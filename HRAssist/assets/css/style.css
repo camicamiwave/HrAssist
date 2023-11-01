@@ -437,9 +437,9 @@ h6 {
 */
 
 form {
-  padding-top: 10px;
+  
   font-size: 13px;
-  margin-top: 30px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -466,7 +466,15 @@ span {
 
 .submit-btn {
   margin-top: 20px;
+  background-color: #08533f;
+  border: none;
+
 }
+
+.submit-btn:hover{
+  background-color: #068e6b;
+}
+
 
 /**
 * End-Change Password Section
