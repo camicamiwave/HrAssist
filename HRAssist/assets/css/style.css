@@ -183,9 +183,6 @@ h6 {
   visibility: hidden;
 }
 
-
-
-
 /**
 * Mobile Navigation 
 */
@@ -479,6 +476,90 @@ span {
 /**
 * End-Change Password Section
 */
+
+
+/**
+* Login Form Employee
+*/
+.login-dark {
+  align-items: center;
+  height: 1000px;
+  background-size: cover;
+  position: relative;
+}
+
+.illustration img{
+  width: 5vw;
+  height: 5vw;
+  background-color: #08533f;
+  border-radius: 7vw;
+}
+
+.login-dark form {
+  max-width: 320px;
+  width: 90%;
+  background-color: #f6f6f6;
+;
+  padding: 40px;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
+}
+
+.login-dark .illustration {
+  text-align: center;
+  padding: 15px 0 20px;
+  font-size: 100px;
+ 
+}
+
+.login-dark form .form-control {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #434a52;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: #000;
+}
+
+.login-dark form .btn-primary {
+  background: #08533F;
+  border: none;
+  width: 7vw;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 26px;
+  text-shadow: none;
+  outline: none;
+} 
+
+.login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
+  background: #5c9f24;
+  outline: none;
+}
+
+
+.login-dark form .forgot:hover, .login-dark form .forgot:active {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.login-dark form .btn-primary:active {
+  transform: translateY(1px);
+}
+
+
+/**
+* End-Login Form Employee
+*/
+
+
 
 
 /*--------------------------------------------------------------
