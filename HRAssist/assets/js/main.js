@@ -163,6 +163,106 @@
 
   });
 
+   /**
+   * Prompt request form
+   */
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const requestLeaveButton = document.querySelector('.button1');
+    const leaveRequestForm = document.querySelector('.leave-request');
+    const requestLocatorButton = document.querySelector('.button2');
+    const locatorRequestForm = document.querySelector('.locator-request');
+
+    requestLeaveButton.addEventListener('click', function() {
+      if (leaveRequestForm.style.display === 'none' || leaveRequestForm.style.display === '') {
+        setTimeout(() => {
+          leaveRequestForm.style.display = 'block';
+        }, 300); // Adjust the delay time (in milliseconds) as needed
+      } else {
+        leaveRequestForm.style.display = 'none';
+      }
+      locatorRequestForm.style.display = 'none'; // Hides the locator form
+    });
+
+    requestLocatorButton.addEventListener('click', function() {
+      if (locatorRequestForm.style.display === 'none' || locatorRequestForm.style.display === '') {
+        setTimeout(() => {
+          locatorRequestForm.style.display = 'block';
+        }, 300); // Adjust the delay time (in milliseconds) as needed
+      } else {
+        locatorRequestForm.style.display = 'none';
+      }
+      leaveRequestForm.style.display = 'none'; // Hides the leave form
+    });
+  });
+
+    /**
+   * End Prompt request form
+   */
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      let itemsAppended = false;
+      let mobileNav = document.querySelector('.navbar ul');
+      let profileDropdown = document.querySelector('.action .menu ul');
+      let changePasswordItem = profileDropdown.children[0].cloneNode(true);
+      let logoutItem = profileDropdown.children[1].cloneNode(true);
+      let actionDiv = document.querySelector('.action');
+  
+      function removeIcons(item) {
+        item.querySelectorAll('i').forEach(icon => icon.remove());
+      }
+  
+      function appendToMobileNav() {
+        if (!itemsAppended && mobileNav) {
+          var mobileNavList1 = document.createElement("li");
+          mobileNavList1.appendChild(changePasswordItem.cloneNode(true));
+          mobileNavList1.classList.add('profile-item');
+          removeIcons(mobileNavList1);
+          mobileNav.appendChild(mobileNavList1);
+  
+          var mobileNavList2 = document.createElement("li");
+          mobileNavList2.appendChild(logoutItem.cloneNode(true));
+          mobileNavList2.classList.add('profile-item');
+          removeIcons(mobileNavList2);
+          mobileNav.appendChild(mobileNavList2);
+  
+          itemsAppended = true;
+        }
+      }
+  
+      function handleResize() {
+        if (window.innerWidth <= 768) {
+          appendToMobileNav();
+          actionDiv.style.display = 'none';
+        } else if (window.innerWidth > 768 && itemsAppended) {
+          let profileItems = document.querySelectorAll('.profile-item');
+          profileItems.forEach(function (item) {
+            mobileNav.removeChild(item);
+          });
+          itemsAppended = false;
+          actionDiv.style.display = 'flex';
+        }
+      }
+  
+      // Add event listener for window resize
+      window.addEventListener('resize', handleResize);
+  
+      // Call the function initially
+      if (window.innerWidth <= 768) {
+        appendToMobileNav();
+        actionDiv.style.display = 'none';
+      }
+    });
+
+
+
+
+
+    
+
+
   /**
    * Initiate portfolio lightbox 
    */

@@ -577,6 +577,35 @@ span {
   background: #068e6b;
 }
 
+.locator_btn{
+  background: #08533F;
+  border: none;
+  width: 7vw;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 26px;
+  text-shadow: none;
+  outline: none;
+  color: #fff;
+}
+
+.locator_btn:hover{
+  background: #068e6b;
+}
+
+
+.leave-request{
+         
+  display: none;
+  transition: 0.5s;
+}
+
+.locator-request{
+ 
+ display: none;
+ transition: 0.5s;
+}
 
 
 
