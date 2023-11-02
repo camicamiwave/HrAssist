@@ -375,8 +375,8 @@ h6 {
 .button1 {
   position: absolute;
   top: 12vh;
-  left: 60vw;
-  width: 9.16vw;
+  left: 60.5vw;
+  width: 10vw;
   height: 3.33vh;
   cursor: pointer;
   background-color: #068e6b;
@@ -396,7 +396,7 @@ h6 {
   top: 12vh;
   left: 73vw;
   border-radius: 2vw;
-  width: 9.16vw;
+  width: 10vw;
   height: 3.33vh;
   cursor: pointer;
   background-color: #068e6b;
@@ -415,7 +415,7 @@ h6 {
   top: 12vh;
   left: 85vw;
   border-radius: 2vw;
-  width: 9.16vw;
+  width: 10vw;
   height: 3.33vh;
   cursor: pointer;
   background-color: #068e6b;
