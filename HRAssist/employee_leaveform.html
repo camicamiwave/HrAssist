@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>HrAssist</title>
+  <title>HrAssist | Leave Form</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -93,71 +93,65 @@
           <button class="button3">+ DTR</button>
       </div>
       </div>
+  </section>
+
+  <br><br><br><br><br><br><br><br>
+  <div class="container mt-5 m-lg-auto p-5 shadow">
+    <section class="leave-request">
+      <header">
+        <h2 style="left: 2vw;">Leave Request Form</h2>
+        <hr>
+      </header>
+      <!-- Form -->
+
+      <form id="LeaveRequestForm">
+        <!-- Name -->
+        <div class="row mb-2">
+          <label class="form-label">Name</label>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="First Name" id="FirstName"/>
+          </div>
+
+          <div class="col">
+            <input  type="text"class="form-control" placeholder="Last Name" id="LastName"/>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="leavetype" class="form-label">Leave Type</label>
+          <select class="form-select" id="leavetype" name="leavetype" required>
+            <option value="">Select a leave type</option>
+            <option value="sick">Sick</option>
+            <option value="vacation">Vacation</option>
+            <option value="maternity">Maternity</option>
+            <option value="paternity">Paternity</option>
+            <option value="bereavement">Bereavement</option>
+          </select>
+        </div>
+
+
+        <div class="row mb-3">
+          <div class="col">
+            <label class="form-label">Start date</label>
+            <input type="date" class="form-control" id="StartDate" />
+          </div>
+          <div class="col">
+            <label class="form-label">End date</label >
+              <input type="date" class="form-control" id="EndDate" />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="reason" class="form-label">Reason</label>
+          <textarea class="form-control" id="reason" name="reason" rows="3" required></textarea>
+        </div>
+
+
+        <button type="submit"class="btn btn-primary w-40 shadow-sm" style="width: 6vw;">Submit</button>
+      </form>
     </section>
-    <br><br><br><br><br><br>
-    <div class="container mt-5 m-lg-auto p-5 shadow">
-      <section class="leave-request">
-        <header class="text-center mb-5">
-          <i
-            class="bi bi-person-fill display-1 text-primary"
-            style="font-size: 10rem"
-          ></i>
-          <h1 class="display-1 h1">Leave request form</h1>
-        </header>
-        <!-- Form -->
-
-        <form id="LeaveRequestForm">
-          <!-- Name -->
-          <div class="row mb-3">
-            <label class="form-label">Name</label>
-            <div class="col">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="First Name"
-                id="FirstName"
-              />
-            </div>
-
-            <div class="col">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Last Name"
-                id="LastName"
-              />
-            </div>
-          </div>
-          <!--  Employee ID Remaining vacation days-->
-          <div class="row mb-3">
-            <div class="col">
-              <label class="form-label"
-                >Start date<small class="text-muted"
-                  >(incl. 1st day)</small
-                ></label
-              ><input type="date" class="form-control" id="StartDate" />
-            </div>
-            <div class="col">
-              <label class="form-label"
-                >End date
-                <small class="text-muted">(incl. last day)</small></label
-              ><input type="date" class="form-control" id="EndDate" />
-            </div>
-          </div>
-          <button
-            type="submit
-          "
-            class="btn btn-primary w-100 shadow-sm"
-          >
-            Submit
-          </button>
-        </form>
-      </section>
-    </div>
-    <!-- Create leave request -->
-
-    
-    
+  </div>
+   
  </main><!-- End #main -->
 
 
