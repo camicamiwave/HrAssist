@@ -560,6 +560,24 @@ span {
 */
 
 
+.leave_btn{
+  background: #08533F;
+  border: none;
+  width: 7vw;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 26px;
+  text-shadow: none;
+  outline: none;
+  color: #fff;
+}
+
+.leave_btn:hover{
+  background: #068e6b;
+}
+
+
 
 
 /*--------------------------------------------------------------
