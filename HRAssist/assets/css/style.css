@@ -374,8 +374,8 @@ h6 {
 
 .button1 {
   position: absolute;
-  top: 18vh;
-  left: 52.08vw;
+  top: 12vh;
+  left: 60vw;
   width: 9.16vw;
   height: 3.33vh;
   cursor: pointer;
@@ -393,8 +393,8 @@ h6 {
 
 .button2 {
   position: absolute;
-  top: 18vh;
-  left: 65.1vw;
+  top: 12vh;
+  left: 73vw;
   border-radius: 2vw;
   width: 9.16vw;
   height: 3.33vh;
@@ -412,8 +412,8 @@ h6 {
 }
 .button3 {
   position: absolute;
-  top: 18vh;
-  left: 78.13vw;
+  top: 12vh;
+  left: 85vw;
   border-radius: 2vw;
   width: 9.16vw;
   height: 3.33vh;
@@ -506,7 +506,7 @@ span {
   position: absolute;
   top: 50%;
   left: 50%;
-  color: #fff;
+  color: #000;
   box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
 }
 

@@ -31,7 +31,15 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .btn-apply, .btn-cancel {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -46,7 +54,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="employee_home.html">Home</a></li>
           <li><a class="nav-link scrollto" href="#activities">Activities</a></li>
           <li><a class="nav-link scrollto" href="#Hiring">Hiring</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
@@ -77,23 +85,81 @@
 
   <main id="main">
 
-    
+ <section class="inner-page">
+      <div class="container">
+        <div class="buttons">
+          <button class="button1">+ Request Leave</button>
+          <button class="button2">+ Request Pass Slip</button>
+          <button class="button3">+ DTR</button>
+      </div>
+      </div>
+    </section>
+    <br><br><br><br><br><br>
+    <div class="container mt-5 m-lg-auto p-5 shadow">
+      <section class="leave-request">
+        <header class="text-center mb-5">
+          <i
+            class="bi bi-person-fill display-1 text-primary"
+            style="font-size: 10rem"
+          ></i>
+          <h1 class="display-1 h1">Leave request form</h1>
+        </header>
+        <!-- Form -->
 
-      <section class="inner-page">
-        <div class="container">
-          <div class="buttons">
-            <button class="button1">+ Request Leave</button>
-            <button class="button2">+ Request Pass Slip</button>
-            <button class="button3">+ DTR</button>
-        </div>
-        </div>
+        <form id="LeaveRequestForm">
+          <!-- Name -->
+          <div class="row mb-3">
+            <label class="form-label">Name</label>
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="First Name"
+                id="FirstName"
+              />
+            </div>
+
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Last Name"
+                id="LastName"
+              />
+            </div>
+          </div>
+          <!--  Employee ID Remaining vacation days-->
+          <div class="row mb-3">
+            <div class="col">
+              <label class="form-label"
+                >Start date<small class="text-muted"
+                  >(incl. 1st day)</small
+                ></label
+              ><input type="date" class="form-control" id="StartDate" />
+            </div>
+            <div class="col">
+              <label class="form-label"
+                >End date
+                <small class="text-muted">(incl. last day)</small></label
+              ><input type="date" class="form-control" id="EndDate" />
+            </div>
+          </div>
+          <button
+            type="submit
+          "
+            class="btn btn-primary w-100 shadow-sm"
+          >
+            Submit
+          </button>
+        </form>
       </section>
-   
+    </div>
+    <!-- Create leave request -->
 
+    
+    
+ </main><!-- End #main -->
 
-   
-
-  </main><!-- End #main -->
 
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -105,9 +171,13 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
 
   <script>
     function menuToggle(){
