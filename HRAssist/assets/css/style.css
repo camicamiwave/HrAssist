@@ -594,18 +594,70 @@ span {
   background: #068e6b;
 }
 
-
-.leave-request{
-         
+.leave-request,
+.locator-request {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 30px;
   display: none;
-  transition: 0.5s;
+  z-index: 1000; /* Adjust the z-index to make the form appear on top of other elements */
+  width: 50%; /* Adjust the width of the form as needed */
+}
+    
+    /* ======================= Cards ====================== */
+.cardBox {
+  position: relative;
+  width: 80%;
+  padding: 20px;
+  margin: 0 auto; /* Center the card boxes horizontally */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  z-index: 1; /* Ensure the card boxes stay below the forms */
 }
 
-.locator-request{
- 
- display: none;
- transition: 0.5s;
+.cardBox .card {
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
 }
+
+.cardBox .card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--blue);
+}
+
+.cardBox .card .cardName {
+  color: var(--black2);
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.cardBox .card .iconBx {
+  font-size: 3.5rem;
+  color: var(--black2);
+}
+
+.cardBox .card:hover {
+  background: var(--blue);
+}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx {
+  color: var(--white);
+}
+
+
 
 
 

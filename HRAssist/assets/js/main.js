@@ -199,9 +199,6 @@
     /**
    * End Prompt request form
    */
-
-
-
     document.addEventListener("DOMContentLoaded", function () {
       let itemsAppended = false;
       let mobileNav = document.querySelector('.navbar ul');
@@ -236,7 +233,7 @@
         if (window.innerWidth <= 768) {
           appendToMobileNav();
           actionDiv.style.display = 'none';
-        } else if (window.innerWidth > 768 && itemsAppended) {
+        } else if (window.innerWidth > 976 && itemsAppended) {
           let profileItems = document.querySelectorAll('.profile-item');
           profileItems.forEach(function (item) {
             mobileNav.removeChild(item);
@@ -250,19 +247,66 @@
       window.addEventListener('resize', handleResize);
   
       // Call the function initially
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 976) {
         appendToMobileNav();
         actionDiv.style.display = 'none';
       }
     });
 
+     /**
+   * Prompt request form
+   */
 
+   document.addEventListener('DOMContentLoaded', function() {
+    const requestLeaveButton = document.querySelector('.button1');
+    const leaveRequestForm = document.querySelector('.leave-request');
+    const requestLocatorButton = document.querySelector('.button2');
+    const locatorRequestForm = document.querySelector('.locator-request');
 
+    let leaveFormVisible = false;
+    let locatorFormVisible = false;
 
+    requestLeaveButton.addEventListener('click', function() {
+      if (!leaveFormVisible) {
+        leaveRequestForm.style.display = 'block';
+        locatorRequestForm.style.display = 'none';
+        leaveFormVisible = true;
+        locatorFormVisible = false;
+      } else {
+        leaveRequestForm.style.display = 'none';
+        leaveFormVisible = false;
+      }
+    });
 
-    
+    requestLocatorButton.addEventListener('click', function() {
+      if (!locatorFormVisible) {
+        locatorRequestForm.style.display = 'block';
+        leaveRequestForm.style.display = 'none';
+        locatorFormVisible = true;
+        leaveFormVisible = false;
+      } else {
+        locatorRequestForm.style.display = 'none';
+        locatorFormVisible = false;
+      }
+    });
 
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.leave-request') && !event.target.closest('.button1')) {
+        leaveRequestForm.style.display = 'none';
+        leaveFormVisible = false;
+      }
+      if (!event.target.closest('.locator-request') && !event.target.closest('.button2')) {
+        locatorRequestForm.style.display = 'none';
+        locatorFormVisible = false;
+      }
+    });
+  });
 
+  /**
+ * End Prompt request form
+ */
+
+  
   /**
    * Initiate portfolio lightbox 
    */
