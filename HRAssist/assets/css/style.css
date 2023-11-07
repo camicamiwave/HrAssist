@@ -634,7 +634,6 @@ span {
   position: relative;
   font-weight: 500;
   font-size: 2.5rem;
-  color: var(--blue);
 }
 
 .cardBox .card .cardName {
@@ -643,18 +642,13 @@ span {
   margin-top: 5px;
 }
 
-.cardBox .card .iconBx {
-  font-size: 3.5rem;
-  color: var(--black2);
-}
 
-.cardBox .card:hover {
-  background: var(--blue);
-}
+
+
 .cardBox .card:hover .numbers,
-.cardBox .card:hover .cardName,
-.cardBox .card:hover .iconBx {
-  color: var(--white);
+.cardBox .card:hover .cardName
+{
+  color: #08533F;
 }
 
 
