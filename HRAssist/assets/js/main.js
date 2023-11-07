@@ -230,7 +230,7 @@
       }
   
       function handleResize() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 976) {
           appendToMobileNav();
           actionDiv.style.display = 'none';
         } else if (window.innerWidth > 976 && itemsAppended) {

@@ -31,6 +31,109 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <style>
+
+@media (max-width: 994px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+  .recentOrders {
+    overflow-x: auto;
+  }
+  .status.inProgress {
+    white-space: nowrap;
+  }
+  .cardBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.details {
+  position: relative;
+  width: 80%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+  padding-left: 210px;
+  /* margin-top: 10px; */
+}
+
+.details .recentRequest {
+  position: relative;
+  display: grid;
+  min-height: 350px;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.details .cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.cardHeader h2 {
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.details table thead td {
+  font-weight: 600;
+}
+.details .recentRequest table tr {
+  color: var(--black1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.details .recentRequest table tr:last-child {
+  border-bottom: none;
+}
+.details .recentRequest table tbody tr:hover {
+  background: whitesmoke;
+  color: var(--white);
+}
+.details .recentRequest table tr td {
+  padding: 10px;
+}
+.details .recentRequest table tr td:last-child {
+  text-align: end;
+}
+.details .recentRequest table tr td:nth-child(2) {
+  text-align: end;
+}
+.details .recentRequest table tr td:nth-child(3) {
+  text-align: center; }
+.status.accepted{
+  padding: 2px 4px;
+  background: #8de02c;
+  color: var(--white);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.status.pending {
+  padding: 2px 4px;
+  background: #e9b10a;
+  color: var(--white);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.status.declined {
+  padding: 2px 4px;
+  background: #f00;
+  color: var(--white);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+  </style>
+
   
 </head>
 
@@ -232,6 +335,50 @@
             </div>
         </div>
     </div>
+
+    <br>
+
+     <!-- ================ Order Details List ================= -->
+     <div class="details">
+      <div class="recentRequest">
+          <div class="cardHeader">
+              <h2>Recent Request</h2>
+          </div>
+
+          <table>
+              <thead>
+                  <tr>
+                      <td>Request</td>
+                      <td>Reason</td>
+                      <td>Leave Days</td>
+                      <td>Status</td>
+                  </tr>
+              </thead>
+
+              <tbody>
+                  <tr>
+                      <td>Leave Request</td>
+                      <td>Sick</td>
+                      <td>3</td>
+                      <td><span class="status accepted">Accepted</span></td>
+                  </tr>
+
+                  <tr>
+                      <td>Pass Slip</td>
+                      <td>LGU Convention</td>
+                      <td>1</td>
+                      <td><span class="status pending">Pending</span></td>
+                  </tr>
+
+                  <tr>
+                      <td>Leave Request</td>
+                      <td>Vacation</td>
+                      <td>15</td>
+                      <td><span class="status declined">Declined</span></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
 
    
  </main><!-- End #main -->

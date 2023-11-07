@@ -601,7 +601,7 @@ span {
   left: 50%;
   transform: translate(-50%, -50%);
   background: #fff;
-  padding: 30px;
+ 
   display: none;
   z-index: 1000; /* Adjust the z-index to make the form appear on top of other elements */
   width: 50%; /* Adjust the width of the form as needed */
@@ -641,8 +641,6 @@ span {
   font-size: 1.1rem;
   margin-top: 5px;
 }
-
-
 
 
 .cardBox .card:hover .numbers,
