@@ -11,7 +11,7 @@ module.exports = {
         firestore_retrieve: './src/retrieve_firestore.js'
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist/bundles'),
         filename: '[name].bundle.js',
     },
     watch: true,
