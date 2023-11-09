@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Applicant-Form</title>
+  <title>Create-Account</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -25,7 +25,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/info.css" rel="stylesheet">
+  <link href="assets/css/create.css" rel="stylesheet">
 
   
 </head>
@@ -38,7 +38,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       
-      <a href="landing.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -47,7 +47,7 @@
           <li><a class="nav-link scrollto" href="#services">Hiring</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Activities</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Login</a></li>
+          <li><a class="getstarted scrollto" id="landing_login_btn">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -62,15 +62,49 @@
       
     </section><!-- End Breadcrumbs -->
 
-    <!--Contnt Start-->
-
-    <section class="inner-page">
+    <section class="inner-page" id="first_applicantion_form_layout">
       <div class="container">
         <p>
           APPLICATION FORM
         </p>
       </div>
+
+    <div class="low-text">
+    <p>Job Department | Job Vacancy Position</p>
+    </div>
+
+    <div class="box">
+      <div class="page">
+        <p>Create an account</p>
+      </div>
+      <div class="text">
+        <p>Be a part of our community.</p>
+      </div>
+      
+      <div class="input-text" id="input-text">
+        <div class="form-container sign-up">
+
+          <form id="applicant_registration">
+           
+            <input type="text" placeholder="Name" id="ApplicantName" name="ApplicantName"> 
+            <input type="email" placeholder="Email" id="ApplicantEmail" name="ApplicantEmail">
+            <input type="password" placeholder="Password" id="ApplicantPassword" name="ApplicantPassword">
+            <input type="password" placeholder="Confirm Password" id="ApplicantConfirmPassword" name="ApplicantConfirmPassword">
+            <button type="submit">Next</button> 
+          </form>
+        </div>
+      </div>
+    </div>
+
     </section>
+
+
+    <section class="inner-page" id="second_applicantion_form_layout" style="display: none;">
+      <div class="container">
+        <p>
+          APPLICATION FORM
+        </p>
+      </div>
     <div class="low-text">
     <p>Job Department | Job Vacancy Position</p>
     <div class="lower">
@@ -83,7 +117,9 @@
       <div class="box">
         <div class="input-text" id="input-text">
           <div class="form-container sign-up">
-            <form class="row g-3">
+
+            <form class="row g-3" id="applicant_info_form">
+
               <div class="col-md-6">
                 <label for="inputFirstName" class="form-label">First Name:</label>
                 <input type="text" class="form-control" id="inputFirstName">
@@ -103,23 +139,24 @@
               <div class="col-md-6">
                 <label for="inputSex" class="form-label">Sex:</label>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" id="female" name="sex" value="female">
+                  <input class="form-check-input" type="radio" id="female" name="sex" value="Female">
                   <label class="form-check-label" for="female">Female</label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" id="male" name="sex" value="male">
+                  <input class="form-check-input" type="radio" id="male" name="sex" value="Male">
                   <label class="form-check-label" for="male">Male</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" id="other" name="sex" value="other">
-                  <label class="form-check-label" for="other">Other</label>
-                </div>
+                </div> 
               </div>
               <div class="col-md-6">
                 <label for="inputState" class="form-label">Civil Status:</label>
                 <select id="inputState" class="form-select">
                   <option selected>Select</option>
-                  <option>...</option>
+                  <option>Single</option>
+                  <option>Married</option>
+                  <option>Widowed</option>
+                  <option>Separated</option>
+                  <option>Divorced</option>
+                  <option>Live-in</option>
                 </select>
               </div>
               <div class="col-md-6">
@@ -132,7 +169,8 @@
               </div>
               <div class="col-md-6">
                 <label for="phone" class="form-label">Contact:</label>
-                <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                <input type="phone" class="form-control" id="phone">
+                <!--<input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">-->
               </div>
               <div class="col-md-6">
                 <label for="inputEmail" class="form-label">Email:</label>
@@ -146,23 +184,29 @@
               <div class="attach"> <p>Attach Files</p> 
               <div class="form-group mt-3">
                 <label class="mr-2">Upload your CV:</label>
-                <input type="file" name="file">
+                <input type="file" name="file" multiple>
               </div>
-<br> <br> <br>
+
+              <br> <br> <br>
               <div class="mes"> <p>Message</p>
               <div class="form-group mt-3">
-              <textarea class="form-control" name="message" rows="5" required></textarea>
+              <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
             </div>
             </form>
+            <br><br>
+            <button type="submit">Submit</button>
           </div>
         </div>
+        
 
         </div>
         </div>
       </div>
     </div>
-
     
+    </section>
+    
+
   </main><!-- End #main -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -177,6 +221,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="bundles/auth.bundle.js"></script>   
 
 </body>
 

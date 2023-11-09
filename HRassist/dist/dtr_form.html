@@ -79,38 +79,53 @@
       <div class="container">
       
         <div class="container">
-            <h1>Login Form</h1>
+            <h1>DTR Form</h1>
 
-          <hr>  
-          <div id="user-info">
-              <!-- User information will be displayed here -->
-          </div>
-          <hr>
+            <p>Please attach the biometeric data of the employee per office. Please make sure that it is in csv format.</p>
   
-          <div id="auth-form">
+          <form id="dtr_form">
 
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"> 
-              </div>
-              
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Test</label>
+                <input type="text" class="form-control" id="test" name="test">
               </div> 
 
-              <a href="signup_form.html">Don't have an account? Sign Up</a><br><br>
               
-              <button id="sign-in-email-password" class="btn btn-primary">Sign In</button>
-              <button id="sign-out" class="btn btn-primary">Sign Out</button>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Test1</label>
+                <input type="text" class="form-control" id="test1" name="test1">
+              </div> 
+
               
-          </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Test2</label>
+                <input type="text" class="form-control" id="test2" name="test2">
+              </div> 
+
+              <div class="mb-3">
+                <label for="inputState" class="form-label">Office:</label>
+                <select id="inputState" class="form-select">
+                  <option selected>Select</option>
+                  <option>DSWD</option>
+                  <option>MAO</option>
+                  <option>Tourism</option> 
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Requirements</label>
+                <input type="file" class="form-control" id="requirement" name="requirement" aria-describedby="emailHelp" multiple> 
+              </div>
+              
+              <button type="submit" id="sign-in-email-password" class="btn btn-primary">Submit</button> 
+              
+            </form>
 
       </div>
 
     </section>
 
-    <script src="bundles/auth.bundle.js"></script>   
+    <script src="bundles/cloud_storage.bundle.js"></script>   
 
   </main><!-- End #main -->
 
