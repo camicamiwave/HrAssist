@@ -378,6 +378,7 @@ body {
     text-align: center;
     font-weight: bold;
     line-height: 0.5;
+    font-size: 20px;
 
   }
 
@@ -440,7 +441,7 @@ form input {
     border-radius: 5px;
 }
 
-form button {
+.button {
     background-color: #08533F;
     border: none;
     border-radius: 5px;
@@ -455,10 +456,27 @@ form button {
 }
 
 
-form button:hover {
+.button:hover {
     background-color: #08533F;
 }
 
+.lower {
+    font-size: 14px;
+    margin-left: 70px;
+}
+
+.app p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 150px;
+ 
+}
+
+.des p {
+    font-size: 14px;
+    color: #08533F;
+
+}
 
   /*--------------------------------------------------------------
 # Breadcrumbs
@@ -507,4 +525,3 @@ form button:hover {
       display: inline-block;
     }
   }
-  
