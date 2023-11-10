@@ -86,4 +86,44 @@ function GetEmployeeTable() {
     });
   }
 
+function FetchData() { 
+  const TestcolRef = collection(db, 'Applicant Information');
+  
+  const querySnapshot = query(TestcolRef);
+
+  onSnapshot(querySnapshot, (snapshot) => {
+    let employees = [];
+    snapshot.docs.forEach((doc) => {
+      employees.push({ ...doc.data(), id: doc.id });
+    });
+    console.log(employees);
+  });
+
+  /*
+  onSnapshot(querySnapshot, (snapshot) => {
+    let employees = [];
+    snapshot.docs.forEach((doc) => {
+      const employeeData = {
+        createdAt: doc.data().createdAt.toDate(), // Convert Firestore timestamp to JavaScript Date
+        files: doc.data().files || [], // Assuming 'files' is an array, default to an empty array if it doesn't exist
+        id: doc.id,
+        test: doc.data().test,
+        test1: doc.data().test1,
+        test_list: doc.data().test_list || [], // Assuming 'test_list' is an array, default to an empty array if it doesn't exist
+      };
+      employees.push(employeeData);
+  
+      console.log("createdAt:", employeeData.createdAt);
+      console.log("files:", employeeData.files);
+      console.log("id:", employeeData.id);
+      console.log("test:", employeeData.test);
+      console.log("test1:", employeeData.test1);
+      console.log("test_list:", employeeData.test_list);
+    });
+    console.log(employees);
+  });
+  */
+}
+
+window.addEventListener('load', FetchData);
 window.addEventListener('load', GetEmployeeTable);

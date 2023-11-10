@@ -140,12 +140,14 @@ export function SignupAccount() {
 
         // Add displayName
         updateProfile(user, {
-            displayName: "Janjan"
+            displayName: "Janjan",
+            userLevel: "applicant" // Set your custom user level here
         })
         .then(() => {
             // Profile updated successfully
             console.log('User created:', user);
             console.log('User display name:', user.displayName);
+            //console.log('User user level:', user.userLevel);
 
             console.log("HELlo")
         })
@@ -168,7 +170,7 @@ export function SignupApplicantAccount() {
     
     const storageRef = ref(storage, "Applicant/Requirements");
 
-    const ApplicantColRef = collection(db, 'Applicant Information')
+    const ApplicantColRef = collection(db, 'Applicant Information') 
 
     document.getElementById('second_applicantion_form_layout').style.display = 'none';
     document.getElementById('applicant_registration').addEventListener('submit', function (e) {
@@ -203,7 +205,8 @@ export function SignupApplicantAccount() {
               
                   // Add displayName
                   updateProfile(user, {
-                    displayName: ApplicantName
+                    displayName: ApplicantName,
+                    userLevel: "applicant" // Set your custom user level here
                   })
                     .then(() => {
                         const fileInput = addApplicantForm.querySelector('input[type="file"]');
@@ -254,25 +257,32 @@ export function SignupApplicantAccount() {
                             const birthdayValue = birthdayInput.value;
 
                     
-                              const data = {
-                                userID: user.uid,
-                                FirstName: addApplicantForm.inputFirstName.value,
-                                MiddleName: addApplicantForm.inputMiddleName.value,
-                                LastName: addApplicantForm.inputLastName.value,
-                                ExName: addApplicantForm.inputExName.value, 
-                                Sex: sexValue,
-                                CivilStatus: civilStatusValue,
-                                Birthdate: birthdayValue,
-                                Placebirth: addApplicantForm.inputplacebirth.value,
-                                Phone: addApplicantForm.phone.value,
-                                Email: addApplicantForm.inputemail.value,
-                                Address: addApplicantForm.inputaddress.value,
+                            const data = {
+                                userID: user.uid, 
+                                ApplicantStatus: "Pending",
+                                JobApply: "",
                                 Message: addApplicantForm.message.value,
                                 createdAt: serverTimestamp(),
+                                Personal_Information: {
+                                    FirstName: addApplicantForm.inputFirstName.value,
+                                    MiddleName: addApplicantForm.inputMiddleName.value,
+                                    LastName: addApplicantForm.inputLastName.value,
+                                    ExName: addApplicantForm.inputExName.value, 
+                                    Sex: sexValue,
+                                    CivilStatus: civilStatusValue,
+                                    Birthdate: birthdayValue,
+                                    Placebirth: addApplicantForm.inputplacebirth.value,
+                                    Phone: addApplicantForm.phone.value,
+                                    Email: addApplicantForm.inputemail.value,
+                                    Address: addApplicantForm.inputaddress.value,
+                                },
+                                Requirements: [],
                               };
                     
                               for (let i = 0; i < fileURL.length; i++) {
-                                data[`file${i + 1}`] = fileURL[i]; // Add each fileURL content to data
+                                data.Requirements.push({
+                                  [`file${i + 1}`]: fileURL[i], // Correct syntax for adding each fileURL content to data
+                                });
                               }
                     
                               // Add data to Firestore with an automatically generated ID
