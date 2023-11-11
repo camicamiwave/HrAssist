@@ -394,7 +394,7 @@ body {
 }
 
 .button1:hover{
-  background-color: #08533f;
+  background-color: #08533f; 
   color: #fff;
 }
 
@@ -480,6 +480,9 @@ body {
   z-index: 1000; /* Adjust the z-index to make the form appear on top of other elements */
   width: 40%; /* Adjust the width of the form as needed */
 }
+
+
+
 
 form {
   max-width: 600px;
@@ -671,6 +674,7 @@ animation: spin 2s linear infinite;
     font-size: 12px; /* Adjust font size as needed */
     border-radius: 3vw;
   }
+  
 }
 
 @media (max-width: 480px) {
