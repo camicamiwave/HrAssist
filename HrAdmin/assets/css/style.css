@@ -245,12 +245,15 @@ table {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   background-color: #ffffff;
 }
 
 .table_header p {
   color: #000000;
+  font-size: 16px;
+  align-content: center;
+  margin: 0 20px;
 }
 
 .table-section {
@@ -299,12 +302,6 @@ tr:hover td {
   box-shadow: inset 0 0 6px #E5E3E3;
 }
 
-.add_new {
-  background-color: #08533F;
-  padding: 10px 20px;
-  color:  #08533F;
-}
-
 
 caption {
   padding-top: 0.5rem;
@@ -338,6 +335,7 @@ button {
   cursor: pointer;
   padding: 10px;
 }
+
 
 td button:nth-child(1){
   margin: 0;
