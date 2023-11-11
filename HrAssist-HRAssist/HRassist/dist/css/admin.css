@@ -32,7 +32,10 @@ body.dark {
     --grey-color-light: #aaa;
 }
 
-/* navbar */
+/* ---------------------------------------------------------------------------------------- */
+/* ---------------------------------------- NAVBAR ---------------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -151,6 +154,10 @@ body.dark {
 
 .recruitment::before {
     content: "Recruitment";
+}
+
+.employee_registration::before {
+    content: "Employee Registration";
 }
 
 .employment_tools::before {
