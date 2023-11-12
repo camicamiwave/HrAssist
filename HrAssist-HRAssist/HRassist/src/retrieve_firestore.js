@@ -86,7 +86,7 @@ function GetEmployeeTable() {
     });
   }
 
-function FetchData() { 
+export function FetchData() { 
   const TestcolRef = collection(db, 'Applicant Information');
   
   const querySnapshot = query(TestcolRef);
@@ -97,6 +97,7 @@ function FetchData() {
       employees.push({ ...doc.data(), id: doc.id });
     });
     console.log(employees);
+    return employees;
   });
 
   /*

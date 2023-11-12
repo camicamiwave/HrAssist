@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee | Dashboard</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="assets/css/style1.css">
+
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+</head>
+
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/logo.png" alt="" style="width: 4vw; display: block;">
+                        <span class="title"><h2>HR Assist</h2></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Activities</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="user">
+                    <img src="assets/img/user.png" alt="">
+                </div>
+            </div>
+
+            <section class="inner-page">
+                <div class="container">
+                  <div class="buttons">
+                    <button class="button1">+ Leave</button>
+                    <button class="button2">+ Pass Slip</button>
+                    <button class="button3">+ DTR</button>
+                </div>
+                </div>
+              </section>
+
+              <br><br><br><br><br><br>
+
+            <!-- ======================= Cards ================== -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">10</div>
+                        <div class="cardName">Total Abscences</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">80</div>
+                        <div class="cardName">Remaining Leaves </div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="airplane-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">284</div>
+                        <div class="cardName">Worked Days</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="accessibility-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">2</div>
+                        <div class="cardName">Pending Request</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="document-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================ Order Details List ================= -->
+            <div class="details">
+                <div class="recentRequest">
+                    <div class="cardHeader">
+                        <h2>Recent Request</h2>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Request</td>
+                                <td>Reason</td>
+                                <td>Leave Days</td>
+                                <td>Status</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Leave Request</td>
+                                <td>Sick</td>
+                                <td>3</td>
+                                <td><span class="status accepted">Accepted</span></td>
+                            </tr>
+          
+                            <tr>
+                                <td>Pass Slip</td>
+                                <td>LGU Convention</td>
+                                <td>1</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+          
+                            <tr>
+                                <td>Leave Request</td>
+                                <td>Vacation</td>
+                                <td>15</td>
+                                <td><span class="status declined">Declined</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Pass Slip</td>
+                                <td>LGU Convention</td>
+                                <td>1</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+          
+                            <tr>
+                                <td>Leave Request</td>
+                                <td>Vacation</td>
+                                <td>15</td>
+                                <td><span class="status declined">Declined</span></td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ================= New Customers ================ -->
+                <div class="recentCustomers">
+                    <div class="cardHeader">
+                        <h2>Recent Activities</h2>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+     <!-- Leave Request Form -->
+<section class="leave-request">
+    <div>
+        <h2>Leave Request Form</h2>
+        <br>
+        <!-- Form -->
+        <form id="LeaveRequestForm">
+            <!-- Name -->
+            <div class="form-group">
+                <label for="FirstName">First Name</label>
+                <input type="text" id="FirstName" placeholder="First Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="LastName">Last Name</label>
+                <input type="text" id="LastName" placeholder="Last Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="leavetype">Leave Type</label>
+                <select id="leavetype" name="leavetype" required>
+                    <option value="">Select a leave type</option>
+                    <option value="sick">Sick</option>
+                    <option value="vacation">Vacation</option>
+                    <option value="maternity">Maternity</option>
+                    <option value="paternity">Paternity</option>
+                    <option value="bereavement">Bereavement</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="StartDate">Start Date</label>
+                <input type="date" id="StartDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="EndDate">End Date</label>
+                <input type="date" id="EndDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="reason">Reason</label>
+                <textarea id="reason" name="reason" rows="3" required></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+
+<!-- Locator Slip Form -->
+<section class="locator-request">
+    <div>
+        <h2>Locator Slip Form</h2>
+        <br>
+        <!-- Form -->
+        <form id="LocatorForm">
+            <!-- Name -->
+            <div class="form-group">
+                <label for="FirstName">First Name</label>
+                <input type="text" id="FirstName" placeholder="First Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="LastName">Last Name</label>
+                <input type="text" id="LastName" placeholder="Last Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Purpose">Purpose</label>
+                <input type="text" id="purpose" placeholder="Purpose" required>
+            </div>
+
+            <div class="form-group">
+                <label for="StartDate">Start Date</label>
+                <input type="date" id="StartDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="EndDate">End Date</label>
+                <input type="date" id="EndDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="reason">Reason</label>
+                <textarea id="reason" name="reason" rows="3" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 6vw;">Submit</button>
+        </form>
+    </div>
+</section>
+
+    <!-- =========== Scripts =========  -->
+    <script src="assets/js/main.js"></script>
+
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+
+</body>
+
+</html>
