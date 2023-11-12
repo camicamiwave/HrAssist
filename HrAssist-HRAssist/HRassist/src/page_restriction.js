@@ -79,7 +79,11 @@ export function PageRestrictionMethod(currentPath, userLevel){
 
   // lagay nyo dito lahat ng pages na exclusive lang for employees
   const Employee_Pages = [
-    '/dist/employee_home.html'
+    '/dist/employee_home.html',
+    '/dist/employee_changepass.html',
+    '/dist/employee_profile.html',
+    '/dist/employee_contactus.html',
+
   ];
   
   // lagay nyo dito lahat ng pages na exclusive lang for admin or HR
