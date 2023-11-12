@@ -86,8 +86,8 @@
                     <div class="menu_title recruitment"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item">
-                        <a href="#" class="nav_link">
+                    <li class="item active">
+                        <a href="manage_applicant_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-group"></i>
                         </span>
@@ -97,7 +97,7 @@
                     <!-- End -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="#" class="nav_link">
+                        <a href="job_vacancy_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-briefcase"></i>
                         </span>
@@ -211,6 +211,72 @@
                 </div>
             </div>
         </nav>
+
+        <div id="main">
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <h1 class="page-title">
+                        <span class="page-title-icon">
+                        <i class="bx bx-group"></i>
+                        </span> Manage Applicant
+                    </h1>
+                </div>
+                <div class="table">
+                    <div class="table-header">
+                        <p>List of Applicants</p>
+                        <button class="add-new">+ Add Applicant</button>
+                    </div>
+                    <div class="table-header">
+                        <div class="group">
+                            <p>Filter</p>
+                        </div>
+                    </div>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Application Date</th>
+                                <th>Application Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Juan Dela Cruz</td>
+                                <td>10/06/2023</td>
+                                <td>Pending</td>
+                                <td>
+                                    <button><i class="bx bx-edit"></i></button>
+                                    <button><i class="bx bx-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Lebron James</td>
+                                <td>10/06/2023</td>
+                                <td>Scheduled</td>
+                                <td>
+                                    <button><i class="bx bx-edit"></i></button>
+                                    <button><i class="bx bx-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Stephen Curry</td>
+                                <td>10/06/2023</td>
+                                <td>Not Qualified</td>
+                                <td>
+                                    <button><i class="bx bx-edit"></i></button>
+                                    <button><i class="bx bx-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
         <!-- JavaScript -->
         <script src="js/script.js"></script>

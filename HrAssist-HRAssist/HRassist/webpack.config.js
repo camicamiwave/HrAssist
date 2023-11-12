@@ -8,7 +8,9 @@ module.exports = {
         cloud_storage: './src/cloud.js', 
         firestore_storage: './src/firestore.js',
         firestore_add: './src/add_firestore.js',
-        firestore_retrieve: './src/retrieve_firestore.js'
+        firestore_retrieve: './src/retrieve_firestore.js',
+        page_verification: './src/page_restriction.js',
+        login_authentication: './src/login_auth.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),
