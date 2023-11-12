@@ -53,7 +53,7 @@ export function UserLoginChecker(Account_UserID, User_Action) {
           } else if (userlevel === "Admin") {
             if (User_Action === "Login"){
                 window.location.href = "dashboard.html";
-            } else if (User_Action === "Browsing"){
+            } else if (User_Action === "Browsing"){ 
                 PageRestrictionMethod(currentPath, userlevel); 
             }
 
@@ -76,6 +76,9 @@ export function UserLoginChecker(Account_UserID, User_Action) {
   
 
 export function PageRestrictionMethod(currentPath, userLevel){
+    
+  console.log("check");
+
 
   // lagay nyo dito lahat ng pages na exclusive lang for employees
   const Employee_Pages = [
@@ -91,6 +94,7 @@ export function PageRestrictionMethod(currentPath, userLevel){
     '/dist/dashboard.html',
     '/dist/manage_applicant.html',
   ];
+
 
   if (userLevel === "Applicant"){
     // Check if the currentPath is in the list of Applicant_Pages
@@ -125,16 +129,19 @@ export function PageRestrictionMethod(currentPath, userLevel){
   }
 
   else if (userLevel === "Admin"){
-    // Check if the currentPath is in the list of Applicant_Pages
-    const isEmployeePage = Employee_Pages.includes(currentPath);
+    // Check if the currentPath is in the list of Applicant_Pages 
+    const isEmployee_Pages = Employee_Pages.includes(currentPath);
 
-    if (isEmployeePage) {
+    console.log(isEmployee_Pages);
+
+    if (isEmployee_Pages) {
       // Perform actions for other pages
       console.log('This is not an Admin page.');
       window.location.href = "dashboard.html";
     } else {
       // Perform actions for Applicant pages
       console.log('This is an Admin page.');
+      
     }
 
   } else {

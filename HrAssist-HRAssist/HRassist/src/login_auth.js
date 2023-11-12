@@ -64,7 +64,7 @@ export function LoginMethod() {
       } else {
         // User is signed out
         //userInfoDisplay.innerHTML = 'Signed out';
-        loginLabelh1.innerHTML = "Login Account"
+        loginLabelh1.innerHTML = "Hello,Again" //"Login Account"
         signInButton.style.display = 'block'; // Show the Sign In button
         signOutButton.style.display = 'none'; // Hide the Sign Out button
       }
