@@ -382,7 +382,7 @@ body {
 .button1 {
   position: absolute;
   top: 3vh;
-  left: 46vw;
+  left: 58vw;
   width: 10vw;
   height: 3.33vh;
   cursor: pointer;
@@ -401,7 +401,7 @@ body {
 .button2 {
   position: absolute;
   top: 3vh;
-  left: 58vw;
+  left: 70vw;
   border-radius: 2vw;
   width: 10vw;
   height: 3.33vh;
