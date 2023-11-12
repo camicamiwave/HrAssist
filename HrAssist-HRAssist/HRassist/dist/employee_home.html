@@ -23,7 +23,9 @@
                 <li>
                     <a href="#">
                         <img src="img/logo.png" alt="" style="width: 4vw; display: block;">
-                        <span class="title"><h2>HR Assist</h2></span>
+                        <span class="title">
+                            <h2>HR Assist</h2>
+                        </span>
                     </a>
                 </li>
 
@@ -97,14 +99,14 @@
 
             <section class="inner-page">
                 <div class="container">
-                  <div class="buttons">
-                    <button class="button1">+ Leave</button>
-                    <button class="button2">+ Pass Slip</button>
+                    <div class="buttons">
+                        <button class="button1" id="leaveBtn">+ Leave</button>
+                        <button class="button2">+ Pass Slip</button>
+                    </div>
                 </div>
-                </div>
-              </section>
+            </section>
 
-              <br><br><br><br><br><br>
+            <br><br><br><br><br><br>
 
             <!-- ======================= Cards ================== -->
             <div class="cardBox">
@@ -178,14 +180,14 @@
                                 <td>3</td>
                                 <td><span class="status accepted">Accepted</span></td>
                             </tr>
-          
+
                             <tr>
                                 <td>Pass Slip</td>
                                 <td>LGU Convention</td>
                                 <td>1</td>
                                 <td><span class="status pending">Pending</span></td>
                             </tr>
-          
+
                             <tr>
                                 <td>Leave Request</td>
                                 <td>Vacation</td>
@@ -199,7 +201,7 @@
                                 <td>1</td>
                                 <td><span class="status pending">Pending</span></td>
                             </tr>
-          
+
                             <tr>
                                 <td>Leave Request</td>
                                 <td>Vacation</td>
@@ -218,113 +220,114 @@
                         <h2>Recent Activities</h2>
                     </div>
 
-                    
+
                 </div>
             </div>
 
-     <!-- Leave Request Form -->
-<section class="leave-request">
-    <div>
-        <h2>Leave Request Form</h2>
-        <br>
-        <!-- Form -->
-        <form id="LeaveRequestForm">
-            <!-- Name -->
-            <div class="form-group">
-                <label for="FirstName">First Name</label>
-                <input type="text" id="FirstName" placeholder="First Name" required>
-            </div>
+            <!-- Leave Request Form -->
+            <section class="leave-request">
+                <div>
+                    <h2>Leave Request Form</h2>
+                    <br>
+                    <!-- Form -->
+                    <form id="LeaveRequestForm">
+                        <!-- Name -->
+                        <div class="form-group">
+                            <label for="FirstName">First Name</label>
+                            <input type="text" id="FirstName" name="FirstName" placeholder="First Name" required>
+                        </div>
 
-            <div class="form-group">
-                <label for="LastName">Last Name</label>
-                <input type="text" id="LastName" placeholder="Last Name" required>
-            </div>
+                        <div class="form-group">
+                            <label for="LastName">Last Name</label>
+                            <input type="text" id="LastName" name="LastName" placeholder="Last Name" required>
+                        </div>
 
-            <div class="form-group">
-                <label for="leavetype">Leave Type</label>
-                <select id="leavetype" name="leavetype" required>
-                    <option value="">Select a leave type</option>
-                    <option value="sick">Sick</option>
-                    <option value="vacation">Vacation</option>
-                    <option value="maternity">Maternity</option>
-                    <option value="paternity">Paternity</option>
-                    <option value="bereavement">Bereavement</option>
-                </select>
-            </div>
+                        <div class="form-group">
+                            <label for="leavetype">Leave Type</label>
+                            <select id="leavetype" name="leavetype" required>
+                                <option value="">Select a leave type</option>
+                                <option value="sick">Sick</option>
+                                <option value="vacation">Vacation</option>
+                                <option value="maternity">Maternity</option>
+                                <option value="paternity">Paternity</option>
+                                <option value="bereavement">Bereavement</option>
+                            </select>
+                        </div>
 
-            <div class="form-group">
-                <label for="StartDate">Start Date</label>
-                <input type="date" id="StartDate" required>
-            </div>
+                        <div class="form-group">
+                            <label for="StartDate">Start Date</label>
+                            <input type="date" id="StartDate" name="StartDate" required>
+                        </div>
 
-            <div class="form-group">
-                <label for="EndDate">End Date</label>
-                <input type="date" id="EndDate" required>
-            </div>
+                        <div class="form-group">
+                            <label for="EndDate">End Date</label>
+                            <input type="date" id="EndDate" name="EndDate" required>
+                        </div>
 
-            <div class="form-group">
-                <label for="reason">Reason</label>
-                <textarea id="reason" name="reason" rows="3" required></textarea>
-            </div>
+                        <div class="form-group">
+                            <label for="reason">Reason</label>
+                            <textarea id="reason" name="reason" rows="3" required></textarea>
+                        </div>
 
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-</section>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </section>
 
-<!-- Locator Slip Form -->
-<section class="locator-request">
-    <div>
-        <h2>Locator Slip Form</h2>
-        <br>
-        <!-- Form -->
-        <form id="LocatorForm">
-            <!-- Name -->
-            <div class="form-group">
-                <label for="FirstName">First Name</label>
-                <input type="text" id="FirstName" placeholder="First Name" required>
-            </div>
+            <!-- Locator Slip Form -->
+            <section class="locator-request">
+                <div>
+                    <h2>Locator Slip Form</h2>
+                    <br>
+                    <!-- Form -->
+                    <form id="LocatorForm">
+                        <!-- Name -->
+                        <div class="form-group">
+                            <label for="FirstName">First Name</label>
+                            <input type="text" id="FirstName" placeholder="First Name" required>
+                        </div>
 
-            <div class="form-group">
-                <label for="LastName">Last Name</label>
-                <input type="text" id="LastName" placeholder="Last Name" required>
-            </div>
+                        <div class="form-group">
+                            <label for="LastName">Last Name</label>
+                            <input type="text" id="LastName" placeholder="Last Name" required>
+                        </div>
 
-            <div class="form-group">
-                <label for="Purpose">Purpose</label>
-                <input type="text" id="purpose" placeholder="Purpose" required>
-            </div>
+                        <div class="form-group">
+                            <label for="Purpose">Purpose</label>
+                            <input type="text" id="purpose" placeholder="Purpose" required>
+                        </div>
 
-            <div class="form-group">
-                <label for="StartDate">Start Date</label>
-                <input type="date" id="StartDate" required>
-            </div>
+                        <div class="form-group">
+                            <label for="StartDate">Start Date</label>
+                            <input type="date" id="StartDate" required>
+                        </div>
 
-            <div class="form-group">
-                <label for="EndDate">End Date</label>
-                <input type="date" id="EndDate" required>
-            </div>
+                        <div class="form-group">
+                            <label for="EndDate">End Date</label>
+                            <input type="date" id="EndDate" required>
+                        </div>
 
-            <div class="form-group">
-                <label for="reason">Reason</label>
-                <textarea id="reason" name="reason" rows="3" required></textarea>
-            </div>
+                        <div class="form-group">
+                            <label for="reason">Reason</label>
+                            <textarea id="reason" name="reason" rows="3" required></textarea>
+                        </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 6vw;">Submit</button>
-        </form>
-    </div>
-</section>
+                        <button type="submit" class="btn btn-primary" style="width: 6vw;">Submit</button>
+                    </form>
+                </div>
+            </section>
 
-    <!-- =========== Scripts =========  -->
-    <script src="js/employee.js"></script>
+            <!-- =========== Scripts =========  -->
+            <script src="js/employee.js"></script>
 
-    <!-- Database Javascript -->  
-    <script src="bundles/auth.bundle.js"></script>   
+            <!-- Database Javascript -->
+            <script src="bundles/auth.bundle.js"></script>
+            <script src="bundles/firestore_add.bundle.js"></script>
 
-    <!-- ====== ionicons ======= -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="vendor/purecounter/purecounter_vanilla.js"></script>
+            <!-- ====== ionicons ======= -->
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+            <script src="vendor/purecounter/purecounter_vanilla.js"></script>
 
 
 </body>

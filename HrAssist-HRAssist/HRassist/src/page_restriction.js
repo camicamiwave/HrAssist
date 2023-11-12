@@ -76,10 +76,7 @@ export function UserLoginChecker(Account_UserID, User_Action) {
   
 
 export function PageRestrictionMethod(currentPath, userLevel){
-    
-  console.log("check");
-
-
+  
   // lagay nyo dito lahat ng pages na exclusive lang for employees
   const Employee_Pages = [
     '/dist/employee_home.html',

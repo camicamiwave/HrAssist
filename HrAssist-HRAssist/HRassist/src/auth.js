@@ -86,92 +86,6 @@ export function LoginChecker() {
 }
 
 
-export function SignupAccount() {
-  const EmployeeColRef = collection(db, 'Employee');
-  const AccountColRef = collection(db, 'User Account');
-  const signupForm = document.querySelector('.signup');
-
-  signupForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const signup_email = signupForm.signup_email.value;
-    const signup_password = signupForm.signup_password.value;
-    const username = signupForm.username.value;
-
-    console.log(username, "SAfsafsafsapogia ko");
-
-    createUserWithEmailAndPassword(auth, signup_email, signup_password)
-      .then((userCredential) => {
-        // Signed up 
-        const user = userCredential.user;
-
-        // Add displayName
-        updateProfile(user, {
-          displayName: username,
-          emailVerified: true,
-        })
-          .then(() => {
-            // Profile updated successfully
-            console.log('User created:', user);
-            console.log('User display name:', user.displayName);
-            console.log("HELlo");
-
-            console.log(signup_email, "hey you")
-
-            const AccountDetails = {
-              userID: user.uid,
-              UserLevel: "Admin",
-              Email: signup_email,
-              createdAt: serverTimestamp(),
-              AccountStatus: "Active"
-            };
-            let accountCustomDocId; // Declare the variable in the outer scope
-
-            // Add data to Firestore with an automatically generated ID
-            addDoc(AccountColRef, AccountDetails)
-              .then((docRef) => {
-                accountCustomDocId = docRef.id; // Update the outer variable
-                // Update the document with the custom ID
-                return setDoc(doc(AccountColRef, accountCustomDocId), { documentID: accountCustomDocId }, { merge: true });
-              })
-              .then(() => {
-                const data = {
-                  userID: user.uid,
-                  AccountUserID: accountCustomDocId, // Now you can use the outer variable
-                  userRole: "Employee",
-                  username: username,
-                  email: signup_email,
-                  createdAt: serverTimestamp()
-                };
-
-                // Add data to Firestore with an automatically generated ID
-                return addDoc(EmployeeColRef, data);
-              })
-              .then((docRef) => {
-                const customDocId = docRef.id;
-                // Update the document with the custom ID
-                return setDoc(doc(EmployeeColRef, customDocId), { documentID: customDocId }, { merge: true });
-              })
-              .then(() => {
-                signupForm.reset();
-                console.log("Added employee successfully...");
-                window.location.href = 'index.html';
-              })
-              .catch(error => console.error('Error adding employee document:', error));
-
-          })
-          .catch((error) => {
-            console.error('Error updating display name:', error);
-          });
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error('Error:', errorCode, errorMessage);
-      });
-  });
-}
-
 // For Applicant View
 export function SignupApplicantAccount() {
 
@@ -359,6 +273,94 @@ export function SignupApplicantAccount() {
   });
 
 }
+
+
+export function SignupAccount() {
+  const EmployeeColRef = collection(db, 'Employee');
+  const AccountColRef = collection(db, 'User Account');
+  const signupForm = document.querySelector('.signup');
+
+  signupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const signup_email = signupForm.signup_email.value;
+    const signup_password = signupForm.signup_password.value;
+    const username = signupForm.username.value;
+
+    console.log(username, "SAfsafsafsapogia ko");
+
+    createUserWithEmailAndPassword(auth, signup_email, signup_password)
+      .then((userCredential) => {
+        // Signed up 
+        const user = userCredential.user;
+
+        // Add displayName
+        updateProfile(user, {
+          displayName: username,
+          emailVerified: true,
+        })
+          .then(() => {
+            // Profile updated successfully
+            console.log('User created:', user);
+            console.log('User display name:', user.displayName);
+            console.log("HELlo");
+
+            console.log(signup_email, "hey you")
+
+            const AccountDetails = {
+              userID: user.uid,
+              UserLevel: "Employee",
+              Email: signup_email,
+              createdAt: serverTimestamp(),
+              AccountStatus: "Active"
+            };
+            let accountCustomDocId; // Declare the variable in the outer scope
+
+            // Add data to Firestore with an automatically generated ID
+            addDoc(AccountColRef, AccountDetails)
+              .then((docRef) => {
+                accountCustomDocId = docRef.id; // Update the outer variable
+                // Update the document with the custom ID
+                return setDoc(doc(AccountColRef, accountCustomDocId), { documentID: accountCustomDocId }, { merge: true });
+              })
+              .then(() => {
+                const data = {
+                  userID: user.uid,
+                  AccountUserID: accountCustomDocId, // Now you can use the outer variable
+                  userRole: "Employee",
+                  username: username,
+                  email: signup_email,
+                  createdAt: serverTimestamp()
+                };
+
+                // Add data to Firestore with an automatically generated ID
+                return addDoc(EmployeeColRef, data);
+              })
+              .then((docRef) => {
+                const customDocId = docRef.id;
+                // Update the document with the custom ID
+                return setDoc(doc(EmployeeColRef, customDocId), { documentID: customDocId }, { merge: true });
+              })
+              .then(() => {
+                signupForm.reset();
+                console.log("Added employee successfully...");
+                window.location.href = 'index.html';
+              })
+              .catch(error => console.error('Error adding employee document:', error));
+
+          })
+          .catch((error) => {
+            console.error('Error updating display name:', error);
+          });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error('Error:', errorCode, errorMessage);
+      });
+  });
+}
+
 
 window.addEventListener('load', SignupApplicantAccount);
 window.addEventListener('load', LoginChecker);
