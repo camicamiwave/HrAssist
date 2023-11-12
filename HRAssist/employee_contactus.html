@@ -26,35 +26,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-section {
-  height: 70vh;
-  width: 100%;
-  display: grid;
-  place-items: center;
-}
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-.column {
-  width: 100%;
-  padding: 0 1em 1em 1em;
-  text-align: center;
 
-}
-.card {
-  width: 100%;
-  height: 100%;
-  padding: 1.5em 1.5em;
-  background: linear-gradient(#ffffff 50%, #068e6b 50%);
-  background-size: 100% 200%;
-  background-position: 0 2.5%;
-  border-radius: 5px;
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-  transition: 0.5s;
-
-}
 h3 {
   font-size: 20px;
   font-weight: 600;
@@ -63,54 +35,136 @@ h3 {
 }
 p {
   color: #575a7b;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1.6;
   letter-spacing: 0.03em;
 }
-.icon-wrapper {
-  background-color: #08533F;
-  position: relative;
-  margin: auto;
-  font-size: 30px;
-  height: 2.5em;
-  width: 2.5em;
-  color: #ffffff;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  transition: 0.5s;
-}
-.card:hover {
-  background-position: 0 100%;
-}
-.card:hover .icon-wrapper {
-  background-color: #ffffff;
-  color: #08533F;
-}
-.card:hover h3 {
-  color: #ffffff;
-}
-.card:hover p {
-  color: #f0f0f0;
-}
+
 @media screen and (min-width: 768px) {
-  section {
+  .contact_box {
     padding: 0 2em;
   }
   .column {
     flex: 0 50%;
     max-width: 50%;
   }
+  .contact-box{
+        margin-top: 15vh;
+		grid-template-columns: 1fr;
+        width: 100%;
+	}
+	.left{
+		height: 200px;
+	}
 }
 @media screen and (min-width: 992px) {
-  section {
+  .contact_box {
     padding: 1em 3em;
   }
   .column {
     flex: 0 0 33.33%;
     max-width: 33.33%;
   }
+  .contact-box{
+        margin-top: 1vh;
+		grid-template-columns: 1fr;
+        width: 100%;
+	}
+	.left{
+		height: 200px;
+	}
+
 }
+
+.container_form{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 100px;
+}
+
+.container_form:after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: url("img/bg.jpg") no-repeat center;
+	background-size: cover;
+	filter: blur(50px);
+	z-index: -1;
+}
+.contact-box{
+	max-width: 850px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #fff;
+	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
+}
+
+.left{
+	background: url("assets/img/logo_dark.png") no-repeat center;
+	background-size: cover;
+	height: 100%;
+}
+
+.right{
+	padding: 25px 40px;
+}
+
+h2{
+	position: relative;
+	padding: 0 0 10px;
+	margin-bottom: 10px;
+}
+
+.field{
+	width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	outline: none;
+	background-color: rgba(230, 230, 230, 0.6);
+	padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+	margin-bottom: 22px;
+	transition: .3s;
+}
+
+.field:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+textarea{
+	min-height: 150px;
+}
+
+.btn_contact{
+	width: 100%;
+	padding: 0.5rem 1rem;
+	background-color: #08533F;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.btn_contact:hover{
+    background-color: #068e6b;
+}
+
+.field:focus{
+    border: 2px solid #068e6b;
+    background-color: #fff;
+}
+
     </style>
 </head>
 
@@ -195,13 +249,13 @@ p {
                 </div>
             </div>
 
-            <section>
+            <section class="contact_box">
                 <div class="row">
                   <h2 class="section-heading">Contact Us</h2>
                 </div>
                 <div class="row">
                   <div class="column">
-                    <div class="card">
+                    <div class="card_contact">
                       <div class="icon-wrapper">
                         <i class="fa-brands fa-facebook"></i>
                       </div>
@@ -213,7 +267,7 @@ p {
                     </div>
                   </div>
                   <div class="column">
-                    <div class="card">
+                    <div class="card_contact">
                       <div class="icon-wrapper">
                         <i class="fa-brands fa-facebook-messenger"></i>
                       </div>
@@ -225,7 +279,7 @@ p {
                     </div>
                   </div>
                   <div class="column">
-                    <div class="card">
+                    <div class="card_contact">
                       <div class="icon-wrapper">
                         <i class="fa-solid fa-envelope"></i>
                       </div>
@@ -237,7 +291,7 @@ p {
                     </div>
                   </div>
                   <div class="column">
-                    <div class="card">
+                    <div class="card_contact">
                       <div class="icon-wrapper">
                         <i class="fa-solid fa-phone"></i>
                       </div>
@@ -249,7 +303,7 @@ p {
                     </div>
                   </div>
                   <div class="column">
-                    <div class="card">
+                    <div class="card_contact">
                       <div class="icon-wrapper">
                         <i class="fa-solid fa-message"></i>
                       </div>
@@ -261,7 +315,7 @@ p {
                     </div>
                   </div>
                   <div class="column">
-                    <div class="card">
+                    <div class="card_contact">
                       <div class="icon-wrapper">
                         <i class="fa-solid fa-map"></i>
                       </div>
@@ -275,7 +329,21 @@ p {
                 </div>
               </section>
 
-              <br><br>
+          
+
+              <div class="container_form">
+                <div class="contact-box">
+                    <div class="left"></div>
+                    <div class="right">
+                        <h2>Contact Form</h2>
+                        <input type="text" class="field" placeholder="Your Name">
+                        <input type="email" class="field" placeholder="Your Email">
+                        <input type="text" class="field" placeholder="Phone">
+                        <textarea placeholder="Message" class="field"></textarea>
+                        <button class="btn_contact">Send</button>
+                    </div>
+                </div>
+            </div>
 
               
   </div>

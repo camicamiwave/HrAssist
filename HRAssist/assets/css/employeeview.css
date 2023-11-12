@@ -481,6 +481,63 @@ body {
   width: 40%; /* Adjust the width of the form as needed */
 }
 
+.contact_box {
+  height: 70vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  width: 100%;
+  padding: 0 1em 1em 1em;
+  text-align: center;
+
+}
+.card_contact {
+  width: 100%;
+  height: 100%;
+  padding: 1.5em 1.5em;
+  background: linear-gradient(#ffffff 50%, #068e6b 50%);
+  background-size: 100% 200%;
+  background-position: 0 2.5%;
+  border-radius: 5px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: 0.5s;
+
+}
+
+.icon-wrapper {
+  background-color: #08533F;
+  position: relative;
+  margin: auto;
+  font-size: 30px;
+  height: 2.5em;
+  width: 2.5em;
+  color: #ffffff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: 0.5s;
+}
+.card_contact:hover {
+  background-position: 0 100%;
+}
+.card_contact:hover .icon-wrapper {
+  background-color: #ffffff;
+  color: #08533F;
+}
+.card_contact:hover h3 {
+  color: #ffffff;
+}
+.card_contact:hover p {
+  color: #f0f0f0;
+}
+
 
 
 
@@ -706,3 +763,7 @@ animation: spin 2s linear infinite;
     left: initial;
   }
 }
+
+
+
+
