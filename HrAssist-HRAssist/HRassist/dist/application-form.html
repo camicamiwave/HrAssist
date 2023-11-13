@@ -64,6 +64,7 @@
             <form action="" id="wizard">
         		<!-- SECTION 1 -->
                 <h2></h2>
+                
                 <section>
                     <div class="inner">
 						<div class="image-holder">
@@ -74,6 +75,7 @@
 								<h3>Application Form</h3>
 							</div>
 							<p>Please fill with your details</p>
+
 							<div class="form-row">
 								<div class="form-holder">
 									<input type="text" placeholder="First Name" class="form-control">
@@ -121,6 +123,9 @@
 									</div>
 								</div>
 							</div>	
+
+                            <button class="btn" id="step1_back_btn">Back</button>
+                            <button class="btn" id="step1_forward_btn">Forward</button>
 						</div>
 					</div>
                 </section>
@@ -161,6 +166,8 @@
 								</div>
 							</div>
 
+                            <button class="btn" id="step2_back_btn">Back</button>
+                            <button class="btn" id="step2_forward_btn">Forward</button>
 						</div>
 					</div>
                 </section>
@@ -188,9 +195,14 @@
                                     <span class="checkmark"></span>&nbsp&nbsp&nbsp&nbsp&nbsp
                                    Please accept <a href="#">terms and conditions</a>
                                 </label>
-                            </div>
-                        </div>                        
+                            </div>      
+                                    
+                            <button class="btn" id="step3_back_btn">Back</button>
+                            <input type="submit" class="btn" id="submit_btn">Forward</button>  
+                        </div>            
+                                    
 					</div>
+                    
                 </section>
             </form>
 		</div>
@@ -202,5 +214,8 @@
 		<script src="js/jquery.steps.js"></script>
 		<script src="js/application-form.js"></script>
 		<!-- Template created and distributed by Colorlib -->
+
+        <!-- Databasa Javascript -->        
+        <script src="bundles/applicant_registry.bundle.js"></script>   
 </body>
 </html>

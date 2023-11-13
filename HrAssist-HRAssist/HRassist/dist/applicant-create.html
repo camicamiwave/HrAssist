@@ -120,27 +120,29 @@
                         <h2 id="LoginLabel">Create an Account</h2>
                         <p>We are happy to have you.</p>
                     </div>
-                    <div class="input-group mb-2">
-                        <input type="text" id="name" name="name" class="form-control form-control-lg bg-light fs-6" placeholder="Name">
-                    </div>
-                    <div class="input-group mb-2">
-                        <input type="email" id="email" name="email" class="form-control form-control-lg bg-light fs-6" placeholder="Email">
-                    </div>
-                    <div class="input-group mb-2">
-                        <input type="password" id="password" name="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
-                    </div>
-                    <div class="input-group mb-2">
-                        <input type="password" id="confirm-password" name="confirm-password" class="form-control form-control-lg bg-light fs-6" placeholder="Confirm Password">
-                    </div>
-                    <div class="input-group mb-2">
-                        <button id="sign-in-email-password" class="login-btn">Save</button>
-                    </div>
+                    <form id="applicantAccountForm" class="applicantAccountForm">
+                        <div class="input-group mb-2">
+                            <input type="text" id="username" name="username" class="form-control form-control-lg bg-light fs-6" placeholder="Username">
+                        </div>
+                        <div class="input-group mb-2">
+                            <input type="email" id="email" name="email" class="form-control form-control-lg bg-light fs-6" placeholder="Email">
+                        </div>
+                        <div class="input-group mb-2">
+                            <input type="password" id="password" name="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
+                        </div>
+                        <div class="input-group mb-2">
+                            <input type="password" id="confirm_password" name="confirm_password" class="form-control form-control-lg bg-light fs-6" placeholder="Confirm Password">
+                        </div>
+                        <div class="input-group mb-2">
+                            <button id="sign-in-email-password" class="login-btn">Save</button>
+                        </div>
+                    </form>
                 </div>
             </div>   
         </div>
     </div>
 
-    <script src="bundles/login_authentication.bundle.js"></script>
+    <script src="bundles/applicant_registry.bundle.js"></script>
 
     </div>
     </div>
