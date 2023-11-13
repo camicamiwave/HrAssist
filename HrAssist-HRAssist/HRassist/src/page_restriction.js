@@ -42,25 +42,25 @@ export function UserLoginChecker(Account_UserID, User_Action) {
             if (User_Action === "Login"){
                 window.location.href = "employee_home.html";
             } else if (User_Action === "Browsing"){ 
-                PageRestrictionMethod(currentPath, userlevel);
+                //PageRestrictionMethod(currentPath, userlevel);
             }
 
           } else if (userlevel === "Applicant") {
             if (User_Action === "Login"){
                 window.location.href = "index.html";
             } else if (User_Action === "Browsing"){ 
-              PageRestrictionMethod(currentPath, userlevel);
+              //PageRestrictionMethod(currentPath, userlevel);
             }
 
           } else if (userlevel === "Admin") {
             if (User_Action === "Login"){
                 window.location.href = "admin_dashboard.html";
             } else if (User_Action === "Browsing"){ 
-                PageRestrictionMethod(currentPath, userlevel); 
+                //PageRestrictionMethod(currentPath, userlevel); 
             }
 
           } else {
-            PageRestrictionMethod(currentPath, "Guest");
+            //PageRestrictionMethod(currentPath, "Guest");
           }
   
         } else {
@@ -69,7 +69,7 @@ export function UserLoginChecker(Account_UserID, User_Action) {
           const currentPath = window.location.pathname; 
           
           console.log("No user found...")
-          PageRestrictionMethod(currentPath, "Guest");
+          //PageRestrictionMethod(currentPath, "Guest");
         }
       });
   

@@ -1,17 +1,20 @@
-import { initializeApp } from 'firebase/app'
+import { initializeApp } from 'firebase/app';
+import { getStorage, ref, getDownloadURL, uploadBytes } from 'firebase/storage';
 import {
   getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut,
   createUserWithEmailAndPassword, updateProfile
 } from "firebase/auth";
-import { 
-    getFirestore, collection, onSnapshot, 
-    addDoc, deleteDoc, doc,
-    query, where,
-    orderBy, serverTimestamp,
-    getDoc, updateDoc
- } from 'firebase/firestore'
 
-import {firebaseConfig} from './server.js';
+import {
+  getFirestore, collection, onSnapshot,
+  addDoc, deleteDoc, doc,
+  query, where,
+  orderBy, serverTimestamp,
+  getDoc, updateDoc, setDoc
+} from 'firebase/firestore'
+
+import { firebaseConfig } from './server.js';
+import { UserLoginChecker } from './page_restriction.js';
 
 
 // init firebase app
@@ -26,93 +29,93 @@ const q = query(colRef, orderBy('createdAt'))
 const auth = getAuth();
 
 function GetApplicantTable() {
-    // Assuming you have Firestore data in the 'employees' array
-    const employeeTable = document.getElementById('applicantTable');
-    const tbody = employeeTable.querySelector('tbody');
+  // Assuming you have Firestore data in the 'employees' array
+  const employeeTable = document.getElementById('applicantTable');
+  const tbody = employeeTable.querySelector('tbody');
 
-    onSnapshot(q, (snapshot) => {
-      // Clear the existing rows in the table body
-      tbody.innerHTML = '';
+  onSnapshot(q, (snapshot) => {
+    // Clear the existing rows in the table body
+    tbody.innerHTML = '';
 
-      snapshot.docs.forEach((doc) => {
-        const data = doc.data();
-        const id = doc.id;
-        const row = document.createElement('tr');
+    snapshot.docs.forEach((doc) => {
+      const data = doc.data();
+      const id = doc.id;
+      const row = document.createElement('tr');
 
-        const personal_info = data.Personal_Information;
-        const ApplicantFullName = personal_info.FirstName + " " + personal_info.LastName;
-        
-        const createdAt = data.createdAt.toDate(); // Assuming createdAt is a timestamp
-        // Extracting date only from createdAt
-        const dateString = createdAt.toLocaleDateString();
+      const personal_info = data.Personal_Information;
+      const ApplicantFullName = personal_info.FirstName + " " + personal_info.LastName;
 
-        /*
-        // Create and populate table cells
-        // Create an image element
-        const imageElement = document.createElement('img');
+      const createdAt = data.createdAt.toDate(); // Assuming createdAt is a timestamp
+      // Extracting date only from createdAt
+      const dateString = createdAt.toLocaleDateString();
 
-        // Set the src attribute to the image URL
-        imageElement.src = "https://firebasestorage.googleapis.com/v0/b/hrassist-lgusanvicente.appspot.com/o/Applicant%2FRequirements%2F1699720150322_bcert.png?alt=media&token=31d4f8c5-a4f2-4070-b104-624f27975f63";
-        // Append the image element to the table cell
-        const profileCell = document.createElement('td');
-        profileCell.appendChild(imageElement);*/
+      /*
+      // Create and populate table cells
+      // Create an image element
+      const imageElement = document.createElement('img');
 
-        const idCell = document.createElement('td');
-        idCell.textContent = id;
+      // Set the src attribute to the image URL
+      imageElement.src = "https://firebasestorage.googleapis.com/v0/b/hrassist-lgusanvicente.appspot.com/o/Applicant%2FRequirements%2F1699720150322_bcert.png?alt=media&token=31d4f8c5-a4f2-4070-b104-624f27975f63";
+      // Append the image element to the table cell
+      const profileCell = document.createElement('td');
+      profileCell.appendChild(imageElement);*/
 
-        const nameCell = document.createElement('td');
-        nameCell.textContent = ApplicantFullName;
+      const idCell = document.createElement('td');
+      idCell.textContent = id;
 
-        const jobApplicationDateCell = document.createElement('td');
-        jobApplicationDateCell.textContent = dateString;
+      const nameCell = document.createElement('td');
+      nameCell.textContent = ApplicantFullName;
 
-        const applicantStatusCell = document.createElement('td');
-        applicantStatusCell.textContent = data.ApplicantStatus;
+      const jobApplicationDateCell = document.createElement('td');
+      jobApplicationDateCell.textContent = dateString;
 
-        // Add button
-        // Create a button element for actions and add it to the row
-        const actionCell = document.createElement('td');
-        const actionButtonEdit = document.createElement('button');
-        //actionButtonEdit.textContent = 'Edit'; // Customize the button label
-        actionButtonEdit.classList.add('btn', 'bx', 'bx-edit', 'mx-2'); // You can use Bootstrap's 'btn' and 'btn-primary' classes
+      const applicantStatusCell = document.createElement('td');
+      applicantStatusCell.textContent = data.ApplicantStatus;
 
-        actionButtonEdit.addEventListener('click', () => {
-          // Define an action for the Edit button (e.g., edit the record)
-          // You can add your specific logic here
-          console.log('Edit button clicked for record with ID:', id);
-        });
+      // Add button
+      // Create a button element for actions and add it to the row
+      const actionCell = document.createElement('td');
+      const actionButtonEdit = document.createElement('button');
+      //actionButtonEdit.textContent = 'Edit'; // Customize the button label
+      actionButtonEdit.classList.add('btn', 'bx', 'bx-edit', 'mx-2'); // You can use Bootstrap's 'btn' and 'btn-primary' classes
 
-        const actionButtonDelete = document.createElement('button');
-        //actionButtonDelete.textContent = 'Delete'; // Customize the button label
-        actionButtonDelete.classList.add('btn', 'bx', 'bx-trash'); // You can use Bootstrap's 'btn' and 'btn-danger' classes
-
-        actionButtonDelete.addEventListener('click', () => {
-          
-          console.log('Delete button clicked for record with ID:', id);
-
-        });
-        
-        actionCell.appendChild(actionButtonEdit);
-        actionCell.appendChild(actionButtonDelete);
-
-        // Add a click event listener to the row
-        row.addEventListener('click', () => {
-            console.log('Row ID clicked:', id);
-        });
-
-        // Append cells to the row 
-        //row.appendChild(profileCell); 
-        row.appendChild(idCell);
-        row.appendChild(nameCell);
-        row.appendChild(jobApplicationDateCell);
-        row.appendChild(applicantStatusCell);
-        row.appendChild(actionCell);
-
-        // Append the row to the table body
-        tbody.appendChild(row);
+      actionButtonEdit.addEventListener('click', () => {
+        // Define an action for the Edit button (e.g., edit the record)
+        // You can add your specific logic here
+        console.log('Edit button clicked for record with ID:', id);
       });
+
+      const actionButtonDelete = document.createElement('button');
+      //actionButtonDelete.textContent = 'Delete'; // Customize the button label
+      actionButtonDelete.classList.add('btn', 'bx', 'bx-trash'); // You can use Bootstrap's 'btn' and 'btn-danger' classes
+
+      actionButtonDelete.addEventListener('click', () => {
+
+        console.log('Delete button clicked for record with ID:', id);
+
+      });
+
+      actionCell.appendChild(actionButtonEdit);
+      actionCell.appendChild(actionButtonDelete);
+
+      // Add a click event listener to the row
+      row.addEventListener('click', () => {
+        console.log('Row ID clicked:', id);
+      });
+
+      // Append cells to the row 
+      //row.appendChild(profileCell); 
+      row.appendChild(idCell);
+      row.appendChild(nameCell);
+      row.appendChild(jobApplicationDateCell);
+      row.appendChild(applicantStatusCell);
+      row.appendChild(actionCell);
+
+      // Append the row to the table body
+      tbody.appendChild(row);
     });
-  }
+  });
+}
 
 
 window.addEventListener('load', GetApplicantTable);
@@ -123,7 +126,7 @@ export function FetchCurrentUser() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         console.log("Hello1");
-        
+
         // User is signed in
         const currentUserID = user.uid;
         console.log("Current User UID:", currentUserID);
@@ -140,17 +143,17 @@ export function FetchCurrentUser() {
 export function FetchApplicantProfile() {
   const TestcolRef = collection(db, 'Applicant Information');
 
-  FetchCurrentUser().then((currentUserUID) => { 
-    const que = query(TestcolRef, where("userID", "==", currentUserUID)); 
+  FetchCurrentUser().then((currentUserUID) => {
+    const que = query(TestcolRef, where("userID", "==", currentUserUID));
 
-    onSnapshot(que, (snapshot) => { 
+    onSnapshot(que, (snapshot) => {
       snapshot.docs.forEach((doc) => {
-        const data = doc.data(); 
+        const data = doc.data();
         const id = doc.id;
 
         const personalInfo = data.Personal_Information;
         const fullName = personalInfo.FirstName + " " + personalInfo.LastName
-        
+
         const applicantProfile = document.getElementById('applicantProfilePic');
         const newProfilePicUrl = data.ApplicantProfilePicture;
 
@@ -170,7 +173,7 @@ export function FetchApplicantProfile() {
 
         const lastName = document.getElementById('inputLastName');
         lastName.value = personalInfo.LastName;
-        
+
         const ExtName = document.getElementById('inputExtName');
         ExtName.value = personalInfo.ExName;
 
@@ -182,19 +185,19 @@ export function FetchApplicantProfile() {
 
         const address = document.getElementById('inputAddress');
         address.value = personalInfo.Address;
-        
+
         const birthPlace = document.getElementById('inputBplace');
         birthPlace.value = personalInfo.Placebirth;
-        
+
         const emailAddress = document.getElementById('inputEmailAddress');
         emailAddress.value = personalInfo.Email;
-        
+
         const phoneNum = document.getElementById('inputPhone');
         phoneNum.value = personalInfo.Phone;
-        
+
         const birthday = document.getElementById('inputEmail');
         birthday.value = personalInfo.Email;
-        
+
 
       });
 
@@ -203,3 +206,99 @@ export function FetchApplicantProfile() {
 }
 
 window.addEventListener('load', FetchApplicantProfile);
+
+export function AddApplicantAccount() {
+  const EmployeeColRef = collection(db, 'Employee');
+  const AccountColRef = collection(db, 'User Account');
+  const signupForm = document.querySelector('.applicantAccountForm');
+
+  signupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const username = signupForm.username.value;
+    const email = signupForm.email.value;
+    const password = signupForm.password.value;
+    const confirm_password = signupForm.confirm_password.value;
+
+    if (password === confirm_password) {
+
+      createUserWithEmailAndPassword(auth, email, confirm_password)
+        .then((userCredential) => {
+          // Signed up 
+          const user = userCredential.user;
+
+          // Add displayName
+          updateProfile(user, {
+            displayName: username,
+            emailVerified: true,
+          })
+            .then(() => { 
+              const AccountDetails = {
+                userID: user.uid,
+                UserLevel: "Applicant",
+                Username: username,
+                Email: email,
+                createdAt: serverTimestamp(),
+                AccountStatus: "Active"
+              };
+
+              let accountCustomDocId; // Declare the variable in the outer scope
+
+              // Add data to Firestore with an automatically generated ID
+              addDoc(AccountColRef, AccountDetails)
+                .then((docRef) => {
+                  accountCustomDocId = docRef.id; // Update the outer variable
+                  // Update the document with the custom ID
+                  return setDoc(doc(AccountColRef, accountCustomDocId), { documentID: accountCustomDocId }, { merge: true });
+                })
+                .then(() => {
+                  signupForm.reset();
+                  console.log("Added applicant successfully...");
+                  window.location.href = 'index.html';
+                })
+                .catch(error => console.error('Error adding applicant document:', error));
+
+            })
+            .catch((error) => {
+              console.error('Error updating display name:', error);
+            });
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.error('Error:', errorCode, errorMessage);
+        });
+    } else {
+      console.log("There was an error...");
+    }
+
+  });
+}
+
+window.addEventListener('load', AddApplicantAccount);
+
+export function AddApplicantionForm(){
+  
+  FetchCurrentUser().then((currentUserUID) => {
+    //const que = query(TestcolRef, where("userID", "==", currentUserUID));
+  const applicationForm = document.querySelector('.applicantAccountForm');
+
+    if (currentUserUID !== "None"){
+      console.log("May user na nakalogin...")
+
+      const step1BackBtn = document.getElementById('step1_back_btn');
+
+      step1BackBtn.addEventListener('submit', (e) => {
+        e.preventDefault();
+          
+        console.log("back...")
+
+      });
+
+    } else {
+      console.log("Walang nakasign up");
+    }
+
+  });
+}
+window.addEventListener('load', AddApplicantionForm);
