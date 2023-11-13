@@ -14,6 +14,7 @@
         <link href="img/hrlogo.svg" rel="icon">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+
         <style>
             .nav-link-profile,
             .nav-link-security {
@@ -26,15 +27,6 @@
                 color: #1F8F3E;
                 font-size: 20px;
             }
-            .btn-choose-file {
-                background-color: #08533F;
-                border: none; 
-            }
-            .btn-choose-file:hover,
-            .btn-choose-file:hover .form-label {
-                background-color: #1F8F3E; /* Change 'your_hover_color' to the hover color you want */
-                border-color: #1F8F3E; /* Change 'your_hover_color' to the hover color you want */
-            }
             .btn-save {
                 background-color: #08533F;
                 border: none; 
@@ -43,6 +35,11 @@
             .btn-save:hover .form-label {
                 background-color: #1F8F3E; 
                 border-color: #1F8F3E; 
+            }
+            .form-check-input:checked{
+                background-color: #08533F; 
+                border-color: #08533F; 
+                color: #08533F; 
             }
         </style>
     </head>
@@ -148,117 +145,75 @@
 
             <div class="container-xl px-4 mt-4">
                 <!-- Account page navigation-->
-                       <!-- Account page navigation-->
-                       <nav class="nav nav-borders">
-                        <a class="nav-link nav-link-profile" href="employee_profile.html" target="__blank" >Profile</a>
-                        <a class="nav-link nav-link-security" href="employee_profilepass.html" target="__blank">Security</a>
-                        
-                        </nav>
-            
-                <hr class="mt-0 mb-6">
+                <nav class="nav nav-borders">
+                    <a class="nav-link nav-link-profile" href="employee_profile.html" target="__blank" >Profile</a>
+                    <a class="nav-link nav-link-security" href="employee_profilepass.html" target="__blank">Security</a>
+                
+                </nav>
+                <hr class="mt-0 mb-4">
                 <div class="row">
-                    <div class="col-xl-4">
-                        <!-- Profile picture card-->
-                        <div class="card mb-4 mb-xl-3">
-                            <div class="card-header">Profile Picture</div>
-                            <div class="card-body text-center">
-                                <div class="d-flex justify-content-center mb-4">
-                                    <img id="selectedAvatar" src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg"
-                                    class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;" alt="example placeholder" />
-                                </div>
-                                <div class="small font-italic text-muted mb-4" id="applicantName">Pedro</div>
-                                <div class="d-flex justify-content-center" >
-                                    <div class="btn btn-primary btn-rounded btn-choose-file">
-                                        <label class="form-label text-white m-1" for="customFile2" >Choose file</label>
-                                        <input type="file" class="form-control d-none" id="customFile2" onchange="displaySelectedImage(event, 'selectedAvatar')" />
-                                    </div>
-                                </div>
-                              
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-8">
-                        <!-- Account details card-->
+                    <div class="col-lg-8">
+                        <!-- Change password card-->
                         <div class="card mb-4">
-                            <div class="card-header">Account Details</div>
+                            <div class="card-header">Change Password</div>
                             <div class="card-body">
                                 <form>
-                                    <!-- Form Group (username)-->
+                                    <!-- Form Group (current password)-->
                                     <div class="mb-3">
+                                        <label class="small mb-1" for="currentPassword">Current Password</label>
+                                        <input class="form-control" id="currentPassword" type="password" placeholder="Enter current password">
                                     </div>
-                                    <!-- Form Row-->
-                                    <div class="row gx-3 mb-3">
-                                        <!-- Form Group (first name)-->
-                                        <div class="col-md-6">
-                                            <label class="small mb-1" for="inputFirstName">First name</label>
-                                            <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Pedro">
-                                        </div>
-                                        <!-- Form Group (last name)-->
-                                        <div class="col-md-6">
-                                            <label class="small mb-1" for="inputLastName">Last name</label>
-                                            <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Batumbakal">
-                                        </div>
-                                    </div>
-                                    <!-- Form Row        -->
-                                    <div class="row gx-3 mb-3">
-                                        <!-- Form Group (organization name)-->
-                                        <div class="col-md-6">
-                                            <label class="small mb-1" for="inputSex">Sex</label>
-                                            <input class="form-control" id="inputSex" type="text" placeholder="Enter your Sex" value="Male">
-                                        </div>
-                                        <!-- Form Group (location)-->
-                                        <div class="col-md-6">
-                                            <label class="small mb-1" for="inputBplace">Birthplace</label>
-                                            <input class="form-control" id="inputBplace" type="text" placeholder="Enter your Birthplace" value=" Provincial Hospital Daet, Camarines Norte">
-                                        </div>
-                                    </div>
-                                    <!-- Form Group (email address)-->
+                                    <!-- Form Group (new password)-->
                                     <div class="mb-3">
-                                        <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                                        <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="pedro@gmail.com">
+                                        <label class="small mb-1" for="newPassword">New Password</label>
+                                        <input class="form-control" id="newPassword" type="password" placeholder="Enter new password">
                                     </div>
-                                    <!-- Form Row-->
-                                    <div class="row gx-3 mb-3">
-                                        <!-- Form Group (phone number)-->
-                                        <div class="col-md-6">
-                                            <label class="small mb-1" for="inputPhone">Phone number</label>
-                                            <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="+639 5151 40765">
-                                        </div>
-                                        <!-- Form Group (birthday)-->
-                                        <div class="col-md-6">
-                                            <label class="small mb-1" for="inputBirthday">Birthday</label>
-                                            <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988">
-                                        </div>
+                                    <!-- Form Group (confirm password)-->
+                                    <div class="mb-3">
+                                        <label class="small mb-1" for="confirmPassword">Confirm Password</label>
+                                        <input class="form-control" id="confirmPassword" type="password" placeholder="Confirm new password">
                                     </div>
-
                                     <button class="btn btn-primary btn-save" type="button">Save</button>
                                 </form>
                             </div>
                         </div>
-                    </div>    
+                        <!-- Security preferences card-->
+                        <div class="card mb-4">
+                            <div class="card-header">Security Preferences</div>
+                            <div class="card-body">
+         
+                                <!-- Data sharing options-->
+                                <h5 class="mb-1">Data Sharing</h5>
+                                <p class="small text-muted">Sharing usage data can help us to improve our products and better serve our users as they navigation through our application. When you agree to share usage data with us, crash reports and usage analytics will be automatically sent to our development team for investigation.</p>
+                                <form>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="radioUsage1" type="radio" name="radioUsage" checked="">
+                                        <label class="form-check-label" for="radioUsage1">Yes, share data and crash reports with app developers</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="radioUsage2" type="radio" name="radioUsage">
+                                        <label class="form-check-label" for="radioUsage2">No, limit my data sharing with app developers</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        
+                        <!-- Delete account card-->
+                        <div class="card mb-4">
+                            <div class="card-header">Delete Account</div>
+                            <div class="card-body">
+                                <p>Deleting your account is a permanent action and cannot be undone. If you are sure you want to delete your account, select the button below.</p>
+                                <button class="btn btn-danger-soft text-danger" type="button">I understand, delete my account</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
+        
 
         </div>
-
-        <script>
-            function displaySelectedImage(event, elementId) {
-            const selectedImage = document.getElementById(elementId);
-            const fileInput = event.target;
-
-            if (fileInput.files && fileInput.files[0]) {
-                const reader = new FileReader();
-
-                reader.onload = function(e) {
-                    selectedImage.src = e.target.result;
-                };
-
-                reader.readAsDataURL(fileInput.files[0]);
-            }
-        }
-        </script>
 
 
         <!-- JavaScript -->
