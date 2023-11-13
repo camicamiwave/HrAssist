@@ -1,4 +1,8 @@
 import { initializeApp } from 'firebase/app'
+import {
+  getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut,
+  createUserWithEmailAndPassword, updateProfile
+} from "firebase/auth";
 import { 
     getFirestore, collection, onSnapshot, 
     addDoc, deleteDoc, doc,
@@ -19,6 +23,7 @@ const colRef = collection(db, 'Applicant Information')
 
 const q = query(colRef, orderBy('createdAt'))
 
+const auth = getAuth();
 
 function GetApplicantTable() {
     // Assuming you have Firestore data in the 'employees' array
@@ -40,6 +45,17 @@ function GetApplicantTable() {
         const createdAt = data.createdAt.toDate(); // Assuming createdAt is a timestamp
         // Extracting date only from createdAt
         const dateString = createdAt.toLocaleDateString();
+
+        /*
+        // Create and populate table cells
+        // Create an image element
+        const imageElement = document.createElement('img');
+
+        // Set the src attribute to the image URL
+        imageElement.src = "https://firebasestorage.googleapis.com/v0/b/hrassist-lgusanvicente.appspot.com/o/Applicant%2FRequirements%2F1699720150322_bcert.png?alt=media&token=31d4f8c5-a4f2-4070-b104-624f27975f63";
+        // Append the image element to the table cell
+        const profileCell = document.createElement('td');
+        profileCell.appendChild(imageElement);*/
 
         const idCell = document.createElement('td');
         idCell.textContent = id;
@@ -85,6 +101,7 @@ function GetApplicantTable() {
         });
 
         // Append cells to the row 
+        //row.appendChild(profileCell); 
         row.appendChild(idCell);
         row.appendChild(nameCell);
         row.appendChild(jobApplicationDateCell);
@@ -99,3 +116,78 @@ function GetApplicantTable() {
 
 
 window.addEventListener('load', GetApplicantTable);
+
+export function FetchCurrentUser() {
+  return new Promise((resolve, reject) => {
+    // Listen for changes in authentication state
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log("Hello1");
+        
+        // User is signed in
+        const currentUserID = user.uid;
+        console.log("Current User UID:", currentUserID);
+        resolve(currentUserID);
+      } else {
+        // No user is signed in
+        console.log("No user is signed in.");
+        resolve("None");
+      }
+    });
+  });
+}
+
+export function FetchApplicantProfile() {
+  const TestcolRef = collection(db, 'Applicant Information');
+
+  FetchCurrentUser().then((currentUserUID) => { 
+    const que = query(TestcolRef, where("userID", "==", currentUserUID)); 
+
+    onSnapshot(que, (snapshot) => { 
+      snapshot.docs.forEach((doc) => {
+        const data = doc.data(); 
+        const id = doc.id;
+
+        const personalInfo = data.Personal_Information;
+        const fullName = personalInfo.FirstName + " " + personalInfo.LastName
+        
+        const applicantProfile = document.getElementById('applicantProfilePic');
+        const newProfilePicUrl = data.ApplicantProfilePicture;
+
+        // Change the src attribute
+        applicantProfile.src = newProfilePicUrl;
+
+        console.log(newProfilePicUrl, 'eto na');
+
+        const applicantName = document.getElementById('applicantName');
+        applicantName.innerHTML = fullName;
+
+        const firstName = document.getElementById('inputFirstName');
+        firstName.value = personalInfo.FirstName;
+
+        const lastName = document.getElementById('inputLastName');
+        lastName.value = personalInfo.LastName;
+
+        const sex = document.getElementById('inputSex');
+        sex.value = personalInfo.Sex;
+        
+        const birthPlace = document.getElementById('inputBplace');
+        birthPlace.value = personalInfo.Placebirth;
+        
+        const emailAddress = document.getElementById('inputEmailAddress');
+        emailAddress.value = personalInfo.Email;
+        
+        const phoneNum = document.getElementById('inputPhone');
+        phoneNum.value = personalInfo.Phone;
+        
+        const birthday = document.getElementById('inputEmail');
+        birthday.value = personalInfo.Email;
+        
+
+      });
+
+    });
+  });
+}
+
+window.addEventListener('load', FetchApplicantProfile);
