@@ -52,7 +52,7 @@ export function UserLoginChecker(Account_UserID, User_Action) {
 
           } else if (userlevel === "Admin") {
             if (User_Action === "Login"){
-                window.location.href = "dashboard.html";
+                window.location.href = "admin_dashboard.html";
             } else if (User_Action === "Browsing"){ 
                 PageRestrictionMethod(currentPath, userlevel); 
             }
@@ -76,7 +76,14 @@ export function UserLoginChecker(Account_UserID, User_Action) {
   
 
 export function PageRestrictionMethod(currentPath, userLevel){
-  
+    
+  var splitResult = currentPath.split('/dist/');
+  var restOfTheCode = splitResult[1];
+  currentPath = "/dist/" + restOfTheCode;
+
+  console.log(currentPath)
+
+
   // lagay nyo dito lahat ng pages na exclusive lang for employees
   const Employee_Pages = [
     '/dist/employee_home.html',
@@ -88,8 +95,8 @@ export function PageRestrictionMethod(currentPath, userLevel){
   
   // lagay nyo dito lahat ng pages na exclusive lang for admin or HR
   const Admin_Pages = [
-    '/dist/dashboard.html',
-    '/dist/manage_applicant.html',
+    '/dist/admin_dashboard.html',
+    '/dist/admin_manage_applicant_view.html',
   ];
 
 
@@ -98,14 +105,13 @@ export function PageRestrictionMethod(currentPath, userLevel){
     const isEmployee_Pages = Employee_Pages.includes(currentPath);
     const isAdmin_Pages = Admin_Pages.includes(currentPath);
 
-    if (isEmployee_Pages) {
-      // Perform actions for Applicant pages
+    console.log(isAdmin_Pages)
+
+    if (isEmployee_Pages || isAdmin_Pages) {
+      // Perform actions for Employee or Admin pages
       console.log('This is not an Applicant page.');
       window.location.href = "index.html";
-    } else if (isAdmin_Pages) {
-      console.log('This is not an Applicant page.');
-      window.location.href = "index.html";
-    }  else {
+    } else {
       // Perform actions for other pages
       console.log('This is an Applicant page.');
     }
@@ -114,6 +120,7 @@ export function PageRestrictionMethod(currentPath, userLevel){
   else if (userLevel === "Employee"){
     // Check if the currentPath is in the list of Applicant_Pages
     const isAdmin_Pages = Admin_Pages.includes(currentPath);
+
 
     if (isAdmin_Pages) {
       // Perform actions for other pages
@@ -129,12 +136,12 @@ export function PageRestrictionMethod(currentPath, userLevel){
     // Check if the currentPath is in the list of Applicant_Pages 
     const isEmployee_Pages = Employee_Pages.includes(currentPath);
 
-    console.log(isEmployee_Pages);
+    console.log(isEmployee_Pages, "asfssafs");
 
     if (isEmployee_Pages) {
       // Perform actions for other pages
       console.log('This is not an Admin page.');
-      window.location.href = "dashboard.html";
+      window.location.href = "admin_dashboard.html";
     } else {
       // Perform actions for Applicant pages
       console.log('This is an Admin page.');
@@ -161,7 +168,8 @@ export function PageRestrictionMethod(currentPath, userLevel){
 
 }
   
+
 // Using URL object
 const url = new URL(window.location.href);
-console.log(url.href , "asfsa1"); 
+console.log(url.href , "asfsa1123s"); 
   

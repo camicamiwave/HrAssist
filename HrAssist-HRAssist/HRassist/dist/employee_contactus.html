@@ -2,165 +2,173 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee | Contact Us</title>
-    <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="css/employeeview.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee | Contact Us</title>
+  <!-- ======= Styles ====== -->
+  <link rel="stylesheet" href="css/employeeview.css">
 
-    <link href="img/hrlogo.svg" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    <style>
-        * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #1f194c;
-  margin: 1em 0;
-}
-p {
-  color: #575a7b;
-  font-size: 13px;
-  line-height: 1.6;
-  letter-spacing: 0.03em;
-}
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1f194c;
+      margin: 1em 0;
+    }
 
-@media screen and (min-width: 768px) {
-  .contact_box {
-    padding: 0 2em;
-  }
-  .column {
-    flex: 0 50%;
-    max-width: 50%;
-  }
-  .contact-box{
+    p {
+      color: #575a7b;
+      font-size: 13px;
+      line-height: 1.6;
+      letter-spacing: 0.03em;
+    }
+
+    @media screen and (min-width: 768px) {
+      .contact_box {
+        padding: 0 2em;
+      }
+
+      .column {
+        flex: 0 50%;
+        max-width: 50%;
+      }
+
+      .contact-box {
         margin-top: 15vh;
-		grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
         width: 100%;
-	}
-	.left{
-		height: 200px;
-	}
-}
-@media screen and (min-width: 992px) {
-  .contact_box {
-    padding: 1em 3em;
-  }
-  .column {
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
-  }
-  .contact-box{
+      }
+
+      .left {
+        height: 200px;
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      .contact_box {
+        padding: 1em 3em;
+      }
+
+      .column {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+      }
+
+      .contact-box {
         margin-top: 1vh;
-		grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
         width: 100%;
-	}
-	.left{
-		height: 200px;
-	}
+      }
 
-}
+      .left {
+        height: 200px;
+      }
 
-.container_form{
-	position: relative;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 20px 100px;
-}
+    }
 
-.container_form:after{
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background: url("img/bg.jpg") no-repeat center;
-	background-size: cover;
-	filter: blur(50px);
-	z-index: -1;
-}
-.contact-box{
-	max-width: 850px;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	background-color: #fff;
-	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
-}
+    .container_form {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 100px;
+    }
 
-.left{
-	background: url("img/logo_dark.png") no-repeat center;
-	background-size: cover;
-	height: 100%;
-}
+    .container_form:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: url("img/bg.jpg") no-repeat center;
+      background-size: cover;
+      filter: blur(50px);
+      z-index: -1;
+    }
 
-.right{
-	padding: 25px 40px;
-}
+    .contact-box {
+      max-width: 850px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #fff;
+      box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+    }
 
-h2{
-	position: relative;
-	padding: 0 0 10px;
-	margin-bottom: 10px;
-}
+    .left {
+      background: url("assets/img/logo_dark.png") no-repeat center;
+      background-size: cover;
+      height: 100%;
+    }
 
-.field{
-	width: 100%;
-	border: 2px solid rgba(0, 0, 0, 0);
-	outline: none;
-	background-color: rgba(230, 230, 230, 0.6);
-	padding: 0.5rem 1rem;
-	font-size: 1.1rem;
-	margin-bottom: 22px;
-	transition: .3s;
-}
+    .right {
+      padding: 25px 40px;
+    }
 
-.field:hover{
-	background-color: rgba(0, 0, 0, 0.1);
-}
+    h2 {
+      position: relative;
+      padding: 0 0 10px;
+      margin-bottom: 10px;
+    }
 
-textarea{
-	min-height: 150px;
-}
+    .field {
+      width: 100%;
+      border: 2px solid rgba(0, 0, 0, 0);
+      outline: none;
+      background-color: rgba(230, 230, 230, 0.6);
+      padding: 0.5rem 1rem;
+      font-size: 1.1rem;
+      margin-bottom: 22px;
+      transition: .3s;
+    }
 
-.btn_contact{
-	width: 100%;
-	padding: 0.5rem 1rem;
-	background-color: #08533F;
-	color: #fff;
-	font-size: 1.1rem;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	transition: .3s;
-}
+    .field:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
 
-.btn_contact:hover{
-    background-color: #068e6b;
-}
+    textarea {
+      min-height: 150px;
+    }
 
-.field:focus{
-    border: 2px solid #068e6b;
-    background-color: #fff;
-}
+    .btn_contact {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      background-color: #08533F;
+      color: #fff;
+      font-size: 1.1rem;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: .3s;
+    }
 
-    </style>
+    .btn_contact:hover {
+      background-color: #068e6b;
+    }
+
+    .field:focus {
+      border: 2px solid #068e6b;
+      background-color: #fff;
+    }
+  </style>
 
 
 
@@ -168,188 +176,194 @@ textarea{
 
 
 <body>
-    <!-- =============== Navigation ================ -->
-    <div class="container">
-        <div class="navigation">
-            <ul>
-                <li>
-                    <a href="#">
-                        <img src="img/logo.png" alt="" style="width: 4vw; display: block;">
-                        <span class="title"><h2>HR Assist</h2></span>
-                    </a>
-                </li>
+  <!-- =============== Navigation ================ -->
+  <div class="container">
+    <div class="navigation">
+      <ul>
+        <li>
+          <a href="#">
+            <img src="img/logo.png" alt="" style="width: 4vw; display: block;">
+            <span class="title">
+              <h2>HR Assist</h2>
+            </span>
+          </a>
+        </li>
 
-                <li>
-                    <a href="employee_home.html">
-                        <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
-                        </span>
-                        <span class="title">Dashboard</span>
-                    </a>
-                </li>
+        <li>
+          <a href="employee_home.html">
+            <span class="icon">
+              <ion-icon name="home-outline"></ion-icon>
+            </span>
+            <span class="title">Dashboard</span>
+          </a>
+        </li>
 
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="people-outline"></ion-icon>
-                        </span>
-                        <span class="title">Activities</span>
-                    </a>
-                </li>
+        <li>
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="people-outline"></ion-icon>
+            </span>
+            <span class="title">Activities</span>
+          </a>
+        </li>
 
-                <li>
-                    <a href="employee_contactus.html">
-                        <span class="icon">
-                            <ion-icon name="call-outline"></ion-icon>
-                        </span>
-                        <span class="title">Contact Us</span>
-                    </a>
-                </li>
+        <li>
+          <a href="employee_contactus.html">
+            <span class="icon">
+              <ion-icon name="call-outline"></ion-icon>
+            </span>
+            <span class="title">Contact Us</span>
+          </a>
+        </li>
 
-                <li>
-                    <a href="employee_profile.html">
-                        <span class="icon">
-                            <ion-icon name="person-outline"></ion-icon>
-                        </span>
-                        <span class="title">Profile</span>
-                    </a>
-                </li>
+        <li>
+          <a href="employee_profile.html">
+            <span class="icon">
+              <ion-icon name="person-outline"></ion-icon>
+            </span>
+            <span class="title">Profile</span>
+          </a>
+        </li>
 
-                <li>
-                    <a href="employee_changepass.html">
-                        <span class="icon">
-                            <ion-icon name="lock-closed-outline"></ion-icon>
-                        </span>
-                        <span class="title">Password</span>
-                    </a>
-                </li>
+        <li>
+          <a href="employee_changepass.html">
+            <span class="icon">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+            </span>
+            <span class="title">Password</span>
+          </a>
+        </li>
 
-                <li>
-                    <a href="employee_loginform.html">
-                        <span class="icon">
-                            <ion-icon name="log-out-outline"></ion-icon>
-                        </span>
-                        <span class="title">Sign Out</span>
-                    </a>
-                </li>
-            </ul>
+        <li>
+          <a href="employee_loginform.html">
+            <span class="icon">
+              <ion-icon name="log-out-outline"></ion-icon>
+            </span>
+            <span class="title">Sign Out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ========================= Main ==================== -->
+    <div class="main">
+      <div class="topbar">
+        <div class="toggle">
+          <ion-icon name="menu-outline"></ion-icon>
         </div>
 
-        <!-- ========================= Main ==================== -->
-        <div class="main">
-            <div class="topbar">
-                <div class="toggle">
-                    <ion-icon name="menu-outline"></ion-icon>
-                </div>
+        <div class="user">
+          <img src="img/user.png" alt="">
+        </div>
+      </div>
 
-                <div class="user">
-                    <img src="img/user.png" alt="">
-                </div>
+      <section class="contact_box">
+        <div class="row">
+          <h2 class="section-heading">Contact Us</h2>
+        </div>
+        <div class="row">
+          <div class="column">
+            <div class="card_contact">
+              <div class="icon-wrapper">
+                <i class="fa-brands fa-facebook"></i>
+              </div>
+              <h3>Facebook</h3>
+              <p>
+                Our Official Facebook Account <br>
+                Facebook.com/Human Resources
+              </p>
             </div>
-
-            <section class="contact_box">
-                <div class="row">
-                  <h2 class="section-heading">Contact Us</h2>
-                </div>
-                <div class="row">
-                  <div class="column">
-                    <div class="card_contact">
-                      <div class="icon-wrapper">
-                        <i class="fa-brands fa-facebook"></i>
-                      </div>
-                      <h3>Facebook</h3>
-                      <p>
-                       Our Official Facebook Account <br>
-                       Facebook.com/Human Resources
-                      </p>
-                    </div>
-                  </div>
-                  <div class="column">
-                    <div class="card_contact">
-                      <div class="icon-wrapper">
-                        <i class="fa-brands fa-facebook-messenger"></i>
-                      </div>
-                      <h3>Messenger</h3>
-                      <p>
-                        Our Official Messenger Account <br>
-                        Messenger.com/Human Resources
-                      </p>
-                    </div>
-                  </div>
-                  <div class="column">
-                    <div class="card_contact">
-                      <div class="icon-wrapper">
-                        <i class="fa-solid fa-envelope"></i>
-                      </div>
-                      <h3>Email</h3>
-                      <p>
-                        Contact us through our Email
-                        Humanresourcessanvicente@gmail.com
-                      </p>
-                    </div>
-                  </div>
-                  <div class="column">
-                    <div class="card_contact">
-                      <div class="icon-wrapper">
-                        <i class="fa-solid fa-phone"></i>
-                      </div>
-                      <h3>Call Us</h3>
-                      <p>
-                        You may also call us through this phone number
-                        +639123456789
-                      </p>
-                    </div>
-                  </div>
-                  <div class="column">
-                    <div class="card_contact">
-                      <div class="icon-wrapper">
-                        <i class="fa-solid fa-message"></i>
-                      </div>
-                      <h3>Text Us</h3>
-                      <p>
-                        You may also text us through this phone number
-                        +639123456789
-                      </p>
-                    </div>
-                  </div>
-                  <div class="column">
-                    <div class="card_contact">
-                      <div class="icon-wrapper">
-                        <i class="fa-solid fa-map"></i>
-                      </div>
-                      <h3>Talk with Us</h3>
-                      <p>
-                        Come to our office and ask anything youd like! <br>
-                        Address: Brgy. San Vicente
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-          
-
-              <div class="container_form">
-                <div class="contact-box">
-                    <div class="left"></div>
-                    <div class="right">
-                        <h2>Contact Form</h2>
-                        <input type="text" class="field" placeholder="Your Name">
-                        <input type="email" class="field" placeholder="Your Email">
-                        <input type="text" class="field" placeholder="Phone">
-                        <textarea placeholder="Message" class="field"></textarea>
-                        <button class="btn_contact">Send</button>
-                    </div>
-                </div>
+          </div>
+          <div class="column">
+            <div class="card_contact">
+              <div class="icon-wrapper">
+                <i class="fa-brands fa-facebook-messenger"></i>
+              </div>
+              <h3>Messenger</h3>
+              <p>
+                Our Official Messenger Account <br>
+                Messenger.com/Human Resources
+              </p>
             </div>
+          </div>
+          <div class="column">
+            <div class="card_contact">
+              <div class="icon-wrapper">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <h3>Email</h3>
+              <p>
+                Contact us through our Email
+                Humanresourcessanvicente@gmail.com
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card_contact">
+              <div class="icon-wrapper">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <h3>Call Us</h3>
+              <p>
+                You may also call us through this phone number
+                +639123456789
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card_contact">
+              <div class="icon-wrapper">
+                <i class="fa-solid fa-message"></i>
+              </div>
+              <h3>Text Us</h3>
+              <p>
+                You may also text us through this phone number
+                +639123456789
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card_contact">
+              <div class="icon-wrapper">
+                <i class="fa-solid fa-map"></i>
+              </div>
+              <h3>Talk with Us</h3>
+              <p>
+                Come to our office and ask anything youd like! <br>
+                Address: Brgy. San Vicente
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              
-  </div>
+
+
+      <div class="container_form">
+        <div class="contact-box">
+          <div class="left"></div>
+          <div class="right">
+            <h2>Contact Form</h2>
+            <input type="text" class="field" placeholder="Your Name">
+            <input type="email" class="field" placeholder="Your Email">
+            <input type="text" class="field" placeholder="Phone">
+            <textarea placeholder="Message" class="field"></textarea>
+            <button class="btn_contact">Send</button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
 
 
 
     <!-- =========== Scripts =========  -->
     <script src="js/employee.js"></script>
+
+    <!-- Database Javascript -->
+    <script src="bundles/auth.bundle.js"></script>
+    <script src="bundles/firestore_add.bundle.js"></script>
 
 
     <!-- ====== ionicons ======= -->
@@ -357,11 +371,11 @@ textarea{
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
-   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
 
-   
-    <!-- Database Javascript -->  
-    <script src="bundles/auth.bundle.js"></script>   
+
+    <!-- Database Javascript -->
+    <script src="bundles/auth.bundle.js"></script>
 
 </body>
 
