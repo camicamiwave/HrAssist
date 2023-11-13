@@ -193,12 +193,12 @@ button:hover {
     white-space: nowrap;
 }
 
-.menu_admin_tools::before {
-    content: "Admin Tools";
+.employee_tools::before {
+    content: "Employee Tools";
 }
 
-.lgu_information::before {
-    content: "LGU Information";
+.profile_information::before {
+    content: "Profile";
 }
 
 .recruitment::before {
