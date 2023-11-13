@@ -375,7 +375,7 @@ body {
 
 
 body{margin-top:20px;
-    background-color:#f2f6fc;
+    background-color:#e2ecea;
     color:#69707a;
     }
     .img-account-profile {
@@ -452,13 +452,13 @@ body{margin-top:20px;
 
 .gradient-custom {
     /* fallback for old browsers */
-    background: #cd9cf2;
+    background: #e2ecea;
     
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to top left, rgba(205, 156, 242, 1), rgba(246, 243, 255, 1));
+    background: #e2ecea;
     
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to top left, rgba(205, 156, 242, 1), rgba(246, 243, 255, 1))
+    background: #e2ecea;
     }
 
 /*** Footer ***/
