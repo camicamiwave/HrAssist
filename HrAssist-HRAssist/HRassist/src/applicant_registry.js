@@ -165,11 +165,23 @@ export function FetchApplicantProfile() {
         const firstName = document.getElementById('inputFirstName');
         firstName.value = personalInfo.FirstName;
 
+        const middleName = document.getElementById('inputMiddleName');
+        middleName.value = personalInfo.MiddleName;
+
         const lastName = document.getElementById('inputLastName');
         lastName.value = personalInfo.LastName;
+        
+        const ExtName = document.getElementById('inputExtName');
+        ExtName.value = personalInfo.ExName;
 
         const sex = document.getElementById('inputSex');
         sex.value = personalInfo.Sex;
+
+        const civilStatus = document.getElementById('inputCivilStatus');
+        civilStatus.value = personalInfo.CivilStatus;
+
+        const address = document.getElementById('inputAddress');
+        address.value = personalInfo.Address;
         
         const birthPlace = document.getElementById('inputBplace');
         birthPlace.value = personalInfo.Placebirth;
