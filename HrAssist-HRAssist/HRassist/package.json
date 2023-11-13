@@ -8,9 +8,12 @@
     "build": "webpack",
     "auth": "node auth.js",
     "cloud_storage": "node cloud.js",
-    "firestore_storage": "node firestore.js",
+    "firestore_storage": "node firestore.js", 
     "firestore_add": "node add_firestore.js",
-    "firestore_retrieve": "node retrieve_firestore.js"
+    "firestore_retrieve": "node retrieve_firestore.js",
+    "page_verification": "node page_restriction.js",
+    "login_authentication": "node login_auth.js",
+    "request_proc": "node request_process.js"
   },
   "keywords": [],
   "author": "",

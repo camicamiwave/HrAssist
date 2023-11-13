@@ -24,68 +24,7 @@ const auth = getAuth();
 
 const db = getFirestore()
 
-const colRef = collection(db, 'Employee')
-
-const q = query(colRef, orderBy('createdAt'))
- 
-// QUERIES
-//const q = query(colRef, where("lname", "==", "Albos"), orderBy('createdAt'))
-
-function FetchAllEmployeeData(){
-    onSnapshot(q, (snapshot) => {
-        let employees = []
-        snapshot.docs.forEach((doc) => {
-            employees.push({ ...doc.data(), id: doc.id})
-        })
-        console.log(employees) 
-      })       
-}
-
-function DeleteEmployee(){
-    const deleteEmployeeForm = document.querySelector(".delete")
-    deleteEmployeeForm.addEventListener('submit', (e) => {
-        e.preventDefault()
-  
-    const docRef = doc(db, 'Employee', deleteEmployeeForm.id.value)
-
-    deleteDoc(docRef)
-      .then(() => {
-        deleteEmployeeForm.reset()
-      })
-})
-
-}
-
-function UpdateEmployee(){    
-    // update a document
-    const updateForm = document.querySelector('.update')
-    updateForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-
-    const docRef = doc(db, 'Employee', updateForm.id.value)
-    updateDoc(docRef, {
-        fname: 'updated fname'
-    })
-    .then(() => {
-        updateForm.reset()
-    })
-    
-    })
-}
-
-
-
-
-//FetchAllEmployeeData();
-//DeleteEmployee();
-//UpdateEmployee(); 
-
-
-
 export function AddLeaveRequest() {
-    console.log("check employee")
-
-    
     document.getElementById('leaveBtn').addEventListener('click', function (e) {
         e.preventDefault();
 

@@ -231,8 +231,13 @@ button:hover {
     list-style: none;
 }
 
+<<<<<<< HEAD
 .menu_items .item .active .nav_link {
     background-color: #08533F;
+=======
+.menu_items .item.active .nav_link {
+    background-color: #1F8F3E;
+>>>>>>> 722692440f3b048d48b5ff2ab96ffe155082a1c9
     color: #fff;
 }
 
@@ -255,7 +260,7 @@ button:hover {
 }
 
 .navlink_icon:hover {
-    background: #08533F;
+    background: #1F8F3E;
 }
 
 .sidebar .nav_link {
@@ -275,7 +280,7 @@ button:hover {
 
 .nav_link:hover {
     color: var(--white-color);
-    background: #08533F;
+    background: #1F8F3E;
 }
 
 .sidebar.close .nav_link:hover {
@@ -406,7 +411,7 @@ button:hover {
     text-align: center;
     -webkit-box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
     box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35); 
-    background-color: #08533F;
+    background-color: #1F8F3E;
     color:#ffffff;
 }
     
@@ -424,7 +429,7 @@ button:hover {
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    border-bottom: 1px solid #08533F;
+    border-bottom: 1px solid #1F8F3E;
 }
 
 .table-header p {
@@ -522,7 +527,7 @@ button:hover {
 .add-new {
     padding: 10px 20px;
     color: #ffffff;
-    background-color: #08533F;
+    background-color: #1F8F3E;
 }
 
 table {
@@ -535,12 +540,12 @@ table {
 thead th {
     position: sticky;
     top: 0;
-    background-color: #08533F;
+    background-color: #1F8F3E;
     color: #ffffff;
 }
 
 th, td {
-    border-bottom: 1px solid #08533F;
+    border-bottom: 1px solid #1F8F3E;
     padding: 10px 20px;
     word-break: normal;
     text-align: center;
@@ -581,3 +586,42 @@ td button:nth-child(2) {
     background-color: #f80000;
 }
 
+/*
+.content-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 25px 0;
+    font-size: 0.9em;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+    background-color: #1F8F3E;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+  
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+  
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+  
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+  
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #1F8F3E;
+}
+  
+.content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #1F8F3E;
+} */
