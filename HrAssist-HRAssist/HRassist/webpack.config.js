@@ -11,7 +11,9 @@ module.exports = {
         firestore_retrieve: './src/retrieve_firestore.js',
         page_verification: './src/page_restriction.js',
         login_authentication: './src/login_auth.js', 
-        request_proc: './src/request_process.js'
+        request_proc: './src/request_process.js', 
+        employee_registry: './src/employee_registry.js',
+        applicant_registry: './src/applicant_registry.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),

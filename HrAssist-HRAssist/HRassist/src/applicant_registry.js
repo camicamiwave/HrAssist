@@ -15,14 +15,14 @@ initializeApp(firebaseConfig)
 
 const db = getFirestore()
 
-const colRef = collection(db, 'Employee')
+const colRef = collection(db, 'Applicant Information')
 
 const q = query(colRef, orderBy('createdAt'))
 
 
-function GetEmployeeTable() {
+function GetApplicantTable() {
     // Assuming you have Firestore data in the 'employees' array
-    const employeeTable = document.getElementById('employeeTable');
+    const employeeTable = document.getElementById('applicantTable');
     const tbody = employeeTable.querySelector('tbody');
 
     onSnapshot(q, (snapshot) => {
@@ -34,24 +34,31 @@ function GetEmployeeTable() {
         const id = doc.id;
         const row = document.createElement('tr');
 
-        // Create and populate table cells
+        const personal_info = data.Personal_Information;
+        const ApplicantFullName = personal_info.FirstName + " " + personal_info.LastName;
+        
+        const createdAt = data.createdAt.toDate(); // Assuming createdAt is a timestamp
+        // Extracting date only from createdAt
+        const dateString = createdAt.toLocaleDateString();
+
         const idCell = document.createElement('td');
-        idCell.textContent = data.idnum;
+        idCell.textContent = id;
 
-        const firstNameCell = document.createElement('td');
-        firstNameCell.textContent = data.fname;
+        const nameCell = document.createElement('td');
+        nameCell.textContent = ApplicantFullName;
 
-        const lastNameCell = document.createElement('td');
-        lastNameCell.textContent = data.lname;
+        const jobApplicationDateCell = document.createElement('td');
+        jobApplicationDateCell.textContent = dateString;
 
-        const phoneCell = document.createElement('td');
-        phoneCell.textContent = data.phonenum;
+        const applicantStatusCell = document.createElement('td');
+        applicantStatusCell.textContent = data.ApplicantStatus;
 
+        // Add button
         // Create a button element for actions and add it to the row
         const actionCell = document.createElement('td');
         const actionButtonEdit = document.createElement('button');
-        actionButtonEdit.textContent = 'Edit'; // Customize the button label
-        actionButtonEdit.classList.add('btn', 'btn-primary', 'mx-2'); // You can use Bootstrap's 'btn' and 'btn-primary' classes
+        //actionButtonEdit.textContent = 'Edit'; // Customize the button label
+        actionButtonEdit.classList.add('btn', 'bx', 'bx-edit', 'mx-2'); // You can use Bootstrap's 'btn' and 'btn-primary' classes
 
         actionButtonEdit.addEventListener('click', () => {
           // Define an action for the Edit button (e.g., edit the record)
@@ -60,8 +67,8 @@ function GetEmployeeTable() {
         });
 
         const actionButtonDelete = document.createElement('button');
-        actionButtonDelete.textContent = 'Delete'; // Customize the button label
-        actionButtonDelete.classList.add('btn', 'btn-danger'); // You can use Bootstrap's 'btn' and 'btn-danger' classes
+        //actionButtonDelete.textContent = 'Delete'; // Customize the button label
+        actionButtonDelete.classList.add('btn', 'bx', 'bx-trash'); // You can use Bootstrap's 'btn' and 'btn-danger' classes
 
         actionButtonDelete.addEventListener('click', () => {
           
@@ -69,15 +76,19 @@ function GetEmployeeTable() {
 
         });
         
-
         actionCell.appendChild(actionButtonEdit);
         actionCell.appendChild(actionButtonDelete);
 
-        // Append cells to the row
+        // Add a click event listener to the row
+        row.addEventListener('click', () => {
+            console.log('Row ID clicked:', id);
+        });
+
+        // Append cells to the row 
         row.appendChild(idCell);
-        row.appendChild(firstNameCell);
-        row.appendChild(lastNameCell);
-        row.appendChild(phoneCell);
+        row.appendChild(nameCell);
+        row.appendChild(jobApplicationDateCell);
+        row.appendChild(applicantStatusCell);
         row.appendChild(actionCell);
 
         // Append the row to the table body
@@ -86,21 +97,5 @@ function GetEmployeeTable() {
     });
   }
 
-export function FetchData() { 
-  const TestcolRef = collection(db, 'Applicant Information');
-  
-  const querySnapshot = query(TestcolRef);
 
-  onSnapshot(querySnapshot, (snapshot) => {
-    let employees = [];
-    snapshot.docs.forEach((doc) => {
-      employees.push({ ...doc.data(), id: doc.id });
-    });
-    console.log(employees);
-    return employees;
-  });
-
-}
-
-window.addEventListener('load', FetchData);
-window.addEventListener('load', GetEmployeeTable);
+window.addEventListener('load', GetApplicantTable);

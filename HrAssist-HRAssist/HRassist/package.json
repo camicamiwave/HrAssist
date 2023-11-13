@@ -13,7 +13,9 @@
     "firestore_retrieve": "node retrieve_firestore.js",
     "page_verification": "node page_restriction.js",
     "login_authentication": "node login_auth.js",
-    "request_proc": "node request_process.js"
+    "request_proc": "node request_process.js",
+    "employee_registry": "node employee_registry.js",
+    "applicant_registry": "node applicant_registry.js"
   },
   "keywords": [],
   "author": "",
