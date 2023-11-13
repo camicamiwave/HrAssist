@@ -92,8 +92,10 @@ export function PageRestrictionMethod(currentPath, userLevel){
   const Employee_Pages = [
     '/dist/employee_home.html',
     '/dist/employee_changepass.html',
-    '/dist/employee_profile.html',
+    '/dist/employee_changeprofile.html',
     '/dist/employee_contactus.html',
+    '/dist/employee_profilepass.html',
+    '/dist/employeeprofile.html',
 
   ];
   
