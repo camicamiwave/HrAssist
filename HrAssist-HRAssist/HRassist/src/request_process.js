@@ -17,14 +17,14 @@ import {
 import { firebaseConfig } from './server.js';
 
 // init firebase app
-app = initializeApp(firebaseConfig)
+initializeApp(firebaseConfig)
+
+// Get authentication object
+const auth = getAuth();
 
 const db = getFirestore()
 
 export function AddLeaveRequest() {
-    console.log("check employee")
-
-    
     document.getElementById('leaveBtn').addEventListener('click', function (e) {
         e.preventDefault();
 
@@ -35,6 +35,8 @@ export function AddLeaveRequest() {
         // Listen for changes in authentication state
         onAuthStateChanged(auth, (user) => {
             if (user) {
+                console.log("Hello1")
+
                 // User is signed in
                 const currentUserID = user.uid;
                 console.log("Current User UID:", currentUserID);

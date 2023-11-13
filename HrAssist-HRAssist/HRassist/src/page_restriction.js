@@ -36,6 +36,8 @@ export function UserLoginChecker(Account_UserID, User_Action) {
           // get the current path of user
           const currentPath = window.location.pathname; 
 
+          console.log("Current Path: ", currentPath)
+
           if (userlevel === "Employee") {
             if (User_Action === "Login"){
                 window.location.href = "employee_home.html";
@@ -62,7 +64,12 @@ export function UserLoginChecker(Account_UserID, User_Action) {
           }
   
         } else {
-          console.log("No user found")
+          
+          // get the current path of user
+          const currentPath = window.location.pathname; 
+          
+          console.log("No user found...")
+          PageRestrictionMethod(currentPath, "Guest");
         }
 
 
@@ -81,7 +88,7 @@ export function PageRestrictionMethod(currentPath, userLevel){
   var restOfTheCode = splitResult[1];
   currentPath = "/dist/" + restOfTheCode;
 
-  console.log(currentPath)
+  console.log(currentPath, "hello")
 
 
   // lagay nyo dito lahat ng pages na exclusive lang for employees
@@ -171,5 +178,5 @@ export function PageRestrictionMethod(currentPath, userLevel){
 
 // Using URL object
 const url = new URL(window.location.href);
-console.log(url.href , "asfsa1123s"); 
+console.log(url.href , "asfs1233a1123s"); 
   

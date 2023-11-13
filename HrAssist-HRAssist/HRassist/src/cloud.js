@@ -30,7 +30,7 @@ export function FetchCloudStorage(fileURL){
     });
 }
 
-FetchCloudStorage("https://firebasestorage.googleapis.com/v0/b/hrassist-lgusanvicente.appspot.com/o/applicant%2Frequirements%2Fform138.png?alt=media&token=83969eaf-c3ff-44f4-a07b-4bdeb290181b")
+//FetchCloudStorage("https://firebasestorage.googleapis.com/v0/b/hrassist-lgusanvicente.appspot.com/o/applicant%2Frequirements%2Fform138.png?alt=media&token=83969eaf-c3ff-44f4-a07b-4bdeb290181b")
 
 function addDataToCloudStorage1(formId, storagePath) {
   const db = getFirestore();
