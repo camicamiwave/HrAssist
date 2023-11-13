@@ -71,9 +71,6 @@ export function UserLoginChecker(Account_UserID, User_Action) {
           console.log("No user found...")
           PageRestrictionMethod(currentPath, "Guest");
         }
-
-
-
       });
   
     } catch (error) {
