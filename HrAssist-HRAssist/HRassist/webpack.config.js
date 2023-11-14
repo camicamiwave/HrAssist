@@ -13,7 +13,8 @@ module.exports = {
         login_authentication: './src/login_auth.js', 
         request_proc: './src/request_process.js', 
         employee_registry: './src/employee_registry.js',
-        applicant_registry: './src/applicant_registry.js'
+        applicant_registry: './src/applicant_registry.js',
+        admin_registry: './src/admin_registry.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),

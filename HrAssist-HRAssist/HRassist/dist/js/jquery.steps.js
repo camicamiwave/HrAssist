@@ -795,14 +795,19 @@ function paginationClickHandler(event)
 
         case "finish":
             finishStep(wizard, state);
+            console.log(state.currentIndex + 1, 'finish')
+            document.getElementById('sign-in-email-password').style.display = 'none';
+            return state.currentIndex + 1;
             break;
 
         case "next":
             goToNextStep(wizard, options, state);
+            console.log(state.currentIndex, 'next')
             break;
 
         case "previous":
             goToPreviousStep(wizard, options, state);
+            console.log(state.currentIndex, 'previous')
             break;
     }
 }
@@ -822,7 +827,7 @@ function refreshPagination(wizard, options, state)
     if (options.enablePagination)
     {
         var finish = wizard.find(".actions a[href$='#finish']").parent(),
-            next = wizard.find(".actions a[href$='#next']").parent();
+            next = wizard.find(".actions a[href$='#next']").parent(); 
 
         if (!options.forceMoveForward)
         {
