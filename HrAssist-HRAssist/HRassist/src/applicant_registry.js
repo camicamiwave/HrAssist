@@ -18,7 +18,7 @@ import { UserLoginChecker } from './page_restriction.js';
 
 
 // init firebase app
-initializeApp(firebaseConfig)
+const app = initializeApp(firebaseConfig)
 
 const db = getFirestore()
 
@@ -27,6 +27,8 @@ const colRef = collection(db, 'Applicant Information')
 const q = query(colRef, orderBy('createdAt'))
 
 const auth = getAuth();
+
+const storage = getStorage(app);
 
 function GetApplicantTable() {
   // Assuming you have Firestore data in the 'employees' array
@@ -277,28 +279,202 @@ export function AddApplicantAccount() {
 
 window.addEventListener('load', AddApplicantAccount);
 
-export function AddApplicantionForm(){
-  
+export function AddApplicantionForm() {
+  const storageRef = ref(storage, "Applicant/Requirements");
+  const ApplicantColRef = collection(db, 'Applicant Information');
+
+  const hideSection = (section) => {
+    document.getElementById(section).style.display = 'none';
+  };
+
+  const showSection = (section) => {
+    document.getElementById(section).style.display = 'block';
+  };
+
+  const setSectionHandlers = (forwardBtn, backBtn, currentSection, nextSection, backSection) => {
+    forwardBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      hideSection(currentSection);
+      showSection(nextSection);
+    });
+
+    backBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      hideSection(currentSection);
+      showSection(backSection);
+    });
+  };
+
   FetchCurrentUser().then((currentUserUID) => {
-    //const que = query(TestcolRef, where("userID", "==", currentUserUID));
-  const applicationForm = document.querySelector('.applicantAccountForm');
+    if (currentUserUID !== "None") {
+      console.log("User is logged in...");
 
-    if (currentUserUID !== "None"){
-      console.log("May user na nakalogin...")
+      hideSection('Section2_Layout');
+      hideSection('Section3_Layout');
 
-      const step1BackBtn = document.getElementById('step1_back_btn');
+      const step1ForwardBtn = document.getElementById('step1_forward_btn');
+      const step2BackBtn = document.getElementById('step2_back_btn');
+      const step2ForwardBtn = document.getElementById('step2_forward_btn');
+      const step3BackBtn = document.getElementById('step3_back_btn');
+      const step3SubmitBtn = document.getElementById('submit_btn');
 
-      step1BackBtn.addEventListener('submit', (e) => {
+      setSectionHandlers(step1ForwardBtn, step2BackBtn, 'Section1_Layout', 'Section2_Layout', 'Section1_Layout');
+      setSectionHandlers(step2ForwardBtn, step3BackBtn, 'Section2_Layout', 'Section3_Layout', 'Section2_Layout');
+
+      step3SubmitBtn.addEventListener('click', (e) => {
         e.preventDefault();
-          
-        console.log("back...")
+
+        console.log("Submit na boy");
+
+        const addApplicantForm = document.querySelector("#applicant_info_form");
+        const fileInput = addApplicantForm.querySelector('input[name="customFile"]');
+        const selectedFiles = fileInput.files;
+
+        if (selectedFiles.length > 0) {
+          const uploadPromises = [];
+          const fileURL = [];
+
+          for (let i = 0; i < selectedFiles.length; i++) {
+            const selectedFile = selectedFiles[i];
+            const timestamp = new Date().getTime();
+            const uniqueFilename = `${timestamp}_${selectedFile.name}`;
+            const fileRef = ref(storageRef, uniqueFilename);
+
+            const uploadPromise = uploadBytes(fileRef, selectedFile)
+              .then((snapshot) => getDownloadURL(fileRef))
+              .then((downloadURL) => {
+                fileURL.push(downloadURL);
+              });
+
+            uploadPromises.push(uploadPromise);
+          }
+
+          Promise.all(uploadPromises)
+            .then(() => {
+              const profileInput = addApplicantForm.querySelector('input[name="applicantPicture"]');
+              const selectedProfile = profileInput.files;
+
+              if (selectedProfile.length > 0) {
+                const firstSelectedProfile = selectedProfile[0];
+                const timestamp1 = new Date().getTime();
+                const uniqueProfileFilename = `${timestamp1}_${firstSelectedProfile.name}`;
+                const fileRef = ref(storageRef, uniqueProfileFilename);
+
+                uploadBytes(fileRef, firstSelectedProfile)
+                  .then((snapshot) => getDownloadURL(fileRef))
+                  .then((downloadURL) => {
+                    const ApplicantProfileURL = downloadURL;
+
+                    console.log('ApplicantProfileURL:', ApplicantProfileURL);
+
+                    FetchApplicantIDData().then((maxID) => {
+                      const civilStatusDropdown = document.getElementById('civilStatusDropdown');
+                      const selectedCivilStatus = civilStatusDropdown.querySelector('li.selected').getAttribute('rel');
+                      const applicantID = maxID + 1;
+                      const data = {
+                        userID: currentUserUID,
+                        ApplicantStatus: "Pending",
+                        JobApply: "",
+                        ApplicantID: applicantID,
+                        createdAt: serverTimestamp(),
+                        ApplicantProfilePicture: ApplicantProfileURL,
+                        Personal_Information: {
+                          FirstName: addApplicantForm.querySelector('input[name="inputFirstName"]').value,
+                          MiddleName: addApplicantForm.querySelector('input[name="inputMiddleName"]').value,
+                          LastName: addApplicantForm.querySelector('input[name="inputLastName"]').value,
+                          ExName: addApplicantForm.querySelector('input[name="inputExName"]').value,
+                          Gender: addApplicantForm.querySelector('input[name="gender"]').value,
+                          CivilStatus: selectedCivilStatus,
+                          Birthdate: addApplicantForm.querySelector('input[name="birthday"]').value,
+                          Placebirth: addApplicantForm.querySelector('input[name="inputplacebirth"]').value,
+                          Phone: addApplicantForm.querySelector('input[name="phone"]').value,
+                          Email: addApplicantForm.querySelector('input[name="inputemail"]').value,
+                          Address: addApplicantForm.querySelector('input[name="inputaddress"]').value,
+                        },
+                        Requirements: fileURL.map((url, index) => ({
+                          [`file${index + 1}`]: url,
+                        })),
+                      };
+
+                      addDoc(ApplicantColRef, data)
+                        .then((docRef) => {
+                          const customDocId = docRef.id;
+                          return setDoc(doc(ApplicantColRef, customDocId), { documentID: customDocId }, { merge: true });
+                        })
+                        .then(() => {
+                          addApplicantForm.reset();
+                          console.log("Added employee successfully...");
+                          window.location.href = 'applicant-congrats.html';
+                        })
+                        .catch(error => console.error('Error adding document:', error));
+                    })
+                    .catch((error) => {
+                      console.error('Error fetching max ApplicantIDNum:', error);
+                    });
+                  })
+                  .catch((error) => {
+                    console.error('Error uploading profile picture:', error);
+                  });
+              } else {
+                console.error('No file selected');
+              }
+            })
+            .catch((error) => console.error('Error adding document:', error));
+        } else {
+          console.error('No file selected');
+        }
+      });
+    } else {
+      console.log("No sign-up detected");
+    }
+  });
+}
+
+window.addEventListener('load', AddApplicantionForm);
+
+export function FetchApplicantIDData() {
+  return new Promise((resolve, reject) => {
+    const TestcolRef = collection(db, 'Applicant Information');
+    const querySnapshot = query(TestcolRef);
+
+    onSnapshot(querySnapshot, (snapshot) => {
+      let maxApplicantIDNum = 0;
+
+      snapshot.docs.forEach((doc) => {
+        const data = doc.data();
+        const applicantIDNum = data.ApplicantID;
+        
+        if (applicantIDNum > maxApplicantIDNum) {
+          maxApplicantIDNum = applicantIDNum;
+        }
+      });
+
+      resolve(maxApplicantIDNum);
+    });
+  });
+}
+
+window.addEventListener('load', FetchApplicantIDData) 
+
+export function FetchApplicationStatus() { 
+
+  const TestcolRef = collection(db, 'Applicant Information');
+
+  FetchCurrentUser().then((currentUserUID) => {
+    const que = query(TestcolRef, where("userID", "==", currentUserUID));
+
+    onSnapshot(que, (snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        const data = doc.data();
+        const id = doc.id;
+
+        const applicantId = document.getElementById('ApplicantIDNum');
+        applicantId.innerHTML = data.ApplicantID;
 
       });
 
-    } else {
-      console.log("Walang nakasign up");
-    }
-
+    });
   });
 }
-window.addEventListener('load', AddApplicantionForm);
+
+window.addEventListener('load', FetchApplicationStatus)

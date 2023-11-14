@@ -61,10 +61,10 @@
     <br><br><br>
 
 		<div class="wrapper">
-            <form action="" id="wizard">
+            <form  id="applicant_info_form">
         		<!-- SECTION 1 -->
                 <h2></h2>
-                <section>
+                <section id="Section1_Layout">
                     <div class="inner">
 						<div class="image-holder">
 							<img src="img/mdrrmo.png" alt="">
@@ -72,22 +72,22 @@
 						<div class="form-content" >
 							<div class="form-header">
 								<h3>Application Form</h3>
-							</div>
+							</div> 
 							<p>Please fill with your details</p>
 							<div class="form-row">
 								<div class="form-holder">
-									<input type="text" placeholder="First Name" class="form-control">
+									<input type="text" placeholder="First Name" name="inputFirstName" id="inputFirstName" class="form-control">
 								</div>
 								<div class="form-holder">
-									<input type="text" placeholder="Middle Name" class="form-control">
+									<input type="text" placeholder="Middle Name" name="inputMiddleName" id="inputMiddleName" class="form-control">
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-holder">
-									<input type="text" placeholder="Last Name" class="form-control">
-								</div>
+									<input type="text" placeholder="Last Name" id="inputLastName" name="inputLastName" class="form-control">
+ 								</div>
 								<div class="form-holder">
-									<input type="text" placeholder="Ex. Name" class="form-control">
+									<input type="text" placeholder="Ex. Name" id="inputExName" name="inputExName" class="form-control">
 								</div>
 							</div>
 							<div class="form-row">
@@ -97,8 +97,8 @@
                                             <div class="select-control">Civil Status</div>
                                             <i class="zmdi zmdi-caret-down"></i>
                                         </div>
-                                        <ul class="dropdown">
-                                            <li rel="Single">Single</li>
+                                        <ul class="dropdown" id="civilStatusDropdown">
+                                            <li rel="Single" class="selected">Single</li>
                                             <li rel="Married">Married</li>
                                             <li rel="Widowed">Widowed</li>
                                             <li rel="Separated">Separated</li>
@@ -111,23 +111,24 @@
 								<div class="form-holder" style="align-self: flex-end; transform: translateY(4px);">
 									<div class="checkbox-tick">
 										<label class="male">
-											<input type="radio" name="gender" value="male" checked> Male<br>
+											<input type="radio" name="gender" value="male" id="gender" checked> Male<br>
 											<span class="checkmark"></span>
 										</label>
 										<label class="female">
-											<input type="radio" name="gender" value="female"> Female<br>
+											<input type="radio" name="gender" id="gender" value="female"> Female<br>
 											<span class="checkmark"></span>
 										</label>
 									</div>
 								</div>
 							</div>	
+                            <button class="btn btn-success" id="step1_forward_btn">Forward</button>
 						</div>
 					</div>
                 </section>
 
 				<!-- SECTION 2 -->
                 <h2></h2>
-                <section>
+                <section id="Section2_Layout">
                     <div class="inner">
 						<div class="image-holder">
 							<img src="img/pic2.png" alt="">
@@ -139,35 +140,38 @@
 							<p>Please fill with additional info</p>
                             <div class="form-row">
                                 <div class="form-holder">
-                                    <input type="date" placeholder="Birthdate" class="form-control">
+                                    <input type="date" placeholder="Birthdate" name="birthday" id="birthday" class="form-control">
                                 </div>
                                 <div class="form-holder">
-                                    <input type="text" placeholder="Place of Birth" class="form-control">
+                                    <input type="text" placeholder="Place of Birth" name="inputplacebirth" id="inputplacebirth" class="form-control">
                                 </div>
                             </div>
                             
 							<div class="form-row">
 								<div class="form-holder">
-									<input type="number" placeholder="Contact" class="form-control">
+									<input type="number" placeholder="Contact" name="phone" id="phone" class="form-control">
 								</div>
 								<div class="form-holder">
-									<input type="text" placeholder="Email" class="form-control">
+									<input type="text" placeholder="Email" name="inputemail" id="inputemail" class="form-control">
 								</div>
 							</div>
 
                             <div class="form-holder">
 								<div class="form-holder">
-									<input type="text" placeholder="Address" class="form-control">
+									<input type="text" placeholder="Address" id="inputaddress" name="inputaddress" class="form-control">
 								</div>
 							</div>
 
+                            <button class="btn btn-success" id="step2_back_btn">Back</button>
+                            <button class="btn btn-success" id="step2_forward_btn">Forward</button>
 						</div>
 					</div>
                 </section>
 
+                
                 <!-- SECTION 3 -->
                 <h2></h2>
-                <section>
+                <section id="Section3_Layout">
                     <div class="inner">
 						<div class="image-holder">
 							<img src="img/pic3.png" alt="">
@@ -176,10 +180,16 @@
                             <div class="form-header">
                                 <h3>Application Form</h3>
                             </div>
+                            <p>Upload your 2x2 Picture here</p>
+                            <div class="form-row">
+                                <div class="form-holder w-100">
+                                    <input type="file" class="form-control" id="applicantPicture" name="applicantPicture"/>
+                                </div>
+                            </div>
                             <p>Upload your CV here</p>
                             <div class="form-row">
                                 <div class="form-holder w-100">
-                                    <input type="file" class="form-control" id="customFile"/>
+                                    <input type="file" class="form-control" id="customFile" name="customFile" multiple/>
                                 </div>
                             </div>
                             <div class="checkbox-circle mt-24">
@@ -189,18 +199,21 @@
                                    Please accept <a href="#">terms and conditions</a>
                                 </label>
                             </div>
-                        </div>                        
+
+                            <button class="btn btn-success" id="step3_back_btn">Back</button>
+                            
+                            <input type="submit" class="btn btn-success" id="submit_btn"></button>
+
+                        </div>                      
 					</div>
                 </section>
+
             </form>
 		</div>
 
-		<!-- JQUERY -->
-		<script src="js/jquery-3.3.1.min.js"></script>
+    <!-- Javascript Database -->
+    <script src="bundles/auth.bundle.js"></script>
+    <script src="bundles/applicant_registry.bundle.js"></script>
 
-		<!-- JQUERY STEP -->
-		<script src="js/jquery.steps.js"></script>
-		<script src="js/application-form.js"></script>
-		<!-- Template created and distributed by Colorlib -->
 </body>
 </html>
