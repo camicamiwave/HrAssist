@@ -86,7 +86,7 @@
                     <div class="menu_title recruitment"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item">
+                    <li class="item active">
                         <a href="admin_manage_applicant_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-group"></i>
@@ -120,7 +120,7 @@
                     </li>
                     <!-- End -->
                     <!-- Start -->
-                    <li class="item active">
+                    <li class="item">
                         <a href="admin_search_employee_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-search-alt-2"></i>
@@ -217,13 +217,126 @@
                 <div class="page-header">
                     <h1 class="page-title">
                         <span class="page-title-icon">
-                        <i class="bx bxs-search-alt-2"></i>
-                        </span> Search Employee
+                        <i class="bx bx-group"></i>
+                        </span> Manage Applicant
                     </h1>
                 </div>
                 <div class="table">
                     <div class="table-header">
-                        <p>Employee Personal Information</p>
+                        <p>Add Applicant</p>
+                    </div>
+                    <div class="container">
+                        <header>Applicant's Form</header>
+                        <form action="#">
+                            <div class="form first">
+                                <div class="details ID">
+                                    <span class="title">Applicant Details</span>
+                                    <div class="fields">
+                                        <div class="input-field">
+                                            <label>Applicant ID</label>
+                                            <input type="text" placeholder="Enter Applicant ID">
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Account ID</label>
+                                            <input type="number" placeholder="Enter Account ID">
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Job Applied</label>
+                                            <input type="text" placeholder="Enter Job Title">
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Application Status</label>
+                                            <select>
+                                                <option disabled selected>Select status</option>
+                                                <option>Pending</option>
+                                                <option>Scheduled</option>
+                                                <option>Not Qualified</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="details personal">
+                                    <span class="title">Personal Information</span>
+                                    <div class="fields">
+                                        <div class="input-field">
+                                            <label>First Name</label>
+                                            <input type="text" placeholder="Enter Applicant's Name">
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Middle Name</label>
+                                            <input type="text" placeholder="Enter Applicant's Middle Name">
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Last Name</label>
+                                            <input type="text" placeholder="Enter Applicant's Last Name">
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Extension</label>
+                                            <input type="text" placeholder="Extension: JR./SR.">
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Gender</label>
+                                            <input type="text" placeholder="Enter Applicant's Gender">
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Date of Birth</label>
+                                            <input type="date" placeholder="Enter Applicant's Birth Date">
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Place of Birth</label>
+                                            <input type="text" placeholder="Enter Applicant's Birth Place">
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Zip Code</label>
+                                            <input type="text" placeholder="Enter Applicant's Zip Code">
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Address</label>
+                                            <input type="text" placeholder="Enter Applicant's Address">
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Phone Number</label>
+                                            <input type="text" placeholder="Enter Applicant's Contact No.">
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Email</label>
+                                            <input type="text" placeholder="Enter Applicant's Email">
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Civil Status</label>
+                                            <select required>
+                                                <option disabled selected>Select status</option>
+                                                <option>Single</option>
+                                                <option>Married</option>
+                                                <option>Widowed</option>
+                                                <option>Legally Separated</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Address</label>
+                                            <input type="text" placeholder="Enter Applicant's Address">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="details requirement">
+                                    <span class="title">Application Requirements and Attachments</span>
+                                    <div class="fields">
+                                        <div class="input-field">
+                                            <label>Upload 2x2 Picture</label>
+                                            <input type="text" placeholder="Enter Applicant ID">
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Upload Resume</label>
+                                            <input type="number" placeholder="Enter Account ID">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="submit">Submit</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
