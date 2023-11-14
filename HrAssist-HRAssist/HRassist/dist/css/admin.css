@@ -631,7 +631,6 @@ form .fields .input-field{
     align-items: center;
     justify-content: center;
     height: 45px;
-    max-width: 200px;
     width: 100%;
     border: none;
     outline: none;
