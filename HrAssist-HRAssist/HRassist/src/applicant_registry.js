@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import { initializeApp } from 'firebase/app';
 import { getStorage, ref, getDownloadURL, uploadBytes } from 'firebase/storage';
 import {
@@ -127,8 +128,6 @@ export function FetchCurrentUser() {
     // Listen for changes in authentication state
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log("Hello1");
-
         // User is signed in
         const currentUserID = user.uid;
         console.log("Current User UID:", currentUserID);
@@ -161,8 +160,6 @@ export function FetchApplicantProfile() {
 
         // Change the src attribute
         applicantProfile.src = newProfilePicUrl;
-
-        console.log(newProfilePicUrl, 'eto na');
 
         const applicantName = document.getElementById('applicantName');
         applicantName.innerHTML = fullName;
@@ -256,7 +253,20 @@ export function AddApplicantAccount() {
                 .then(() => {
                   signupForm.reset();
                   console.log("Added applicant successfully...");
-                  window.location.href = 'index.html';
+                  Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Your account added successfully",
+                    showConfirmButton: true, // Change to true to show a confirm button
+                    // Add a confirm button handler
+                    confirmButtonText: 'Confirm', // Customize the button text
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // User clicked the confirm button
+                        window.location.href = 'index.html';
+                    }
+                });
+
                 })
                 .catch(error => console.error('Error adding applicant document:', error));
 
@@ -305,12 +315,12 @@ export function AddApplicantionForm() {
     });
   };
 
+  hideSection('Section2_Layout');
+  hideSection('Section3_Layout');
+
   FetchCurrentUser().then((currentUserUID) => {
     if (currentUserUID !== "None") {
       console.log("User is logged in...");
-
-      hideSection('Section2_Layout');
-      hideSection('Section3_Layout');
 
       const step1ForwardBtn = document.getElementById('step1_forward_btn');
       const step2BackBtn = document.getElementById('step2_back_btn');
@@ -404,7 +414,21 @@ export function AddApplicantionForm() {
                         .then(() => {
                           addApplicantForm.reset();
                           console.log("Added employee successfully...");
-                          window.location.href = 'applicant-congrats.html';
+
+                          Swal.fire({
+                            position: "center",
+                            icon: "success",
+                            title: "Your job application save successfully",
+                            showConfirmButton: true, // Change to true to show a confirm button
+                            // Add a confirm button handler
+                            confirmButtonText: 'Confirm', // Customize the button text
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                // User clicked the confirm button
+                                window.location.href = 'applicant-congrats.html';
+                            }
+                        });
+
                         })
                         .catch(error => console.error('Error adding document:', error));
                     })
@@ -426,8 +450,12 @@ export function AddApplicantionForm() {
       });
     } else {
       console.log("No sign-up detected");
+      window.location.href = "login.html"
     }
   });
+
+
+  
 }
 
 window.addEventListener('load', AddApplicantionForm);

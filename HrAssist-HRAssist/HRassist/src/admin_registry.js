@@ -185,7 +185,7 @@ export function AdminAccountInformation() {
                             }).then((result) => {
                                 if (result.isConfirmed) {
                                     // User clicked the confirm button
-                                    window.location.href = 'dashboard.html';
+                                    window.location.href = 'admin_dashboard.html';
                                 }
                             });
                         })

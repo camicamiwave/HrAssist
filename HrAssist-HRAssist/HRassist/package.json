@@ -16,7 +16,9 @@
     "request_proc": "node request_process.js",
     "employee_registry": "node employee_registry.js",
     "applicant_registry": "node applicant_registry.js",
-    "admin_registry": "node admin_registry.js"
+    "admin_registry": "node admin_registry.js",
+    "navbar": "node navbar.js",
+    "fetch_current_user": "node fetch_current_user.js"
   },
   "keywords": [],
   "author": "",
