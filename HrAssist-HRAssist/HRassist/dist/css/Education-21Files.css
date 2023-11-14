@@ -1,0 +1,172 @@
+.fb-profile-block {
+    margin: auto;
+    position: relative;
+    width: 100%;
+  }
+  .cover-container{
+      background: #068E6B;
+      background: -webkit-radial-gradient(bottom, rgb(115, 245, 195) 12%, #068E6B);
+      background: radial-gradient(at bottom, #15cc9e 12%, #068E6B)
+  }
+  .fb-profile-block-thumb{
+    display: block;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+  }
+  .fb-profile-block-menu {
+    border: 1px solid #d3d6db;
+    border-radius: 0 0 3px 3px;
+  }
+  .profile-img a{
+      bottom: 15px;
+      box-shadow: none;
+      display: block;
+      left: 15px;
+      padding:1px;
+      position: absolute;
+      height: 160px;
+      width: 160px;
+      background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+      z-index:9;
+  }
+  .profile-img img {
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07);
+    height:158px;
+    padding: 5px;
+    width:158px;
+  }
+  .profile-active {
+    top: 70px;
+    left: 200px;
+    position: absolute;
+    color:#fff
+  }
+  .profile-name {
+    bottom: 90px;
+    left: 200px;
+    position: absolute;
+  }
+  .profile-hr {
+    bottom: 65px;
+    left: 200px;
+    position: absolute;
+    color:#fff4f4;
+  }
+  .profile-name h2 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+    max-width: 275px;
+    position: relative;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+  .fb-profile-block-menu{
+    height: 44px;
+    position: relative;
+    width:100%;
+    overflow:hidden;
+   }
+  .block-menu {
+    clear: right;
+    padding-left: 205px;
+  }
+  .block-menu ul{
+      margin:0;
+      padding:0;
+  }
+  .block-menu ul li{
+      display:inline-block;
+  }
+  .block-menu ul li a {
+    border-right: 1px solid #e9eaed;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    height: 42px;
+    line-height: 3.0;
+    padding: 0 17px;
+    position: relative;
+    vertical-align: middle;
+    white-space: nowrap;
+    color:#4b4f56;
+    text-transform:capitalize;
+  }
+  .block-menu ul li:first-child a{
+    border-left: 1px solid #e9eaed;
+  }
+
+  /*Personal Data*/
+
+  body{margin-top:20px;
+    background-color:#e2ecea;
+    color:#161616;
+    }
+
+    .img-account-profile {
+        height: 10rem;
+    }
+    .rounded-circle {
+        border-radius: 50% !important;
+    }
+    .card {
+        box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+    }
+    .card .card-header {
+        font-weight: 500;
+    }
+    .card-header:first-child {
+        border-radius: 0.35rem 0.35rem 0 0;
+    }
+    .card-header {
+        padding: 1rem 1.35rem;
+        margin-bottom: 0;
+        background-color: #0dad85;
+        border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+    }
+
+
+    .card-header strong {
+        color:#fff;
+    }
+
+    .form-control, .dataTable-input {
+        display: block;
+        width: 100%;
+        padding: 0.875rem 1.125rem;
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1;
+        color: #69707a;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #c5ccd6;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0.35rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    
+    .nav-borders .nav-link.active {
+        color: #0061f2;
+        border-bottom-color: #0061f2;
+    }
+    .nav-borders .nav-link {
+        color: #69707a;
+        border-bottom-width: 0.125rem;
+        border-bottom-style: solid;
+        border-bottom-color: transparent;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
