@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Dashboard</title>
+    <title>Calendar</title>
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -17,6 +17,11 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+
+
+    <!--calendar css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js">
+    
   </head>
   <body>
    
@@ -139,13 +144,13 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="offices.html">
+              <a class="nav-link" href="pages/forms/basic_elements.html">
                 <span class="menu-title">Offices</span>
                 <i class="mdi mdi-home-modern menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="calendar.html">
+              <a class="nav-link" href="pages/charts/chartjs.html">
                 <span class="menu-title">Calendar</span>
                 <i class="mdi mdi-calendar menu-icon"></i>
               </a>
@@ -253,21 +258,23 @@
         </nav>
         <!-- partial -->
         <div class="main-panel">
-          <div class="content-wrapper">
-            <div class="page-header">
-              <h3 class="page-title">
-                <span class="page-title-icon bg-gradient-primary text-white me-2">
-                  <i class="mdi mdi-home"></i>
-                </span> Dashboard
-              </h3>
-              <nav aria-label="breadcrumb">
-                <ul class="breadcrumb">
-                  <li class="breadcrumb-item active" aria-current="page">
-                    <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <h3 class="page-title">
+                      <span class="page-title-icon bg-gradient-primary text-white me-2">
+                        <i class="mdi mdi-home"></i>
+                      </span> Calendar
+                    </h3>
+                    <div>
+                      <button style="background-color: #08533F; color: #ffffff; padding: 10px 20px; margin-right: 20px;">+ Add Event</button>
+                  </div>
+                  </div>
+              </div>
+
+            <div id='calendar'></div>
+        </div>
+          
+            
     <!-- plugins:js -->
     <script src="assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
@@ -283,6 +290,16 @@
     <!-- Custom js for this page -->
     <script src="assets/js/dashboard.js"></script>
     <script src="assets/js/todolist.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+    </script>
     <!-- End custom js for this page -->
   </body>
 </html>
