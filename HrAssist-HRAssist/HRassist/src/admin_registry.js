@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import { initializeApp } from 'firebase/app';
 import { getStorage, ref, getDownloadURL, uploadBytes } from 'firebase/storage';
 import {
@@ -121,7 +122,8 @@ export function AdminAccountInformation() {
                     console.log('User created:', user);
                     console.log('User display name:', user.displayName);
 
-                    const fileInput = addOtherInfoForm.querySelector('input[name="fileInput"]');
+                    //const fileInput = addOtherInfoForm.querySelector('input[name="fileInput"]');
+                    const fileInput = document.getElementById('fileInput');
                     const selectedFiles = fileInput.files;  
                     const firstSelectedFile = selectedFiles[0];  // Access the first file
       
@@ -172,7 +174,20 @@ export function AdminAccountInformation() {
                         .then(() => {
                             addPersonalInfoForm.reset();
                             console.log("Added admin successfully...");
-                            window.location.href = 'dashboard.html';
+
+                            Swal.fire({
+                                position: "center",
+                                icon: "success",
+                                title: "Admin added successfully",
+                                showConfirmButton: true, // Change to true to show a confirm button
+                                // Add a confirm button handler
+                                confirmButtonText: 'Confirm', // Customize the button text
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    // User clicked the confirm button
+                                    window.location.href = 'dashboard.html';
+                                }
+                            });
                         })
                         .catch(error => console.error('Error adding employee document:', error));
                     })  
