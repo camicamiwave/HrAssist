@@ -1,0 +1,811 @@
+.divider {
+    border: none;
+    height: 1px; /* Adjust the height of the divider as needed */
+    background-color: #ccc; /* Adjust the color of the divider as needed */
+    margin: 20px 0; /* Adjust the margin as needed */
+}
+.grayish-card {
+    background-color: #dcdcdc; /* Grayish background color */
+    border-radius: 15px; /* Rounded corners */
+    margin: 20px; /* Add some margin for spacing */
+    width: 400px; /* Set the width as needed */
+    margin-top: 20px;
+    margin-left: 0px;
+    width:100%;
+    height: 100%;
+
+}
+.imgrewards{
+    aspect-ratio: 1.05;
+    object-fit: contain;
+    object-position: center;
+    width: 46px;
+    overflow: hidden;
+    max-width: 100%;
+    margin-top: 50px;
+    margin-left: 95px;
+  }
+
+  .rewards {
+    color: #068e6b;
+    text-align: center;
+    letter-spacing: 1.56px;
+    align-self: center;
+    white-space: nowrap;
+    margin: auto 0;
+    font: 700 24px/36px Poppins, sans-serif;
+    margin-top: -40px;
+    margin-left: -880px;
+    margin-bottom: -30px;
+  }
+
+  @media (max-width: 991px) {
+    .request {
+      white-space: initial;
+    }
+
+  }
+.h4{
+    margin-top: 200px;
+}
+.card-header{
+    margin-top: 50px;
+    font-size: 25px;
+    margin-left: 25px;
+
+}
+.line{
+    margin-left: -3px;
+    align-self: self-start;
+}
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Lighter shade of gray for odd rows */
+
+}
+
+.table-striped tbody tr:nth-child(even) {
+    background-color: #dcdcdc; /* Darker shade of gray for even rows */
+}
+.table-striped{
+    width: fit-content;
+    font-size: 24px;
+    margin-left: 28px ;
+    align-content: center;
+}
+.table-striped th, .table-striped td {
+    padding: 0px; /* Add spacing to table cells */
+}
+
+/*Newly Hired*/
+.grayish-card1 {
+    background-color: #dcdcdc; /* Grayish background color */
+    border-radius: 15px; /* Rounded corners */
+    margin: 20px; /* Add some margin for spacing */
+    width: 550px; /* Set the width as needed */
+    margin-top: 90px;
+    margin-left: 50px;
+    width:100%;
+    height: 100%;
+}
+
+.card-header1{
+    font-size: 25px;
+    margin-left: 25px;
+    height:500px;
+    
+}
+.line1{
+    margin-left: -3px;
+    align-self: self-start;
+}
+.table-striped1 tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Lighter shade of gray for odd rows */
+
+}
+
+.table-striped1 tbody tr:nth-child(even) {
+    background-color: #dcdcdc; /* Darker shade of gray for even rows */
+}
+.table-striped1{
+    width: fit-content;
+    font-size: 24px;
+    margin-left: 28px ;
+    align-content: center;
+}
+.table-striped1 th, .table-striped td {
+    padding: 0px; /* Add spacing to table cells */
+}
+.main-container {
+    align-self: start;
+    display: flex;
+
+    width: 170px;
+    max-width: 100%;
+    justify-content: space-between;
+
+  }
+
+  @media (max-width: 991px) {
+    .main-container {
+      margin-top: 40px;
+    }
+  }
+
+  .img {
+    aspect-ratio: 1.18;
+    object-fit: contain;
+    object-position: center;
+    width: 45px;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .reports {
+    color: #068e6b;
+    text-align: center;
+    letter-spacing: 1.56px;
+    align-self: start;
+    margin-top: 10px;
+    white-space: nowrap;
+    font: 700 24px/36px Poppins, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .reports {
+      white-space: initial;
+    }
+  }
+
+  .tabs-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ddd;
+    transition: background-color 0.3s;
+  }
+  
+  .tab:hover {
+    background-color: #bbb;
+
+  }
+  .active-tab {
+    background-color: #4CAF50;
+    color: white;
+}
+  .tab-content h2 {
+    color: #068e6b;
+  }
+
+  .imgreports {
+    aspect-ratio: 1.18;
+    object-fit: contain;
+    object-position: center;
+    width: 45px;
+    margin-top: 20px;
+    margin-left: 10px;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .reportstitle {
+    color: #068e6b;
+    text-align: start;
+    letter-spacing: 1.56px;
+    align-self: start;
+    margin-top: -40px;
+    margin-left: 60px;
+    white-space: nowrap;
+    font: 700 24px/36px Poppins, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .reports {
+      white-space: initial;
+    }
+  }
+  /*most active*/
+  .grayish-card2 {
+    background-color: #dcdcdc; /* Grayish background color */
+    border-radius: 15px; /* Rounded corners */
+    margin: 20px; /* Add some margin for spacing */
+    width: 550px; /* Set the width as needed */
+
+    margin-top: -710px;
+    margin-left: 700px;
+    width: max-content;
+    
+}
+.card-header2{
+    font-size: 25px;
+    margin-left: 25px;
+}
+.line2{
+    margin-left: -3px;
+    align-self: self-start;
+}
+.table-striped2 tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Lighter shade of gray for odd rows */
+
+}
+
+.table-striped2 tbody tr:nth-child(even) {
+    background-color: #dcdcdc; /* Darker shade of gray for even rows */
+}
+.table-striped2{
+    width: fit-content;
+    font-size: 24px;
+    margin-left: 28px ;
+    align-content: center;
+}
+.table-striped2 th, .table-striped td {
+    padding: 0px; /* Add spacing to table cells */
+}
+.main-container {
+    align-self: start;
+    display: flex;
+
+    width: 170px;
+    max-width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  @media (max-width: 991px) {
+    .main-container {
+      margin-top: 40px;
+    }
+  }
+
+
+  
+  .imgacc {
+    aspect-ratio: 1.05;
+    object-fit: contain;
+    object-position: center;
+    width: 46px;
+    overflow: hidden;
+    max-width: 100%;
+    margin-left: 140px;
+  }
+  .accounts {
+    color: #068e6b;
+    text-align: center;
+    letter-spacing: 1.56px;
+    align-self: center;
+    white-space: nowrap;
+    margin: auto 0;
+    font: 700 24px/36px Poppins, sans-serif;
+    margin-top:13px;
+    margin-left: -835px;
+
+  }
+
+  @media (max-width: 991px) {
+    .accounts {
+      white-space: initial;
+    }
+  }
+  .add_acc_btn{
+    background-color: #068e6b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font: 500 14px/24px Poppins, sans-serif;
+    cursor: pointer;
+    margin-left: 80%;
+  }
+  .listofacc{
+    color: #068e6b;
+    text-align: left;
+    letter-spacing: 1.04px;
+    font: 500 18px/24px Poppins, sans-serif;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-left: 143px;
+    margin-bottom: -40px;
+  }
+  .listenadd{
+    display: flex;
+    justify-content: space-between; /* or any other value depending on your layout */
+    align-items: center;
+    margin-top: 10px;
+  }
+  .addbtn{
+    margin-top: -25px
+  }
+  .filter-container {
+    display: flex;
+    align-items: center;
+    margin-top: 19px;
+    margin-left: 150px
+  }
+  .form-select {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #068e6b;
+    padding: 3px;
+    font-size: 16px;
+  }
+  /* Style for the filter label */
+  .filter-label {
+    margin-left: -7px;
+    margin-top: 10px;
+    font: 500 16px/24px Poppins, sans-serif;
+    color: #068e6b;;
+    font-weight: bold;
+  }
+  .search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 685px;
+  }
+  .search {
+    padding: 8px 30px 8px 8px; /* Adjust padding as needed */
+    border: 1px solid #068e6b;;
+    border-radius: 5px;
+    width: 200px; /* Adjust width as needed */
+  }
+  .search-icon {
+    position: absolute;
+    right: 10px; /* Adjust right position as needed */
+    cursor: pointer;
+  }
+  .filter-container1 {
+    display: flex;
+    align-items: normal;
+    margin-top: -37px;
+    margin-left: 350px;
+
+  }
+  .form-select1 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #068e6b;
+    padding: 3px;
+    font-size: 16px;
+    
+  }
+  .table-container {
+    
+    width: 80%;
+    margin-left: 140px;
+  }
+  
+  .message-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .message-table th, .message-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .message-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .message-table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  .account-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 0px;
+    margin-left: 0px;
+
+  }
+  
+  .account-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff; /* Set text color as needed */
+    margin-bottom: 0px;
+  }
+  
+  .activate-btn,
+  .terminate-btn {
+    padding: 5px 10px;
+    font-size: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+
+  }
+  
+  .activate-btn {
+    background-color: #4caf50; /* Green color for Activate button */
+    color: white;
+  }
+  
+  .terminate-btn {
+    background-color: #f44336; /* Red color for Terminate button */
+    color: white;
+  }
+
+  .imgacc, .imgapp, .imgrew, .imgreq {
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    margin-right: 10px; /* Adjust the margin as needed */
+    margin-top: 30px;
+    margin-bottom: -50px;
+}
+
+
+
+
+
+
+
+
+
+
+/*Duplicate for Request*/
+
+ 
+  .imgreports {
+    aspect-ratio: 1.18;
+    object-fit: contain;
+    object-position: center;
+    width: 45px;
+    margin-top: 20px;
+    margin-left: 10px;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .reportstitle {
+    color: #068e6b;
+    text-align: start;
+    letter-spacing: 1.56px;
+    align-self: start;
+    margin-top: -40px;
+    margin-left: 60px;
+    white-space: nowrap;
+    font: 700 24px/36px Poppins, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .reports {
+      white-space: initial;
+    }
+  }
+
+  .imgrequest {
+    aspect-ratio: 1.05;
+    object-fit: contain;
+    object-position: center;
+    width: 46px;
+    overflow: hidden;
+    max-width: 100%;
+    margin-top: 50px;
+    margin-left: 130px;
+  }
+
+  .request {
+    color: #068e6b;
+    text-align: center;
+    letter-spacing: 1.56px;
+    align-self: center;
+    white-space: nowrap;
+    margin: auto 0;
+    font: 700 24px/36px Poppins, sans-serif;
+    margin-top: -40px;
+    margin-left: -800px;
+    margin-bottom: -30px;
+  }
+
+  @media (max-width: 991px) {
+    .request {
+      white-space: initial;
+    }
+
+  }
+  .listofreq{
+    color: #068e6b;
+    text-align: left;
+    letter-spacing: 1.04px;
+    font: 500 18px/24px Poppins, sans-serif;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-left: 140px;
+  }
+  .listenadd{
+    display: flex;
+    justify-content: space-between; /* or any other value depending on your layout */
+    align-items: center;
+  }
+
+  .filter-container {
+    display: flex;
+    align-items: center;
+    margin-top: 19px;
+    margin-left: 150px
+  }
+  .form-select {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #068e6b;
+    padding: 3px;
+    font-size: 16px;
+  }
+  /* Style for the filter label */
+  .filter-label {
+    margin-right: 10px;
+    font: 500 16px/24px Poppins, sans-serif;
+    color: #068e6b;;
+    font-weight: bold;
+  }
+  .search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 685px;
+  }
+  .search {
+    padding: 8px 30px 8px 8px; /* Adjust padding as needed */
+    border: 1px solid #068e6b;;
+    border-radius: 5px;
+    width: 200px; /* Adjust width as needed */
+  }
+  .search-icon {
+    position: absolute;
+    right: 10px; /* Adjust right position as needed */
+    cursor: pointer;
+  }
+  .filter-container1 {
+    display: flex;
+    align-items: normal;
+    margin-top: -37px;
+    margin-left: 350px;
+
+  }
+  .form-select1 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #068e6b;
+    padding: 3px;
+    font-size: 16px;
+    
+  }
+  .table-container1 {
+    
+    width: 80%;
+    margin-left: 140px;
+  }
+  
+  .message-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .message-table th, .message-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .message-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .message-table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  .account-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 0px;
+    margin-left: 0px;
+
+  }
+  
+  .account-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff; /* Set text color as needed */
+    margin-bottom: 0px;
+  }
+  
+  .activate-btn,
+  .terminate-btn {
+    padding: 5px 10px;
+    font-size: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+
+  }
+  
+  .activate-btn {
+    background-color: #4caf50; /* Green color for Activate button */
+    color: white;
+  }
+  
+  .terminate-btn {
+    background-color: #f44336; /* Red color for Terminate button */
+    color: white;
+  }
+
+  /*Applicants*/
+  .applicants {
+    color: #068e6b;
+    text-align: center;
+    letter-spacing: 1.56px;
+    align-self: center;
+    white-space: nowrap;
+    margin: auto 0;
+    font: 700 24px/36px Poppins, sans-serif;
+    margin-top:13px;
+    margin-left: -835px;
+
+  }
+
+  @media (max-width: 991px) {
+    .applicants {
+      white-space: initial;
+    }
+  }
+  .add_applicants{
+    background-color: #068e6b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font: 500 14px/24px Poppins, sans-serif;
+    cursor: pointer;
+    margin-left: 80%;
+  }
+  .listofapp{
+    color: #068e6b;
+    text-align: left;
+    letter-spacing: 1.04px;
+    font: 500 18px/24px Poppins, sans-serif;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-left: 143px;
+    margin-bottom: -40px;
+  }
+  .listenadd{
+    display: flex;
+    justify-content: space-between; /* or any other value depending on your layout */
+    align-items: center;
+    margin-top: 10px;
+  }
+  .addbtn{
+    margin-top: -25px
+  }
+  .filter-container {
+    display: flex;
+    align-items: center;
+    margin-top: 19px;
+    margin-left: 150px
+  }
+  .form-select {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #068e6b;
+    padding: 3px;
+    font-size: 16px;
+  }
+  /* Style for the filter label */
+  .filter-label {
+    margin-left: -7px;
+    margin-top: 10px;
+    font: 500 16px/24px Poppins, sans-serif;
+    color: #068e6b;;
+    font-weight: bold;
+  }
+  .search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 685px;
+  }
+  .search {
+    padding: 8px 30px 8px 8px; /* Adjust padding as needed */
+    border: 1px solid #068e6b;;
+    border-radius: 5px;
+    width: 200px; /* Adjust width as needed */
+  }
+  .search-icon {
+    position: absolute;
+    right: 10px; /* Adjust right position as needed */
+    cursor: pointer;
+  }
+  .filter-container1 {
+    display: flex;
+    align-items: normal;
+    margin-top: -37px;
+    margin-left: 350px;
+
+  }
+  .form-select1 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #068e6b;
+    padding: 3px;
+    font-size: 16px;
+    
+  }
+  .table-container {
+    
+    width: 80%;
+    margin-left: 140px;
+  }
+  
+  .message-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .message-table th, .message-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .message-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .message-table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  .view-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+
+  .account-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff; /* Set text color as needed */
+    margin-bottom: 0px;
+  }
+  
+  .view-btn {
+    padding: 5px 10px;
+    font-size: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: blue; /* Blue color for Viewbutton */
+    color: white;
+
+  }
+
+
+

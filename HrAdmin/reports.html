@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Reports</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="reports.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <!--Tabs-->
+
+    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7da4dc4c-4db2-4881-ac97-b8227a54d34b?apiKey=9c098728c0c645bf9643b96f1cd2c880&" class="imgreports" />
+    <div class="reportstitle">Reports</div>
+      
+    <div class="tabs-container">
+            <div class="tab" id = "acc" onclick="openTab('Accounts')">Accounts</div>
+            <div class="tab" id = "app" onclick="openTab('Applicants')">Applicants</div>
+            <div class="tab" id = "rew" onclick="openTab('Rewards')">Rewards</div>
+            <div class="tab" id = "req" onclick="openTab('Request')">Request</div>
+    </div>
+    
+    <!--Rewards-->
+
+        <div class="tab-content" id="Rewards">
+            <div class="tab-content" id="Rewards"></div>
+            <img loading="lazy" src="assets/gift-solid 1 (1).png" class="imgrewards" />
+                <div class="rewards">Rewards</div>
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card grayish-card">
+                            <div class="card-header">
+                                <h4>Candidate for Punctuality</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>Name</th>
+                                                <th>Department</th>
+                                                <th>Attendance</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>John Doe</td>
+                                                <td>HR</td>
+                                                <td>20</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Jane Smith</td>
+                                                <td>IT</td>
+                                                <td>15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Bob Johnson</td>
+                                                <td>Finance</td>
+                                                <td>18</td>
+                                            </tr>
+                                            <!-- Add more rows as needed -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!--Newly Hired-->
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card grayish-card">
+                                <div class="card-header">
+                                    <h4>Newly Hired</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>No.</th>
+                                                    <th>Name</th>
+                                                    <th>Department</th>
+                                                    <th>Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>John Doe</td>
+                                                    <td>HR</td>
+                                                    <td>11-11-2023</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Jane Smith</td>
+                                                    <td>IT</td>
+                                                    <td>11-12-2023</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Bob Johnson</td>
+                                                    <td>Finance</td>
+                                                    <td>18-12-2023</td>
+                                                </tr>
+                                                <!-- Add more rows as needed -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+                <!--Most Active-->
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card grayish-card">
+                                <div class="card-header">
+                                    <h4>Most Active Employee</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>No.</th>
+                                                    <th>Name</th>
+                                                    <th>Department</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>John Doe</td>
+                                                    <td>HR</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Jane Smith</td>
+                                                    <td>IT</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Bob Johnson</td>
+                                                    <td>Finance</td>
+                                                </tr>
+                                                <!-- Add more rows as needed -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+            
+            <!--Accounts-->
+
+            <div class="tab-content" id="Accounts" style="display: none;">
+                <div class = acc>
+                <img loading="lazy" src="assets/acc.png" class="imgacc" />
+                <div class="accounts">Accounts</div>
+                <div class = "listnadd">
+                    <div class="listofacc">List of Accounts</div>
+                    <div class="addbtn"><button class="add_acc_btn">+Add Account</button></div>
+                    <hr>
+                </div>
+                </div>
+                <div class = "filter-container">
+                    <label for="filter" class="filter-label">Filter</label>
+                    <select name="filter" class="form-select" data-el="form-select">
+                      <option value="All">All</option>
+                      <option value="Accounting">Accounting</option>
+                      <option value="HR">HR</option>
+                    </select>
+                    <div class="search-container">
+                      <input type="text" id="search" placeholder="Search" class="search">
+                      <img loading="lazy" src="assets/Search Icon.png" class="search-icon" alt="Search">
+                    </div>
+                </div>
+                <div class = "filter-container1">
+                    <select name="filter" class="form-select1" data-el="form-select">
+                      <option value="All">All</option>
+                      <option value="Applicant">Applicant</option>
+                      <option value="Permanent">Permanent</option>
+                      <option value="Job Order">Job Order</option>
+                    </select>
+                </div>
+                <div class="table-container">
+                    <table class="message-table">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Category</th>
+                          <th>Account Status</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro Penduko</td>
+                          <td>Applicant</td>
+                          <td>Active</td>
+                          <td class="account-container">
+                            <button class="activate-btn">Activate</button>
+                            <button class="terminate-btn">Terminate</button>
+                          </td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+
+            <!--Applicants-->
+
+            <div class="tab-content" id="Applicants" style="display: none;">
+                <div class = acc>
+                    <img loading="lazy" src="assets/acc.png" class="imgacc" />
+                    <div class="applicants">Applicants</div>
+                    <div class = "listnadd">
+                        <div class="listofapp">List of Applicants</div>
+                        <div class="addbtn"><button class="add_applicants">+Add Applicant</button></div>
+                        <hr>
+                    </div>
+                </div>
+                <div class = "filter-container">
+                    <label for="filter" class="filter-label">Filter</label>
+                    <select name="filter" class="form-select" data-el="form-select">
+                      <option value="All">All</option>
+                      <option value="Accounting">Pending</option>
+                      <option value="HR">Scheduled</option>
+                    </select>
+                    <div class="search-container">
+                      <input type="text" id="search" placeholder="Search" class="search">
+                      <img loading="lazy" src="assets/Search Icon.png" class="search-icon" alt="Search">
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="message-table">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Application Date</th>
+                          <th>Application Status</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Pedro Penduko</td>
+                          <td>11-12-2023</td>
+                          <td>Pending</td>
+                          <td class="view-container">
+                            <button class="view-btn" onclick="redirectToApplicantProf()">View</button>
+                          </td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+                
+            </div>
+
+            <!--request Tab-->
+        
+            <div class="tab-content" id="Request" style="display: none;">
+                <img loading="lazy" src="assets/solar_calendar-bold.png" class="imgrequest" />
+                <div class="request">Request</div>
+                <div class = "listnadd">
+                    <div class="listofreq">List of Employee Request</div>
+                    <hr>
+                </div>
+                <div class = "filter-container">
+                    <label for="filter" class="filter-label">Filter</label>
+                    <select name="filter" class="form-select" data-el="form-select">
+                      <option value="All">All</option>
+                      <option value="Accounting">Leave</option>
+                      <option value="HR">Locaor Slip</option>
+                    </select>
+                    <div class="search-container">
+                      <input type="text" id="search" placeholder="Search" class="search">
+                      <img loading="lazy" src="assets/Search Icon.png" class="search-icon" alt="Search">
+                    </div>
+                </div>
+                <div class="table-container1">
+                    <table class="message-table">
+                      <thead>
+                        <tr>
+                          <th>Username</th>
+                          <th>Request</th>
+                          <th>Reason</th>
+                          <th>Duration</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>username@username.com</td>
+                          <td>Leave</td>
+                          <td>Sick</td>
+                          <td>3 days</td>
+                          <td class="account-container">
+                            <button class="activate-btn">Accept</button>
+                            <button class="terminate-btn">Deny</button>
+                          </td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+
+
+            
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+<script src="reports.js"></script>
+</html>
+

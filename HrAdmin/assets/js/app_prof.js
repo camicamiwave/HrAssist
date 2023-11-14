@@ -16,4 +16,9 @@ function openTab(tabName) {
 
     // Add 'active-tab' class to the selected tab
     event.currentTarget.classList.add("active-tab");
+
+    // Open the 'Personal Information' tab on page load
+    window.addEventListener('load', function () {
+            openTab('PersonalInformation');
+        });
 }
