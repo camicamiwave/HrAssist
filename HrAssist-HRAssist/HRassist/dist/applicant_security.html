@@ -77,24 +77,24 @@
                 <div class="card mb-4">
                     <div class="card-header">Change Password</div>
                     <div class="card-body">
-                        <form>
-                            <!-- Form Group (current password)-->
+                        <p>Reset your password by following the instructions sent to your email.</p>
+                        <button class="btn btn-primary" id="resetbtn" type="button">Reset Password</button>
+                        <!--
+                        <form> 
                             <div class="mb-3">
                                 <label class="small mb-1" for="currentPassword">Current Password</label>
                                 <input class="form-control" id="currentPassword" type="password" placeholder="Enter current password">
-                            </div>
-                            <!-- Form Group (new password)-->
+                            </div> 
                             <div class="mb-3">
                                 <label class="small mb-1" for="newPassword">New Password</label>
                                 <input class="form-control" id="newPassword" type="password" placeholder="Enter new password">
-                            </div>
-                            <!-- Form Group (confirm password)-->
+                            </div> 
                             <div class="mb-3">
                                 <label class="small mb-1" for="confirmPassword">Confirm Password</label>
                                 <input class="form-control" id="confirmPassword" type="password" placeholder="Confirm new password">
                             </div>
-                            <button class="btn btn-primary" type="button">Save</button>
-                        </form>
+                            <button class="btn btn-primary" id="resetbtn" type="button">Save</button>
+                        </form>-->
                     </div>
                 </div>
                 <!-- Security preferences card-->
@@ -125,7 +125,7 @@
                     <div class="card-header">Delete Account</div>
                     <div class="card-body">
                         <p>Deleting your account is a permanent action and cannot be undone. If you are sure you want to delete your account, select the button below.</p>
-                        <button class="btn btn-danger-soft text-danger" type="button">I understand, delete my account</button>
+                        <button class="btn btn-danger-soft text-danger" id="deleteAccountBtn" type="button">I understand, delete my account</button>
                     </div>
                 </div>
             </div>
@@ -197,10 +197,9 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
  
-    <!-- Database Javascript -->  
-    <script src="bundles/auth.bundle.js"></script>   
-    <script src="bundles/cloud_storage.bundle.js"></script> 
-    <script src="bundles/firestore_retrieve.bundle.js"></script> 
+    <!-- Database Javascript -->   
+    <script src="bundles/auth.bundle.js"></script> 
+    <script src="bundles/fetch_current_user.bundle.js"></script> 
 </body>
 
 </html>

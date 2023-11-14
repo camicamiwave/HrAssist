@@ -346,3 +346,4 @@ export function SignupAccount() {
 window.addEventListener('load', SignupApplicantAccount);
 window.addEventListener('load', LoginChecker);
 window.addEventListener('load', SignupAccount);
+

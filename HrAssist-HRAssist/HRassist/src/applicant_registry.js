@@ -499,6 +499,21 @@ export function FetchApplicationStatus() {
         const applicantId = document.getElementById('ApplicantIDNum');
         applicantId.innerHTML = data.ApplicantID;
 
+        const applicantDateCreated = document.getElementById('ApplicantTimeCreated');
+
+        // Convert Firestore timestamp to JavaScript Date object
+        const dateCreated = data.createdAt;
+        const createdAtDate = dateCreated.toDate();
+
+        // Format the date as a string
+        const formattedDate = createdAtDate.toLocaleString('en-US', {
+          year: 'numeric',
+          month: 'numeric',
+          day: 'numeric', 
+        });
+
+        applicantDateCreated.innerHTML = formattedDate;
+
       });
 
     });
