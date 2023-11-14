@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appreciation Form</title>
+
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="stylesform.css">
+</head>
+<body>
+  <div class="main-container">
+    <img src="Assets\gift-solid 1.png" class="image" alt="Rewards" />
+    <div class="description">Rewards</div>
+  </div>
+  <div class="appreciation-title">Appreciation Form</div>
+  <hr>
+  <div class="main-container">
+    <div class="form-container">
+      <div class="form-column">
+        <div class="form-box">
+          <label for="firstname_txtbox" class="form-label"></label>
+          <input type="text" id="firstname_txtbox" placeholder="First Name" name="firstname_txtbox" class="form-input" data-el="form-input-1" required>
+          <label for="lastname_txtbox" class="form-label"></label>
+          <input type="text" id="lastname_txtbox" placeholder="Last Name" name="lastname_txtbox" class="form-input" data-el="form-input-2" required>
+          <label for = dateissue class="form-label">Date Issue:</label>
+          <input type="date" id="dateissue" placeholder="Date Issue" name="dateissue" class="form-input" data-el="form-input-3" required>
+          </div>
+          
+          <div><label for="token" class="form-label"></label>
+          <input type="text" id="token" placeholder="Token" name="token" class="form-input" data-el="form-input-4" required>
+          </div>
+          <div>
+          <label for="message" class="form-label"></label>
+          <input type="text" id="message" placeholder="Message(Optional)" name="message" class="form-input" data-el="form-input-5" required>
+          </div>
+      </div>
+      
+      <div class="form-column" id = "form-column2">
+        <div class="form-box">
+          <label for="mdname_txtbox" class="form-label"></label>
+          <input type="text" id="mdname_txtbox" placeholder="Middle Name" name="mdname_txtbox" class="form-input" data-el="form-input-6" required>
+          <label for="nameext_txtbox" class="form-label"></label>
+          <input type="text" id="nameext_txtbox" placeholder="Name Extension" name="nameext_txtbox" class="form-input" data-el="form-input-7" required>
+        </div>
+        <div class="form-div"></div>
+        <div class="center-container">
+          <button class="save-button">Save</button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+  <!-- Link to your JavaScript file -->
+  <script src="scriptform.js"></script>
+</body>
+</html>
