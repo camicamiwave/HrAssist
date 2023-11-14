@@ -1,0 +1,129 @@
+.rewards-title{
+    color: #068e6b;
+    font-weight: bold;
+    text-align: left;
+    letter-spacing: 1.04px;
+    margin-left: 50px;
+    font: 500 30px Poppins, sans-serif;
+  }
+.image1 {
+aspect-ratio: 1;
+object-fit: contain;
+object-position: center;
+width: 30px;
+overflow: hidden;
+align-self: left;
+max-width: 100%;
+margin-top: 20px;
+margin-left: 50px;
+}
+
+.description {
+color: #068e6b;
+text-align:left;
+letter-spacing: 1.56px;
+margin-top: -30px;
+margin-bottom: 30px;
+margin-left: 90px;
+font: 500 24px Poppins, sans-serif;
+}
+.add_reward_btn{
+    background-color: #068e6b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 800px;
+  }
+  /* Style for the separation line */
+
+  .filter-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 50px;
+  }
+  .form-select {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: rgba(155, 155, 155, 1);
+  }
+  /* Style for the filter label */
+  .filter-label {
+    margin-right: 10px;
+    font-size: 16px;
+    color: black;
+  }
+  .table-container {
+    width: 80%;
+    margin-left: 140px;
+  }
+  
+  .message-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .message-table th, .message-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .message-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .message-table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  .centered-image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; /* Adjust margin as needed */
+
+  } 
+  .image2 {
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    /* Additional styles as needed */
+  }
+  .sent_token_text{
+    text-align: center;
+    margin-top: 0px; /* Adjust margin as needed */
+
+  }
+  .add_reward_btn2{
+    background-color: #068e6b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 0px;
+    align-items: center;
+  }
+  .search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 800px;
+  }
+  .search {
+    padding: 8px 30px 8px 8px; /* Adjust padding as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px; /* Adjust width as needed */
+  }
+  .search-icon {
+    position: absolute;
+    right: 10px; /* Adjust right position as needed */
+    cursor: pointer;
+  }
+  
