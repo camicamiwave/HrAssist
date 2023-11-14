@@ -15,7 +15,8 @@
     "login_authentication": "node login_auth.js",
     "request_proc": "node request_process.js",
     "employee_registry": "node employee_registry.js",
-    "applicant_registry": "node applicant_registry.js"
+    "applicant_registry": "node applicant_registry.js",
+    "admin_registry": "node admin_registry.js"
   },
   "keywords": [],
   "author": "",
