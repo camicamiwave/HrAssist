@@ -63,8 +63,8 @@
                                 <ul>
                                     <li><a href="datasheet.html">Personal</a></li>
                                     <li><a href="Education-21Files.html">Education</a></li>
-                                    <li><a href="#">Other Information</a></li>
-                                    <li><a href="#">Signature</a></li>
+                                    <li><a href="OtherInfo-201file.html">Other Information</a></li>
+                                    <li><a href="signature-201file.html">Signature</a></li>
                                     <li><a href="#">Files</a></li>
                                 </ul>
                             </div>
@@ -154,16 +154,12 @@
                                 "<td><input type='checkbox' class='form-check-input' /></td>" +
                                 "</tr>";
                 
-                            $("#worked tbody").append(newRow);
+                           // Delete row
+                           $(document).on("click", ".btn-delete-row", function () {
+                                            $(this).closest("tr").remove();
+                                        });
+                                    });
                         });
-                
-                        $(".btn-delete").on("click", function () {
-                            $("#worked tbody input:checked").each(function () {
-                                // Remove the entire row
-                                $(this).closest("tr").remove();
-                            });
-                        });
-                    });
                 </script>
                 
     <style>
@@ -225,6 +221,7 @@
                                         </div>
                                     </div>
                                 </div>
+                        
                                 
                 <!--VII. LEARNING AND DEVELOPMENT (L&D) INTERVENTIONS/TRAINING PROGRAMS ATTENDED-->
                 <div class="container">
@@ -365,7 +362,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <br>
+                    
                             <hr>
 
                             <div class="container">
@@ -374,12 +371,49 @@
                                         <p>Are you related by consanguinity or affinity to the appointing or recommending authority, 
                                             or to the chief of bureau or office or to the person who has immediate supervision over you in the Office, 
                                             Bureau or Department where you will be apppointed.</p>
+                                            <div class="group">
+                                                <div class="d-inline">a. within the third degree?</div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                                        <label class="form-check-label" for="inlineCheckbox1">YES</label>
+                                                      </div>
+                                                      <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                                        <label class="form-check-label" for="inlineCheckbox2">NO</label>
+                                                      </div>
+                                                </div>
+                                            </div>
 
+                                            <div class="group">
+                                                <div class="d-inline">b. within the fourth degree (for Local Government Unit - Career Employees)?</div>
+                                                
+                                                <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                                        <label class="form-check-label" for="inlineCheckbox1">YES</label>
+                                                      </div>
+                                                      <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                                        <label class="form-check-label" for="inlineCheckbox2">NO</label>
+                                                      </div>
+                                                
+                                                </div>
 
-                            
-                            
-                            
-                                
+                                                <div class="form-check form-check-inline">
+                                                <div class="col-md-2">
+                                                    <label class="small mb-1" for="inputCsId">If YES, give details:</label>
+                                                    <input class="form-control" id="inputCsId" type="text" placeholder="" value="">
+                                                </div>
+                                                </div>
+                                            </div>
+                                        <style>
+                                            .form-check {
+                                                align-items:right;
+                                            }
+                                        </style>
+                                            
+                                            
+
+                               
     </section><!-- End Breadcrumbs -->
 
 </main><!-- End #main -->
