@@ -44,7 +44,34 @@
                         <div class="fb-profile-block-thumb cover-container"></div>
                         <div class="profile-img">
                             <a href="#">
-                                <img class="" id="applicantProfilePic" src="img/profile.png" alt="">        
+                                <label for="fileInput">
+                                    <img class="" id="applicantProfilePic" src="img/profile.png" alt="Profile Picture">
+                                </label>
+                                <input type="file" id="fileInput" name="fileInput" style="display: none" accept="image/*">   
+
+                                <script>
+                                    // Get references to the image and file input
+                                    const profileImage = document.getElementById('applicantProfilePic');
+                                    const fileInput = document.getElementById('fileInput');
+
+                                    // Add an event listener to the file input
+                                    fileInput.addEventListener('change', handleFileSelect);
+
+                                    // Function to handle file selection
+                                    function handleFileSelect(event) {
+                                        const file = event.target.files[0];
+
+                                        if (file) {
+                                            // Read the selected file as a Data URL
+                                            const reader = new FileReader();
+                                            reader.onload = function (e) {
+                                                // Set the image source to the Data URL
+                                                profileImage.src = e.target.result;
+                                            };
+                                            reader.readAsDataURL(file);
+                                        }
+                                    }
+                                </script>
                             </a>
                         </div>
                         <div class="profile-active">
@@ -91,7 +118,7 @@
                     <br>
                     <div class="card-header"><strong>I. PERSONAL INFORMATION</strong></div>
                     <div class="card-body">
-                        <form>
+                        <form id="employeeDataSheet">
                             <!-- Form Group (CS ID NO)-->
                             <div class="col-md-2">
                                 <label class="small mb-1" for="inputCsId">CS ID NO:</label>
@@ -128,11 +155,11 @@
                                         <label for="inputExName">Gender</label>
                                         <div class="checkbox-tick">
                                             <label class="male">
-                                                <input type="radio" name="gender" value="male" checked> Male<br>
+                                                <input type="radio" id="gender" name="gender" value="male" checked> Male<br>
                                                 <span class="checkmark"></span>
                                             </label>
                                             <label class="female">
-                                                <input type="radio" name="gender" value="female"> Female<br>
+                                                <input type="radio" id="gender" name="gender" value="female"> Female<br>
                                                 <span class="checkmark"></span>
                                             </label>
                                         </div>
@@ -141,11 +168,11 @@
                                 <!-- Form Group (bdate)-->
                                 <div class="col-md-3">
                                     <label for="inputBdate">Birthdate</label>
-                                    <input type="date" placeholder="Birthdate" class="form-control">
+                                    <input type="date" placeholder="Birthdate" id="Birthdate" class="form-control">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputPlaceBirth">Place of Birth</label>
-                                    <input type="input" placeholder="PlaceBirth" class="form-control">
+                                    <input type="input" placeholder="PlaceBirth" id="PlaceBirth" class="form-control">
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="inputStatus">Civil Status</label>
@@ -235,12 +262,13 @@
                                 <div class="col-md-4">
                                     <label class="small mb-1" for="checkDetails">If Dual Citizenship (Please indicate details):</label> <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                        <label class="form-check-label" for="inlineCheckbox1">by birth</label>
+                                        <input class="form-check-input" type="radio" id="citizenshipType" name="citizenshipType" value="byBirth" checked>
+                                        <label class="form-check-label" for="ByBirth">By Birth</label>
                                       </div>
+                                      
                                       <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                        <label class="form-check-label" for="inlineCheckbox2">by naturalization</label>
+                                        <input class="form-check-input" type="radio" id="citizenshipType" name="citizenshipType" value="Naturalize">
+                                        <label class="form-check-label" for="Naturalize">By Naturalization</label>
                                       </div>
                                 </div>
                                 <div class="col-md-4">
@@ -298,21 +326,21 @@
                             <div class="row gx-3 mb-1">
                             <!-- Form Group (first name)-->
                             <div class="col-md-4">
-                                <label class="small mb-1" for="inputFirstName">First name</label>
-                                <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Pedro">
+                                <label class="small mb-1" for="inputSpouseFirstName">First name</label>
+                                <input class="form-control" id="inputSpouseFirstName" type="text" placeholder="Enter your first name" value="Pedro">
                             </div>
                             <!-- Form Group (middle name)-->
                             <div class="col-md-3">
-                                <label class="small mb-1" for="inputMiddleName">Middle name</label>
-                                <input class="form-control" id="inputMiddleName" type="text" placeholder="Enter your middle name" value="Garcia">
+                                <label class="small mb-1" for="inputSpouseMiddleName">Middle name</label>
+                                <input class="form-control" id="inputSpouseMiddleName" type="text" placeholder="Enter your middle name" value="Garcia">
                             </div>
                             <div class="col-md-4">
-                                <label class="small mb-1" for="inputSurName">Surname</label>
-                                <input class="form-control" id="inputSurName" type="text" placeholder="Enter your surname" value="Batumbakal">
+                                <label class="small mb-1" for="inputSpouseSurName">Surname</label>
+                                <input class="form-control" id="inputSpouseSurName" type="text" placeholder="Enter your surname" value="Batumbakal">
                             </div>
                             <div class="col-md-1">
-                                <label class="small mb-1" for="InputExName">Ex. name</label>
-                                <input class="form-control" id="inputExName" type="text" placeholder="Enter your surname" value="Jr.">
+                                <label class="small mb-1" for="inputSpouseExName">Ex. name</label>
+                                <input class="form-control" id="inputSpouseExName" type="text" placeholder="Enter your surname" value="Jr.">
                             </div>
                         </div>
                         <hr>
@@ -321,45 +349,45 @@
                         <div class="row gx-3 mb-1">
                             <!-- Form Group (first name)-->
                             <div class="col-md-4">
-                                <label class="small mb-1" for="inputOccupation">Occupation</label>
-                                <input class="form-control" id="inputOccupation" type="text" placeholder="" value="">
+                                <label class="small mb-1" for="inputSpouseOccupation">Occupation</label>
+                                <input class="form-control" id="inputSpouseOccupation" type="text" placeholder="" value="">
                             </div>
                             <!-- Form Group (middle name)-->
                             <div class="col-md-4">
-                                <label class="small mb-1" for="inputEmployer">Employer/Business name</label>
-                                <input class="form-control" id="inputEmployer" type="text" placeholder="" value="">
+                                <label class="small mb-1" for="inputSpouseEmployer">Employer/Business name</label>
+                                <input class="form-control" id="inputSpouseEmployer" type="text" placeholder="" value="">
                             </div>
                             <div class="col-md-4">
-                                <label class="small mb-1" for="inputBusinessAdd">Business Address</label>
-                                <input class="form-control" id="inputBusinessAdd" type="text" placeholder="" value="">
+                                <label class="small mb-1" for="inputSpouseBusinessAdd">Business Address</label>
+                                <input class="form-control" id="inputSpouseBusinessAdd" type="text" placeholder="" value="">
                             </div>
                         </div>
                         <hr>
 
                         <div class="col-md-4">
-                            <label class="small mb-1" for="inputTelNo">Telephone No.</label>
-                            <input class="form-control" id="inputTelNo" type="text" placeholder="" value="">
+                            <label class="small mb-1" for="inputSpouseTelNo">Telephone No.</label>
+                            <input class="form-control" id="inputSpouseTelNo" type="text" placeholder="" value="">
                         </div>
                         <hr>
                         <div class="small mb-1">Name of Father</div>
                         <div class="row gx-3 mb-1">
                             <!-- Form Group (first name)-->
                             <div class="col-md-4">
-                                <label class="small mb-1" for="inputFirstName">First name</label>
-                                <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Pedro">
+                                <label class="small mb-1" for="inputFatherFirstName">First name</label>
+                                <input class="form-control" id="inputFatherFirstName" type="text" placeholder="Enter your first name" value="Pedro">
                             </div>
                             <!-- Form Group (middle name)-->
                             <div class="col-md-3">
-                                <label class="small mb-1" for="inputMiddleName">Middle name</label>
-                                <input class="form-control" id="inputMiddleName" type="text" placeholder="Enter your middle name" value="Garcia">
+                                <label class="small mb-1" for="inputFatherMiddleName">Middle name</label>
+                                <input class="form-control" id="inputFatherMiddleName" type="text" placeholder="Enter your middle name" value="Garcia">
                             </div>
                             <div class="col-md-4">
-                                <label class="small mb-1" for="inputSurName">Surname</label>
-                                <input class="form-control" id="inputSurName" type="text" placeholder="Enter your surname" value="Batumbakal">
+                                <label class="small mb-1" for="inputFatherSurName">Surname</label>
+                                <input class="form-control" id="inputFatherSurName" type="text" placeholder="Enter your surname" value="Batumbakal">
                             </div>
                             <div class="col-md-1">
                                 <label class="small mb-1" for="InputExName">Ex. name</label>
-                                <input class="form-control" id="inputExName" type="text" placeholder="Enter your surname" value="Jr.">
+                                <input class="form-control" id="inputFatherExName" type="text" placeholder="Enter your surname" value="Jr.">
                             </div>
                         </div>
                         <hr>
@@ -368,21 +396,21 @@
                         <div class="row gx-3 mb-1">
                             <!-- Form Group (first name)-->
                             <div class="col-md-3">
-                                <label class="small mb-1" for="inputFirstName">First name</label>
-                                <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Pedro">
+                                <label class="small mb-1" for="inputMotherFirstName">First name</label>
+                                <input class="form-control" id="inputMotherFirstName" type="text" placeholder="Enter your first name" value="Pedro">
                             </div>
                             <!-- Form Group (middle name)-->
                             <div class="col-md-3">
-                                <label class="small mb-1" for="inputMiddleName">Middle name</label>
-                                <input class="form-control" id="inputMiddleName" type="text" placeholder="Enter your middle name" value="Garcia">
+                                <label class="small mb-1" for="inputMotherMiddleName">Middle name</label>
+                                <input class="form-control" id="inputMotherMiddleName" type="text" placeholder="Enter your middle name" value="Garcia">
                             </div>
                             <div class="col-md-3">
-                                <label class="small mb-1" for="inputSurName">Surname</label>
-                                <input class="form-control" id="inputSurName" type="text" placeholder="Enter your surname" value="Batumbakal">
+                                <label class="small mb-1" for="inputMotherSurName">Surname</label>
+                                <input class="form-control" id="inputMotherSurName" type="text" placeholder="Enter your surname" value="Batumbakal">
                             </div>
                             <div class="col-md-3">
-                                <label class="small mb-1" for="inputMaiden">Maiden name</label>
-                                <input class="form-control" id="InputMaiden" type="text" placeholder="" value="">
+                                <label class="small mb-1" for="inputMotherMaiden">Maiden name</label>
+                                <input class="form-control" id="inputMotherMaiden" type="text" placeholder="" value="">
                             </div>
                         </div>
                         <hr>
@@ -398,20 +426,20 @@
                     <div class="row gx-3 mb-1" id="formContainer">
                         <!-- Initial set of form fields -->
                         <div class="col-md-4">
-                            <label class="small mb-1" for="inputFirstName">First name</label>
-                            <input class="form-control" id="inputFirstName" type="text" placeholder="" value="" oninput="generateForms()">
+                            <label class="small mb-1" for="inputChildFirstName">First name</label>
+                            <input class="form-control" id="inputChildFirstName" type="text" placeholder="" value="" oninput="generateForms()">
                         </div>
                         <div class="col-md-3">
-                            <label class="small mb-1" for="inputMiddleName">Middle name</label>
-                            <input class="form-control" id="inputMiddleName" type="text" placeholder="" value="" oninput="generateForms()">
+                            <label class="small mb-1" for="inputChildMiddleName">Middle name</label>
+                            <input class="form-control" id="inputChildMiddleName" type="text" placeholder="" value="" oninput="generateForms()">
                         </div>
                         <div class="col-md-4">
-                            <label class="small mb-1" for="inputSurName">Surname</label>
-                            <input class="form-control" id="inputSurName" type="text" placeholder="" value="" oninput="generateForms()">
+                            <label class="small mb-1" for="inputChildSurName">Surname</label>
+                            <input class="form-control" id="inputChildSurName" type="text" placeholder="" value="" oninput="generateForms()">
                         </div>
                         <div class="col-md-1">
-                            <label class="small mb-1" for="InputExName">Ex. name</label>
-                            <input class="form-control" id="inputExName" type="text" placeholder="" value="">
+                            <label class="small mb-1" for="inputChildExName">Ex. name</label>
+                            <input class="form-control" id="inputChildExName" type="text" placeholder="" value="">
                         </div>
                     </div>
                     <hr>
@@ -448,6 +476,8 @@
                             }
                         }
                     </script>
+
+                    <input type="submit" id="submitBtn" name="submitBtn" class="btn btn-success" value="Submit"/>
                     
                     </form>
                 </div>
@@ -474,6 +504,7 @@
                     <!-- Template Main JS File -->
                     <script src="js/datasheet.js"></script>
                     <script src="bundles/auth.bundle.js"></script>   
+                    <script src="bundles/employee_registry.bundle.js"></script>   
 
 </body>
 
