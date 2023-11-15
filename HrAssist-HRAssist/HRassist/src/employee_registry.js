@@ -101,6 +101,7 @@ window.addEventListener('load', GetEmployeeTable);
 function FetchUserLevel(){
 
 }
+
 export function AddEmployeeDataSheet() {
   
   const TestcolRef = collection(db, 'User Account');
@@ -213,6 +214,19 @@ export function AddEmployeeDataSheet() {
                     ChildrenDetails: []
                   };
 
+                  const numberChildren = document.getElementById("numberOfChildren").value;
+
+                  const formData = []
+              
+                  for (let i = 1; i <= numberChildren; i++) {   
+                    employeeData.ChildrenDetails.push({
+                      firstName: document.getElementById(`inputFirstName${i}`).value,
+                      middleName: document.getElementById(`inputMiddleName${i}`).value,
+                      surName: document.getElementById(`inputSurName${i}`).value,
+                      exName: document.getElementById(`inputExName${i}`).value,
+                      });
+                  }
+                
                   // Add data to Firestore
                   return addDoc(EmployeecolRef, employeeData);
                 })
@@ -223,26 +237,30 @@ export function AddEmployeeDataSheet() {
                 })
                 .then(() => {
                   
-                })
-                .then(() => {
-                  // Reset the form
-                  addDataSheetForm.reset();
-                  console.log("Added employee successfully...");
-
-                  // Display success message using SweetAlert
                   Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "Employee added successfully",
-                    showConfirmButton: true,
-                    confirmButtonText: 'Confirm',
+                    title: "Are you sure?",
+                    text: "Employee's personal information will be saved",
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Confirm"
                   }).then((result) => {
                     if (result.isConfirmed) {
-                      // User clicked the confirm button
-                      window.location.href = 'admin_dashboard.html';
+                      Swal.fire({
+                        title: "Saved!",
+                        text: "Your employee added successfully...",
+                        icon: "success"
+                      }).then(() => {
+                        // Reset the form
+                        addDataSheetForm.reset();
+                        console.log("Added employee successfully...");
+                        window.location.href = 'Education-21Files.html';
+                      })
+
                     }
                   });
-                })
+                }) 
                 .catch(error => console.error('Error adding employee document:', error));
             });
           } else {
@@ -258,3 +276,4 @@ export function AddEmployeeDataSheet() {
 
 // Trigger the function on page load
 window.addEventListener('load', AddEmployeeDataSheet);
+
