@@ -35,7 +35,7 @@
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
+    <section class="breadcrumbs" id="EducationSection">
       
         <div class="container">
             <div class="row">
@@ -60,47 +60,11 @@
                         <div class="fb-profile-block-menu">
                             <div class="block-menu">
                                 <ul>
-                                    <li><a href="#" onclick="confirmAction('Personal')">Personal</a></li>
-                                    <li><a href="#" >Education</a></li>
-                                    <li><a href="#" onclick="confirmAction('Other Information')">Other Information</a></li>
-                                    <li><a href="#" onclick="confirmAction('Signature')">Signature</a></li> 
-                                    <li><a href="#" onclick="confirmAction('Files')">Files</a></li>
-                                    <script>
-                                        function confirmAction(category) {
-                                            Swal.fire({
-                                                title: "Are you sure?",
-                                                text: `Your changes will be lost. Do you want to proceed?`,
-                                                icon: "warning",
-                                                showCancelButton: true,
-                                                confirmButtonColor: "#3085d6",
-                                                cancelButtonColor: "#d33",
-                                                confirmButtonText: "Yes, proceed!"
-                                            }).then((result) => {
-                                                if (result.isConfirmed) {
-                                                // Redirect to the corresponding page based on the clicked link
-                                                switch (category) {
-                                                    case 'Personal':
-                                                    window.location.href = "datasheet.html";
-                                                    break;
-                                                    case 'Education':
-                                                    window.location.href = "Education-21Files.html";
-                                                    break;
-                                                    case 'Other Information':
-                                                    window.location.href = "OtherInfo-201file.html";
-                                                    break;
-                                                    case 'Signature':
-                                                    window.location.href = "signature-201file.html";
-                                                    break;
-                                                    case 'Files':
-                                                    window.location.href = "signature-201file.html";
-                                                    break;
-                                                    default:
-                                                    break;
-                                                }
-                                                }
-                                            });
-                                            }
-                                    </script>
+                                    <li><a href="#" id="201Personal">Personal</a></li>
+                                    <li><a href="#" id="201Education" >Education</a></li>
+                                    <li><a href="#" id="201Other" >Other Information</a></li>
+                                    <li><a href="#" id="201Signature">Signature</a></li> 
+                                    <li><a href="#" id="201Files">Files</a></li>
                                 </ul>
                             </div> 
                         </div>
@@ -112,155 +76,158 @@
                 <!--Education-->
                 <div class="container">
                     <div class="row">
-                        <!-- Account details card-->
-                        
                         <div class="col-md-12">
                             <br>
                             <div class="card-header"><strong>III. EDUCATION BACKGROUND</strong></div>
                             <br>
                             <div class="small mb-1">Please provide full details</div>
-                                <!-- TABLE -->
-                                <br>
+                            <!-- TABLE -->
+                            <br>
                             <div class="container">
-                               
                                 <div class="row">
-                                    
-                                    <div class="col-md-12">
-                                        <table class="table table-hover" id="worked">
-                                            <thead>
-                                                <tr>
-                                                    <th>Level</th>
-                                                    <th>School Name</th>
-                                                    <th>Basic Education/degree/course</th>
-                                                    <th>From</th>
-                                                    <th>To</th>
-                                                    <th>Highes level/
-                                                        units earned
-                                                        (If not graduated)</th>
-                                                    <th>Scholarship/academic honors
-                                                        received</th>
-                            
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">Elementary</th>
-                                                    <td>
-                                                        <input class="form-control" type="text" />
-                                                    </td>
-                                                    <td>
-                                                        <input class="form-control" type="text" />
-                                                    </td>
-                                                    <td>
-                                                        <input class="form-control" type="text" />
-                                                    </td>
-                                                    <td>
-                                                        <input class="form-control" type="text" />
-                                                    </td>
-                                                    <td>
-                                                        <input class="form-control" type="text" />
-                                                    </td>
-                                                    <td>
-                                                        <input class="form-control" type="text" />
-                                                    </td>
-                                                   
-                                                </tr>
-                                                <tr>
+                                    <div class="col-md-12"> 
+                                        <form id="EducationForm">
+                                            <table class="table table-hover" id="worked">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Level</th>
+                                                        <th>School Name</th>
+                                                        <th>Basic Education/degree/course</th>
+                                                        <th>From</th>
+                                                        <th>To</th>
+                                                        <th>Highes level/units earned (If not graduated)</th>
+                                                        <th>Scholarship/academic honors received</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody> 
+                                                    <tr>
+                                                        <th scope="row">Elementary</th>
+                                                        <td>
+                                                            <input class="form-control" name="elemSchoolName" type="text" />
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" name="elemGrade" type="text" />
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" name="elemFrom" type="text" />
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" name="elemTo" type="text" />
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" name="elemHighestLevel" type="text" />
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" name="elemScholarship" type="text" />
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
                                                     <th scope="row">Secondary</th>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" name="secondSchoolName" id="secondSchoolName" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="secondGrade" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="secondFrom" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="secondTo" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="secondHighestLevel" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="secondScholarship" type="text" />
                                                     </td>
                                                     
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">Vocational/Trade Course</th>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" name="vocationalSchoolName" id="vocationalSchoolName" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="vocationalGrade" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="vocationalFrom" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="vocationalTo" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="vocationalHighestLevel" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="vocationalScholarship" type="text" />
                                                     </td>
+                                                    
                                                     
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">College</th>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" name="collegeSchoolName" id="collegeSchoolName" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="collegeGrade" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="collegeFrom" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
-                                                    </td>   
-                                                    <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="collegeTo" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
-                                                    </td> 
+                                                        <input class="form-control" id="collegeHighestLevel" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="collegeScholarship" type="text" />
+                                                    </td>
+                                                     
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">Graduate School</th>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" name="graduateSchoolName" id="graduateSchoolName" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="graduateGrade" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="graduateFrom" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
-                                                    </td>   
-                                                    <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="graduateTo" type="text" />
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="text" />
+                                                        <input class="form-control" id="graduateHighestLevel" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="graduateScholarship" type="text" />
                                                     </td> 
                                                 </tr>
-                                                
 
+                                                <tr>
+                                                    <td colspan="7">                    
+                                                        <input type="submit" id="EducationSubmitBtn" name="EducationSubmitBtn" class="btn btn-success" value="Save" >
+                                                    </td>
+                                                </tr>  
                                             </tbody>
                                         </table>
-                                    </div>
+                                        </form>
+                                        
+                                    
                                 </div>
-                         </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
 
@@ -295,7 +262,10 @@
 
 <!-- Template Main JS File -->
 <script src="js/datasheet.js"></script>
+
+<!-- Database JS File -->
 <script src="bundles/auth.bundle.js"></script>   
+<script src="bundles/employee_registry.bundle.js"></script>   
 
 </body>
 
