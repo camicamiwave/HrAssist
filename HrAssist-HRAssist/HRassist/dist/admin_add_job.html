@@ -223,7 +223,65 @@
                 </div>
                 <div class="table">
                     <div class="table-header">
-                        <p>Employee Personal Information</p>
+                        <p>Add Job</p>
+                    </div>
+                    <div class="container">
+                        <header>Job Details</header>
+                        <div class="content">
+                          <form action="#">
+                            <div class="user-details">
+                              <div class="input-box">
+                                <span class="details">Job Title</span>
+                                <input type="text" placeholder="Enter Job Title" >
+                              </div>
+                              <div class="input-box">
+                                <span class="details">Job Type</span>
+                                <select required>
+                                    <option disabled selected>Select Job Type</option>
+                                    <option>Full-Time</option>
+                                    <option>Part-Time</option>
+                                    <option>Contract</option>
+                                </select>
+                              </div>
+                              <div class="input-box">
+                                <span class="details">Salary</span>
+                                <input type="text" placeholder="Enter Salary Amount" >
+                              </div>
+                              <div class="input-box">
+                                <span class="details">Application Deadline</span>
+                                <input type="date" placeholder="Enter Date of Deadline" >
+                              </div>
+                            </div>
+                            <div class="job-details">
+                                <div class="input-box">
+                                    <span class="details">Job Description</span>
+                                    <textarea style="resize: none;" cols="128" rows="5" name="message" placeholder="Write description here..."></textarea>
+                                    <a href="javascript:myClickHandler();" class="add" >+ Add Information</a>
+                                </div>
+                                <div class="input-box">
+                                    <span class="details">Responsibility</span>
+                                    <textarea style="resize: none;" cols="128" rows="5" name="message" placeholder="Write responsibility here..."></textarea>
+                                    <a href="javascript:myClickHandler();" class="add2">+ Add Information</a>
+                                </div>
+                                <div class="input-box">
+                                    <span class="details">Qualification</span>
+                                    <textarea style="resize: none;" cols="128" rows="5" name="message" placeholder="Write responsibility here..."></textarea>
+                                    <a href="javascript:myClickHandler();" class="add3" >+ Add Information</a>
+                                </div>
+                            </div>
+                            <div class="user-details">
+                                <div class="input-box">
+                                  <span class="details">Number of Vacancy</span>
+                                  <input type="number" placeholder="Enter No. of Vacancy" >
+                                </div>
+                                <div class="input-box">
+                                    <span class="details">Location</span>
+                                    <input type="text" placeholder="Enter Location" >
+                                </div>
+                              </div>
+                            <button class="submit">Post Job</button>
+                          </form>
+                        </div>
                     </div>
                 </div>
             </div>
