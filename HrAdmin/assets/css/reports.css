@@ -133,7 +133,28 @@
     overflow: hidden;
     max-width: 100%;
   }
-
+  .listofrew{
+    color: #068e6b;
+    text-align: left;
+    letter-spacing: 1.04px;
+    font: 500 18px/24px Poppins, sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-bottom: -40px;
+    margin-left: 5px;
+  }
+  .listnaddrew{
+    display: flex;
+    justify-content: space-between; /* or any other value depending on your layout */
+    align-items: center;
+    margin-top: -25px;
+    margin-left: 5px;
+  }
+.hr{
+  margin-top: 10px;
+  color: #4caf50;
+}
   .reports {
     color: #068e6b;
     text-align: center;
@@ -446,6 +467,7 @@
 
 /*Duplicate for Request*/
 
+
  #Request{
   margin-top: -50px
  }
@@ -507,24 +529,26 @@
   }
   .listofreq{
     color: #068e6b;
-    text-align: left;
-    letter-spacing: 1.04px;
-    font: 500 18px/24px Poppins, sans-serif;
-    font-weight: bold;
-    margin-top: 50px;
-    margin-left: 140px;
-  }
-  .listenadd{
-    display: flex;
-    justify-content: space-between; /* or any other value depending on your layout */
-    align-items: center;
-  }
+  text-align: left;
+  letter-spacing: 1.04px;
+  font: 500 18px/24px Poppins, sans-serif;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-left: 0px;
+  margin-bottom: -40px;
+}
+.listenadd{
+  display: flex;
+  justify-content: space-between; /* or any other value depending on your layout */
+  align-items: center;
+  margin-top: 10px;
+}
 
   .filter-container {
     display: flex;
     align-items: center;
     margin-top: 19px;
-    margin-left: 150px
+    margin-left: 0px
   }
   .form-select {
     display: flex;
@@ -533,6 +557,8 @@
     background-color: #068e6b;
     padding: 3px;
     font-size: 16px;
+    width: fit-content;
+    margin-left: 20px;
   }
   /* Style for the filter label */
   .filter-label {
