@@ -27,7 +27,7 @@
                 <i class="bi bi-grid"></i>
                 <i class='bx bx-sun' id="darkLight"></i>
                 <i class='bx bx-bell' ></i>
-                <img src="img/favicon.png" alt="" class="profile" />
+                <img src="img/favicon.png" alt="" id="navbarProfilePicture" class="profile" />
             </div>
         </nav>
 
@@ -120,7 +120,7 @@
                     </li>
                     <!-- End -->
                     <!-- Start -->
-                    <li class="item active">
+                    <li class="item">
                         <a href="admin_search_employee_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-search-alt-2"></i>
@@ -154,7 +154,7 @@
                     </li>
                     <!-- End -->
                     <!-- Start -->
-                    <li class="item">
+                    <li class="item active">
                         <a href="admin_rewards_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-gift"></i>
@@ -217,42 +217,53 @@
                 <div class="page-header">
                     <h1 class="page-title">
                         <span class="page-title-icon">
-                        <i class="bx bxs-search-alt-2"></i>
-                        </span> Search Employee
+                        <i class="bx bxs-gift"></i>
+                        </span> Rewards
                     </h1>
                 </div>
                 <div class="table">
                     <div class="table-header">
-                        <p>Employee Personal Information</p>
+                        <p>Appreciation Form</p>
                     </div>
                     <div class="container">
-                        <form id="SearchEmployeeForm">
-                            <div class="form first">
-                                <div class="details ID">
-                                    <span class="title">Employee Details</span>
-                                    <div class="fields">
-                                        <div class="input-field">
-                                            <label>First Name</label>
-                                            <input type="text" placeholder="Enter First Name" id="inputFirstName" name="inputFirstName">
-                                        </div>
-                                        <div class="input-field">
-                                            <label>Middle Name</label>
-                                            <input type="text" placeholder="Enter Middle Name" id="inputMiddleName" name="inputMiddleName">
-                                        </div>
-                                        <div class="input-field">
-                                            <label>Last Name</label>
-                                            <input type="text" placeholder= "Enter Last Name" id="inputLastName" name="inputLastName">
-                                        </div>
-                                        <div class="input-field">
-                                            <label>Ext. Name</label>
-                                            <input type="text" placeholder="Enter Extension Name" id="inputExtName" name="inputExtName">
-                                        </div>
+                        <header>Reward Details</header>
+                        <div class="content">
+                            <form>
+                                <div class="user-details">
+                                <div class="input-box">
+                                        <span class="details">First Name</span>
+                                        <input type="text" placeholder="Enter First Name">
+                                    </div>
+                                    <div class="input-box">
+                                        <span class="details">Middle Name</span>
+                                        <input type="text" placeholder="Enter Middle Name">
+                                    </div>
+                                    <div class="input-box">
+                                        <span class="details">Last Name</span>
+                                        <input type="text" placeholder="Enter Last Name">
+                                    </div>
+                                    <div class="input-box">
+                                        <span class="details">Ext. Name</span>
+                                        <input type="text" placeholder="Enter Ext. Name">
+                                    </div>
+                                    <div class="input-box">
+                                        <span class="details">Date Issued</span>
+                                        <input type="date" placeholder="Enter Ext. Name">
                                     </div>
                                 </div>
-
-                                <button class="submit" id="submitBtn">Search Employee</button>
-                            </div>
-                        </form>
+                                <div class="job-details">
+                                    <div class="input-box">
+                                        <span class="details">Token</span>
+                                        <input type="text" placeholder="Enter Token">
+                                    </div>
+                                    <div class="input-box">
+                                        <span class="details">Message (Optional)</span>
+                                        <textarea placeholder="Write message here..."></textarea>
+                                    </div>
+                                </div>
+                                <button class="submit">Save</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -260,10 +271,5 @@
 
         <!-- JavaScript -->
         <script src="js/script.js"></script>
-
-        <!-- Database JavaScript -->
-        <script src="bundles/PDS.bundle.js"></script>
-
     </body>
-
 </html>

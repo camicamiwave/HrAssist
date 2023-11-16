@@ -7,12 +7,6 @@ const sidebarClose = document.querySelector(".collapse_sidebar");
 const sidebarExpand = document.querySelector(".expand_sidebar");
 const mainContent = document.querySelector("#main");
 
-const addBtn = document.querySelector(".add");
-const addBtn2 = document.querySelector(".add2");
-const addBtn3 = document.querySelector(".add3");
-const input = document.querySelector(".job-details .input-box");
-
-
 sidebarOpen.addEventListener("click", () => {
     sidebar.classList.toggle("close");
     mainContent.classList.toggle("close");
@@ -59,32 +53,6 @@ if (window.innerWidth < 768) {
     sidebar.classList.remove("close");
     mainContent.classList.remove("close");
 }
-
-function removeInput() {
-  this.parentElement.remove();
-}
-
-function addInput(){
-  const information = document.createElement("input");
-  information.type="text";
-  information.placeholder = "Enter Information";
-
-  const btn=document.createElement("a");
-  btn.className = "delete";
-  btn.innerHTML = "Delete";
-
-  btn.addEventListener("click", removeInput)
-
-  const flex=document.createElement("div");
-  flex.className = "flex";
-
-  input.appendChild(flex);
-  flex.appendChild(information)
-  flex.appendChild(btn)
-}
-
-
-addBtn.addEventListener("click", addInput);
 
 
                      /**
