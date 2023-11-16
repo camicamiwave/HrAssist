@@ -710,7 +710,7 @@
     margin-top: 19px;
     margin-left: 0px
   }
-  .form-select {
+  .form-select_app {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -803,7 +803,7 @@
     margin-bottom: 0px;
   }
   
-  .view-btn {
+  #view-btn {
     padding: 5px 10px;
     font-size: 10px;
     margin-left: 10px;
