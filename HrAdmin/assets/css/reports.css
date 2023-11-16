@@ -22,8 +22,8 @@
     width: 46px;
     overflow: hidden;
     max-width: 100%;
-    margin-top: 50px;
-    margin-left: 95px;
+    margin-top: 10px;
+    margin-left: 20px;
   }
 
   .rewards {
@@ -34,8 +34,8 @@
     white-space: nowrap;
     margin: auto 0;
     font: 700 24px/36px Poppins, sans-serif;
-    margin-top: -40px;
-    margin-left: -880px;
+    margin-top: -50px;
+    margin-left: -730px;
     margin-bottom: -30px;
   }
 
@@ -191,8 +191,8 @@
     object-fit: contain;
     object-position: center;
     width: 45px;
-    margin-top: 20px;
-    margin-left: 10px;
+    margin-top: 10px;
+    margin-left: 15px;
     overflow: hidden;
     max-width: 100%;
   }
@@ -202,8 +202,8 @@
     text-align: start;
     letter-spacing: 1.56px;
     align-self: start;
-    margin-top: -40px;
-    margin-left: 60px;
+    margin-top: -60px;
+    margin-left: 80px;
     white-space: nowrap;
     font: 700 24px/36px Poppins, sans-serif;
   }
@@ -275,7 +275,7 @@
     width: 46px;
     overflow: hidden;
     max-width: 100%;
-    margin-left: 140px;
+    margin-left: 0px;
   }
   .accounts {
     color: #068e6b;
@@ -286,7 +286,7 @@
     margin: auto 0;
     font: 700 24px/36px Poppins, sans-serif;
     margin-top:13px;
-    margin-left: -835px;
+    margin-left: -770px;
 
   }
 
@@ -303,7 +303,7 @@
     border-radius: 5px;
     font: 500 14px/24px Poppins, sans-serif;
     cursor: pointer;
-    margin-left: 80%;
+    margin-left:87%;
   }
   .listofacc{
     color: #068e6b;
@@ -312,7 +312,7 @@
     font: 500 18px/24px Poppins, sans-serif;
     font-weight: bold;
     margin-top: 5px;
-    margin-left: 143px;
+    margin-left: 0px;
     margin-bottom: -40px;
   }
   .listenadd{
@@ -324,33 +324,34 @@
   .addbtn{
     margin-top: -25px
   }
-  .filter-container {
+  .filter-container_acc {
     display: flex;
     align-items: center;
     margin-top: 19px;
-    margin-left: 150px
+    margin-left: 0px
   }
-  .form-select {
+  .form-select_acc {
     display: flex;
     flex-direction: column;
     position: relative;
     background-color: #068e6b;
     padding: 3px;
     font-size: 16px;
+    width: fit-content;
+    margin-left: 20px;
   }
   /* Style for the filter label */
-  .filter-label {
-    margin-left: -7px;
+  .filter-label_acc {
     margin-top: 10px;
     font: 500 16px/24px Poppins, sans-serif;
     color: #068e6b;;
     font-weight: bold;
   }
-  .search-container {
+  .search-container_acc {
     display: flex;
     align-items: center;
     position: relative;
-    margin-left: 685px;
+    margin-left: 610px;
   }
   .search {
     padding: 8px 30px 8px 8px; /* Adjust padding as needed */
@@ -363,26 +364,31 @@
     right: 10px; /* Adjust right position as needed */
     cursor: pointer;
   }
-  .filter-container1 {
+  .filter-container_acc1 {
     display: flex;
     align-items: normal;
-    margin-top: -37px;
+    margin-top: -35px;
     margin-left: 350px;
 
+
   }
-  .form-select1 {
+  .form-select_acc1 {
     display: flex;
     flex-direction: column;
     position: relative;
     background-color: #068e6b;
     padding: 3px;
     font-size: 16px;
+    width: fit-content;
+    margin-left: -120px;
     
   }
   .table-container {
     
-    width: 80%;
-    margin-left: 140px;
+    width: 100%;
+    font-size: 16px;
+    margin-left: 0px ;
+    align-content: center;
   }
   
   .message-table {
@@ -396,7 +402,7 @@
     padding: 10px;
     text-align: left;
   }
-  
+
   .message-table th {
     background-color: #f2f2f2;
   }
@@ -404,7 +410,7 @@
   .message-table tbody tr:hover {
     background-color: #f5f5f5;
   }
-  .account-container {
+  .account-container_acc {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -421,8 +427,8 @@
     margin-bottom: 0px;
   }
   
-  .activate-btn,
-  .terminate-btn {
+  .activate-btn_acc,
+  .terminate-btn_acc{
     padding: 5px 10px;
     font-size: 10px;
     margin-left: 20px;
@@ -432,12 +438,12 @@
 
   }
   
-  .activate-btn {
+  .activate-btn_acc {
     background-color: #4caf50; /* Green color for Activate button */
     color: white;
   }
   
-  .terminate-btn {
+  .terminate-btn_acc {
     background-color: #f44336; /* Red color for Terminate button */
     color: white;
   }
@@ -757,8 +763,8 @@
   }
   .table-container {
     
-    width: 80%;
-    margin-left: 140px;
+    width: 100%;
+
   }
   
   .message-table {
