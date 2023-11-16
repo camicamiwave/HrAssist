@@ -19,7 +19,8 @@
     "admin_registry": "node admin_registry.js",
     "navbar": "node navbar.js",
     "fetch_current_user": "node fetch_current_user.js",
-    "PDS": "node PDS.js"
+    "PDS": "node PDS.js",
+    "job_registry": "node job_registry.js"
   },
   "keywords": [],
   "author": "",
