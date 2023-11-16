@@ -1,3 +1,12 @@
+.sidebar:hover + .tab-content {
+  margin-left: 300px; /* Adjust this value according to your sidebar width */
+  transition: margin-left 0.5s ease;
+}
+
+.sidebar:hover ~ #main {
+    margin-left: 300px; /* Adjust this value according to your sidebar width */
+    transition: margin-left 0.5s ease;
+}
 .divider {
     border: none;
     height: 1px; /* Adjust the height of the divider as needed */
@@ -14,14 +23,83 @@
     width:100%;
     height: 100%;
 }
+.card-header {
+  display: flex;
+  align-items: center;
+}
+
+.imgrewards {
+  aspect-ratio: 1.05;
+  object-fit: contain;
+  width: 30px;
+  margin-left: 7px;
+}
+
+.card-header h4 {
+  margin-left: 10px; /* Adjust the margin as needed */
+}
+/* ---------------------------------------------------------------------------------------- */
+/* ----------------------------------------- MAIN ----------------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
+
+
+#main {
+  transition: margin-left 0.5s ease;
+  padding: 16px;
+  margin-top: 70px;
+  margin-left: 80px;
+  margin-right: 10px;
+}
+
+/* Add this CSS to make #main responsive when the sidebar is expanded */
+.sidebar.expand ~ #main {
+  margin-right: 15px;
+  margin-left: 310px; /* Adjust this value according to your sidebar width */
+  transition: margin-left 0.5s ease;
+}
+
+/* Add this CSS to make #main responsive when the sidebar is collapsed */
+.sidebar.close ~ #main {
+  margin-right: 10px;
+  margin-left: 90px;
+}
+
+.page-header {
+  margin: 0 0 1.5rem 0; 
+}
+
+.page-title {
+  color: #000000;
+  font-size: 1.125rem;
+  margin-bottom: 10px;
+}
+
+.page-title .page-title-icon {
+  display: inline-block;
+  margin-right: 15px;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  text-align: center;
+  -webkit-box-shadow: 0px 3px 8.3px 0.7px rgba(31, 143, 62, 0.35);
+  box-shadow: 0px 3px 8.3px 0.7px rgba(31, 143, 62, 0.35); 
+  background-color: #08533F;
+  color:#ffffff;
+}
+  
+.page-title .page-title-icon i {
+  font-size: .9375rem;
+  line-height: 36px; }
 #Rewards{
-  margin-top: -18px;
+  margin-top: -50px;
 }
 .imgrewards{
   aspect-ratio: 1.05;
   object-fit: contain;
   width: 30px;
   margin-left: 7px;
+  margin-top: -10px;
+
   }
 
   .rewards {
@@ -32,7 +110,6 @@
     white-space: nowrap;
     margin: auto 0;
     font: 700 24px/36px Poppins, sans-serif;
-    margin-top:-30px;
     margin-left: -770px; 
   }
 
@@ -109,15 +186,6 @@
 .table-striped1 th, .table-striped td {
     padding: 0px; /* Add spacing to table cells */
 }
-.main-container {
-    align-self: start;
-    display: flex;
-
-    width: 170px;
-    max-width: 100%;
-    justify-content: space-between;
-
-  }
 
   @media (max-width: 991px) {
     .main-container {
@@ -281,37 +349,24 @@
     }
   }
 
+    /*-----------------------------------Account------------------------------------*/
 
   #Accounts{
     margin-top: -50px;
   }
+  .account-container {
+    display: flex;
+    align-items: center;
+  }
+  .card-header h4 {
+    margin-left: 10px; /* Adjust the margin as needed */
+  }
   .imgacc {
-    aspect-ratio: 1.05;
-    object-fit: contain;
-    object-position: center;
-    width: 46px;
-    overflow: hidden;
-    max-width: 100%;
-    margin-left: 0px;
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    margin-right: 10px; /* Adjust the margin as needed */
   }
-  .accounts {
-    color: #068e6b;
-    text-align: center;
-    letter-spacing: 1.56px;
-    align-self: center;
-    white-space: nowrap;
-    margin: auto 0;
-    font: 700 24px/36px Poppins, sans-serif;
-    margin-top:13px;
-    margin-left: -770px;
-
-  }
-
-  @media (max-width: 991px) {
-    .accounts {
-      white-space: initial;
-    }
-  }
+  
   .add_acc_btn{
     background-color: #068e6b;
     color: white;
@@ -320,14 +375,15 @@
     border-radius: 5px;
     font: 500 14px/24px Poppins, sans-serif;
     cursor: pointer;
-    margin-left:87%;
+    margin-left:430px;
+
+
   }
   .listofacc{
     color: #068e6b;
     text-align: left;
     letter-spacing: 1.04px;
-    font: 500 18px/24px Poppins, sans-serif;
-    font-weight: bold;
+    font: 500 14px/24px Poppins, sans-serif;
     margin-top: 5px;
     margin-left: 0px;
     margin-bottom: -40px;
@@ -338,14 +394,13 @@
     align-items: center;
     margin-top: 10px;
   }
-  .addbtn{
-    margin-top: -25px
-  }
+
   .filter-container_acc {
     display: flex;
     align-items: center;
-    margin-top: 19px;
+    margin-top: 0px;
     margin-left: 0px
+    
   }
   .form-select_acc {
     display: flex;
@@ -354,7 +409,7 @@
     background-color: #068e6b;
     padding: 3px;
     font-size: 16px;
-    width: fit-content;
+    padding :-10px;
     margin-left: 20px;
   }
   /* Style for the filter label */
@@ -368,38 +423,19 @@
     display: flex;
     align-items: center;
     position: relative;
-    margin-left: 610px;
+    margin-left: 395px;
   }
-  .search {
-    padding: 8px 30px 8px 8px; /* Adjust padding as needed */
+  .search_acc {
     border: 1px solid #068e6b;;
     border-radius: 5px;
     width: 200px; /* Adjust width as needed */
   }
-  .search-icon {
+  .search-icon_acc {
     position: absolute;
     right: 10px; /* Adjust right position as needed */
     cursor: pointer;
   }
-  .filter-container_acc1 {
-    display: flex;
-    align-items: normal;
-    margin-top: -35px;
-    margin-left: 350px;
 
-
-  }
-  .form-select_acc1 {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    background-color: #068e6b;
-    padding: 3px;
-    font-size: 16px;
-    width: fit-content;
-    margin-left: -120px;
-    
-  }
   .table-container {
     
     width: 100%;
@@ -428,12 +464,6 @@
     background-color: #f5f5f5;
   }
 
-  .account-label {
-    font-size: 12px;
-    font-weight: bold;
-    color: #ffffff; /* Set text color as needed */
-    margin-bottom: 0px;
-  }
   
   button {
     font-size: 10px;
@@ -456,16 +486,10 @@
     font-size: 12px;
   }
 
-  .imgacc, .imgapp, .imgrew, .imgreq {
-    width: 30px; /* Adjust the width as needed */
-    height: 30px; /* Adjust the height as needed */
-    margin-right: 10px; /* Adjust the margin as needed */
-    margin-top: 30px;
-    margin-bottom: -50px;
-}
 
 
-/*Duplicate for Request*/
+
+/*------------------------------------------Request---------------------------------------------*/
 
 
  #Request{
@@ -567,23 +591,37 @@
     color: #068e6b;;
     font-weight: bold;
   }
-  .search-container {
+  .search-container_req {
     display: flex;
     align-items: center;
     position: relative;
-    margin-left: 685px;
+    margin-left: 100px;
   }
-  .search {
+  .search_req {
     padding: 8px 30px 8px 8px; /* Adjust padding as needed */
     border: 1px solid #068e6b;;
     border-radius: 5px;
     width: 200px; /* Adjust width as needed */
   }
-  .search-icon {
+  .search-icon_req {
     position: absolute;
     right: 10px; /* Adjust right position as needed */
     cursor: pointer;
   }
+  /* Responsive Styles */
+@media (max-width: 700px) {
+  .search-container_req {
+    margin-left: 20px; /* Adjust margin-left for smaller screens */
+  }
+
+  .search_req {
+    width: 150px; /* Adjust width for smaller screens */
+  }
+
+  .search-icon_req {
+    right: 5px; /* Adjust right position for smaller screens */
+  }
+}
   .filter-container1 {
     display: flex;
     align-items: normal;
@@ -634,13 +672,7 @@
     margin-left: 0px;
 
   }
-  
-  .account-label {
-    font-size: 12px;
-    font-weight: bold;
-    color: #ffffff; /* Set text color as needed */
-    margin-bottom: 0px;
-  }
+
   
   .activate-btn,
   .terminate-btn {
@@ -755,9 +787,8 @@
   }
   .search-container {
     display: flex;
-    align-items: center;
     position: relative;
-    margin-left: 610px;
+    margin-left: 80%;
   }
   .search {
     padding: 8px 30px 8px 8px; /* Adjust padding as needed */
@@ -808,7 +839,7 @@
   }
   
   .message-table th {
-    background-color: #f2f2f2;
+    background-color: #068e6b;;
   }
   
   .message-table tbody tr:hover {
@@ -822,12 +853,6 @@
   }
 
 
-  .account-label {
-    font-size: 12px;
-    font-weight: bold;
-    color: #ffffff; /* Set text color as needed */
-    margin-bottom: 0px;
-  }
   
   #view-btn {
     padding: 5px 10px;
