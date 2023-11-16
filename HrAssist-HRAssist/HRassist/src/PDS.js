@@ -690,5 +690,58 @@ export function AddEmployeeDataSheet() {
   }
   
   
-  window.addEventListener('load', fetchEmployeeData)
+window.addEventListener('load', fetchEmployeeData)
   
+
+export function SearchEmployee(){
+    // Assuming you have an HTML form with id="employeeDataSheet"
+    const addDataSheetForm = document.querySelector("#SearchEmployeeForm");
+    const EmployeecolRef = collection(db, 'Employee Information');
+
+    // Event listener for the form submission
+    addDataSheetForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const LastName = addDataSheetForm.inputLastName.value
+        const FirstName = addDataSheetForm.inputFirstName.value
+        const MiddleName = addDataSheetForm.inputMiddleName.value
+        const ExtName = addDataSheetForm.inputExtName.value
+
+        console.log(`Fullname:${LastName}${FirstName}${MiddleName}${ExtName}`)
+
+        //alert(`Fullname:${LastName} ${FirstName} ${MiddleName} ${ExtName}`)
+    
+        const que = query(EmployeecolRef,  
+            where("Personal_Information.FirstName", "==", FirstName),
+            where("Personal_Information.MiddleName", "==", MiddleName),
+            where("Personal_Information.SurName", "==", LastName),
+            where("Personal_Information.ExName", "==", ExtName)
+            );
+            
+        // for retrieving the current user
+        onSnapshot(que, (snapshot) => {
+            snapshot.docs.forEach((docData) => {
+            const data = docData.data(); 
+            
+            const employeeDocID = data.documentID;
+
+            if (data){
+                console.log(data)
+                alert("There was record retrieved.")
+
+                
+                
+                window.location.href = `datasheet.html?data=${encodeURIComponent(employeeDocID)}`;
+                
+            } else {            
+                console.log("No record retrieved.")
+            }
+        })
+        
+        
+        })
+    })
+    
+}
+
+window.addEventListener('load', SearchEmployee)

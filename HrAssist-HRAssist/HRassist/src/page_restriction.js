@@ -85,9 +85,6 @@ export function PageRestrictionMethod(currentPath, userLevel){
   var restOfTheCode = splitResult[1];
   currentPath = "/dist/" + restOfTheCode;
 
-  console.log(currentPath, "hello")
-
-
   // lagay nyo dito lahat ng pages na exclusive lang for employees
   const Employee_Pages = [
     '/dist/employee_home.html',
@@ -174,8 +171,4 @@ export function PageRestrictionMethod(currentPath, userLevel){
 
 }
   
-
-// Using URL object
-const url = new URL(window.location.href);
-console.log(url.href , "asfs1233a1123s"); 
   

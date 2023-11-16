@@ -16,7 +16,7 @@ export function FetchCurrentUser() {
       if (user) {
         // User is signed in
         const currentUserID = user.uid;
-        console.log("Current User UID:", currentUserID);
+        //console.log("Current User UID:", currentUserID);
         resolve(currentUserID);
       } else {
         // No user is signed in
@@ -27,7 +27,7 @@ export function FetchCurrentUser() {
   });
 }
 
-export function ResetPassword123() {
+export function ResetPassword() {
   return new Promise((resolve, reject) => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -103,9 +103,9 @@ export function ResetPassword123() {
 
 window.addEventListener('load', () => {
   FetchCurrentUser().then(() => {
-    ResetPassword123().then((result) => {
+    ResetPassword().then((result) => {
       console.log(result);
-    }).catch((error) => {
+    }).catch((error) => { 
       console.error(error);
     });
   });
