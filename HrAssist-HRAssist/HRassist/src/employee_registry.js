@@ -416,6 +416,12 @@ export function AddEmployeeDataFirestore(querySelctorID, employeeData, currentDo
                       addDataSheetForm.reset();
                       console.log("Added employee successfully...");
                       //window.location.href = `Education-21Files.html?data=${encodeURIComponent(currentDocumentID)}`;
+                      console.log("Hello")
+
+                      if (querySelctorID === "#EducationForm"){
+                        window.location.href = `OtherInfo-201file.html?data=${encodeURIComponent(currentDocumentID)}`;
+                      } else if (querySelctorID === "#fileForm")
+                        window.location.href = `Files.html?data=${encodeURIComponent(currentDocumentID)}`;
                     });
                   })
                   .catch(error => console.error('Error adding employee document:', error));
@@ -438,8 +444,10 @@ export function Employee201Buttons(){
   // Trigger to send document id when it was called
   Employee201Navigator(receivedStringData);
   
-  const addDataSheetForm = document.querySelector("#EducationForm");
-  const addSignatureForm = document.querySelector("#fileForm");
+  const addDataSheetForm = document.querySelector("#EducationForm"); 
+  
+  console.log("safsafs12312")
+
 
   addDataSheetForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -491,23 +499,32 @@ export function Employee201Buttons(){
 
     // Saving to firestore
     AddEmployeeDataFirestore('#EducationForm', employeeData, receivedStringData)
-
-    .then(() => {
-        window.location.href = `OtherInfo-201file.html?data=${encodeURIComponent(currentDocumentID)}`;
-    })
-
-
-  
   })
 
-  addSignatureForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    console.log("safsafs")
+  
 
-    const storageRef = ref(storage, "Employee/Requirements");
+}
+
+window.addEventListener('load', Employee201Buttons)
+
+
+export function addEmployeeSignatureForm(){
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const receivedStringData = urlParams.get('data');
+  
+  // Trigger to send document id when it was called
+  Employee201Navigator(receivedStringData);
+  
+  const addSignatureForm = document.querySelector("#signatureForm");
+  
+  let URL;
+  const storageRef = ref(storage, "Employee/Requirements");
     
+  addSignatureForm.addEventListener('submit', (e) => {
+    e.preventDefault(); 
     // Access the file input field
-    const fileInput = document.getElementById('fileInput');
+    const fileInput = document.getElementById('inputGroupFile01');
     const selectedFiles = fileInput.files;
     const firstSelectedFile = selectedFiles[0];  // Access the first file
 
@@ -520,22 +537,19 @@ export function Employee201Buttons(){
     const uploadPromise = uploadBytes(fileRef, firstSelectedFile)
       .then((snapshot) => getDownloadURL(fileRef))
       .then((downloadURL) => {
-    
+        // declaring the url outside
+        URL = downloadURL;
+      }).then(() => { 
         const employeeData = {
-          EsignatureURL: downloadURL,
+          EsignatureURL: URL,
         }
-
-        // Saving to firestore
-        return AddEmployeeDataFirestore('#fileForm', employeeData, downloadURL)
-
-        .then(() => {
-            window.location.href = `signature-201file.html?data=${encodeURIComponent(currentDocumentID)}`;
-        })
+        AddEmployeeDataFirestore('#signatureForm', employeeData, URL)
       })
   })
+
 }
 
-window.addEventListener('load', Employee201Buttons)
+window.addEventListener('load', addEmployeeSignatureForm)
 
 
 

@@ -133,10 +133,10 @@
                         <body>
                             <div class="container">
                                 <br>
-                            
-                                <form id="fileForm">
+
+                                <form id="signatureForm">
                                     <div class="input-group">
-                            
+
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="inputGroupFileAddon01"> Upload
                                                 E-Signature
@@ -145,40 +145,44 @@
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="inputGroupFile01"
                                                 aria-describedby="inputGroupFileAddon01">
-                                            <label class="custom-file-label" id="fileInput" for="inputGroupFile01">Choose file</label>
+                                            <label class="custom-file-label" id="fileInput"
+                                                for="inputGroupFile01">Choose file</label>
                                         </div>
-                            
+
                                         <script>
                                             const fileInput = document.getElementById('inputGroupFile01');
-                            
+
                                             fileInput.addEventListener('change', (event) => {
                                                 const file = event.target.files[0];
-                            
+
                                                 if (file) {
                                                     // Display the file name in the label
                                                     const fileName = file.name;
                                                     document.getElementById('fileInput').innerText = fileName;
-                            
+
                                                     // Read the text content of the file
                                                     const reader = new FileReader();
-                            
+
                                                     reader.onload = function (e) {
                                                         const fileContent = e.target.result;
                                                         // Display the content in an alert (you can replace this with your desired action)
                                                         //alert('File Content:\n' + fileContent);
                                                     };
-                            
+
                                                     reader.readAsText(file);
                                                 }
                                             });
                                         </script>
-                            
-                                    </div><br><br> 
-                                    <input type="submit" id="signatureBtn" name="signatureBtn" class="btn btn-success" value="Submit"/>
-                                </form>
+
+                                    </div><br><br>
+                                    <input type="submit" id="signatureBtn" name="signatureBtn" class="btn btn-success"
+                                        value="Submit" />
+
+                                    </form>
+
                                 <br>
                             </div>
-                            
+
         </section><!-- End Breadcrumbs -->
 
     </main><!-- End #main -->
@@ -198,7 +202,7 @@
 
     <!-- Template Main JS File -->
     <script src="js/datasheet.js"></script>
-    <script src="bundles/auth.bundle.js"></script> 
+    <script src="bundles/auth.bundle.js"></script>
     <script src="bundles/employee_registry.bundle.js"></script>
 
 </body>
