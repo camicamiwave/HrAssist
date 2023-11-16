@@ -13,17 +13,15 @@
     margin-left: 0px;
     width:100%;
     height: 100%;
-
+}
+#Rewards{
+  margin-top: -18px;
 }
 .imgrewards{
-    aspect-ratio: 1.05;
-    object-fit: contain;
-    object-position: center;
-    width: 46px;
-    overflow: hidden;
-    max-width: 100%;
-    margin-top: 10px;
-    margin-left: 20px;
+  aspect-ratio: 1.05;
+  object-fit: contain;
+  width: 30px;
+  margin-left: 7px;
   }
 
   .rewards {
@@ -34,9 +32,8 @@
     white-space: nowrap;
     margin: auto 0;
     font: 700 24px/36px Poppins, sans-serif;
-    margin-top: -50px;
-    margin-left: -730px;
-    margin-bottom: -30px;
+    margin-top:-30px;
+    margin-left: -770px; 
   }
 
   @media (max-width: 991px) {
@@ -45,11 +42,8 @@
     }
 
   }
-.h4{
-    margin-top: 200px;
-}
 .card-header{
-    margin-top: 50px;
+
     font-size: 25px;
     margin-left: 25px;
 
@@ -267,7 +261,9 @@
   }
 
 
-  
+  #Accounts{
+    margin-top: -50px;
+  }
   .imgacc {
     aspect-ratio: 1.05;
     object-fit: contain;
@@ -410,16 +406,7 @@
   .message-table tbody tr:hover {
     background-color: #f5f5f5;
   }
-  .account-container_acc {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    margin-top: 0px;
-    margin-left: 0px;
 
-  }
-  
   .account-label {
     font-size: 12px;
     font-weight: bold;
@@ -427,25 +414,25 @@
     margin-bottom: 0px;
   }
   
-  .activate-btn_acc,
-  .terminate-btn_acc{
-    padding: 5px 10px;
+  button {
     font-size: 10px;
-    margin-left: 20px;
     cursor: pointer;
     border: none;
     border-radius: 5px;
-
+    margin: 0 10px;
+    transition: background-color 0.3s;
   }
   
-  .activate-btn_acc {
+  #activate-btn_acc {
     background-color: #4caf50; /* Green color for Activate button */
     color: white;
+    font-size: 12px;
   }
   
-  .terminate-btn_acc {
+  #terminate-btn_acc {
     background-color: #f44336; /* Red color for Terminate button */
     color: white;
+    font-size: 12px;
   }
 
   .imgacc, .imgapp, .imgrew, .imgreq {
@@ -457,17 +444,11 @@
 }
 
 
-
-
-
-
-
-
-
-
 /*Duplicate for Request*/
 
- 
+ #Request{
+  margin-top: -50px
+ }
   .imgreports {
     aspect-ratio: 1.18;
     object-fit: contain;
@@ -496,15 +477,14 @@
     }
   }
 
+    #Request{
+      margin-top: -18px;
+    }  
   .imgrequest {
     aspect-ratio: 1.05;
     object-fit: contain;
-    object-position: center;
-    width: 46px;
-    overflow: hidden;
-    max-width: 100%;
-    margin-top: 50px;
-    margin-left: 130px;
+    width: 30px;
+    margin-left: 7px;
   }
 
   .request {
@@ -515,9 +495,8 @@
     white-space: nowrap;
     margin: auto 0;
     font: 700 24px/36px Poppins, sans-serif;
-    margin-top: -40px;
-    margin-left: -800px;
-    margin-bottom: -30px;
+    margin-top:-30px;
+    margin-left: -770px; 
   }
 
   @media (max-width: 991px) {
@@ -658,7 +637,23 @@
     color: white;
   }
 
+
+
   /*Applicants*/
+  #Applicants{
+    margin-top: -50px;
+  }
+  .imgapp {
+    aspect-ratio: 1.05;
+    object-fit: contain;
+    object-position: center;
+    width: 46px;
+    overflow: hidden;
+    max-width: 100%;
+    margin-left: -5px;
+  }
+
+  
   .applicants {
     color: #068e6b;
     text-align: center;
@@ -667,50 +662,53 @@
     white-space: nowrap;
     margin: auto 0;
     font: 700 24px/36px Poppins, sans-serif;
-    margin-top:13px;
-    margin-left: -835px;
+    margin-top:17px;
+    margin-left: -770px;
 
   }
 
-  @media (max-width: 991px) {
+  @media (max-width: 991px){
     .applicants {
       white-space: initial;
     }
   }
+
   .add_applicants{
     background-color: #068e6b;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font: 500 14px/24px Poppins, sans-serif;
-    cursor: pointer;
-    margin-left: 80%;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font: 500 14px/24px Poppins, sans-serif;
+      cursor: pointer;
+      margin-left:86%;
   }
   .listofapp{
     color: #068e6b;
-    text-align: left;
-    letter-spacing: 1.04px;
-    font: 500 18px/24px Poppins, sans-serif;
-    font-weight: bold;
-    margin-top: 5px;
-    margin-left: 143px;
-    margin-bottom: -40px;
+      text-align: left;
+      letter-spacing: 1.04px;
+      font: 500 18px/24px Poppins, sans-serif;
+      font-weight: bold;
+      margin-top: 5px;
+      margin-left: 0px;
+      margin-bottom: -40px;
   }
   .listenadd{
     display: flex;
-    justify-content: space-between; /* or any other value depending on your layout */
-    align-items: center;
-    margin-top: 10px;
+      justify-content: space-between; /* or any other value depending on your layout */
+      align-items: center;
+      margin-top: 10px;
   }
+
   .addbtn{
     margin-top: -25px
   }
+
   .filter-container {
     display: flex;
     align-items: center;
     margin-top: 19px;
-    margin-left: 150px
+    margin-left: 0px
   }
   .form-select {
     display: flex;
@@ -719,10 +717,11 @@
     background-color: #068e6b;
     padding: 3px;
     font-size: 16px;
+    width: fit-content;
+    margin-left: 20px;
   }
   /* Style for the filter label */
   .filter-label {
-    margin-left: -7px;
     margin-top: 10px;
     font: 500 16px/24px Poppins, sans-serif;
     color: #068e6b;;
@@ -732,7 +731,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    margin-left: 685px;
+    margin-left: 610px;
   }
   .search {
     padding: 8px 30px 8px 8px; /* Adjust padding as needed */
@@ -744,21 +743,24 @@
     position: absolute;
     right: 10px; /* Adjust right position as needed */
     cursor: pointer;
+
   }
   .filter-container1 {
     display: flex;
     align-items: normal;
-    margin-top: -37px;
+    margin-top: -35px;
     margin-left: 350px;
 
   }
   .form-select1 {
     display: flex;
-    flex-direction: column;
-    position: relative;
-    background-color: #068e6b;
-    padding: 3px;
-    font-size: 16px;
+      flex-direction: column;
+      position: relative;
+      background-color: #068e6b;
+      padding: 3px;
+      font-size: 16px;
+      width: fit-content;
+      margin-left: -120px;
     
   }
   .table-container {
