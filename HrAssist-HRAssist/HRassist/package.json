@@ -18,7 +18,8 @@
     "applicant_registry": "node applicant_registry.js",
     "admin_registry": "node admin_registry.js",
     "navbar": "node navbar.js",
-    "fetch_current_user": "node fetch_current_user.js"
+    "fetch_current_user": "node fetch_current_user.js",
+    "PDS": "node PDS.js"
   },
   "keywords": [],
   "author": "",
