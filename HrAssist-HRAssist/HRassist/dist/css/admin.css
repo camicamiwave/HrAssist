@@ -75,6 +75,7 @@ button {
     outline: none;
     border: none;
     border-radius: 20px;
+    text-decoration: none;
 }
 
 button:hover {
@@ -541,7 +542,7 @@ td button:nth-child(2) {
 .container form{
     position: relative;
     margin-top: 16px;
-    height: 1000px;
+    height: 100%;
     min-height: 490px;
     background-color: #fff;
     overflow: hidden;
@@ -684,5 +685,154 @@ form .buttons button , .backBtn{
 @media (max-width: 550px) {
     form .fields .input-field{
         width: 100%;
+    }
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* ---------------------------------------- FORM 2 ---------------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
+
+
+.content form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+    height: 1010%;
+}
+
+.content form .job-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0 12px 0;
+    width: 100%;
+    height: 100%;
+}
+
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+.add, .add2, .add3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
+    color: #ffffff;
+    background-color: #08533F;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+
+
+.add:hover, .add2:hover, .add3:hover {
+    background-color: #1f8f3e;
+    color: #ffffff;
+}
+
+/* Dynamic class for add input */
+
+.flex, .flex2, .flex3 {
+    display: flex;
+    padding: 5px 10px;
+    gap: 1.5em;
+    margin: auto;
+}
+
+.delete, .delete2, .delete3 {
+    text-decoration: none;
+    display: inline-block;
+    background-color: #f44336;
+    color: #fff;
+    padding: 5px 10px;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; 
+}
+
+
+form .job-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+form .input-box span.details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input, .user-details .input-box select {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+
+.job-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-color: #08533F;
+}
+
+.job-details .input-box input:focus,
+.job-details .input-box input:valid{
+    border-color: #08533F;
+}
+  
+@media(max-width: 584px){
+    .container{
+    max-width: 100%;
+    }
+
+    form .user-details .input-box{
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    form .job-details .input-box{
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    .content form .user-details{
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+
+    .content form .job-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar{
+      width: 5px;
+    }
+
+    .job-details::-webkit-scrollbar{
+        width: 5px;
     }
 }

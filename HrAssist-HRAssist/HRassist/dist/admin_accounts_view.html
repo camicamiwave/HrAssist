@@ -38,7 +38,7 @@
                     <div class="menu_title menu_admin_tools"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item active">
+                    <li class="item">
                         <a href="admin_dashboard.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-dashboard"></i>
@@ -48,7 +48,7 @@
                     </li>
                     <!-- End -->
                     <!-- Start -->
-                    <li class="item">
+                    <li class="item active">
                         <a href="admin_accounts_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-user-account"></i>
@@ -217,9 +217,63 @@
                 <div class="page-header">
                     <h1 class="page-title">
                         <span class="page-title-icon">
-                        <i class="bx bxs-dashboard"></i>
-                        </span> Dashboard
+                        <i class="bx bxs-user-account"></i>
+                        </span> Accounts
                     </h1>
+                </div>
+                <div class="table">
+                    <div class="table-header">
+                        <p>List of Applicants</p>
+                        <a href="job_application.html"><button class="add-new">+ Add Account</button></a>
+                    </div>
+                    <div class="table-header">
+                        <div class="group">
+                            <p>Filter</p>
+                        </div>
+                    </div>
+                    <table class="content-table" id="applicantTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Account Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Juan Dela Cruz</td>
+                                <td>Applicant</td>
+                                <td>Active</td>
+                                <td>
+                                    <button style="color: #ffff; width: 100px;">Activate</button>
+                                    <button style="color: #ffff; width: 100px;">Deactivate</i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Lebron James</td>
+                                <td>Permanent</td>
+                                <td>Active</td>
+                                <td>
+                                    <button style="color: #ffff; width: 100px;">Activate</button>
+                                    <button style="color: #ffff; width: 100px;">Deactivate</i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Stephen Curry</td>
+                                <td>Job Order</td>
+                                <td>Deactivated</td>
+                                <td>
+                                    <button style="color: #ffff; width: 100px;">Activate</button>
+                                    <button style="color: #ffff; width: 100px;">Deactivate</i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -227,9 +281,6 @@
         <!-- JavaScript -->
         <script src="js/script.js"></script>
     
-        <!-- Database Javascript -->  
-        <script src="bundles/auth.bundle.js"></script>   
-        <script src="bundles/applicant_registry.bundle.js"></script>   
     </body>
 
 </html>

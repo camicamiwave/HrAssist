@@ -16,7 +16,8 @@ module.exports = {
         applicant_registry: './src/applicant_registry.js',
         admin_registry: './src/admin_registry.js',
         navbar: './src/navbar.js',
-        fetch_current_user: './src/fetch_current_user.js'
+        fetch_current_user: './src/fetch_current_user.js',
+        PDS: './src/PDS.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),
