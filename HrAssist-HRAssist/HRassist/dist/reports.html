@@ -4,263 +4,212 @@
     <meta charset="utf-8">
     <title>Reports</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="assets/css/reports.css" rel="stylesheet">
+    <link href="css/reports.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css">
     <!-- plugins:css -->
-    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link href="img/hrlogo.svg" rel="icon">
+    <link rel="stylesheet" href="css/admin.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
 <body>
-    <!-- partial:partials/_navbar.html -->
-    <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.html">
-            <img src="assets/images/logo.svg" alt="logo" style="width: 120px; height: 120px;" />
-        </a>
-        
-        <a class="navbar-brand brand-logo-mini" href="index.html">
-          <img src="assets/images/logo.svg" alt="logo" style="width: 120px; height: 120px;" />
-      </a>
-        </div>
-        <div class="navbar-menu-wrapper d-flex align-items-stretch">
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="mdi mdi-menu"></span>
-          </button>
-          <div class="search-field d-none d-md-block">
-            <form class="d-flex align-items-center h-100" action="#">
-              <div class="input-group">
-                <div class="input-group-prepend bg-transparent">
-                  <i class="input-group-text border-0 mdi mdi-magnify"></i>
-                </div>
-                <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
-              </div>
-            </form>
+    <!-- navbar -->
+    <nav class="navbar">
+      <div class="logo_item">
+          <i class="bx bx-menu" id="sidebarOpen"></i>
+          <img src="img/hrmis.png" alt="" style="width: 60px; height: 40px; border-radius: 0%; margin-left: -15px;"></i>
+          <div class="search_bar">
+              <input type="text" placeholder="Search" />
           </div>
-          <ul class="navbar-nav navbar-nav-right">
-            <li class="nav-item nav-profile dropdown">
-              <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                <div class="nav-profile-img">
-                  <img src="assets/images/faces/face1.png" alt="image">
-                  <span class="availability-status online"></span>
-                </div>
-                <div class="nav-profile-text">
-                  <p class="mb-1 text-black">Sir Alejo</p>
-                </div>
-              </a>
-              <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-               
-                <a class="dropdown-item" href="#">
-                  <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
-              </div>
-            </li>
-            <li class="nav-item d-none d-lg-block full-screen-link">
-              <a class="nav-link">
-                <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
-              </a>
-            </li>
-            
-            <li class="nav-item dropdown">
-              <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
-                <i class="mdi mdi-bell-outline"></i>
-                <span class="count-symbol bg-danger"></span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                <h6 class="p-3 mb-0">Notifications</h6>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-success">
-                      <i class="mdi mdi-calendar"></i>
-                    </div>
-                  </div>
-                 
-            <li class="nav-item nav-settings d-none d-lg-block">
-              <a class="nav-link" href="#">
-                <i class="mdi mdi-format-line-spacing"></i>
-              </a>
-            </li>
+      </div>    
+      <div class="navbar_content">
+          <i class="bi bi-grid"></i>
+          <i class='bx bx-sun' id="darkLight"></i>
+          <i class='bx bx-bell' ></i>
+          <img src="img/favicon.png" alt="" class="profile" />
+      </div>
+  </nav>
+
+  <!--sidebar-->
+  <nav class="sidebar">
+      <div class="menu_content">
+          <ul class="menu_items">
+              <div class="menu_title menu_admin_tools"></div>
+              <!-- duplicate these li tag if you want to add or remove navlink only -->
+              <!-- Start -->
+              <li class="item active">
+                  <a href="dashboard.html" class="nav_link">
+                  <span class="navlink_icon">
+                      <i class="bx bxs-dashboard"></i>
+                  </span>
+                  <span class="navlink">Dashboard</span>
+                  </a>
+              </li>
+              <!-- End -->
+              <!-- Start -->
+              <li class="item">
+                  <a href="#" class="nav_link">
+                  <span class="navlink_icon">
+                      <i class="bx bxs-user-account"></i>
+                  </span>
+                  <span class="navlink">Accounts</span>
+                  </a>
+              </li>
+              <!-- End -->
           </ul>
-          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-            <span class="mdi mdi-menu"></span>
-          </button>
-        </div>
-      </nav>
-      <!-- partial -->
-      <div class="container-fluid page-body-wrapper">
-        <!-- partial:partials/_sidebar.html -->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
-          <ul class="nav">
-            <li class="nav-item nav-profile">
-              <a href="#" class="nav-link">
-                <div class="nav-profile-image">
-                  <img src="assets/images/faces/face1.png" alt="profile">
-                  <span class="login-status online"></span>
-                  <!--change to offline or busy as needed-->
-                </div>
-                <div class="nav-profile-text d-flex flex-column">
-                  <span class="font-weight-bold mb-2">Sir Alejo</span>
-                  <span class="text-secondary text-small">HR Personnel</span>
-                </div>
-                <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <span class="text-secondary text-small">ADMIN TOOLS</span>
-              </a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">
-                <span class="menu-title">Dashboard</span>
-                <i class="mdi mdi-view-dashboard menu-icon"></i> 
-              </a>
-            </li>
-         
-            <li class="nav-item">
-              <a class="nav-link" href="pages/icons/mdi.html">
-                <span class="menu-title">Accounts</span>
-                <i class="mdi mdi-account-multiple menu-icon"></i>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <span class="text-secondary text-small">LGU INFORMATION</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="offices.html">
-                <span class="menu-title">Offices</span>
-                <i class="mdi mdi-home-modern menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="calendar.html">
-                <span class="menu-title">Calendar</span>
-                <i class="mdi mdi-calendar menu-icon"></i>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <span class="text-secondary text-small">RECRUITMENT</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="manage_applicant_view.html">
-                <span class="menu-title">Manage Applicant</span>
-                <i class="mdi mdi-application menu-icon"></i>
-              </a>
-            </li>
-
-
-            <li class="nav-item">
-              <a class="nav-link" href="pages/tables/basic-table.html">
-                <span class="menu-title">Job Vacancy</span>
-                <i class="mdi mdi-briefcase menu-icon"></i>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <span class="text-secondary text-small">EMPLOYEE REGISTRATION</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="pages/tables/basic-table.html">
-                <span class="menu-title">Employee Registry</span>
-                <i class="mdi mdi-account-check menu-icon"></i>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="pages/tables/basic-table.html">
-                <span class="menu-title">Search Employee</span>
-                <i class="mdi mdi-account-search menu-icon"></i>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <span class="text-secondary text-small">EMPLOYEE TOOLS</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="pages/tables/basic-table.html">
-                <span class="menu-title">201 Files</span>
-                <i class="mdi mdi-folder menu-icon"></i>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="pages/tables/basic-table.html">
-                <span class="menu-title">DTR</span>
-                <i class="mdi mdi-calendar-text menu-icon"></i>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="pages/tables/basic-table.html">
-                <span class="menu-title">Request</span>
-                <i class="mdi mdi-calendar-check menu-icon"></i>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="pages/tables/basic-table.html">
-                <span class="menu-title">Reward</span>
-                <i class="mdi mdi-gift menu-icon"></i>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="reports.html">
-                <span class="menu-title">Reports</span>
-                <i class="mdi mdi-chart-line menu-icon"></i>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <span class="text-secondary text-small">LEARNING DEVELOPMENT</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="pages/tables/basic-table.html">
-                <span class="menu-title">Training & Seminar</span>
-                <i class="mdi mdi-human-greeting menu-icon"></i>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="pages/tables/basic-table.html">
-                <span class="menu-title">Materials</span>
-                <i class="mdi mdi-book-open-variant menu-icon"></i>
-              </a>
-            </li>
-
+          <ul class="menu_items">
+              <div class="menu_title lgu_information"></div>
+              <!-- duplicate these li tag if you want to add or remove navlink only -->
+              <!-- Start -->
+              <li class="item">
+                  <a href="#" class="nav_link">
+                  <span class="navlink_icon">
+                      <i class="bx bxs-buildings"></i>
+                  </span>
+                  <span class="navlink">Offices</span>
+                  </a>
+              </li>
+              <!-- End -->
+              <!-- Start -->
+              <li class="item">
+                  <a href="#" class="nav_link">
+                  <span class="navlink_icon">
+                      <i class="bx bxs-calendar"></i>
+                  </span>
+                  <span class="navlink">Calendars</span>
+                  </a>
+              </li>
+              <!-- End -->
           </ul>
-        </nav>
-        <!-- partial -->
-        <div class="main-panel">
-          <div class="content-wrapper">
-            <div class="page-header">
-              <h3 class="page-title">
-                <span class="page-title-icon bg-gradient-primary text-white me-2">
-                  <i class="mdi mdi-home"></i>
-                </span> Dashboard
-              </h3>
-              <nav aria-label="breadcrumb">
-                <ul class="breadcrumb">
-                  <li class="breadcrumb-item active" aria-current="page">
-                    <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+          <ul class="menu_items">
+              <div class="menu_title recruitment"></div>
+              <!-- duplicate these li tag if you want to add or remove navlink only -->
+              <!-- Start -->
+              <li class="item">
+                  <a href="#" class="nav_link">
+                  <span class="navlink_icon">
+                      <i class="bx bxs-group"></i>
+                  </span>
+                  <span class="navlink">Manage Applicant</span>
+                  </a>
+              </li>
+              <!-- End -->
+              <!-- Start -->
+              <li class="item">
+                  <a href="#" class="nav_link">
+                  <span class="navlink_icon">
+                      <i class="bx bxs-briefcase"></i>
+                  </span>
+                  <span class="navlink">Job Vacancy</span>
+                  </a>
+              </li>
+              <!-- End -->
+          </ul>
+          <ul class="menu_items">
+              <div class="menu_title employee_registration"></div>
+              <!-- duplicate these li tag if you want to add or remove navlink only -->
+              <!-- Start -->
+              <li class="item">
+                  <a href="#" class="nav_link">
+                  <span class="navlink_icon">
+                      <i class="bx bxs-user-detail"></i>
+                  </span>
+                  <span class="navlink">Employee Registry</span>
+                  </a>
+              </li>
+              <!-- End -->
+              <!-- Start -->
+              <li class="item">
+                  <a href="#" class="nav_link">
+                  <span class="navlink_icon">
+                      <i class="bx bxs-search-alt-2"></i>
+                  </span>
+                  <span class="navlink">Search Employee</span>
+                  </a>
+              </li>
+              <!-- End -->
+          </ul>
+          <ul class="menu_items">
+              <div class="menu_title employment_tools"></div>
+              <!-- duplicate these li tag if you want to add or remove navlink only -->
+              <!-- Start -->
+              <li class="item">
+                  <a href="#" class="nav_link">
+                  <span class="navlink_icon">
+                      <i class="bx bxs-folder"></i>
+                  </span>
+                  <span class="navlink">201 Files</span>
+                  </a>
+              </li>
+              <!-- End -->
+              <!-- Start -->
+              <li class="item">
+                  <a href="#" class="nav_link">
+                  <span class="navlink_icon">
+                      <i class="bx bxs-calendar-alt"></i>
+                  </span>
+                  <span class="navlink">Request</span>
+                  </a>
+              </li>
+              <!-- End -->
+              <!-- Start -->
+              <li class="item">
+                  <a href="#" class="nav_link">
+                  <span class="navlink_icon">
+                      <i class="bx bxs-gift"></i>
+                  </span>
+                  <span class="navlink">Rewards</span>
+                  </a>
+              </li>
+              <!-- End -->
+              <!-- Start -->
+              <li class="item">
+                  <a href="#" class="nav_link">
+                  <span class="navlink_icon">
+                      <i class="bx bxs-file"></i>
+                  </span>
+                  <span class="navlink">Reports</span>
+                  </a>
+              </li>
+              <!-- End -->
+          </ul>
+          <ul class="menu_items">
+              <div class="menu_title learning_nd_development"></div>
+              <!-- duplicate these li tag if you want to add or remove navlink only -->
+              <!-- Start -->
+              <li class="item">
+                  <a href="#" class="nav_link">
+                  <span class="navlink_icon">
+                      <i class="bx bxs-calendar-event"></i>
+                  </span>
+                  <span class="navlink">Training & Seminars</span>
+                  </a>
+              </li>
+              <!-- End -->
+              <!-- Start -->
+              <li class="item">
+                  <a href="#" class="nav_link">
+                  <span class="navlink_icon">
+                      <i class="bx bxs-folder-open"></i>
+                  </span>
+                  <span class="navlink">Materials</span>
+                  </a>
+              </li>
+              <!-- End -->
+          </ul>
+      </div>
+      <!-- Sidebar Open / Close -->
+      <div class="bottom_content">
+          <div class="bottom expand_sidebar">
+              <span> Expand</span>
+              <i class='bx bx-log-in' ></i>
+          </div>
+          <div class="bottom collapse_sidebar">
+              <span> Collapse</span>
+              <i class='bx bx-log-out'></i>
+          </div>
+      </div>
+  </nav>
     <!-- plugins:js -->
     <script src="assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
@@ -277,339 +226,353 @@
     <script src="assets/js/dashboard.js"></script>
     <script src="assets/js/todolist.js"></script>
     <!-- End custom js for this page -->    
-        <!--Tabs-->
-        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7da4dc4c-4db2-4881-ac97-b8227a54d34b?apiKey=9c098728c0c645bf9643b96f1cd2c880&" class="imgreports" />
-        <div class="reportstitle">Reports</div>
+       
+    
+    <!--Tabs-->
+      <div id="main">
+        <div class="content-wrapper">
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7da4dc4c-4db2-4881-ac97-b8227a54d34b?apiKey=9c098728c0c645bf9643b96f1cd2c880&" class="imgreports" />
+            <div class="reportstitle">Reports</div>
 
-        
-        <div class="tabs-container">
-                <div class="tab" id = "acc" onclick="openTab('Accounts')">Accounts</div>
-                <div class="tab" id = "app" onclick="openTab('Applicants')">Applicants</div>
-                <div class="tab" id = "rew" onclick="openTab('Rewards')">Rewards</div>
-                <div class="tab" id = "req" onclick="openTab('Request')">Request</div>
-        </div>
-        
-        <!--Rewards-->
-
-            <div class="tab-content" id="Rewards">
-                <div class = acc>
-                    <img loading="lazy" src="assets/images/reports/gift-solid 1 (1).png" class="imgrewards" />
-                    <div class="rewards">Rewards</div>
-                    <div class = "listnaddrew">
-                        <div class="listofrew">List of Rewards   
-                        </div>
-                    </div>
-                </div>
-                <div class="container mt-5">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card grayish-card">
-                                <div class="card-header">
-                                    <h4>Candidate for Punctuality</h4>
-                                </div>
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>No.</th>
-                                                    <th>Name</th>
-                                                    <th>Department</th>
-                                                    <th>Attendance</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>John Doe</td>
-                                                    <td>HR</td>
-                                                    <td>20</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Jane Smith</td>
-                                                    <td>IT</td>
-                                                    <td>15</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>Bob Johnson</td>
-                                                    <td>Finance</td>
-                                                    <td>18</td>
-                                                </tr>
-                                                <!-- Add more rows as needed -->
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <!--Newly Hired-->
-                    <div class="container mt-5">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card grayish-card">
-                                    <div class="card-header">
-                                        <h4>Newly Hired</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped">
-                                                <thead>
-                                                    <tr>
-                                                        <th>No.</th>
-                                                        <th>Name</th>
-                                                        <th>Department</th>
-                                                        <th>Date</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>John Doe</td>
-                                                        <td>HR</td>
-                                                        <td>11-11-2023</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Jane Smith</td>
-                                                        <td>IT</td>
-                                                        <td>11-12-2023</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Bob Johnson</td>
-                                                        <td>Finance</td>
-                                                        <td>18-12-2023</td>
-                                                    </tr>
-                                                    <!-- Add more rows as needed -->
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>        
-                    <!--Most Active-->
-                    <div class="container mt-5">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card grayish-card">
-                                    <div class="card-header">
-                                        <h4>Most Active Employee</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped">
-                                                <thead>
-                                                    <tr>
-                                                        <th>No.</th>
-                                                        <th>Name</th>
-                                                        <th>Department</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>John Doe</td>
-                                                        <td>HR</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Jane Smith</td>
-                                                        <td>IT</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Bob Johnson</td>
-                                                        <td>Finance</td>
-                                                    </tr>
-                                                    <!-- Add more rows as needed -->
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>        
-                </div>
-                
-                <!--Accounts-->
-
-                <div class="tab-content" id="Accounts" style="display: none;">
-                    <div class = acc>
-                    <img loading="lazy" src="assets/images/reports/acc.png" class="imgacc" />
-                    <div class="accounts">Accounts</div>
-                    <div class = "listnadd">
-                        <div class="listofacc">List of Accounts</div>
-                        <div class="addbtn"><button class="add_acc_btn">+Add Account</button></div>
-                        <hr>
-                    </div>
-                    </div>
-                    <div class = "filter-container_acc">
-                        <label for="filter" class="filter-label_acc">Filter</label>
-                        <select name="filter" class="form-select_acc" data-el="form-select">
-                        <option value="All">All</option>
-                        <option value="Accounting">Accounting</option>
-                        <option value="HR">HR</option>
-                        </select>
-                        <div class="search-container_acc">
-                        <input type="text" id="search" placeholder="Search" class="search">
-                        <img loading="lazy" src="assets/images/reports/Search Icon.png" class="search-icon" alt="Search">
-                        </div>
-                    </div>
-                    <div class = "filter-container_acc1">
-                        <select name="filter" class="form-select_acc1" data-el="form-select">
-                        <option value="All">All</option>
-                        <option value="Applicant">Applicant</option>
-                        <option value="Permanent">Permanent</option>
-                        <option value="Job Order">Job Order</option>
-                        </select>
-                    </div>
-                    <div class="table-container">
-                        <table class="message-table">
-                        <thead>
-                            <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Account Status</th>
-                            <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <td>1</td>
-                            <td>Pedro Penduko</td>
-                            <td>Applicant</td>
-                            <td>Active</td>
-                            <td class="account-container_acc">
-                                <button id="activate-btn_acc">Activate</button>
-                                <button id="terminate-btn_acc">Terminate</button>
-                            </td>
-                            </tr>
-                            <!-- Add more rows as needed -->
-                        </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!--Applicants-->
-
-                <div class="tab-content" id="Applicants" style="display: none;">
-                    <div class = acc>
-                        <img loading="lazy" src="assets/images/reports/carbon_user-activity.png" class="imgapp" />
-                        <div class="applicants">Applicants</div>
-                        <div class = "listnadd">
-                            <div class="listofapp">List of Applicants</div>
-                            <div class="addbtn"><button class="add_applicants">+Add Applicant</button></div>
-                            <hr>
-                        </div>
-                    </div>
-                    <div class = "filter-container">
-                        <label for="filter" class="filter-label">Filter</label>
-                        <select name="filter" class="form-select_app" data-el="form-select">
-                        <option value="All">All</option>
-                        <option value="Accounting">Pending</option>
-                        <option value="HR">Scheduled</option>
-                        </select>
-                        <div class="search-container">
-                        <input type="text" id="search" placeholder="Search" class="search">
-                        <img loading="lazy" src="assets/images/reports/Search Icon.png" class="search-icon" alt="Search">
-                        </div>
-                    </div>
-                    <div class="table-container">
-                        <table class="message-table">
-                        <thead>
-                            <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Application Date</th>
-                            <th>Application Status</th>
-                            <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <td>1</td>
-                            <td>Pedro Penduko</td>
-                            <td>11-12-2023</td>
-                            <td>Pending</td>
-                            <td class="view-container">
-                                <button id="view-btn" onclick="redirectToApplicantProf()">View</button>
-                            </td>
-                            </tr>
-                            <!-- Add more rows as needed -->
-                        </tbody>
-                        </table>
-                    </div>
-                </div>
-                    
             
-                <!--request Tab-->
-                <div class="tab-content" id="Request" style="display: none;">
-                    <div>
-                        <img loading="lazy" src="assets/images/reports/solar_calendar-bold.png" class="imgrequest" />
-                        <div class="request">Request</div>
-                        <div class="listnadd">
-                            <div class="listofreq">List of Employee Request</div>
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="filter-container">
-                        <label for="filter" class="filter-label">Filter</label>
-                        <select name="filter" class="form-select" data-el="form-select">
-                            <option value="All">All</option>
-                            <option value="Leave">Leave</option>
-                            <option value="LocatorSlip">Locator Slip</option>
-                        </select>
-                        <div class="search-container">
-                            <input type="text" id="search" placeholder="Search" class="search">
-                            <img loading="lazy" src="assets/images/reports/Search Icon.png" class="search-icon" alt="Search">
-                        </div>
-                    </div>
-                    <div class="table-container1">
-                        <table class="message-table">
-                            <thead>
-                                <tr>
-                                    <th>Username</th>
-                                    <th>Request</th>
-                                    <th>Reason</th>
-                                    <th>Duration</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>username@username.com</td>
-                                    <td>Leave</td>
-                                    <td>Sick</td>
-                                    <td>3 days</td>
-                                    <td class="account-container">
-                                        <button class="activate-btn">Accept</button>
-                                        <button class="terminate-btn">Deny</button>
-                                    </td>
-                                </tr>
-                                <!-- Add more rows as needed -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                
+            <div class="tabs-container">
+                    <div class="tab" id = "acc" onclick="openTab('Accounts')">Accounts</div>
+                    <div class="tab" id = "app" onclick="openTab('Applicants')">Applicants</div>
+                    <div class="tab" id = "rew" onclick="openTab('Rewards')">Rewards</div>
+                    <div class="tab" id = "req" onclick="openTab('Request')">Request</div>
             </div>
-        </div>
-    </div>
+            
+            <!--Rewards-->
+
+                <div class="tab-content" id="Rewards">
+      
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card grayish-card">
+                                  <div class="card-header">
+                                    <img loading="lazy" src="images/reports/gift-solid 1 (1).png" class="imgrewards" /><h4>Rewards</h4>
+                                  </div>
+                                    <div class="card-header">
+                                        <h4>Candidate for Punctuality</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No.</th>
+                                                        <th>Name</th>
+                                                        <th>Department</th>
+                                                        <th>Attendance</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>John Doe</td>
+                                                        <td>HR</td>
+                                                        <td>20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Jane Smith</td>
+                                                        <td>IT</td>
+                                                        <td>15</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Bob Johnson</td>
+                                                        <td>Finance</td>
+                                                        <td>18</td>
+                                                    </tr>
+                                                    <!-- Add more rows as needed -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <!--Newly Hired-->
+                        <div class="container mt-5">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card grayish-card">
+                                        <div class="card-header">
+                                            <h4>Newly Hired</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>No.</th>
+                                                            <th>Name</th>
+                                                            <th>Department</th>
+                                                            <th>Date</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>John Doe</td>
+                                                            <td>HR</td>
+                                                            <td>11-11-2023</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td>Jane Smith</td>
+                                                            <td>IT</td>
+                                                            <td>11-12-2023</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3</td>
+                                                            <td>Bob Johnson</td>
+                                                            <td>Finance</td>
+                                                            <td>18-12-2023</td>
+                                                        </tr>
+                                                        <!-- Add more rows as needed -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>        
+                        <!--Most Active-->
+                        <div class="container mt-5">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card grayish-card">
+                                        <div class="card-header">
+                                            <h4>Most Active Employee</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>No.</th>
+                                                            <th>Name</th>
+                                                            <th>Department</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>John Doe</td>
+                                                            <td>HR</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td>Jane Smith</td>
+                                                            <td>IT</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3</td>
+                                                            <td>Bob Johnson</td>
+                                                            <td>Finance</td>
+                                                        </tr>
+                                                        <!-- Add more rows as needed -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>        
+                    </div>
+                    
+                    <!--Accounts-->
+                    <div class="tab-content" id="Accounts">
+                      <div class="container mt-5">
+                          <div class="row">
+                              <div class="col-12">
+                                  <div class="card grayish-card">
+                                    <div class="card-header" id = firstacc_head>
+                                      <img loading="lazy" src="images/reports/acc.png" class="imgacc" />
+                                      <h4 class="account-label">Accounts</h4>
+                                    </div>
+                                      <div class="card-header">
+                                          <h4>List of Accounts</h4>
+                                            <button class="add_acc_btn">+Add Account</button>
+                                          <hr>
+                                      </div>
+                                      <div class = "card-headerfilt">
+                                        <label for="filter" class="filter-label_acc">Filter</label>
+                                        <select name="filter" class="form-select_acc" data-el="form-select">
+                                        <option value="All">All</option>
+                                        <option value="Accounting">Accounting</option>
+                                        <option value="HR">HR</option>
+                                        </select>
+                                        <div class="search-container_acc">
+                                        <input type="text" id="search_acc" placeholder="Search" class="search">
+                                        <img loading="lazy" src="images/reports/Search Icon.png" class="search-icon_acc" alt="Search">
+                                        </div>
+                                    </div>
+                                      <div class="card-body">
+
+                                          <div class="table-container">
+                                              <table class="message-table">
+                                              <thead>
+                                                  <tr>
+                                                  <th>ID</th>
+                                                  <th>Name</th>
+                                                  <th>Category</th>
+                                                  <th>Account Status</th>
+                                                  <th>Action</th>
+                                                  </tr>
+                                              </thead>
+                                              <tbody>
+                                                  <tr>
+                                                  <td>1</td>
+                                                  <td>Pedro Penduko</td>
+                                                  <td>Applicant</td>
+                                                  <td>Active</td>
+                                                  <td class="account-container_acc">
+                                                      <button id="activate-btn_acc">Activate</button>
+                                                      <button id="terminate-btn_acc">Terminate</button>
+                                                  </td>
+                                                  </tr>
+                                                  <!-- Add more rows as needed -->
+                                              </tbody>
+                                              </table>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                                  
+
+                                      <!--Applicants-->
+                                      <div class="tab-content" id="Applicants">
+                                        <div class="container mt-5">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="card grayish-card">
+                                                      <div class="card-header" id = firstacc_head>
+                                                        <img loading="lazy" src="images/reports/carbon_user-activity.png" class="imgapp" />
+                                                        <h4 class="applicants">Applicant</h4>
+                                                      </div>
+                                                        <div class="card-header">
+                                                            <h4 id = "listofapp">List of Applicants</h4>
+                                                              <button class="add_app_btn">+Add Account</button>
+                                                            <hr>
+                                                        </div>
+                                                        <div class = "card-header">
+                                                          <label for="filter" class="filter-label_app">Filter</label>
+                                                          <select name="filter" class="form-select_app" data-el="form-select">
+                                                          <option value="All">All</option>
+                                                          <option value="Accounting">Pending</option>
+                                                          <option value="HR">Scheduled</option>
+                                                          </select>
+                                                          <div class="search-container_app">
+                                                          <input type="text" id="search_app" placeholder="Search" class="search_app">
+                                                          <img loading="lazy" src="images/reports/Search Icon.png" class="search-icon_app" alt="Search">
+                                                          </div>
+                                                      </div>
+                                                      <div class="card-body"></div>
+                                                        <div class="table-container">
+                                                            <table class="message-table">
+                                                            <thead>
+                                                                <tr>
+                                                                <th>ID</th>
+                                                                <th>Name</th>
+                                                                <th>Application Date</th>
+                                                                <th>Application Status</th>
+                                                                <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                <td>1</td>
+                                                                <td>Pedro Penduko</td>
+                                                                <td>11-12-2023</td>
+                                                                <td>Pending</td>
+                                                                <td class="view-container">
+                                                                    <button id="view-btn" onclick="redirectToApplicantProf()">View</button>
+                                                                </td>
+                                                                </tr>
+                                                                <!-- Add more rows as needed -->
+                                                            </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                          </div>
+                                      </div>
+                                          
+                                  
+                                      <!--request Tab-->
+                                      <div class="tab-content" id="Request" style="display: none;">
+                                          <div>
+                                              <img loading="lazy" src="assets/images/reports/solar_calendar-bold.png" class="imgrequest" />
+                                              <div class="request">Request</div>
+                                              <div class="listnadd">
+                                                  <div class="listofreq">List of Employee Request</div>
+                                                  <hr>
+                                              </div>
+                                          </div>
+                                          <div class="filter-container">
+                                              <label for="filter" class="filter-label">Filter</label>
+                                              <select name="filter" class="form-select" data-el="form-select">
+                                                  <option value="All">All</option>
+                                                  <option value="Leave">Leave</option>
+                                                  <option value="LocatorSlip">Locator Slip</option>
+                                              </select>
+                                              <div class="search-container_req">
+                                                  <input type="text" id="search" placeholder="Search" class="search_req">
+                                                  <img loading="lazy" src="images/reports/Search Icon.png" class="search-icon_req" alt="Search">
+                                              </div>
+                                          </div>
+                                          <div class="table-container1">
+                                              <table class="message-table">
+                                                  <thead>
+                                                      <tr>
+                                                          <th>Username</th>
+                                                          <th>Request</th>
+                                                          <th>Reason</th>
+                                                          <th>Duration</th>
+                                                          <th>Action</th>
+                                                      </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                      <tr>
+                                                          <td>username@username.com</td>
+                                                          <td>Leave</td>
+                                                          <td>Sick</td>
+                                                          <td>3 days</td>
+                                                          <td class="account-container">
+                                                              <button class="activate-btn">Accept</button>
+                                                              <button class="terminate-btn">Deny</button>
+                                                          </td>
+                                                      </tr>
+                                                      <!-- Add more rows as needed -->
+                                                  </tbody>
+                                              </table>
+                                          </div>
+                                      </div>
+                                    </div>  
+                                  </div>
+          </div>
+      </div>
+  </div>
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/reports.js"></script>
+    <script src="js/reports.js"></script>
+    <script src = "js/script.js"></script>
 </body>
 </html>
 
