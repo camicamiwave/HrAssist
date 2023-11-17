@@ -63,7 +63,7 @@
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="admin-offices.html" class="nav_link">
+                        <a href="admin_offices_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-buildings"></i>
                         </span>
@@ -86,7 +86,7 @@
                     <div class="menu_title recruitment"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item">
+                    <li class="item active">
                         <a href="admin_manage_applicant_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-group"></i>
@@ -120,7 +120,7 @@
                     </li>
                     <!-- End -->
                     <!-- Start -->
-                    <li class="item active">
+                    <li class="item">
                         <a href="admin_search_employee_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-search-alt-2"></i>
@@ -217,42 +217,21 @@
                 <div class="page-header">
                     <h1 class="page-title">
                         <span class="page-title-icon">
-                        <i class="bx bxs-search-alt-2"></i>
-                        </span> Search Employee
+                        <i class="bx bx-group"></i>
+                        </span> Manage Applicant
                     </h1>
                 </div>
                 <div class="table">
                     <div class="table-header">
-                        <p>Employee Personal Information</p>
+                        <p style="margin: auto;">Applicant Profile</p>
                     </div>
-                    <div class="container">
-                        <form id="SearchEmployeeForm">
-                            <div class="form first">
-                                <div class="details ID">
-                                    <span class="title">Employee Details</span>
-                                    <div class="fields">
-                                        <div class="input-field">
-                                            <label>First Name</label>
-                                            <input type="text" placeholder="Enter First Name" id="inputFirstName" name="inputFirstName">
-                                        </div>
-                                        <div class="input-field">
-                                            <label>Middle Name</label>
-                                            <input type="text" placeholder="Enter Middle Name" id="inputMiddleName" name="inputMiddleName">
-                                        </div>
-                                        <div class="input-field">
-                                            <label>Last Name</label>
-                                            <input type="text" placeholder= "Enter Last Name" id="inputLastName" name="inputLastName">
-                                        </div>
-                                        <div class="input-field">
-                                            <label>Ext. Name</label>
-                                            <input type="text" placeholder="Enter Extension Name" id="inputExtName" name="inputExtName">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button class="submit" id="submitBtn">Search Employee</button>
-                            </div>
-                        </form>
+                    <div class="table-header">
+                        <div class="group">
+                            <button>Personal Information</button>
+                            <button>Education</button>
+                            <button>Other Information</button>
+                            <button>Files</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -260,9 +239,6 @@
 
         <!-- JavaScript -->
         <script src="js/script.js"></script>
-
-        <!-- Database JavaScript -->
-        <script src="bundles/PDS.bundle.js"></script>
 
     </body>
 

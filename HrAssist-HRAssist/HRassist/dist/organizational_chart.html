@@ -8,9 +8,10 @@
         <!-- Boxicons CSS -->
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
         <title>HR Assist - Admin</title>
-        <link rel="stylesheet" href="css/admin.css" />
+        <link rel="stylesheet" href="css/org-chart.css" />
         <!-- Favicon -->
         <link href="img/hrlogo.svg" rel="icon">
+        <script src="www.[yourdomain].com/OrgChart.js"></script>
     </head>
 
     <body>
@@ -62,8 +63,8 @@
                     <div class="menu_title lgu_information"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item">
-                        <a href="admin-offices.html" class="nav_link">
+                    <li class="item active">
+                        <a href="#" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-buildings"></i>
                         </span>
@@ -73,7 +74,7 @@
                     <!-- End -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="#" class="nav_link">
+                        <a href="calendar.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-calendar"></i>
                         </span>
@@ -120,7 +121,7 @@
                     </li>
                     <!-- End -->
                     <!-- Start -->
-                    <li class="item active">
+                    <li class="item">
                         <a href="admin_search_employee_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-search-alt-2"></i>
@@ -217,53 +218,24 @@
                 <div class="page-header">
                     <h1 class="page-title">
                         <span class="page-title-icon">
-                        <i class="bx bxs-search-alt-2"></i>
-                        </span> Search Employee
+                        <i class="bx bxs-buildings"></i>
+                        </span> Offices > Organization Tree
                     </h1>
                 </div>
-                <div class="table">
-                    <div class="table-header">
-                        <p>Employee Personal Information</p>
-                    </div>
-                    <div class="container">
-                        <form id="SearchEmployeeForm">
-                            <div class="form first">
-                                <div class="details ID">
-                                    <span class="title">Employee Details</span>
-                                    <div class="fields">
-                                        <div class="input-field">
-                                            <label>First Name</label>
-                                            <input type="text" placeholder="Enter First Name" id="inputFirstName" name="inputFirstName">
-                                        </div>
-                                        <div class="input-field">
-                                            <label>Middle Name</label>
-                                            <input type="text" placeholder="Enter Middle Name" id="inputMiddleName" name="inputMiddleName">
-                                        </div>
-                                        <div class="input-field">
-                                            <label>Last Name</label>
-                                            <input type="text" placeholder= "Enter Last Name" id="inputLastName" name="inputLastName">
-                                        </div>
-                                        <div class="input-field">
-                                            <label>Ext. Name</label>
-                                            <input type="text" placeholder="Enter Extension Name" id="inputExtName" name="inputExtName">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button class="submit" id="submitBtn">Search Employee</button>
-                            </div>
-                        </form>
-                    </div>
+                <div class="organization-container">
+                    <div class="org-name">Office of the Municipal</div>
+                    <div style="width:100%; height:700px;" id="tree"></div>
                 </div>
+                
             </div>
         </div>
 
         <!-- JavaScript -->
-        <script src="js/script.js"></script>
-
-        <!-- Database JavaScript -->
-        <script src="bundles/PDS.bundle.js"></script>
-
+        <script src="js/orgchart.js"></script>
+        <script src="js/organizational-chart.js"></script>
+        <!-- Database Javascript -->  
+        <script src="bundles/auth.bundle.js"></script>   
+        <script src="bundles/applicant_registry.bundle.js"></script>   
     </body>
 
 </html>

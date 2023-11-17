@@ -423,104 +423,68 @@ button:hover {
     line-height: 36px; }
 
 /* ---------------------------------------------------------------------------------------- */
-/* ----------------------------------------- TABLE ---------------------------------------- */
+/* ------------------------------------ Offices Section ----------------------------------- */
 /* ---------------------------------------------------------------------------------------- */
 
-.table {
-    background-color: #ffffff;
+.organization-container {
     overflow: auto;
     align-items: center;
     justify-content: center;
+    min-width: 300px;
+    margin: 0 auto;
 }
-
-.table-header {
+  
+.organization-container .details {
+    background: #ffffff;
+    box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+  
+.details .org-left {
+    min-width: 82px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #08533F;
+    justify-content: center;
+    padding: 8px 48px;
 }
-
-.table-header p {
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.table-header .group {
+  
+.details .org-right {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 24px;
 }
-
-.table-header .group button {
-    flex: 1;
-    width: 200px;
-    margin: 0 70px; /* Adjust margin as needed */
-    padding: 10px 20px;
-    color: #ffffff;
-    background-color: #08533F;
-    border-radius: 6px;
-    border: none; /* Remove button border */
+  
+.details .org-right h3.org-name {
+    font-size: 24px;
+    margin: 24px 0 10px 0;
+    color: #00674B;
+    text-transform: uppercase;
 }
-
-.add-new {
-    padding: 10px 20px;
-    color: #ffffff;
-    background-color: #08533F;
+  
+.details .org-right .num-orgmember {
+    background: #fff8ba;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    padding: 8px;
+    border-radius: 16px;
+    font-size: 14px;
+    margin-bottom: 24px;
 }
-
-table {
-    width: 100%;
-    table-layout: auto;
-    min-width: 100px;
-    border-collapse: collapse;
+  
+img.org-logo {
+    min-width: 50%;
+    min-height: 50%;
+    vertical-align: middle;
 }
-
-thead th {
-    position: sticky;
-    top: 0;
-    background-color: #08533F;
-    color: #ffffff;
-}
-
-th, td {
-    border-bottom: 1px solid #08533F;
-    padding: 10px 20px;
-    word-break: normal;
-    text-align: center;
-}
-
-td img {
-    height: 50px;
-    width: 50px;
-    border-radius: 100%;
-    border: 5px solid #e6e7e8;
-    margin: auto;
-}
-
-tr:hover td {
-    color: #000000;
-    cursor: pointer;
-    background-color: #e8f3eb;
-}
-
-
-tbody tr td button {
-    padding: 10px;
-    margin: 0 10px;
-    border-radius: 10%;
-}
-
-tbody tr td button i {
-    color: #ffffff;
-    width: 100%;
-    height: 100%;
-}
-
-td button:nth-child(1) {
-    background-color: #0298cf;
-}
-
-td button:nth-child(2) {
-    background-color: #f80000;
+  
+a.org-link {
+    text-decoration: none;
 }
 
 /* ---------------------------------------------------------------------------------------- */
@@ -529,7 +493,7 @@ td button:nth-child(2) {
 
 .container{
     position: relative;
-    max-width: 900px;
+    min-width: 900px;
     width: 100%;
     border-radius: 6px;
     padding: 30px;
@@ -826,129 +790,5 @@ form .input-box span.details{
 
     .job-details::-webkit-scrollbar{
         width: 5px;
-    }
-}
-
-
-/* ---------------------------------------------------------------------------------------- */
-/* -------------------------------------- CARD VIEW --------------------------------------- */
-/* ---------------------------------------------------------------------------------------- */
-
-.article-contener {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    margin: auto;
-}
-
-.groups {
-    margin: auto;
-    width: 780px;
-    height: auto;
-}
-
-.groups li {
-    position: relative;
-    list-style: none;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 3px 4px 0 #0001;
-    overflow: hidden;
-    margin-bottom: 30px;
-    transition: all 0.3s;
-}
-
-.groups li:hover {
-    transform: scale(1.04);
-    box-shadow: 0 4px 14px 0 #0005;
-}
-
-.groups .card {
-    background-color: #e8f3eb;
-    overflow: hidden;
-    display: block;
-    border-left: 20px solid #1f8f3e;
-    border-top: 2px solid #08533F;
-    border-bottom: 2px solid #08533F;
-    border-right: 2px solid #08533F;
-}
-
-.groups .image-session {
-    float: left;
-    overflow: hidden;
-    margin-right: 20px;
-}
-
-.groups .image-session .image {
-    margin-left: 50px;
-    margin-top: 35px;
-    width: 150px;
-    height: 150px; 
-    display: block;
-    background-size: cover;
-    background-position: center;
-}
-
-.groups .meta-sission {
-    position: relative;
-    padding: 15px;
-    display: block;
-    height: 220px;
-}
-
-
-.groups .body .title {
-    padding-left: 90px;
-    margin-top: 55px;
-    height: 60px;
-    overflow: hidden;
-    font-size: 22px;
-}
-
-
-.groups .footer .button {
-    position: absolute;
-    bottom: 20px;
-    right: 25px;
-    background: #08533F;
-    color: #fff;
-    line-height: 2.2;
-    padding: 0 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 1px 6px 0 #0004;
-    transition: all 0.3s; 
-}
-
-.groups .footer .button:hover { 
-    box-shadow: 0 3px 8px 0 #0005;
-    background: #1f8f3e; 
-    right: 15px;
-}
-
-.groups .footer .views {
-    display: block;
-    font-size: 12px;
-    margin-top: 40px;
-}
-
-@media screen and (max-width:780px){
-    .groups {    
-        width: 96%;
-    }
-    
-    .groups li:hover {    
-        transform: none;    
-        box-shadow: none;
-    }
-}
-
-@media screen and (max-width:560px){
-    .groups .image-session {    
-        float: none;
-         margin-right: 0;
-    }
-    
-    .groups .image-session .image {
-        width: 100%;
     }
 }

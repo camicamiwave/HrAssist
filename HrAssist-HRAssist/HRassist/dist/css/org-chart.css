@@ -1,0 +1,522 @@
+/* Import Google font - Poppins */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+.sidebar:hover + .main-content {
+    margin-left: 300px; /* Adjust this value according to your sidebar width */
+    transition: margin-left 0.5s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --white-color: #fff;
+    --blue-color: #4070f4;
+    --grey-color: #707070;
+    --grey-color-light: #aaa;
+}
+
+body {
+    background-color: #D9D9D9;
+    transition: all 0.5s ease;
+}
+
+body.dark {
+    background-color: #333;
+}
+
+body.dark {
+    --white-color: #333;
+    --blue-color: #fff;
+    --grey-color: #f2f2f2;
+    --grey-color-light: #aaa;
+}
+
+h1, .h1 {
+    font-size: calc(1.375rem + 1.5vw); }
+    @media (min-width: 1200px) {
+        h1, .h1 {
+            font-size: 2.5rem; } }
+  
+h2, .h2 {
+    font-size: calc(1.325rem + 0.9vw); }
+    @media (min-width: 1200px) {
+        h2, .h2 {
+            font-size: 2rem; } }
+  
+h3, .h3 {
+    font-size: calc(1.3rem + 0.6vw); }
+    @media (min-width: 1200px) {
+        h3, .h3 {
+            font-size: 1.75rem; } }
+  
+h4, .h4 {
+    font-size: calc(1.275rem + 0.3vw); }
+    @media (min-width: 1200px) {
+        h4, .h4 {
+            font-size: 1.5rem; } }
+  
+h5, .h5 {
+    font-size: 1.25rem; }
+  
+h6, .h6 {
+    font-size: 1rem; }
+  
+p {
+    margin-top: 0;
+    margin-bottom: 1rem; }
+
+button {
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #1f8f3e;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* ---------------------------------------- NAVBAR ---------------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    z-index: 1000;
+    box-shadow: 0 0 2px var(--grey-color-light);
+}
+
+.logo_item {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--blue-color);
+}
+
+.navbar img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.navbar img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.search_bar {
+    height: 35px;
+    max-width: 430px;
+    width: 100%;
+}
+
+.search_bar input {
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    font-size: 18px;
+    outline: none;
+    background-color: var(--white-color);
+    color: var(--grey-color);
+    border: 1px solid var(--grey-color-light);
+    padding: 0 20px;
+}
+
+.navbar_content {
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+}
+
+.navbar_content i {
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--grey-color);
+}
+
+/* sidebar */
+.sidebar {
+    background-color: var(--white-color);
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 80px 20px;
+    z-index: 100;
+    overflow-y: scroll;
+    box-shadow: 0 0 1px var(--grey-color-light);
+    transition: all 0.5s ease;
+}
+
+.sidebar.close {
+    padding: 60px 0;
+    width: 80px;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.menu_content {
+    position: relative;
+}
+
+.menu_title {
+    margin: 15px 0;
+    padding: 0 20px;
+    font-size: 18px;
+}
+
+.sidebar.close .menu_title {
+    padding: 6px 30px;
+}
+
+.menu_title::before {
+    color: var(--grey-color);
+    white-space: nowrap;
+}
+
+.menu_admin_tools::before {
+    content: "Admin Tools";
+}
+
+.lgu_information::before {
+    content: "LGU Information";
+}
+
+.recruitment::before {
+    content: "Recruitment";
+}
+
+.employee_registration::before {
+    content: "Employee Registration";
+}
+
+.employment_tools::before {
+    content: "Employment Tools";
+}
+
+.learning_nd_development::before {
+    content: "Learning & Development";
+}
+
+.sidebar.close .menu_title::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 18px;
+    border-radius: 12px;
+    background: var(--grey-color-light);
+}
+
+.menu_items {
+    padding: 0;
+    list-style: none;
+}
+
+.active{
+    background-color: #08533F;
+    color: var(--white-color);
+    border-radius: 10px;
+}
+
+.navlink_icon {
+    position: relative;
+    font-size: 22px;
+    min-width: 50px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.navlink_icon::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: calc(100% + 100px);
+    left: -20px;
+}
+
+.navlink_icon:hover {
+    background: #08533F;
+}
+
+.sidebar .nav_link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 4px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--grey-color);
+    white-space: nowrap;
+}
+
+.sidebar.close .navlink {
+    display: none;
+}
+
+.nav_link:hover {
+    color: var(--white-color);
+    background: #08533F;
+}
+
+.sidebar.close .nav_link:hover {
+    background: var(--white-color);
+}
+
+.submenu_item {
+    cursor: pointer;
+}
+
+.submenu {
+    display: none;
+}
+
+.submenu_item .arrow-left {
+    position: absolute;
+    right: 10px;
+    display: inline-block;
+    margin-right: auto;
+}
+
+.sidebar.close .submenu {
+    display: none;
+}
+
+.show_submenu ~ .submenu {
+    display: block;
+}
+
+.show_submenu .arrow-left {
+    transform: rotate(90deg);
+}
+
+.submenu .sublink {
+  padding: 15px 15px 15px 52px;
+}
+
+.bottom_content {
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    width: 260px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.bottom {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0;
+    justify-content: space-around;
+    padding: 18px 0;
+    text-align: center;
+    width: 115%;
+    color: var(--grey-color);
+    border-top: 1px solid var(--grey-color-light);
+    background-color: var(--white-color);
+}
+
+.bottom i {
+    font-size: 20px;
+}
+
+.bottom span {
+    font-size: 18px;
+}
+.sidebar.close .bottom_content {
+    width: 50px;
+    left: 15px;
+}
+
+.sidebar.close .bottom span {
+    display: none;
+}
+
+.sidebar.hoverable .collapse_sidebar {
+    display: none;
+}
+
+#sidebarOpen {
+     display: none;
+}
+
+/* Add this CSS to make #main responsive when hovering over the sidebar */
+.sidebar:hover ~ #main {
+    margin-left: 300px; /* Adjust this value according to your sidebar width */
+    transition: margin-left 0.5s ease;
+}
+
+
+/* ---------------------------------------------------------------------------------------- */
+/* ----------------------------------------- MAIN ----------------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
+
+
+#main {
+    transition: margin-left 0.5s ease;
+    padding: 16px;
+    margin-top: 70px;
+    margin-left: 80px;
+    margin-right: 10px;
+}
+
+/* Add this CSS to make #main responsive when the sidebar is expanded */
+.sidebar.expand ~ #main {
+    margin-right: 15px;
+    margin-left: 310px; /* Adjust this value according to your sidebar width */
+    transition: margin-left 0.5s ease;
+}
+
+/* Add this CSS to make #main responsive when the sidebar is collapsed */
+.sidebar.close ~ #main {
+    margin-right: 10px;
+    margin-left: 90px;
+}
+
+.page-header {
+    margin: 0 0 1.5rem 0; 
+}
+  
+.page-title {
+    color: #000000;
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+}
+
+.page-title .page-title-icon {
+    display: inline-block;
+    margin-right: 15px;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    text-align: center;
+    -webkit-box-shadow: 0px 3px 8.3px 0.7px rgba(31, 143, 62, 0.35);
+    box-shadow: 0px 3px 8.3px 0.7px rgba(31, 143, 62, 0.35); 
+    background-color: #08533F;
+    color:#ffffff;
+}
+    
+.page-title .page-title-icon i {
+    font-size: .9375rem;
+    line-height: 36px; }
+
+
+/* ---------------------------------------------------------------------------------------- */
+/* --------------------------------------- ORG TREE --------------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
+.organization-container {
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+    min-width: 300px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+#tree {
+    width: 200px;
+    height: 200px;
+    display: flex;
+}
+
+/*partial*/
+
+[lcn='hr-team']>rect {
+    fill: #FFCA28;
+}
+
+[lcn='sales-team']>rect {
+    fill: #F57C00;
+}
+
+[lcn='top-management']>rect {
+    fill: #f2f2f2;
+}
+
+[lcn='top-management']>text,
+.assistant>text {
+    fill: #aeaeae;
+}
+
+[lcn='top-management'] circle,
+[lcn='assistant'] {
+    fill: #aeaeae;
+}
+
+.assistant>rect {
+    fill: #ffffff;
+}
+
+.assistant [data-ctrl-n-menu-id]>circle {
+    fill: #aeaeae;
+}
+
+.it-team>rect {
+    fill: #b4ffff;
+}
+
+.it-team>text {
+    fill: #039BE5;
+}
+
+.it-team>[data-ctrl-n-menu-id] line {
+    stroke: #039BE5;
+}
+
+.it-team>g>.ripple {
+    fill: #00efef;
+}
+
+.hr-team>rect {
+    fill: #fff5d8;
+}
+
+.hr-team>text {
+    fill: #ecaf00;
+}
+
+.hr-team>[data-ctrl-n-menu-id] line {
+    stroke: #ecaf00;
+}
+
+.hr-team>g>.ripple {
+    fill: #ecaf00;
+}
+
+.sales-team>rect {
+    fill: #ffeedd;
+}
+
+.sales-team>text {
+    fill: #F57C00;
+}
+
+.sales-team>[data-ctrl-n-menu-id] line {
+    stroke: #F57C00;
+}
+
+.sales-team>g>.ripple {
+    fill: #F57C00;
+}

@@ -63,7 +63,7 @@
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="admin-offices.html" class="nav_link">
+                        <a href="admin_offices_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-buildings"></i>
                         </span>
@@ -110,7 +110,7 @@
                     <div class="menu_title employee_registration"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item">
+                    <li class="item active">
                         <a href="admin_employee_registry_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-user-detail"></i>
@@ -120,7 +120,7 @@
                     </li>
                     <!-- End -->
                     <!-- Start -->
-                    <li class="item active">
+                    <li class="item">
                         <a href="admin_search_employee_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-search-alt-2"></i>
@@ -217,43 +217,102 @@
                 <div class="page-header">
                     <h1 class="page-title">
                         <span class="page-title-icon">
-                        <i class="bx bxs-search-alt-2"></i>
-                        </span> Search Employee
+                        <i class="bx bxs-user-detail"></i>
+                        </span> Employees
                     </h1>
                 </div>
                 <div class="table">
                     <div class="table-header">
-                        <p>Employee Personal Information</p>
+                        <p>Filter</p>
+                        <a href="datasheet.html"><button class="add-new">+ Add Employee</button></a>
                     </div>
-                    <div class="container">
-                        <form id="SearchEmployeeForm">
-                            <div class="form first">
-                                <div class="details ID">
-                                    <span class="title">Employee Details</span>
-                                    <div class="fields">
-                                        <div class="input-field">
-                                            <label>First Name</label>
-                                            <input type="text" placeholder="Enter First Name" id="inputFirstName" name="inputFirstName">
-                                        </div>
-                                        <div class="input-field">
-                                            <label>Middle Name</label>
-                                            <input type="text" placeholder="Enter Middle Name" id="inputMiddleName" name="inputMiddleName">
-                                        </div>
-                                        <div class="input-field">
-                                            <label>Last Name</label>
-                                            <input type="text" placeholder= "Enter Last Name" id="inputLastName" name="inputLastName">
-                                        </div>
-                                        <div class="input-field">
-                                            <label>Ext. Name</label>
-                                            <input type="text" placeholder="Enter Extension Name" id="inputExtName" name="inputExtName">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button class="submit" id="submitBtn">Search Employee</button>
-                            </div>
-                        </form>
-                    </div>
+                    <table class="content-table" id="employeeTable">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Code</th>
+                                <th>Name</th>
+                                <th>Job Position</th>
+                                <th>Office </th>
+                                <th>Gender </th>
+                                <th>Job Title</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="img/admin/user.jpg"></td>
+                                <td>EM1</td>
+                                <td>Emma Watson</td>
+                                <td>Clerk</td>
+                                <td>MAO</td>
+                                <td>Female</td>
+                                <td>Full-Time</td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/admin/user.jpg"></td>
+                                <td>EM2</td>
+                                <td>Anna Gadil</td>
+                                <td>Admin</td>
+                                <td>MSO</td>
+                                <td>Female</td>
+                                <td>Job-Order</td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/admin/user.jpg"></td>
+                                <td>EM3</td>
+                                <td>Camila Watson</td>
+                                <td>Head</td>
+                                <td>MAO</td>
+                                <td>Female</td>
+                                <td>Full-Time</td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/admin/user.jpg"></td>
+                                <td>EM4</td>
+                                <td>Jhana Watson</td>
+                                <td>Encoder</td>
+                                <td>DSWD</td>
+                                <td>Female</td>
+                                <td>Job-Order</td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/admin/user.jpg"></td>
+                                <td>EM5</td>
+                                <td>Tomes Robinson</td>
+                                <td>Driver</td>
+                                <td>MTPSO</td>
+                                <td>Female</td>
+                                <td>Job-Order</td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/admin/user.jpg"></td>
+                                <td>EM6</td>
+                                <td>Joan Gamboa</td>
+                                <td>Clerk</td>
+                                <td>MHO</td>
+                                <td>Female</td>
+                                <td>Full-Time</td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/admin/user.jpg"></td>
+                                <td>EM7</td>
+                                <td>Emma Vinas</td>
+                                <td>Officer</td>
+                                <td>MSWD</td>
+                                <td>Female</td>
+                                <td>Full-Time</td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/admin/user.jpg"></td>
+                                <td>EM8</td>
+                                <td>Emje Dasco</td>
+                                <td>Head</td>
+                                <td>DSWD</td>
+                                <td>Female</td>
+                                <td>Full-Time</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -261,9 +320,10 @@
         <!-- JavaScript -->
         <script src="js/script.js"></script>
 
-        <!-- Database JavaScript -->
-        <script src="bundles/PDS.bundle.js"></script>
-
+        <!-- Database Javascript -->  
+        <script src="bundles/auth.bundle.js"></script> 
+        <script src="bundles/navbar.bundle.js"></script>     
+        <script src="bundles/employee_registry.bundle.js"></script>   
     </body>
 
 </html>
