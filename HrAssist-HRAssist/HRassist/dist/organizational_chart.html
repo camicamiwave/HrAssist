@@ -8,9 +8,10 @@
         <!-- Boxicons CSS -->
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
         <title>HR Assist - Admin</title>
-        <link rel="stylesheet" href="css/admin.css" />
+        <link rel="stylesheet" href="css/org-chart.css" />
         <!-- Favicon -->
         <link href="img/hrlogo.svg" rel="icon">
+        <script src="www.[yourdomain].com/OrgChart.js"></script>
     </head>
 
     <body>
@@ -62,8 +63,8 @@
                     <div class="menu_title lgu_information"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item">
-                        <a href="admin_offices_view.html" class="nav_link">
+                    <li class="item active">
+                        <a href="#" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-buildings"></i>
                         </span>
@@ -86,7 +87,7 @@
                     <div class="menu_title recruitment"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item active">
+                    <li class="item">
                         <a href="admin_manage_applicant_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-group"></i>
@@ -217,70 +218,21 @@
                 <div class="page-header">
                     <h1 class="page-title">
                         <span class="page-title-icon">
-                        <i class="bx bx-group"></i>
-                        </span> Manage Applicant
+                        <i class="bx bxs-buildings"></i>
+                        </span> Offices > Organization Tree
                     </h1>
                 </div>
-                <div class="table">
-                    <div class="table-header">
-                        <p>List of Applicants</p>
-                        <a href="job_application.html"><button class="add-new">+ Add Applicant</button></a>
-                    </div>
-                    <div class="table-header">
-                        <div class="group">
-                            <p>Filter</p>
-                        </div>
-                    </div>
-                    <table class="content-table" id="applicantTable">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Application Date</th>
-                                <th>Application Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Juan Dela Cruz</td>
-                                <td>10/06/2023</td>
-                                <td>Pending</td>
-                                <td>
-                                    <button><i class="bx bx-edit"></i></button>
-                                    <button><i class="bx bx-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Lebron James</td>
-                                <td>10/06/2023</td>
-                                <td>Scheduled</td>
-                                <td>
-                                    <button><i class="bx bx-edit"></i></button>
-                                    <button><i class="bx bx-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Stephen Curry</td>
-                                <td>10/06/2023</td>
-                                <td>Not Qualified</td>
-                                <td>
-                                    <button><i class="bx bx-edit"></i></button>
-                                    <button><i class="bx bx-trash"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="organization-container">
+                    <div class="org-name">Office of the Municipal</div>
+                    <div style="width:100%; height:700px;" id="tree"></div>
                 </div>
+                
             </div>
         </div>
 
         <!-- JavaScript -->
-        <script src="js/script.js"></script>
-    
+        <script src="js/orgchart.js"></script>
+        <script src="js/organizational-chart.js"></script>
         <!-- Database Javascript -->  
         <script src="bundles/auth.bundle.js"></script>   
         <script src="bundles/applicant_registry.bundle.js"></script>   

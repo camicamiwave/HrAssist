@@ -8,7 +8,7 @@
         <!-- Boxicons CSS -->
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
         <title>HR Assist - Admin</title>
-        <link rel="stylesheet" href="css/admin.css" />
+        <link rel="stylesheet" href="css/admin-calendar.css" />
         <!-- Favicon -->
         <link href="img/hrlogo.svg" rel="icon">
     </head>
@@ -63,7 +63,7 @@
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="admin_offices_view.html" class="nav_link">
+                        <a href="admin-offices.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-buildings"></i>
                         </span>
@@ -72,7 +72,7 @@
                     </li>
                     <!-- End -->
                     <!-- Start -->
-                    <li class="item">
+                    <li class="item active">
                         <a href="calendar.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-calendar"></i>
@@ -86,7 +86,7 @@
                     <div class="menu_title recruitment"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item active">
+                    <li class="item">
                         <a href="admin_manage_applicant_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-group"></i>
@@ -217,69 +217,91 @@
                 <div class="page-header">
                     <h1 class="page-title">
                         <span class="page-title-icon">
-                        <i class="bx bx-group"></i>
-                        </span> Manage Applicant
+                        <i class="bx bxs-calendar"></i>
+                        </span> Calendar
                     </h1>
                 </div>
-                <div class="table">
-                    <div class="table-header">
-                        <p>List of Applicants</p>
-                        <a href="job_application.html"><button class="add-new">+ Add Applicant</button></a>
-                    </div>
-                    <div class="table-header">
-                        <div class="group">
-                            <p>Filter</p>
+                <button id="btnAddEvent" class="add-event">+ Add Event</button>
+                <div class="calendar-container">
+                    <div class="calendar">
+                        <div class="month">
+                            <i class="bx bxs-chevron-left prev"></i>
+                            <div class="date">november 2023</div>
+                            <i class="bx bxs-chevron-right next"></i>
                         </div>
+                        <div class="weekdays">
+                            <div>Sun</div>
+                            <div>Mon</div>
+                            <div>Tue</div>
+                            <div>Wed</div>
+                            <div>Thu</div>
+                            <div>Fri</div>
+                            <div>Sat</div>
+                        </div>
+                        <div class="days">
+                        <!--code in js-->
+                        </div>
+                        <div class="go-to">
+                            <div class="go-date">
+                                <input type="text" class="date-input" placeholder="mm/yyyy" style="margin-right: 0px;"/>
+                                <button class="btnGo" style="margin-left: 0px;">Go</button>
+                            </div>
+                            <button class="btnToday">Today</button>
+                        </div>
+                    </div>   
+                </div>   
+            </div>
+            <!-- Modal Section-->
+            <div class="bg-modal">
+                <div class="modal-content">
+                    <div class="formHeader">
+                        <h3>ADD EVENT</h3>
+                        <div class="close">&times;</div>
                     </div>
-                    <table class="content-table" id="applicantTable">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Application Date</th>
-                                <th>Application Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Juan Dela Cruz</td>
-                                <td>10/06/2023</td>
-                                <td>Pending</td>
-                                <td>
-                                    <button><i class="bx bx-edit"></i></button>
-                                    <button><i class="bx bx-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Lebron James</td>
-                                <td>10/06/2023</td>
-                                <td>Scheduled</td>
-                                <td>
-                                    <button><i class="bx bx-edit"></i></button>
-                                    <button><i class="bx bx-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Stephen Curry</td>
-                                <td>10/06/2023</td>
-                                <td>Not Qualified</td>
-                                <td>
-                                    <button><i class="bx bx-edit"></i></button>
-                                    <button><i class="bx bx-trash"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="form-content">
+                        <form class="add-event" action="">
+                        <label for="event-name">Event Name</label> <br>
+                        <input type="text" class="event-name" required="required" style="width: 95%"/> <br>
+                        <div class="column-left">
+                            <label for="event-date">Event Date</label> <br>
+                            <input type="date" class="event-date"/> <br>
+                            <label for="start-from">Category</label> <br>
+                            <div class="dropdown">
+                                <input type="text" class="selected" readonly placeholder="Select Option" style="width: 178px;"/>
+                                <ul class="menu">
+                                    <li class="active">Personal</li>
+                                    <li>Holiday</li>
+                                    <li>Work-related</li>
+                                </ul>
+                            </div>
+                            <label for="start-from">Start From</label> <br>
+                            <input type="datetime-local" class="start-from" style="width: 178px"/>
+                        </div>
+                        <div class="column-right">
+                            <label for="event-frequency">Event Frequency</label> <br>
+                            <div class="dropdown">
+                                <input type="text" class="selected" readonly placeholder="Select Option" style="width: 178px;"/>
+                                <ul class="menu">
+                                    <li class="active">Whole Day</li>
+                                    <li>Extended</li>
+                                    <li>Timely</li>
+                                </ul>
+                            </div>
+                            <label for="tag-color">Event Tag Color</label> <br>
+                            <input type="color" class="tag-color" style="width: 68px; height: 40px; float: left; margin-right: 2px" id="send" oninput="result.value=send.value">
+                            <input type="text" class="hex-code" id="result" style="width: 110px"/>
+                            <label for="end-to">End to</label> <br>
+                            <input type="datetime-local" class="end-to" style="width: 180px"/>
+                        </div>
+                        <button id="btnSubmit" style="width: 80px; border-radius: 20px; margin-top: 10px">Submit</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- JavaScript -->
-        <script src="js/script.js"></script>
+        <script src="js/calendar.js"></script>
     
         <!-- Database Javascript -->  
         <script src="bundles/auth.bundle.js"></script>   
