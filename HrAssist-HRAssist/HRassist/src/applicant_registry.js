@@ -485,19 +485,32 @@ export function FetchApplicantIDData() {
 window.addEventListener('load', FetchApplicantIDData) 
 
 export function FetchApplicationStatus() { 
+    // Get the query string from the URL
+    const queryString = window.location.search;
 
+    // Create a URLSearchParams object from the query string
+    const urlParams = new URLSearchParams(queryString);
+
+    // Get the values of the customDocId and id parameters
+    const customDocId = urlParams.get('customDocId'); 
+
+    // Log or use the retrieved values
+    console.log(`Custom Doc ID: ${customDocId}`); 
+
+    
   const TestcolRef = collection(db, 'Applicant Information');
+  const ApplicantQue = query(TestcolRef, where('documentID', '==', customDocId))
 
   FetchCurrentUser().then((currentUserUID) => {
     const que = query(TestcolRef, where("userID", "==", currentUserUID));
 
-    onSnapshot(que, (snapshot) => {
+    onSnapshot(ApplicantQue, (snapshot) => {
       snapshot.docs.forEach((doc) => {
         const data = doc.data();
         const id = doc.id;
 
         const applicantId = document.getElementById('ApplicantIDNum');
-        applicantId.innerHTML = data.ApplicantID;
+        //applicantId.innerHTML = data.ApplicantID;
 
         const applicantDateCreated = document.getElementById('ApplicantTimeCreated');
 

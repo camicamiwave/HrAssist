@@ -110,11 +110,11 @@
                 <div class="col-md-6">
                   <label for="inputSex" class="form-label">Sex:</label>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" id="female" name="sex" value="female">
+                    <input class="form-check-input" type="radio" id="gender" name="sex" value="Female">
                     <label class="form-check-label" for="female">Female</label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" id="male" name="sex" value="male">
+                    <input class="form-check-input" type="radio" id="gender" name="sex" value="Male">
                     <label class="form-check-label" for="male">Male</label>
                   </div>
                 </div>
@@ -122,7 +122,11 @@
                   <label for="inputState" class="form-label">Civil Status:</label>
                   <select id="inputState" class="form-select">
                     <option selected>Select</option>
-                    <option>...</option>
+                    <option>Single</option>
+                    <option>Married</option>
+                    <option>Widowed</option>
+                    <option>Separated</option>
+                    <option>Lived-in</option>
                   </select>
                 </div>
                 <div class="col-md-6">
@@ -150,8 +154,15 @@
                 <div class="attach">
                   <p>Attach Files</p>
                   <div class="form-group mt-3">
-                    <label class="mr-2">Upload your CV:</label>
-                    <input type="file" name="file">
+                    <label class="mr-2">Upload your 2x2:</label>
+                    <input type="file" name="file" id="applicantPic">
+                  </div>
+                  <br> <br> <br>
+
+                  <p>Attach Requirements</p>
+                  <div class="form-group mt-3">
+                    <label class="mr-2">Upload your requirements:</label>
+                    <input type="file" name="file" id="cvFile" multiple>
                   </div>
 
                   <br> <br> <br>
@@ -191,7 +202,7 @@
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
   <script src="bundles/auth.bundle.js"></script>
-  <script src="bundles/firestore_add.bundle.js"></script>
+  <script src="bundles/job_registry.bundle.js"></script>
 
 </body>
 
