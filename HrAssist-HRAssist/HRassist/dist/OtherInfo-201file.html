@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Education-201file</title>
+  <title>OtherInfo-201file</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -27,6 +27,12 @@
 
   <!-- Template Main CSS File -->
   <link href="css/datasheet.css" rel="stylesheet">
+
+  <!--START-->
+
+  
+
+  <!--END-->
 
   
 </head>
@@ -98,14 +104,17 @@
                         margin-bottom: 10px;
                     }
                 </style>
+
+                <!--Start Here-->
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
                             <button type="button" class="btn btn-info btn-add"><i class="bi bi-plus"></i> Add New</button>
+                            <button type="button" class="btn btn-danger btn-delete-row-1"><i class="bi bi-trash"></i> Delete</button>
                         </div>
 
                         <div class="col-md-12">
-                            <table class="table table-hover" id="worked">
+                            <table class="table table-hover" id="worked_1">
                                 <thead>
                                     <tr>
                                         <th>Career Service/RA 1080 (Board/Bar) Under Special Laws/CES/CSEE Barangay Eligibility/ Drivers License</th>
@@ -134,34 +143,7 @@
                             </table>
                         </div>
                     </div>
-                </div>
-
-                <script>
-                    $(document).ready(function () {
-                        // Add new row
-                        $(".btn-add").on("click", function () {
-                            var newRow = "<tr>" +
-                                "<td><input class='form-control' type='text' /></td>" +
-                                "<td><input class='form-control' type='text' /></td>" +
-                                "<td><input class='form-control' type='text' /></td>" +
-                                "<td><input class='form-control' type='text' /></td>" +
-                                "<td><input class='form-control' type='text' /></td>" +
-                                "<td><input class='form-control' type='text' /></td>" +
-                                "<td><input class='form-control' type='text' /></td>" +
-                                "<td colspan='2'><input class='form-control' type='text' /></td>" +
-                                
-                                "<td><button type='button' class='btn btn-danger btn-delete-row'><i class='bi bi-trash'></i></button></td>" +
-                                "</tr>";
-                
-                            $("#worked tbody").append(newRow);
-                        });
-                
-                        // Delete row
-                        $(document).on("click", ".btn-delete-row", function () {
-                            $(this).closest("tr").remove();
-                        });
-                    });
-                </script>                   
+                </div>                 
             <style>
                 /* Custom styles for the table header */
                 th {
@@ -171,6 +153,38 @@
                 }
         </style>
         </div>
+
+        <script>
+            $(document).ready(function () {
+                // Add new row
+                $(".btn-add").on("click", function () {
+                    var newRow = "<tr>" +
+                        "<td><input class='form-control' type='text' /></td>" +
+                        "<td><input class='form-control' type='text' /></td>" +
+                        "<td><input class='form-control' type='text' /></td>" +
+                        "<td><input class='form-control' type='text' /></td>" +
+                        "<td><input class='form-control' type='text' /></td>" +
+                        "<td><input class='form-control' type='text'/></td>" +
+                        "<td><input class='form-control' type='text' /></td>" +
+                        "<td><input class='form-control' type='text' /></td>" +
+                        "<td><input class='form-control' type='text' /></td>" +
+                        "</tr>";
+        
+                    $("#worked_1 tbody").append(newRow);
+                });
+
+                // Delete row
+                $(".btn-delete-row-1").on("click", function () {
+                    // Ensure there is at least one row before attempting to delete
+                    if ($("#worked_1 tbody tr").length > 1) {
+                        $("#worked_1 tbody tr:last").remove();
+                    }
+                });
+            });
+        </script>
+    </div>
+</div>
+</div>
 
                 <!--V. WORK EXPERIENCE-->
                 <div class="container">
@@ -190,12 +204,12 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <button type="button" class="btn btn-info btn-add"><i class="bi bi-plus"></i> Add New</button>
-                                        
+                                            <button type="button" class="btn btn-info btn-add-work-experience"><i class="bi bi-plus"></i> Add New</button>
+                                            <button type="button" class="btn btn-danger btn-delete-row-2"><i class="bi bi-trash"></i> Delete</button>
                                         </div>
                 
                                         <div class="col-md-12">
-                                            <table class="table table-hover" id="worked">
+                                            <table class="table table-hover" id="worked_2">
                                                 <thead>
                                                     <tr>
                                                         <th>NAME & ADDRESS OF ORGANIZATION</th>
@@ -222,124 +236,185 @@
                                 <script>
                                     $(document).ready(function () {
                                         // Add new row
-                                        $(".btn-add").on("click", function () {
+                                        $(".btn-add-work-experience").on("click", function () {
                                             var newRow = "<tr>" +
                                                 "<td><input class='form-control' type='text' /></td>" +
-                                                "<td><input class='form-control' type='text' /></td>" +
+                                                "<td><input class='form-control' type='text'/></td>" +
                                                 "<td><input class='form-control' type='text' /></td>" +
                                                 "<td><input class='form-control' type='text' /></td>" +
                                                 "<td><input class='form-control' type='text' /></td>" +
                                                 "</tr>";
                                 
-                                            $("#worked tbody").append(newRow);
+                                            $("#worked_2 tbody").append(newRow);
                                         });
                                 
-                                        // Delete row
-                                        $(document).on("click", ".btn-delete-row", function () {
-                                            $(this).closest("tr").remove();
+                                         // Delete row
+                                        $(".btn-delete-row-2").on("click", function () {
+                                            // Ensure there is at least one row before attempting to delete
+                                            if ($("#worked_2 tbody tr").length > 1) {
+                                                $("#worked_2 tbody tr:last").remove();
+                                            }
                                         });
                                     });
-                                </script>
+                                </script>                                
                                 
                                 
-                <!--VII. LEARNING AND DEVELOPMENT (L&D) INTERVENTIONS/TRAINING PROGRAMS ATTENDED-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <br>
-                            <div class="card-header"><strong>VII. LEARNING AND DEVELOPMENT (L&D) INTERVENTIONS/TRAINING PROGRAMS ATTENDED</strong></div>
-                            <br>
-                            <!-- TABLE -->
-                            <style>
-                                .btn-add,
-                                .btn-delete {
-                                    margin-top: 10px;
-                                    margin-bottom: 10px;
-                                }
-                            </style>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <button type="button" class="btn btn-info btn-add"><i class="bi bi-plus"></i> Add New</button>
-                                       
-                                    </div>
-            
-                                    <div class="col-md-12">
-                                        <table class="table table-hover" id="worked">
-                                            <thead>
-                                                <tr>
-                                                    <th>TITLE OF LEARNING AND DEVELOPMENT INTERVENTIONS/TRAINING PROGRAMS</th>
-                                                    <th>FROM</th>
-                                                    <th>TO</th>
-                                                    <th>NUMBER OF HOURS</th>
-                                                    <th>TYPE OF LD</th>
-                                                    <th>CONDUCTED/SPONSORED BY</th>
-                            
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><input class="form-control" type="text" /></td>
-                                                    <td><input class="form-control" type="text" /></td>
-                                                    <td><input class="form-control" type="text" /></td>
-                                                    <td><input class="form-control" type="text" /></td>
-                                                    <td><input class="form-control" type="text" /></td>
-                                                    <td><input class="form-control" type="text" /></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--VIII. OTHER INFORMATION-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <br>
-                            <div class="card-header"><strong>VII. LEARNING AND DEVELOPMENT (L&D) INTERVENTIONS/TRAINING PROGRAMS ATTENDED</strong></div>
-                            <br>
-                             <!-- TABLE -->
-                             <style>
-                                .btn-add,
-                                .btn-delete {
-                                    margin-top: 10px;
-                                    margin-bottom: 10px;
-                                }
-                              
-                            </style>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <button type="button" class="btn btn-info btn-add"><i class="bi bi-plus"></i> Add New</button>
-                                        
-                                    </div>
-                                    <div class="col-md-12">
-                                        <table class="table table-hover" id="worked">
-                                            <thead>
-                                                <tr>
-                                                    <th>SPECIAL SKILLS AND HOBBIES</th>
+                                
+           <!--VII. LEARNING AND DEVELOPMENT (L&D) INTERVENTIONS/TRAINING PROGRAMS ATTENDED-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <div class="card-header"><strong>VII. LEARNING AND DEVELOPMENT (L&D) INTERVENTIONS/TRAINING PROGRAMS ATTENDED</strong></div>
+            <br>
+            <!-- TABLE -->
+            <style>
+                .btn-add-learning,
+                .btn-delete-row {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+            </style>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-info btn-add-learning"><i class="bi bi-plus"></i> Add New</button>
+                        <button type="button" class="btn btn-danger btn-delete-row-3"><i class="bi bi-trash"></i> Delete</button>
+                    </div>
 
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><input class="form-control" type="text" /></td>
-                                                    
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="col-md-12">
+                        <table class="table table-hover" id="worked_3">
+                            <thead>
+                                <tr>
+                                    <th>TITLE OF LEARNING AND DEVELOPMENT INTERVENTIONS/TRAINING PROGRAMS</th>
+                                    <th>FROM</th>
+                                    <th>TO</th>
+                                    <th>NUMBER OF HOURS</th>
+                                    <th>TYPE OF LD</th>
+                                    <th>CONDUCTED/SPONSORED BY</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input class="form-control" type="text" /></td>
+                                    <td><input class="form-control" type="text" /></td>
+                                    <td><input class="form-control" type="text" /></td>
+                                    <td><input class="form-control" type="text" /></td>
+                                    <td><input class="form-control" type="text" /></td>
+                                    <td><input class="form-control" type="text" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function () {
+                    // Add new row
+                    $(".btn-add-learning").on("click", function () {
+                        var newRow = "<tr>" +
+                            "<td><input class='form-control' type='text' /></td>" +
+                            "<td><input class='form-control' type='text'/></td>" +
+                            "<td><input class='form-control' type='text' /></td>" +
+                            "<td><input class='form-control' type='text' /></td>" +
+                            "<td><input class='form-control' type='text' /></td>" +
+                            "<td><input class='form-control' type='text' /></td>" +
+                            "</tr>";
 
+                        $("#worked_3 tbody").append(newRow);
+                    });
+
+                    // Delete row
+                    $(document).on("click", ".btn-delete-row-3", function () {
+                        $(this).closest("tr").remove();
+                    });
+                    $(".btn-delete-row-3").on("click", function () {
+                        // Ensure there is at least one row before attempting to delete
+                        if ($("#worked_3 tbody tr").length > 1) {
+                            $("#worked_3 tbody tr:last").remove();
+                        }
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</div>
+
+<!--VIII. OTHER INFORMATION-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <div class="card-header"><strong>VIII. OTHER INFORMATION</strong></div>
+            <br>
+            <!-- TABLE -->
+            <style>
+                .btn-add-skills,
+                .btn-delete-row {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+            </style>
+
+            <!--Speacial Skills-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-info btn-add-skills"><i class="bi bi-plus"></i> Add New</button>
+                        <button type="button" class="btn btn-danger btn-delete-row-4"><i class="bi bi-trash"></i> Delete</button>
+                    </div>
+                    <div class="col-md-12">
+                        <table class="table table-hover" id="worked_4">
+                            <thead>
+                                <tr>
+                                    <th>SPECIAL SKILLS AND HOBBIES</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input class="form-control" type="text" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function () {
+                    // Add new row
+                    $(".btn-add-skills").on("click", function () {
+                        var newRow = "<tr>" +
+                            "<td><input class='form-control' type='text' /></td>" +
+                            "</tr>";
+
+                        $("#worked_4 tbody").append(newRow);
+                    });
+
+                    // Delete row
+                    $(document).on("click", ".btn-delete-row-4", function () {
+                        $(this).closest("tr").remove();
+                    });
+                    $(".btn-delete-row-4").on("click", function () {
+                        // Ensure there is at least one row before attempting to delete
+                        if ($("#worked_4 tbody tr").length > 1) {
+                            $("#worked_4 tbody tr:last").remove();
+                        }
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</div>
+
+         <!--NON-ACADEMIC DISTINCTIONS/RECOGNITION-->
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <button type="button" class="btn btn-info btn-add"><i class="bi bi-plus"></i> Add New</button>
-                                        
+                                        <button type="button" class="btn btn-info btn-add-non-acad"><i class="bi bi-plus"></i> Add New</button>
+                                        <button type="button" class="btn btn-danger btn-delete-row-5"><i class="bi bi-trash"></i> Delete</button>
                                     </div>
                                     <div class="col-md-12">
-                                        <table class="table table-hover" id="worked">
+                                        <table class="table table-hover" id="worked_5">
                                             <thead>
                                                 <tr>
                                                     <th>NON-ACADEMIC DISTINCTIONS/RECOGNITION</th>
@@ -356,33 +431,78 @@
                                     </div>
                                 </div>
                             </div>
+                            <script>
+                                $(document).ready(function () {
+                                    // Add new row
+                                    $(".btn-add-non-acad").on("click", function () {
+                                        var newRow = "<tr>" +
+                                            "<td><input class='form-control' type='text' /></td>" +
+                                            "</tr>";
+                
+                                        $("#worked_5 tbody").append(newRow);
+                                    });
+                
+                                    // Delete row
+                                    $(document).on("click", ".btn-delete-row-5", function () {
+                                        $(this).closest("tr").remove();
+                                    });
+                                    $(".btn-delete-row-5").on("click", function () {
+                                        // Ensure there is at least one row before attempting to delete
+                                        if ($("#worked_5 tbody tr").length > 1) {
+                                            $("#worked_5 tbody tr:last").remove();
+                                        }
+                                    });
+                                });
+                            </script>
 
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <button type="button" class="btn btn-info btn-add"><i class="bi bi-plus"></i> Add New</button>
-                                       
-                                    </div>
-                                    <div class="col-md-12">
-                                        <table class="table table-hover" id="worked">
-                                            <thead>
-                                                <tr>
-                                                    <th>MEMBERSHIP IN ASSOCIATION/ORGANIZATION</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><input class="form-control" type="text" /></td>
-                                                    
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                <!-- MEMBERSHIP IN ASSOCIATION/ORGANIZATION -->
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <button type="button" class="btn btn-info btn-add-membership"><i class="bi bi-plus"></i> Add New</button>
+                                            <button type="button" class="btn btn-danger btn-delete-row-6"><i class="bi bi-trash"></i> Delete</button>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <table class="table table-hover" id="worked_6">
+                                                <thead>
+                                                    <tr>
+                                                        <th>MEMBERSHIP IN ASSOCIATION/ORGANIZATION</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><input class="form-control" type="text" /></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                    
-                            <hr>
+                                <script>
+                                    $(document).ready(function () {
+                                        // Add new row
+                                        $(".btn-add-membership").on("click", function () {
+                                            var newRow = "<tr>" +
+                                                "<td><input class='form-control' type='text' /></td>" +
+                                                "</tr>";
+
+                                            $("#worked_6 tbody").append(newRow);
+                                        });
+                                        // Delete row
+                                        $(document).on("click", ".btn-delete-row-6", function () {
+                                                                                $(this).closest("tr").remove();
+                                        });
+                                        $(".btn-delete-row-6").on("click", function () {
+                                            // Ensure there is at least one row before attempting to delete
+                                            if ($("#worked_6 tbody tr").length > 1) {
+                                                $("#worked_6 tbody tr:last").remove();
+                                            }
+                                        });
+                                    });
+                                </script>
+                                <hr>
+                            
+                            <!--Another Content Start here-->
 
                             <div class="container">
                                 <div class="row">
@@ -393,29 +513,44 @@
                                             <div class="group">
                                                 <div class="d-inline">a. within the third degree?</div>
                                                     <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                                        <input class="form-check-input" type="checkbox" id="inlineCheckboxYES1" value="option1">
                                                         <label class="form-check-label" for="inlineCheckbox1">YES</label>
                                                       </div>
                                                       <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                                        <input class="form-check-input" type="checkbox" id="inlineCheckboxNO1" value="option2">
                                                         <label class="form-check-label" for="inlineCheckbox2">NO</label>
                                                       </div>
                                                 </div>
                                             </div>
 
+                                            <style>
+                                                .group {
+                                                    display: flex;
+                                                    align-items: center; /* Align items vertically in the center */
+                                                    margin-left: 50PX; /* Set left margin to 0 */
+                                                }
+                                            
+                                                .d-inline {
+                                                    margin-right: 10px; /* Adjust the right margin as needed */
+                                                }
+                                            </style>
+                                            
                                             <div class="group">
                                                 <div class="d-inline">b. within the fourth degree (for Local Government Unit - Career Employees)?</div>
                                                 
                                                 <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                        <label class="form-check-label" for="inlineCheckbox1">YES</label>
-                                                      </div>
-                                                      <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                                        <label class="form-check-label" for="inlineCheckbox2">NO</label>
-                                                      </div>
-                                                
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckboxYES2" value="option1">
+                                                    <label class="form-check-label" for="inlineCheckbox1">YES</label>
                                                 </div>
+                                                
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckboxNO2" value="option2">
+                                                    <label class="form-check-label" for="inlineCheckbox2">NO</label>
+                                                </div>
+                                            </div>
+
+                                            <!--Start-->
+                                            
 
                                                 <div class="form-check form-check-inline">
                                                 <div class="col-md-2">
@@ -429,11 +564,17 @@
                                                 align-items:right;
                                             }
                                         </style>
-                                            
-                                            
+
+                                        <!--START HERE-->
+                                        
+
+
+
+                                        <!--END HERE-->
 
                                
     </section><!-- End Breadcrumbs -->
+
 
 </main><!-- End #main -->
 

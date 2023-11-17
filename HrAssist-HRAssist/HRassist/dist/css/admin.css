@@ -715,47 +715,6 @@ form .user-details .input-box{
     width: calc(100% / 2 - 20px);
 }
 
-.add, .add2, .add3 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    display: inline-block;
-    padding: 5px 10px;
-    color: #ffffff;
-    background-color: #08533F;
-    justify-content: center;
-    align-items: center;
-    border-radius: 12px;
-}
-
-
-.add:hover, .add2:hover, .add3:hover {
-    background-color: #1f8f3e;
-    color: #ffffff;
-}
-
-/* Dynamic class for add input */
-
-.flex, .flex2, .flex3 {
-    display: flex;
-    padding: 5px 10px;
-    gap: 1.5em;
-    margin: auto;
-}
-
-.delete, .delete2, .delete3 {
-    text-decoration: none;
-    display: inline-block;
-    background-color: #f44336;
-    color: #fff;
-    padding: 5px 10px;
-    margin-left: auto;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer; 
-}
-
-
 form .job-details .input-box{
     margin-bottom: 15px;
     width: 100%;
@@ -767,7 +726,7 @@ form .input-box span.details{
     margin-bottom: 5px;
 }
 
-.user-details .input-box input, .user-details .input-box select {
+.user-details .input-box input{
     height: 45px;
     width: 100%;
     outline: none;
@@ -792,6 +751,19 @@ form .input-box span.details{
     transition: all 0.3s ease;
 }
 
+.job-details .input-box textarea {
+    height: 100px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    resize: none;
+}
+
 
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
@@ -800,6 +772,11 @@ form .input-box span.details{
 
 .job-details .input-box input:focus,
 .job-details .input-box input:valid{
+    border-color: #08533F;
+}
+
+.job-details .input-box textarea:focus,
+.job-details .input-box textarea:valid{
     border-color: #08533F;
 }
   
