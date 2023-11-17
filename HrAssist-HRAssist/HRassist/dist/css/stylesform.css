@@ -1,0 +1,185 @@
+.appreciation-title{
+  color: #068e6b;
+  font-weight: bold;
+  text-align: left;
+  letter-spacing: 1.04px;
+  margin-left: 50px;
+  font: 500 30px Poppins, sans-serif;
+}
+.main-container {
+  align-self: start;
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .main-container {
+    max-width: 100%;
+  }
+}
+
+.form-container {
+  gap: 0px;
+  display: flex;
+}
+
+@media (max-width: 991px) {
+  .form-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0px;
+  }
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  align-items: stretch;
+  width: 30%;
+  margin-top: 50px;
+  margin-left: 320px;
+  gap: 0px;
+}
+
+
+@media (max-width: 991px) {
+  .form-column {
+    width: 100%;
+    gap: 0px;
+  }
+}
+
+.form-box {
+  display: flex;
+  flex-grow: 0;
+  flex-direction: column;
+  gap: 0px;
+  
+}
+
+@media (max-width: 991px) {
+  .form-box {
+    margin-top: 19px;
+    margin-left: 100;
+  }
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 20px;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+  padding: 10px;
+  width: 300px;
+  gap: 0px;
+
+}
+#dateissue.form-input{
+  flex: 1;
+  width: 81%;
+  padding: 2px;
+  font-size: 20px; /* Adjust the size as needed */
+  color: #999999;
+}
+#dateissue::-webkit-calendar-picker-indicator {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -25px;
+  margin-left: 270px; /* Adjust the position as needed */
+  cursor: pointer;
+  color: #999999;
+}
+#dateissue.form-input:valid + ::-webkit-calendar-picker-indicator {
+  color: black;
+}
+/* Adjust the size of the calendar icon */
+#dateissue::-webkit-calendar-picker-indicator::before {
+  content: '\1F4C5'; /* Unicode character for a calendar icon */
+  font-size: 30px; /* Adjust the size as needed */
+}
+.date-input-container::before {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  content: "dd/mm/yyyy";
+  color: #999999; /* Adjust the color as needed */
+  margin-right: -15px; /* Adjust the spacing as needed */
+}
+
+.form-label {
+  justify-content: left;
+  color: #000;
+  text-align: left;
+  letter-spacing: 0.715px;
+  align-self: stretch;
+  margin-top: 17px;
+  margin-bottom: -12px;
+  font: 500 13px Poppins, sans-serif;
+
+}
+#mdname_txtbox.form-input{
+  margin-left: -280px;
+}
+#nameext_txtbox.form-input{
+  margin-left: -280px;
+}
+#token.form-input{
+  width: 740px;
+}
+#message.form-input{
+  width: 740px;
+  padding-bottom: 100px;
+}
+.form-div {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 991px) {
+  .form-div {
+    margin-top: 20px;
+  }
+}
+
+
+.image {
+aspect-ratio: 1;
+object-fit: contain;
+object-position: center;
+width: 30px;
+overflow: hidden;
+align-self: left;
+max-width: 100%;
+margin-top: 20px;
+margin-left: 50px;
+}
+
+.description {
+color: #068e6b;
+text-align:left;
+letter-spacing: 1.56px;
+margin-top: -30px;
+margin-bottom: 30px;
+margin-left: 90px;
+font: 500 24px Poppins, sans-serif;
+}
+
+.save-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50; /* Green color */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 300px;
+  margin-left: -400px;
+}
+
+.save-button:hover {
+  background-color: #45a049; /* Darker green color on hover */
+}
