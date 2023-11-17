@@ -179,7 +179,7 @@
 }
 .table-striped1{
     width: fit-content;
-    font-size: 24px;
+    font-size: 16px;
     margin-left: 28px ;
     align-content: center;
 }
@@ -238,7 +238,9 @@
       white-space: initial;
     }
   }
-
+#table_acc{
+  font: 500 18px/24px Poppins, sans-serif;
+}
   .tabs-container {
     display: flex;
     justify-content: space-around;
@@ -402,45 +404,47 @@
   .filter-container_acc {
     display: flex;
     align-items: center;
-    margin-top: 0px;
-    margin-left: 0px
+    margin-top: 30px;
+    margin-left: 10px
     
   }
+
   .form-select_acc {
     display: flex;
     flex-direction: column;
     position: relative;
     background-color: #068e6b;
-    padding: 12px 10px 1px 0px;  /* Add some padding */
+    padding-top: 5px;
     font-size: 16px; /* Adjust the font size */
     width: fit-content; /* Adjust width as needed */
-    margin-left: 80px;
-    margin-top: -40px;
+    margin-left: 100px;
+    margin-top: -35px;
+    height: fit-content;
   }
   /* Style for the filter label */
   .filter-label_acc {
-    margin-top: 20px;
+    margin-top: 25px;
     font: 500 16px/24px Poppins, sans-serif;
-    color: #068e6b;;
-    font-weight: bold;
-    margin-left: 20px;
+    
+    margin-left: 50px;
   }
   .search-container_acc {
     display: flex;
     align-items: center;
     position: relative;
-    margin-left: 600px;
-    margin-top: -30px;
+    margin-left: 590px;
+    margin-top: -37px;
+    
   }
-  .search_acc {
-    padding: 8px 30px 20px 20px; /* Adjust padding as needed */
+  #search_acc {
+    padding-left: 12px;
     border: 1px solid #068e6b;;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 200px; /* Adjust width as needed */
   }
   .search-icon_acc {
     position: absolute;
-    right: 10px; /* Adjust right position as needed */
+    right: 20px; /* Adjust right position as needed */
     cursor: pointer;
   }
 
@@ -486,12 +490,14 @@
     background-color: #4caf50; /* Green color for Activate button */
     color: white;
     font-size: 12px;
+
   }
   
   #terminate-btn_acc {
     background-color: #f44336; /* Red color for Terminate button */
     color: white;
     font-size: 12px;
+
   }
 
 
@@ -716,7 +722,10 @@
     width: 27px; /* Adjust the width as needed */
     height: 27px; /* Adjust the height as needed */
   }
-
+  .card-headerapplist{
+    font: 500 16px/24px Poppins, sans-serif;
+    margin-top: -0px;
+  }
   .applicants {
     text-align: center;
     letter-spacing: 1.56px;
@@ -756,36 +765,32 @@
     margin-top: -25px
   }
 
-  .filter-container {
-    display: flex;
-    align-items: center;
-    margin-top: 19px;
-    margin-left: 0px
-  }
   .form-select_app {
     display: flex;
     flex-direction: column;
     position: relative;
     background-color: #068e6b;
-    padding: 3px;
-    font-size: 16px;
-    width: fit-content;
-    margin-left: 20px;
+    padding: 12px 10px 1px 0px;  /* Add some padding */
+    font-size: 16px; /* Adjust the font size */
+    width: fit-content; /* Adjust width as needed */
+    margin-left: 80px;
+    margin-top: -40px;
   }
   /* Style for the filter label */
   .filter-label {
-    margin-top: 10px;
-    font: 500 16px/24px Poppins, sans-serif;
-    color: #068e6b;;
-    font-weight: bold;
+      margin-top: 20px;
+      font: 500 16px/24px Poppins, sans-serif;
+      margin-left: 20px;
   }
   .search-container_app {
     display: flex;
+    align-items: center;
     position: relative;
-    margin-left: 500px;
+    margin-left: 600px;
+    margin-top: -30px;
   }
   .search_app {
-    padding: 8px 30px 8px 8px; /* Adjust padding as needed */
+    padding: 8px 30px 20px 20px; /* Adjust padding as needed */
     border: 1px solid #068e6b;;
     border-radius: 5px;
     width: 200px; /* Adjust width as needed */
@@ -796,24 +801,7 @@
     cursor: pointer;
 
   }
-  .filter-container1 {
-    display: flex;
-    align-items: normal;
-    margin-top: -35px;
-    margin-left: 350px;
 
-  }
-  .form-select1 {
-    display: flex;
-      flex-direction: column;
-      position: relative;
-      background-color: #068e6b;
-      padding: 3px;
-      font-size: 16px;
-      width: fit-content;
-      margin-left: -120px;
-    
-  }
   .table-container {
     
     width: 100%;
