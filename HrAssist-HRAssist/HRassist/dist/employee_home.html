@@ -26,7 +26,7 @@
                 <i class="bi bi-grid"></i>
                 <i class='bx bx-sun' id="darkLight"></i>
                 <i class='bx bx-bell' ></i>
-                <img src="img/favicon.png" alt="" class="profile" />
+                <img src="img/favicon.png" alt="" class="profile" id="navbarProfilePicture"/>
             </div>
         </nav>
 
@@ -81,11 +81,11 @@
                     </li>
 
                     <li class="item">
-                        <a href="login.html" class="nav_link">
+                        <a href="login.html" id="employee_logout_btn" class="nav_link">
                         <span class="navlink_icon">
                             <i class='bx bx-log-out'></i>
                         </span>
-                        <span class="navlink">Log-out</span>
+                        <span class="navlink"><span id="logout_value">Log-out</span></span>
                         </a>
                     </li>
                 </ul>
@@ -344,10 +344,11 @@
 
         <!-- Database Javascript -->  
         <script src="bundles/auth.bundle.js"></script>   
-        <script src="bundles/request_proc.bundle.js"></script>   
+        <script src="bundles/request_proc.bundle.js"></script>
+        <script src="bundles/navbar.bundle.js"></script>   
 
         <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-
+     
     </body>
 
 </html>

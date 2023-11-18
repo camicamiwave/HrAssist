@@ -18,7 +18,8 @@ module.exports = {
         navbar: './src/navbar.js',
         fetch_current_user: './src/fetch_current_user.js',
         PDS: './src/PDS.js',
-        job_registry: './src/job_registry.js'
+        job_registry: './src/job_registry.js',
+        employee_interface: './src/employee_interface.js'
         
     },
     output: {
