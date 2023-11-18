@@ -11,7 +11,7 @@
     <link href="img/hrlogo.svg" rel="icon">
     <link rel="stylesheet" href="css/admin.css" />
     <link rel="stylesheet" href="css/reports.css" />
-    <link rel="stylesheet" href="app_prof.css" />
+    <link rel="stylesheet" href="css/app_prof.css" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
 
@@ -227,7 +227,8 @@
                 <div class="tab" id = "rew" onclick="openTab('Other Information')">Other Information</div>
                 <div class="tab" id = "req" onclick="openTab('File')">File</div>
             </div>
-            <div id="PersonalInformation" class="tab-content">
+            <!--Personal Information-->
+            <div class="tab-content" id="Personal Information" style="display: none;">
                 <div class="row gutters-sm">
                     <div class="col-md-4 mb-3">
                         <!-- Card for Admin Info -->
@@ -235,16 +236,17 @@
                             <div class="card-body">
                                 <div class="d-flex flex-column align-items-center text-center">
                                     <img src="img/profile.png" alt="Admin" class="rounded-circle" width="150">
-                                    <div class="mt-3">
+                                    <div >
                                         <h4>Name</h4>
                                         <p class="text-muted font-size-sm">Address</p>
-                                        <button class="btn_quali">Qualified</button>
-                                        <button class="btn_notquali">Not Qualified</button>
+                                    </div>
+                                    <div class = "button">
+                                        <button id="btn_quali">Qualified</button>
+                                        <button id="btn_notquali">Not Qualified</button>
                                     </div>
                                 </div>
                             </div>
-                        </div> 
-                        
+                        </div>
                         <!-- List Group Card -->
                         <div class="card mt-3">
                             <ul class="list-group list-group-flush">
@@ -266,13 +268,39 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
-    
-                    <div class="col-md-8">
+                    
                         <!-- Personal Information Card -->
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Educational Background</i></h6>
+                            <!-- Personal Information Card -->
+    
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Level</th>
+                                                <th>School</th>
+                                                <th>Year Graduated</th>
+                                                <th>Highest Grade (if not graduated)</th>
+                                                <th>Academic Honors Received</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>High School</td>
+                                                <td>Example High School</td>
+                                                <td>2010</td>
+                                                <td>N/A</td>
+                                                <td>Summa Cum Laude</td>
+                                            </tr>
+                                            <!-- Add more rows as needed -->
+                                        </tbody>
+                                    </table>
+                            </div>
+                        </div>  
                         <div class="card mb-3">
                             <div class="card-body">
-                                <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Personal Information</i></h6>
+                                <h4>Personal Information</h4>
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Full Name</h6>
@@ -318,20 +346,53 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <a class="btn btn-info" target="__blank"
-                                            href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-               
+                </div>  
             </div>
             
-            <div id="EducationalBackground" class="tab-content">
+            <div id="Educational Background" class="tab-content">
+                <div class="row gutters-sm">
+                    <div class="col-md-4 mb-3">
+                        <!-- Card for Admin Info -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-column align-items-center text-center">
+                                    <img src="img/profile.png" alt="Admin" class="rounded-circle" width="150">
+                                    <div >
+                                        <h4>Name</h4>
+                                        <p class="text-muted font-size-sm">Address</p>
+                                    </div>
+                                    <div class = "button">
+                                        <button id="btn_quali">Qualified</button>
+                                        <button id="btn_notquali">Not Qualified</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                        <!-- List Group Card -->
+                        <div class="card mt-3">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <h6>Full Name</h6>
+                                    <span class="text-secondary">Name D. Name</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <h6>Job Apply</h6>
+                                    <span class="text-secondary">Secretary</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <h6>Application Date</h6>
+                                    <span class="text-secondary">11-22-2023</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <h6>Application Status</h6>
+                                    <span class="text-secondary">Pending</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 <div class="row gutters-sm">
                     <div class="col-md-4 mb-3">
                         <!-- Card for Admin Info -->
