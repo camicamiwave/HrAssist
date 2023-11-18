@@ -9,6 +9,7 @@
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
         <title>HR Assist - Admin</title>
         <link rel="stylesheet" href="css/admin.css" />
+        <link rel="stylesheet" href="css/leave_credits.css" />
         <!-- Favicon -->
         <link href="img/hrlogo.svg" rel="icon">
     </head>
@@ -216,7 +217,7 @@
             <h1 class="page-title">
                 <span class="page-title-icon">
                 <i class="bx bxs-gift"></i>
-                </span> Rewards
+                </span> 201 File
             </h1>
         </div>
         <div class="table">
@@ -224,40 +225,34 @@
                 <p>Leave Credits</p>
             </div>
             <div class="container">
-                <header>Employee Name</header>
                 <div class="content">
                     <form>
                         <div class="user-details">
-                        <div class="input-box">
+                            <div class="input-box" id = "idno_txt">
+                                <span class="details">Enter ID Number:</span>
+                                <input type="text" placeholder="Employee Name">
+                            </div>
+                            <div class="input-box" id = "name_txt">
+                                <span class="details">Enter Employee Name:</span>
+                                <input type="text" placeholder="#00000">
+                            </div>
+                        <div class="input-box" id = "leavetype_txt">
                                 <span class="details">Leave Type:</span>
-                                <input type="text" placeholder="Enter First Name">
+                                <input type="text" placeholder="Sick Leave">
                             </div>
-                            <div class="input-box">
-                                <span class="details">Middle Name</span>
-                                <input type="text" placeholder="Enter Middle Name">
+                            <div class="input-box" id = "leavecredit_txt">
+                                <span class="details">Leave Credit:</span>
+                                <input type="text" placeholder="1">
                             </div>
-                            <div class="input-box">
-                                <span class="details">Last Name</span>
-                                <input type="text" placeholder="Enter Last Name">
+                            <div class="input-box" id = "prevcred_bal">
+                                <span class="details">Previous Leave Balance:</span>
+                                <input type="text" placeholder="50">
                             </div>
-                            <div class="input-box">
-                                <span class="details">Ext. Name</span>
-                                <input type="text" placeholder="Enter Ext. Name">
+                            <div class="input-box" id="value_txt">
+                                <span class="details" >Value</span>
+                                <input type="text" placeholder="51 days">
                             </div>
-                            <div class="input-box">
-                                <span class="details">Date Issued</span>
-                                <input type="date" placeholder="Enter Ext. Name">
-                            </div>
-                        </div>
-                        <div class="job-details">
-                            <div class="input-box">
-                                <span class="details">Token</span>
-                                <input type="text" placeholder="Enter Token">
-                            </div>
-                            <div class="input-box">
-                                <span class="details">Message (Optional)</span>
-                                <textarea placeholder="Write message here..."></textarea>
-                            </div>
+                            
                         </div>
                         <button class="submit">Save</button>
                     </form>
