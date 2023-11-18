@@ -87,110 +87,116 @@ export function AddEmployeeDataSheet() {
                       ProfilePictureURL: downloadURL,
                       Personal_Information: {
                         // Add other fields based on your form
-                        CSCID: addDataSheetForm.inputCsId.value,
-                        FirstName: addDataSheetForm.inputFirstName.value,
-                        MiddleName: addDataSheetForm.inputMiddleName.value,
-                        SurName: addDataSheetForm.inputSurName.value,
-                        ExName: addDataSheetForm.inputExName.value,
-                        Gender: addDataSheetForm.gender.value,
-                        Birthdate: addDataSheetForm.Birthdate.value,
-                        PlaceBirth: addDataSheetForm.PlaceBirth.value,
-                        CivilStatus: addDataSheetForm.inputStatus.value,
-                        Email: addDataSheetForm.inputEmail.value,
-                        MobileNumber: addDataSheetForm.inputMnumber.value,
-                        TelNum: addDataSheetForm.inputTel.value,
-                        Height: addDataSheetForm.inputHeight.value,
-                        BloodType: addDataSheetForm.inputWeight.value,
-                        GSIS: addDataSheetForm.InputGsis.value,
-                        PagIbig: addDataSheetForm.InputPagibig.value,
-                        PhilHealth: addDataSheetForm.inputPhealth.value,
-                        SSS: addDataSheetForm.inputSSS.value,
-                        Tin: addDataSheetForm.inputTIN.value,
-                        Agency: addDataSheetForm.InputAgency.value,
-                        Citizen: addDataSheetForm.citizenshipType.value,
-                        Country: addDataSheetForm.inputCountry.value,
-                        HouseBlock: addDataSheetForm.inputHouse.value,
-                        Street: addDataSheetForm.inputStreet.value,
-                        Subdivision: addDataSheetForm.InputSub.value,
-                        Barangay: addDataSheetForm.inputBarangay.value,
-                        Municipality: addDataSheetForm.inputMun.value,
-                        Subdivision: addDataSheetForm.InputSub.value,
-                        Province: addDataSheetForm.InputProv.value,
-                        ZipCode: addDataSheetForm.inputZip.value,
+                        CSCID: addDataSheetForm.inputCsId.value.trim(),
+                        FirstName: addDataSheetForm.inputFirstName.value.trim(),
+                        MiddleName: addDataSheetForm.inputMiddleName.value.trim(),
+                        SurName: addDataSheetForm.inputSurName.value.trim(),
+                        ExName: addDataSheetForm.inputExName.value.trim(),
+                        Gender: addDataSheetForm.gender.value.trim(),
+                        Birthdate: addDataSheetForm.Birthdate.value.trim(),
+                        PlaceBirth: addDataSheetForm.PlaceBirth.value.trim(),
+                        CivilStatus: addDataSheetForm.inputStatus.value.trim(),
+                        Email: addDataSheetForm.inputEmail.value.trim(),
+                        MobileNumber: addDataSheetForm.inputMnumber.value.trim(),
+                        TelNum: addDataSheetForm.inputTel.value.trim(),
+                        Height: addDataSheetForm.inputHeight.value.trim(),
+                        BloodType: addDataSheetForm.inputWeight.value.trim(),
+                        GSIS: addDataSheetForm.InputGsis.value.trim(),
+                        PagIbig: addDataSheetForm.InputPagibig.value.trim(),
+                        PhilHealth: addDataSheetForm.inputPhealth.value.trim(),
+                        SSS: addDataSheetForm.inputSSS.value.trim(),
+                        Tin: addDataSheetForm.inputTIN.value.trim(),
+                        Agency: addDataSheetForm.InputAgency.value.trim(),
+                        Citizen: addDataSheetForm.inputCitizen.value.trim(),
+                        Naturalize: addDataSheetForm.naturalization.value.trim(),
+                        Country: addDataSheetForm.inputCountry.value.trim(),
+                        HouseBlock: addDataSheetForm.inputHouse.value.trim(),
+                        Street: addDataSheetForm.inputStreet.value.trim(),
+                        Subdivision: addDataSheetForm.InputSub.value.trim(),
+                        Barangay: addDataSheetForm.inputBarangay.value.trim(),
+                        Municipality: addDataSheetForm.inputMun.value.trim(),
+                        Subdivision: addDataSheetForm.InputSub.value.trim(),
+                        Province: addDataSheetForm.InputProv.value.trim(),
+                        ZipCode: addDataSheetForm.inputZip.value.trim(),
                       },
                       SpouseDetails: {
-                        SpouseFirstName: addDataSheetForm.inputSpouseFirstName.value,
-                        SpouseMiddleName: addDataSheetForm.inputSpouseMiddleName.value,
-                        SpouseSurName: addDataSheetForm.inputSpouseSurName.value,
-                        SpouseExName: addDataSheetForm.inputSpouseExName.value,
-                        SpouseOccupation: addDataSheetForm.inputSpouseOccupation.value,
-                        SpouseEmployer: addDataSheetForm.inputSpouseEmployer.value,
-                        SpouseBusinessAdd: addDataSheetForm.inputSpouseBusinessAdd.value,
-                        SpouseTelNum: addDataSheetForm.inputSpouseTelNo.value,
+                        SpouseFirstName: addDataSheetForm.inputSpouseFirstName.value.trim(),
+                        SpouseMiddleName: addDataSheetForm.inputSpouseMiddleName.value.trim(),
+                        SpouseSurName: addDataSheetForm.inputSpouseSurName.value.trim(),
+                        SpouseExName: addDataSheetForm.inputSpouseExName.value.trim(),
+                        SpouseOccupation: addDataSheetForm.inputSpouseOccupation.value.trim(),
+                        SpouseEmployer: addDataSheetForm.inputSpouseEmployer.value.trim(),
+                        SpouseBusinessAdd: addDataSheetForm.inputSpouseBusinessAdd.value.trim(),
+                        SpouseTelNum: addDataSheetForm.inputSpouseTelNo.value.trim(),
                       },
                       FatherDetails: {
-                        FatherFirstName: addDataSheetForm.inputFatherFirstName.value,
-                        FatherMiddleName: addDataSheetForm.inputFatherMiddleName.value,
-                        FatherSurName: addDataSheetForm.inputFatherSurName.value,
-                        FatherExName: addDataSheetForm.inputFatherExName.value
+                        FatherFirstName: addDataSheetForm.inputFatherFirstName.value.trim(),
+                        FatherMiddleName: addDataSheetForm.inputFatherMiddleName.value.trim(),
+                        FatherSurName: addDataSheetForm.inputFatherSurName.value.trim(),
+                        FatherExName: addDataSheetForm.inputFatherExName.value.trim()
                       },
                       MotherDetails: {
-                        MotherFirstName: addDataSheetForm.inputMotherFirstName.value,
-                        MotherMiddleName: addDataSheetForm.inputMotherMiddleName.value,
-                        MotherSurName: addDataSheetForm.inputMotherSurName.value,
-                        MotherMaidenName: addDataSheetForm.inputMotherMaiden.value
+                        MotherFirstName: addDataSheetForm.inputMotherFirstName.value.trim(),
+                        MotherMiddleName: addDataSheetForm.inputMotherMiddleName.value.trim(),
+                        MotherSurName: addDataSheetForm.inputMotherSurName.value.trim(),
+                        MotherMaidenName: addDataSheetForm.inputMotherMaiden.value.trim()
                       },
-                      NumberChildren: addDataSheetForm.numberOfChildren.value,
+                      NumberChildren: addDataSheetForm.numberOfChildren.value.trim(),
                       ChildrenDetails: []
                     };
   
-                    const numberChildren = document.getElementById("numberOfChildren").value;
-  
-                    const formData = []
-  
-                    for (let i = 1; i <= numberChildren; i++) {
-                      employeeData.ChildrenDetails.push({
-                        firstName: document.getElementById(`inputFirstName${i}`).value,
-                        middleName: document.getElementById(`inputMiddleName${i}`).value,
-                        surName: document.getElementById(`inputSurName${i}`).value,
-                        exName: document.getElementById(`inputExName${i}`).value,
-                      });
-                    }
-  
-                    Swal.fire({
-                      title: "Are you sure?",
-                      text: "Employee's personal information will be saved",
-                      icon: "question",
-                      showCancelButton: true,
-                      confirmButtonColor: "#3085d6",
-                      cancelButtonColor: "#d33",
-                      confirmButtonText: "Confirm"
-                    }).then((result) => {
-                      if (result.isConfirmed) {
+                    try{
+                      const numberChildren = document.getElementById("numberOfChildren").value;
+    
+                      const formData = []
+
+                        for (let i = 1; i <= numberChildren; i++) {
+                          employeeData.ChildrenDetails.push({
+                            ChildrenFirstName: document.getElementById(`inputChildrenFirstName${i}`).value.trim(),
+                            ChiildrenMiddleName: document.getElementById(`inputChildrenMiddleName${i}`).value.trim(),
+                            ChiildrenSurName: document.getElementById(`inputChildrenSurName${i}`).value.trim(),
+                            ChiildrenExName: document.getElementById(`inputChildrenExName${i}`).value.trim(),
+                          });
+                        }
+                      
                         Swal.fire({
-                          title: "Saved!",
-                          text: "Your employee added successfully...",
-                          icon: "success"
-                        }).then(() => {
-                          // Add data to Firestore
-                          return addDoc(EmployeecolRef, employeeData);
-                        }).then((docRef) => {
-                          customDocId = docRef.id;
-                          // Update the document with the custom ID
-                          return setDoc(doc(EmployeecolRef, customDocId), { documentID: customDocId }, { merge: true });
-                        })
-                          .then(() => {
-                            console.log("hereee: ", customDocId)
-                            // Reset the form
-                            addDataSheetForm.reset();
-                            console.log("Added employee successfully...");
-                            //window.location.href = 'Education-21Files.html';
-                            window.location.href = `Education-21Files.html?data=${encodeURIComponent(customDocId)}`;
-                          })
-                          .catch(error => console.error('Error adding employee document:', error));
+                          title: "Are you sure?",
+                          text: "Employee's personal information will be saved",
+                          icon: "question",
+                          showCancelButton: true,
+                          confirmButtonColor: "#3085d6",
+                          cancelButtonColor: "#d33",
+                          confirmButtonText: "Confirm"
+                        }).then((result) => {
+                          if (result.isConfirmed) {
+                            Swal.fire({
+                              title: "Saved!",
+                              text: "Your employee added successfully...",
+                              icon: "success"
+                            }).then(() => {
+                              // Add data to Firestore
+                              return addDoc(EmployeecolRef, employeeData);
+                            }).then((docRef) => {
+                              customDocId = docRef.id;
+                              // Update the document with the custom ID
+                              return setDoc(doc(EmployeecolRef, customDocId), { documentID: customDocId }, { merge: true });
+                            })
+                              .then(() => {
+                                console.log("hereee: ", customDocId)
+                                // Reset the form
+                                addDataSheetForm.reset();
+                                console.log("Added employee successfully...");
+                                //window.location.href = 'Education-21Files.html';
+                                window.location.href = `Education-21Files.html?data=${encodeURIComponent(customDocId)}`;
+                              })
+                              .catch(error => console.error('Error adding employee document:', error));
+                          }
+                        });
+    
                       }
-                    });
-  
+                      catch {
+                        alert("Please provide the required fields.")
+                      }  
                   })
   
               });
@@ -508,12 +514,15 @@ export function AddEmployeeDataSheet() {
       console.log(current, 'current user');
       const Accountque = query(TestcolRef, where("userID", "==", current.uid));
       const Employeeque = query(EmployeecolRef, where("documentID", "==", receivedStringData));
-  
+
+      console.log("hello123: ", data)  
   
       // for retrieving the current user
       onSnapshot(Accountque, (snapshot) => {
-        snapshot.docs.forEach((docData) => {
-          const data = docData.data();
+        snapshot.docs.forEach((accountdocData) => {
+          const data = accountdocData.data();
+
+
   
           // for checking if the user is admin
           if (data.UserLevel === "Admin") {          
@@ -525,6 +534,8 @@ export function AddEmployeeDataSheet() {
                 const ProfileURL = data.ProfilePictureURL;
                 empName.innerHTML = fullname;
                 empProfilePicture.src = ProfileURL
+
+                console.log('pogi: ', fullname)
     
                 
                 var splitResult = urlHref.split('/dist/');
@@ -557,6 +568,7 @@ export function AddEmployeeDataSheet() {
    
                 // Check the current document
                 if (isDataSheetPresent){
+                  console.log("PResents")
                   const addDataSheetForm = document.querySelector("#employeeDataSheet"); 
                   // Personal details
                   addDataSheetForm.inputCsId.value = data.Personal_Information.CSCID

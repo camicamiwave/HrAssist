@@ -145,6 +145,8 @@ export function FetchApplicantProfile() {
   const TestcolRef = collection(db, 'Applicant Information');
 
   FetchCurrentUser().then((currentUserUID) => {
+
+    console.log(currentUserUID, 'sdds')
     const que = query(TestcolRef, where("userID", "==", currentUserUID));
 
     onSnapshot(que, (snapshot) => {

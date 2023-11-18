@@ -38,18 +38,26 @@ function AddApplicantForm() {
     const addApplicantForm = document.querySelector("#applicant_info_form")
 
     let applicantCurrentMaxID;
+    let userUID;
 
+    FetchCurrentUser().then((currentUserUID) => {
+        userUID = currentUserUID;
+
+        const que = query(TestcolRef, where("userID", "==", userUID));
+    })
+        
     FetchApplicantIDData().then((maxID) => {
         applicantCurrentMaxID = maxID
     })
 
     addApplicantForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+        e.preventDefault(); 
         const applicantID = applicantCurrentMaxID + 1;
 
         const applicantJobForm = {
             createdAt: serverTimestamp(),
             ApplicantStatus: "Pending",
+            userID: userUID,
             JobApply: "",
             ApplicantID: applicantID,
             Personal_Information: {
