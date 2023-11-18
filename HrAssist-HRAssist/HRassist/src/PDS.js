@@ -376,75 +376,302 @@ export function AddEmployeeDataFirestore(querySelctorID, employeeData, currentDo
 }
 
 export function Employee201Buttons() {
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const receivedStringData = urlParams.get('data');
-
-  // Trigger to send document id when it was called
-  Employee201Navigator(receivedStringData);
-
-  const addDataSheetForm = document.querySelector("#EducationForm");
-
-  console.log("safsafs12312")
-
-
-  addDataSheetForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const employeeData = {
-      Education_Details: {
-        Elementary: {
-          ElementarySchool: addDataSheetForm.elemSchoolName.value,
-          ElementaryGrade: addDataSheetForm.elemGrade.value,
-          ElementaryFrom: addDataSheetForm.elemFrom.value,
-          ElementaryTo: addDataSheetForm.elemTo.value,
-          ElementaryLevel: addDataSheetForm.elemHighestLevel.value,
-          ElementaryScholarship: addDataSheetForm.elemScholarship.value,
-        },
-        Secondary: {
-          SecondarySchool: addDataSheetForm.secondSchoolName.value,
-          SecondaryGrade: addDataSheetForm.secondGrade.value,
-          SecondaryFrom: addDataSheetForm.secondFrom.value,
-          SecondaryTo: addDataSheetForm.secondTo.value,
-          SecondaryLevel: addDataSheetForm.secondHighestLevel.value,
-          SecondaryScholarship: addDataSheetForm.secondScholarship.value,
-        },
-        Vocational: {
-          VocationalSchool: addDataSheetForm.vocationalSchoolName.value,
-          VocationalGrade: addDataSheetForm.vocationalGrade.value,
-          VocationalFrom: addDataSheetForm.vocationalFrom.value,
-          VocationalTo: addDataSheetForm.vocationalTo.value,
-          VocationalLevel: addDataSheetForm.vocationalHighestLevel.value,
-          VocationalScholarship: addDataSheetForm.vocationalScholarship.value,
-        },
-        College: {
-          CollegeSchool: addDataSheetForm.collegeSchoolName.value,
-          CollegeGrade: addDataSheetForm.collegeGrade.value,
-          CollegeFrom: addDataSheetForm.collegeFrom.value,
-          CollegeTo: addDataSheetForm.collegeTo.value,
-          CollegeLevel: addDataSheetForm.collegeHighestLevel.value,
-          CollegeScholarship: addDataSheetForm.collegeScholarship.value,
-        },
-        Graduate: {
-          GraduateSchool: addDataSheetForm.graduateSchoolName.value,
-          GraduateGrade: addDataSheetForm.graduateGrade.value,
-          GraduateFrom: addDataSheetForm.graduateFrom.value,
-          GraduateTo: addDataSheetForm.graduateTo.value,
-          GraduateLevel: addDataSheetForm.graduateHighestLevel.value,
-          GraduateScholarship: addDataSheetForm.graduateScholarship.value,
+  try{
+    const urlParams = new URLSearchParams(window.location.search);
+    const receivedStringData = urlParams.get('data');
+  
+    // Trigger to send document id when it was called
+    Employee201Navigator(receivedStringData);
+  
+    const addDataSheetForm = document.querySelector("#EducationForm");
+  
+    addDataSheetForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+  
+      const employeeData = {
+        Education_Details: {
+          Elementary: {
+            ElementarySchool: addDataSheetForm.elemSchoolName.value.trim(),
+            ElementaryGrade: addDataSheetForm.elemGrade.value.trim(),
+            ElementaryFrom: addDataSheetForm.elemFrom.value.trim(),
+            ElementaryTo: addDataSheetForm.elemTo.value.trim(),
+            ElementaryLevel: addDataSheetForm.elemHighestLevel.value.trim(),
+            ElementaryScholarship: addDataSheetForm.elemScholarship.value.trim(),
+          },
+          Secondary: {
+            SecondarySchool: addDataSheetForm.secondSchoolName.value.trim(),
+            SecondaryGrade: addDataSheetForm.secondGrade.value.trim(),
+            SecondaryFrom: addDataSheetForm.secondFrom.value.trim(),
+            SecondaryTo: addDataSheetForm.secondTo.value.trim(),
+            SecondaryLevel: addDataSheetForm.secondHighestLevel.value.trim(),
+            SecondaryScholarship: addDataSheetForm.secondScholarship.value.trim(),
+          },
+          Vocational: {
+            VocationalSchool: addDataSheetForm.vocationalSchoolName.value.trim(),
+            VocationalGrade: addDataSheetForm.vocationalGrade.value.trim(),
+            VocationalFrom: addDataSheetForm.vocationalFrom.value.trim(),
+            VocationalTo: addDataSheetForm.vocationalTo.value.trim(),
+            VocationalLevel: addDataSheetForm.vocationalHighestLevel.value.trim(),
+            VocationalScholarship: addDataSheetForm.vocationalScholarship.value.trim(),
+          },
+          College: {
+            CollegeSchool: addDataSheetForm.collegeSchoolName.value.trim(),
+            CollegeGrade: addDataSheetForm.collegeGrade.value.trim(),
+            CollegeFrom: addDataSheetForm.collegeFrom.value.trim(),
+            CollegeTo: addDataSheetForm.collegeTo.value.trim(),
+            CollegeLevel: addDataSheetForm.collegeHighestLevel.value.trim(),
+            CollegeScholarship: addDataSheetForm.collegeScholarship.value.trim(),
+          },
+          Graduate: {
+            GraduateSchool: addDataSheetForm.graduateSchoolName.value.trim(),
+            GraduateGrade: addDataSheetForm.graduateGrade.value.trim(),
+            GraduateFrom: addDataSheetForm.graduateFrom.value.trim(),
+            GraduateTo: addDataSheetForm.graduateTo.value.trim(),
+            GraduateLevel: addDataSheetForm.graduateHighestLevel.value.trim(),
+            GraduateScholarship: addDataSheetForm.graduateScholarship.value.trim(),
+          }
         }
-      }
-    };
+      };
+  
+      // Saving to firestore
+      AddEmployeeDataFirestore('#EducationForm', employeeData, receivedStringData)
+    })
+  } catch {
+    console.log("Not Education form")
 
-    // Saving to firestore
-    AddEmployeeDataFirestore('#EducationForm', employeeData, receivedStringData)
-  })
+  }
 
 
 
 }
 
 window.addEventListener('load', Employee201Buttons)
+
+export function Add201OtherInfo(){
+  const TestcolRef = collection(db, 'User Account');
+  const EmployeecolRef = collection(db, 'Employee Information');
+
+  const addOtherInfoForm = document.getElementById("otherInfoSubmitBtn");
+
+  let customDocId; // Declare customDocId outside the then block
+
+  addOtherInfoForm.addEventListener('click', (e) => {
+    e.preventDefault();
+  
+    const OtherInformationData = {
+      OtherInformation: {
+        CSC_Eligibility: {
+          Eligibility: {
+                          EligibilityName: document.getElementById(`EmpEligibility`).value.trim(),
+                          Rating: document.getElementById(`EmpRating`).value.trim(),
+                          BasicDegree: document.getElementById(`EmpBasicDegree`).value.trim(),
+                          ExamDate: document.getElementById(`EmpExamDate`).value.trim(),
+                          ExamPlace: document.getElementById(`EmpExamPlace`).value.trim(),
+                          HighestLevel: document.getElementById(`EmpHighestLevel`).value.trim(),
+                          Scholarship: document.getElementById(`EmpScholarship`).value.trim(),
+                          LicenseNumber: document.getElementById(`EmpLicenseNumber`).value.trim(),
+                          LicenseDate: document.getElementById(`EmpLicenseDate`).value.trim(),}  
+                        },
+        WorkExperience: {
+          WorkExperienceDetails: {
+            WorkName: document.getElementById(`WorkName`).value.trim(),
+            WorkFrom: document.getElementById(`WorkFrom`).value.trim(),
+            WorkTo: document.getElementById(`WorkTo`).value.trim(),
+            WorkNumHours: document.getElementById(`WorkNumHours`).value.trim(),
+            WorkPosition: document.getElementById(`WorkPosition`).value.trim()
+          } 
+        },
+        LearingDevelopment: {
+          LearingDevelopmentDetails: {
+            LearningTitle: document.getElementById(`LearningTitle`).value.trim(),
+            LearningFrom: document.getElementById(`LearningFrom`).value.trim(),
+            LearningTo: document.getElementById(`LearningTo`).value.trim(),
+            LearningHours: document.getElementById(`LearningHours`).value.trim(),
+            LearningLD: document.getElementById(`LearningLD`).value.trim(), 
+            LearningSponsored: document.getElementById(`LearningSponsored`).value.trim(),  
+          } 
+        },
+        SpecialSkills: {
+          SpecialSkillDetails: {        
+            LearningTitle: document.getElementById(`SpecialSkillsHobies`).value.trim(),
+          }
+        },
+        AcademicDistinction: {
+          AcademicDistinctionDetails: {        
+            AcademicDistinctionName: document.getElementById(`AcademicName`).value.trim(),
+          }
+        },
+        Organization: {
+          OrganizationDetails: {
+            LearningTitle: document.getElementById(`OrgMember`).value.trim(),
+          }
+        },
+        Other_Information: {
+          RadioThirdDegree: document.getElementById(`RadioThirdDegree`).value.trim(),
+          RadioFourthDegree: document.getElementById(`RadioFourthDegree`).value.trim(),
+          DegreeSpecify: document.getElementById(`DegreeSpecify`).value.trim(),
+          Guilty: document.getElementById(`GuiltyID`).value.trim(),
+          GuiltySpecify: document.getElementById(`GuiltyID`).value.trim(),
+          CriminalRecord: document.getElementById(`CriminalRecord`).value.trim(),
+          CriminalRecordSpecify: document.getElementById(`CriminalRecordSpecify`).value.trim(),
+          CountryResidence: document.getElementById(`CountryResidence`).value.trim(),
+          CountryResidenceSpecify: document.getElementById(`CountryResidenceSpecify`).value.trim(),
+          Indigenous: document.getElementById(`Indigenous`).value.trim(),
+          IndigenousSpecify: document.getElementById(`IndigenousSpecify`).value.trim(),
+          Disability: document.getElementById(`Disability`).value.trim(),
+          DisabilitySpecify: document.getElementById(`DisabilitySpecify`).value.trim(),
+          SoloParent: document.getElementById(`SoloParent`).value.trim(),
+          SoloParentSpecify: document.getElementById(`SoloParentSpecify`).value.trim(),
+        },
+        References: {
+          ReferencesDetails: {
+            ReferenceName: document.getElementById(`ReferenceName`).value.trim(),
+            ReferenceAddress: document.getElementById(`ReferenceAddress`).value.trim(),
+            ReferenceTellNo: document.getElementById(`ReferenceTellNo`).value.trim(),
+          }
+        }
+      }
+    }
+
+    // Eligibilityyyyy
+    const EligibilityIDS = numberOfIds;
+    
+    for (let i = 1; i < EligibilityIDS; i++) { 
+      const eligibilityData = {
+        EligibilityName: document.getElementById(`EmpEligibility${i}`).value.trim(),
+        Rating: document.getElementById(`EmpRating${i}`).value.trim(),
+        BasicDegree: document.getElementById(`EmpBasicDegree${i}`).value.trim(),
+        ExamDate: document.getElementById(`EmpExamDate${i}`).value.trim(),
+        ExamPlace: document.getElementById(`EmpExamPlace${i}`).value.trim(),
+        HighestLevel: document.getElementById(`EmpHighestLevel${i}`).value.trim(),
+        Scholarship: document.getElementById(`EmpScholarship${i}`).value.trim(),
+        LicenseNumber: document.getElementById(`EmpLicenseNumber${i}`).value.trim(),
+        LicenseDate: document.getElementById(`EmpLicenseDate${i}`).value.trim()
+      };
+    
+      // Create a key for each eligibility and add the data
+      OtherInformationData.OtherInformation.CSC_Eligibility[`Eligibility${i}`] = eligibilityData;
+
+    }
+
+    // Work Experience
+    const WorkExpIDS = WorknumberOfIds;
+    for (let i = 1; i < WorkExpIDS; i++) { 
+      const workExpData = {
+        WorkName: document.getElementById(`WorkName${i}`).value.trim(),
+        WorkFrom: document.getElementById(`WorkFrom${i}`).value.trim(),
+        WorkTo: document.getElementById(`WorkTo${i}`).value.trim(),
+        WorkNumHours: document.getElementById(`WorkNumHours${i}`).value.trim(),
+        WorkPosition: document.getElementById(`WorkPosition${i}`).value.trim(), 
+      };
+    
+      // Create a key for each eligibility and add the data
+      OtherInformationData.OtherInformation.WorkExperience[`WorkExperienceDetails${i}`] = workExpData;
+
+    }
+
+    const LearningIDS = LearningnumberOfIds;
+    for (let i = 1; i < LearningIDS; i++) { 
+      const LeaningData = {
+        LearningTitle: document.getElementById(`LearningTitle${i}`).value.trim(),
+        LearningFrom: document.getElementById(`LearningFrom${i}`).value.trim(),
+        LearningTo: document.getElementById(`LearningTo${i}`).value.trim(),
+        LearningHours: document.getElementById(`LearningHours${i}`).value.trim(),
+        LearningLD: document.getElementById(`LearningLD${i}`).value.trim(), 
+        LearningSponsored: document.getElementById(`LearningSponsored${i}`).value.trim(),
+      };
+    
+      // Create a key for each eligibility and add the data
+      OtherInformationData.OtherInformation.LearingDevelopment[`LearingDevelopmentDetails${i}`] = LeaningData;
+
+    }
+
+    const SpecialSkillIDS = SkillsID;
+
+    for (let i = 1; i < SpecialSkillIDS; i++) { 
+      const SpecialSkillDets = {
+        LearningTitle: document.getElementById(`LearningTitle${i}`).value.trim(),
+      };
+    
+      // Create a key for each eligibility and add the data
+      OtherInformationData.OtherInformation.SpecialSkills[`SpecialSkillDetails${i}`] = SpecialSkillDets;
+    }
+
+    const AcademicID = SkillsID;
+
+    for (let i = 1; i < AcademicID; i++) { 
+      const AcademicDets = {
+        AcademicName: document.getElementById(`AcademicName${i}`).value.trim(),
+      };
+    
+      // Create a key for each eligibility and add the data
+      OtherInformationData.OtherInformation.AcademicDistinction[`AcademicDetail${i}`] = AcademicDets;
+    }
+
+    const OrgID = OrganizationID;
+
+    for (let i = 1; i < OrgID; i++) { 
+      const OrganizationDets = {
+        LearningTitle: document.getElementById(`OrgMember${i}`).value.trim(),
+      };
+    
+      // Create a key for each eligibility and add the data
+      OtherInformationData.OtherInformation.AcademicDistinction[`AcademicDetail${i}`] = OrganizationDets;
+    }
+
+    
+    const ReferenceID = ReferenceNameID;
+
+    for (let i = 1; i < ReferenceID; i++) { 
+      const ReferencesDets = {
+        ReferenceName: document.getElementById(`ReferenceName${i}`).value.trim(),
+        ReferenceAddress: document.getElementById(`ReferenceAddress${i}`).value.trim(),
+        ReferenceTellNo: document.getElementById(`ReferenceTellNo${i}`).value.trim(),
+      };
+    
+      // Create a key for each eligibility and add the data
+      OtherInformationData.OtherInformation.References[`ReferencesDets${i}`] = ReferencesDets;
+    }
+
+    console.log(OtherInformationData)
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Employee's personal information will be saved",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Confirm"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Saved!",
+          text: "Your employee added successfully...",
+          icon: "success"
+        }).then(() => {
+          // Add data to Firestore
+          return addDoc(EmployeecolRef, OtherInformationData);
+        }).then((docRef) => {
+          customDocId = docRef.id;
+          // Update the document with the custom ID
+          return setDoc(doc(EmployeecolRef, customDocId), { documentID: customDocId }, { merge: true });
+        })
+          .then(() => { 
+            console.log("Added employee successfully..."); 
+            window.location.href = `signature-201file.html?data=${encodeURIComponent(customDocId)}`;
+          })
+          .catch(error => console.error('Error adding employee document:', error));
+      }
+    });
+
+    
+  })
+
+}
+
+window.addEventListener('load', Add201OtherInfo)
+
 
 
 export function addEmployeeSignatureForm() {
@@ -565,7 +792,7 @@ export function fetchEmployeeData() {
                 console.log("PResents")
                 const addDataSheetForm = document.querySelector("#employeeDataSheet");
                 // Personal details
-                addDataSheetForm.inputCsId.value = data.Personal_Information.CSCID
+                addDataSheetForm.inputCsId.value = data.Personal_Information.CSCID.trim
                 addDataSheetForm.inputFirstName.value = data.Personal_Information.FirstName
                 addDataSheetForm.inputMiddleName.value = data.Personal_Information.MiddleName
                 addDataSheetForm.inputSurName.value = data.Personal_Information.SurName
@@ -751,3 +978,7 @@ export function SearchEmployee() {
 }
 
 window.addEventListener('load', SearchEmployee)
+
+// ------> Other Information <---------------------------------------------------
+
+
