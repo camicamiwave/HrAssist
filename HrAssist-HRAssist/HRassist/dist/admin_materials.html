@@ -190,7 +190,7 @@
                     <!-- End -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="#" class="nav_link">
+                        <a href="admin_material_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-folder-open"></i>
                         </span>
@@ -215,49 +215,40 @@
 
         <div id="main">
             <div class="content-wrapper">
-                <div class = "page-header">
+                <div class="page-header">
                     <h1 class="page-title">
                         <span class="page-title-icon">
                         <i class="bx bxs-folder-open"></i>
-                        </span> Materials
+                        </span> L&D Materials
                     </h1>
-                    
                 </div>
                 <div class="table">
-                    <div>
+                    <div class="table-header">
                         <img src="img/favicon.png" alt="" class="MHOlogo"/>
-                        <p id = "office">Municipal Health Office</p>
-                        <hr>
-                    </div>    
-                        <!--Attachments-->  
-                        <div class="container">
-                            <div id="table">
-                                <div class="table-header">
-                                    <p>File Attachments</p>
-                                </div>
-                                <table class="content-table">  
-                                    <thead>
-                                        <tr>
-                                            <th>Attachment</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                        <td>File.pdf</td>
-                                        <td id= "btncontainer">
-                                            <button id="preview-btn_acc">Preview</button>
-                                            <button id="dl-btn_acc">Download</button>
-                                        </td>
-                                        </tr>
-                                    <!-- Add more rows as needed -->
-                                </tbody>
-                                </table>
-                            </div>
-                        </div>
+                        <p>Municipal Health Office</p>
+                        <a href="job-list.html"><button class="add-new">+ Upload Files</button></a>
                     </div>
+                    <table class="content-table" id="applicantTable">
+                        <thead>
+                            <tr>
+                                <th>Files</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Learning and Development Course Offerings 2023</td>
+                                <td>
+                                    <button><i class="bx bx-show"></i></button>
+                                    <button><i class="bx bx-trash"></i></button>
+                                    <button><i class="bx bx-download"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
+        </div>
 
         <!-- JavaScript -->
         <script src="js/script.js"></script>
