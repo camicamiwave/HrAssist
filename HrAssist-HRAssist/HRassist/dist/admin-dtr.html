@@ -8,7 +8,7 @@
         <!-- Boxicons CSS -->
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
         <title>HR Assist - Admin</title>
-        <link rel="stylesheet" href="css/admin.css" />
+        <link rel="stylesheet" href="css/admin-dtr.css" />  
         <!-- Favicon -->
         <link href="img/hrlogo.svg" rel="icon">
     </head>
@@ -27,7 +27,7 @@
                 <i class="bi bi-grid"></i>
                 <i class='bx bx-sun' id="darkLight"></i>
                 <i class='bx bx-bell' ></i>
-                <img src="img/favicon.png" alt="" id="navbarProfilePicture" class="profile" />
+                <img src="img/favicon.png" alt="" class="profile" id="navbarProfilePicture"/>
             </div>
         </nav>
 
@@ -38,7 +38,7 @@
                     <div class="menu_title menu_admin_tools"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item">
+                    <li class="item active">
                         <a href="admin_dashboard.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-dashboard"></i>
@@ -63,7 +63,7 @@
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="admin_offices_view.html" class="nav_link">
+                        <a href="admin-offices.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-buildings"></i>
                         </span>
@@ -73,7 +73,7 @@
                     <!-- End -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="#" class="nav_link">
+                        <a href="calendar.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-calendar"></i>
                         </span>
@@ -110,7 +110,7 @@
                     <div class="menu_title employee_registration"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item active">
+                    <li class="item">
                         <a href="admin_employee_registry_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-user-detail"></i>
@@ -165,7 +165,7 @@
                     <!-- End -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="admin-dtr.html" class="nav_link">
+                        <a href="#" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-file"></i>
                         </span>
@@ -217,89 +217,140 @@
                 <div class="page-header">
                     <h1 class="page-title">
                         <span class="page-title-icon">
-                        <i class="bx bxs-user-detail"></i>
-                        </span> List of Employees
+                        <i class="bx bxs-file"></i>
+                        </span> DTR
                     </h1>
                 </div>
                 <div class="table">
                     <div class="table-header">
-                        <p>Departments</p>
+                        <button>Add</button>
+                        <button>Upload</button>
+                        <button>Search</button>
                     </div>
-                    <div class="article-contener">
-                        <ul class="groups">
-                            <li>
-                                <div class="card">
-                                    <div class="image-session">
-                                        <span class="image" style="background-image: url('img/clients/client-1.png');"></span>
+                    <div class="select-employee">
+                        <header>Employee Details</header>
+                        <div class="container-left">
+                            <div class="content">
+                                <form>
+                                    <div class="input-box">
+                                        <span class="details">Employee Name</span>
+                                        <input type="text">
                                     </div>
-                                    <div class="meta-sission">
-                                        <div class="body">
-                                            <h2 class="title">Municipal Health Office</h2>
+                                    <div class="input-box">
+                                        <span class="details">Office</span>
+                                        <input type="text">
+                                    </div>
+                                    <div class="input-box">
+                                        <span class="details">Position</span>
+                                        <input type="text">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="container-right">
+                            <div class="content">
+                                <form>
+                                    <div class="input-box">
+                                        <span class="details">For the month of</span>
+                                        <input type="date">
+                                    </div>
+                                    <div class="input-box">
+                                        <span class="details">Period Covered</span>
+                                        <input type="text">
+                                    </div>
+                                </form>
+                            </div>
+                            <button class="add-new">Export as</button>
+                            <button class="add-new">Print</button>
+                            <button class="add-new">Select</button>
+                        </div>
+                        <div class="container-bottom">
+                            <div class="content">
+                                <form>
+                                    <div class="user-details">
+                                        <div class="input-box">
+                                            No. of Pass Slip
+                                            <input type="number" style="width: 100px;">
                                         </div>
-                                        <div class="footer">
-                                            <a href="admin_employee_registry_list.html" class="button">Open →</a>
+                                        <div class="input-box">
+                                            No. of AWOL
+                                            <input type="number" style="width: 100px;">
+                                        </div>
+                                        <div class="input-box">
+                                            No. of Times Tardy
+                                            <input type="number" style="width: 100px;">
+                                        </div>
+                                        <div class="input-box">
+                                            No. of Hours/Min Tardy
+                                            <input type="number" style="width: 100px;">
+                                        </div>
+                                        <div class="input-box">
+                                            No. of Times Undertime
+                                            <input type="number" style="width: 100px;">
+                                        </div>
+                                        <div class="input-box">
+                                            No. of Hours/Min Undertim
+                                            <input type="number" style="width: 100px;">
                                         </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card">
-                                    <div class="image-session">
-                                        <span class="image" style="background-image: url('img/clients/client-2.png');"></span>
-                                    </div>
-                                    <div class="meta-sission">
-                                        <div class="body">
-                                            <h2 class="title">Municipal Traffic and Public Safety Office</h2>
-                                        </div>
-                                        <div class="footer">
-                                            <a href="admin_employee_registry_list.html" class="button">Open →</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card">
-                                    <div class="image-session">
-                                        <span class="image" style="background-image: url('img/clients/client-3.png');"></span>
-                                    </div>
-                                    <div class="meta-sission">
-                                        <div class="body">
-                                            <h2 class="title">Municipal of Agriculture Office</h2>
-                                        </div>
-                                        <div class="footer">
-                                            <a href="admin_employee_registry_list.html" class="button">Open →</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card">
-                                    <div class="image-session">
-                                        <span class="image" style="background-image: url('img/clients/client-4.png');"></span>
-                                    </div>
-                                    <div class="meta-sission">
-                                        <div class="body">
-                                            <h2 class="title">Municipality of San Vicente</h2>
-                                        </div>
-                                        <div class="footer">
-                                            <a href="admin_employee_registry_list.html" class="button">Open →</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                                </form>
+                            </div>
+                        </div>
                     </div>
+                    
+                </div>
+                <div class="table">
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>AM In</th>
+                                <th>AM Out</th>
+                                <th>PM In</th>
+                                <th>PM Out</th>
+                                <th>Hours</th>
+                                <th>Mins</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+
+                                    <input type="number" id="day">
+                                </td>
+                                <td>
+                                    <input type="time" id="am-in">
+                                </td>
+                                <td>
+                                    <input type="time" id="am-out">
+                                </td>
+                                <td>
+                                    <input type="time" id="pm-in">
+                                </td>
+                                <td>
+                                    <input type="time" id="am-in">
+                                </td>
+                                <td>
+                                    <input type="number" id="hours">
+                                </td>
+                                <td>
+                                    <input type="number" id="mins">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
 
         <!-- JavaScript -->
         <script src="js/script.js"></script>
-
-        
+    
         <!-- Database Javascript -->  
-        <script src="bundles/auth.bundle.js"></script>      
+        <script src="bundles/auth.bundle.js"></script>   
+        <script src="bundles/applicant_registry.bundle.js"></script>   
         <script src="bundles/navbar.bundle.js"></script>
+           
     </body>
 
 </html>

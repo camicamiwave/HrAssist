@@ -529,3 +529,148 @@ body{margin-top:20px;
     padding-right: 0;
     border-right: none;
 }
+
+/*START*/
+
+body{
+  margin-top:20px;
+  background: #f5f5f5;
+}
+
+.ui-w-100 {
+  width: 100px !important;
+  height: auto;
+}
+
+.card {
+  background-clip: padding-box;
+  box-shadow: 0 1px 4px rgba(24,28,33,0.012);
+}
+
+.user-view-table td:first-child {
+  width: 9rem;
+}
+.user-view-table td {
+  padding-right: 0;
+  padding-left: 0;
+  border: 0;
+}
+
+.text-light {
+  color: #babbbc !important;
+}
+
+.card .row-bordered>[class*=" col-"]::after {
+  border-color: rgba(24,28,33,0.075);
+}    
+
+.text-xlarge {
+  font-size: 170% !important;
+}
+
+/*END*/
+.fb-profile-block {
+  margin: auto;
+  position: relative;
+  width: 100%;
+}
+.cover-container{
+    background: #068E6B;
+    background: -webkit-radial-gradient(bottom, rgb(115, 245, 195) 12%, #068E6B);
+    background: radial-gradient(at bottom, #15cc9e 12%, #068E6B)
+}
+.fb-profile-block-thumb{
+  display: block;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+}
+.fb-profile-block-menu {
+  border: 1px solid #d3d6db;
+  border-radius: 0 0 3px 3px;
+}
+.profile-img a{
+    bottom: 15px;
+    box-shadow: none;
+    display: block;
+    left: 15px;
+    padding:1px;
+    position: absolute;
+    height: 160px;
+    width: 160px;
+    background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+    z-index:9;
+}
+.profile-img img {
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07);
+  height:158px;
+  padding: 5px;
+  width:158px;
+}
+.profile-active {
+  top: 70px;
+  left: 200px;
+  position: absolute;
+  color:#fff
+}
+.profile-name {
+  bottom: 90px;
+  left: 200px;
+  position: absolute;
+}
+.profile-hr {
+  bottom: 65px;
+  left: 200px;
+  position: absolute;
+  color:#fff4f4;
+}
+.profile-name h2 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  max-width: 275px;
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.fb-profile-block-menu{
+  height: 44px;
+  position: relative;
+  width:100%;
+  overflow:hidden;
+ }
+.block-menu {
+  clear: right;
+  padding-left: 205px;
+}
+.block-menu ul{
+    margin:0;
+    padding:0;
+}
+.block-menu ul li{
+    display:inline-block;
+}
+.block-menu ul li a {
+  border-right: 1px solid #e9eaed;
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  height: 42px;
+  line-height: 3.0;
+  padding: 0 17px;
+  position: relative;
+  vertical-align: middle;
+  white-space: nowrap;
+  color:#4b4f56;
+  text-transform:capitalize;
+}
+.block-menu ul li:first-child a{
+  border-left: 1px solid #e9eaed;
+}
+
+/*START*/
