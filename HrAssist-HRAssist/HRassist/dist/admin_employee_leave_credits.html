@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Boxicons CSS -->
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+        <title>HR Assist - Admin</title>
+        <link rel="stylesheet" href="css/admin.css" />
+        <!-- Favicon -->
+        <link href="img/hrlogo.svg" rel="icon">
+    </head>
+
+    <body>
+        <!-- navbar -->
+        <nav class="navbar">
+            <div class="logo_item">
+                <i class="bx bx-menu" id="sidebarOpen"></i>
+                <img src="img/hrmis.png" alt="" style="width: 60px; height: 40px; border-radius: 0%; margin-left: -15px;"></i>
+                <div class="search_bar">
+                    <input type="text" placeholder="Search" />
+                </div>
+            </div>    
+            <div class="navbar_content">
+                <i class="bi bi-grid"></i>
+                <i class='bx bx-sun' id="darkLight"></i>
+                <i class='bx bx-bell' ></i>
+                <img src="img/favicon.png" alt="" class="profile" />
+            </div>
+        </nav>
+
+        <!--sidebar-->
+        <nav class="sidebar">
+            <div class="menu_content">
+                <ul class="menu_items">
+                    <div class="menu_title menu_admin_tools"></div>
+                    <!-- duplicate these li tag if you want to add or remove navlink only -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin_dashboard.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-dashboard"></i>
+                        </span>
+                        <span class="navlink">Dashboard</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin_accounts_view.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-user-account"></i>
+                        </span>
+                        <span class="navlink">Accounts</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                </ul>
+                <ul class="menu_items">
+                    <div class="menu_title lgu_information"></div>
+                    <!-- duplicate these li tag if you want to add or remove navlink only -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin_offices_view.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-buildings"></i>
+                        </span>
+                        <span class="navlink">Offices</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-calendar"></i>
+                        </span>
+                        <span class="navlink">Calendars</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                </ul>
+                <ul class="menu_items">
+                    <div class="menu_title recruitment"></div>
+                    <!-- duplicate these li tag if you want to add or remove navlink only -->
+                    <!-- Start -->
+                    <li class="item active">
+                        <a href="admin_manage_applicant_view.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-group"></i>
+                        </span>
+                        <span class="navlink">Manage Applicant</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin_job_vacancy_view.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-briefcase"></i>
+                        </span>
+                        <span class="navlink">Job Vacancy</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                </ul>
+                <ul class="menu_items">
+                    <div class="menu_title employee_registration"></div>
+                    <!-- duplicate these li tag if you want to add or remove navlink only -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin_employee_registry_view.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-user-detail"></i>
+                        </span>
+                        <span class="navlink">Employee Registry</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin_search_employee_view.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-search-alt-2"></i>
+                        </span>
+                        <span class="navlink">Search Employee</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                </ul>
+                <ul class="menu_items">
+                    <div class="menu_title employment_tools"></div>
+                    <!-- duplicate these li tag if you want to add or remove navlink only -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-folder"></i>
+                        </span>
+                        <span class="navlink">201 Files</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-calendar-alt"></i>
+                        </span>
+                        <span class="navlink">Request</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin_rewards_view.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-gift"></i>
+                        </span>
+                        <span class="navlink">Rewards</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-file"></i>
+                        </span>
+                        <span class="navlink">Reports</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                </ul>
+                <ul class="menu_items">
+                    <div class="menu_title learning_nd_development"></div>
+                    <!-- duplicate these li tag if you want to add or remove navlink only -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin_training_n_seminars_view.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-calendar-event"></i>
+                        </span>
+                        <span class="navlink">Training & Seminars</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-folder-open"></i>
+                        </span>
+                        <span class="navlink">Materials</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                </ul>
+            </div>
+            <!-- Sidebar Open / Close -->
+            <div class="bottom_content">
+                <div class="bottom expand_sidebar">
+                    <span> Expand</span>
+                    <i class='bx bx-log-in' ></i>
+                </div>
+                <div class="bottom collapse_sidebar">
+                    <span> Collapse</span>
+                    <i class='bx bx-log-out'></i>
+                </div>
+            </div>
+        </nav>
+
+        <div id="main">
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <h1 class="page-title">
+                        <span class="page-title-icon">
+                        <i class="bx bx-group"></i>
+                        </span> Manage Applicant
+                    </h1>
+                </div>
+                <div class="table">
+                    <div class="table-header">
+                        <p style="margin: auto;">Applicant Profile</p>
+                    </div>
+                    <div class="table-header">
+                        <div class="con-buttons">
+                            <div class="box-btn">
+                                <a href="admin_employee_account.html"><header>Account</header></a>
+                            </div>
+                            <div class="box-btn">
+                                <a href="admin_employee_pds.html" ><header>Personal Data Sheet</header></a>
+                            </div>
+                            <div class="box-btn">
+                                <a href="admin_employee_appointment.html"><header>Appointment</header></a>
+                            </div>
+                            <div class="box-btn">
+                                <a href="admin_employee_attachments.html"><header>Attachments</header></a>
+                            </div>
+                            <div class="box-btn selected">
+                                <a href="admin_employee_leave_credits.html"><header>Leave Credits</header></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="content">
+                            <form>
+                                <div class="user-details">
+                                    <div class="input-box" id = "idno_txt">
+                                        <span class="details">Enter ID Number:</span>
+                                        <input type="text" placeholder="Employee Name">
+                                    </div>
+                                    <div class="input-box" id = "name_txt">
+                                        <span class="details">Enter Employee Name:</span>
+                                        <input type="text" placeholder="#00000">
+                                    </div>
+                                <div class="input-box" id = "leavetype_txt">
+                                        <span class="details">Leave Type:</span>
+                                        <input type="text" placeholder="Sick Leave">
+                                    </div>
+                                    <div class="input-box" id = "leavecredit_txt">
+                                        <span class="details">Leave Credit:</span>
+                                        <input type="text" placeholder="1">
+                                    </div>
+                                    <div class="input-box" id = "prevcred_bal">
+                                        <span class="details">Previous Leave Balance:</span>
+                                        <input type="text" placeholder="50">
+                                    </div>
+                                    <div class="input-box" id="value_txt">
+                                        <span class="details" >Value</span>
+                                        <input type="text" placeholder="51 days">
+                                    </div>
+                                    
+                                </div>
+                                <button class="submit">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="js/script.js"></script>
+
+    </body>
+
+</html>
