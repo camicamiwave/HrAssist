@@ -833,6 +833,22 @@
     color: white;
 
   }
+  #btn_quali{
+    background-color: #28a745;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#btn_notquali{
+    background-color: #28a745;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
 
 
