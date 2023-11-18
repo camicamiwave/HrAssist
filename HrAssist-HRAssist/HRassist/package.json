@@ -20,7 +20,8 @@
     "navbar": "node navbar.js",
     "fetch_current_user": "node fetch_current_user.js",
     "PDS": "node PDS.js",
-    "job_registry": "node job_registry.js"
+    "job_registry": "node job_registry.js",
+    "employee_interface": "node employee_interface.js"
   },
   "keywords": [],
   "author": "",

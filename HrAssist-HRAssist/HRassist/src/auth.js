@@ -51,6 +51,7 @@ export function LoginChecker() {
           signOut(auth)
             .then(() => {
               console.log("Sign out");
+              alert("You are signed out.")
               window.location.href = 'login.html';
             })
             .catch((error) => {
@@ -347,3 +348,64 @@ window.addEventListener('load', SignupApplicantAccount);
 window.addEventListener('load', LoginChecker);
 window.addEventListener('load', SignupAccount);
 
+
+export function EmployeeLoginChecker() {
+
+  // Add an event listener to detect changes in authentication state
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+
+      // Check if the element with ID "landing_login_btn" exists
+      const Logout_Btn = document.getElementById("logout_value");
+
+      if (Logout_Btn) {
+        // Set the innerHTML property only if the element exists
+        Logout_Btn.innerHTML = "Log-out";
+
+        console.log(user);
+
+        const LandingLoginBtn = document.getElementById('employee_logout_btn');
+
+        // Add an event listener for the Sign Out button
+        LandingLoginBtn.addEventListener('click', () => {
+          signOut(auth)
+            .then(() => {
+              console.log("Sign out");
+              alert("You are signed out.")
+              window.location.href = 'login.html';
+            })
+            .catch((error) => {
+              console.error('Sign-out error:', error);
+            });
+        });
+
+      } else {
+        //console.log("Authorize person is logging...");
+      }
+
+      AccountUserLevel = UserLoginChecker(user.uid, "Browsing");
+
+    } else {
+      // User is signed out
+      console.log("No user login...");
+      const LandingLoginBtn = document.getElementById('employee_logout_btn');
+      // Check if the element with ID "landing_login_btn" exists
+      const Logout_Btn = document.getElementById("logout_value");
+
+      if (LandingLoginBtn) {
+        Logout_Btn.innerHTML = "Login";
+
+        LandingLoginBtn.addEventListener('click', () => {
+          window.location.href = 'login.html';
+        });
+      } else {
+        //console.log("Element with ID 'landing_login_btn' not found.");
+      }
+
+      AccountUserLevel = UserLoginChecker("None", "Browsing");
+
+    }
+  });
+}
+
+window.addEventListener('load', EmployeeLoginChecker)

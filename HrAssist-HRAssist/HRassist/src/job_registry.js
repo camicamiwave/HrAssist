@@ -37,12 +37,21 @@ function AddApplicantForm() {
 
     const addApplicantForm = document.querySelector("#applicant_info_form")
 
+    let applicantCurrentMaxID;
+
+    FetchApplicantIDData().then((maxID) => {
+        applicantCurrentMaxID = maxID
+    })
 
     addApplicantForm.addEventListener('submit', (e) => {
         e.preventDefault();
+        const applicantID = applicantCurrentMaxID + 1;
 
         const applicantJobForm = {
             createdAt: serverTimestamp(),
+            ApplicantStatus: "Pending",
+            JobApply: "",
+            ApplicantID: applicantID,
             Personal_Information: {
                 FirstName: addApplicantForm.inputFirstName.value,
                 MiddleName: addApplicantForm.inputMiddleName.value,
@@ -267,15 +276,6 @@ function Test() {
     })
 
 }
-
-/*
-// Example: Adding an event listener to the submit button
-document.getElementById('jobForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent the default form submission behavior
-    
-    Test()
-});*/
-
 window.addEventListener('load', Test)
 
 
@@ -290,6 +290,29 @@ window.addEventListener('load', () => {
     });
 });
 
+
+export function FetchApplicantIDData() {
+    return new Promise((resolve, reject) => {
+      const TestcolRef = collection(db, 'Applicant Information');
+      const querySnapshot = query(TestcolRef);
+  
+      onSnapshot(querySnapshot, (snapshot) => {
+        let maxApplicantIDNum = 0;
+  
+        snapshot.docs.forEach((doc) => {
+          const data = doc.data();
+          const applicantIDNum = data.ApplicantID;
+          
+          if (applicantIDNum > maxApplicantIDNum) {
+            maxApplicantIDNum = applicantIDNum;
+          }
+        });
+  
+        resolve(maxApplicantIDNum);
+      });
+    });
+  }
+  
 
 // This section is for applicant hiring index.html
 export function fetchApplicantHiring() {
