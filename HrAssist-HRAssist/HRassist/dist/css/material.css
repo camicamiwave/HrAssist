@@ -9,9 +9,12 @@
     height: auto; /* Maintain aspect ratio */
     margin-right: -600px;
     margin-left: 100px; /* Adjust margin as needed */
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 #office{
-    margin:auto;
+    margin-left: 170px;
+    margin-top: -50px;
 }
 #btncontainer button {
     background-color: #08533F; /* Dark green color */
@@ -23,6 +26,6 @@
     margin-right: 5px; /* Adjust margin as needed between buttons */
 }
 #table{
-    margin-top: -80px;
+    margin-top: -30px;
 }
 
