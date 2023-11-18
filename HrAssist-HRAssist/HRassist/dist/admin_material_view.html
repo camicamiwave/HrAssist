@@ -9,7 +9,6 @@
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
         <title>HR Assist - Admin</title>
         <link rel="stylesheet" href="css/admin.css" />
-        <link rel="stylesheet" href="css/material.css" />
         <!-- Favicon -->
         <link href="img/hrlogo.svg" rel="icon">
     </head>
@@ -146,7 +145,7 @@
                     <!-- End -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="#" class="nav_link">
+                        <a href="admin_request.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-calendar-alt"></i>
                         </span>
@@ -155,7 +154,7 @@
                     </li>
                     <!-- End -->
                     <!-- Start -->
-                    <li class="item active">
+                    <li class="item">
                         <a href="admin_rewards_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-gift"></i>
@@ -166,7 +165,7 @@
                     <!-- End -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="#" class="nav_link">
+                        <a href="admin-dtr.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-file"></i>
                         </span>
@@ -189,7 +188,7 @@
                     </li>
                     <!-- End -->
                     <!-- Start -->
-                    <li class="item">
+                    <li class="item active">
                         <a href="#" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-folder-open"></i>
@@ -215,51 +214,92 @@
 
         <div id="main">
             <div class="content-wrapper">
-                <div class = "page-header">
+                <div class="page-header">
                     <h1 class="page-title">
                         <span class="page-title-icon">
                         <i class="bx bxs-folder-open"></i>
-                        </span> Materials
+                        </span> L&D Materials
                     </h1>
-                    
                 </div>
                 <div class="table">
-                    <div>
-                        <img src="img/favicon.png" alt="" class="MHOlogo"/>
-                        <p id = "office">Municipal Health Office</p>
-                        <hr>
-                    </div>    
-                        <!--Attachments-->  
-                        <div class="container">
-                            <div id="table">
-                                <div class="table-header">
-                                    <p>File Attachments</p>
+                    <div class="table-header">
+                        <p>Departments</p>
+                    </div>
+                    <div class="article-contener">
+                        <ul class="groups">
+                            <li>
+                                <div class="card">
+                                    <div class="image-session">
+                                        <span class="image" style="background-image: url('img/clients/client-1.png');"></span>
+                                    </div>
+                                    <div class="meta-sission">
+                                        <div class="body">
+                                            <h2 class="title">Municipal Health Office</h2>
+                                        </div>
+                                        <div class="footer">
+                                            <a href="admin_materials.html" class="button">Open →</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <table class="content-table">  
-                                    <thead>
-                                        <tr>
-                                            <th>Attachment</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                        <td>File.pdf</td>
-                                        <td id= "btncontainer">
-                                            <button id="preview-btn_acc">Preview</button>
-                                            <button id="dl-btn_acc">Download</button>
-                                        </td>
-                                        </tr>
-                                    <!-- Add more rows as needed -->
-                                </tbody>
-                                </table>
-                            </div>
-                        </div>
+                            </li>
+                            <li>
+                                <div class="card">
+                                    <div class="image-session">
+                                        <span class="image" style="background-image: url('img/clients/client-2.png');"></span>
+                                    </div>
+                                    <div class="meta-sission">
+                                        <div class="body">
+                                            <h2 class="title">Municipal Traffic and Public Safety Office</h2>
+                                        </div>
+                                        <div class="footer">
+                                            <a href="admin_materials.html" class="button">Open →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card">
+                                    <div class="image-session">
+                                        <span class="image" style="background-image: url('img/clients/client-3.png');"></span>
+                                    </div>
+                                    <div class="meta-sission">
+                                        <div class="body">
+                                            <h2 class="title">Municipal of Agriculture Office</h2>
+                                        </div>
+                                        <div class="footer">
+                                            <a href="admin_materials.html" class="button">Open →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card">
+                                    <div class="image-session">
+                                        <span class="image" style="background-image: url('img/clients/client-4.png');"></span>
+                                    </div>
+                                    <div class="meta-sission">
+                                        <div class="body">
+                                            <h2 class="title">Municipality of San Vicente</h2>
+                                        </div>
+                                        <div class="footer">
+                                            <a href="admin_materials.html" class="button">Open →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
+        </div>
 
         <!-- JavaScript -->
         <script src="js/script.js"></script>
+
+        
+        <!-- Database Javascript -->  
+        <script src="bundles/auth.bundle.js"></script>      
+        <script src="bundles/navbar.bundle.js"></script>
     </body>
+
 </html>
