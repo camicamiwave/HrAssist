@@ -27,7 +27,7 @@
                 <i class="bi bi-grid"></i>
                 <i class='bx bx-sun' id="darkLight"></i>
                 <i class='bx bx-bell' ></i>
-                <img src="img/favicon.png" alt="" id="navbarProfilePicture" class="profile" />
+                <img src="img/favicon.png" alt="" class="profile" />
             </div>
         </nav>
 
@@ -86,7 +86,7 @@
                     <div class="menu_title recruitment"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item">
+                    <li class="item active">
                         <a href="admin_manage_applicant_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-group"></i>
@@ -110,7 +110,7 @@
                     <div class="menu_title employee_registration"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item active">
+                    <li class="item">
                         <a href="admin_employee_registry_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-user-detail"></i>
@@ -165,7 +165,7 @@
                     <!-- End -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="admin-dtr.html" class="nav_link">
+                        <a href="#" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-file"></i>
                         </span>
@@ -217,77 +217,66 @@
                 <div class="page-header">
                     <h1 class="page-title">
                         <span class="page-title-icon">
-                        <i class="bx bxs-user-detail"></i>
-                        </span> List of Employees
+                        <i class="bx bx-group"></i>
+                        </span> Manage Applicant
                     </h1>
                 </div>
                 <div class="table">
                     <div class="table-header">
-                        <p>Departments</p>
+                        <p style="margin: auto;">Applicant Profile</p>
                     </div>
-                    <div class="article-contener">
-                        <ul class="groups">
-                            <li>
-                                <div class="card">
-                                    <div class="image-session">
-                                        <span class="image" style="background-image: url('img/clients/client-1.png');"></span>
+                    <div class="table-header">
+                        <div class="con-buttons">
+                            <div class="box-btn">
+                                <a href="admin_employee_account.html"><header>Account</header></a>
+                            </div>
+                            <div class="box-btn">
+                                <a href="admin_employee_pds.html" ><header>Personal Data Sheet</header></a>
+                            </div>
+                            <div class="box-btn">
+                                <a href="admin_employee_appointment.html"><header>Appointment</header></a>
+                            </div>
+                            <div class="box-btn">
+                                <a href="admin_employee_attachments.html"><header>Attachments</header></a>
+                            </div>
+                            <div class="box-btn selected">
+                                <a href="admin_employee_leave_credits.html"><header>Leave Credits</header></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="content">
+                            <form>
+                                <div class="user-details">
+                                    <div class="input-box" id = "idno_txt">
+                                        <span class="details">Enter ID Number:</span>
+                                        <input type="text" placeholder="Employee Name">
                                     </div>
-                                    <div class="meta-sission">
-                                        <div class="body">
-                                            <h2 class="title">Municipal Health Office</h2>
-                                        </div>
-                                        <div class="footer">
-                                            <a href="admin_employee_registry_list.html" class="button">Open →</a>
-                                        </div>
+                                    <div class="input-box" id = "name_txt">
+                                        <span class="details">Enter Employee Name:</span>
+                                        <input type="text" placeholder="#00000">
                                     </div>
+                                <div class="input-box" id = "leavetype_txt">
+                                        <span class="details">Leave Type:</span>
+                                        <input type="text" placeholder="Sick Leave">
+                                    </div>
+                                    <div class="input-box" id = "leavecredit_txt">
+                                        <span class="details">Leave Credit:</span>
+                                        <input type="text" placeholder="1">
+                                    </div>
+                                    <div class="input-box" id = "prevcred_bal">
+                                        <span class="details">Previous Leave Balance:</span>
+                                        <input type="text" placeholder="50">
+                                    </div>
+                                    <div class="input-box" id="value_txt">
+                                        <span class="details" >Value</span>
+                                        <input type="text" placeholder="51 days">
+                                    </div>
+                                    
                                 </div>
-                            </li>
-                            <li>
-                                <div class="card">
-                                    <div class="image-session">
-                                        <span class="image" style="background-image: url('img/clients/client-2.png');"></span>
-                                    </div>
-                                    <div class="meta-sission">
-                                        <div class="body">
-                                            <h2 class="title">Municipal Traffic and Public Safety Office</h2>
-                                        </div>
-                                        <div class="footer">
-                                            <a href="admin_employee_registry_list.html" class="button">Open →</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card">
-                                    <div class="image-session">
-                                        <span class="image" style="background-image: url('img/clients/client-3.png');"></span>
-                                    </div>
-                                    <div class="meta-sission">
-                                        <div class="body">
-                                            <h2 class="title">Municipal of Agriculture Office</h2>
-                                        </div>
-                                        <div class="footer">
-                                            <a href="admin_employee_registry_list.html" class="button">Open →</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card">
-                                    <div class="image-session">
-                                        <span class="image" style="background-image: url('img/clients/client-4.png');"></span>
-                                    </div>
-                                    <div class="meta-sission">
-                                        <div class="body">
-                                            <h2 class="title">Municipality of San Vicente</h2>
-                                        </div>
-                                        <div class="footer">
-                                            <a href="admin_employee_registry_list.html" class="button">Open →</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                                <button class="submit">Save</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -296,10 +285,6 @@
         <!-- JavaScript -->
         <script src="js/script.js"></script>
 
-        
-        <!-- Database Javascript -->  
-        <script src="bundles/auth.bundle.js"></script>      
-        <script src="bundles/navbar.bundle.js"></script>
     </body>
 
 </html>

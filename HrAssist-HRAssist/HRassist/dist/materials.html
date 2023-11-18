@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!-- Boxicons CSS -->
-        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-        <title>HR Assist - Admin</title>
-        <link rel="stylesheet" href="css/admin.css" />
-        <!-- Favicon -->
+        <meta charset="utf-8">
+        <title>Reports</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/reports.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <!-- plugins:css -->
         <link href="img/hrlogo.svg" rel="icon">
+        <link rel="stylesheet" href="css/admin.css" />
+        <link rel="stylesheet" href="css/material.css" />
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     </head>
 
     <body>
-        <!-- navbar -->
         <nav class="navbar">
             <div class="logo_item">
                 <i class="bx bx-menu" id="sidebarOpen"></i>
@@ -27,7 +27,7 @@
                 <i class="bi bi-grid"></i>
                 <i class='bx bx-sun' id="darkLight"></i>
                 <i class='bx bx-bell' ></i>
-                <img src="img/favicon.png" alt="" id="navbarProfilePicture" class="profile" />
+                <img src="img/favicon.png" alt="" class="profile" />
             </div>
         </nav>
 
@@ -86,7 +86,7 @@
                     <div class="menu_title recruitment"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item">
+                    <li class="item active">
                         <a href="admin_manage_applicant_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-group"></i>
@@ -110,7 +110,7 @@
                     <div class="menu_title employee_registration"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item active">
+                    <li class="item">
                         <a href="admin_employee_registry_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-user-detail"></i>
@@ -165,7 +165,7 @@
                     <!-- End -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="admin-dtr.html" class="nav_link">
+                        <a href="#" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-file"></i>
                         </span>
@@ -214,92 +214,56 @@
 
         <div id="main">
             <div class="content-wrapper">
-                <div class="page-header">
                     <h1 class="page-title">
                         <span class="page-title-icon">
-                        <i class="bx bxs-user-detail"></i>
-                        </span> List of Employees
+                        <i class="bx bxs-folder-open"></i>
+                        </span> Materials
                     </h1>
-                </div>
                 <div class="table">
                     <div class="table-header">
-                        <p>Departments</p>
+                        <img src="img/favicon.png" alt="" class="MHOlogo"/>
+                        <p id = "office">Municipal Health Office</p>
                     </div>
-                    <div class="article-contener">
-                        <ul class="groups">
-                            <li>
-                                <div class="card">
-                                    <div class="image-session">
-                                        <span class="image" style="background-image: url('img/clients/client-1.png');"></span>
-                                    </div>
-                                    <div class="meta-sission">
-                                        <div class="body">
-                                            <h2 class="title">Municipal Health Office</h2>
-                                        </div>
-                                        <div class="footer">
-                                            <a href="admin_employee_registry_list.html" class="button">Open →</a>
-                                        </div>
-                                    </div>
+                    <div id="main">
+                    <div class="content-wrapper">    
+                        <!--Attachments-->  
+                        <div class="container">
+                            <div id="table">
+                                <div class="table-header">
+                                    <p>File Attachments</p>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="card">
-                                    <div class="image-session">
-                                        <span class="image" style="background-image: url('img/clients/client-2.png');"></span>
-                                    </div>
-                                    <div class="meta-sission">
-                                        <div class="body">
-                                            <h2 class="title">Municipal Traffic and Public Safety Office</h2>
-                                        </div>
-                                        <div class="footer">
-                                            <a href="admin_employee_registry_list.html" class="button">Open →</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card">
-                                    <div class="image-session">
-                                        <span class="image" style="background-image: url('img/clients/client-3.png');"></span>
-                                    </div>
-                                    <div class="meta-sission">
-                                        <div class="body">
-                                            <h2 class="title">Municipal of Agriculture Office</h2>
-                                        </div>
-                                        <div class="footer">
-                                            <a href="admin_employee_registry_list.html" class="button">Open →</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card">
-                                    <div class="image-session">
-                                        <span class="image" style="background-image: url('img/clients/client-4.png');"></span>
-                                    </div>
-                                    <div class="meta-sission">
-                                        <div class="body">
-                                            <h2 class="title">Municipality of San Vicente</h2>
-                                        </div>
-                                        <div class="footer">
-                                            <a href="admin_employee_registry_list.html" class="button">Open →</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                                <table class="content-table">  
+                                    <thead>
+                                        <tr>
+                                            <th>Attachment</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <td>File.pdf</td>
+                                        <td id= "btncontainer">
+                                            <button id="preview-btn_acc">Preview</button>
+                                            <button id="dl-btn_acc">Download</button>
+                                        </td>
+                                        </tr>
+                                    <!-- Add more rows as needed -->
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                    </div>
+               
         </div>
-
-        <!-- JavaScript -->
-        <script src="js/script.js"></script>
-
-        
-        <!-- Database Javascript -->  
-        <script src="bundles/auth.bundle.js"></script>      
-        <script src="bundles/navbar.bundle.js"></script>
+    </div>
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/reports.js"></script>
+        <script src = "js/script.js"></script>
     </body>
+    </html>
 
-</html>

@@ -229,28 +229,41 @@
                         <header>Job Details</header>
                         <div class="content">
                           <form id="jobForm">
+                            <div class="input-file">
+                                <span class="details">Upload the Logo of Office:</span>
+                                <!--<input type="file" placeholder="Enter Location" id="inputJobLogo">-->
+                                <figure class="image-container">
+                                    <img id="chosen-image">
+                                    <figcaption id="file-name"></figcaption>
+                                </figure>
+                        
+                                <input type="file" id="upload-button" accept="image/*">
+                                <upload for="upload-button">
+                                    <i class="fas fa-upload"></i> &nbsp; Choose A Photo
+                                </upload>
+                            </div>
                             <div class="user-details">
-                              <div class="input-box">
-                                <span class="details">Job Title</span>
-                                <input type="text" placeholder="Enter Job Title" id="inputJobTitle">
-                              </div>
-                              <div class="input-box">
-                                <span class="details">Job Type</span>
-                                <select id="inputJobType" required>
-                                    <option disabled selected>Select Job Type</option>
-                                    <option>Full-Time</option>
-                                    <option>Part-Time</option>
-                                    <option>Contract</option>
-                                </select>
-                              </div>
-                              <div class="input-box">
-                                <span class="details">Salary</span>
-                                <input type="text" placeholder="Enter Salary Amount" id="inputSalaryAmount">
-                              </div>
-                              <div class="input-box">
-                                <span class="details">Application Deadline</span>
-                                <input type="date" placeholder="Enter Date of Deadline" id="inputDate">
-                              </div>
+                                <div class="input-box">
+                                    <span class="details">Job Title</span>
+                                    <input type="text" placeholder="Enter Job Title" id="inputJobTitle">
+                                </div>
+                                <div class="input-box">
+                                    <span class="details">Job Type</span>
+                                    <select id="inputJobType" required>
+                                        <option disabled selected>Select Job Type</option>
+                                        <option>Full-Time</option>
+                                        <option>Part-Time</option>
+                                        <option>Contract</option>
+                                    </select>
+                                </div>
+                                <div class="input-box">
+                                    <span class="details">Salary</span>
+                                    <input type="text" placeholder="Enter Salary Amount" id="inputSalaryAmount">
+                                </div>
+                                <div class="input-box">
+                                    <span class="details">Application Deadline</span>
+                                    <input type="date" placeholder="Enter Date of Deadline" id="inputDate">
+                                </div>
                             </div>
                             <div class="job-details">
                                 <div class="input-box">
@@ -261,12 +274,12 @@
                                 <div class="input-box">
                                     <span class="details">Responsibility</span>
                                     <textarea style="resize: none;" cols="128" rows="5" name="message" id="inputJobResponsibility" placeholder="Write responsibility here..."></textarea>
-                                    <a href="javascript:myClickHandler();" class="add2">+ Add Information</a>
+                                    <a href="javascript:myClickHandler();" class="add">+ Add Information</a>
                                 </div>
                                 <div class="input-box">
                                     <span class="details">Qualification</span>
                                     <textarea style="resize: none;" cols="128" rows="5" name="message" id="inputJobQuality" placeholder="Write responsibility here..."></textarea>
-                                    <a href="javascript:myClickHandler();" class="add3" >+ Add Information</a>
+                                    <a href="javascript:myClickHandler();" class="add" >+ Add Information</a>
                                 </div>
                             </div>
                             <div class="user-details">
@@ -277,11 +290,6 @@
                                 <div class="input-box">
                                     <span class="details">Location</span>
                                     <input type="text" placeholder="Enter Location" id="inputJobLocation">
-                                </div>
-
-                                <div class="input-file">
-                                    <span class="details">Logo of the office:</span>
-                                    <input type="file" placeholder="Enter Location" id="inputJobLogo">
                                 </div>
 
                               </div>
