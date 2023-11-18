@@ -320,7 +320,7 @@ export function AddEmployeeDataFirestore(querySelctorID, employeeData, currentDo
   console.log(querySelctorID, employeeData, currentDocumentID)
   const TestcolRef = collection(db, 'User Account');
   const EmployeecolRef = collection(db, 'Employee Information');
-  const addDataSheetForm = document.querySelector(querySelctorID);
+  //const addDataSheetForm = document.querySelector(querySelctorID);
 
   FetchCurrentUser().then((current) => {
     console.log(current, 'current user');
@@ -349,7 +349,7 @@ export function AddEmployeeDataFirestore(querySelctorID, employeeData, currentDo
                     text: "Your employee added successfully...",
                     icon: "success"
                   }).then(() => {
-                    addDataSheetForm.reset();
+                    //addDataSheetForm.reset();
                     console.log("Added employee successfully...");
                     //window.location.href = `Education-21Files.html?data=${encodeURIComponent(currentDocumentID)}`;
                     console.log("Hello")
@@ -449,7 +449,9 @@ window.addEventListener('load', Employee201Buttons)
 
 export function Add201OtherInfo(){
   const TestcolRef = collection(db, 'User Account');
-  const EmployeecolRef = collection(db, 'Employee Information');
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const receivedStringData = urlParams.get('data');
 
   const addOtherInfoForm = document.getElementById("otherInfoSubmitBtn");
 
@@ -635,36 +637,9 @@ export function Add201OtherInfo(){
 
     console.log(OtherInformationData)
 
-    Swal.fire({
-      title: "Are you sure?",
-      text: "Employee's personal information will be saved",
-      icon: "question",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Confirm"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: "Saved!",
-          text: "Your employee added successfully...",
-          icon: "success"
-        }).then(() => {
-          // Add data to Firestore
-          return addDoc(EmployeecolRef, OtherInformationData);
-        }).then((docRef) => {
-          customDocId = docRef.id;
-          // Update the document with the custom ID
-          return setDoc(doc(EmployeecolRef, customDocId), { documentID: customDocId }, { merge: true });
-        })
-          .then(() => { 
-            console.log("Added employee successfully..."); 
-            window.location.href = `signature-201file.html?data=${encodeURIComponent(customDocId)}`;
-          })
-          .catch(error => console.error('Error adding employee document:', error));
-      }
-    });
 
+    // Saving to firestore
+    AddEmployeeDataFirestore('', OtherInformationData, receivedStringData)
     
   })
 
