@@ -27,7 +27,7 @@
                 <i class="bi bi-grid"></i>
                 <i class='bx bx-sun' id="darkLight"></i>
                 <i class='bx bx-bell' ></i>
-                <img src="img/favicon.png" alt="" class="profile" />
+                <img src="img/favicon.png" alt="" id="navbarProfilePicture" class="profile" />
             </div>
         </nav>
 
@@ -63,7 +63,7 @@
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="admin_offices_view.html" class="nav_link">
+                        <a href="admin-offices.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-buildings"></i>
                         </span>
@@ -73,7 +73,7 @@
                     <!-- End -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="#" class="nav_link">
+                        <a href="calendar.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-calendar"></i>
                         </span>
@@ -134,7 +134,7 @@
                     <div class="menu_title employment_tools"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item active">
+                    <li class="item">
                         <a href="#" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-folder"></i>
@@ -144,7 +144,7 @@
                     </li>
                     <!-- End -->
                     <!-- Start -->
-                    <li class="item">
+                    <li class="item active">
                         <a href="admin_request.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-calendar-alt"></i>
@@ -165,7 +165,7 @@
                     <!-- End -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="#" class="nav_link">
+                        <a href="admin-dtr.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-file"></i>
                         </span>
@@ -217,9 +217,92 @@
                 <div class="page-header">
                     <h1 class="page-title">
                         <span class="page-title-icon">
-                        <i class="bx bxs-folder"></i>
-                        </span> 201 Files
+                        <i class="bx bxs-calendar-alt"></i>
+                        </span> Request
                     </h1>
+                </div>
+                <div class="table">
+                    <div class="table-header">
+                        <p>List of Employee Request</p>
+                    </div>
+                    <div class="table-header">
+                        <div class="group">
+                            <p>Filter</p>
+                        </div>
+                    </div>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>User Name</th>
+                                <th>Request</th>
+                                <th>Reason</th>
+                                <th>Days</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Albos, John Erwin S.</td>
+                                <td>Leave</td>
+                                <td>Sick</td>
+                                <td>2 day(s)</td>
+                                <td>
+                                    <button>Confirm</button>
+                                    <button>Cancel</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Borje, Sean Michael A.</td>
+                                <td>Leave</td>
+                                <td>Bereavement</td>
+                                <td>7 day(s)</td>
+                                <td>
+                                    <button>Confirm</button>
+                                    <button>Cancel</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Biñas, Camila G.</td>
+                                <td>Leave</td>
+                                <td>Maternity</td>
+                                <td>105 day(s)</td>
+                                <td>
+                                    <button>Confirm</button>
+                                    <button>Cancel</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>De La Fuente, Ar-jay</td>
+                                <td>Leave</td>
+                                <td>Vacation</td>
+                                <td>7 day(s)</td>
+                                <td>
+                                    <button>Confirm</button>
+                                    <button>Cancel</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Gadil, Donita Rose I.</td>
+                                <td>Locator Slip</td>
+                                <td>Business</td>
+                                <td></td>
+                                <td>
+                                    <button>Confirm</button>
+                                    <button>Cancel</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Malubay, Arriana Mae V.</td>
+                                <td>Locator Slip</td>
+                                <td>Parent Meeting (school)</td>
+                                <td></td>
+                                <td>
+                                    <button>Confirm</button>
+                                    <button>Cancel</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -230,6 +313,8 @@
         <!-- Database Javascript -->  
         <script src="bundles/auth.bundle.js"></script>   
         <script src="bundles/applicant_registry.bundle.js"></script>   
+        <script src="bundles/navbar.bundle.js"></script>
+        
     </body>
 
 </html>
