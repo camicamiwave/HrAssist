@@ -616,7 +616,7 @@ form .fields .input-field{
     color: #2e2e2e;
 }
 
-.input-field input, select{
+.input-field input{
     outline: none;
     font-size: 14px;
     font-weight: 400;
@@ -626,6 +626,18 @@ form .fields .input-field{
     padding: 0 15px;
     height: 42px;
     margin: 8px 0;
+}
+
+select{
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #08533F;
+    padding: 0 15px;
+    height: 42px;
 }
 
 .input-field input :focus,
@@ -685,6 +697,7 @@ form .buttons button , .backBtn{
     margin-right: 14px;
 }
 
+
 @media (max-width: 750px) {
     .container form{
         overflow-y: scroll;
@@ -702,6 +715,7 @@ form .buttons button , .backBtn{
         width: 100%;
     }
 }
+
 
 /* ---------------------------------------------------------------------------------------- */
 /* ---------------------------------------- FORM 2 ---------------------------------------- */
@@ -777,6 +791,7 @@ form .input-box span.details{
     border-bottom-width: 2px;
     transition: all 0.3s ease;
     resize: none;
+    margin-bottom: 10px;
 }
 
 
@@ -794,6 +809,58 @@ form .input-box span.details{
 .job-details .input-box textarea:valid{
     border-color: #08533F;
 }
+
+.add {
+    width: 100%;
+    background-color: #08533F;
+    text-decoration: none;
+    padding: 10px 5px;
+    color: #fff;
+    border-radius: 12px;
+    font-size: smaller;
+    margin-bottom: 20px;
+}
+
+.add:hover {
+    background-color: #1f8f3e;
+}
+
+.image-container{
+    width: 90%;
+    margin: 0 auto 30px auto;
+}
+
+.image-container img{
+    display: block;
+    position: relative;
+    max-width: 100%;
+    max-height: 400px;
+    margin: auto;
+}
+
+figcaption{
+    margin: 20px 0 30px 0;
+    text-align: center;
+    color: #2a292a;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+upload {
+    display: block;
+    position: relative;
+    background-color: #08533F;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    margin: auto;
+    cursor: pointer;
+} 
   
 @media(max-width: 584px){
     .container{
@@ -951,4 +1018,48 @@ form .input-box span.details{
     .groups .image-session .image {
         width: 100%;
     }
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* ------------------------------------ APPLICANT EDIT ------------------------------------ */
+/* ---------------------------------------------------------------------------------------- */
+
+.con-buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.box-btn {
+    width: 100%;
+    height: auto;
+    color: #fff;
+    border: 2px solid #08533F;
+    background-color: #08533F;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 12px;
+}
+
+.selected{
+    width: 100%;
+    height: auto;
+    color: #fff;
+    border: 2px solid #1f8f3e;
+    background-color: #1f8f3e;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 12px;
+}
+
+.box-btn a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.card {
+    background-color: #08533F;
 }
