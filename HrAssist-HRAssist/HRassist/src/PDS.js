@@ -767,102 +767,102 @@ export function fetchEmployeeData() {
                 console.log("PResents")
                 const addDataSheetForm = document.querySelector("#employeeDataSheet");
                 // Personal details
-                addDataSheetForm.inputCsId.value = data.Personal_Information.CSCID.trim
-                addDataSheetForm.inputFirstName.value = data.Personal_Information.FirstName
-                addDataSheetForm.inputMiddleName.value = data.Personal_Information.MiddleName
-                addDataSheetForm.inputSurName.value = data.Personal_Information.SurName
-                addDataSheetForm.inputExName.value = data.Personal_Information.ExName
-                addDataSheetForm.gender.value = data.Personal_Information.Gender
-                addDataSheetForm.Birthdate.value = data.Personal_Information.Birthdate
-                addDataSheetForm.PlaceBirth.value = data.Personal_Information.PlaceBirth
-                addDataSheetForm.inputStatus.value = data.Personal_Information.CivilStatus
-                addDataSheetForm.inputEmail.value = data.Personal_Information.Email
-                addDataSheetForm.inputMnumber.value = data.Personal_Information.MobileNumber
-                addDataSheetForm.inputTel.value = data.Personal_Information.TelNum
-                addDataSheetForm.inputHeight.value = data.Personal_Information.Height
-                addDataSheetForm.inputWeight.value = data.Personal_Information.Height
-                addDataSheetForm.InputGsis.value = data.Personal_Information.GSIS
-                addDataSheetForm.InputPagibig.value = data.Personal_Information.PagIbig
-                addDataSheetForm.inputPhealth.value = data.Personal_Information.PhilHealth
-                addDataSheetForm.inputSSS.value = data.Personal_Information.SSS
-                addDataSheetForm.inputTIN.value = data.Personal_Information.Tin
-                addDataSheetForm.InputAgency.value = data.Personal_Information.Agency
-                addDataSheetForm.citizenshipType.value = data.Personal_Information.Citizen
-                addDataSheetForm.inputCountry.value = data.Personal_Information.Country
-                addDataSheetForm.inputHouse.value = data.Personal_Information.HouseBlock
-                addDataSheetForm.inputStreet.value = data.Personal_Information.Street
-                addDataSheetForm.InputSub.value = data.Personal_Information.Subdivision
-                addDataSheetForm.inputBarangay.value = data.Personal_Information.Barangay
-                addDataSheetForm.inputMun.value = data.Personal_Information.Municipality
-                addDataSheetForm.InputSub.value = data.Personal_Information.Subdivision
-                addDataSheetForm.InputProv.value = data.Personal_Information.Province
-                addDataSheetForm.inputZip.value = data.Personal_Information.ZipCode
+                addDataSheetForm.inputCsId.value = data.Personal_Information.CSCID.trim()
+                addDataSheetForm.inputFirstName.value = data.Personal_Information.FirstName.trim()
+                addDataSheetForm.inputMiddleName.value = data.Personal_Information.MiddleName.trim()
+                addDataSheetForm.inputSurName.value = data.Personal_Information.SurName.trim()
+                addDataSheetForm.inputExName.value = data.Personal_Information.ExName.trim()
+                addDataSheetForm.gender.value = data.Personal_Information.Gender.trim()
+                addDataSheetForm.Birthdate.value = data.Personal_Information.Birthdate.trim()
+                addDataSheetForm.PlaceBirth.value = data.Personal_Information.PlaceBirth.trim()
+                addDataSheetForm.inputStatus.value = data.Personal_Information.CivilStatus.trim()
+                addDataSheetForm.inputEmail.value = data.Personal_Information.Email.trim()
+                addDataSheetForm.inputMnumber.value = data.Personal_Information.MobileNumber.trim()
+                addDataSheetForm.inputTel.value = data.Personal_Information.TelNum.trim()
+                addDataSheetForm.inputHeight.value = data.Personal_Information.Height.trim()
+                addDataSheetForm.inputWeight.value = data.Personal_Information.Height.trim()
+                addDataSheetForm.InputGsis.value = data.Personal_Information.GSIS.trim()
+                addDataSheetForm.InputPagibig.value = data.Personal_Information.PagIbig.trim()
+                addDataSheetForm.inputPhealth.value = data.Personal_Information.PhilHealth.trim()
+                addDataSheetForm.inputSSS.value = data.Personal_Information.SSS.trim()
+                addDataSheetForm.inputTIN.value = data.Personal_Information.Tin.trim()
+                addDataSheetForm.InputAgency.value = data.Personal_Information.Agency.trim()
+                addDataSheetForm.citizenshipType.value = data.Personal_Information.Citizen.trim()
+                addDataSheetForm.inputCountry.value = data.Personal_Information.Country.trim()
+                addDataSheetForm.inputHouse.value = data.Personal_Information.HouseBlock.trim()
+                addDataSheetForm.inputStreet.value = data.Personal_Information.Street.trim()
+                addDataSheetForm.InputSub.value = data.Personal_Information.Subdivision.trim()
+                addDataSheetForm.inputBarangay.value = data.Personal_Information.Barangay.trim()
+                addDataSheetForm.inputMun.value = data.Personal_Information.Municipality.trim()
+                addDataSheetForm.InputSub.value = data.Personal_Information.Subdivision.trim()
+                addDataSheetForm.InputProv.value = data.Personal_Information.Province.trim()
+                addDataSheetForm.inputZip.value = data.Personal_Information.ZipCode.trim()
 
                 // Family Background
                 // Spouse Details
-                addDataSheetForm.inputSpouseFirstName.value = data.Personal_Information.SpouseFirstName
-                addDataSheetForm.inputSpouseMiddleName.value = data.Personal_Information.SpouseMiddleName
-                addDataSheetForm.inputSpouseSurName.value = data.Personal_Information.SpouseSurName
-                addDataSheetForm.inputSpouseExName.value = data.Personal_Information.SpouseExName
-                addDataSheetForm.inputSpouseOccupation.value = data.Personal_Information.SpouseOccupation
-                addDataSheetForm.inputSpouseEmployer.value = data.Personal_Information.SpouseEmployer
-                addDataSheetForm.inputSpouseBusinessAdd.value = data.Personal_Information.SpouseBusinessAdd
-                addDataSheetForm.inputSpouseTelNo.value = data.Personal_Information.SpouseTelNum
-
+                addDataSheetForm.inputSpouseFirstName.value = data.Personal_Information.SpouseFirstName.trim()
+                addDataSheetForm.inputSpouseMiddleName.value = data.Personal_Information.SpouseMiddleName.trim()
+                addDataSheetForm.inputSpouseSurName.value = data.Personal_Information.SpouseSurName.trim()
+                addDataSheetForm.inputSpouseExName.value = data.Personal_Information.SpouseExName.trim()
+                addDataSheetForm.inputSpouseOccupation.value = data.Personal_Information.SpouseOccupation.trim()
+                addDataSheetForm.inputSpouseEmployer.value = data.Personal_Information.SpouseEmployer.trim()
+                addDataSheetForm.inputSpouseBusinessAdd.value = data.Personal_Information.SpouseBusinessAdd.trim()
+                addDataSheetForm.inputSpouseTelNo.value = data.Personal_Information.SpouseTelNum.trim()
+                .trim()
                 // Father Details
-                addDataSheetForm.inputFatherFirstName.value = data.Personal_Information.FatherFirstName
-                addDataSheetForm.inputFatherMiddleName.value = data.Personal_Information.MiddleName
-                addDataSheetForm.inputFatherSurName.value = data.Personal_Information.FatherSurName
-                addDataSheetForm.inputFatherExName.value = data.Personal_Information.FatherExName
+                addDataSheetForm.inputFatherFirstName.value = data.Personal_Information.FatherFirstName.trim()
+                addDataSheetForm.inputFatherMiddleName.value = data.Personal_Information.MiddleName.trim()
+                addDataSheetForm.inputFatherSurName.value = data.Personal_Information.FatherSurName.trim()
+                addDataSheetForm.inputFatherExName.value = data.Personal_Information.FatherExName.trim()
 
                 // Mother Details
-                addDataSheetForm.inputMotherFirstName.value = data.Personal_Information.MotherFirstName
-                addDataSheetForm.inputMotherMiddleName.value = data.Personal_Information.MotherMiddleName
-                addDataSheetForm.inputMotherSurName.value = data.Personal_Information.MotherSurName
-                addDataSheetForm.inputMotherMaiden.value = data.Personal_Information.MotherMaidenName
+                addDataSheetForm.inputMotherFirstName.value = data.Personal_Information.MotherFirstName.trim()
+                addDataSheetForm.inputMotherMiddleName.value = data.Personal_Information.MotherMiddleName.trim()
+                addDataSheetForm.inputMotherSurName.value = data.Personal_Information.MotherSurName.trim()
+                addDataSheetForm.inputMotherMaiden.value = data.Personal_Information.MotherMaidenName.trim()
 
               } else if (isEducationPresent) {
                 console.log("Nahanap ko")
                 const addDataSheetForm = document.querySelector("#EducationForm");
                 // Elementary Details
-                addDataSheetForm.elemSchoolName.value = data.Education_Details.Elementary.ElementarySchool
-                addDataSheetForm.elemGrade.value = data.Education_Details.Elementary.ElementaryGrade
-                addDataSheetForm.elemFrom.value = data.Education_Details.Elementary.ElementaryFrom
-                addDataSheetForm.elemTo.value = data.Education_Details.Elementary.ElementaryTo
-                addDataSheetForm.elemHighestLevel.value = data.Education_Details.Elementary.ElementaryLevel
-                addDataSheetForm.elemScholarship.value = data.Education_Details.Elementary.ElementaryScholarship
+                addDataSheetForm.elemSchoolName.value = data.Education_Details.Elementary.ElementarySchool.trim()
+                addDataSheetForm.elemGrade.value = data.Education_Details.Elementary.ElementaryGrade.trim()
+                addDataSheetForm.elemFrom.value = data.Education_Details.Elementary.ElementaryFrom.trim()
+                addDataSheetForm.elemTo.value = data.Education_Details.Elementary.ElementaryTo.trim()
+                addDataSheetForm.elemHighestLevel.value = data.Education_Details.Elementary.ElementaryLevel.trim()
+                addDataSheetForm.elemScholarship.value = data.Education_Details.Elementary.ElementaryScholarship.trim()
 
                 // Secondary Details
-                addDataSheetForm.secondSchoolName.value = data.Education_Details.Secondary.SecondarySchool
-                addDataSheetForm.secondGrade.value = data.Education_Details.Secondary.SecondaryGrade
-                addDataSheetForm.secondFrom.value = data.Education_Details.Secondary.SecondaryFrom
-                addDataSheetForm.secondTo.value = data.Education_Details.Secondary.SecondaryTo
-                addDataSheetForm.secondHighestLevel.value = data.Education_Details.Secondary.SecondaryLevel
-                addDataSheetForm.secondScholarship.value = data.Education_Details.Secondary.SecondaryScholarship
+                addDataSheetForm.secondSchoolName.value = data.Education_Details.Secondary.SecondarySchool.trim()
+                addDataSheetForm.secondGrade.value = data.Education_Details.Secondary.SecondaryGrade.trim()
+                addDataSheetForm.secondFrom.value = data.Education_Details.Secondary.SecondaryFrom.trim()
+                addDataSheetForm.secondTo.value = data.Education_Details.Secondary.SecondaryTo.trim()
+                addDataSheetForm.secondHighestLevel.value = data.Education_Details.Secondary.SecondaryLevel.trim()
+                addDataSheetForm.secondScholarship.value = data.Education_Details.Secondary.SecondaryScholarship.trim()
 
                 // Vocational Details
-                addDataSheetForm.vocationalSchoolName.value = data.Education_Details.Vocational.VocationalSchool
-                addDataSheetForm.vocationalGrade.value = data.Education_Details.Vocational.VocationalGrade
-                addDataSheetForm.vocationalFrom.value = data.Education_Details.Vocational.VocationalFrom
-                addDataSheetForm.vocationalTo.value = data.Education_Details.Vocational.VocationalTo
-                addDataSheetForm.vocationalHighestLevel.value = data.Education_Details.Vocational.VocationalLevel
-                addDataSheetForm.vocationalScholarship.value = data.Education_Details.Vocational.VocationalScholarship
+                addDataSheetForm.vocationalSchoolName.value = data.Education_Details.Vocational.VocationalSchool.trim()
+                addDataSheetForm.vocationalGrade.value = data.Education_Details.Vocational.VocationalGrade.trim()
+                addDataSheetForm.vocationalFrom.value = data.Education_Details.Vocational.VocationalFrom.trim()
+                addDataSheetForm.vocationalTo.value = data.Education_Details.Vocational.VocationalTo.trim()
+                addDataSheetForm.vocationalHighestLevel.value = data.Education_Details.Vocational.VocationalLevel.trim()
+                addDataSheetForm.vocationalScholarship.value = data.Education_Details.Vocational.VocationalScholarship.trim()
 
                 // College Details
-                addDataSheetForm.collegeSchoolName.value = data.Education_Details.College.CollegeSchool
-                addDataSheetForm.collegeGrade.value = data.Education_Details.College.CollegeGrade
-                addDataSheetForm.collegeFrom.value = data.Education_Details.College.CollegeFrom
-                addDataSheetForm.collegeTo.value = data.Education_Details.College.CollegeTo
-                addDataSheetForm.collegeHighestLevel.value = data.Education_Details.College.CollegeLevel
-                addDataSheetForm.collegeScholarship.value = data.Education_Details.College.CollegeScholarship
+                addDataSheetForm.collegeSchoolName.value = data.Education_Details.College.CollegeSchool.trim()
+                addDataSheetForm.collegeGrade.value = data.Education_Details.College.CollegeGrade.trim()
+                addDataSheetForm.collegeFrom.value = data.Education_Details.College.CollegeFrom.trim()
+                addDataSheetForm.collegeTo.value = data.Education_Details.College.CollegeTo.trim()
+                addDataSheetForm.collegeHighestLevel.value = data.Education_Details.College.CollegeLevel.trim()
+                addDataSheetForm.collegeScholarship.value = data.Education_Details.College.CollegeScholarship.trim()
 
                 // Graduate Details
-                addDataSheetForm.graduateSchoolName.value = data.Education_Details.Graduate.GraduateSchool
-                addDataSheetForm.graduateGrade.value = data.Education_Details.Graduate.GraduateGrade
-                addDataSheetForm.graduateFrom.value = data.Education_Details.Graduate.GraduateFrom
-                addDataSheetForm.graduateTo.value = data.Education_Details.Graduate.GraduateTo
-                addDataSheetForm.graduateHighestLevel.value = data.Education_Details.Graduate.GraduateLevel
-                addDataSheetForm.graduateScholarship.value = data.Education_Details.Graduate.GraduateScholarship
+                addDataSheetForm.graduateSchoolName.value = data.Education_Details.Graduate.GraduateSchool.trim()
+                addDataSheetForm.graduateGrade.value = data.Education_Details.Graduate.GraduateGrade.trim()
+                addDataSheetForm.graduateFrom.value = data.Education_Details.Graduate.GraduateFrom.trim()
+                addDataSheetForm.graduateTo.value = data.Education_Details.Graduate.GraduateTo.trim()
+                addDataSheetForm.graduateHighestLevel.value = data.Education_Details.Graduate.GraduateLevel.trim()
+                addDataSheetForm.graduateScholarship.value = data.Education_Details.Graduate.GraduateScholarship.trim()
 
               } else if (isOtherFilesPresent) {
 
@@ -942,6 +942,8 @@ export function SearchEmployee() {
           window.location.href = `datasheet.html?data=${encodeURIComponent(employeeDocID)}`;
 
         } else {
+          alert("There was record retrieved.")
+
           console.log("No record retrieved.")
         }
       })
