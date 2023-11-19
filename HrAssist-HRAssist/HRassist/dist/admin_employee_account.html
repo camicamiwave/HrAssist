@@ -86,7 +86,7 @@
                     <div class="menu_title recruitment"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item active">
+                    <li class="item">
                         <a href="admin_manage_applicant_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-group"></i>
@@ -110,7 +110,7 @@
                     <div class="menu_title employee_registration"></div>
                     <!-- duplicate these li tag if you want to add or remove navlink only -->
                     <!-- Start -->
-                    <li class="item">
+                    <li class="item active">
                         <a href="admin_employee_registry_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-user-detail"></i>
@@ -189,7 +189,7 @@
                     <!-- End -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="#" class="nav_link">
+                        <a href="admin_material_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-folder-open"></i>
                         </span>
@@ -247,58 +247,26 @@
                     <div class="container">
                         <header>Account Details</header>
                         <div class="content">
-                          <form>
+                          <form id="EmployeeAccountForm">
                             <div class="user-details">
                                 <div class="input-box">
                                     <span class="details">Username</span>
-                                    <input type="text" placeholder="Enter Username">
+                                    <input type="text" placeholder="Enter Username" id="empInputUsername">
                                 </div>
                                 <div class="input-box">
                                     <span class="details">Email</span>
-                                    <input type="email" placeholder="Enter Email">
+                                    <input type="email" placeholder="Enter Email" id="empInputEmail">
                                 </div>
                                 <div class="input-box">
                                     <span class="details">Password</span>
-                                    <input type="password" placeholder="Enter Password">
+                                    <input type="password" placeholder="Enter Password" id="empInputPassword">
                                 </div>
                                 <div class="input-box">
                                     <span class="details">Confirm Password</span>
-                                    <input type="password" placeholder="Confirm Password">
+                                    <input type="password" placeholder="Confirm Password" id="empInputConfirmPassword">
                                 </div>
-                                <div class="input-box">
-                                    <span class="details">First Name</span>
-                                    <input type="text" placeholder="Enter First Name">
-                                </div>
-                                <div class="input-box">
-                                    <span class="details">Middle Name</span>
-                                    <input type="text" placeholder="Enter Middle Name">
-                                </div>
-                                <div class="input-box">
-                                    <span class="details">Last Name</span>
-                                    <input type="text" placeholder="Enter Last Name">
-                                </div>
-                                <div class="input-box">
-                                    <span class="details">Extension Name</span>
-                                    <input type="text" placeholder="Enter Ext. Name">
-                                </div>
-                                <div class="input-box">
-                                    <span class="details">Date of Birth</span>
-                                    <input type="date" placeholder="Enter Birthdate">
-                                </div>
-                                <div class="input-box">
-                                    <span class="details">Place of Birth</span>
-                                    <input type="text" placeholder="Enter Place of Birth">
-                                </div>
-                                <div class="input-box">
-                                    <span class="details">Address</span>
-                                    <input type="text" placeholder="Enter Address">
-                                </div>
-                                <div class="input-box">
-                                    <span class="details">Phone Number</span>
-                                    <input type="text" placeholder="Enter Phone Number">
-                                </div>
-                            </div>
-                            <button type="button" class="submit">Create Account</button>
+                             </div>
+                            <button type="submit" class="submit" id="empCreateAccountBtn">Create Account</button>
                           </form>
                         </div>
                     </div> 
@@ -308,6 +276,8 @@
 
         <!-- JavaScript -->
         <script src="js/script.js"></script>
+        <script src="bundles/navbar.bundle.js"></script>
+        <script src="bundles/employee_registry.bundle.js"></script>
 
     </body>
 

@@ -9,6 +9,8 @@
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
         <title>HR Assist - Admin</title>
         <link rel="stylesheet" href="css/admin.css" />
+        <link rel="stylesheet" href="css/admin-dashboard.css" />
+
         <!-- Favicon -->
         <link href="img/hrlogo.svg" rel="icon">
     </head>
@@ -189,7 +191,7 @@
                     <!-- End -->
                     <!-- Start -->
                     <li class="item">
-                        <a href="#" class="nav_link">
+                        <a href="admin_material_view.html" class="nav_link">
                         <span class="navlink_icon">
                             <i class="bx bxs-folder-open"></i>
                         </span>
@@ -228,7 +230,106 @@
                     <div class="container">
                         <header>Events</header>
                         <div class="content">
-                            
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h2 class="calendar_head">Calendar</h2>
+                                        </div>
+                                        <div class="calendar_events">
+                                            <h4 class="card-title">Drag and drop your event or click in the calendar</h4>
+                                            <div id="calendar-events" class="mb-3">
+                                                <div class="calendar-events" data-class="bg-info"><i class="fas fa-square bg-primary"></i> New Theme Release</div>
+                                                <div class="calendar-events" data-class="bg-success"><i class="fas fa-square bg-success"></i>My Event</div>
+                                                <div class="calendar-events" data-class="bg-danger"><i class="fas fa-square bg-warning"></i> Meet Manager</div>
+                                                <div class="calendar-events" data-class="bg-warning"><i class="fas fa-square bg-secondary"></i> Create New theme</div>
+                                            </div>
+                                            <div class="checkbox  mb-3">
+                                                <input id="drop-remove" type="checkbox">
+                                                <label for="drop-remove">Remove after drop</label>
+                                            </div>
+                                            <a href="#" data-toggle="modal" data-target="#add_new_event" class="btn mb-3 btn-primary btn-block">
+                                                <i class="fas fa-plus"></i> Create New
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-8">
+                                    <div class="card bg-white">
+                                        <div class="card-body">
+                                            <div id="calendar"></div>
+                                        </div>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="customize_popup">
+                    <div class="modal fade" id="add_event" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelevent" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabelevent">Add New Event</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class=" col-md-12 p-0">
+                                        <div class=" form-popup">
+                                            <label>Event Name</label>
+                                            <input type="text" placeholder="Insert Event Name">
+                                        </div>
+                                        <div class=" form-popup">
+                                            <label>Category Color</label>
+                                            <select name="Danger">
+                                            <option value="Danger">Danger</option>
+                                            <option value="Success">Success</option>
+                                            <option value="Warning">Warning</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-apply">Apply</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="customize_popup">
+                    <div class="modal fade" id="my_event" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabeladd" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabeladd">Add New Event</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class=" col-md-12 p-0">
+                                        <div class=" form-popup">
+                                            <label>Event Name</label>
+                                            <input type="text" placeholder="Insert Event Name">
+                                        </div>
+                                        <div class=" form-popup">
+                                            <label>Category Color</label>
+                                            <select name="Danger">
+                                            <option value="Danger">Danger</option>
+                                            <option value="Success">Success</option>
+                                            <option value="Warning">Warning</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-apply">Apply</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
