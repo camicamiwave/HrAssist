@@ -36,7 +36,27 @@
 
     <!-- ======= Breadcrumbs ======= -->
     <section class="breadcrumbs">
-      
+
+        <!--
+        <div class="container">
+            <div class="d-flex w-100">
+                <h1 class="mx-auto text-center custom-text-label">Employee 201 Files</h1>
+            </div>
+
+            <div class="d-flex w-100">
+                <a type="button" class="btn btn-success flex-fill rounded-0" href="admin_employee_account.html">Account</a>
+                <a type="button" class="btn btn-success flex-fill rounded-0 custom-account-btn">Personal Information</a>
+                <a type="button" class="btn btn-success flex-fill rounded-0">Appointment</a>
+                <a type="button" class="btn btn-success flex-fill rounded-0">Attachments</a>
+                <a type="button" class="btn btn-success flex-fill rounded-0">Leave Credits</a>
+            </div>
+
+            <div class="d-flex w-100">
+                <h1 class="mx-auto text-center custom-text">Personal Data Sheet</h1>
+            </div>
+        </div>-->
+        
+
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -357,23 +377,23 @@
                             <!-- Form Group (first name)-->
                             <div class="col-md-4">
                                 <label class="small mb-1" for="inputSpouseOccupation">Occupation</label>
-                                <input class="form-control" id="inputSpouseOccupation" type="text" placeholder="" value="">
+                                <input class="form-control" id="inputSpouseOccupation" type="text" placeholder="">
                             </div>
                             <!-- Form Group (middle name)-->
                             <div class="col-md-4">
                                 <label class="small mb-1" for="inputSpouseEmployer">Employer/Business name</label>
-                                <input class="form-control" id="inputSpouseEmployer" type="text" placeholder="" value="">
+                                <input class="form-control" id="inputSpouseEmployer" type="text" placeholder="" >
                             </div>
                             <div class="col-md-4">
                                 <label class="small mb-1" for="inputSpouseBusinessAdd">Business Address</label>
-                                <input class="form-control" id="inputSpouseBusinessAdd" type="text" placeholder="" value="">
+                                <input class="form-control" id="inputSpouseBusinessAdd" type="text" placeholder="">
                             </div>
                         </div>
                         <hr>
 
                         <div class="col-md-4">
                             <label class="small mb-1" for="inputSpouseTelNo">Telephone No.</label>
-                            <input class="form-control" id="inputSpouseTelNo" type="text" placeholder="" value="">
+                            <input class="form-control" id="inputSpouseTelNo" type="text" placeholder="" >
                         </div>
                         <hr>
                         <div class="small mb-1">Name of Father</div>
@@ -434,19 +454,19 @@
                         <!-- Initial set of form fields -->
                         <div class="col-md-4">
                             <label class="small mb-1" for="childreninputFirstName">First name</label>
-                            <input class="form-control" id="childreninputFirstName" type="text" placeholder="" value="" oninput="generateForms()">
+                            <input class="form-control" id="childreninputFirstName" type="text" placeholder=""  oninput="generateForms()">
                         </div>
                         <div class="col-md-3">
                             <label class="small mb-1" for="childreninputMiddleName">Middle name</label>
-                            <input class="form-control" id="childreninputMiddleName" type="text" placeholder="" value="" oninput="generateForms()">
+                            <input class="form-control" id="childreninputMiddleName" type="text" placeholder=""  oninput="generateForms()">
                         </div>
                         <div class="col-md-4">
                             <label class="small mb-1" for="childreninputSurName">Surname</label>
-                            <input class="form-control" id="childreninputSurName" type="text" placeholder="" value="" oninput="generateForms()">
+                            <input class="form-control" id="childreninputSurName" type="text" placeholder=""  oninput="generateForms()">
                         </div>
                         <div class="col-md-1">
                             <label class="small mb-1" for="childrenInputExName">Ex. name</label>
-                            <input class="form-control" id="childreninputExName" type="text" placeholder="" value="">
+                            <input class="form-control" id="childreninputExName" type="text" placeholder="" >
                         </div>
                     </div>
                     <hr>
@@ -470,19 +490,19 @@
                                 const formHtml = `
                                     <div class="col-md-4">
                                         <label class="small mb-1" for="inputChildrenFirstName${i}">First name ${i}</label>
-                                        <input class="form-control" id="inputChildrenFirstName${i}" type="text" placeholder="" value="">
+                                        <input class="form-control" id="inputChildrenFirstName${i}" type="text" placeholder="" >
                                     </div>
                                     <div class="col-md-3">
                                         <label class="small mb-1" for="inputChildrenMiddleName${i}">Middle name ${i}</label>
-                                        <input class="form-control" id="inputChildrenMiddleName${i}" type="text" placeholder="" value="">
+                                        <input class="form-control" id="inputChildrenMiddleName${i}" type="text" placeholder="" >
                                     </div>
                                     <div class="col-md-4">
                                         <label class="small mb-1" for="inputChildrenSurName${i}">Surname ${i}</label>
-                                        <input class="form-control" id="inputChildrenSurName${i}" type="text" placeholder="" value="">
+                                        <input class="form-control" id="inputChildrenSurName${i}" type="text" placeholder="" >
                                     </div>
                                     <div class="col-md-1">
                                         <label class="small mb-1" for="inputChildrenExName${i}">Ex. name ${i}</label>
-                                        <input class="form-control" id="inputChildrenExName${i}" type="text" placeholder="" value="">
+                                        <input class="form-control" id="inputChildrenExName${i}" type="text" placeholder="" >
                                     </div>
                                 `;
                                 formContainer.innerHTML += formHtml;
@@ -491,7 +511,7 @@
                     </script>
 
 
-                    <input type="submit" id="submitBtn" name="submitBtn" class="btn btn-success" value="Save"/>
+                    <input type="submit" id="submitBtn" name="submitBtn" class="btn btn-success submit-btn" value="Save"/>
                     
                 </div>
             </form>

@@ -21,7 +21,9 @@
     "fetch_current_user": "node fetch_current_user.js",
     "PDS": "node PDS.js",
     "job_registry": "node job_registry.js",
-    "employee_interface": "node employee_interface.js"
+    "employee_interface": "node employee_interface.js",
+    "employee_signin": "node employee_signin.js",
+    "employee_appointment": "node employee_appointment.js"
   },
   "keywords": [],
   "author": "",

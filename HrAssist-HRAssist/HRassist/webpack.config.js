@@ -19,7 +19,9 @@ module.exports = {
         fetch_current_user: './src/fetch_current_user.js',
         PDS: './src/PDS.js',
         job_registry: './src/job_registry.js',
-        employee_interface: './src/employee_interface.js'
+        employee_interface: './src/employee_interface.js',
+        employee_signin: './src/employee_signin.js',
+        employee_appointment: './src/employee_appointment.js'
         
     },
     output: {

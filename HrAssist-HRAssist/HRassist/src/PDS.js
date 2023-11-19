@@ -40,6 +40,13 @@ export function AddEmployeeDataSheet() {
 
   let customDocId; // Declare customDocId outside the then block
 
+  
+  const urlParams = new URLSearchParams(window.location.search);
+  const receivedStringData = urlParams.get('data');
+
+  console.log("Data Retrieved: ", receivedStringData);
+
+  
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -81,7 +88,7 @@ export function AddEmployeeDataSheet() {
                 .then((downloadURL) => {
                   // Prepare data for Firestore
                   const employeeData = {
-                    userID: user.uid,
+                    accountDocID: receivedStringData,
                     UserLevel: "Employee",
                     createdAt: serverTimestamp(),
                     ProfilePictureURL: downloadURL,
@@ -157,42 +164,10 @@ export function AddEmployeeDataSheet() {
                         ChiildrenSurName: document.getElementById(`inputChildrenSurName${i}`).value.trim(),
                         ChiildrenExName: document.getElementById(`inputChildrenExName${i}`).value.trim(),
                       });
+
+                      
                     }
-
-                    Swal.fire({
-                      title: "Are you sure?",
-                      text: "Employee's personal information will be saved",
-                      icon: "question",
-                      showCancelButton: true,
-                      confirmButtonColor: "#3085d6",
-                      cancelButtonColor: "#d33",
-                      confirmButtonText: "Confirm"
-                    }).then((result) => {
-                      if (result.isConfirmed) {
-                        Swal.fire({
-                          title: "Saved!",
-                          text: "Your employee added successfully...",
-                          icon: "success"
-                        }).then(() => {
-                          // Add data to Firestore
-                          return addDoc(EmployeecolRef, employeeData);
-                        }).then((docRef) => {
-                          customDocId = docRef.id;
-                          // Update the document with the custom ID
-                          return setDoc(doc(EmployeecolRef, customDocId), { documentID: customDocId }, { merge: true });
-                        })
-                          .then(() => {
-                            console.log("hereee: ", customDocId)
-                            // Reset the form
-                            addDataSheetForm.reset();
-                            console.log("Added employee successfully...");
-                            //window.location.href = 'Education-21Files.html';
-                            window.location.href = `Education-21Files.html?data=${encodeURIComponent(customDocId)}`;
-                          })
-                          .catch(error => console.error('Error adding employee document:', error));
-                      }
-                    });
-
+                    AddEmployeeDataFirestore('#employeeDataSheet', employeeData, receivedStringData)
                   }
                   catch {
                     alert("Please provide the required fields.")
@@ -214,6 +189,9 @@ export function AddEmployeeDataSheet() {
 // Trigger the function on page load
 window.addEventListener('load', AddEmployeeDataSheet);
 
+
+
+/*
 export function UrlParameterRetriever() {
   // In your second.html JavaScript file
   const urlParams = new URLSearchParams(window.location.search);
@@ -224,7 +202,7 @@ export function UrlParameterRetriever() {
 }
 
 window.addEventListener('load', UrlParameterRetriever);
-
+*/
 
 function Employee201Navigator(customDocId) {
   const personalBtn = document.getElementById('201Personal');
@@ -354,7 +332,9 @@ export function AddEmployeeDataFirestore(querySelctorID, employeeData, currentDo
                     //window.location.href = `Education-21Files.html?data=${encodeURIComponent(currentDocumentID)}`;
                     console.log("Hello")
 
-                    if (querySelctorID === "#EducationForm") {
+                    if (querySelctorID === "#employeeDataSheet") {
+                      window.location.href = `Education-21Files.html?data=${encodeURIComponent(currentDocumentID)}`;
+                    } else if (querySelctorID === "#EducationForm") {
                       window.location.href = `OtherInfo-201file.html?data=${encodeURIComponent(currentDocumentID)}`;
                     } else if (querySelctorID === "#fileForm") {
                       window.location.href = `Files.html?data=${encodeURIComponent(currentDocumentID)}`;
@@ -800,26 +780,26 @@ export function fetchEmployeeData() {
 
                 // Family Background
                 // Spouse Details
-                addDataSheetForm.inputSpouseFirstName.value = data.Personal_Information.SpouseFirstName.trim()
-                addDataSheetForm.inputSpouseMiddleName.value = data.Personal_Information.SpouseMiddleName.trim()
-                addDataSheetForm.inputSpouseSurName.value = data.Personal_Information.SpouseSurName.trim()
-                addDataSheetForm.inputSpouseExName.value = data.Personal_Information.SpouseExName.trim()
-                addDataSheetForm.inputSpouseOccupation.value = data.Personal_Information.SpouseOccupation.trim()
-                addDataSheetForm.inputSpouseEmployer.value = data.Personal_Information.SpouseEmployer.trim()
-                addDataSheetForm.inputSpouseBusinessAdd.value = data.Personal_Information.SpouseBusinessAdd.trim()
-                addDataSheetForm.inputSpouseTelNo.value = data.Personal_Information.SpouseTelNum.trim()
-                .trim()
+                addDataSheetForm.inputSpouseFirstName.value = data.SpouseDetails.SpouseFirstName.trim()
+                addDataSheetForm.inputSpouseMiddleName.value = data.SpouseDetails.SpouseMiddleName.trim()
+                addDataSheetForm.inputSpouseSurName.value = data.SpouseDetails.SpouseSurName.trim()
+                addDataSheetForm.inputSpouseExName.value = data.SpouseDetails.SpouseExName.trim()
+                addDataSheetForm.inputSpouseOccupation.value = data.SpouseDetails.SpouseOccupation.trim()
+                addDataSheetForm.inputSpouseEmployer.value = data.SpouseDetails.SpouseEmployer.trim()
+                addDataSheetForm.inputSpouseBusinessAdd.value = data.SpouseDetails.SpouseBusinessAdd.trim()
+                addDataSheetForm.inputSpouseTelNo.value = data.SpouseDetails.SpouseTelNum.trim()
+                
                 // Father Details
-                addDataSheetForm.inputFatherFirstName.value = data.Personal_Information.FatherFirstName.trim()
-                addDataSheetForm.inputFatherMiddleName.value = data.Personal_Information.MiddleName.trim()
-                addDataSheetForm.inputFatherSurName.value = data.Personal_Information.FatherSurName.trim()
-                addDataSheetForm.inputFatherExName.value = data.Personal_Information.FatherExName.trim()
+                addDataSheetForm.inputFatherFirstName.value = data.FatherDetails.FatherFirstName.trim()
+                addDataSheetForm.inputFatherMiddleName.value = data.FatherDetails.MiddleName.trim()
+                addDataSheetForm.inputFatherSurName.value = data.FatherDetails.FatherSurName.trim()
+                addDataSheetForm.inputFatherExName.value = data.FatherDetails.FatherExName.trim()
 
                 // Mother Details
-                addDataSheetForm.inputMotherFirstName.value = data.Personal_Information.MotherFirstName.trim()
-                addDataSheetForm.inputMotherMiddleName.value = data.Personal_Information.MotherMiddleName.trim()
-                addDataSheetForm.inputMotherSurName.value = data.Personal_Information.MotherSurName.trim()
-                addDataSheetForm.inputMotherMaiden.value = data.Personal_Information.MotherMaidenName.trim()
+                addDataSheetForm.inputMotherFirstName.value = data.FatherDetails.MotherFirstName.trim()
+                addDataSheetForm.inputMotherMiddleName.value = data.FatherDetails.MotherMiddleName.trim()
+                addDataSheetForm.inputMotherSurName.value = data.FatherDetails.MotherSurName.trim()
+                addDataSheetForm.inputMotherMaiden.value = data.FatherDetails.MotherMaidenName.trim()
 
               } else if (isEducationPresent) {
                 console.log("Nahanap ko")
