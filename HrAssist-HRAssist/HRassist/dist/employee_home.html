@@ -46,6 +46,16 @@
                         </a>
                     </li>
                     <!-- End -->
+                    <!--START-->
+                    <li class="item">
+                        <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-calendar-alt"></i>
+                        </span>
+                        <span class="navlink">Request</span>
+                        </a>
+                    </li>   
+                    <!--END-->
                     <!-- Start -->
                     <li class="item">
                         <a href="#" class="nav_link">
@@ -56,16 +66,19 @@
                         </a>
                     </li>
                     <!-- End -->
-                    <!-- Start -->
+                    <!--Start-->
                     <li class="item">
-                        <a href="employee_contactus.html" class="nav_link">
+                        <a href="#" class="nav_link">
                         <span class="navlink_icon">
-                            <i class='bx bx-phone-call'></i>
+                            <i class="bx bxs-calendar"></i>
                         </span>
-                        <span class="navlink">Contact Us</span>
+                        <span class="navlink">Calendars</span>
                         </a>
                     </li>
-                    <!-- End -->
+
+                    <!--End-->
+                    
+                    
                 </ul>
                 <ul class="menu_items">
                     <div class="menu_title profile_information"></div>
@@ -334,9 +347,56 @@
 </section>
         </div>
 
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+const requestLeaveButton = document.querySelector('.button1');
+const leaveRequestForm = document.querySelector('.leave-request');
+const requestLocatorButton = document.querySelector('.button2');
+const locatorRequestForm = document.querySelector('.locator-request');
+
+let leaveFormVisible = false;
+let locatorFormVisible = false;
+
+requestLeaveButton.addEventListener('click', function() {
+  if (!leaveFormVisible) {
+    leaveRequestForm.style.display = 'block';
+    locatorRequestForm.style.display = 'none';
+    leaveFormVisible = true;
+    locatorFormVisible = false;
+  } else {
+    leaveRequestForm.style.display = 'none';
+    leaveFormVisible = false;
+  }
+});
+
+requestLocatorButton.addEventListener('click', function() {
+  if (!locatorFormVisible) {
+    locatorRequestForm.style.display = 'block';
+    leaveRequestForm.style.display = 'none';
+    locatorFormVisible = true;
+    leaveFormVisible = false;
+  } else {
+    locatorRequestForm.style.display = 'none';
+    locatorFormVisible = false;
+  }
+});
+
+document.addEventListener('click', function(event) {
+  if (!event.target.closest('.leave-request') && !event.target.closest('.button1')) {
+    leaveRequestForm.style.display = 'none';
+    leaveFormVisible = false;
+  }
+  if (!event.target.closest('.locator-request') && !event.target.closest('.button2')) {
+    locatorRequestForm.style.display = 'none';
+    locatorFormVisible = false;
+  }
+});
+});
+        </script>
+
 
         <!-- JavaScript -->
-        <script src="js/script.js"></script>
+        <script src="js/employee.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>

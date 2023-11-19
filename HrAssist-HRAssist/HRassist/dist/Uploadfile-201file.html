@@ -62,23 +62,15 @@
                             <h6>HR Personal</h6>
                         </div>
                         
-                        <div class="fb-profile-block-menu">
+              
                             <div class="block-menu">
                                 <ul>
                                     <li><a href="datasheet.html">Personal</a></li>
                                     <li><a href="Education-21Files.html">Education</a></li>
                                     <li><a href="OtherInfo-201file.html">Other Information</a></li>
                                     <li><a href="signature-201file.html">Signature</a></li>
-                                    <li><a href="#">Files</a></li>
-                                </ul>
-                            </div>
-                            <div class="block-menu">
-                                <ul>
-                                    <li><a href="#">Personal</a></li>
-                                    <li><a href="#">Education</a></li>
-                                    <li><a href="#">Other Information</a></li>
-                                    <li><a href="#">Signature</a></li>
-                                    <li><a href="#">Files</a></li>
+                                    <li><a href="Uploadfile-201file.html">Files</a></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -86,7 +78,7 @@
                 </div>
             </div>
         </div>
-        <!-- IV. CIVIL SERVICE ELIGIBILITY -->
+        <!-- IV. ATTACHMENT -->
                 
                 <div class="container">
                     <div class="row">
@@ -108,54 +100,37 @@
                       height: 45px;  
                     }  
                     </style>  
-                    <body>  
-                    <div class="container">  
-                        <div class="row">    
-                                    <div class="card-body card-block">  
-                                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">  
-                                            <div class="row form-group">  
-                                                <div class="col-12 col-md-12">  
-                                                    <div class="control-group" id="fields">  
-                                                        <label class="control-label" for="field1">  
-                                                            Upload File  
-                                                        </label>  
-                                                        <div class="controls">  
-                                                            <div class="entry input-group upload-input-group">  
-                                                                <input class="form-control" name="fields[]" type="file">  
-                                                                <button class="btn btn-upload btn-success btn-add" type="button">  
-                                                                    <i class="fa fa-plus"> </i>  
-                                                                </button>  
-                                                            </div>  
-                                                        </div>  
-                                                        <button class="btn btn-primary"> Upload </button>  
-                                                    </div>  
-                                                </div>  
-                                            </div>  
-                                        </form>  
-                                    </div>  
-                                </div>  
-                          </div>  
-                      </div>  
-                    </div>  
-                    <script>  
-                            $(function () {  
-                                $(document).on('click', '.btn-add', function (e) {  
-                                    e.preventDefault();  
-                                    var controlForm = $('.controls:first'),  
-                                        currentEntry = $(this).parents('.entry:first'),  
-                                        newEntry = $(currentEntry.clone()).appendTo(controlForm);  
-                                    newEntry.find('input').val('');  
-                                    controlForm.find('.entry:not(:last) .btn-add')  
-                                        .removeClass('btn-add').addClass('btn-remove')  
-                                        .removeClass('btn-success').addClass('btn-danger')  
-                                        .html('<span class="fa fa-trash"> </span>');  
-                                }).on('click', '.btn-remove', function (e) {  
-                                    $(this).parents('.entry:first').remove();  
-                                    e.preventDefault();  
-                                    return false;  
-                                });  
-                            });  
-                    </script> 
+
+<button class="btn btn-primary" style="margin-top: 20px;"> Upload New Files</button>
+<table style="background-color: #ffffff; overflow: auto; align-items: center; justify-content: center; width: 100%;
+table-layout: auto; min-width: 100px; border-collapse: collapse; margin-top: 20px;">
+    <thead>
+        <tr>
+            <th style="position: sticky; top: 0; background-color: #08533F; color: #ffffff; border-bottom: 1px solid #08533F;
+            padding: 10px 20px; word-break: normal; text-align: center;">File Name</th>
+            <th style="position: sticky; top: 0; background-color: #08533F; color: #ffffff; border-bottom: 1px solid #08533F;
+            padding: 10px 20px; word-break: normal; text-align: center;">Date Uploaded</th>
+            <th style="position: sticky; top: 0; background-color: #08533F; color: #ffffff; border-bottom: 1px solid #08533F;
+            padding: 10px 20px; word-break: normal; text-align: center;">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="border-bottom: 1px solid #08533F; padding: 10px 20px; word-break: normal; text-align: center;">Docs1.pdf</td>
+            <td style="border-bottom: 1px solid #08533F; padding: 10px 20px; word-break: normal; text-align: center;">10/18/2023</td>
+            <td style="border-bottom: 1px solid #08533F; padding: 10px 20px; word-break: normal; text-align: center;">
+                <button>View</button>
+                <button>Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
 
                 
 
