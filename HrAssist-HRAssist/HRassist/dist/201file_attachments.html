@@ -42,7 +42,7 @@
     <main id="main">
 
         <!-- ======= Breadcrumbs ======= -->
-        <section class="breadcrumbs" >
+        <section class="breadcrumbs">
 
             <div class="container">
                 <div class="d-flex w-100">
@@ -50,11 +50,16 @@
                 </div>
 
                 <div class="d-flex w-100">
-                    <a type="button" id="AccountBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Account</a>
-                    <a type="button" id="PersonalInfoBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Personal Information</a>
-                    <a type="button" id="AppointmentBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Appointment</a>
-                    <a type="button" id="AttachmentBtn" class="btn btn-success flex-fill rounded-0  custom-account-btn">Attachments</a>
-                    <a type="button" id="LeaveCreditBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Leave Credits</a>
+                    <a type="button" id="AccountBtn"
+                        class="btn btn-success flex-fill rounded-0 custom-201-btn">Account</a>
+                    <a type="button" id="PersonalInfoBtn"
+                        class="btn btn-success flex-fill rounded-0 custom-201-btn">Personal Information</a>
+                    <a type="button" id="AppointmentBtn"
+                        class="btn btn-success flex-fill rounded-0 custom-201-btn">Appointment</a>
+                    <a type="button" id="AttachmentBtn"
+                        class="btn btn-success flex-fill rounded-0  custom-account-btn">Attachments</a>
+                    <a type="button" id="LeaveCreditBtn"
+                        class="btn btn-success flex-fill rounded-0 custom-201-btn">Leave Credits</a>
                 </div>
 
                 <div class="d-flex w-100">
@@ -63,7 +68,7 @@
             </div>
 
 
-            <div class="container" >
+            <div class="container">
                 <div class="row">
 
 
@@ -73,31 +78,25 @@
                             <div class="profile-img">
                                 <a href="#" id="profileLink">
                                     <img class="" id="applicantProfilePic" src="img/profile.png" alt="Profile Picture">
-                                </a> 
+                                </a>
                             </div>
- 
+
                             </script>
 
-
                             <div class="profile-active">
-                                <p></p>
+                                <p id="account_status_label"> </p>
                             </div>
                             <div class="profile-name">
                                 <h2 id="profile_name_id"></h2>
                             </div>
                             <div class="profile-hr">
-                                <h6></h6>
+                                <h6 id="jobPositionTitle"></h6>
                             </div>
 
                             <div class="fb-profile-block-menu">
                                 <div class="block-menu">
                                     <ul>
-                                        <li><a href="datasheet.html" id="201Personal">Personal</a></li>
-                                        <li><a href="Education-21Files.html" id="201Education">Education</a></li>
-                                        <li><a href="OtherInfo-201file.html" id="201Other">Other Information</a>
-                                        </li>
-                                        <li><a href="signature-201file.html" id="201Signature">Signature</a></li>
-                                        <li><a href="Uploadfile-201file.html" id="201Files">Files</a></li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -123,39 +122,117 @@
                             <br>
 
                             <p>Upload employee's attachments here</p><br>
-
+                            <!-- Add the necessary jQuery library -->
+                            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                            <button type="button" class="btn btn-warning btn-add-work-experience" id="addNewButton">
+                                <i class="bi bi-plus"></i> Add New
+                            </button>
+                            <br><br>
                             
-                            <button type="button" class="btn btn-warning btn-add-work-experience"><i
-                                    class="bi bi-plus"></i> Add New</button><br><br>
-
-                            <form id="employeeDataSheet">
+                            <form id="employeeAttachments">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr style="background-color: rgb(236, 236, 235);">
                                             <th scope="col" style="width: 10%;"></th>
-                                            <th scope="col"  style="width: 70%;">File Name</th>
-                                            <th scope="col" class="text-center"  style="width: 30%;">Action</th> <!-- Add the text-right class here -->
+                                            <th scope="col" style="width: 70%;">File Name</th>
+                                            <th scope="col" class="text-center" style="width: 30%;">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td> 
-                                                
-                                            </td>
-                                            <td class="text-center"> <!-- Add the text-right class here -->
-                                                <button type="button" class="btn btn-primary btn-add-work-experience"><i class="bi btn-info"></i>View</button>
-                                                <button type="button" class="btn btn-danger btn-add-work-experience"><i class="bi bi-trash"></i>Delete</button>
-                                            </td>
-                                        </tr>
+                                    <tbody id="fileListBody">
+                                        <!-- File rows will be added dynamically here -->
                                     </tbody>
                                 </table>
-                                
+                            </form>
+                            
+                            <script>
+                                $(document).ready(function () {
+                                    // Array to store uploaded files
+                                    window.AttachmentuploadedFiles = [];
+                                    window.AttachmentFiles = [];
+                            
+                                    // Function to update file list and renumber
+                                    function updateFileList() {
+                                        $("#fileListBody").empty(); // Clear the existing rows
+                                        for (let i = 0; i < AttachmentuploadedFiles.length; i++) {
+                                            const file = AttachmentuploadedFiles[i];
+                            
+                                            const row = $("<tr>");
+                                            const fileNameCell = $("<td class='file-name'>");
+                                            const actionCell = $("<td class='text-center'>");
+                                            const deleteButton = $("<button type='button' class='btn btn-danger btn-delete-file'><i class='bi bi-trash'></i> Delete</button>");
+                            
+                                            const fileRow = $("<div><p class='file-link'>" + file.name + "</p></div>");
+                                            fileNameCell.append(fileRow);
+                            
+                                            // Add the row to the table
+                                            actionCell.append(deleteButton);
+                                            row.append("<th scope='row'>" + (i + 1) + "</th>", fileNameCell, actionCell);
+                                            $("#fileListBody").append(row);
+                            
+                                            // Delete button click event
+                                            deleteButton.click(function () {
+                                                // Implement your logic to delete the uploaded file
+                                                AttachmentuploadedFiles.splice(i, 1); // Remove the file from the array
+                                                updateFileList(); // Update the file list after deletion
+                                            });
+                                        }
+                                    }
+                            
+                                    // Add New button click event
+                                    $("#addNewButton").click(function () {
+                                        const fileInput = $("<input type='file' class='file-input' style='display: none;' />");
+                            
+                                        fileInput.change(function () {
+                                            const files = this.files;
+                            
+                                            if (files.length > 0) {
+                                                for (let i = 0; i < files.length; i++) {
+                                                    const fileName = files[i].name;
+                            
+                                                    // Store file information in the array
+                                                    AttachmentuploadedFiles.push({
+                                                        id: AttachmentuploadedFiles.length + 1,
+                                                        name: fileName,
+                                                        // Add other file information if needed
+                                                    });
 
-                                <br><br><br><hr> 
-                                <input type="submit" id="appointmentSubmitBtn" name="submitBtn" style="width: 100%;"
-                                    class="btn btn-success submit-btn" value="Save" />
+                                                    AttachmentFiles.push(files[i])
+                                                }
+                            
+                                                updateFileList(); // Update the file list after adding files
+                                            }
+                                        });
+                            
+                                        fileInput.click();
+                                    });
+                            
+                                    // Example function to retrieve uploaded files
+                                    function getUploadedFiles() {
+                                        console.log(AttachmentuploadedFiles, 'Hey...')
+                                        return AttachmentuploadedFiles;
+                                    }
+                                });
+                            </script>
+                            
+                            <br><br><br>
+                            <hr>
+                            <style>
+                                .submit-btn-container {
+                                    text-align: right;
+                                }
 
+                                #appointmentSubmitBtn {
+                                    /* Adjust other styles as needed */
+                                    width: 10%;
+                                    margin-top: 10px;
+                                    /* Optional: Add some top margin for spacing */
+                                }
+                            </style>
+
+                            <div class="submit-btn-container">
+                                <button type="button" id="attachmentSubmitBtn" name="submitBtn"
+                                    class="btn btn-success submit-btn">Save</button>
+                            </div>
                             </form>
                         </div>
                     </div>
@@ -180,9 +257,9 @@
 
     <!-- Template Main JS File -->
     <script src="js/datasheet.js"></script>
-    <script src="bundles/auth.bundle.js"></script>
-    <script src="bundles/PDS.bundle.js"></script>
+    <script src="bundles/auth.bundle.js"></script> 
     <script src="bundles/file201.bundle.js"></script>
+    <script src="bundles/fetch_employee_info.bundle.js"></script>
 
 
 </body>

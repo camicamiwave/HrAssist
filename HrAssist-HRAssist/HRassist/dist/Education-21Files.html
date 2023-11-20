@@ -82,8 +82,7 @@
                                     <li><a href="datasheet.html" id="201Personal">Personal</a></li>
                                     <li><a href="Education-21Files.html" id="201Education" >Education</a></li>
                                     <li><a href="OtherInfo-201file.html" id="201Other" >Other Information</a></li>
-                                    <li><a href="signature-201file.html" id="201Signature">Signature</a></li> 
-                                    <li><a href="Uploadfile-201file.html" id="201Files">Files</a></li>
+                                    <li><a href="signature-201file.html" id="201Signature">Signature</a></li>  
                                 </ul>
                             </div> 
                         </div>
@@ -126,22 +125,22 @@
                                                     <tr>
                                                         <th scope="row">Elementary</th>
                                                         <td>
-                                                            <input class="form-control" name="elemSchoolName" type="text" />
+                                                            <input class="form-control" id="elemSchoolName" name="elemSchoolName" type="text" />
                                                         </td>
                                                         <td>
-                                                            <input class="form-control" name="elemGrade" type="text" />
+                                                            <input class="form-control" id="elemGrade" name="elemGrade" type="text" />
                                                         </td>
                                                         <td>
-                                                            <input class="form-control" name="elemFrom" type="text" />
+                                                            <input class="form-control" id="elemFrom" name="elemFrom" type="text" />
                                                         </td>
                                                         <td>
-                                                            <input class="form-control" name="elemTo" type="text" />
+                                                            <input class="form-control" id="elemTo" name="elemTo" type="text" />
                                                         </td>
                                                         <td>
-                                                            <input class="form-control" name="elemHighestLevel" type="text" />
+                                                            <input class="form-control" id="elemHighestLevel" name="elemHighestLevel" type="text" />
                                                         </td>
                                                         <td>
-                                                            <input class="form-control" name="elemScholarship" type="text" />
+                                                            <input class="form-control" id="elemScholarship" name="elemScholarship" type="text" />
                                                         </td>
                                                     </tr>
 
@@ -233,14 +232,10 @@
                                                         <input class="form-control" id="graduateScholarship" type="text" />
                                                     </td> 
                                                 </tr>
-
-                                                <tr>
-                                                    <td colspan="7">                    
-                                                        <input type="submit" id="EducationSubmitBtn" name="EducationSubmitBtn" class="btn btn-success" value="Save" >
-                                                    </td>
-                                                </tr>  
                                             </tbody>
                                         </table>
+                                         
+                                        <input type="submit" id="EducationSubmitBtn" name="EducationSubmitBtn" class="btn btn-success" value="Save">
                                         </form>
                                         
                                     
@@ -288,7 +283,9 @@
 
 <!-- Database JS File -->
 <script src="bundles/auth.bundle.js"></script>   
-<script src="bundles/PDS.bundle.js"></script>
+<script src="bundles/PDS.bundle.js"></script>    
+<script src="bundles/fetch_employee_info.bundle.js"></script>    
+<script src="bundles/file201.bundle.js"></script>
 
 </body>
 

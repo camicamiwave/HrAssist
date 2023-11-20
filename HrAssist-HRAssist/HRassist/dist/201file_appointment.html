@@ -68,61 +68,23 @@
                             <div class="profile-img">
                                 <a href="#" id="profileLink">
                                     <img class="" id="applicantProfilePic" src="img/profile.png" alt="Profile Picture">
-                                </a>
-                                <input id="fileInput" type="file" name="fileInput" style="display: none;">
+                                </a> 
                             </div>
 
-                            <!-- JavaScript -->
-                            <script>
-                                // Get references to the image, file input, and link
-                                const profileImage = document.getElementById('applicantProfilePic');
-                                const fileInput = document.getElementById('fileInput');
-                                const profileLink = document.getElementById('profileLink');
-
-                                // Add an event listener to the link to trigger the file input click
-                                profileLink.addEventListener('click', function () {
-                                    fileInput.click();
-                                });
-
-                                // Add an event listener to the file input
-                                fileInput.addEventListener('change', handleFileSelect);
-
-                                // Function to handle file selection
-                                function handleFileSelect(event) {
-                                    const file = event.target.files[0];
-
-                                    if (file) {
-                                        // Read the selected file as a Data URL
-                                        const reader = new FileReader();
-                                        reader.onload = function (e) {
-                                            // Set the image source to the Data URL
-                                            profileImage.src = e.target.result;
-                                        };
-                                        reader.readAsDataURL(file);
-                                    }
-                                }
-                            </script>
-
-
                             <div class="profile-active">
-                                <p></p>
+                                <p id="account_status_label"> </p>
                             </div>
                             <div class="profile-name">
                                 <h2 id="profile_name_id"></h2>
                             </div>
                             <div class="profile-hr">
-                                <h6></h6>
+                                <h6 id="jobPositionTitle"></h6>
                             </div>
 
                             <div class="fb-profile-block-menu">
                                 <div class="block-menu">
-                                    <ul>
-                                        <li><a href="datasheet.html" id="201Personal">Personal</a></li>
-                                        <li><a href="Education-21Files.html" id="201Education">Education</a></li>
-                                        <li><a href="OtherInfo-201file.html" id="201Other">Other Information</a>
-                                        </li>
-                                        <li><a href="signature-201file.html" id="201Signature">Signature</a></li>
-                                        <li><a href="Uploadfile-201file.html" id="201Files">Files</a></li>
+                                    <ul> 
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -132,6 +94,8 @@
             </div>
             <br><br>
             <!--Personal Data-->
+
+
 
             <div class="container custom-container-pds">
                 <br>
@@ -146,7 +110,7 @@
                             <br>
                             <div class="card-header"><strong>I. Appointment Information</strong></div>
 
-                            <form id="employeeDataSheet">
+                            <form id="employeeAppointmentForm">
                                 <div class="card-body">
                                     <!-- Form Row-->
                                     <div class="row gx-3 mb-1">
@@ -255,8 +219,8 @@
                                                 placeholder="Enter Appointing Officer">
                                         </div>
                                         <div class="col-md-4">
-                                            <label class="small mb-1" for="inputAppOff">Date of Signing</label>
-                                            <input class="form-control" id="inputAppOff" type="date"
+                                            <label class="small mb-1" for="inputDate">Date of Signing</label>
+                                            <input class="form-control" id="inputDate" type="date"
                                                 placeholder="Enter Appointing Officer">
                                         </div>
                                     </div>
@@ -284,8 +248,8 @@
                                     </script>
                                     <br>
                                     <hr>
-                                    <input type="submit" id="appointmentSubmitBtn" name="submitBtn"
-                                    class="btn btn-success submit-btn" value="Save" />
+                                    <input type="submit" id="appointmentSubmitBtn" name="appointmentSubmitBtn"
+                                    class="btn btn-success submit-btn" value="Save">
 
                             </form>
                         </div>
@@ -311,9 +275,10 @@
 
     <!-- Template Main JS File -->
     <script src="js/datasheet.js"></script>
-    <script src="bundles/auth.bundle.js"></script>
-    <script src="bundles/PDS.bundle.js"></script>
+    <script src="bundles/auth.bundle.js"></script> 
     <script src="bundles/file201.bundle.js"></script> 
+    <script src="bundles/employee_appointment.bundle.js"></script> 
+    <script src="bundles/fetch_employee_info.bundle.js"></script> 
 
 
 </body>

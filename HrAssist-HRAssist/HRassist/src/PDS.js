@@ -15,6 +15,7 @@ import {
 } from 'firebase/firestore'
 
 import { firebaseConfig } from './server.js';
+import { fetchAppointmentData } from './employee_appointment.js';
 
 // init firebase app
 const app = initializeApp(firebaseConfig)
@@ -30,6 +31,7 @@ const auth = getAuth();
 const storage = getStorage(app);
 
 export function AddEmployeeDataSheet() {
+  try{
 
   const TestcolRef = collection(db, 'User Account');
   const EmployeecolRef = collection(db, 'Employee Information');
@@ -184,25 +186,15 @@ export function AddEmployeeDataSheet() {
       console.log("No user is signed in.");
     }
   });
+  } catch {
+    console.log("There was an error...")
+  }
+
 }
 
 // Trigger the function on page load
 window.addEventListener('load', AddEmployeeDataSheet);
 
-
-
-/*
-export function UrlParameterRetriever() {
-  // In your second.html JavaScript file
-  const urlParams = new URLSearchParams(window.location.search);
-  const receivedStringData = urlParams.get('data');
-
-  console.log("Data Retrieved: ", receivedStringData);
-
-}
-
-window.addEventListener('load', UrlParameterRetriever);
-*/
 
 function Employee201Navigator(customDocId) {
   const personalBtn = document.getElementById('201Personal');
@@ -336,10 +328,10 @@ export function AddEmployeeDataFirestore(querySelctorID, employeeData, currentDo
                       window.location.href = `Education-21Files.html?data=${encodeURIComponent(currentDocumentID)}`;
                     } else if (querySelctorID === "#EducationForm") {
                       window.location.href = `OtherInfo-201file.html?data=${encodeURIComponent(currentDocumentID)}`;
-                    } else if (querySelctorID === "#fileForm") {
-                      window.location.href = `Files.html?data=${encodeURIComponent(currentDocumentID)}`;
+                    }else if (querySelctorID === "otherInformation") {
+                      window.location.href = `signature-201file.html?data=${encodeURIComponent(currentDocumentID)}`; 
                     } else if (querySelctorID === "#signatureForm") {
-                      window.location.href = `Files.html?data=${encodeURIComponent(currentDocumentID)}`;
+                      window.location.href = `Uploadfile-201file.html?data=${encodeURIComponent(currentDocumentID)}`;
                     }
                   });
                 })
@@ -355,16 +347,49 @@ export function AddEmployeeDataFirestore(querySelctorID, employeeData, currentDo
 
 }
 
-export function Employee201Buttons() {
-  try{
+function URLDataRetriever() {
+  return new Promise((resolve, reject) => {
     const urlParams = new URLSearchParams(window.location.search);
     const receivedStringData = urlParams.get('data');
+
+    if (receivedStringData) {
+      // Trigger to send document id when it was called
+      Employee201Navigator(receivedStringData);
+
+      // Resolve the promise with the received string data
+      resolve(receivedStringData);
+    } else {
+      // Reject the promise if 'data' parameter is not found
+      reject(new Error('No data parameter found in the URL'));
+    }
+  });
+}
+
+window.addEventListener('load', () => {
+  URLDataRetriever()
+    .then((data) => {
+      console.log('Received data:', data);
+      // Continue with your logic using the received data
+    })
+    .catch((error) => {
+      console.error(error.message);
+      // Handle the error, e.g., redirect to an error page or display a message
+    });
+});
+
+export function EmployeeEducation() {
+
   
-    // Trigger to send document id when it was called
-    Employee201Navigator(receivedStringData);
-  
+  try{
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const receivedStringData = urlParams.get('data');
+    
     const addDataSheetForm = document.querySelector("#EducationForm");
-  
+    const testBtn = document.getElementById('EducationSubmitBtn');
+    const testdata = document.getElementById('elemSchoolName');
+      
+    
     addDataSheetForm.addEventListener('submit', (e) => {
       e.preventDefault();
   
@@ -418,14 +443,10 @@ export function Employee201Buttons() {
     })
   } catch {
     console.log("Not Education form")
-
   }
-
-
-
 }
 
-window.addEventListener('load', Employee201Buttons)
+window.addEventListener('load', EmployeeEducation)
 
 export function Add201OtherInfo(){
   const TestcolRef = collection(db, 'User Account');
@@ -619,7 +640,7 @@ export function Add201OtherInfo(){
 
 
     // Saving to firestore
-    AddEmployeeDataFirestore('', OtherInformationData, receivedStringData)
+    AddEmployeeDataFirestore('otherInformation', OtherInformationData, receivedStringData)
     
   })
 
@@ -633,9 +654,6 @@ export function addEmployeeSignatureForm() {
 
   const urlParams = new URLSearchParams(window.location.search);
   const receivedStringData = urlParams.get('data');
-
-  // Trigger to send document id when it was called
-  Employee201Navigator(receivedStringData);
 
   const addSignatureForm = document.querySelector("#signatureForm");
 
@@ -880,3 +898,13 @@ export function fetchEmployeeData() {
 
 window.addEventListener('load', fetchEmployeeData)
 
+function fetchEmployeeTitle(){
+  try{
+    window.addEventListener('load', fetchAppointmentData)    
+  } catch {
+    console.log("no data retrieved...")
+  }
+
+}
+
+window.addEventListener('load', fetchEmployeeTitle)

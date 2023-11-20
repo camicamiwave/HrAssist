@@ -77,24 +77,19 @@
                             </div>
 
                             <div class="profile-active">
-                                <p></p>
+                                <p id="account_status_label"> </p>
                             </div>
                             <div class="profile-name">
                                 <h2 id="profile_name_id"></h2>
                             </div>
                             <div class="profile-hr">
-                                <h6></h6>
+                                <h6 id="jobPositionTitle"></h6>
                             </div>
 
                             <div class="fb-profile-block-menu">
                                 <div class="block-menu">
                                     <ul>
-                                        <li><a href="datasheet.html" id="201Personal">Personal</a></li>
-                                        <li><a href="Education-21Files.html" id="201Education">Education</a></li>
-                                        <li><a href="OtherInfo-201file.html" id="201Other">Other Information</a>
-                                        </li>
-                                        <li><a href="signature-201file.html" id="201Signature">Signature</a></li>
-                                        <li><a href="Uploadfile-201file.html" id="201Files">Files</a></li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -105,25 +100,141 @@
             <br><br>
             <!--Personal Data-->
 
+            <style>
+                .column-col{
+                    background-color: white;
+                    border-radius: 5px;
+                }
+            </style>
+            
+
+
+
+
+            <div class="container custom-container-pds mx-auto" style="width: 80%;">
+                <br>
+                <style>
+                    table{
+                        width: 80%;
+                    }
+                    td{
+                        text-align: center; 
+                        padding: 20px;
+                    } 
+                    th{
+                        text-align: center; 
+                        padding: 20px;
+                        font-weight: 700; 
+                    }
+                    h6{
+                        font-weight: 700;
+                    }
+                    
+                </style>
+
+
+                <div class="container">
+                    
+                    
+                    <div class="container">
+                        <h6>Leave Credits</h6>
+                        <br>
+                        <button type="button" id="LeaveCreditsaveBtn" name="saveBtn" class="btn btn-success submit-btn" style="width: 15%" onclick="openEditModal()">Save</button>
+                        <br>
+                      </div>
+                      
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col" style="width: 10%;"></th>
+                            <th scope="col" style="width: 20%;">Leave Type</th>
+                            <th scope="col" style="width: 20%;">Remaining Units</th>
+                            <th scope="col" class="text-center" style="width: 20%;">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody id="fileListBody">
+                          <tr>
+                            <td>1</td>
+                            <td>Vacational Leave</td>
+                            <td>15.00</td>
+                            <td><button class="btn btn-primary" onclick="openEditModal(1, 'Vacational Leave', 15.00)">Edit</button></td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Sick Leave</td>
+                            <td>15.00</td>
+                            <td><button class="btn btn-primary" onclick="openEditModal(2, 'Sick Leave', 15.00)">Edit</button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      
+                      <!-- Modal -->
+                      <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="editModalLabel">Add Leave</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <!-- Add your input fields here -->
+                              <label for="leaveType">Leave Type:</label>
+                              <input type="text" id="leaveType" class="form-control">
+                              <label for="remainingUnits">Total Units:</label>
+                              <input type="number" id="remainingUnits" class="form-control">
+                              <label for="remainingUnits">From:</label>
+                              <input type="date" id="fromLeave" class="form-control">
+                              <label for="remainingUnits">To:</label>
+                              <input type="date" id="toLeave" class="form-control">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+                      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+                      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+                      
+                      <script>
+                        function openEditModal() {
+                          // Show the modal
+                          $('#editModal').modal('show');
+                        }
+                      </script>
+
+                </div>
+            </div>
+            <br>
+            <br>
+
+
+
+
+
+            <!--
             <div class="container custom-container-pds mx-auto" style="width: 80%;">
                 <br>
 
-                <!-- Personal Data -->
                 <div class="container">
                     <div class="row">
 
-                        <!-- Account details card -->
                         <div class="col-md-12">
                             <br>
                             <div class="card-header"><strong>I. Leave Information</strong></div>
                             <br>
-                            <form>
+                            <form id="LeaveCreditForm">
                                 <div class="card-body">
-                                    <!-- Form Grid (2x2) -->
+                                    
                                     <div class="row gx-3 mb-1">
-                                        <!-- First Column -->
+                                        
                                         <div class="col-md-6">
-                                            <!-- Form Group (Leave Type) -->
+
                                             <div class="form-group">
                                                 <label class="small mb-1" for="empInputUsername">Leave Type</label>
                                                 <select class="form-control" id="empInputUsername" type="select">
@@ -134,21 +245,20 @@
                                                     <option value="Bereavement Leave">Bereavement Leave</option>
                                                 </select>
                                             </div>
-                                            <!-- Form Group (Previous Leave Balance) -->
+                                            
                                             <div class="form-group">
                                                 <label class="small mb-1" for="previousLeaveBalance">Previous Leave Balance</label>
                                                 <input class="form-control" id="previousLeaveBalance" type="text">
                                             </div>
                                         </div>
                                 
-                                        <!-- Second Column -->
                                         <div class="col-md-6">
-                                            <!-- Form Group (Leave Credit) -->
+                                            
                                             <div class="form-group">
                                                 <label class="small mb-1" for="leavecredit">Leave Credit</label>
                                                 <input class="form-control" id="leavecredit" type="text">
                                             </div>
-                                            <!-- Form Group (Value) -->
+                                            
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputValue">Value</label>
                                                 <input class="form-control" id="inputValue" type="text" placeholder="Number of days">
@@ -156,21 +266,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                
 
                                     
                                     
 
-                                    <hr>
+                                    <hr> 
+                                    <input type="submit" id="LeaveCreditsaveBtn" name="saveBtn"
+                                        class="btn btn-success submit-btn" value="Submit">
 
-                                    <input type="submit" id="saveBtn" name="saveBtn"
-                                        class="btn btn-success submit-btn" value="Save" />
+                                    <button type="button" id="LeaveCreditsaveBtn" name="saveBtn"
+                                        class="btn btn-success submit-btn" >Save</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
         </section><!-- End Breadcrumbs -->
 
@@ -192,6 +303,7 @@
     <script src="bundles/auth.bundle.js"></script>
     <script src="bundles/PDS.bundle.js"></script>
     <script src="bundles/file201.bundle.js"></script> 
+    <script src="bundles/fetch_employee_info.bundle.js"></script> 
 
 
 </body>

@@ -126,7 +126,6 @@ export function AdminAccountInformation() {
                     const fileInput = document.getElementById('fileInput');
                     const selectedFiles = fileInput.files;  
                     const firstSelectedFile = selectedFiles[0];  // Access the first file
-      
                     
                     const timestamp = new Date().getTime();
                     const uniqueFilename = `${timestamp}_${firstSelectedFile.name}`;

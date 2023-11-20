@@ -22,7 +22,8 @@ module.exports = {
         employee_interface: './src/employee_interface.js',
         employee_signin: './src/employee_signin.js',
         employee_appointment: './src/employee_appointment.js',
-        file201: './src/201file.js'
+        file201: './src/201file.js',
+        fetch_employee_info: './src/fetch_employee_info.js'
         
     },
     output: {
