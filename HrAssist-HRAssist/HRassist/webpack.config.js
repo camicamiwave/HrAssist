@@ -21,7 +21,8 @@ module.exports = {
         job_registry: './src/job_registry.js',
         employee_interface: './src/employee_interface.js',
         employee_signin: './src/employee_signin.js',
-        employee_appointment: './src/employee_appointment.js'
+        employee_appointment: './src/employee_appointment.js',
+        file201: './src/201file.js'
         
     },
     output: {

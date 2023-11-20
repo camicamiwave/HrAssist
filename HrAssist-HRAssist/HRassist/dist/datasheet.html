@@ -2,484 +2,551 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Employee-DataSheet</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <title>Employee-DataSheet</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="css/datasheet.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="css/datasheet.css" rel="stylesheet">
 
-  
+
 </head>
 
 <body>
 
-  <main id="main">
+    <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
 
-        <!--
-        <div class="container">
-            <div class="d-flex w-100">
-                <h1 class="mx-auto text-center custom-text-label">Employee 201 Files</h1>
+            <div class="container">
+                <div class="d-flex w-100">
+                    <h1 class="mx-auto text-center custom-text-label">Employee 201 Files </h1>
+                </div>
+
+                <div class="d-flex w-100">
+                    <a type="button" id="AccountBtn" class="btn btn-success flex-fill rounded-0 custom-account-btn">Account</a>
+                    <a type="button" id="PersonalInfoBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Personal Information</a>
+                    <a type="button" id="AppointmentBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Appointment</a>
+                    <a type="button" id="AttachmentBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Attachments</a>
+                    <a type="button" id="LeaveCreditBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Leave Credits</a>
+                </div>
+
+                <div class="d-flex w-100">
+                    <h1 class="mx-auto text-center custom-text">Personal Data Sheet</h1>
+                </div>
             </div>
 
-            <div class="d-flex w-100">
-                <a type="button" class="btn btn-success flex-fill rounded-0" href="admin_employee_account.html">Account</a>
-                <a type="button" class="btn btn-success flex-fill rounded-0 custom-account-btn">Personal Information</a>
-                <a type="button" class="btn btn-success flex-fill rounded-0">Appointment</a>
-                <a type="button" class="btn btn-success flex-fill rounded-0">Attachments</a>
-                <a type="button" class="btn btn-success flex-fill rounded-0">Leave Credits</a>
-            </div>
 
-            <div class="d-flex w-100">
-                <h1 class="mx-auto text-center custom-text">Personal Data Sheet</h1>
-            </div>
-        </div>-->
-        
+                <div class="container">
+                    <div class="row">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="fb-profile-block">
-                        <div class="fb-profile-block-thumb cover-container"></div>
-                        <div class="profile-img">
-                            <a href="#" id="profileLink">
-                                <img class="" id="applicantProfilePic" src="img/profile.png" alt="Profile Picture">
-                            </a>
-                            <input id="fileInput" type="file" name="fileInput" style="display: none;">
-                        </div>
-                        
-                        <!-- JavaScript -->
-                        <script>
-                            // Get references to the image, file input, and link
-                            const profileImage = document.getElementById('applicantProfilePic');
-                            const fileInput = document.getElementById('fileInput');
-                            const profileLink = document.getElementById('profileLink');
-                        
-                            // Add an event listener to the link to trigger the file input click
-                            profileLink.addEventListener('click', function () {
-                                fileInput.click();
-                            });
-                        
-                            // Add an event listener to the file input
-                            fileInput.addEventListener('change', handleFileSelect);
-                        
-                            // Function to handle file selection
-                            function handleFileSelect(event) {
-                                const file = event.target.files[0];
-                        
-                                if (file) {
-                                    // Read the selected file as a Data URL
-                                    const reader = new FileReader();
-                                    reader.onload = function (e) {
-                                        // Set the image source to the Data URL
-                                        profileImage.src = e.target.result;
-                                    };
-                                    reader.readAsDataURL(file);
-                                }
-                            }
-                        </script>
-                        
 
-                        <div class="profile-active">
-                            <p></p>
-                        </div>
-                        <div class="profile-name">
-                            <h2 id="profile_name_id"></h2>
-                        </div>
-                        <div class="profile-hr">
-                            <h6></h6>
-                        </div>
+                        <div class="col-md-12">
+                            <div class="fb-profile-block">
+                                <div class="fb-profile-block-thumb cover-container"></div>
+                                <div class="profile-img">
+                                    <a href="#" id="profileLink">
+                                        <img class="" id="applicantProfilePic" src="img/profile.png"
+                                            alt="Profile Picture">
+                                    </a>
+                                    <input id="fileInput" type="file" name="fileInput" style="display: none;">
+                                </div>
 
-                        <div class="fb-profile-block-menu">
-                            <div class="block-menu">
-                                <ul>
-                                    <li><a href="datasheet.html" id="201Personal">Personal</a></li>
-                                    <li><a href="Education-21Files.html" id="201Education" >Education</a></li>
-                                    <li><a href="OtherInfo-201file.html" id="201Other" >Other Information</a></li>
-                                    <li><a href="signature-201file.html" id="201Signature">Signature</a></li> 
-                                    <li><a href="Uploadfile-201file.html" id="201Files">Files</a></li>
-                                </ul>
+                                <!-- JavaScript -->
+                                <script>
+                                    // Get references to the image, file input, and link
+                                    const profileImage = document.getElementById('applicantProfilePic');
+                                    const fileInput = document.getElementById('fileInput');
+                                    const profileLink = document.getElementById('profileLink');
+
+                                    // Add an event listener to the link to trigger the file input click
+                                    profileLink.addEventListener('click', function () {
+                                        fileInput.click();
+                                    });
+
+                                    // Add an event listener to the file input
+                                    fileInput.addEventListener('change', handleFileSelect);
+
+                                    // Function to handle file selection
+                                    function handleFileSelect(event) {
+                                        const file = event.target.files[0];
+
+                                        if (file) {
+                                            // Read the selected file as a Data URL
+                                            const reader = new FileReader();
+                                            reader.onload = function (e) {
+                                                // Set the image source to the Data URL
+                                                profileImage.src = e.target.result;
+                                            };
+                                            reader.readAsDataURL(file);
+                                        }
+                                    }
+                                </script>
+
+
+                                <div class="profile-active">
+                                    <p></p>
+                                </div>
+                                <div class="profile-name">
+                                    <h2 id="profile_name_id"></h2>
+                                </div>
+                                <div class="profile-hr">
+                                    <h6></h6>
+                                </div>
+
+                                <div class="fb-profile-block-menu">
+                                    <div class="block-menu">
+                                        <ul>
+                                            <li><a href="datasheet.html" id="201Personal">Personal</a></li>
+                                            <li><a href="Education-21Files.html" id="201Education">Education</a></li>
+                                            <li><a href="OtherInfo-201file.html" id="201Other">Other Information</a>
+                                            </li>
+                                            <li><a href="signature-201file.html" id="201Signature">Signature</a></li>
+                                            <li><a href="Uploadfile-201file.html" id="201Files">Files</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!--Personal Data-->
-        <div class="container">
-            <div class="row">
-                <!-- Account details card-->
+                <br><br>
+                <!--Personal Data-->
                 
-                <div class="col-md-12">
-                    <br>
-                    <div class="card-header"><strong>I. PERSONAL INFORMATION</strong></div>
-                    
-                    <form id="employeeDataSheet">
-                    <div class="card-body">
-                            <!-- Form Group (CS ID NO)-->
-                            <div class="col-md-2">
-                                <label class="small mb-1" for="inputCsId">CS ID NO:</label>
-                                <input class="form-control" id="inputCsId" type="text" placeholder="" >
-                            </div>
-                            <hr>
-                            <!-- Form Row-->
-                            <div class="row gx-3 mb-1">
-                                <!-- Form Group (first name)-->
-                                <div class="col-md-4">
-                                    <label class="small mb-1" for="inputFirstName">First name</label>
-                                    <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name">
-                                </div>
-                                <!-- Form Group (middle name)-->
-                                <div class="col-md-3">
-                                    <label class="small mb-1" for="inputMiddleName">Middle name</label>
-                                    <input class="form-control" id="inputMiddleName" type="text" placeholder="Enter your middle name" >
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="small mb-1" for="inputSurName">Surname</label>
-                                    <input class="form-control" id="inputSurName" type="text" placeholder="Enter your surname" >
-                                </div>
-                                <div class="col-md-1">
-                                    <label class="small mb-1" for="InputExName">Ex. name</label>
-                                    <input class="form-control" id="inputExName" type="text" placeholder="Ext">
-                                </div>
-                            </div>
-                            <hr>
-                            <!-- Form Row        -->
-                            <div class="row gx-3 mb-1">
-                                <!-- Form Group (gender-->
-                                <div class="col-md-2">
-                                    <div class="form-holder" style="align-self: flex-end; transform: translateY(4px);">
-                                        <label for="inputExName">Gender</label>
-                                        <div class="checkbox-tick">
-                                            <label class="male">
-                                                <input type="radio" name="gender" value="Male" checked> Male<br>
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <label class="female">
-                                                <input type="radio" name="gender" value="Female"> Female<br>
-                                                <span class="checkmark"></span>
-                                            </label>
+            <div class="container custom-container-pds">
+                <br><br>
+                <div class="container">
+                    <div class="row">
+                        <!-- Account details card-->
+
+
+                        <div class="col-md-12"> 
+                            <div class="card-header"><strong>I. PERSONAL INFORMATION</strong></div>
+
+                            <form id="employeeDataSheet">
+                                <div class="card-body">
+                                    <!-- Form Group (CS ID NO)-->
+                                    <div class="col-md-2">
+                                        <label class="small mb-1" for="inputCsId">CS ID NO:</label>
+                                        <input class="form-control" id="inputCsId" type="text" placeholder="">
+                                    </div>
+                                    <hr>
+                                    <!-- Form Row-->
+                                    <div class="row gx-3 mb-1">
+                                        <!-- Form Group (first name)-->
+                                        <div class="col-md-4">
+                                            <label class="small mb-1" for="inputFirstName">First name</label>
+                                            <input class="form-control" id="inputFirstName" type="text"
+                                                placeholder="Enter your first name">
+                                        </div>
+                                        <!-- Form Group (middle name)-->
+                                        <div class="col-md-3">
+                                            <label class="small mb-1" for="inputMiddleName">Middle name</label>
+                                            <input class="form-control" id="inputMiddleName" type="text"
+                                                placeholder="Enter your middle name">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="small mb-1" for="inputSurName">Surname</label>
+                                            <input class="form-control" id="inputSurName" type="text"
+                                                placeholder="Enter your surname">
+                                        </div>
+                                        <div class="col-md-1">
+                                            <label class="small mb-1" for="InputExName">Ex. name</label>
+                                            <input class="form-control" id="inputExName" type="text" placeholder="Ext">
                                         </div>
                                     </div>
-                                </div>
-                                <!-- Form Group (bdate)-->
-                                <div class="col-md-3">
-                                    <label for="inputBdate">Birthdate</label>
-                                    <input type="date" placeholder="Birthdate" id="Birthdate" class="form-control">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="inputPlaceBirth">Place of Birth</label>
-                                    <input type="input" placeholder="Place of Birth" id="PlaceBirth" class="form-control">
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label for="inputStatus">Civil Status</label>
-                                    <select id="inputStatus" class="form-control">
-                                        
-                                        <option>Single</option>
-                                        <option>Married</option>
-                                        <option>Widowed</option>
-                                        <option>Separated</option>
-                                        <option>Divorced</option>
-                                        <option>Live-in</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <hr>
-                            <!-- Form Group (email address)-->
-                            <!--Form Group Number-->
-                            <!-- Form Row-->
-                            <div class="row gx-3 mb-1">
-                            <div class="col-md-4">
-                                <label class="small mb-1" for="inputEmail">Email</label>
-                                <input class="form-control" id="inputEmail" type="text" placeholder="Enter your email" >
-                            </div>
-                            <div class="col-md-4">
-                                <label class="small mb-1" for="inputMnumber">Mobile number</label>
-                                <input class="form-control" id="inputMnumber" type="text" placeholder="Enter your mobile number" >
-                            </div>
-                            <div class="col-md-4">
-                                <label class="small mb-1" for="inputTel">Telephone number</label>
-                                <input class="form-control" id="inputTel" type="text" placeholder="Enter your telephone number" >
-                            </div>
-                            </div>
-                            <hr>
-                            <!--Form Group Height-->
-                            <!-- Form Row-->
-                            <div class="row gx-3 mb-1">
-                                <div class="col-md-2">
-                                    <label class="small mb-1" for="inputHeight">Height</label>
-                                    <input class="form-control" id="inputHeight" type="text" placeholder="Enter your height" >
-                                </div>
-                                <div class="col-md-2">
-                                    <label class="small mb-1" for="inputWeight">Weight</label>
-                                    <input class="form-control" id="inputWeight" type="text" placeholder="Enter your weight" >
-                                </div>
-                                <div class="col-md-2">
-                                    <label class="small mb-1" for="inputBloodType">Blood Type</label>
-                                    <input class="form-control" id="inputBloodType" type="text" placeholder="Enter your blood type">
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="small mb-1" for="InputGsis">GSIS ID No</label>
-                                    <input class="form-control" id="InputGsis" type="text" placeholder="Enter your GSIS ID">
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="small mb-1" for="InputPagibig">PAG-IBIG NO</label>
-                                    <input class="form-control" id="InputPagibig" type="text" placeholder="Enter your PAG-IBIG NO" >
-                                </div>
-                            </div>
-                            <hr>
+                                    <hr>
+                                    <!-- Form Row        -->
+                                    <div class="row gx-3 mb-1">
+                                        <!-- Form Group (gender-->
+                                        <div class="col-md-2">
+                                            <div class="form-holder"
+                                                style="align-self: flex-end; transform: translateY(4px);">
+                                                <label for="inputExName">Gender</label>
+                                                <div class="checkbox-tick">
+                                                    <label class="male">
+                                                        <input type="radio" name="gender" value="Male" checked> Male<br>
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                    <label class="female">
+                                                        <input type="radio" name="gender" value="Female"> Female<br>
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Form Group (bdate)-->
+                                        <div class="col-md-3">
+                                            <label for="inputBdate">Birthdate</label>
+                                            <input type="date" placeholder="Birthdate" id="Birthdate"
+                                                class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="inputPlaceBirth">Place of Birth</label>
+                                            <input type="input" placeholder="Place of Birth" id="PlaceBirth"
+                                                class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="inputStatus">Civil Status</label>
+                                            <select id="inputStatus" class="form-control">
 
-                            <!-- Form Row-->
-                            <div class="row gx-3 mb-1">
-                                <div class="col-md-3">
-                                    <label class="small mb-1" for="inputPhealth">PHILHEALTH NO.</label>
-                                    <input class="form-control" id="inputPhealth" type="text" placeholder="" >
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="small mb-1" for="inputSSS">SSS NO.</label>
-                                    <input class="form-control" id="inputSSS" type="text" placeholder="" value="">
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="small mb-1" for="inputTIN">TIN NO.</label>
-                                    <input class="form-control" id="inputTIN" type="text" placeholder="" value="">
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="small mb-1" for="InputAgency">AGENCY EMPLOYEE NO.</label>
-                                    <input class="form-control" id="InputAgency" type="text" placeholder="" value="">
-                                </div>
-                            </div>
-                            <hr>
-
-                            <!-- Form Row-->
-                            <div class="row gx-3 mb-1">
-                                <div class="col-md-4">
-                                    <label class="small mb-1" for="inputCitizen">Citizenship</label>
-                                    <input class="form-control" id="inputCitizen" type="text" placeholder="" value="Filipino">
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="small mb-1" for="checkDetails">If Dual Citizenship (Please indicate details):</label> <br>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" id="naturalization" name="citizenshipType" value="ByBirth">
-                                        <label class="form-check-label" for="inlineCheckbox1">by birth</label>
+                                                <option>Single</option>
+                                                <option>Married</option>
+                                                <option>Widowed</option>
+                                                <option>Separated</option>
+                                                <option>Divorced</option>
+                                                <option>Live-in</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" id="naturalization" name="citizenshipType" value="ByNaturalization">
-                                        <label class="form-check-label" for="inlineCheckbox2">by naturalization</label>
+                                    <hr>
+                                    <!-- Form Group (email address)-->
+                                    <!--Form Group Number-->
+                                    <!-- Form Row-->
+                                    <div class="row gx-3 mb-1">
+                                        <div class="col-md-4">
+                                            <label class="small mb-1" for="inputEmail">Email</label>
+                                            <input class="form-control" id="inputEmail" type="text"
+                                                placeholder="Enter your email">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="small mb-1" for="inputMnumber">Mobile number</label>
+                                            <input class="form-control" id="inputMnumber" type="text"
+                                                placeholder="Enter your mobile number">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="small mb-1" for="inputTel">Telephone number</label>
+                                            <input class="form-control" id="inputTel" type="text"
+                                                placeholder="Enter your telephone number">
+                                        </div>
                                     </div>
-                                </div>                                
-                                <div class="col-md-4">
-                                    <label class="small mb-1" for="inputCountry">Please indicate country:</label>
-                                    <input class="form-control" id="inputCountry" type="text" placeholder="" value="">
-                                </div>
-                            </div>
-                            <hr>
+                                    <hr>
+                                    <!--Form Group Height-->
+                                    <!-- Form Row-->
+                                    <div class="row gx-3 mb-1">
+                                        <div class="col-md-2">
+                                            <label class="small mb-1" for="inputHeight">Height</label>
+                                            <input class="form-control" id="inputHeight" type="text"
+                                                placeholder="Enter your height">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="small mb-1" for="inputWeight">Weight</label>
+                                            <input class="form-control" id="inputWeight" type="text"
+                                                placeholder="Enter your weight">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="small mb-1" for="inputBloodType">Blood Type</label>
+                                            <input class="form-control" id="inputBloodType" type="text"
+                                                placeholder="Enter your blood type">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="small mb-1" for="InputGsis">GSIS ID No</label>
+                                            <input class="form-control" id="InputGsis" type="text"
+                                                placeholder="Enter your GSIS ID">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="small mb-1" for="InputPagibig">PAG-IBIG NO</label>
+                                            <input class="form-control" id="InputPagibig" type="text"
+                                                placeholder="Enter your PAG-IBIG NO">
+                                        </div>
+                                    </div>
+                                    <hr>
 
-                            <!-- Form Row-->
-                            <div class="row gx-3 mb-1">
-                                <div class="col-md-4">
-                                    <label class="small mb-1" for="inputHouse">House/Block/Lot No.</label>
-                                    <input class="form-control" id="inputHouse" type="text" placeholder="" value="">
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="small mb-1" for="inputStreet">Street</label>
-                                    <input class="form-control" id="inputStreet" type="text" placeholder="" value="">
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="small mb-1" for="InputSub">Subdivision</label>
-                                    <input class="form-control" id="InputSub" type="text" placeholder="" value="">
-                                </div>
-                            </div>
-                            <hr>
+                                    <!-- Form Row-->
+                                    <div class="row gx-3 mb-1">
+                                        <div class="col-md-3">
+                                            <label class="small mb-1" for="inputPhealth">PHILHEALTH NO.</label>
+                                            <input class="form-control" id="inputPhealth" type="text" placeholder="">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="small mb-1" for="inputSSS">SSS NO.</label>
+                                            <input class="form-control" id="inputSSS" type="text" placeholder=""
+                                                value="">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="small mb-1" for="inputTIN">TIN NO.</label>
+                                            <input class="form-control" id="inputTIN" type="text" placeholder=""
+                                                value="">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="small mb-1" for="InputAgency">AGENCY EMPLOYEE NO.</label>
+                                            <input class="form-control" id="InputAgency" type="text" placeholder=""
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <hr>
 
-                             <!-- Form Row-->
-                             <div class="row gx-3 mb-1">
-                                <div class="col-md-4">
-                                    <label class="small mb-1" for="inputBarangay">Barangay</label>
-                                    <input class="form-control" id="inputBarangay" type="text" placeholder="" value="">
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="small mb-1" for="inputMun">City/Municipality</label>
-                                    <input class="form-control" id="inputMun" type="text" placeholder="" value="">
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="small mb-1" for="InputProv">Province</label>
-                                    <input class="form-control" id="InputProv" type="text" placeholder="" value="">
-                                </div>
-                            </div>
-                            <hr>
+                                    <!-- Form Row-->
+                                    <div class="row gx-3 mb-1">
+                                        <div class="col-md-4">
+                                            <label class="small mb-1" for="inputCitizen">Citizenship</label>
+                                            <input class="form-control" id="inputCitizen" type="text" placeholder=""
+                                                value="Filipino">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="small mb-1" for="checkDetails">If Dual Citizenship (Please
+                                                indicate details):</label> <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="naturalization"
+                                                    name="citizenshipType" value="ByBirth">
+                                                <label class="form-check-label" for="inlineCheckbox1">by birth</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="naturalization"
+                                                    name="citizenshipType" value="ByNaturalization">
+                                                <label class="form-check-label" for="inlineCheckbox2">by
+                                                    naturalization</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="small mb-1" for="inputCountry">Please indicate
+                                                country:</label>
+                                            <input class="form-control" id="inputCountry" type="text" placeholder=""
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <hr>
 
-                            <div class="col-md-4">
-                                <label class="small mb-1" for="inputZip">Zip Code</label>
-                                <input class="form-control" id="inputZip" type="text" placeholder="" value="">
-                            </div>
-                            <br>
+                                    <!-- Form Row-->
+                                    <div class="row gx-3 mb-1">
+                                        <div class="col-md-4">
+                                            <label class="small mb-1" for="inputHouse">House/Block/Lot No.</label>
+                                            <input class="form-control" id="inputHouse" type="text" placeholder=""
+                                                value="">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="small mb-1" for="inputStreet">Street</label>
+                                            <input class="form-control" id="inputStreet" type="text" placeholder=""
+                                                value="">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="small mb-1" for="InputSub">Subdivision</label>
+                                            <input class="form-control" id="InputSub" type="text" placeholder=""
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <hr>
 
-                            <!--Family Background-->
-                            <div class="card-header"><strong>II. FAMILY BACKGROUND</strong></div>
-                            <div class="card-body">
-                                <div class="small mb-1">Spouse Details</div>
-                            <!-- Form Row-->
-                            <div class="row gx-3 mb-1">
-                            <!-- Form Group (first name)-->
-                            <div class="col-md-4">
-                                <label class="small mb-1" for="inputSpouseFirstName">First name</label>
-                                <input class="form-control" id="inputSpouseFirstName" type="text" placeholder="Enter your first name" >
-                            </div>
-                            <!-- Form Group (middle name)-->
-                            <div class="col-md-3">
-                                <label class="small mb-1" for="inputSpouseMiddleName">Middle name</label>
-                                <input class="form-control" id="inputSpouseMiddleName" type="text" placeholder="Enter your middle name" >
-                            </div>
-                            <div class="col-md-4">
-                                <label class="small mb-1" for="inputSpouseSurName">Surname</label>
-                                <input class="form-control" id="inputSpouseSurName" type="text" placeholder="Enter your surname" >
-                            </div>
-                            <div class="col-md-1">
-                                <label class="small mb-1" for="inputSpouseExName">Ex. name</label>
-                                <input class="form-control" id="inputSpouseExName" type="text" placeholder="Enter your surname" >
-                            </div>
-                        </div>
-                        <hr>
+                                    <!-- Form Row-->
+                                    <div class="row gx-3 mb-1">
+                                        <div class="col-md-4">
+                                            <label class="small mb-1" for="inputBarangay">Barangay</label>
+                                            <input class="form-control" id="inputBarangay" type="text" placeholder=""
+                                                value="">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="small mb-1" for="inputMun">City/Municipality</label>
+                                            <input class="form-control" id="inputMun" type="text" placeholder=""
+                                                value="">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="small mb-1" for="InputProv">Province</label>
+                                            <input class="form-control" id="InputProv" type="text" placeholder=""
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <hr>
 
-                        <!-- Form Row-->
-                        <div class="row gx-3 mb-1">
-                            <!-- Form Group (first name)-->
-                            <div class="col-md-4">
-                                <label class="small mb-1" for="inputSpouseOccupation">Occupation</label>
-                                <input class="form-control" id="inputSpouseOccupation" type="text" placeholder="">
-                            </div>
-                            <!-- Form Group (middle name)-->
-                            <div class="col-md-4">
-                                <label class="small mb-1" for="inputSpouseEmployer">Employer/Business name</label>
-                                <input class="form-control" id="inputSpouseEmployer" type="text" placeholder="" >
-                            </div>
-                            <div class="col-md-4">
-                                <label class="small mb-1" for="inputSpouseBusinessAdd">Business Address</label>
-                                <input class="form-control" id="inputSpouseBusinessAdd" type="text" placeholder="">
-                            </div>
-                        </div>
-                        <hr>
+                                    <div class="col-md-4">
+                                        <label class="small mb-1" for="inputZip">Zip Code</label>
+                                        <input class="form-control" id="inputZip" type="text" placeholder="" value="">
+                                    </div>
+                                    <br>
 
-                        <div class="col-md-4">
-                            <label class="small mb-1" for="inputSpouseTelNo">Telephone No.</label>
-                            <input class="form-control" id="inputSpouseTelNo" type="text" placeholder="" >
-                        </div>
-                        <hr>
-                        <div class="small mb-1">Name of Father</div>
-                        <div class="row gx-3 mb-1">
-                            <!-- Form Group (first name)-->
-                            <div class="col-md-4">
-                                <label class="small mb-1" for="inputFatherFirstName">First name</label>
-                                <input class="form-control" id="inputFatherFirstName" type="text" placeholder="Enter your first name" >
-                            </div>
-                            <!-- Form Group (middle name)-->
-                            <div class="col-md-3">
-                                <label class="small mb-1" for="inputFatherMiddleName">Middle name</label>
-                                <input class="form-control" id="inputFatherMiddleName" type="text" placeholder="Enter your middle name" >
-                            </div>
-                            <div class="col-md-4">
-                                <label class="small mb-1" for="inputFatherSurName">Surname</label>
-                                <input class="form-control" id="inputFatherSurName" type="text" placeholder="Enter your surname" >
-                            </div>
-                            <div class="col-md-1">
-                                <label class="small mb-1" for="inputFatherExName">Ex. name</label>
-                                <input class="form-control" id="inputFatherExName" type="text" placeholder="Enter your surname" >
-                            </div>
-                        </div>
-                        <hr>
+                                    <!--Family Background-->
+                                    <div class="card-header"><strong>II. FAMILY BACKGROUND</strong></div>
+                                    <div class="card-body">
+                                        <div class="small mb-1">Spouse Details</div>
+                                        <!-- Form Row-->
+                                        <div class="row gx-3 mb-1">
+                                            <!-- Form Group (first name)-->
+                                            <div class="col-md-4">
+                                                <label class="small mb-1" for="inputSpouseFirstName">First name</label>
+                                                <input class="form-control" id="inputSpouseFirstName" type="text"
+                                                    placeholder="Enter your first name">
+                                            </div>
+                                            <!-- Form Group (middle name)-->
+                                            <div class="col-md-3">
+                                                <label class="small mb-1" for="inputSpouseMiddleName">Middle
+                                                    name</label>
+                                                <input class="form-control" id="inputSpouseMiddleName" type="text"
+                                                    placeholder="Enter your middle name">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="small mb-1" for="inputSpouseSurName">Surname</label>
+                                                <input class="form-control" id="inputSpouseSurName" type="text"
+                                                    placeholder="Enter your surname">
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label class="small mb-1" for="inputSpouseExName">Ex. name</label>
+                                                <input class="form-control" id="inputSpouseExName" type="text"
+                                                    placeholder="Enter your surname">
+                                            </div>
+                                        </div>
+                                        <hr>
 
-                        <div class="small mb-1">Name of Mother</div>
-                        <div class="row gx-3 mb-1">
-                            <!-- Form Group (first name)-->
-                            <div class="col-md-3">
-                                <label class="small mb-1" for="inputMotherFirstName">First name</label>
-                                <input class="form-control" id="inputMotherFirstName" type="text" placeholder="Enter your first name" >
-                            </div>
-                            <!-- Form Group (middle name)-->
-                            <div class="col-md-3">
-                                <label class="small mb-1" for="inputMotherMiddleName">Middle name</label>
-                                <input class="form-control" id="inputMotherMiddleName" type="text" placeholder="Enter your middle name">
-                            </div>
-                            <div class="col-md-3">
-                                <label class="small mb-1" for="inputMotherSurName">Surname</label>
-                                <input class="form-control" id="inputMotherSurName" type="text" placeholder="Enter your surname" >
-                            </div>
-                            <div class="col-md-3">
-                                <label class="small mb-1" for="inputMotherMaiden">Maiden name</label>
-                                <input class="form-control" id="inputMotherMaiden" type="text" placeholder="" >
-                            </div>
-                        </div>
-                        <hr>
-                    <div class="row gx-3 mb-1">
-                        <!-- Number of Children input -->
-                        <div class="col-md-4">
-                            <label class="small mb-1" for="numberOfChildren">Number of Children</label>
-                            <input class="form-control" id="numberOfChildren" type="number" placeholder="" value="0" oninput="generateForms()">
-                        </div>
-                    </div>
-                    <hr>
-                    
-                    <div class="row gx-3 mb-1" id="formContainer">
-                        <!-- Initial set of form fields -->
-                        <div class="col-md-4">
-                            <label class="small mb-1" for="childreninputFirstName">First name</label>
-                            <input class="form-control" id="childreninputFirstName" type="text" placeholder=""  oninput="generateForms()">
-                        </div>
-                        <div class="col-md-3">
-                            <label class="small mb-1" for="childreninputMiddleName">Middle name</label>
-                            <input class="form-control" id="childreninputMiddleName" type="text" placeholder=""  oninput="generateForms()">
-                        </div>
-                        <div class="col-md-4">
-                            <label class="small mb-1" for="childreninputSurName">Surname</label>
-                            <input class="form-control" id="childreninputSurName" type="text" placeholder=""  oninput="generateForms()">
-                        </div>
-                        <div class="col-md-1">
-                            <label class="small mb-1" for="childrenInputExName">Ex. name</label>
-                            <input class="form-control" id="childreninputExName" type="text" placeholder="" >
-                        </div>
-                    </div>
-                    <hr>
-                    
-                    <script>
-                        const inputChildrenNum = document.getElementById('numberOfChildren').value;
-                        if (inputChildrenNum.value.trim() == "0" || inputChildrenNum.value.trim() == ""){
-                            const formContainer = document.getElementById('formContainer');
-                            formContainer.style.display = 'none';
-                        }
+                                        <!-- Form Row-->
+                                        <div class="row gx-3 mb-1">
+                                            <!-- Form Group (first name)-->
+                                            <div class="col-md-4">
+                                                <label class="small mb-1" for="inputSpouseOccupation">Occupation</label>
+                                                <input class="form-control" id="inputSpouseOccupation" type="text"
+                                                    placeholder="">
+                                            </div>
+                                            <!-- Form Group (middle name)-->
+                                            <div class="col-md-4">
+                                                <label class="small mb-1" for="inputSpouseEmployer">Employer/Business
+                                                    name</label>
+                                                <input class="form-control" id="inputSpouseEmployer" type="text"
+                                                    placeholder="">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="small mb-1" for="inputSpouseBusinessAdd">Business
+                                                    Address</label>
+                                                <input class="form-control" id="inputSpouseBusinessAdd" type="text"
+                                                    placeholder="">
+                                            </div>
+                                        </div>
+                                        <hr>
 
-                        function generateForms() {
-                            const numberOfChildren = document.getElementById('numberOfChildren').value;
-                            const formContainer = document.getElementById('formContainer');
-                    
-                            // Clear previous forms
-                            formContainer.innerHTML = '';
-                    
-                            // Generate new forms based on the number of children
-                            for (let i = 1; i <= numberOfChildren; i++) {
-                                const formHtml = `
+                                        <div class="col-md-4">
+                                            <label class="small mb-1" for="inputSpouseTelNo">Telephone No.</label>
+                                            <input class="form-control" id="inputSpouseTelNo" type="text"
+                                                placeholder="">
+                                        </div>
+                                        <hr>
+                                        <div class="small mb-1">Name of Father</div>
+                                        <div class="row gx-3 mb-1">
+                                            <!-- Form Group (first name)-->
+                                            <div class="col-md-4">
+                                                <label class="small mb-1" for="inputFatherFirstName">First name</label>
+                                                <input class="form-control" id="inputFatherFirstName" type="text"
+                                                    placeholder="Enter your first name">
+                                            </div>
+                                            <!-- Form Group (middle name)-->
+                                            <div class="col-md-3">
+                                                <label class="small mb-1" for="inputFatherMiddleName">Middle
+                                                    name</label>
+                                                <input class="form-control" id="inputFatherMiddleName" type="text"
+                                                    placeholder="Enter your middle name">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="small mb-1" for="inputFatherSurName">Surname</label>
+                                                <input class="form-control" id="inputFatherSurName" type="text"
+                                                    placeholder="Enter your surname">
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label class="small mb-1" for="inputFatherExName">Ex. name</label>
+                                                <input class="form-control" id="inputFatherExName" type="text"
+                                                    placeholder="Enter your surname">
+                                            </div>
+                                        </div>
+                                        <hr>
+
+                                        <div class="small mb-1">Name of Mother</div>
+                                        <div class="row gx-3 mb-1">
+                                            <!-- Form Group (first name)-->
+                                            <div class="col-md-3">
+                                                <label class="small mb-1" for="inputMotherFirstName">First name</label>
+                                                <input class="form-control" id="inputMotherFirstName" type="text"
+                                                    placeholder="Enter your first name">
+                                            </div>
+                                            <!-- Form Group (middle name)-->
+                                            <div class="col-md-3">
+                                                <label class="small mb-1" for="inputMotherMiddleName">Middle
+                                                    name</label>
+                                                <input class="form-control" id="inputMotherMiddleName" type="text"
+                                                    placeholder="Enter your middle name">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label class="small mb-1" for="inputMotherSurName">Surname</label>
+                                                <input class="form-control" id="inputMotherSurName" type="text"
+                                                    placeholder="Enter your surname">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label class="small mb-1" for="inputMotherMaiden">Maiden name</label>
+                                                <input class="form-control" id="inputMotherMaiden" type="text"
+                                                    placeholder="">
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row gx-3 mb-1">
+                                            <!-- Number of Children input -->
+                                            <div class="col-md-4">
+                                                <label class="small mb-1" for="numberOfChildren">Number of
+                                                    Children</label>
+                                                <input class="form-control" id="numberOfChildren" type="number"
+                                                    placeholder="" value="0" oninput="generateForms()">
+                                            </div>
+                                        </div>
+                                        <hr>
+
+                                        <div class="row gx-3 mb-1" id="formContainer">
+                                            <!-- Initial set of form fields -->
+                                            <div class="col-md-4">
+                                                <label class="small mb-1" for="childreninputFirstName">First
+                                                    name</label>
+                                                <input class="form-control" id="childreninputFirstName" type="text"
+                                                    placeholder="" oninput="generateForms()">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label class="small mb-1" for="childreninputMiddleName">Middle
+                                                    name</label>
+                                                <input class="form-control" id="childreninputMiddleName" type="text"
+                                                    placeholder="" oninput="generateForms()">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="small mb-1" for="childreninputSurName">Surname</label>
+                                                <input class="form-control" id="childreninputSurName" type="text"
+                                                    placeholder="" oninput="generateForms()">
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label class="small mb-1" for="childrenInputExName">Ex. name</label>
+                                                <input class="form-control" id="childreninputExName" type="text"
+                                                    placeholder="">
+                                            </div>
+                                        </div>
+                                        <hr>
+
+                                        <script>
+                                            const inputChildrenNum = document.getElementById('numberOfChildren').value;
+                                            if (inputChildrenNum.value.trim() == "0" || inputChildrenNum.value.trim() == "") {
+                                                const formContainer = document.getElementById('formContainer');
+                                                formContainer.style.display = 'none';
+                                            }
+
+                                            function generateForms() {
+                                                const numberOfChildren = document.getElementById('numberOfChildren').value;
+                                                const formContainer = document.getElementById('formContainer');
+
+                                                // Clear previous forms
+                                                formContainer.innerHTML = '';
+
+                                                // Generate new forms based on the number of children
+                                                for (let i = 1; i <= numberOfChildren; i++) {
+                                                    const formHtml = `
                                     <div class="col-md-4">
                                         <label class="small mb-1" for="inputChildrenFirstName${i}">First name ${i}</label>
                                         <input class="form-control" id="inputChildrenFirstName${i}" type="text" placeholder="" >
@@ -497,40 +564,44 @@
                                         <input class="form-control" id="inputChildrenExName${i}" type="text" placeholder="" >
                                     </div>
                                 `;
-                                formContainer.innerHTML += formHtml;
-                            }
-                        }
-                    </script>
+                                                    formContainer.innerHTML += formHtml;
+                                                }
+                                            }
+                                        </script>
 
 
-                    <input type="submit" id="submitBtn" name="submitBtn" class="btn btn-success submit-btn" value="Save"/>
-                    
+                                        <input type="submit" id="submitBtn" name="submitBtn"
+                                            class="btn btn-success submit-btn" value="Save" />
+
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </form>
             </div>
-        </div>
-    </div>
-</div>
+            </div>
 
-                            
-                        </section><!-- End Breadcrumbs -->
 
-                    </main><!-- End #main -->
+        </section><!-- End Breadcrumbs -->
 
-                    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    </main><!-- End #main -->
 
-                    <!-- Vendor JS Files -->
-                    <script src="vendor/purecounter/purecounter_vanilla.js"></script>
-                    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                    <script src="vendor/glightbox/js/glightbox.min.js"></script>
-                    <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
-                    <script src="vendor/swiper/swiper-bundle.min.js"></script>
-                    <script src="vendor/php-email-form/validate.js"></script>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
 
-                    <!-- Template Main JS File -->
-                    <script src="js/datasheet.js"></script>
-                    <script src="bundles/auth.bundle.js"></script>   
-                    <script src="bundles/PDS.bundle.js"></script>   
+    <!-- Vendor JS Files -->
+    <script src="vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="js/datasheet.js"></script>
+    <script src="bundles/auth.bundle.js"></script>
+    <script src="bundles/PDS.bundle.js"></script>
+    <script src="bundles/file201.bundle.js"></script>
 
 
 </body>

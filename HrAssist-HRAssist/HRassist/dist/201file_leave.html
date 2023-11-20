@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Employee-DataSheet</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- Template Main CSS File -->
+    <link href="css/datasheet.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+
+            <div class="container">
+                <div class="d-flex w-100">
+                    <h1 class="mx-auto text-center custom-text-label">Employee 201 Files </h1>
+                </div>
+
+                <div class="d-flex w-100">
+                    <a type="button" id="AccountBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Account</a>
+                    <a type="button" id="PersonalInfoBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Personal Information</a>
+                    <a type="button" id="AppointmentBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Appointment</a>
+                    <a type="button" id="AttachmentBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Attachments</a>
+                    <a type="button" id="LeaveCreditBtn" class="btn btn-success flex-fill rounded-0 custom-account-btn">Leave Credits</a>
+                </div>
+
+                <div class="d-flex w-100">
+                    <h1 class="mx-auto text-center custom-text">Appointment Information</h1>
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="row">
+
+
+                    <div class="col-md-12">
+                        <div class="fb-profile-block">
+                            <div class="fb-profile-block-thumb cover-container"></div>
+                            <div class="profile-img">
+                                <a href="#" id="profileLink">
+                                    <img class="" id="applicantProfilePic" src="img/profile.png" alt="Profile Picture">
+                                </a>
+                            </div>
+
+                            <div class="profile-active">
+                                <p></p>
+                            </div>
+                            <div class="profile-name">
+                                <h2 id="profile_name_id"></h2>
+                            </div>
+                            <div class="profile-hr">
+                                <h6></h6>
+                            </div>
+
+                            <div class="fb-profile-block-menu">
+                                <div class="block-menu">
+                                    <ul>
+                                        <li><a href="datasheet.html" id="201Personal">Personal</a></li>
+                                        <li><a href="Education-21Files.html" id="201Education">Education</a></li>
+                                        <li><a href="OtherInfo-201file.html" id="201Other">Other Information</a>
+                                        </li>
+                                        <li><a href="signature-201file.html" id="201Signature">Signature</a></li>
+                                        <li><a href="Uploadfile-201file.html" id="201Files">Files</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <!--Personal Data-->
+
+            <div class="container custom-container-pds mx-auto" style="width: 80%;">
+                <br>
+
+                <!-- Personal Data -->
+                <div class="container">
+                    <div class="row">
+
+                        <!-- Account details card -->
+                        <div class="col-md-12">
+                            <br>
+                            <div class="card-header"><strong>I. Leave Information</strong></div>
+                            <br>
+                            <form>
+                                <div class="card-body">
+                                    <!-- Form Grid (2x2) -->
+                                    <div class="row gx-3 mb-1">
+                                        <!-- First Column -->
+                                        <div class="col-md-6">
+                                            <!-- Form Group (Leave Type) -->
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="empInputUsername">Leave Type</label>
+                                                <select class="form-control" id="empInputUsername" type="select">
+                                                    <option value="">Select</option>
+                                                    <option value="Sick Leave">Sick Leave</option>
+                                                    <option value="Vacation Leave">Vacation Leave</option>
+                                                    <option value="Maternity Leave">Maternity Leave</option>
+                                                    <option value="Bereavement Leave">Bereavement Leave</option>
+                                                </select>
+                                            </div>
+                                            <!-- Form Group (Previous Leave Balance) -->
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="previousLeaveBalance">Previous Leave Balance</label>
+                                                <input class="form-control" id="previousLeaveBalance" type="text">
+                                            </div>
+                                        </div>
+                                
+                                        <!-- Second Column -->
+                                        <div class="col-md-6">
+                                            <!-- Form Group (Leave Credit) -->
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="leavecredit">Leave Credit</label>
+                                                <input class="form-control" id="leavecredit" type="text">
+                                            </div>
+                                            <!-- Form Group (Value) -->
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="inputValue">Value</label>
+                                                <input class="form-control" id="inputValue" type="text" placeholder="Number of days">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+
+                                    
+                                    
+
+                                    <hr>
+
+                                    <input type="submit" id="saveBtn" name="saveBtn"
+                                        class="btn btn-success submit-btn" value="Save" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section><!-- End Breadcrumbs -->
+
+    </main><!-- End #main -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="js/datasheet.js"></script>
+    <script src="bundles/auth.bundle.js"></script>
+    <script src="bundles/PDS.bundle.js"></script>
+    <script src="bundles/file201.bundle.js"></script> 
+
+
+</body>
+
+</html>

@@ -270,7 +270,7 @@ function confirmAction(category, documentID) {
           break;
         case 'Files':
           //window.location.href = "signature-201file.html";
-          window.location.href = `signature-201file.html?data=${encodeURIComponent(documentID)}`;
+          window.location.href = `Uploadfile-201file.html?data=${encodeURIComponent(documentID)}`;
           break;
         default:
           break;
@@ -739,7 +739,7 @@ export function fetchEmployeeData() {
 
               // Check if any string in the array contains 'datasheet.html'
               var isFilesPresent = splitResult.some(function (item) {
-                return item.includes('files-201.html');
+                return item.includes('Uploadfile-201file.html');
               });
 
               // Check the current document
@@ -879,63 +879,4 @@ export function fetchEmployeeData() {
 
 
 window.addEventListener('load', fetchEmployeeData)
-
-
-export function SearchEmployee() {
-  // Assuming you have an HTML form with id="employeeDataSheet"
-  const addDataSheetForm = document.querySelector("#SearchEmployeeForm");
-  const EmployeecolRef = collection(db, 'Employee Information');
-
-  // Event listener for the form submission
-  addDataSheetForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const LastName = addDataSheetForm.inputLastName.value
-    const FirstName = addDataSheetForm.inputFirstName.value
-    const MiddleName = addDataSheetForm.inputMiddleName.value
-    const ExtName = addDataSheetForm.inputExtName.value
-
-    console.log(`Fullname:${LastName}${FirstName}${MiddleName}${ExtName}`)
-
-    //alert(`Fullname:${LastName} ${FirstName} ${MiddleName} ${ExtName}`)
-
-    const que = query(EmployeecolRef,
-      where("Personal_Information.FirstName", "==", FirstName),
-      where("Personal_Information.MiddleName", "==", MiddleName),
-      where("Personal_Information.SurName", "==", LastName),
-      where("Personal_Information.ExName", "==", ExtName)
-    );
-
-    // for retrieving the current user
-    onSnapshot(que, (snapshot) => {
-      snapshot.docs.forEach((docData) => {
-        const data = docData.data();
-
-        const employeeDocID = data.documentID;
-
-        if (data) {
-          console.log(data)
-          alert("There was record retrieved.")
-
-
-
-          window.location.href = `datasheet.html?data=${encodeURIComponent(employeeDocID)}`;
-
-        } else {
-          alert("There was record retrieved.")
-
-          console.log("No record retrieved.")
-        }
-      })
-
-
-    })
-  })
-
-}
-
-window.addEventListener('load', SearchEmployee)
-
-// ------> Other Information <---------------------------------------------------
-
 
