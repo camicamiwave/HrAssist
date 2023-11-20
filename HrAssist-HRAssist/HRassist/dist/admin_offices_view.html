@@ -3,295 +3,377 @@
 <html lang="en">
 
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Boxicons CSS -->
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-        <title>HR Assist - Admin</title>
         <link rel="stylesheet" href="css/admin.css" />
         <!-- Favicon -->
         <link href="img/hrlogo.svg" rel="icon">
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        <title>Offices</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+
+        <!-- Favicons -->
+        <link href="assets/img/favicon.png" rel="icon">
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.gstatic.com" rel="preconnect">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+        <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+        <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+        <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+        <!-- Template Main CSS File -->
+        <link href="css/employee-template.css" rel="stylesheet">
+
     </head>
 
     <body>
-        <!-- navbar -->
-        <nav class="navbar">
-            <div class="logo_item">
-                <i class="bx bx-menu" id="sidebarOpen"></i>
-                <img src="img/hrmis.png" alt="" style="width: 60px; height: 40px; border-radius: 0%; margin-left: -15px;"></i>
-                <div class="search_bar">
-                    <input type="text" placeholder="Search" />
-                </div>
-            </div>    
-            <div class="navbar_content">
-                <i class="bi bi-grid"></i>
-                <i class='bx bx-sun' id="darkLight"></i>
-                <i class='bx bx-bell' ></i>
-                <img src="img/favicon.png" alt="" id="navbarProfilePicture" class="profile" />
-            </div>
-        </nav>
+     <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
 
-        <!--sidebar-->
-        <nav class="sidebar">
-            <div class="menu_content">
-                <ul class="menu_items">
-                    <div class="menu_title menu_admin_tools"></div>
-                    <!-- duplicate these li tag if you want to add or remove navlink only -->
-                    <!-- Start -->
-                    <li class="item">
-                        <a href="admin_dashboard.html" class="nav_link">
-                        <span class="navlink_icon">
-                            <i class="bx bxs-dashboard"></i>
-                        </span>
-                        <span class="navlink">Dashboard</span>
-                        </a>
-                    </li>
-                    <!-- End -->
-                    <!-- Start -->
-                    <li class="item">
-                        <a href="admin_accounts_view.html" class="nav_link">
-                        <span class="navlink_icon">
-                            <i class="bx bxs-user-account"></i>
-                        </span>
-                        <span class="navlink">Accounts</span>
-                        </a>
-                    </li>
-                    <!-- End -->
-                </ul>
-                <ul class="menu_items">
-                    <div class="menu_title lgu_information"></div>
-                    <!-- duplicate these li tag if you want to add or remove navlink only -->
-                    <!-- Start -->
-                    <li class="item active">
-                        <a href="admin_offices_view.html" class="nav_link">
-                        <span class="navlink_icon">
-                            <i class="bx bxs-buildings"></i>
-                        </span>
-                        <span class="navlink">Offices</span>
-                        </a>
-                    </li>
-                    <!-- End -->
-                    <!-- Start -->
-                    <li class="item">
-                        <a href="#" class="nav_link">
-                        <span class="navlink_icon">
-                            <i class="bx bxs-calendar"></i>
-                        </span>
-                        <span class="navlink">Calendars</span>
-                        </a>
-                    </li>
-                    <!-- End -->
-                </ul>
-                <ul class="menu_items">
-                    <div class="menu_title recruitment"></div>
-                    <!-- duplicate these li tag if you want to add or remove navlink only -->
-                    <!-- Start -->
-                    <li class="item">
-                        <a href="admin_manage_applicant_view.html" class="nav_link">
-                        <span class="navlink_icon">
-                            <i class="bx bxs-group"></i>
-                        </span>
-                        <span class="navlink">Manage Applicant</span>
-                        </a>
-                    </li>
-                    <!-- End -->
-                    <!-- Start -->
-                    <li class="item">
-                        <a href="admin_job_vacancy_view.html" class="nav_link">
-                        <span class="navlink_icon">
-                            <i class="bx bxs-briefcase"></i>
-                        </span>
-                        <span class="navlink">Job Vacancy</span>
-                        </a>
-                    </li>
-                    <!-- End -->
-                </ul>
-                <ul class="menu_items">
-                    <div class="menu_title employee_registration"></div>
-                    <!-- duplicate these li tag if you want to add or remove navlink only -->
-                    <!-- Start -->
-                    <li class="item">
-                        <a href="admin_employee_registry_view.html" class="nav_link">
-                        <span class="navlink_icon">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!--<img src="img/hrmis.png" alt="" width="50" height="10"> -->
+        <span class="d-none d-lg-block">HRAssist</span>
+
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile.png" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Juan Luna</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Juan Garcia</h6>
+              <span>Employee</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-heading">Employee Tool</li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+      </li><!-- End Components Nav -->
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bx bxs-calendar-alt"></i>
+          <span>Request</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bx bxs-user-account"></i>
+          <span>Activities</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-contact.html">
+          <i class="bx bxs-calendar"></i>
+          <span>Calendar</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-heading">Employee Profile</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="users-profile.html">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a><!-- End Register Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-login.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Login</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Offices</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Offices</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+            <!--START YOUR CONTENT HERE -->
+
+                <div class="content-wrapper">
+                    <div class="page-header">
+                        <h1 class="page-title">
+                            <span class="page-title-icon">
                             <i class="bx bxs-user-detail"></i>
-                        </span>
-                        <span class="navlink">Employee Registry</span>
-                        </a>
-                    </li>
-                    <!-- End -->
-                    <!-- Start -->
-                    <li class="item">
-                        <a href="admin_search_employee_view.html" class="nav_link">
-                        <span class="navlink_icon">
-                            <i class="bx bxs-search-alt-2"></i>
-                        </span>
-                        <span class="navlink">Search Employee</span>
-                        </a>
-                    </li>
-                    <!-- End -->
-                </ul>
-                <ul class="menu_items">
-                    <div class="menu_title employment_tools"></div>
-                    <!-- duplicate these li tag if you want to add or remove navlink only -->
-                    <!-- Start -->
-                    <li class="item">
-                        <a href="#" class="nav_link">
-                        <span class="navlink_icon">
-                            <i class="bx bxs-folder"></i>
-                        </span>
-                        <span class="navlink">201 Files</span>
-                        </a>
-                    </li>
-                    <!-- End -->
-                    <!-- Start -->
-                    <li class="item">
-                        <a href="admin_request.html" class="nav_link">
-                        <span class="navlink_icon">
-                            <i class="bx bxs-calendar-alt"></i>
-                        </span>
-                        <span class="navlink">Request</span>
-                        </a>
-                    </li>
-                    <!-- End -->
-                    <!-- Start -->
-                    <li class="item">
-                        <a href="admin_rewards_view.html" class="nav_link">
-                        <span class="navlink_icon">
-                            <i class="bx bxs-gift"></i>
-                        </span>
-                        <span class="navlink">Rewards</span>
-                        </a>
-                    </li>
-                    <!-- End -->
-                    <!-- Start -->
-                    <li class="item">
-                        <a href="#" class="nav_link">
-                        <span class="navlink_icon">
-                            <i class="bx bxs-file"></i>
-                        </span>
-                        <span class="navlink">Reports</span>
-                        </a>
-                    </li>
-                    <!-- End -->
-                </ul>
-                <ul class="menu_items">
-                    <div class="menu_title learning_nd_development"></div>
-                    <!-- duplicate these li tag if you want to add or remove navlink only -->
-                    <!-- Start -->
-                    <li class="item">
-                        <a href="admin_training_n_seminars_view.html" class="nav_link">
-                        <span class="navlink_icon">
-                            <i class="bx bxs-calendar-event"></i>
-                        </span>
-                        <span class="navlink">Training & Seminars</span>
-                        </a>
-                    </li>
-                    <!-- End -->
-                    <!-- Start -->
-                    <li class="item">
-                        <a href="admin_material_view.html" class="nav_link">
-                        <span class="navlink_icon">
-                            <i class="bx bxs-folder-open"></i>
-                        </span>
-                        <span class="navlink">Materials</span>
-                        </a>
-                    </li>
-                    <!-- End -->
-                </ul>
-            </div>
-            <!-- Sidebar Open / Close -->
-            <div class="bottom_content">
-                <div class="bottom expand_sidebar">
-                    <span> Expand</span>
-                    <i class='bx bx-log-in' ></i>
+                            </span> List of Employees
+                        </h1>
+                    </div>
+                    <div class="table">
+                        <div class="table-header">
+                            <p>Departments</p>
+                        </div>
+                        <div class="article-contener">
+                            <ul class="groups">
+                                <li>
+                                    <div class="card">
+                                        <div class="image-session">
+                                            <span class="image" style="background-image: url('img/clients/client-1.png');"></span>
+                                        </div>
+                                        <div class="meta-sission">
+                                            <div class="body">
+                                                <h2 class="title">Municipal Health Office</h2>
+                                            </div>
+                                            <div class="footer">
+                                                <a href="#" class="button">Open →</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="card">
+                                        <div class="image-session">
+                                            <span class="image" style="background-image: url('img/clients/client-2.png');"></span>
+                                        </div>
+                                        <div class="meta-sission">
+                                            <div class="body">
+                                                <h2 class="title">Municipal Traffic and Public Safety Office</h2>
+                                            </div>
+                                            <div class="footer">
+                                                <a href="#" class="button">Open →</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="card">
+                                        <div class="image-session">
+                                            <span class="image" style="background-image: url('img/clients/client-3.png');"></span>
+                                        </div>
+                                        <div class="meta-sission">
+                                            <div class="body">
+                                                <h2 class="title">Municipal of Agriculture Office</h2>
+                                            </div>
+                                            <div class="footer">
+                                                <a href="#" class="button">Open →</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="card">
+                                        <div class="image-session">
+                                            <span class="image" style="background-image: url('img/clients/client-4.png');"></span>
+                                        </div>
+                                        <div class="meta-sission">
+                                            <div class="body">
+                                                <h2 class="title">Municipality of San Vicente</h2>
+                                            </div>
+                                            <div class="footer">
+                                                <a href="#" class="button">Open →</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="bottom collapse_sidebar">
-                    <span> Collapse</span>
-                    <i class='bx bx-log-out'></i>
-                </div>
-            </div>
-        </nav>
+    </section>
+            <!--END YOUR CONTENT-->
 
-        <div id="main">
-            <div class="content-wrapper">
-                <div class="page-header">
-                    <h1 class="page-title">
-                        <span class="page-title-icon">
-                        <i class="bx bxs-user-detail"></i>
-                        </span> List of Employees
-                    </h1>
-                </div>
-                <div class="table">
-                    <div class="table-header">
-                        <p>Departments</p>
-                    </div>
-                    <div class="article-contener">
-                        <ul class="groups">
-                            <li>
-                                <div class="card">
-                                    <div class="image-session">
-                                        <span class="image" style="background-image: url('img/clients/client-1.png');"></span>
-                                    </div>
-                                    <div class="meta-sission">
-                                        <div class="body">
-                                            <h2 class="title">Municipal Health Office</h2>
-                                        </div>
-                                        <div class="footer">
-                                            <a href="#" class="button">Open →</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card">
-                                    <div class="image-session">
-                                        <span class="image" style="background-image: url('img/clients/client-2.png');"></span>
-                                    </div>
-                                    <div class="meta-sission">
-                                        <div class="body">
-                                            <h2 class="title">Municipal Traffic and Public Safety Office</h2>
-                                        </div>
-                                        <div class="footer">
-                                            <a href="#" class="button">Open →</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card">
-                                    <div class="image-session">
-                                        <span class="image" style="background-image: url('img/clients/client-3.png');"></span>
-                                    </div>
-                                    <div class="meta-sission">
-                                        <div class="body">
-                                            <h2 class="title">Municipal of Agriculture Office</h2>
-                                        </div>
-                                        <div class="footer">
-                                            <a href="#" class="button">Open →</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card">
-                                    <div class="image-session">
-                                        <span class="image" style="background-image: url('img/clients/client-4.png');"></span>
-                                    </div>
-                                    <div class="meta-sission">
-                                        <div class="body">
-                                            <h2 class="title">Municipality of San Vicente</h2>
-                                        </div>
-                                        <div class="footer">
-                                            <a href="#" class="button">Open →</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>    
+        
 
         <!-- JavaScript -->
         <script src="js/script.js"></script>
