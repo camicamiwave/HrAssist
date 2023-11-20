@@ -232,11 +232,6 @@ button:hover {
     list-style: none;
 }
 
-.active{
-    background-color: #08533F;
-    color: var(--white-color);
-    border-radius: 10px;
-}
 
 .navlink_icon {
     position: relative;
@@ -422,6 +417,70 @@ button:hover {
     font-size: .9375rem;
     line-height: 36px; }
 
+
+/* ---------------------------------------------------------------------------------------- */
+/* -------------------------------------- DASHBOARD --------------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
+
+.box-info {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	grid-gap: 24px;
+	margin-top: 36px;
+}
+
+
+.box-info li {
+	padding: 24px;
+	background: #ffffff;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	grid-gap: 24px;
+    margin-bottom: 50px;
+    border: 2px solid #08533F;
+}
+
+.box-info li:hover {
+    background-color: #e8f3eb;
+}
+
+.box-info li .bx {
+	width: 80px;
+	height: 80px;
+	border-radius: 10px;
+	font-size: 36px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    color: #ffffff;
+}
+
+.box-info li:nth-child(1) .bx {
+	background: #08533F;
+	color: #ffffff;
+}
+
+.box-info li:nth-child(2) .bx {
+	background: #08533F;
+	color: #ffffff;
+}
+
+.box-info li:nth-child(3) .bx {
+	background: #08533F;
+	color: #ffffff;
+}
+
+.box-info li .text h3 {
+	font-size: 24px;
+	font-weight: 600;
+	color: #000000;
+}
+
+.box-info li .text p {
+	color: #000000;	
+}
+
 /* ---------------------------------------------------------------------------------------- */
 /* ----------------------------------------- TABLE ---------------------------------------- */
 /* ---------------------------------------------------------------------------------------- */
@@ -461,10 +520,118 @@ button:hover {
     border: none; /* Remove button border */
 }
 
-.add-new {
-    padding: 10px 20px;
-    color: #ffffff;
-    background-color: #08533F;
+.hero-section {
+    height: 100%;
+    position: relative;
+    display: flex;
+    padding: auto;
+    align-items: center;
+}
+
+.hero-section .content {
+    display: flex;
+    max-width: 1280px;
+    margin: auto;
+    width: 100%;
+    justify-content: space-between; /* Adjust this according to your layout */
+    align-items: center; /* Adjust this according to your layout */
+}
+
+.hero-section .search-form {
+    height: 48px;
+    display: flex;
+    max-width: 630px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.hero-section .search-form input {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #08533F;
+    outline: none;
+    padding: 0 15px;
+    font-size: 1rem;
+    border-radius: 4px 0 0 4px;
+}
+
+.hero-section .search-form button {
+    height: 100%;
+    width: 80px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #00882E;
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+    transition: background 0.2s ease;
+}
+
+.hero-section .search-form button:hover {
+    background: #08533F;
+  }
+
+.hero-section .popular-tags {
+    display: flex;
+    color: #08533F;
+    gap: 25px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.hero-section .popular-tags .tags {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    list-style: none;
+}
+
+.hero-section .tags li a {
+    text-decoration: none;
+    color: #08533F;
+    border: 1px solid #08533F;
+    padding: 4px 12px;
+    border-radius: 50px;
+    transition: 0.2s ease;
+}
+
+.hero-section .tags li a:hover {
+    color: #000;
+    background: #fff;
+}
+
+@media screen and (max-width: 900px) {
+    .hero-section {
+      background: none;
+    }
+    .hero-section .content {
+      margin: 0 auto 80px;
+    }
+    .hero-section .content :is(h1, .search-form) {
+      max-width: 100%;
+    }
+    .hero-section .content h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      line-height: 55px;
+    }
+    .hero-section .search-form {
+      display: block;
+      margin-top: 20px;
+    }
+    .hero-section .search-form input {
+      border-radius: 4px;
+    }
+    
+    .hero-section .search-form button {
+      margin-top: 10px;
+      border-radius: 4px;
+      width: 100%;
+    }
+    .hero-section .popular-tags {
+      display: none;
+    }
 }
 
 table {
@@ -476,6 +643,8 @@ table {
 
 thead th {
     position: sticky;
+    text-align: center;
+    align-items: center;
     top: 0;
     background-color: #08533F;
     color: #ffffff;
