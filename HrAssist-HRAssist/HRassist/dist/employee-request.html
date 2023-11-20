@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Boxicons CSS -->
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+        <title>HR Assist - Employee</title>
+        <link rel="stylesheet" href="css/employee-request.css" />
+        <!-- Favicon -->
+        <link href="img/hrlogo.svg" rel="icon">
+    </head>
+
+    <body>
+        <!-- navbar -->
+        <nav class="navbar">
+            <div class="logo_item">
+                <i class="bx bx-menu" id="sidebarOpen"></i>
+                <img src="img/hrmis.png" alt="" style="width: 60px; height: 40px; border-radius: 0%; margin-left: -15px;"></i>
+                <div class="search_bar">
+                    <input type="text" placeholder="Search" />
+                </div>
+            </div>    
+            <div class="navbar_content">
+                <i class="bi bi-grid"></i>
+                <i class='bx bx-sun' id="darkLight"></i>
+                <i class='bx bx-bell' ></i>
+                <img src="img/favicon.png" alt="" class="profile" />
+            </div>
+        </nav>
+
+        
+        <!--sidebar-->
+        <nav class="sidebar">
+            <div class="menu_content">
+                <ul class="menu_items">
+                    <div class="menu_title menu_admin_tools"></div>
+                    <!-- duplicate these li tag if you want to add or remove navlink only -->
+                    <!-- Start -->
+                    <li class="item active">
+                        <a href="employee-request.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-dashboard"></i>
+                        </span>
+                        <span class="navlink">Dashboard</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+
+                    <!--START-->
+                    <li class="item">
+                        <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-calendar-alt"></i>
+                        </span>
+                        <span class="navlink">Request</span>
+                        </a>
+                    </li>   
+                    <!--END-->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-user-account"></i>
+                        </span>
+                        <span class="navlink">Activities</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!--Start-->
+                    <li class="item">
+                        <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-calendar"></i>
+                        </span>
+                        <span class="navlink">Calendars</span>
+                        </a>
+                    </li>
+
+                    <!--End-->
+                    
+                </ul>
+                <ul class="menu_items">
+                    <div class="menu_title profile_information"></div>
+                    <!-- duplicate these li tag if you want to add or remove navlink only -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="employeeprofile.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class='bx bxs-user-circle'></i>
+                        </span>
+                        <span class="navlink">User Profile</span>
+                        </a>
+                    </li>
+
+                    <li class="item">
+                        <a href="login.html" id="employee_logout_btn" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class='bx bx-log-out'></i>
+                        </span>
+                        <span class="navlink"><span id="logout_value">Log-out</span></span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="bottom_content">
+                    <div class="bottom expand_sidebar">
+                        <span> Expand</span>
+                        <i class='bx bx-log-in' ></i>
+                    </div>
+                    <div class="bottom collapse_sidebar">
+                        <span> Collapse</span>
+                        <i class='bx bx-log-out'></i>
+                    </div>
+                </div>
+
+        </nav>
+        
+
+
+        <!-- JavaScript -->
+        <script src="js/script.js"></script>
+
+        <!-- Database Javascript -->  
+        <script src="bundles/auth.bundle.js"></script>   
+        
+    </body>
+
+</html>
