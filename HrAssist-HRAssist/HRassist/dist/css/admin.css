@@ -471,6 +471,16 @@ button:hover {
 	color: #ffffff;
 }
 
+.box-info li:nth-child(4) .bx {
+	background: #08533F;
+	color: #ffffff;
+}
+
+.box-info li:nth-child(5) .bx {
+	background: #08533F;
+	color: #ffffff;
+}
+
 .box-info li .text h3 {
 	font-size: 24px;
 	font-weight: 600;
