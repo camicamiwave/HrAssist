@@ -258,12 +258,12 @@ function confirmAction(category, documentID) {
           break;
         case 'Signature':
           //window.location.href = "signature-201file.html";
-          window.location.href = `signature-201file.html?data=${encodeURIComponent(documentID)}`;
+          window.location.href = `201file_appointment.html?data=${encodeURIComponent(documentID)}`;
           break;
-        case 'Files':
+        //case 'Files':
           //window.location.href = "signature-201file.html";
-          window.location.href = `Uploadfile-201file.html?data=${encodeURIComponent(documentID)}`;
-          break;
+          //window.location.href = `Uploadfile-201file.html?data=${encodeURIComponent(documentID)}`;
+          //break;
         default:
           break;
       }
@@ -331,7 +331,7 @@ export function AddEmployeeDataFirestore(querySelctorID, employeeData, currentDo
                     }else if (querySelctorID === "otherInformation") {
                       window.location.href = `signature-201file.html?data=${encodeURIComponent(currentDocumentID)}`; 
                     } else if (querySelctorID === "#signatureForm") {
-                      window.location.href = `Uploadfile-201file.html?data=${encodeURIComponent(currentDocumentID)}`;
+                      window.location.href = `201file_appointment.html?data=${encodeURIComponent(currentDocumentID)}`;
                     }
                   });
                 })
@@ -757,7 +757,7 @@ export function fetchEmployeeData() {
 
               // Check if any string in the array contains 'datasheet.html'
               var isFilesPresent = splitResult.some(function (item) {
-                return item.includes('Uploadfile-201file.html');
+                return item.includes('201file_appointment.html');
               });
 
               // Check the current document

@@ -30,92 +30,11 @@ const auth = getAuth();
 
 const storage = getStorage(app);
 
-
-export function AddEmployeeAppointment(querySelctorID, employeeData, currentDocumentID) {
-
-    console.log(querySelctorID, employeeData, currentDocumentID)
-    const TestcolRef = collection(db, 'User Account');
-    const EmployeecolRef = collection(db, 'Employee Information');
-    //const addDataSheetForm = document.querySelector(querySelctorID);
-  
-    FetchCurrentUser().then((current) => {
-      console.log(current, 'current user');
-      const que = query(TestcolRef, where("userID", "==", current.uid));
-  
-      onSnapshot(que, (snapshot) => {
-        snapshot.docs.forEach((docData) => {
-          const data = docData.data();
-  
-          if (data.UserLevel === "Admin") {
-            Swal.fire({
-              title: "Are you sure?",
-              text: "Employee's personal information will be saved",
-              icon: "question",
-              showCancelButton: true,
-              confirmButtonColor: "#3085d6",
-              cancelButtonColor: "#d33",
-              confirmButtonText: "Confirm"
-            }).then((result) => {
-              if (result.isConfirmed) {
-                const employeeDocRef = doc(EmployeecolRef, currentDocumentID);
-                return setDoc(employeeDocRef, employeeData, { merge: true })
-                  .then(() => {
-                    Swal.fire({
-                      title: "Saved!",
-                      text: "Your employee added successfully...",
-                      icon: "success"
-                    }).then(() => {
-                      //addDataSheetForm.reset();
-                      console.log("Added employee successfully...");
-                      //window.location.href = `Education-21Files.html?data=${encodeURIComponent(currentDocumentID)}`;
-                      console.log("Hello")
-  
-                      if (querySelctorID === "#employeeDataSheet") {
-                        window.location.href = `Education-21Files.html?data=${encodeURIComponent(currentDocumentID)}`;
-                      } else if (querySelctorID === "#EducationForm") {
-                        window.location.href = `OtherInfo-201file.html?data=${encodeURIComponent(currentDocumentID)}`;
-                      } else if (querySelctorID === "#fileForm") {
-                        window.location.href = `Files.html?data=${encodeURIComponent(currentDocumentID)}`;
-                      } else if (querySelctorID === "#signatureForm") {
-                        window.location.href = `Files.html?data=${encodeURIComponent(currentDocumentID)}`;
-                      }
-                    });
-                  })
-                  .catch(error => console.error('Error adding employee document:', error));
-              }
-            });
-          } else {
-            console.log("Only admin can add data...");
-          }
-        });
-      });
-    })
-  
-  }
-
-export function AppointmentInitializer(){
-  try{
-    const urlParams = new URLSearchParams(window.location.search);
-    const receivedStringData = urlParams.get('data');
-  
-    // Trigger to send document id when it was called
-    Employee201Navigator(receivedStringData);
-  
-  } catch {
-    console.log("Not Education form")
-  }
-
-}
-
-
-
 function AddAppointmentData(){
   const EmployeeColRef = collection(db, '201File Information');
 
   const urlParams = new URLSearchParams(window.location.search);
-  const receivedStringData = urlParams.get('data');
-
-  console.log(receivedStringData)
+  const receivedStringData = urlParams.get('data'); 
 
   const addDataSheetForm = document.querySelector("#employeeAppointmentForm");
   const appointmentSubmitBtn = document.getElementById('appointmentSubmitBtn')
@@ -124,6 +43,8 @@ function AddAppointmentData(){
 
   addDataSheetForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    
+    console.log(receivedStringData,'hey')
 
     try {
       
@@ -159,7 +80,7 @@ function AddAppointmentData(){
       if (result.isConfirmed) {
         //const employeeDocRef = doc(EmployeecolRef, currentDocumentID);
         //return setDoc(employeeDocRef, employeeData, { merge: true })
-        return addDoc(EmployeeColRef, {employeeData, id: receivedStringData})
+        return addDoc(EmployeeColRef, employeeData)
         .then((docRef) =>{
           EmpcustomDocId = docRef.id;
           return setDoc(doc(EmployeeColRef, EmpcustomDocId), { documentID: EmpcustomDocId }, { merge: true });
@@ -172,7 +93,7 @@ function AddAppointmentData(){
             }).then(() => {
               //addDataSheetForm.reset();
               console.log("Added appointment successfully...");
-              //window.location.href = `Education-21Files.html?data=${encodeURIComponent(EmpcustomDocId)}`;
+              window.location.href = `201file_attachments.html?data=${encodeURIComponent(EmpcustomDocId)}`;
               console.log("Hello")
 
             });
@@ -180,10 +101,6 @@ function AddAppointmentData(){
           .catch(error => console.error('Error adding employee document:', error));
       }
     });
-
-
-    console.log(employeeData)
-
 
 
   } catch {

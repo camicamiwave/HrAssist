@@ -26,8 +26,7 @@ export function UserLoginChecker(Account_UserID, User_Action) {
         let employees = [];
         snapshot.docs.forEach((doc) => {
           employees.push({ ...doc.data(), id: doc.id });
-        });
-        console.log(employees);
+        }); 
   
         if (employees.length > 0) {
           //console.log("User login...123");
@@ -35,8 +34,6 @@ export function UserLoginChecker(Account_UserID, User_Action) {
 
           // get the current path of user
           const currentPath = window.location.pathname; 
-
-          console.log("Current Path: ", currentPath)
 
           if (userlevel === "Employee") {
             if (User_Action === "Login"){
@@ -107,8 +104,6 @@ export function PageRestrictionMethod(currentPath, userLevel){
     // Check if the currentPath is in the list of Applicant_Pages
     const isEmployee_Pages = Employee_Pages.includes(currentPath);
     const isAdmin_Pages = Admin_Pages.includes(currentPath);
-
-    console.log(isAdmin_Pages)
 
     if (isEmployee_Pages || isAdmin_Pages) {
       // Perform actions for Employee or Admin pages

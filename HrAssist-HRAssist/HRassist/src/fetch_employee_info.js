@@ -21,11 +21,12 @@ const app = initializeApp(firebaseConfig)
 
 const db = getFirestore()
 
+const urlParams = new URLSearchParams(window.location.search);
+const receivedStringData = urlParams.get('data');
+
 export function fetchEmployeeInfo(collectionReference, recievedDocumentID, nameOfData) {
   return new Promise((resolve) => {
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const receivedStringData = urlParams.get('data');
 
     const Employeeque = query(collectionReference, where(nameOfData, "==", recievedDocumentID));
 
@@ -45,26 +46,26 @@ export function fetchProfileData(){
     const File201ColRef = collection(db, '201File Information');
     const EmployeeColRef = collection(db, 'Employee Information');
     const UserAccountColRef = collection(db, 'User Account');
-  
-    const urlParams = new URLSearchParams(window.location.search);
-    const receivedStringData = urlParams.get('data');
-  
+
     let data; 
 
     try {
       fetchEmployeeInfo(EmployeeColRef, receivedStringData, "documentID").then((dataRetrieved) => {
         
-        console.log(dataRetrieved, 'Data mo heheheh');
-  
         data = dataRetrieved;
         
           if (data){ 
-            applicantProfilePic.src = data.ProfilePictureURL
-  
+            
+            if (data.ProfilePictureURL){
+              applicantProfilePic.src = data.ProfilePictureURL
+            } 
+            
             console.log(data.Personal_Information.FirstName)
             const fullName = `${data.Personal_Information.FirstName} ${data.Personal_Information.MiddleName} ${data.Personal_Information.SurName}`
             profile_name_id.innerHTML = fullName
             
+          } else {
+
           }
         
           /*
