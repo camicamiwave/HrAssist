@@ -1,44 +1,41 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
-    <head>
-        <!-- Boxicons CSS -->
-        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/admin.css" />
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <!-- Favicon -->
-        <link href="img/hrlogo.svg" rel="icon">
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-      
-        <title>Job Vacancy</title>
-        <meta content="" name="description">
-        <meta content="" name="keywords">
-      
-        <!-- Favicons -->
-        <link href="assets/img/favicon.png" rel="icon">
-        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-      
-        <!-- Google Fonts -->
-        <link href="https://fonts.gstatic.com" rel="preconnect">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-      
-        <!-- Vendor CSS Files -->
-        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-        <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-        <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-        <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-        <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-        <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
-      
-        <!-- Template Main CSS File -->
-        <link href="css/employee-template.css" rel="stylesheet">
-    </head>
+    <title>Employee-DataSheet</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
-    <body>
-     <!-- ======= Header ======= -->
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="css/datasheet.css" rel="stylesheet">
+    <link href="css/employee-template.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
@@ -203,9 +200,8 @@
 
   </header><!-- End Header -->
 
-  <!-- ======= Sidebar ======= -->
+    <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
-
     <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-heading">Admin Tool</li>
 
@@ -216,10 +212,9 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
-      <li class="nav-item">
-      </li><!-- End Components Nav -->
 
-
+    <li class="nav-item">
+    </li><!-- End Components Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="admin_accounts_view.html">
           <i class="bx bxs-user-account"></i>
@@ -252,7 +247,7 @@
         </a><!-- End Register Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link" href="admin_job_vacancy_view.html">
+        <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
           <i class="bx bxs-briefcase"></i>
           <span>Job Vacancy</span>
         </a>
@@ -261,7 +256,7 @@
       <li class="nav-heading">Employee Registration</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="admin_employee_registry_list.html">
+        <a class="nav-link" href="admin_employee_registry_list.html">
           <i class="bi bi-person-workspace"></i>
           <span>Employee Registry</span>
         </a><!-- End Register Page Nav -->
@@ -313,143 +308,126 @@
       </li>
 
     </ul>
+    </aside><!-- End Sidebar-->
 
-  </aside><!-- End Sidebar-->
+    <main id="main">
 
-  <main id="main" class="main">
-
-    <div class="pagetitle">
-      <h1>Job Vacancy</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Job Vacancy</li>
-        </ol>
-      </nav>
-    </div><!-- End Page Title -->
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
 
 
-    <section class="section dashboard">
+            <div class="container">
+                <div class="d-flex w-100">
+                    <h1 class="mx-auto text-center custom-text-label">Employee 201 Files</h1>
+                </div>
 
-            <!--START YOUR CONTENT HERE -->
-                <div class="content-wrapper">
+                <div class="d-flex w-100">
+                    <a type="button" id="AccountBtn"
+                        class="btn btn-success flex-fill rounded-0 custom-account-btn">Account</a>
+                    <a type="button" id="PersonalInfoBtn"
+                        class="btn btn-success flex-fill rounded-0 custom-201-btn">Personal Information</a>
+                    <a type="button" id="AppointmentBtn"
+                        class="btn btn-success flex-fill rounded-0 custom-201-btn">Appointment</a>
+                    <a type="button" id="AttachmentBtn"
+                        class="btn btn-success flex-fill rounded-0 custom-201-btn">Attachments</a>
+                    <a type="button" id="LeaveCreditBtn"
+                        class="btn btn-success flex-fill rounded-0 custom-201-btn">Leave Credits</a>
+                </div>
 
-                  <ul class="box-info">
-                    <li class="dash-box">
-                        <i class='bx bxs-briefcase' ></i>
-                        <span class="text">
-                            <h3>3</h3>
-                            <p>Total Available Jobs</p>
-                        </span>
-                    </li>
-                    <li>
-                        <i class='bx bxs-group' ></i>
-                        <span class="text">
-                            <h3>3</h3>
-                            <p>Full-Time Jobs</p>
-                        </span>
-                    </li>
-                    <li>
-                        <i class='bx bxs-time' ></i>
-                        <span class="text">
-                            <h3>0</h3>
-                            <p>Part-Time Jobs</p>
-                        </span>
-                    </li>
-                </ul>
-            
-                    <div class="table">
-                        <div class="table-header">
-                            <p>List of Jobs</p>
-                            <a href="admin_add_job.html"><button class="btn-add" style="padding: 10px 20px; color: #ffffff; background-color: #08533F; border-radius: 12px;">+ Add Job</button></a>
-                        </div>
-                        <section class="hero-section">
-                          <div class="content">
-                            <div class="popular-tags">
-                              Filter:
-                              <ul class="tags">
-                                <li><a href="#">All</a></li>
-                                <li><a href="#">Full-Time</a></li>
-                                <li><a href="#">Part-Time</a></li>
-                              </ul>
+            </div>
+            <br>
+
+
+            <!--Personal Data-->
+            <div class="container">
+                <div class="row">
+                    <!-- Account details card-->
+                    <div class="col-md-6 mx-auto">
+                        <div class="custom-container">
+                            <div class="d-flex w-100">
+                                <h1 class="mx-auto text-center custom-text">Account Creation</h1>
                             </div>
-                            <form action="#" class="search-form">
-                              <input type="text" placeholder="Search for any job vacancy..." required>
-                              <button class="material-symbols-outlined" type="sumbit">search</button>
+
+                            <form id="employeeDataSheet">
+                                <div class="card-body">
+                                    <!-- Form Row-->
+                                    <div class="row gx-3 mb-1">
+                                        <!-- Form Group (first name)-->
+                                        <div class="col-12">
+                                            <label class="small mb-1" for="empInputUsername">Username</label>
+                                            <input class="form-control" id="empInputUsername" type="text"
+                                                placeholder="Enter your username">
+                                        </div>
+                                    </div>
+                                    <!-- Form Row-->
+                                    <div class="row gx-3 mb-1">
+                                        <!-- Form Group (middle name)-->
+                                        <div class="col-12">
+                                            <label class="small mb-1" for="empInputEmail">Email</label>
+                                            <input class="form-control" id="empInputEmail" type="text"
+                                                placeholder="Enter your email">
+                                        </div>
+                                    </div>
+                                    <!-- Form Row-->
+                                    <div class="row gx-3 mb-1">
+                                        <!-- Form Group (password)-->
+                                        <div class="col-12">
+                                            <label class="small mb-1" for="empInputPassword">Password</label>
+                                            <input class="form-control" id="empInputPassword" type="password"
+                                                placeholder="Enter your password">
+                                        </div>
+                                    </div>
+                                    <!-- Form Row-->
+                                    <div class="row gx-3 mb-1">
+                                        <!-- Form Group (confirm password)-->
+                                        <div class="col-12">
+                                            <label class="small mb-1" for="empInputConfirmPassword">Confirm
+                                                Password</label>
+                                            <input class="form-control" id="empInputConfirmPassword" type="password"
+                                                placeholder="Confirm your password">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <input type="submit" id="empCreateAccountBtn" name="empCreateAccountBtn"
+                                        class="btn btn-success submit-btn" value="Create Account" />
+                                </div>
                             </form>
-                          </div>
-                        </section>
-                        <table class="content-table">
-                            <thead>
-                                <tr>
-                                    <th>Job Title</th>
-                                    <th>Job Type</th>
-                                    <th>Application Deadline</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Administrative Assistant III</td>
-                                    <td>Full Time</td>
-                                    <td>11/23/2023</td>
-                                    <td>
-                                        <button><i class="bx bx-edit"></i></button>
-                                        <button><i class="bx bx-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Accountant III</td>
-                                    <td>Full Time</td>
-                                    <td>10/06/2023</td>
-                                    <td>
-                                        <button><i class="bx bx-edit"></i></button>
-                                        <button><i class="bx bx-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Planning Officer II</td>
-                                    <td>Full Time</td>
-                                    <td>11/06/2023</td>
-                                    <td>
-                                        <button><i class="bx bx-edit"></i></button>
-                                        <button><i class="bx bx-trash"></i></button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        </div>
                     </div>
                 </div>
             </div>
-    </section>
-            <!--END YOUR CONTENT-->
 
-  </main><!-- End #main -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+            </div>
+            </div>
+            </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/chart.js/chart.umd.js"></script>
-  <script src="assets/vendor/echarts/echarts.min.js"></script>
-  <script src="assets/vendor/quill/quill.min.js"></script>
-  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>    
+        </section><!-- End Breadcrumbs -->
 
-        
+    </main><!-- End #main -->
 
-        <!-- JavaScript -->
-        <script src="js/script.js"></script>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
 
-        <!-- Database Javascript -->
-        <script src="bundles/auth.bundle.js"></script> 
-        <script src="bundles/job_registry.bundle.js"></script> 
-        <script src="bundles/navbar.bundle.js"></script> 
-    </body>
+    <!-- Vendor JS Files -->
+    <script src="vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="js/datasheet.js"></script>
+    <script src="bundles/auth.bundle.js"></script>
+    <script src="bundles/employee_signin.bundle.js"></script>
+    <script src="bundles/file201.bundle.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+
+</body>
 
 </html>
