@@ -1044,6 +1044,117 @@ upload {
     margin: auto;
     cursor: pointer;
 } 
+
+form .gender-details .gender-title{
+    font-size: 20px;
+    font-weight: 500;
+    width: 100%;
+}
+   
+form .category{
+    display: flex;
+    width: 80%;
+    margin: 14px 0 ;
+    justify-content: space-between;
+}
+
+form .category label{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+   
+form .category label .dot{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: #d9d9d9;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three{
+    background: #08533F;
+    border-color: #d9d9d9;
+}
+   
+form input[type="radio"]{
+    display: none;
+}
+   
+form .button{
+    height: 45px;
+    margin: 35px 0
+   
+}
+   
+form .button input{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+form .button input:hover{
+    /* transform: scale(0.99); */
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+.drag-area{
+    border: 2px dashed #08533F;
+    height: 200px;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .drag-area.active{
+    border: 2px solid #fff;
+  }
+  .drag-area .icon{
+    font-size: 100px;
+    color: #fff;
+  }
+  .drag-area p1{
+    font-size: 20px;
+    font-weight: 500;
+    color: #08533F;
+  }
+  .drag-area span{
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    margin: 10px 0 15px 0;
+  }
+  .drag-area button{
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #fff;
+    color: #5256ad;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .drag-area img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
   
 @media(max-width: 584px){
     .container{
