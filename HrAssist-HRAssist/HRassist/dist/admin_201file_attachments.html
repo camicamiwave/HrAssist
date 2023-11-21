@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Employee-DataSheet</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- Template Main CSS File -->
+    <link href="css/datasheet.css" rel="stylesheet">
+    <link href="css/employee-template.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <!--<img src="img/hrmis.png" alt="" width="50" height="10"> -->
+                <span class="d-none d-lg-block">HRAssist</span>
+    
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+  
+        <div class="search-bar">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+        </div><!-- End Search Bar -->
+  
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+  
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li><!-- End Search Icon-->
+    
+                <li class="nav-item dropdown">
+    
+                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                    <i class="bi bi-bell"></i>
+                    <span class="badge bg-primary badge-number">4</span>
+                </a><!-- End Notification Icon -->
+    
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                    <li class="dropdown-header">
+                    You have 4 new notifications
+                    <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                    </li>
+                    <li>
+                    <hr class="dropdown-divider">
+                    </li>
+    
+                    <li class="notification-item">
+                    <i class="bi bi-exclamation-circle text-warning"></i>
+                    <div>
+                        <h4>Lorem Ipsum</h4>
+                        <p>Quae dolorem earum veritatis oditseno</p>
+                        <p>30 min. ago</p>
+                    </div>
+                    </li>
+    
+                    <li>
+                    <hr class="dropdown-divider">
+                    </li>
+    
+                    <li class="notification-item">
+                    <i class="bi bi-x-circle text-danger"></i>
+                    <div>
+                        <h4>Atque rerum nesciunt</h4>
+                        <p>Quae dolorem earum veritatis oditseno</p>
+                        <p>1 hr. ago</p>
+                    </div>
+                    </li>
+    
+                    <li>
+                    <hr class="dropdown-divider">
+                    </li>
+    
+                    <li class="notification-item">
+                    <i class="bi bi-check-circle text-success"></i>
+                    <div>
+                        <h4>Sit rerum fuga</h4>
+                        <p>Quae dolorem earum veritatis oditseno</p>
+                        <p>2 hrs. ago</p>
+                    </div>
+                    </li>
+    
+                    <li>
+                    <hr class="dropdown-divider">
+                    </li>
+    
+                    <li class="notification-item">
+                    <i class="bi bi-info-circle text-primary"></i>
+                    <div>
+                        <h4>Dicta reprehenderit</h4>
+                        <p>Quae dolorem earum veritatis oditseno</p>
+                        <p>4 hrs. ago</p>
+                    </div>
+                    </li>
+    
+                    <li>
+                    <hr class="dropdown-divider">
+                    </li>
+                    <li class="dropdown-footer">
+                    <a href="#">Show all notifications</a>
+                    </li>
+    
+                </ul><!-- End Notification Dropdown Items -->
+    
+                </li><!-- End Notification Nav -->
+    
+    
+                <li class="nav-item dropdown pe-3">
+    
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                    <img src="assets/img/profile.png" alt="Profile" class="rounded-circle">
+                    <span class="d-none d-md-block dropdown-toggle ps-2">Juan Luna</span>
+                </a><!-- End Profile Iamge Icon -->
+    
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                    <li class="dropdown-header">
+                    <h6>Juan Garcia</h6>
+                    <span>Employee</span>
+                    </li>
+                    <li>
+                    <hr class="dropdown-divider">
+                    </li>
+    
+                    <li>
+                    <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                        <i class="bi bi-person"></i>
+                        <span>My Profile</span>
+                    </a>
+                    </li>
+                    <li>
+                    <hr class="dropdown-divider">
+                    </li>
+    
+                    <li>
+                    <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                        <i class="bi bi-gear"></i>
+                        <span>Account Settings</span>
+                    </a>
+                    </li>
+                    <li>
+                    <hr class="dropdown-divider">
+                    </li>
+    
+                    <li>
+                    <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                        <i class="bi bi-question-circle"></i>
+                        <span>Need Help?</span>
+                    </a>
+                    </li>
+                    <li>
+                    <hr class="dropdown-divider">
+                    </li>
+    
+                    <li>
+                    <a class="dropdown-item d-flex align-items-center" href="#">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span>Sign Out</span>
+                    </a>
+                    </li>
+    
+                </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+  
+            </ul>
+
+        </nav><!-- End Icons Navigation -->
+  
+    </header><!-- End Header -->
+  
+        <!-- ======= Sidebar ======= -->
+      <aside id="sidebar" class="sidebar">
+        <ul class="sidebar-nav" id="sidebar-nav">
+          <li class="nav-heading">Admin Tool</li>
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_dashboard.html">
+              <i class="bi bi-grid"></i>
+              <span>Dashboard</span>
+            </a>
+          </li><!-- End Dashboard Nav -->
+  
+  
+        <li class="nav-item">
+            </li><!-- End Components Nav -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_accounts_view.html">
+              <i class="bx bxs-user-account"></i>
+              <span>Accounts</span>
+            </a>
+          </li><!-- End Profile Page Nav -->
+  
+          <li class="nav-heading">LGU Information</li>
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin-offices.html">
+              <i class="bx bxs-buildings"></i>
+              <span>Offices</span>
+            </a>
+          </li><!-- End F.A.Q Page Nav -->
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+              <i class="bx bxs-calendar"></i>
+              <span>Calendar</span>
+            </a>
+          </li><!-- End Contact Page Nav -->
+  
+          <li class="nav-heading">Recruitment</li>
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_manage_applicant_view.html">
+              <i class="bi bi-people"></i>
+              <span>Manage Applicant</span>
+            </a><!-- End Register Page Nav -->
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
+              <i class="bx bxs-briefcase"></i>
+              <span>Job Vacancy</span>
+            </a>
+          </li><!-- End Login Page Nav -->
+  
+          <li class="nav-heading">Employee Registration</li>
+  
+          <li class="nav-item">
+            <a class="nav-link" href="admin_employee_registry_list.html">
+              <i class="bi bi-person-workspace"></i>
+              <span>Employee Registry</span>
+            </a><!-- End Register Page Nav -->
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_search_employee_view.html">
+              <i class="bi bi-search"></i>
+              <span>Search Employee</span>
+            </a>
+          </li>
+  
+          <li class="nav-heading">Employement Tools</li>
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_request.html">
+              <i class="bi bi-envelope"></i>
+              <span>Request</span>
+            </a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_rewards_view.html">
+              <i class="bi bi-gift"></i>
+              <span>Rewards</span>
+            </a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+              <i class="bi bi-folder"></i>
+              <span>Reports</span>
+            </a>
+          </li>
+  
+          <li class="nav-heading">Learning & Development</li>
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+              <i class="bx bxs-group"></i>
+              <span>Training & Seminar</span>
+            </a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_materials.html">
+              <i class="bx bxs-folder-open"></i>
+              <span>Materials</span>
+            </a>
+          </li>
+  
+        </ul>
+    </aside><!-- End Sidebar-->
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+
+            <div class="container">
+                <div class="d-flex w-100">
+                    <h1 class="mx-auto text-center custom-text-label">Employee 201 Files </h1>
+                </div>
+
+                <div class="d-flex w-100">
+                    <a type="button" id="AccountBtn"
+                        class="btn btn-success flex-fill rounded-0 custom-201-btn">Account</a>
+                    <a type="button" id="PersonalInfoBtn"
+                        class="btn btn-success flex-fill rounded-0 custom-201-btn">Personal Information</a>
+                    <a type="button" id="AppointmentBtn"
+                        class="btn btn-success flex-fill rounded-0 custom-201-btn">Appointment</a>
+                    <a type="button" id="AttachmentBtn"
+                        class="btn btn-success flex-fill rounded-0  custom-account-btn">Attachments</a>
+                    <a type="button" id="LeaveCreditBtn"
+                        class="btn btn-success flex-fill rounded-0 custom-201-btn">Leave Credits</a>
+                </div>
+
+                <div class="d-flex w-100">
+                    <h1 class="mx-auto text-center custom-text">Appointment Information</h1>
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="row">
+
+
+                    <div class="col-md-12">
+                        <div class="fb-profile-block">
+                            <div class="fb-profile-block-thumb cover-container"></div>
+                            <div class="profile-img">
+                                <a href="#" id="profileLink">
+                                    <img class="" id="applicantProfilePic" src="img/profile.png" alt="Profile Picture">
+                                </a>
+                            </div>
+
+                            </script>
+
+                            <div class="profile-active">
+                                <p id="account_status_label"> </p>
+                            </div>
+                            <div class="profile-name">
+                                <h2 id="profile_name_id"></h2>
+                            </div>
+                            <div class="profile-hr">
+                                <h6 id="jobPositionTitle"></h6>
+                            </div>
+
+                            <div class="fb-profile-block-menu">
+                                <div class="block-menu">
+                                    <ul>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <!--Personal Data-->
+
+            <div class="container custom-container-pds" style="width: 82%;">
+                <br>
+
+                <!--Personal Data-->
+                <div class="container">
+                    <div class="row">
+
+                        <!-- Account details card-->
+
+                        <div class="col-md-12">
+                            <br>
+                            <div class="card-header"><strong>I. Attachements Information</strong></div>
+                            <br>
+
+                            <p>Upload employee's attachments here</p><br>
+                            <!-- Add the necessary jQuery library -->
+                            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                            <button type="button" class="btn btn-warning btn-add-work-experience" id="addNewButton">
+                                <i class="bi bi-plus"></i> Add New
+                            </button>
+                            <br><br>
+                            
+                            <form id="employeeAttachments">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr style="background-color: rgb(236, 236, 235);">
+                                            <th scope="col" style="width: 10%;"></th>
+                                            <th scope="col" style="width: 70%;">File Name</th>
+                                            <th scope="col" class="text-center" style="width: 30%;">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="fileListBody">
+                                        <!-- File rows will be added dynamically here -->
+                                    </tbody>
+                                </table>
+                            </form>
+                            
+                            <script>
+                                $(document).ready(function () {
+                                    // Array to store uploaded files
+                                    window.AttachmentuploadedFiles = [];
+                                    window.AttachmentFiles = [];
+                            
+                                    // Function to update file list and renumber
+                                    function updateFileList() {
+                                        $("#fileListBody").empty(); // Clear the existing rows
+                                        for (let i = 0; i < AttachmentuploadedFiles.length; i++) {
+                                            const file = AttachmentuploadedFiles[i];
+                            
+                                            const row = $("<tr>");
+                                            const fileNameCell = $("<td class='file-name'>");
+                                            const actionCell = $("<td class='text-center'>");
+                                            const deleteButton = $("<button type='button' class='btn btn-danger btn-delete-file'><i class='bi bi-trash'></i> Delete</button>");
+                            
+                                            const fileRow = $("<div><p class='file-link'>" + file.name + "</p></div>");
+                                            fileNameCell.append(fileRow);
+                            
+                                            // Add the row to the table
+                                            actionCell.append(deleteButton);
+                                            row.append("<th scope='row'>" + (i + 1) + "</th>", fileNameCell, actionCell);
+                                            $("#fileListBody").append(row);
+                            
+                                            // Delete button click event
+                                            deleteButton.click(function () {
+                                                // Implement your logic to delete the uploaded file
+                                                AttachmentuploadedFiles.splice(i, 1); // Remove the file from the array
+                                                updateFileList(); // Update the file list after deletion
+                                            });
+                                        }
+                                    }
+                            
+                                    // Add New button click event
+                                    $("#addNewButton").click(function () {
+                                        const fileInput = $("<input type='file' class='file-input' style='display: none;' />");
+                            
+                                        fileInput.change(function () {
+                                            const files = this.files;
+                            
+                                            if (files.length > 0) {
+                                                for (let i = 0; i < files.length; i++) {
+                                                    const fileName = files[i].name;
+                            
+                                                    // Store file information in the array
+                                                    AttachmentuploadedFiles.push({
+                                                        id: AttachmentuploadedFiles.length + 1,
+                                                        name: fileName,
+                                                        // Add other file information if needed
+                                                    });
+
+                                                    AttachmentFiles.push(files[i])
+                                                }
+                            
+                                                updateFileList(); // Update the file list after adding files
+                                            }
+                                        });
+                            
+                                        fileInput.click();
+                                    });
+                            
+                                    // Example function to retrieve uploaded files
+                                    function getUploadedFiles() {
+                                        console.log(AttachmentuploadedFiles, 'Hey...')
+                                        return AttachmentuploadedFiles;
+                                    }
+                                });
+                            </script>
+                            
+                            <br><br><br>
+                            <hr>
+                            <style>
+                                .submit-btn-container {
+                                    text-align: right;
+                                }
+
+                                #appointmentSubmitBtn {
+                                    /* Adjust other styles as needed */
+                                    width: 10%;
+                                    margin-top: 10px;
+                                    /* Optional: Add some top margin for spacing */
+                                }
+                            </style>
+
+                            <div class="submit-btn-container">
+                                <button type="button" id="attachmentSubmitBtn" name="submitBtn"
+                                    class="btn btn-success submit-btn">Save</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section><!-- End Breadcrumbs -->
+
+    </main><!-- End #main -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="js/datasheet.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="bundles/auth.bundle.js"></script> 
+    <script src="bundles/file201.bundle.js"></script>
+    <script src="bundles/fetch_employee_info.bundle.js"></script>
+
+
+</body>
+
+</html>

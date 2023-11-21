@@ -80,22 +80,22 @@ function confirmAction(category, documentID) {
             switch (category) {
                 case 'AccountBtn':
                     //window.location.href = "datasheet.html";
-                    window.location.href = `201file_account.html?data=${encodeURIComponent(documentID)}`;
+                    window.location.href = `admin_201file_account.html?data=${encodeURIComponent(documentID)}`;
                     break;
                 case 'PersonalInfoBtn':
-                    window.location.href = `datasheet.html?data=${encodeURIComponent(documentID)}`;
+                    window.location.href = `admin_201file_pds.html?data=${encodeURIComponent(documentID)}`;
                     break;
                 case 'AppointmentBtn':
                     //window.location.href = "OtherInfo-201file.html";
-                    window.location.href = `201file_appointment.html?data=${encodeURIComponent(documentID)}`;
+                    window.location.href = `admin_201file_appointment.html?data=${encodeURIComponent(documentID)}`;
                     break;
                 case 'AttachmentBtn':
                     //window.location.href = "signature-201file.html";
-                    window.location.href = `201file_attachments.html?data=${encodeURIComponent(documentID)}`;
+                    window.location.href = `admin_201file_attachments.html?data=${encodeURIComponent(documentID)}`;
                     break;
                 case 'LeaveCreditBtn':
                     //window.location.href = "signature-201file.html";
-                    window.location.href = `201file_leave.html?data=${encodeURIComponent(documentID)}`;
+                    window.location.href = `admin_201file_leave.html?data=${encodeURIComponent(documentID)}`;
                     break;
                 default:
                     break;
