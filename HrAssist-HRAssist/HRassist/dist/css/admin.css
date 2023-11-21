@@ -471,6 +471,16 @@ button:hover {
 	color: #ffffff;
 }
 
+.box-info li:nth-child(4) .bx {
+	background: #08533F;
+	color: #ffffff;
+}
+
+.box-info li:nth-child(5) .bx {
+	background: #08533F;
+	color: #ffffff;
+}
+
 .box-info li .text h3 {
 	font-size: 24px;
 	font-weight: 600;
@@ -574,7 +584,7 @@ button:hover {
 .hero-section .popular-tags {
     display: flex;
     color: #08533F;
-    gap: 25px;
+    gap: 10px;
     font-size: 0.875rem;
     font-weight: 500;
     margin-top: 15px;
