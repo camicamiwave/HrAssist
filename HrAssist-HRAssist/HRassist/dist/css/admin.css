@@ -574,7 +574,7 @@ button:hover {
 .hero-section .popular-tags {
     display: flex;
     color: #08533F;
-    gap: 25px;
+    gap: 10px;
     font-size: 0.875rem;
     font-weight: 500;
     margin-top: 15px;
