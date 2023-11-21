@@ -1008,6 +1008,20 @@ form .input-box span.details{
     background-color: #1f8f3e;
 }
 
+.upload-label {
+    display: block;
+    position: relative;
+    background-color: #08533F;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    margin: auto;
+    cursor: pointer;
+}
+
 .image-container{
     width: 90%;
     margin: 0 auto 30px auto;
@@ -1044,6 +1058,40 @@ upload {
     margin: auto;
     cursor: pointer;
 } 
+
+.form-element {
+    width:200px;
+    height:200px;
+    box-shadow:0px 0px 20px 5px rgba(100,100,100,0.1);
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.form-element input {
+    display:none;
+}
+
+.form-element img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.form-element div {
+    position:relative;
+    height:40px;
+    margin-top:-40px;
+    background:rgba(0,0,0,0.5);
+    text-align:center;
+    line-height:40px;
+    font-size:13px;
+    color:#f5f5f5;
+    font-weight:600;
+}
+  
+.form-element div span {
+    font-size:40px;
+}
 
 form .gender-details .gender-title{
     font-size: 20px;
@@ -1138,7 +1186,7 @@ form .button input:hover{
     color: #fff;
     margin: 10px 0 15px 0;
   }
-  .drag-area button{
+.drag-area button{
     padding: 10px 25px;
     font-size: 20px;
     font-weight: 500;
@@ -1148,14 +1196,15 @@ form .button input:hover{
     color: #5256ad;
     border-radius: 5px;
     cursor: pointer;
-  }
+}
+
   .drag-area img{
     height: 100%;
     width: 100%;
     object-fit: cover;
     border-radius: 5px;
-  }
-  
+}
+
 @media(max-width: 584px){
     .container{
     max-width: 100%;
