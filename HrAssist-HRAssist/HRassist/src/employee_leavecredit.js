@@ -32,6 +32,7 @@ const storage = getStorage(app);
 
 const urlParams = new URLSearchParams(window.location.search);
 const receivedStringData = urlParams.get('data');
+const received201filedoc = urlParams.get('201filedoc');
 
 export function Employee201LeaveCredit() {
     const leaveSubmitBtn = document.getElementById('leaveSaveChanges');
@@ -66,7 +67,7 @@ export function Employee201LeaveCredit() {
                 // get the current employee data
                 const EmployeecolRef = collection(db, '201File Information');
                 
-                const employeeDocRef = doc(EmployeecolRef, receivedStringData);
+                const employeeDocRef = doc(EmployeecolRef, received201filedoc);
                 return setDoc(employeeDocRef, leaveFormData, { merge: true })
 
 
@@ -93,7 +94,7 @@ export function fetchEmployee201LeaveCredit() {
         console.log("Retrieved Leave ID:", receivedStringData);
 
 
-        fetchEmployeeInfo(EmployeecolRef, receivedStringData, "employeeDocID").then((dataRetrieved) => {
+        fetchEmployeeInfo(EmployeecolRef, received201filedoc, "documentID").then((dataRetrieved) => {
             const leaveData = dataRetrieved.Leave_Details;
 
             console.log("Retrieved Leave Data:", leaveData);
@@ -102,22 +103,24 @@ export function fetchEmployee201LeaveCredit() {
 
             // Clear existing rows
             tableBody.innerHTML = '';
-
+            let num = 1 
             // Loop through the Leave_Details object and add rows to the table
             for (var leaveType in leaveData) {
-            if (leaveData.hasOwnProperty(leaveType)) {
-                var row = tableBody.insertRow();
-                var cell1 = row.insertCell(0);
-                var cell2 = row.insertCell(1);
-                var cell3 = row.insertCell(2);
-                var cell4 = row.insertCell(3);
+                if (leaveData.hasOwnProperty(leaveType)) {
+                    var row = tableBody.insertRow();
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
 
-                // Set values for each cell
-                cell1.innerHTML = ''; // You can set an ID or index here
-                cell2.innerHTML = leaveData[leaveType].LeaveType;
-                cell3.innerHTML = leaveData[leaveType].RemainingUnits;
-                cell4.innerHTML = '<button onclick="performAction()">Action</button>';
-            }
+                    // Set values for each cell
+                    cell1.innerHTML = num; // You can set an ID or index here
+                    cell2.innerHTML = leaveData[leaveType].LeaveType;
+                    cell3.innerHTML = leaveData[leaveType].RemainingUnits;
+                    cell4.innerHTML = '<button onclick="performAction()">Action</button>';
+
+                }
+                num++
             }
 
 

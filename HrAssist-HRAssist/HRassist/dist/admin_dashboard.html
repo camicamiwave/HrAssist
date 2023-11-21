@@ -2,49 +2,51 @@
 
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        <!-- Boxicons CSS -->
-        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-        <title>HR Assist - Admin</title>
-        <link rel="stylesheet" href="css/admin.css" />
-        <link rel="stylesheet" href="css/admin2.css" />
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-      
-        <title>Dashboard</title>
-        <meta content="" name="description">
-        <meta content="" name="keywords">
-      
-        <!-- Favicons -->
-        <link href="assets/img/favicon.png" rel="icon">
-        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-      
-        <!-- Google Fonts -->
-        <link href="https://fonts.gstatic.com" rel="preconnect">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-      
-        <!-- Vendor CSS Files -->
-        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-        <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-        <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-        <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-        <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-        <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
-      
-        <!-- Template Main CSS File -->
-        <link href="css/employee-template.css" rel="stylesheet">
-       
-        <!-- Favicon -->
-        <link href="img/hrlogo.svg" rel="icon">
-    </head>
+  <!-- Boxicons CSS -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>HR Assist - Admin</title>
+  <link rel="stylesheet" href="css/admin.css" />
+  <link rel="stylesheet" href="css/admin2.css" />
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <body>
-      <!-- ======= Header ======= -->
+  <title>Dashboard</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/employee-template.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link href="img/hrlogo.svg" rel="icon">
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     
@@ -151,14 +153,14 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile.png" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Juan Luna</span>
+            <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Juan Garcia</h6>
-              <span>Employee</span>
+              <h6 id="hoverUserName">Juan Garcia</h6>
+              <span id="userLevel">Employee</span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -195,7 +197,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" id="navbar_signout_btn">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -210,118 +212,118 @@
   </header><!-- End Header -->
 
   <!-- ======= Sidebar ======= -->
- <!-- ======= Sidebar ======= -->
- <aside id="sidebar" class="sidebar">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
 
-  <ul class="sidebar-nav" id="sidebar-nav">
-    <li class="nav-heading">Admin Tool</li>
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-heading">Admin Tool</li>
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#">
-        <i class="bi bi-grid"></i>
-        <span>Dashboard</span>
-      </a>
-    </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
 
-    <li class="nav-item">
-    </li><!-- End Components Nav -->
+      <li class="nav-item">
+      </li><!-- End Components Nav -->
 
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="admin_accounts_view.html">
-        <i class="bx bxs-user-account"></i>
-        <span>Accounts</span>
-      </a>
-    </li><!-- End Profile Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_accounts_view.html">
+          <i class="bx bxs-user-account"></i>
+          <span>Accounts</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
 
-    <li class="nav-heading">LGU Information</li>
+      <li class="nav-heading">LGU Information</li>
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="admin-offices.html">
-        <i class="bx bxs-buildings"></i>
-        <span>Offices</span>
-      </a>
-    </li><!-- End F.A.Q Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin-offices.html">
+          <i class="bx bxs-buildings"></i>
+          <span>Offices</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="calendar.html">
-        <i class="bx bxs-calendar"></i>
-        <span>Calendar</span>
-      </a>
-    </li><!-- End Contact Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="calendar.html">
+          <i class="bx bxs-calendar"></i>
+          <span>Calendar</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
 
-    <li class="nav-heading">Recruitment</li>
+      <li class="nav-heading">Recruitment</li>
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="admin_manage_applicant_view.html">
-        <i class="bi bi-people"></i>
-        <span>Manage Applicant</span>
-      </a><!-- End Register Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_manage_applicant_view.html">
+          <i class="bi bi-people"></i>
+          <span>Manage Applicant</span>
+        </a><!-- End Register Page Nav -->
 
-    <li class="nav-item">
-      <a class="nav-link" href="admin_job_vacancy_view.html">
-        <i class="bx bxs-briefcase"></i>
-        <span>Job Vacancy</span>
-      </a>
-    </li><!-- End Login Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link" href="admin_job_vacancy_view.html">
+          <i class="bx bxs-briefcase"></i>
+          <span>Job Vacancy</span>
+        </a>
+      </li><!-- End Login Page Nav -->
 
-    <li class="nav-heading">Employee Registration</li>
+      <li class="nav-heading">Employee Registration</li>
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="admin_employee_registry_list.html">
-        <i class="bi bi-person-workspace"></i>
-        <span>Employee Registry</span>
-      </a><!-- End Register Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_employee_registry_list.html">
+          <i class="bi bi-person-workspace"></i>
+          <span>Employee Registry</span>
+        </a><!-- End Register Page Nav -->
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="admin_search_employee_view.html">
-        <i class="bi bi-search"></i>
-        <span>Search Employee</span>
-      </a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_search_employee_view.html">
+          <i class="bi bi-search"></i>
+          <span>Search Employee</span>
+        </a>
+      </li>
 
-    <li class="nav-heading">Employement Tools</li>
+      <li class="nav-heading">Employement Tools</li>
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="admin_request.html">
-        <i class="bi bi-envelope"></i>
-        <span>Request</span>
-      </a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_request.html">
+          <i class="bi bi-envelope"></i>
+          <span>Request</span>
+        </a>
+      </li>
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="admin_rewards_view.html">
-        <i class="bi bi-gift"></i>
-        <span>Rewards</span>
-      </a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_rewards_view.html">
+          <i class="bi bi-gift"></i>
+          <span>Rewards</span>
+        </a>
+      </li>
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="admin-dtr.html">
-        <i class="bi bi-folder"></i>
-        <span>Reports</span>
-      </a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin-dtr.html">
+          <i class="bi bi-folder"></i>
+          <span>Reports</span>
+        </a>
+      </li>
 
-    <li class="nav-heading">Learning & Development</li>
+      <li class="nav-heading">Learning & Development</li>
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
-        <i class="bx bxs-group"></i>
-        <span>Training & Seminar</span>
-      </a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+          <i class="bx bxs-group"></i>
+          <span>Training & Seminar</span>
+        </a>
+      </li>
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="admin_material_view.html">
-        <i class="bx bxs-folder-open"></i>
-        <span>Materials</span>
-      </a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_material_view.html">
+          <i class="bx bxs-folder-open"></i>
+          <span>Materials</span>
+        </a>
+      </li>
 
-  </ul>
+    </ul>
 
-</aside><!-- End Sidebar-->
+  </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
@@ -337,340 +339,340 @@
 
     <section class="section dashboard">
 
-            <!--START YOUR CONTENT HERE -->
+      <!--START YOUR CONTENT HERE -->
 
-            <div class="content-wrapper">
-                <div class="page-header">
+      <div class="content-wrapper">
+        <div class="page-header">
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="row mb-4">
+              <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card board1 fill1">
+                  <div class="card-body">
+                    <div class="card_widget_header">
+                      <label>Employees</label>
+                      <h4>700</h4>
+                    </div>
+                    <div class="card_widget_img">
+                      <img src="img/dashboard/dash1.png" alt="card-img" />
+                    </div>
+                  </div>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="row mb-4">
-                            <div class="col-xl-3 col-sm-6 col-12">
-                                <div class="card board1 fill1">
-                                    <div class="card-body">
-                                        <div class="card_widget_header">
-                                            <label>Employees</label>
-                                            <h4>700</h4>
-                                        </div>
-                                        <div class="card_widget_img">
-                                            <img src="img/dashboard/dash1.png" alt="card-img" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-sm-6 col-12">
-                                <div class="card board1 fill2 ">
-                                    <div class="card-body">
-                                        <div class="card_widget_header">
-                                            <label>Accounts</label>
-                                            <h4>30</h4>
-                                        </div>
-                                        <div class="card_widget_img">
-                                            <img src="img/dashboard/dash2.png" alt="card-img" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-sm-6 col-12">
-                                <div class="card board1 fill3 ">
-                                    <div class="card-body">
-                                        <div class="card_widget_header">
-                                            <label>Leaves</label>
-                                            <h4>9</h4>
-                                        </div>
-                                            <div class="card_widget_img">
-                                            <img src="img/dashboard/dash3.png" alt="card-img" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-sm-6 col-12">
-                                <div class="card board1 fill4 ">
-                                    <div class="card-body">
-                                        <div class="card_widget_header">
-                                            <label>Applicants</label>
-                                            <h4>200</h4>
-                                        </div>
-                                        <div class="card_widget_img">
-                                            <img src="img/dashboard/dash4.png" alt="card-img" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card board1 fill2 ">
+                  <div class="card-body">
+                    <div class="card_widget_header">
+                      <label>Accounts</label>
+                      <h4>30</h4>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Active LGU Employees</h4>
-                                    <div class="mt-2" style="height:283px; width:100%;">
-                                        <canvas class="donutChart"></canvas>
-                                    </div>
-                                    <ul class="list-style-none mb-0">
-                                        <li class="mt-3">
-                                            <i class="fas fa-circle text-danger font-10 me-2"></i>
-                                            <span class="text-muted">Permanent</span>
-                                            <span class="text-dark float-end font-weight-medium"></span>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-circle text-primary font-10 me-2"></i>
-                                            <span class="text-muted">Job Order</span>
-                                            <span class="text-dark float-end font-weight-medium"></span>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-circle text-primary font-10 me-2"></i>
-                                            <span class="text-muted">Part-time</span>
-                                            <span class="text-dark float-end font-weight-medium"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-8">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-start">
-                                        <h4 class="card-title mb-0">Attendance</h4>
-                                    </div>
-                                    <div class="pl-4 mb-5">
-                                        <div class="stats ct-charts position-relative" style="height: 315px;">
-                                            
-                                        </div>
-                                    </div>
-                                    <ul class="list-inline text-center mt-4 mb-0">
-                                        <li class="list-inline-item text-muted fst-italic">Attendance for this Month</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="card_widget_img">
+                      <img src="img/dashboard/dash2.png" alt="card-img" />
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-8">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <h4 class="card-title">Rewards</h4>
-                                        <div class="ms-auto">
-                                            <div class="dropdown sub-dropdown">
-                                                <button class="btn btn-link text-muted dropdown-toggle" type="button"
-                                                    id="dd1" data-bs-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                    <i data-feather="more-vertical"></i>
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd1">
-                                                    <a class="dropdown-item" href="#">Insert</a>
-                                                    <a class="dropdown-item" href="#">Update</a>
-                                                    <a class="dropdown-item" href="#">Delete</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table no-wrap v-middle mb-0">
-                                            <thead>
-                                                <tr class="border-0">
-                                                    <th class="border-0 font-14 font-weight-medium text-muted">Category
-                                                    </th>
-                                                    <th class="border-0 font-14 font-weight-medium text-muted px-2">To
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="border-top-0 px-2 py-4">
-                                                        <div class="d-flex no-block align-items-center">
-                                                            <div class="">
-                                                                <h5 class="text-dark mb-0 font-14 font-weight-medium">Best Office Award</h5>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="border-top-0 text-muted px-2 py-4 font-14">MAO</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="border-top-0 px-2 py-4">
-                                                        <div class="d-flex no-block align-items-center">
-                                                            <div class="">
-                                                                <h5 class="text-dark mb-0 font-14 font-weight-medium">Best Employee Award</h5>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="border-top-0 text-muted px-2 py-4 font-14">Juan Dela Cruz</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="border-top-0 px-2 py-4">
-                                                        <div class="d-flex no-block align-items-center">
-                                                            <div class="">
-                                                                <h5 class="text-dark mb-0 font-14 font-weight-medium">Regional Award</h5>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="border-top-0 text-muted px-2 py-4 font-14">LGU</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="border-top-0 px-2 py-4">
-                                                        <div class="d-flex no-block align-items-center">
-                                                            <div class="">
-                                                                <h5 class="text-dark mb-0 font-14 font-weight-medium">Punctual Award</h5>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="border-top-0 text-muted px-2 py-4 font-14">John Doe</td>
-                                                </tr>
-                                                
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Upcoming Activities</h4>
-                                    <div class="mt-4 activity">
-                                        <div class="d-flex align-items-start border-left-line pb-3">
-                                            <div>
-                                                <a href="javascript:void(0)" class="btn btn-info btn-circle mb-2 btn-item">
-                                                    <i data-feather="shopping-cart"></i>
-                                                </a>
-                                            </div>
-                                            <div class="ms-3 mt-2">
-                                                <h5 class="text-dark font-weight-medium mb-2">Team Building</h5>
-                                                <p class="font-14 mb-2 text-muted">All employees of MAO are invovled<br> Cannon 5M
-                                                    Camera.
-                                                </p>
-                                                <span class="font-weight-light font-14 text-muted">10/10/2023</span>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-start border-left-line pb-3">
-                                            <div>
-                                                <a href="javascript:void(0)"
-                                                    class="btn btn-danger btn-circle mb-2 btn-item">
-                                                    <i data-feather="message-square"></i>
-                                                </a>
-                                            </div>
-                                            <div class="ms-3 mt-2">
-                                                <h5 class="text-dark font-weight-medium mb-2">Seminar</h5>
-                                                <p class="font-14 mb-2 text-muted">For all MTPSO employee<br>
-                                                    ticket</p>
-                                                <span class="font-weight-light font-14 text-muted">06/10/2023</span>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-start border-left-line">
-                                            <div>
-                                                <a href="javascript:void(0)" class="btn btn-cyan btn-circle mb-2 btn-item">
-                                                    <i data-feather="bell"></i>
-                                                </a>
-                                            </div>
-                                            <div class="ms-3 mt-2">
-                                                <h5 class="text-dark font-weight-medium mb-2">Soft-Skill Development</h5>
-                                                <p class="font-14 mb-2 text-muted">MHO are the participant of this event</p>
-                                                <span class="font-weight-light font-14 mb-1 d-block text-muted">08/01/2023</span>
-                                                <a href="javascript:void(0)"
-                                                    class="font-14 border-bottom pb-1 border-info">Load More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <h4 class="card-title">Interviews</h4>
-                                        <div class="ms-auto">
-                                            <div class="dropdown sub-dropdown">
-                                                <button class="btn btn-link text-muted dropdown-toggle" type="button"
-                                                    id="dd1" data-bs-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                    <i data-feather="more-vertical"></i>
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd1">
-                                                    <a class="dropdown-item" href="#">Insert</a>
-                                                    <a class="dropdown-item" href="#">Update</a>
-                                                    <a class="dropdown-item" href="#">Delete</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table no-wrap v-middle mb-0">
-                                            <thead>
-                                                <tr class="border-0">
-                                                    <th class="border-0 font-14 font-weight-medium text-muted">Applicant</th>
-                                                    <th class="border-0 font-14 font-weight-medium text-muted px-2">Job
-                                                    </th>
-                                                    <th class="border-0 font-14 font-weight-medium text-muted">Interviewer</th>
-                                                    <th class="border-0 font-14 font-weight-medium text-muted text-center">Status</th>
-                                                    <th class="border-0 font-14 font-weight-medium text-muted text-center">Schedule</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="border-top-0 px-2 py-4">
-                                                        <div class="d-flex no-block align-items-center">
-                                                            <div class="">
-                                                                <h5 class="text-dark mb-0 font-16 font-weight-medium">Hanna
-                                                                    Gover</h5>
-                                                                <span class="text-muted font-14">hgover@gmail.com</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="border-top-0 text-muted px-2 py-4 font-14">Designer</td>
-                                                    <td class="border-top-0 text-muted px-2 py-4 font-14">Juan Dela Cruz</td>
-                                                    <td class="font-weight-medium text-dark border-top-0 px-2 py-4">complete</td>
-                                                    <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">Face-to-Face Interview</td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                    <td class="border-top-0 px-2 py-4">
-                                                        <div class="d-flex no-block align-items-center">
-                                                            <div class="">
-                                                                <h5 class="text-dark mb-0 font-16 font-weight-medium">JulianJosephs</h5>
-                                                                <span class="text-muted font-14">Josephs@gmail.com</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="border-top-0 text-muted px-2 py-4 font-14">Janitor</td>
-                                                    <td class="border-top-0 text-muted px-2 py-4 font-14">Philip Jacque</td>
-                                                    <td class="font-weight-medium text-dark border-top-0 px-2 py-4">upcoming</td>
-                                                    <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">Face-to-Face Interview</td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                    <td class="border-top-0 px-2 py-4">
-                                                        <div class="d-flex no-block align-items-center">
-                                                            <div class="">
-                                                                <h5 class="text-dark mb-0 font-16 font-weight-medium">JanPetrovic</h5>
-                                                                <span class="text-muted font-14">Jpet@gmail.com</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="border-top-0 text-muted px-2 py-4 font-14">Assistant</td>
-                                                    <td class="border-top-0 text-muted px-2 py-4 font-14">Jen Gomez</td>
-                                                    <td class="font-weight-medium text-dark border-top-0 px-2 py-4">upcoming</td>
-                                                    <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">Telephonic Interview</td> 
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card board1 fill3 ">
+                  <div class="card-body">
+                    <div class="card_widget_header">
+                      <label>Leaves</label>
+                      <h4>9</h4>
+                    </div>
+                    <div class="card_widget_img">
+                      <img src="img/dashboard/dash3.png" alt="card-img" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card board1 fill4 ">
+                  <div class="card-body">
+                    <div class="card_widget_header">
+                      <label>Applicants</label>
+                      <h4>200</h4>
+                    </div>
+                    <div class="card_widget_img">
+                      <img src="img/dashboard/dash4.png" alt="card-img" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-12">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Active LGU Employees</h4>
+                  <div class="mt-2" style="height:283px; width:100%;">
+                    <canvas class="donutChart"></canvas>
+                  </div>
+                  <ul class="list-style-none mb-0">
+                    <li class="mt-3">
+                      <i class="fas fa-circle text-danger font-10 me-2"></i>
+                      <span class="text-muted">Permanent</span>
+                      <span class="text-dark float-end font-weight-medium"></span>
+                    </li>
+                    <li>
+                      <i class="fas fa-circle text-primary font-10 me-2"></i>
+                      <span class="text-muted">Job Order</span>
+                      <span class="text-dark float-end font-weight-medium"></span>
+                    </li>
+                    <li>
+                      <i class="fas fa-circle text-primary font-10 me-2"></i>
+                      <span class="text-muted">Part-time</span>
+                      <span class="text-dark float-end font-weight-medium"></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-8">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-start">
+                    <h4 class="card-title mb-0">Attendance</h4>
+                  </div>
+                  <div class="pl-4 mb-5">
+                    <div class="stats ct-charts position-relative" style="height: 315px;">
+
+                    </div>
+                  </div>
+                  <ul class="list-inline text-center mt-4 mb-0">
+                    <li class="list-inline-item text-muted fst-italic">Attendance for this Month</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-lg-8">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-4">
+                    <h4 class="card-title">Rewards</h4>
+                    <div class="ms-auto">
+                      <div class="dropdown sub-dropdown">
+                        <button class="btn btn-link text-muted dropdown-toggle" type="button" id="dd1"
+                          data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i data-feather="more-vertical"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd1">
+                          <a class="dropdown-item" href="#">Insert</a>
+                          <a class="dropdown-item" href="#">Update</a>
+                          <a class="dropdown-item" href="#">Delete</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table no-wrap v-middle mb-0">
+                      <thead>
+                        <tr class="border-0">
+                          <th class="border-0 font-14 font-weight-medium text-muted">Category
+                          </th>
+                          <th class="border-0 font-14 font-weight-medium text-muted px-2">To
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="border-top-0 px-2 py-4">
+                            <div class="d-flex no-block align-items-center">
+                              <div class="">
+                                <h5 class="text-dark mb-0 font-14 font-weight-medium">Best Office Award</h5>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="border-top-0 text-muted px-2 py-4 font-14">MAO</td>
+                        </tr>
+                        <tr>
+                          <td class="border-top-0 px-2 py-4">
+                            <div class="d-flex no-block align-items-center">
+                              <div class="">
+                                <h5 class="text-dark mb-0 font-14 font-weight-medium">Best Employee Award</h5>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="border-top-0 text-muted px-2 py-4 font-14">Juan Dela Cruz</td>
+                        </tr>
+                        <tr>
+                          <td class="border-top-0 px-2 py-4">
+                            <div class="d-flex no-block align-items-center">
+                              <div class="">
+                                <h5 class="text-dark mb-0 font-14 font-weight-medium">Regional Award</h5>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="border-top-0 text-muted px-2 py-4 font-14">LGU</td>
+                        </tr>
+                        <tr>
+                          <td class="border-top-0 px-2 py-4">
+                            <div class="d-flex no-block align-items-center">
+                              <div class="">
+                                <h5 class="text-dark mb-0 font-14 font-weight-medium">Punctual Award</h5>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="border-top-0 text-muted px-2 py-4 font-14">John Doe</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Upcoming Activities</h4>
+                  <div class="mt-4 activity">
+                    <div class="d-flex align-items-start border-left-line pb-3">
+                      <div>
+                        <a href="javascript:void(0)" class="btn btn-info btn-circle mb-2 btn-item">
+                          <i data-feather="shopping-cart"></i>
+                        </a>
+                      </div>
+                      <div class="ms-3 mt-2">
+                        <h5 class="text-dark font-weight-medium mb-2">Team Building</h5>
+                        <p class="font-14 mb-2 text-muted">All employees of MAO are invovled<br> Cannon 5M
+                          Camera.
+                        </p>
+                        <span class="font-weight-light font-14 text-muted">10/10/2023</span>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-start border-left-line pb-3">
+                      <div>
+                        <a href="javascript:void(0)" class="btn btn-danger btn-circle mb-2 btn-item">
+                          <i data-feather="message-square"></i>
+                        </a>
+                      </div>
+                      <div class="ms-3 mt-2">
+                        <h5 class="text-dark font-weight-medium mb-2">Seminar</h5>
+                        <p class="font-14 mb-2 text-muted">For all MTPSO employee<br>
+                          ticket</p>
+                        <span class="font-weight-light font-14 text-muted">06/10/2023</span>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-start border-left-line">
+                      <div>
+                        <a href="javascript:void(0)" class="btn btn-cyan btn-circle mb-2 btn-item">
+                          <i data-feather="bell"></i>
+                        </a>
+                      </div>
+                      <div class="ms-3 mt-2">
+                        <h5 class="text-dark font-weight-medium mb-2">Soft-Skill Development</h5>
+                        <p class="font-14 mb-2 text-muted">MHO are the participant of this event</p>
+                        <span class="font-weight-light font-14 mb-1 d-block text-muted">08/01/2023</span>
+                        <a href="javascript:void(0)" class="font-14 border-bottom pb-1 border-info">Load More</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-4">
+                    <h4 class="card-title">Interviews</h4>
+                    <div class="ms-auto">
+                      <div class="dropdown sub-dropdown">
+                        <button class="btn btn-link text-muted dropdown-toggle" type="button" id="dd1"
+                          data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i data-feather="more-vertical"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd1">
+                          <a class="dropdown-item" href="#">Insert</a>
+                          <a class="dropdown-item" href="#">Update</a>
+                          <a class="dropdown-item" href="#">Delete</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table no-wrap v-middle mb-0">
+                      <thead>
+                        <tr class="border-0">
+                          <th class="border-0 font-14 font-weight-medium text-muted">Applicant</th>
+                          <th class="border-0 font-14 font-weight-medium text-muted px-2">Job
+                          </th>
+                          <th class="border-0 font-14 font-weight-medium text-muted">Interviewer</th>
+                          <th class="border-0 font-14 font-weight-medium text-muted text-center">Status</th>
+                          <th class="border-0 font-14 font-weight-medium text-muted text-center">Schedule</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="border-top-0 px-2 py-4">
+                            <div class="d-flex no-block align-items-center">
+                              <div class="">
+                                <h5 class="text-dark mb-0 font-16 font-weight-medium">Hanna
+                                  Gover</h5>
+                                <span class="text-muted font-14">hgover@gmail.com</span>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="border-top-0 text-muted px-2 py-4 font-14">Designer</td>
+                          <td class="border-top-0 text-muted px-2 py-4 font-14">Juan Dela Cruz</td>
+                          <td class="font-weight-medium text-dark border-top-0 px-2 py-4">complete</td>
+                          <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">Face-to-Face
+                            Interview</td>
+
+                        </tr>
+                        <tr>
+                          <td class="border-top-0 px-2 py-4">
+                            <div class="d-flex no-block align-items-center">
+                              <div class="">
+                                <h5 class="text-dark mb-0 font-16 font-weight-medium">JulianJosephs</h5>
+                                <span class="text-muted font-14">Josephs@gmail.com</span>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="border-top-0 text-muted px-2 py-4 font-14">Janitor</td>
+                          <td class="border-top-0 text-muted px-2 py-4 font-14">Philip Jacque</td>
+                          <td class="font-weight-medium text-dark border-top-0 px-2 py-4">upcoming</td>
+                          <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">Face-to-Face
+                            Interview</td>
+
+                        </tr>
+                        <tr>
+                          <td class="border-top-0 px-2 py-4">
+                            <div class="d-flex no-block align-items-center">
+                              <div class="">
+                                <h5 class="text-dark mb-0 font-16 font-weight-medium">JanPetrovic</h5>
+                                <span class="text-muted font-14">Jpet@gmail.com</span>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="border-top-0 text-muted px-2 py-4 font-14">Assistant</td>
+                          <td class="border-top-0 text-muted px-2 py-4 font-14">Jen Gomez</td>
+                          <td class="font-weight-medium text-dark border-top-0 px-2 py-4">upcoming</td>
+                          <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">Telephonic
+                            Interview</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-       
-            <!--END YOUR CONTENT-->
+
+    <!--END YOUR CONTENT-->
 
   </main><!-- End #main -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -684,17 +686,17 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-   
 
 
-        <!-- JavaScript -->
-        <script src="js/admin-chart.js"></script>
-    
-        <!-- Database Javascript -->  
-        <script src="bundles/auth.bundle.js"></script>   
-        <script src="bundles/applicant_registry.bundle.js"></script>   
-        <script src="bundles/navbar.bundle.js"></script>
-           
-    </body>
+
+  <!-- JavaScript -->
+  <script src="js/admin-chart.js"></script>
+
+  <!-- Database Javascript -->
+  <script src="bundles/auth.bundle.js"></script>
+  <script src="bundles/applicant_registry.bundle.js"></script>
+  <script src="bundles/navbar.bundle.js"></script>
+
+</body>
 
 </html>

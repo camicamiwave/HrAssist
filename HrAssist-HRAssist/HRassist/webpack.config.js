@@ -25,7 +25,8 @@ module.exports = {
         file201: './src/201file.js',
         fetch_employee_info: './src/fetch_employee_info.js',
         employee_attachments: './src/employee_attachments.js',
-        employee_leavecredit: './src/employee_leavecredit.js'
+        employee_leavecredit: './src/employee_leavecredit.js',
+        signout_account: './src/signout_account.js'
         
     },
     output: {

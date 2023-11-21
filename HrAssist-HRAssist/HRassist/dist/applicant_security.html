@@ -65,9 +65,10 @@
     <div class="container-xl px-4 mt-4">
         <!-- Account page navigation-->
         <nav class="nav nav-borders">
-        <a class="nav-link  ms-0" href="profile.html" target="__blank">Profile</a>
-        <a class="nav-link" href="applicant_pending.html" target="__blank">Status</a>
-        <a class="nav-link active" href="applicant_security.html" target="__blank">Security</a>
+            <a class="nav-link  active" id="profileTab">Profile</a>
+            <a class="nav-link" id="statusTab">Status</a>
+            <a class="nav-link" id="securityTab">Security</a>
+
         
         </nav>
         <hr class="mt-0 mb-4">
@@ -79,22 +80,7 @@
                     <div class="card-body">
                         <p>Reset your password by following the instructions sent to your email.</p>
                         <button class="btn btn-primary" id="resetbtn" type="button">Reset Password</button>
-                        <!--
-                        <form> 
-                            <div class="mb-3">
-                                <label class="small mb-1" for="currentPassword">Current Password</label>
-                                <input class="form-control" id="currentPassword" type="password" placeholder="Enter current password">
-                            </div> 
-                            <div class="mb-3">
-                                <label class="small mb-1" for="newPassword">New Password</label>
-                                <input class="form-control" id="newPassword" type="password" placeholder="Enter new password">
-                            </div> 
-                            <div class="mb-3">
-                                <label class="small mb-1" for="confirmPassword">Confirm Password</label>
-                                <input class="form-control" id="confirmPassword" type="password" placeholder="Confirm new password">
-                            </div>
-                            <button class="btn btn-primary" id="resetbtn" type="button">Save</button>
-                        </form>-->
+                        
                     </div>
                 </div>
                 <!-- Security preferences card-->

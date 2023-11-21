@@ -32,6 +32,7 @@ const storage = getStorage(app);
 
 const urlParams = new URLSearchParams(window.location.search);
 const receivedStringData = urlParams.get('data');
+const receivedString201File = urlParams.get('201filedoc');
 
 export function Employee201Attachment() {
     try {
@@ -80,15 +81,25 @@ export function Employee201Attachment() {
                             };
 
                             const EmployeecolRef = collection(db, '201File Information');
-                            const employeeDocRef = doc(EmployeecolRef, receivedStringData);
+                            const employeeDocRef = doc(EmployeecolRef, receivedString201File);
 
                             // Use setDoc to set the data in the document
                             setDoc(employeeDocRef, attachmentsData, { merge: true });
                         })
                         .then(() => {
                             console.log("Attachments added successfully...");
+                            Swal.fire({
+                                position: "center",
+                                icon: "success",
+                                title: "Your work has been saved",
+                                showConfirmButton: false,
+                                timer: 1500
+                              });
                             // Optionally, perform additional actions after attachments are added
-                            window.location.href = `201file_leave.html?data=${encodeURIComponent(receivedStringData)}`;
+                            //window.location.href = `201file_leave.html?data=${encodeURIComponent(receivedStringData)}`;
+                        }).then(() => {
+                            //window.location.href = `201file_leave.html?data=${encodeURIComponent(receivedStringData)}&201filedoc=${encodeURIComponent(receivedString201File)}`;
+
                         })
                         .catch((error) => {
                             console.error("Error adding attachments:", error);
@@ -106,14 +117,14 @@ export function Employee201Attachment() {
 
 window.addEventListener('load', Employee201Attachment);
 
-export function fetchEmployee201Attachment() {
+export function fetchEmployee201Attachment() { 
     try {
         // get the current employee data
         const EmployeecolRef = collection(db, '201File Information');
 
-        console.log("Retrieved Leave ID:", receivedStringData);
+        console.log("Retrieved Leave ID:", receivedString201File);
 
-        fetchEmployeeInfo(EmployeecolRef, receivedStringData, "documentID").then((dataRetrieved) => {
+        fetchEmployeeInfo(EmployeecolRef, receivedString201File, "documentID").then((dataRetrieved) => {
             const attachmentData = dataRetrieved.AttachmentURLs;
 
             console.log(attachmentData, 'aet');
@@ -135,8 +146,8 @@ export function fetchEmployee201Attachment() {
 
                     // Set values for each cell
                     cell1.innerHTML = num; // You can set an ID or index here
-                    cell2.innerHTML = `<a href='${attachmentData[index]}'>Docs${num}</a>`;
-                    cell3.innerHTML = '<button onclick="performAction()">Action</button>';
+                    cell2.innerHTML = `<a href='${attachmentData[index]}' style='width: 60%; text-align: center'>Docs${num}</a>`;
+                    cell3.innerHTML = '<button onclick="performAction()" style="width: 30%; text-align: center">Action</button>';
                 }
                 num++;
             }

@@ -146,14 +146,14 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile.png" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Juan Luna</span>
+            <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Juan Garcia</h6>
-              <span>Employee</span>
+              <h6 id="hoverUserName">Juan Garcia</h6>
+              <span id="userLevel">Employee</span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -341,9 +341,10 @@
                             <header>Job Details</header>
                             <div class="content">
                               <form id="jobForm">
+                                <!--
                                 <div class="input-file">
                                     <span class="details">Upload the Logo of Office:</span>
-                                    <!--<input type="file" placeholder="Enter Location" id="inputJobLogo">-->
+                                    <input type="file" placeholder="Enter Location" id="inputJobLogo">
                                     <figure class="image-container">
                                         <img id="chosen-image">
                                         <figcaption id="file-name"></figcaption>
@@ -353,7 +354,37 @@
                                     <upload for="upload-button">
                                         <i class="fas fa-upload"></i> &nbsp; Choose A Photo
                                     </upload>
+                                    <img src=""/>
+                                    <input type="file" placeholder="Enter Location" id="inputJobLogo">
+                                </div>-->
+                                <div class="input-file">
+                                  <span class="details">Upload the Logo of Office:</span>
+                                  <div class="form-element">
+                                    <input type="file" id="file-1" accept="image/*">
+                                    <label for="file-1" id="file-1-preview">
+                                      <img src="https://bit.ly/3ubuq5o" alt="">
+                                      <div>
+                                        <span>+</span>
+                                      </div>
+                                    </label>
+                                    <script>
+                                      function previewBeforeUpload(id){
+                                        document.querySelector("#"+id).addEventListener("change",function(e){
+                                          if(e.target.files.length == 0){
+                                            return;
+                                          }
+                                          let file = e.target.files[0];
+                                          let url = URL.createObjectURL(file);
+                                          document.querySelector("#"+id+"-preview div").innerText = file.name;
+                                          document.querySelector("#"+id+"-preview img").src = url;
+                                        });
+                                      }
+  
+                                      previewBeforeUpload("file-1");
+                                    </script>
+                                  </div>
                                 </div>
+                                
                                 <div class="user-details">
                                     <div class="input-box">
                                         <span class="details">Job Title</span>

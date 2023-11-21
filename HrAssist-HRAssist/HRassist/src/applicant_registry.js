@@ -158,7 +158,7 @@ export function FetchApplicantProfile() {
         const fullName = personalInfo.FirstName + " " + personalInfo.LastName
 
         const applicantProfile = document.getElementById('applicantProfilePic');
-        const newProfilePicUrl = data.ApplicantProfilePicture;
+        const newProfilePicUrl = data.ProfilePicURL;
 
         // Change the src attribute
         applicantProfile.src = newProfilePicUrl;
@@ -196,9 +196,24 @@ export function FetchApplicantProfile() {
         const phoneNum = document.getElementById('inputPhone');
         phoneNum.value = personalInfo.Phone;
 
-        const birthday = document.getElementById('inputEmail');
-        birthday.value = personalInfo.Email;
+        const inputEmailAddress = document.getElementById('inputEmailAddress');
+        inputEmailAddress.value = personalInfo.Email;
 
+
+        try {
+          const inputApplicantStatus = document.getElementById('ApplicantStatus');
+          const inputJobApply = document.getElementById('JobApply');
+          const inputdateSubmitted = document.getElementById('dateSubmitted');
+          const inputMessage = document.getElementById('Message');
+
+          inputApplicantStatus.value = data.ApplicantStatus;
+          inputJobApply.value = "";
+          inputdateSubmitted.value = data.createdAt;
+          inputMessage.value = data.personalInfo.Message;
+
+        } catch {
+
+        }
 
       });
 
@@ -536,3 +551,47 @@ export function FetchApplicationStatus() {
 }
 
 window.addEventListener('load', FetchApplicationStatus)
+
+
+
+export function TabNavigator() {
+
+  try{
+    const profileTab = document.getElementById('profileTab');
+    if (profileTab){
+  
+      profileTab.addEventListener('click', (e) => { 
+        window.location.href = `profile.html`;
+      })
+    }  
+  } catch {
+    console.log("Not profile")
+  }
+
+  try{
+    const statusTab = document.getElementById('statusTab');
+    
+    statusTab.addEventListener('click', (e) => { 
+      window.location.href = `applicant_status.html`;
+    })
+
+  } catch {
+    console.log("Not status Tab")
+  }
+  
+  try {
+    const securityTab = document.getElementById('securityTab');
+    if (securityTab) {
+      securityTab.addEventListener('click', (e) => { 
+        window.location.href = `applicant_security.html`;
+      })
+    }
+    
+  } catch {
+    console.log("Not securit Tab")
+  }
+
+  
+}
+
+window.addEventListener('load', TabNavigator)

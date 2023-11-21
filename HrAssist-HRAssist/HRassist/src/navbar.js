@@ -30,6 +30,30 @@ const auth = getAuth();
 
 const storage = getStorage(app);
 
+
+export function Signout() {
+  //const userInfoDisplay = document.getElementById('user-info');
+  const navbar_signout_btn = document.getElementById('navbar_signout_btn'); 
+
+  if (navbar_signout_btn){
+    // Add an event listener for the Sign Out button
+    navbar_signout_btn.addEventListener('click', () => {
+      signOut(auth)
+        .then(() => {
+          //userInfoDisplay.innerHTML = 'Signed out';
+          console.log("Sign out")
+          window.location.href = 'login.html'
+        })
+        .catch((error) => {
+          console.error('Sign-out error:', error);
+        });
+    });
+  }
+}
+
+
+window.addEventListener('load', Signout)
+
 export function FetchCurrentUser() {
     return new Promise((resolve, reject) => {
       // Listen for changes in authentication state
@@ -59,6 +83,8 @@ export function FetchNavbarProfile() {
         snapshot.docs.forEach((doc) => {
           const data = doc.data();
           const id = doc.id;
+
+          const adminPersonalInfo = data.Personal_Information;
           
           const AccountInfo = data.Account_Information;
 
@@ -66,6 +92,14 @@ export function FetchNavbarProfile() {
           const newImageUrl = AccountInfo.ProfilePictureURL;
 
           navbarProfPic.src = newImageUrl;
+
+          const navbarUserName = document.getElementById('navbarUserName');
+          const hoverUserName = document.getElementById('hoverUserName');
+          const userLevel = document.getElementById('userLevel');
+
+          navbarUserName.innerHTML = adminPersonalInfo.FirstName
+          hoverUserName.innerHTML = adminPersonalInfo.FirstName
+          userLevel.innerHTML = data.UserLevel
   
         });
   
@@ -73,4 +107,6 @@ export function FetchNavbarProfile() {
     });
   }
   
-  window.addEventListener('load', FetchNavbarProfile)
+window.addEventListener('load', FetchNavbarProfile)
+
+  

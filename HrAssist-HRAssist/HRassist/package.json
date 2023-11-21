@@ -27,7 +27,8 @@
     "file201": "node 201file.js",
     "fetch_employee_info": "node fetch_employee_info.js",
     "employee_attachments": "node employee_attachments.js",
-    "employee_leavecredit": "node employee_leavecredit.js"
+    "employee_leavecredit": "node employee_leavecredit.js",
+    "signout_account": "node signout_account.js"
   },
   "keywords": [],
   "author": "",
