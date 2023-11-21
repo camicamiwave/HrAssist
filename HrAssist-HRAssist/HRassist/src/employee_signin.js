@@ -115,7 +115,7 @@ function TestAccountCreation() {
                                 alert("Congratulations, you've confirmed your identity. You can now add other employee's information");
 
 
-                                window.location.href = `datasheet.html?data=${encodeURIComponent(NewdocRef)}`;
+                                window.location.href = `admin_201file_pds.html?data=${encodeURIComponent(NewdocRef)}`;
                             } catch (error) {
                                 console.error('Error creating new user:', error.message);
                                 Swal.fire({

@@ -30,7 +30,7 @@ const auth = getAuth();
 
 const storage = getStorage(app);
 
-export function ButtonNavigtor201File(customDocId) {
+export function ButtonNavigtor201File(customDocId, received201File) {
     const AccountBtn = document.getElementById('AccountBtn');
     const PersonalInfoBtn = document.getElementById('PersonalInfoBtn');
     const AppointmentBtn = document.getElementById('AppointmentBtn');
@@ -39,34 +39,34 @@ export function ButtonNavigtor201File(customDocId) {
 
     AccountBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        confirmAction("AccountBtn", customDocId)
+        confirmAction("AccountBtn", customDocId, received201File)
     })
 
     PersonalInfoBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        confirmAction("PersonalInfoBtn", customDocId)
+        confirmAction("PersonalInfoBtn", customDocId, received201File)
     })
 
     AppointmentBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        confirmAction("AppointmentBtn", customDocId)
+        confirmAction("AppointmentBtn", customDocId, received201File)
     })
 
     AttachmentBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        confirmAction("AttachmentBtn", customDocId)
+        confirmAction("AttachmentBtn", customDocId, received201File)
     })
 
     LeaveCreditBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        confirmAction("LeaveCreditBtn", customDocId)
+        confirmAction("LeaveCreditBtn", customDocId, received201File)
     })
 }
 
 
 
 // method for checking if the user wants to go to other pages
-function confirmAction(category, documentID) {
+function confirmAction(category, documentID, received201File) {
     Swal.fire({
         title: "Are you sure?",
         text: `Your changes will be lost. Do you want to proceed?`,
@@ -81,22 +81,27 @@ function confirmAction(category, documentID) {
             switch (category) {
                 case 'AccountBtn':
                     //window.location.href = "datasheet.html";
-                    window.location.href = `admin_201file_account.html?data=${encodeURIComponent(documentID)}`;
+                    //window.location.href = `admin_201file_account.html?data=${encodeURIComponent(documentID)}`;
+                    window.location.href = `admin_201file_account.html?data=${encodeURIComponent(documentID)}&201filedoc=${encodeURIComponent(received201File)}`;
                     break;
                 case 'PersonalInfoBtn':
-                    window.location.href = `admin_201file_pds.html?data=${encodeURIComponent(documentID)}`;
+                    //window.location.href = `admin_201file_pds.html?data=${encodeURIComponent(documentID)}`;
+                    window.location.href = `admin_201file_pds.html?data=${encodeURIComponent(documentID)}&201filedoc=${encodeURIComponent(received201File)}`;
                     break;
                 case 'AppointmentBtn':
                     //window.location.href = "OtherInfo-201file.html";
-                    window.location.href = `admin_201file_appointment.html?data=${encodeURIComponent(documentID)}`;
+                    //window.location.href = `admin_201file_appointment.html?data=${encodeURIComponent(documentID)}`;
+                    window.location.href = `admin_201file_appointment.html?data=${encodeURIComponent(documentID)}&201filedoc=${encodeURIComponent(received201File)}`;
                     break;
                 case 'AttachmentBtn':
                     //window.location.href = "signature-201file.html";
-                    window.location.href = `admin_201file_attachments.html?data=${encodeURIComponent(documentID)}`;
+                    //window.location.href = `admin_201file_attachments.html?data=${encodeURIComponent(documentID)}`;
+                    window.location.href = `admin_201file_attachments.html?data=${encodeURIComponent(documentID)}&201filedoc=${encodeURIComponent(received201File)}`;
                     break;
                 case 'LeaveCreditBtn':
                     //window.location.href = "signature-201file.html";
-                    window.location.href = `admin_201file_leave.html?data=${encodeURIComponent(documentID)}`;
+                    //window.location.href = `admin_201file_leave.html?data=${encodeURIComponent(documentID)}`;
+                    window.location.href = `admin_201file_leave.html?data=${encodeURIComponent(documentID)}&201filedoc=${encodeURIComponent(received201File)}`;
                     break;
                 default:
                     break;
@@ -109,10 +114,11 @@ function URLDataRetriever() {
     return new Promise((resolve, reject) => {
         const urlParams = new URLSearchParams(window.location.search);
         const receivedStringData = urlParams.get('data');
+        const received201File = urlParams.get('201filedoc');
 
         if (receivedStringData) {
             // Trigger to send document id when it was called
-            ButtonNavigtor201File(receivedStringData);
+            ButtonNavigtor201File(receivedStringData, received201File);
 
             // Resolve the promise with the received string data
             resolve(receivedStringData);

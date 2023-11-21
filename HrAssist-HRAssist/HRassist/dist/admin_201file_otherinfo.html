@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>OtherInfo-201file</title>
+    <title>Employee-DataSheet</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -27,15 +27,16 @@
     <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
     <!-- Template Main CSS File -->
     <link href="css/datasheet.css" rel="stylesheet">
     <link href="css/employee-template.css" rel="stylesheet">
 
-    <!--START-->
-
-
-
-    <!--END-->
+    
 
 
 </head>
@@ -44,168 +45,168 @@
 
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
-
         <div class="d-flex align-items-center justify-content-between">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <!--<img src="img/hrmis.png" alt="" width="50" height="10"> -->
-            <span class="d-none d-lg-block">HRAssist</span>
-  
-          </a>
-          <i class="bi bi-list toggle-sidebar-btn"></i>
+            <a href="index.html" class="logo d-flex align-items-center">
+                <!--<img src="img/hrmis.png" alt="" width="50" height="10"> -->
+                <span class="d-none d-lg-block">HRAssist</span>
+    
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
   
         <div class="search-bar">
-          <form class="search-form d-flex align-items-center" method="POST" action="#">
-            <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-            <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-          </form>
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
         </div><!-- End Search Bar -->
   
         <nav class="header-nav ms-auto">
-          <ul class="d-flex align-items-center">
+            <ul class="d-flex align-items-center">
   
-            <li class="nav-item d-block d-lg-none">
-              <a class="nav-link nav-icon search-bar-toggle " href="#">
-                <i class="bi bi-search"></i>
-              </a>
-            </li><!-- End Search Icon-->
-  
-            <li class="nav-item dropdown">
-  
-              <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                <i class="bi bi-bell"></i>
-                <span class="badge bg-primary badge-number">4</span>
-              </a><!-- End Notification Icon -->
-  
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-                <li class="dropdown-header">
-                  You have 4 new notifications
-                  <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-  
-                <li class="notification-item">
-                  <i class="bi bi-exclamation-circle text-warning"></i>
-                  <div>
-                    <h4>Lorem Ipsum</h4>
-                    <p>Quae dolorem earum veritatis oditseno</p>
-                    <p>30 min. ago</p>
-                  </div>
-                </li>
-  
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-  
-                <li class="notification-item">
-                  <i class="bi bi-x-circle text-danger"></i>
-                  <div>
-                    <h4>Atque rerum nesciunt</h4>
-                    <p>Quae dolorem earum veritatis oditseno</p>
-                    <p>1 hr. ago</p>
-                  </div>
-                </li>
-  
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-  
-                <li class="notification-item">
-                  <i class="bi bi-check-circle text-success"></i>
-                  <div>
-                    <h4>Sit rerum fuga</h4>
-                    <p>Quae dolorem earum veritatis oditseno</p>
-                    <p>2 hrs. ago</p>
-                  </div>
-                </li>
-  
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-  
-                <li class="notification-item">
-                  <i class="bi bi-info-circle text-primary"></i>
-                  <div>
-                    <h4>Dicta reprehenderit</h4>
-                    <p>Quae dolorem earum veritatis oditseno</p>
-                    <p>4 hrs. ago</p>
-                  </div>
-                </li>
-  
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li class="dropdown-footer">
-                  <a href="#">Show all notifications</a>
-                </li>
-  
-              </ul><!-- End Notification Dropdown Items -->
-  
-            </li><!-- End Notification Nav -->
-  
-  
-            <li class="nav-item dropdown pe-3">
-  
-                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
-                    <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
-                  </a><!-- End Profile Iamge Icon -->
-        
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li><!-- End Search Icon-->
+    
+                <li class="nav-item dropdown">
+    
+                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                    <i class="bi bi-bell"></i>
+                    <span class="badge bg-primary badge-number">4</span>
+                </a><!-- End Notification Icon -->
+    
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                     <li class="dropdown-header">
-                      <h6 id="hoverUserName">Juan Garcia</h6>
-                      <span id="userLevel">Employee</span>
+                    You have 4 new notifications
+                    <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
                     </li>
                     <li>
-                      <hr class="dropdown-divider">
+                    <hr class="dropdown-divider">
                     </li>
+    
+                    <li class="notification-item">
+                    <i class="bi bi-exclamation-circle text-warning"></i>
+                    <div>
+                        <h4>Lorem Ipsum</h4>
+                        <p>Quae dolorem earum veritatis oditseno</p>
+                        <p>30 min. ago</p>
+                    </div>
+                    </li>
+    
+                    <li>
+                    <hr class="dropdown-divider">
+                    </li>
+    
+                    <li class="notification-item">
+                    <i class="bi bi-x-circle text-danger"></i>
+                    <div>
+                        <h4>Atque rerum nesciunt</h4>
+                        <p>Quae dolorem earum veritatis oditseno</p>
+                        <p>1 hr. ago</p>
+                    </div>
+                    </li>
+    
+                    <li>
+                    <hr class="dropdown-divider">
+                    </li>
+    
+                    <li class="notification-item">
+                    <i class="bi bi-check-circle text-success"></i>
+                    <div>
+                        <h4>Sit rerum fuga</h4>
+                        <p>Quae dolorem earum veritatis oditseno</p>
+                        <p>2 hrs. ago</p>
+                    </div>
+                    </li>
+    
+                    <li>
+                    <hr class="dropdown-divider">
+                    </li>
+    
+                    <li class="notification-item">
+                    <i class="bi bi-info-circle text-primary"></i>
+                    <div>
+                        <h4>Dicta reprehenderit</h4>
+                        <p>Quae dolorem earum veritatis oditseno</p>
+                        <p>4 hrs. ago</p>
+                    </div>
+                    </li>
+    
+                    <li>
+                    <hr class="dropdown-divider">
+                    </li>
+                    <li class="dropdown-footer">
+                    <a href="#">Show all notifications</a>
+                    </li>
+    
+                </ul><!-- End Notification Dropdown Items -->
+    
+                </li><!-- End Notification Nav -->
+    
+    
+                <li class="nav-item dropdown pe-3">
+    
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
+                      </a><!-- End Profile Iamge Icon -->
+            
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                          <h6 id="hoverUserName">Juan Garcia</h6>
+                          <span id="userLevel">Employee</span>
+                        </li>
+                        <li>
+                          <hr class="dropdown-divider">
+                        </li>
+    
+                    <li>
+                    <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                        <i class="bi bi-person"></i>
+                        <span>My Profile</span>
+                    </a>
+                    </li>
+                    <li>
+                    <hr class="dropdown-divider">
+                    </li>
+    
+                    <li>
+                    <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                        <i class="bi bi-gear"></i>
+                        <span>Account Settings</span>
+                    </a>
+                    </li>
+                    <li>
+                    <hr class="dropdown-divider">
+                    </li>
+    
+                    <li>
+                    <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                        <i class="bi bi-question-circle"></i>
+                        <span>Need Help?</span>
+                    </a>
+                    </li>
+                    <li>
+                    <hr class="dropdown-divider">
+                    </li>
+    
+                    <li>
+                    <a class="dropdown-item d-flex align-items-center" id="navbar_signout_btn">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span>Sign Out</span>
+                    </a>
+                    </li>
+    
+                </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
   
-                <li>
-                  <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                    <i class="bi bi-person"></i>
-                    <span>My Profile</span>
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-  
-                <li>
-                  <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                    <i class="bi bi-gear"></i>
-                    <span>Account Settings</span>
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-  
-                <li>
-                  <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                    <i class="bi bi-question-circle"></i>
-                    <span>Need Help?</span>
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-  
-                <li>
-                  <a class="dropdown-item d-flex align-items-center" href="#">
-                    <i class="bi bi-box-arrow-right"></i>
-                    <span>Sign Out</span>
-                  </a>
-                </li>
-  
-              </ul><!-- End Profile Dropdown Items -->
-            </li><!-- End Profile Nav -->
-  
-          </ul>
+            </ul>
+
         </nav><!-- End Icons Navigation -->
   
-      </header><!-- End Header -->
+    </header><!-- End Header -->
   
         <!-- ======= Sidebar ======= -->
       <aside id="sidebar" class="sidebar">
@@ -221,7 +222,7 @@
   
   
         <li class="nav-item">
-        </li><!-- End Components Nav -->
+            </li><!-- End Components Nav -->
           <li class="nav-item">
             <a class="nav-link collapsed" href="admin_accounts_view.html">
               <i class="bx bxs-user-account"></i>
@@ -319,6 +320,7 @@
 
     <main id="main">
 
+    
         <!-- ======= Breadcrumbs ======= -->
         <section class="breadcrumbs">
 
@@ -1202,7 +1204,6 @@
 
         </section><!-- End Breadcrumbs -->
 
-
     </main><!-- End #main -->
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
@@ -1218,9 +1219,14 @@
 
     <!-- Template Main JS File -->
     <script src="js/datasheet.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="bundles/auth.bundle.js"></script>
-    <script src="bundles/PDS.bundle.js"></script>
+    <!--<script src="assets/js/main.js"></script>-->
+
+
+    <!-- Database JS File -->
+    <script src="bundles/auth.bundle.js"></script>   
+    <script src="bundles/PDS.bundle.js"></script>    
+    <script src="bundles/fetch_employee_info.bundle.js"></script>    
+    <script src="bundles/file201.bundle.js"></script>
 
 </body>
 

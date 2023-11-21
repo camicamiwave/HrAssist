@@ -93,7 +93,8 @@ function AddAppointmentData(){
             }).then(() => {
               //addDataSheetForm.reset();
               console.log("Added appointment successfully...");
-              window.location.href = `201file_attachments.html?data=${encodeURIComponent(EmpcustomDocId)}`;
+              window.location.href = `admin_201file_attachments.html?data=${encodeURIComponent(receivedStringData)}&201filedoc=${encodeURIComponent(EmpcustomDocId)}`;
+              
               console.log("Hello")
 
             });
@@ -122,12 +123,12 @@ export function fetchAppointmentData(){
 
   const urlParams = new URLSearchParams(window.location.search);
   const receivedStringData = urlParams.get('data');
+  const received201File = urlParams.get('201filedoc');
+
+  console.log('201file: ', received201File)
 
   try{
     fetchEmployeeInfo(File201ColRef, receivedStringData, "employeeDocID").then((dataRetrieved) => {
-      
-      console.log(dataRetrieved, 'Data mo heheheh');
-
       const data = dataRetrieved;
 
       const addDataSheetForm = document.querySelector("#employeeAppointmentForm");

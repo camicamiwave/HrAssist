@@ -28,7 +28,18 @@ const storage = getStorage(app);
 
 
 function AddApplicantForm() {
-    console.log("Heto na...")
+
+    // Get the query string from the URL
+    const queryString = window.location.search;
+
+    // Create a URLSearchParams object from the query string
+    const urlParams = new URLSearchParams(queryString);
+    // Get the values of the customDocId and id parameters
+    const jobDetailsURL = urlParams.get('id'); 
+    
+
+    console.log(jobDetailsURL, 'hello')
+    
     const JobcolRef = collection(db, 'Applicant Information');
 
     let customDocId;
@@ -58,7 +69,7 @@ function AddApplicantForm() {
             createdAt: serverTimestamp(),
             ApplicantStatus: "Pending",
             userID: userUID,
-            JobApply: "",
+            jobDetailsURL: jobDetailsURL,
             ApplicantID: applicantID,
             Personal_Information: {
                 FirstName: addApplicantForm.inputFirstName.value,
@@ -72,8 +83,7 @@ function AddApplicantForm() {
                 Phone: addApplicantForm.phone.value,
                 Email: addApplicantForm.inputemail.value,
                 Address: addApplicantForm.inputaddress.value,
-                Message: addApplicantForm.message.value,
-                Requirements: []
+                Message: addApplicantForm.message.value
             } 
         }
 
@@ -437,8 +447,6 @@ export function fetchJobDetails(){
         snapshot.docs.forEach((doc) => {
             const data = doc.data();
             const id = doc.id;
-            
-            console.log('MY ID: ', id)
 
             jobTitleText.innerHTML = data.JobTitle
             jobLocationText.innerHTML = data.JobLocation
@@ -463,11 +471,25 @@ export function fetchJobDetails(){
             jobLocationText1.innerHTML =  data.JobLocation
             jobDueDateText.innerHTML =  data.DueDate
 
+
             ApplyNowBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 console.log("hehehe")
+                
+
+                FetchCurrentUser().then((result) => {
+                    if (result !== "None") { 
+                        console.log(result)
+                        // Redirect to the new URL with the customDocId and id as query parameters
+                        window.location.href = `job_form.html?customDocId=${encodeURIComponent(data.customDocId)}&id=${id}`;
+                    } else { 
+                        window.location.href = `applicant-create.html`;
+                    }
+                });
+
+
                 // Redirect to the new URL with the customDocId and id as query parameters
-                window.location.href = `job_form.html?customDocId=${encodeURIComponent(data.customDocId)}&id=${id}`;
+                //window.location.href = `job_form.html?customDocId=${encodeURIComponent(data.customDocId)}&id=${id}`;
 
             })
 
