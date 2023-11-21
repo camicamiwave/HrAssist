@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Employee-DataSheet</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- Template Main CSS File -->
+    <link href="css/datasheet.css" rel="stylesheet">
+    <link href="css/employee-template.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <!--<img src="img/hrmis.png" alt="" width="50" height="10"> -->
+            <span class="d-none d-lg-block">HRAssist</span>
+  
+          </a>
+          <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+  
+        <div class="search-bar">
+          <form class="search-form d-flex align-items-center" method="POST" action="#">
+            <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+            <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+          </form>
+        </div><!-- End Search Bar -->
+  
+        <nav class="header-nav ms-auto">
+          <ul class="d-flex align-items-center">
+  
+            <li class="nav-item d-block d-lg-none">
+              <a class="nav-link nav-icon search-bar-toggle " href="#">
+                <i class="bi bi-search"></i>
+              </a>
+            </li><!-- End Search Icon-->
+  
+            <li class="nav-item dropdown">
+  
+              <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                <i class="bi bi-bell"></i>
+                <span class="badge bg-primary badge-number">4</span>
+              </a><!-- End Notification Icon -->
+  
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                <li class="dropdown-header">
+                  You have 4 new notifications
+                  <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+                <li class="notification-item">
+                  <i class="bi bi-exclamation-circle text-warning"></i>
+                  <div>
+                    <h4>Lorem Ipsum</h4>
+                    <p>Quae dolorem earum veritatis oditseno</p>
+                    <p>30 min. ago</p>
+                  </div>
+                </li>
+  
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+                <li class="notification-item">
+                  <i class="bi bi-x-circle text-danger"></i>
+                  <div>
+                    <h4>Atque rerum nesciunt</h4>
+                    <p>Quae dolorem earum veritatis oditseno</p>
+                    <p>1 hr. ago</p>
+                  </div>
+                </li>
+  
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+                <li class="notification-item">
+                  <i class="bi bi-check-circle text-success"></i>
+                  <div>
+                    <h4>Sit rerum fuga</h4>
+                    <p>Quae dolorem earum veritatis oditseno</p>
+                    <p>2 hrs. ago</p>
+                  </div>
+                </li>
+  
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+                <li class="notification-item">
+                  <i class="bi bi-info-circle text-primary"></i>
+                  <div>
+                    <h4>Dicta reprehenderit</h4>
+                    <p>Quae dolorem earum veritatis oditseno</p>
+                    <p>4 hrs. ago</p>
+                  </div>
+                </li>
+  
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li class="dropdown-footer">
+                  <a href="#">Show all notifications</a>
+                </li>
+  
+              </ul><!-- End Notification Dropdown Items -->
+  
+            </li><!-- End Notification Nav -->
+  
+  
+            <li class="nav-item dropdown pe-3">
+  
+              <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                <img src="assets/img/profile.png" alt="Profile" class="rounded-circle">
+                <span class="d-none d-md-block dropdown-toggle ps-2">Juan Luna</span>
+              </a><!-- End Profile Iamge Icon -->
+  
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                <li class="dropdown-header">
+                  <h6>Juan Garcia</h6>
+                  <span>Employee</span>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+                <li>
+                  <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                    <i class="bi bi-person"></i>
+                    <span>My Profile</span>
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+                <li>
+                  <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                    <i class="bi bi-gear"></i>
+                    <span>Account Settings</span>
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+                <li>
+                  <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                    <i class="bi bi-question-circle"></i>
+                    <span>Need Help?</span>
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+                <li>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Sign Out</span>
+                  </a>
+                </li>
+  
+              </ul><!-- End Profile Dropdown Items -->
+            </li><!-- End Profile Nav -->
+  
+          </ul>
+        </nav><!-- End Icons Navigation -->
+  
+      </header><!-- End Header -->
+  
+        <!-- ======= Sidebar ======= -->
+      <aside id="sidebar" class="sidebar">
+        <ul class="sidebar-nav" id="sidebar-nav">
+          <li class="nav-heading">Admin Tool</li>
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_dashboard.html">
+              <i class="bi bi-grid"></i>
+              <span>Dashboard</span>
+            </a>
+          </li><!-- End Dashboard Nav -->
+  
+  
+        <li class="nav-item">
+        </li><!-- End Components Nav -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_accounts_view.html">
+              <i class="bx bxs-user-account"></i>
+              <span>Accounts</span>
+            </a>
+          </li><!-- End Profile Page Nav -->
+  
+          <li class="nav-heading">LGU Information</li>
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin-offices.html">
+              <i class="bx bxs-buildings"></i>
+              <span>Offices</span>
+            </a>
+          </li><!-- End F.A.Q Page Nav -->
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+              <i class="bx bxs-calendar"></i>
+              <span>Calendar</span>
+            </a>
+          </li><!-- End Contact Page Nav -->
+  
+          <li class="nav-heading">Recruitment</li>
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_manage_applicant_view.html">
+              <i class="bi bi-people"></i>
+              <span>Manage Applicant</span>
+            </a><!-- End Register Page Nav -->
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
+              <i class="bx bxs-briefcase"></i>
+              <span>Job Vacancy</span>
+            </a>
+          </li><!-- End Login Page Nav -->
+  
+          <li class="nav-heading">Employee Registration</li>
+  
+          <li class="nav-item">
+            <a class="nav-link" href="admin_employee_registry_list.html">
+              <i class="bi bi-person-workspace"></i>
+              <span>Employee Registry</span>
+            </a><!-- End Register Page Nav -->
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_search_employee_view.html">
+              <i class="bi bi-search"></i>
+              <span>Search Employee</span>
+            </a>
+          </li>
+  
+          <li class="nav-heading">Employement Tools</li>
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_request.html">
+              <i class="bi bi-envelope"></i>
+              <span>Request</span>
+            </a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_rewards_view.html">
+              <i class="bi bi-gift"></i>
+              <span>Rewards</span>
+            </a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+              <i class="bi bi-folder"></i>
+              <span>Reports</span>
+            </a>
+          </li>
+  
+          <li class="nav-heading">Learning & Development</li>
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+              <i class="bx bxs-group"></i>
+              <span>Training & Seminar</span>
+            </a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_materials.html">
+              <i class="bx bxs-folder-open"></i>
+              <span>Materials</span>
+            </a>
+          </li>
+  
+        </ul>
+      </aside><!-- End Sidebar-->
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section class="breadcrumbs">
+
+            <div class="container">
+                <div class="d-flex w-100">
+                    <h1 class="mx-auto text-center custom-text-label">Employee 201 Files </h1>
+                </div>
+
+                <div class="d-flex w-100">
+                    <a type="button" id="AccountBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Account</a>
+                    <a type="button" id="PersonalInfoBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Personal Information</a>
+                    <a type="button" id="AppointmentBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Appointment</a>
+                    <a type="button" id="AttachmentBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Attachments</a>
+                    <a type="button" id="LeaveCreditBtn" class="btn btn-success flex-fill rounded-0 custom-account-btn">Leave Credits</a>
+                </div>
+
+                <div class="d-flex w-100">
+                    <h1 class="mx-auto text-center custom-text">Appointment Information</h1>
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="row">
+
+
+                    <div class="col-md-12">
+                        <div class="fb-profile-block">
+                            <div class="fb-profile-block-thumb cover-container"></div>
+                            <div class="profile-img">
+                                <a href="#" id="profileLink">
+                                    <img class="" id="applicantProfilePic" src="img/profile.png" alt="Profile Picture">
+                                </a>
+                            </div>
+
+                            <div class="profile-active">
+                                <p id="account_status_label"> </p>
+                            </div>
+                            <div class="profile-name">
+                                <h2 id="profile_name_id"></h2>
+                            </div>
+                            <div class="profile-hr">
+                                <h6 id="jobPositionTitle"></h6>
+                            </div>
+
+                            <div class="fb-profile-block-menu">
+                                <div class="block-menu">
+                                    <ul>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <!--Personal Data-->
+
+            <style>
+                .column-col{
+                    background-color: white;
+                    border-radius: 5px;
+                }
+            </style>
+            
+
+
+
+
+            <div class="container custom-container-pds mx-auto" style="width: 80%;">
+                <br>
+                <style>
+                    table{
+                        width: 80%;
+                    }
+                    td{
+                        text-align: center; 
+                        padding: 20px;
+                    } 
+                    th{
+                        text-align: center; 
+                        padding: 20px;
+                        font-weight: 700; 
+                    }
+                    h6{
+                        font-weight: 700;
+                    }
+                    
+                </style>
+
+
+                <div class="container">
+                    
+                    
+                    <div class="container">
+                        <h6>Leave Credits</h6>
+                        <br>
+                        <button type="button" id="LeaveCreditsaveBtn" name="saveBtn" class="btn btn-success submit-btn" style="width: 15%" onclick="openEditModal()">Save</button>
+                        <br>
+                      </div>
+                      
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col" style="width: 10%;"></th>
+                            <th scope="col" style="width: 20%;">Leave Type</th>
+                            <th scope="col" style="width: 20%;">Remaining Units</th>
+                            <th scope="col" class="text-center" style="width: 20%;">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody id="fileListBody">
+                          <tr>
+                            <td>1</td>
+                            <td>Vacational Leave</td>
+                            <td>15.00</td>
+                            <td><button class="btn btn-primary" onclick="openEditModal(1, 'Vacational Leave', 15.00)">Edit</button></td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Sick Leave</td>
+                            <td>15.00</td>
+                            <td><button class="btn btn-primary" onclick="openEditModal(2, 'Sick Leave', 15.00)">Edit</button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      
+                      <!-- Modal -->
+                      <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="editModalLabel">Add Leave</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <!-- Add your input fields here -->
+                              <label for="leaveType">Leave Type:</label>
+                              <input type="text" id="leaveType" class="form-control">
+                              <label for="remainingUnits">Total Units:</label>
+                              <input type="number" id="remainingUnits" class="form-control">
+                              <label for="remainingUnits">From:</label>
+                              <input type="date" id="fromLeave" class="form-control">
+                              <label for="remainingUnits">To:</label>
+                              <input type="date" id="toLeave" class="form-control">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+                      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+                      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+                      
+                      <script>
+                        function openEditModal() {
+                          // Show the modal
+                          $('#editModal').modal('show');
+                        }
+                      </script>
+
+                </div>
+            </div>
+            <br>
+            <br>
+
+
+
+
+
+            <!--
+            <div class="container custom-container-pds mx-auto" style="width: 80%;">
+                <br>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <br>
+                            <div class="card-header"><strong>I. Leave Information</strong></div>
+                            <br>
+                            <form id="LeaveCreditForm">
+                                <div class="card-body">
+                                    
+                                    <div class="row gx-3 mb-1">
+                                        
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="empInputUsername">Leave Type</label>
+                                                <select class="form-control" id="empInputUsername" type="select">
+                                                    <option value="">Select</option>
+                                                    <option value="Sick Leave">Sick Leave</option>
+                                                    <option value="Vacation Leave">Vacation Leave</option>
+                                                    <option value="Maternity Leave">Maternity Leave</option>
+                                                    <option value="Bereavement Leave">Bereavement Leave</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="previousLeaveBalance">Previous Leave Balance</label>
+                                                <input class="form-control" id="previousLeaveBalance" type="text">
+                                            </div>
+                                        </div>
+                                
+                                        <div class="col-md-6">
+                                            
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="leavecredit">Leave Credit</label>
+                                                <input class="form-control" id="leavecredit" type="text">
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="inputValue">Value</label>
+                                                <input class="form-control" id="inputValue" type="text" placeholder="Number of days">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                    
+                                    
+
+                                    <hr> 
+                                    <input type="submit" id="LeaveCreditsaveBtn" name="saveBtn"
+                                        class="btn btn-success submit-btn" value="Submit">
+
+                                    <button type="button" id="LeaveCreditsaveBtn" name="saveBtn"
+                                        class="btn btn-success submit-btn" >Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+
+        </section><!-- End Breadcrumbs -->
+
+    </main><!-- End #main -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="js/datasheet.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="bundles/auth.bundle.js"></script>
+    <script src="bundles/PDS.bundle.js"></script>
+    <script src="bundles/file201.bundle.js"></script> 
+    <script src="bundles/fetch_employee_info.bundle.js"></script> 
+
+
+</body>
+
+</html>

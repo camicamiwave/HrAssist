@@ -88,15 +88,15 @@ function confirmAction(category, documentID) {
                     break;
                 case 'AppointmentBtn':
                     //window.location.href = "OtherInfo-201file.html";
-                    window.location.href = `201file_appointment.html?data=${encodeURIComponent(documentID)}`;
+                    window.location.href = `admin_201file_appointment.html?data=${encodeURIComponent(documentID)}`;
                     break;
                 case 'AttachmentBtn':
                     //window.location.href = "signature-201file.html";
-                    window.location.href = `201file_attachments.html?data=${encodeURIComponent(documentID)}`;
+                    window.location.href = `admin_201file_attachments.html?data=${encodeURIComponent(documentID)}`;
                     break;
                 case 'LeaveCreditBtn':
                     //window.location.href = "signature-201file.html";
-                    window.location.href = `201file_leave.html?data=${encodeURIComponent(documentID)}`;
+                    window.location.href = `admin_201file_leave.html?data=${encodeURIComponent(documentID)}`;
                     break;
                 default:
                     break;
