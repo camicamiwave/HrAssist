@@ -253,7 +253,7 @@ function confirmAction(category, documentID) {
           window.location.href = `Education-21Files.html?data=${encodeURIComponent(documentID)}`;
           break;
         case 'Other Information':
-          //window.location.href = "OtherInfo-201file.html";
+          //window.location.href = "OtherInfo-201file.html";   
           window.location.href = `OtherInfo-201file.html?data=${encodeURIComponent(documentID)}`;
           break;
         case 'Signature':

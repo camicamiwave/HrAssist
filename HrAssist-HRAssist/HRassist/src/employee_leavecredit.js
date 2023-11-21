@@ -65,14 +65,10 @@ export function Employee201LeaveCredit() {
 
                 // get the current employee data
                 const EmployeecolRef = collection(db, '201File Information');
+                
+                const employeeDocRef = doc(EmployeecolRef, receivedStringData);
+                return setDoc(employeeDocRef, leaveFormData, { merge: true })
 
-                fetchEmployeeInfo(EmployeecolRef, receivedStringData, "employeeDocID").then((dataRetrieved) => {
-                    const data = dataRetrieved
-                    console.log(data.documentID)
-
-                    const employeeDocRef = doc(EmployeecolRef, data.documentID);
-                    return setDoc(employeeDocRef, leaveFormData, { merge: true })
-                })
 
             }).then(() => {
                 console.log("Added successfully...")

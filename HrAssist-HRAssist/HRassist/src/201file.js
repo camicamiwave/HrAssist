@@ -81,10 +81,10 @@ function confirmAction(category, documentID) {
             switch (category) {
                 case 'AccountBtn':
                     //window.location.href = "datasheet.html";
-                    window.location.href = `201file_account.html?data=${encodeURIComponent(documentID)}`;
+                    window.location.href = `admin_201file_account.html?data=${encodeURIComponent(documentID)}`;
                     break;
                 case 'PersonalInfoBtn':
-                    window.location.href = `datasheet.html?data=${encodeURIComponent(documentID)}`;
+                    window.location.href = `admin_201file_pds.html?data=${encodeURIComponent(documentID)}`;
                     break;
                 case 'AppointmentBtn':
                     //window.location.href = "OtherInfo-201file.html";
