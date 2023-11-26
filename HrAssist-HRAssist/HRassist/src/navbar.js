@@ -15,8 +15,8 @@ import {
 
 import { firebaseConfig } from './server.js';
 import { UserLoginChecker } from './page_restriction.js';
-
-
+import { fetchEmployeeInfo } from './fetch_employee_info.js';
+  
 // init firebase app
 const app = initializeApp(firebaseConfig)
 
@@ -84,23 +84,42 @@ export function FetchNavbarProfile() {
           const data = doc.data();
           const id = doc.id;
 
-          const adminPersonalInfo = data.Personal_Information;
-          
-          const AccountInfo = data.Account_Information;
+          const accountDocID = data.documentID;
 
           const navbarProfPic = document.getElementById('navbarProfilePicture');
-          const newImageUrl = AccountInfo.ProfilePictureURL;
-
-          navbarProfPic.src = newImageUrl;
-
           const navbarUserName = document.getElementById('navbarUserName');
           const hoverUserName = document.getElementById('hoverUserName');
           const userLevel = document.getElementById('userLevel');
 
-          navbarUserName.innerHTML = adminPersonalInfo.FirstName
-          hoverUserName.innerHTML = adminPersonalInfo.FirstName
+          if (data.UserLevel === "Admin"){
+
+            const adminPersonalInfo = data.Personal_Information;          
+            const AccountInfo = data.Account_Information;
+            const newImageUrl = AccountInfo.ProfilePictureURL;
+            navbarProfPic.src = newImageUrl;
+
+            navbarUserName.innerHTML = adminPersonalInfo.FirstName
+            hoverUserName.innerHTML = adminPersonalInfo.FirstName
+    
+          } else if (data.UserLevel === "Employee"){
+            
+            // get the current employee data
+            const EmployeecolRef = collection(db, 'Employee Information');
+
+            fetchEmployeeInfo(EmployeecolRef, accountDocID, "accountID").then((dataRetrieved) => {
+                const EmployeeData = dataRetrieved; 
+                const EmployeePersonalInfo = dataRetrieved.Personal_Information;
+                EmployeePersonalInfo.FirstName
+
+                const newImageUrl = EmployeeData.ProfilePictureURL;
+                navbarProfPic.src = newImageUrl;
+    
+                navbarUserName.innerHTML = EmployeePersonalInfo.FirstName
+                hoverUserName.innerHTML = EmployeePersonalInfo.FirstName 
+            })
+          }
           userLevel.innerHTML = data.UserLevel
-  
+
         });
   
       });

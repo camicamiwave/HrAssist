@@ -121,13 +121,8 @@ export function fetchEmployee201Attachment() {
     try {
         // get the current employee data
         const EmployeecolRef = collection(db, '201File Information');
-
-        console.log("Retrieved Leave ID:", receivedString201File);
-
-        fetchEmployeeInfo(EmployeecolRef, receivedString201File, "documentID").then((dataRetrieved) => {
+        fetchEmployeeInfo(EmployeecolRef, receivedStringData, "employeeDocID").then((dataRetrieved) => {
             const attachmentData = dataRetrieved.AttachmentURLs;
-
-            console.log(attachmentData, 'aet');
 
             var tableBody = document.getElementById('fileListBody');
 
@@ -147,7 +142,7 @@ export function fetchEmployee201Attachment() {
                     // Set values for each cell
                     cell1.innerHTML = num; // You can set an ID or index here
                     cell2.innerHTML = `<a href='${attachmentData[index]}' style='width: 60%; text-align: center'>Docs${num}</a>`;
-                    cell3.innerHTML = '<button onclick="performAction()" style="width: 30%; text-align: center">Action</button>';
+                    cell3.innerHTML = '<button onclick="performAction()" class="btn btn-primary" style="width: 50%; text-align: center">Delete</button>';
                 }
                 num++;
             }

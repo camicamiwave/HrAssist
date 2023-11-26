@@ -28,7 +28,10 @@
     "fetch_employee_info": "node fetch_employee_info.js",
     "employee_attachments": "node employee_attachments.js",
     "employee_leavecredit": "node employee_leavecredit.js",
-    "signout_account": "node signout_account.js"
+    "signout_account": "node signout_account.js",
+    "employee_information": "node employee_information.js",
+    "employee_leave_form": "node employee_leave_form.js",
+    "employee_pass_slip": "node employee_pass_slip.js"
   },
   "keywords": [],
   "author": "",

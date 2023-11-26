@@ -15,7 +15,9 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,24 +35,24 @@
 
 <body>
 
- <!-- ======= Header ======= -->
- <header id="header" class="header fixed-top d-flex align-items-center">
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
 
-  <div class="d-flex align-items-center justify-content-between">
-    <a href="employee_home.html" class="logo d-flex align-items-center">
-      <img src="assets/img/logo.png" alt="">
-      <span class="d-none d-lg-block">Assist</span>
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="employee_home.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">Assist</span>
 
-    </a>
-    <i class="bi bi-list toggle-sidebar-btn"></i>
-  </div><!-- End Logo -->
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
 
-  <div class="search-bar">
-    <form class="search-form d-flex align-items-center" method="POST" action="#">
-      <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-      <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-    </form>
-  </div><!-- End Search Bar -->
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
@@ -140,14 +142,14 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile.png" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Juan Luna</span>
+            <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Juan Garcia</h6>
-              <span>Employee</span>
+              <h6 id="hoverUserName">Juan Garcia</h6>
+              <span id="userLevel">Employee</span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -184,7 +186,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" id="navbar_signout_btn">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -198,63 +200,63 @@
 
   </header><!-- End Header -->
 
-    <!-- ======= Sidebar ======= -->
-    <aside id="sidebar" class="sidebar">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
 
-      <ul class="sidebar-nav" id="sidebar-nav">
-        <li class="nav-heading">Employee Tool</li>
-  
-        <li class="nav-item">
-          <a class="nav-link " href="employee_home.html">
-            <i class="bi bi-grid"></i>
-            <span>Dashboard</span>
-          </a>
-        </li><!-- End Dashboard Nav -->
-  
-        <li class="nav-item">
-        </li>
-  
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="employee-request.html">
-            <i class="bx bxs-calendar-alt"></i>
-            <span>Request</span>
-          </a>
-        </li>
-  
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="employee-activity.html">
-            <i class="bx bxs-user-account"></i>
-            <span>Activities</span>
-          </a>
-        </li>
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="employee-calendar.html">
-            <i class="bx bxs-calendar"></i>
-            <span>Calendar</span>
-          </a>
-        </li>
-  
-        <li class="nav-heading">Employee Profile</li>
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="employee-users-profile.html">
-            <i class="bi bi-person"></i>
-            <span>Profile</span>
-          </a>
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="login.html">
-            <i class="bi bi-box-arrow-in-right"></i>
-            <span>Login</span>
-          </a>
-        </li>
-  
-      </ul>
-  
-    </aside><!-- End Sidebar-->
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-heading">Employee Tool</li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="employee_home.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="employee-request.html">
+          <i class="bx bxs-calendar-alt"></i>
+          <span>Request</span>
+        </a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="employee-activity.html">
+          <i class="bx bxs-user-account"></i>
+          <span>Activities</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="employee-calendar.html">
+          <i class="bx bxs-calendar"></i>
+          <span>Calendar</span>
+        </a>
+      </li>
+
+      <li class="nav-heading">Employee Profile</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="employee-users-profile.html">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="login.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Login</span>
+        </a>
+      </li>
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
@@ -271,20 +273,92 @@
     <!--Button Start-->
 
     <style>
-        .right-aligned-btn {
-          text-align: right;
-          margin-top: 20px;
-          
-        }
-      </style>
-      
-  <div class="right-aligned-btn">
-    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="apply" data-whatever="@mdo">Apply Leave</button>
-    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="apply" data-whatever="@mdo">Apply Leave</button>
-</div>
+      .right-aligned-btn {
+        text-align: right;
+        margin-top: 20px;
+
+      }
+    </style>
+
+    <div class="right-aligned-btn">
+      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#applyLeaveModal"
+        data-whatever="@mdo">+ Pass Slip</button>
+
+      <a type="button" class="btn btn-success btn-sm" href="employee_request_form.html">+ Apply Leave</a>
+
+      <!--<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#applyLeaveModal"
+        data-whatever="@mdo" href="employee_request_form.html">+ Apply Leave</button>-->
+    </div>
     <hr>
 
-      <!--Button End-->
+    <!-- Modal -->
+    <div class="modal fade" id="applyLeaveModal" tabindex="-1" aria-labelledby="applyLeaveModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form id="passSlipForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="leaveTitle">Pass Slip Form</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="slipDate">Date:</label>
+                  <input type="date" id="slipDate" name="slipDate" class="form-control" required>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="slipTime">Time:</label>
+                  <input type="time" id="slipTime" name="slipTime" class="form-control" required>
+                </div>
+              </div>
+            </div><br>
+
+            <div class="form-group">
+              <label for="passSlipDetails">Pass Slip Details:</label>
+              <br>
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="radio" id="slipPurpose" name="purpose" value="Official">
+                  <label for="officialPurpose">&nbsp;Official</label>
+                </div><br>
+                <div class="col-md-6">
+                  <input type="radio" id="slipPurpose" name="purpose" value="Personal">
+                  <label for="personalPurpose">&nbsp;Personal</label>
+                </div>
+              </div>
+            </div><br>
+
+            <div class="form-group">
+              <label for="textArea">Purpose:</label>
+              <textarea class="form-control" id="purposeText" rows="3" placeholder="Enter your purpose" required></textarea>
+            </div> <br>
+
+            <div class="form-group">
+              <label for="textArea">Attachment:</label><br>
+              <input type="file" class="form-control" id="attachmentFile" rows="3"
+                placeholder="Enter your purpose" multiple>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" id="applyPassSlip" class="btn btn-primary">Apply</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <!--Button End-->
 
     <section class="section dashboard">
       <div class="row">
@@ -317,17 +391,17 @@
                   <div class="d-flex align-items-center">
 
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                       <img src="assets/img/dashboard/leave1.png" alt="1">
+                      <img src="assets/img/dashboard/leave1.png" alt="1">
                     </div>
                     <div class="ps-3">
                       <h6>10</h6>
                       <div class="ps-3">
-                      
+
                         <span class="text-muted small">Available: <strong>10</strong> </span> <br>
                         <span class="text-muted small">Booked: <strong>0</strong> </span>
-  
+
                       </div>
-                     
+
                     </div>
                   </div>
                 </div>
@@ -367,7 +441,7 @@
                     </div>
                   </div>
                 </div>
-                
+
               </div>
             </div><!-- End Leave Card -->
 
@@ -403,7 +477,7 @@
                     </div>
                   </div>
                 </div>
-                
+
               </div>
             </div><!-- End Work Days Card -->
 
@@ -439,86 +513,86 @@
                     </div>
                   </div>
                 </div>
-                
+
               </div>
             </div><!-- Pending Request Days -->
 
             <!-- Absenses Card -->
             <div class="col-xxl-2 col-md-4">
-                <div class="card info-card sales-card">
-  
-                  <div class="filter">
-                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                      <li class="dropdown-header text-start">
-                        <h6>Filter</h6>
-                      </li>
-  
-                      <li><a class="dropdown-item" href="#">Today</a></li>
-                      <li><a class="dropdown-item" href="#">This Month</a></li>
-                      <li><a class="dropdown-item" href="#">This Year</a></li>
-                    </ul>
-                  </div>
-  
-                  <div class="card-body">
-                    <h5 class="card-title">PTO </h5>
-  
-                    <div class="d-flex align-items-center">
-  
-                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                         <img src="assets/img/dashboard/leave5.png" alt="1">
-                      </div>
+              <div class="card info-card sales-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">PTO </h5>
+
+                  <div class="d-flex align-items-center">
+
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <img src="assets/img/dashboard/leave5.png" alt="1">
+                    </div>
+                    <div class="ps-3">
+                      <h6>10</h6>
                       <div class="ps-3">
-                        <h6>10</h6>
-                        <div class="ps-3">
-                        
-                            <span class="text-muted small">Available: <strong>9</strong> </span> <br>
-                            <span class="text-muted small">Booked: <strong>0</strong> </span>    
-    
-                        </div>
-                       
+
+                        <span class="text-muted small">Available: <strong>9</strong> </span> <br>
+                        <span class="text-muted small">Booked: <strong>0</strong> </span>
+
                       </div>
+
                     </div>
                   </div>
-  
                 </div>
-              </div><!-- End Absenses Card -->
-  
-              <!-- Leave Card -->
-              <div class="col-xxl-2 col-md-4">
-                <div class="card info-card revenue-card">
-  
-                  <div class="filter">
-                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                      <li class="dropdown-header text-start">
-                        <h6>Filter</h6>
-                      </li>
-  
-                      <li><a class="dropdown-item" href="#">Today</a></li>
-                      <li><a class="dropdown-item" href="#">This Month</a></li>
-                      <li><a class="dropdown-item" href="#">This Year</a></li>
-                    </ul>
-                  </div>
-  
-                  <div class="card-body">
-                    <h5 class="card-title">Sick Leave </h5>
-  
-                    <div class="d-flex align-items-center">
-                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                        <img src="assets/img/dashboard/leave6.png" alt="1">
-                      </div>
-                      <div class="ps-3">
-                        <h6>14</h6>
-                        <span class="text-muted small">Available: <strong>8</strong> </span> <br>
-                        <span class="text-muted small">Booked: <strong>2</strong> </span>
-  
-                      </div>
+
+              </div>
+            </div><!-- End Absenses Card -->
+
+            <!-- Leave Card -->
+            <div class="col-xxl-2 col-md-4">
+              <div class="card info-card revenue-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Sick Leave </h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <img src="assets/img/dashboard/leave6.png" alt="1">
+                    </div>
+                    <div class="ps-3">
+                      <h6>14</h6>
+                      <span class="text-muted small">Available: <strong>8</strong> </span> <br>
+                      <span class="text-muted small">Booked: <strong>2</strong> </span>
+
                     </div>
                   </div>
-                  
                 </div>
-              </div><!-- End Leave Card -->
+
+              </div>
+            </div><!-- End Leave Card -->
 
 
 
@@ -559,12 +633,21 @@
 
             </div><!-- End Activities Card -->
 
-            
+
 
 
   </main><!-- End #main -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -578,6 +661,9 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script src="bundles/navbar.bundle.js"></script>
+  <script src="bundles/employee_pass_slip.bundle.js"></script>
 
 </body>
 

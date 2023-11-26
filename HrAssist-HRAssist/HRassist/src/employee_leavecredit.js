@@ -66,10 +66,15 @@ export function Employee201LeaveCredit() {
 
                 // get the current employee data
                 const EmployeecolRef = collection(db, '201File Information');
-                
-                const employeeDocRef = doc(EmployeecolRef, received201filedoc);
-                return setDoc(employeeDocRef, leaveFormData, { merge: true })
 
+                fetchEmployeeInfo(EmployeecolRef, receivedStringData, "employeeDocID").then((dataRetrieved) => {
+                    const File201Data = dataRetrieved; 
+                    const leaveData = dataRetrieved.Leave_Details;
+
+                    const employeeDocRef = doc(EmployeecolRef, File201Data.documentID);
+                    return setDoc(employeeDocRef, leaveFormData, { merge: true })    
+                })
+                
 
             }).then(() => {
                 console.log("Added successfully...")
@@ -94,10 +99,9 @@ export function fetchEmployee201LeaveCredit() {
         console.log("Retrieved Leave ID:", receivedStringData);
 
 
-        fetchEmployeeInfo(EmployeecolRef, received201filedoc, "documentID").then((dataRetrieved) => {
+        fetchEmployeeInfo(EmployeecolRef, receivedStringData, "employeeDocID").then((dataRetrieved) => {
+            const File201Data = dataRetrieved; 
             const leaveData = dataRetrieved.Leave_Details;
-
-            console.log("Retrieved Leave Data:", leaveData);
 
             var tableBody = document.getElementById('fileListBody');
 
@@ -117,7 +121,7 @@ export function fetchEmployee201LeaveCredit() {
                     cell1.innerHTML = num; // You can set an ID or index here
                     cell2.innerHTML = leaveData[leaveType].LeaveType;
                     cell3.innerHTML = leaveData[leaveType].RemainingUnits;
-                    cell4.innerHTML = '<button onclick="performAction()">Action</button>';
+                    cell4.innerHTML = '<button onclick="openEditModal()" class="btn btn-primary">Edit</button>';
 
                 }
                 num++
