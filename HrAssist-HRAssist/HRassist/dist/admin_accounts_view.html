@@ -152,8 +152,8 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6 id="hoverUserName">Juan Garcia</h6>
-              <span id="userLevel">Employee</span>
+              <h6 id="hoverUserName"></h6>
+              <span id="userLevel"></span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -323,11 +323,11 @@
                                 <p>Filter</p>
                             </div>
                         </div>
-                        <table class="content-table" id="applicantTable">
+                        <table class="content-table" id="accountTable">
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Name</th>
+                                    <th>Email</th>
                                     <th>Category</th>
                                     <th>Account Status</th>
                                     <th>Action</th>
@@ -335,35 +335,17 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Juan Dela Cruz</td>
-                                    <td>Applicant</td>
-                                    <td>Active</td>
+                                    <td id="accountIdNum">1</td>
+                                    <td id="accountName">Juan Dela Cruz</td>
+                                    <td id="accountUserLevel">Applicant</td>
+                                    <td id="accountStatus">Active</td>
+
                                     <td>
-                                        <button style="color: #ffff; width: 100px;">Activate</button>
-                                        <button style="color: #ffff; width: 100px;">Deactivate</i></button>
+                                        <button id="activateAccount" style="color: #ffff; width: 100px;">Activate</button>
+                                        <button id="deactivateAccount" style="color: #ffff; width: 100px;">Deactivate</i></button>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Lebron James</td>
-                                    <td>Permanent</td>
-                                    <td>Active</td>
-                                    <td>
-                                        <button style="color: #ffff; width: 100px;">Activate</button>
-                                        <button style="color: #ffff; width: 100px;">Deactivate</i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Stephen Curry</td>
-                                    <td>Job Order</td>
-                                    <td>Deactivated</td>
-                                    <td>
-                                        <button style="color: #ffff; width: 100px;">Activate</button>
-                                        <button style="color: #ffff; width: 100px;">Deactivate</i></button>
-                                    </td>
-                                </tr>
+
+                                </tr> 
                             </tbody>
                         </table>
                     </div>
@@ -394,7 +376,8 @@
 
         <!-- Database Js-->
         <script src="bundles/auth.bundle.js"></script>   
-        <script src="bundles/navbar.bundle.js"></script>
+        <script src="bundles/navbar.bundle.js"></script> 
+        <script src="bundles/account_status.bundle.js"></script>
 
     
     </body>

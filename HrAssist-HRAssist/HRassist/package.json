@@ -31,7 +31,9 @@
     "signout_account": "node signout_account.js",
     "employee_information": "node employee_information.js",
     "employee_leave_form": "node employee_leave_form.js",
-    "employee_pass_slip": "node employee_pass_slip.js"
+    "employee_pass_slip": "node employee_pass_slip.js",
+    "account_status": "node account_status.js",
+    "dtr": "node dtr.js"
   },
   "keywords": [],
   "author": "",

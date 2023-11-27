@@ -29,7 +29,9 @@ module.exports = {
         signout_account: './src/signout_account.js',
         employee_information: './src/employee_information.js',
         employee_leave_form: './src/employee_leave_form.js',
-        employee_pass_slip: './src/employee_pass_slip.js'
+        employee_pass_slip: './src/employee_pass_slip.js',
+        account_status: './src/account_status.js',
+        dtr: './src/dtr.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),

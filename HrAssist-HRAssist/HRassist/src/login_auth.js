@@ -28,8 +28,6 @@ export function LoginMethod() {
         // User is signed in, you can display user information
         const user = userCredential.user;
 
-        console.log("HELLOS")
-
         if (user) {
           //userInfoDisplay.innerHTML = `Signed in as123: ${user.displayName} (${user.email})`;
           console.log(`Signed in: ${user.email} `);

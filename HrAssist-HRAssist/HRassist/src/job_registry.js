@@ -216,6 +216,7 @@ function Test() {
 
         const jobDetailsData = {
             createdAt: serverTimestamp(),
+            JobStatus: 'Ongoing',
             JobTitle: document.getElementById("inputJobTitle").value,
             JobType: document.getElementById("inputJobType").value,
             SalaryAmount: document.getElementById("inputSalaryAmount").value,
@@ -503,3 +504,103 @@ export function fetchJobDetails(){
 
 
 window.addEventListener('load', fetchJobDetails) 
+
+
+
+// ----------------------> get job vacancy table
+
+
+function GetJobVacancyTable() {
+    try {
+                
+        const jobcolRef = collection(db, 'Job Information')
+
+        const q = query(jobcolRef, orderBy('createdAt'))
+
+        // Assuming you have Firestore data in the 'employees' array
+        const employeeTable = document.getElementById('jobVacancyTable');
+        const tbody = employeeTable.querySelector('tbody');
+
+        let idNum = 1;
+
+        onSnapshot(q, (snapshot) => {
+            // Clear the existing rows in the table body
+            tbody.innerHTML = '';
+
+            snapshot.docs.forEach((doc) => {
+                const data = doc.data();
+                const id = doc.id;
+                const row = document.createElement('tr');
+
+                const idCell = document.createElement('td');
+                idCell.textContent = idNum;
+
+                const jobTitle = document.createElement('td');
+                jobTitle.textContent = data.JobTitle;
+
+                const jobType = document.createElement('td');
+                jobType.textContent = data.JobType;
+
+                const jobPositionCell = document.createElement('td');
+                jobPositionCell.textContent = data.DueDate;
+
+                // Create a single cell for both buttons
+                const buttonsCell = document.createElement('td');
+
+                // Create activation and deactivation buttons with classes
+                const editButton = createButton('Edit', 'editJob');
+                const deleteButton = createButton('Delete', 'deleteJob');
+
+                // Add click event listeners to the buttons
+                editButton.addEventListener('click', () => {
+                    // Implement activation logic here 
+                    alert(`Activate clicked for ID: ${data.Email}`);
+                    AccountStatusActivation('Activate', id)
+                    idNum = 1;
+                });
+
+                deleteButton.addEventListener('click', () => {
+                    // Implement deactivation logic here
+                    alert(`Deactivate clicked for ID: ${data.Email}`);
+                    AccountStatusActivation('Deactivated', id)
+                    idNum = 1;
+                });
+
+                // Append buttons to the cell
+                buttonsCell.appendChild(editButton);
+                buttonsCell.appendChild(deleteButton);
+
+                // Add cells to the row
+                row.appendChild(idCell);
+                row.appendChild(jobTitle);
+                row.appendChild(jobType);
+                row.appendChild(jobPositionCell); 
+                row.appendChild(buttonsCell); // Append the cell with buttons
+
+                // Append the row to the table body
+                tbody.appendChild(row);
+
+                idNum++;
+            });
+        });
+    } catch (error) {
+        console.log('Error:', error.message);
+    }
+}
+
+// Helper function to create a button with text and class
+function createButton(text, className) {
+    const button = document.createElement('button');
+    button.textContent = text;
+    button.classList.add(className);
+    button.style.color = '#fff';
+    button.style.width = '60px';
+    button.style.fontSize = '12px'
+    return button;
+}
+
+window.addEventListener('load', GetJobVacancyTable);
+
+
+
+

@@ -676,14 +676,18 @@ form .fields .input-field{
     transition: all 0.3s linear;
     cursor: pointer;
 }
-
+ 
 .container form .btnText{
     font-size: 14px;
     font-weight: 400;
 }
 
 form button:hover{
-    background-color: #1f8f3e;
+    background-color: #505250;
+}
+
+.dtr-container-profile{
+    background-color: #404140;
 }
 
 form button i,
