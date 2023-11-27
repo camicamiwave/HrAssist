@@ -501,7 +501,7 @@ td input {
 }
 
 tr:hover td {
-    color: #000000;
+    color: #000000b2;
     cursor: pointer;
     background-color: #e8f3eb;
 }
