@@ -4,24 +4,23 @@
 
     <head>
 
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+      <title>Calendar</title>
+      <meta content="" name="description">
+      <meta content="" name="keywords">
+
         <!-- Boxicons CSS -->
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
         <title>HR Assist - Admin</title>
         <link rel="stylesheet" href="css/admin.css" />
         <link rel="stylesheet" href="css/admin-dashboard.css" />
 
-        <!-- Favicon -->
-        <link href="img/hrlogo.svg" rel="icon">
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+          <!-- Favicons -->
+      <link href="img/favicon.png" rel="icon">
+      <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
-        <title>Calendar</title>
-        <meta content="" name="description">
-        <meta content="" name="keywords">
-
-        <!-- Favicons -->
-        <link href="assets/img/favicon.png" rel="icon">
-        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -41,10 +40,9 @@
     </head>
 
     <body>
-    <!-- ======= Header ======= -->
+     <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
-    
     <div class="d-flex align-items-center justify-content-center">
       <a href="admin_dashboard.html" class="logo d-flex align-items-center mx-auto">
         <img src="assets/img/logo.png" alt="">
@@ -52,6 +50,7 @@
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
+    
 
     <div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
@@ -192,7 +191,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" id="navbar_signout_btn">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -206,118 +205,104 @@
 
   </header><!-- End Header -->
 
-  <!-- ======= Sidebar ======= -->
+    <!-- ======= Sidebar ======= -->
+  <!-- Sidebar -->
   <aside id="sidebar" class="sidebar">
-
     <ul class="sidebar-nav" id="sidebar-nav">
-      <li class="nav-heading">Admin Tool</li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
-
-      <li class="nav-item">
-      </li><!-- End Components Nav -->
-
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-          <i class="bx bxs-user-account"></i>
-          <span>Accounts</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
-
-      <li class="nav-heading">LGU Information</li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-          <i class="bx bxs-buildings"></i>
-          <span>Offices</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
-          <i class="bx bxs-calendar"></i>
-          <span>Calendar</span>
-        </a>
-      </li><!-- End Contact Page Nav -->
-
-      <li class="nav-heading">Recruitment</li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
-          <i class="bi bi-people"></i>
-          <span>Manage Applicant</span>
-        </a><!-- End Register Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link" href="pages-login.html">
-          <i class="bx bxs-briefcase"></i>
-          <span>Job Vacancy</span>
-        </a>
-      </li><!-- End Login Page Nav -->
-
-      <li class="nav-heading">Employee Registration</li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
-          <i class="bi bi-person-workspace"></i>
-          <span>Employee Registry</span>
-        </a><!-- End Register Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bi bi-search"></i>
-          <span>Search Employee</span>
-        </a>
-      </li>
-
-      <li class="nav-heading">Employement Tools</li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bi bi-envelope"></i>
-          <span>Request</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bi bi-gift"></i>
-          <span>Rewards</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bi bi-folder"></i>
-          <span>Reports</span>
-        </a>
-      </li>
-
-      <li class="nav-heading">Learning & Development</li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bx bxs-group"></i>
-          <span>Training & Seminar</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bx bxs-folder-open"></i>
-          <span>Materials</span>
-        </a>
-      </li>
-
+      <li class="nav-heading">ADMIN TOOL</li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_dashboard.html">
+                <i class="bi bi-grid"></i>
+                <span>Dashboard</span>
+            </a>
+        </li><!-- End Dashboard Nav -->
+  
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_accounts_view.html">
+                <i class="bx bxs-user-account"></i>
+                <span>Accounts</span>
+            </a>
+        </li><!-- End Accounts Nav -->
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="a#">
+              <i class="bi bi-search"></i>
+              <span>Search Employee</span>
+          </a>
+      </li><!-- End Search Nav -->
+  
+        <li class="nav-heading">Recruitment, Selection, & Placement</li>
+  
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_manage_applicant_view.html">
+                <i class="bi bi-people"></i>
+                <span>Manage Applicant</span>
+            </a>
+        </li><!-- End Manage Applicant Nav -->
+  
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
+                <i class="bx bxs-briefcase"></i>
+                <span>Job Vacancy</span>
+            </a>
+        </li><!-- End Job Vacancy Nav -->
+  
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+                <i class="bi bi-person"></i>
+                <span>Manage Employee</span>
+            </a>
+        </li><!-- End Manage Employee Nav -->
+  
+        <li class="nav-heading">LEARNING & DEVELOPMENT</li>
+  
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+                <i class="bx bxs-group"></i>
+                <span>Training & Seminar</span>
+            </a>
+        </li><!-- End Training & Seminar Nav -->
+  
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+                <i class="bx bxs-calendar"></i>
+                <span>Calendar & Scheduling</span>
+            </a>
+        </li><!-- End Calendar & Scheduling Nav -->
+  
+        <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+  
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+                <i class="bi bi-envelope"></i>
+                <span>Employee Request</span>
+            </a>
+        </li><!-- End Request Nav -->
+  
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+                <i class="bi bi-clock"></i>
+                <span>DTR</span>
+            </a>
+        </li><!-- End DTR Nav -->
+  
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+                <i class="bi bi-check-square"></i>
+                <span>IPCR</span>
+            </a>
+        </li><!-- End IPCR Nav -->
+  
+        <li class="nav-heading">REWARDS AND RECOGNITION</li>
+  
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+                <i class="bi bi-award"></i>
+                <span>Award</span>
+            </a>
+        </li><!-- End Award Nav -->
     </ul>
-
-  </aside><!-- End Sidebar-->
+  </aside><!-- End Sidebar -->
 
   <main id="main" class="main">
 
