@@ -137,6 +137,14 @@
                 z-index: 1;
             }
 
+            #progress-num .step span {
+                font-size: 12px; /* Adjust text size as needed */
+                text-align: left;
+                display: inline-flex;
+                margin-top: 5px; /* Adjust spacing between number and text */
+                color: #000000;
+            }
+
             #progress-num .step.active {
                 border-color: lightseagreen;
                 background-color: lightseagreen;
@@ -333,29 +341,21 @@
                     </a>
                 </li>
 
-                <li class="nav-heading">LGU Information</li>
-
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="admin-offices.html">
-                        <i class="bx bxs-buildings"></i>
-                        <span>Offices</span>
+                    <a class="nav-link collapsed" href="admin_search_employee_view.html">
+                        <i class="bi bi-search"></i>
+                        <span>Search Employee</span>
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="calendar.html">
-                        <i class="bx bxs-calendar"></i>
-                        <span>Calendar</span>
-                    </a>
-                </li>
-
-                <li class="nav-heading">Recruitment</li>
+                <li class="nav-heading">Recruitment, Selection, & Placement</li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="bi bi-people"></i>
                         <span>Manage Applicant</span>
                     </a>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
@@ -364,41 +364,10 @@
                     </a>
                 </li>
 
-                <li class="nav-heading">Employee Registration</li>
-
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="admin_employee_registry_list.html">
                         <i class="bi bi-person-workspace"></i>
-                        <span>Employee Registry</span>
-                    </a>
-
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="admin_search_employee_view.html">
-                        <i class="bi bi-search"></i>
-                        <span>Search Employee</span>
-                    </a>
-                </li>
-
-                <li class="nav-heading">Employement Tools</li>
-
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="admin_request.html">
-                        <i class="bi bi-envelope"></i>
-                        <span>Request</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="admin_rewards_view.html">
-                        <i class="bi bi-gift"></i>
-                        <span>Rewards</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="admin-dtr.html">
-                        <i class="bi bi-folder"></i>
-                        <span>Reports</span>
+                        <span>Manage Employee</span>
                     </a>
                 </li>
 
@@ -412,12 +381,50 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="admin_materials.html">
-                        <i class="bx bxs-folder-open"></i>
-                        <span>Materials</span>
+                    <a class="nav-link collapsed" href="calendar.html">
+                        <i class="bx bxs-calendar"></i>
+                        <span>Calendar & Scheduling</span>
                     </a>
                 </li>
 
+                <li class="nav-heading">Performance Management System</li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="admin_request.html">
+                        <i class="bi bi-envelope"></i>
+                        <span>Employee Request</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="admin-offices.html">
+                        <i class="bx bxs-buildings"></i>
+                        <span>Offices</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="admin-dtr.html">
+                        <i class="bi bi-folder"></i>
+                        <span>DTR</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="admin-ipcr.html">
+                        <i class="bi bi-check-square"></i>
+                        <span>IPCR</span>
+                    </a>
+                </li>
+
+                <li class="nav-heading">Rewards And Recognition</li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="admin_rewards_view.html">
+                        <i class="bi bi-gift"></i>
+                        <span>Award</span>
+                    </a>
+                </li>
             </ul>
         </aside><!-- End Sidebar-->
 
@@ -463,10 +470,10 @@
                             <div id="progress">
                                 <div id="progress-bar"></div>
                                 <ul id="progress-num">
-                                  <li class="step active">1</li>
-                                  <li class="step">2</li>
-                                  <li class="step">3</li>
-                                  <li class="step">4</li>
+                                  <li class="step active">1 <span>Applied</span></li>
+                                  <li class="step">2 <span>Applied</span></li></li>
+                                  <li class="step">3 <span>Applied</span></li></li>
+                                  <li class="step">4 <span>Applied</span></li></li>
                                 </ul>
                             </div>
                             <button id="progress-prev" class="btn" disabled>Prev</button>
