@@ -483,7 +483,7 @@ export function FetchApplicantIDData() {
     const querySnapshot = query(TestcolRef);
 
     onSnapshot(querySnapshot, (snapshot) => {
-      let maxApplicantIDNum = 0;
+      let maxApplicantIDNum = 10000;
 
       snapshot.docs.forEach((doc) => {
         const data = doc.data();

@@ -8,7 +8,8 @@ import {
     doc,
     addDoc,
     setDoc,
-    serverTimestamp
+    serverTimestamp,
+    getDocs
 } from 'firebase/firestore';
 
 import { firebaseConfig } from './server.js';
@@ -16,6 +17,7 @@ import { firebaseConfig } from './server.js';
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+
 
 function TestAccountCreation() {
     const SubmitAccountForm = document.getElementById('empCreateAccountBtn');
@@ -74,10 +76,8 @@ function TestAccountCreation() {
 
                         if (loginResult.isConfirmed) {
                             try {
-
                                 const userCredential = await createUserWithEmailAndPassword(auth, EmployeeEmail, EmployeeConfirmPassword);
                                 const empuser = userCredential.user;
-                                console.log('Successfully created new user:', empuser.uid);
 
                                 // Add displayName
                                 await updateProfile(empuser, {
@@ -106,13 +106,16 @@ function TestAccountCreation() {
                                     EmployeeUsername: EmployeeUserName,
                                     EmployeeEmail: EmployeeEmail,
                                 };
+
+
                                 const empDocRef = await addDoc(EmployeeColRef, PriorAccountDetails);
                                 NewdocRef = empDocRef.id;
+
 
                                 await setDoc(doc(EmployeeColRef, NewdocRef), { documentID: NewdocRef }, { merge: true });
 
                                 console.log("Added employee account successfully...");
-                                alert("Congratulations, you've confirmed your identity. You can now add other employee's information");
+                                alert("Thank you for confirming your identity. You can now add other employee's information");
 
 
                                 window.location.href = `admin_201file_pds.html?data=${encodeURIComponent(NewdocRef)}`;

@@ -14,6 +14,22 @@
     margin-bottom: 10px;
 }
 
+.year-table-container {
+  padding: 20px; /* Add padding to the container */
+  border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add box-shadow for a subtle shadow effect */
+  background-color: white;
+
+}
+
+.year-table-container .card-body {
+  padding: 20px; /* Optional: Add padding to the card body */
+}
+
+.year-table-container .form-control {
+  margin-bottom: 10px;
+}
+
 .custom-container-pds{
   
   padding: 20px; /* Add padding to the container */

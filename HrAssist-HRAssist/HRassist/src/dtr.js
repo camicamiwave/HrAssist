@@ -93,6 +93,7 @@ function SearchEmployee() {
 window.addEventListener('load', SearchEmployee)
 
 
+
 export function SaveEmployeeDTR(dtrDetails) {
     const DTRcolRef = collection(db, 'DTR Information');
 

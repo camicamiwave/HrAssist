@@ -11,7 +11,8 @@ import {
   addDoc, deleteDoc, doc,
   query, where,
   orderBy, serverTimestamp,
-  getDoc, updateDoc, setDoc
+  getDoc, updateDoc, setDoc,
+  getDocs
 } from 'firebase/firestore'
 
 import { firebaseConfig } from './server.js';
@@ -74,107 +75,111 @@ export function AddEmployeeDataSheet() {
               addDataSheetForm.addEventListener('submit', (e) => {
                 e.preventDefault();
 
-                // Access the file input field
-                const fileInput = document.getElementById('fileInput');
-                const selectedFiles = fileInput.files;
-                const firstSelectedFile = selectedFiles[0];  // Access the first file
+                
+                // Example pagtawag ng function
+                GetIncrementalID().then((resultIncrementAccountID) => {
 
-                // Generate a unique filename using timestamp
-                const timestamp = new Date().getTime();
-                const uniqueFilename = `${timestamp}_${firstSelectedFile.name}`;
-                const fileRef = ref(storageRef, uniqueFilename);
+                  // Access the file input field
+                  const fileInput = document.getElementById('fileInput');
+                  const selectedFiles = fileInput.files;
+                  const firstSelectedFile = selectedFiles[0];  // Access the first file
 
-                // Upload the file to Firebase Storage
-                const uploadPromise = uploadBytes(fileRef, firstSelectedFile)
-                  .then((snapshot) => getDownloadURL(fileRef))
-                  .then((downloadURL) => {
-                    // Prepare data for Firestore
-                    const employeeData = {
-                      accountDocID: receivedStringData,
-                      UserLevel: "Employee",
-                      createdAt: serverTimestamp(),
-                      ProfilePictureURL: downloadURL,
-                      Personal_Information: {
-                        // Add other fields based on your form
-                        CSCID: addDataSheetForm.inputCsId.value.trim(),
-                        FirstName: addDataSheetForm.inputFirstName.value.trim(),
-                        MiddleName: addDataSheetForm.inputMiddleName.value.trim(),
-                        SurName: addDataSheetForm.inputSurName.value.trim(),
-                        ExName: addDataSheetForm.inputExName.value.trim(),
-                        Gender: addDataSheetForm.gender.value.trim(),
-                        Birthdate: addDataSheetForm.Birthdate.value.trim(),
-                        PlaceBirth: addDataSheetForm.PlaceBirth.value.trim(),
-                        CivilStatus: addDataSheetForm.inputStatus.value.trim(),
-                        Email: addDataSheetForm.inputEmail.value.trim(),
-                        MobileNumber: addDataSheetForm.inputMnumber.value.trim(),
-                        TelNum: addDataSheetForm.inputTel.value.trim(),
-                        Height: addDataSheetForm.inputHeight.value.trim(),
-                        BloodType: addDataSheetForm.inputWeight.value.trim(),
-                        GSIS: addDataSheetForm.InputGsis.value.trim(),
-                        PagIbig: addDataSheetForm.InputPagibig.value.trim(),
-                        PhilHealth: addDataSheetForm.inputPhealth.value.trim(),
-                        SSS: addDataSheetForm.inputSSS.value.trim(),
-                        Tin: addDataSheetForm.inputTIN.value.trim(),
-                        Agency: addDataSheetForm.InputAgency.value.trim(),
-                        Citizen: addDataSheetForm.inputCitizen.value.trim(),
-                        Naturalize: addDataSheetForm.naturalization.value.trim(),
-                        Country: addDataSheetForm.inputCountry.value.trim(),
-                        HouseBlock: addDataSheetForm.inputHouse.value.trim(),
-                        Street: addDataSheetForm.inputStreet.value.trim(),
-                        Subdivision: addDataSheetForm.InputSub.value.trim(),
-                        Barangay: addDataSheetForm.inputBarangay.value.trim(),
-                        Municipality: addDataSheetForm.inputMun.value.trim(),
-                        Subdivision: addDataSheetForm.InputSub.value.trim(),
-                        Province: addDataSheetForm.InputProv.value.trim(),
-                        ZipCode: addDataSheetForm.inputZip.value.trim(),
-                      },
-                      SpouseDetails: {
-                        SpouseFirstName: addDataSheetForm.inputSpouseFirstName.value.trim(),
-                        SpouseMiddleName: addDataSheetForm.inputSpouseMiddleName.value.trim(),
-                        SpouseSurName: addDataSheetForm.inputSpouseSurName.value.trim(),
-                        SpouseExName: addDataSheetForm.inputSpouseExName.value.trim(),
-                        SpouseOccupation: addDataSheetForm.inputSpouseOccupation.value.trim(),
-                        SpouseEmployer: addDataSheetForm.inputSpouseEmployer.value.trim(),
-                        SpouseBusinessAdd: addDataSheetForm.inputSpouseBusinessAdd.value.trim(),
-                        SpouseTelNum: addDataSheetForm.inputSpouseTelNo.value.trim(),
-                      },
-                      FatherDetails: {
-                        FatherFirstName: addDataSheetForm.inputFatherFirstName.value.trim(),
-                        FatherMiddleName: addDataSheetForm.inputFatherMiddleName.value.trim(),
-                        FatherSurName: addDataSheetForm.inputFatherSurName.value.trim(),
-                        FatherExName: addDataSheetForm.inputFatherExName.value.trim()
-                      },
-                      MotherDetails: {
-                        MotherFirstName: addDataSheetForm.inputMotherFirstName.value.trim(),
-                        MotherMiddleName: addDataSheetForm.inputMotherMiddleName.value.trim(),
-                        MotherSurName: addDataSheetForm.inputMotherSurName.value.trim(),
-                        MotherMaidenName: addDataSheetForm.inputMotherMaiden.value.trim()
-                      },
-                      NumberChildren: addDataSheetForm.numberOfChildren.value.trim(),
-                      ChildrenDetails: []
-                    };
+                  // Generate a unique filename using timestamp
+                  const timestamp = new Date().getTime();
+                  const uniqueFilename = `${timestamp}_${firstSelectedFile.name}`;
+                  const fileRef = ref(storageRef, uniqueFilename);
 
-                    try {
-                      const numberChildren = document.getElementById("numberOfChildren").value;
+                  // Upload the file to Firebase Storage
+                  const uploadPromise = uploadBytes(fileRef, firstSelectedFile)
+                    .then((snapshot) => getDownloadURL(fileRef))
+                    .then((downloadURL) => {
+                      // Prepare data for Firestore
+                      const employeeData = {
+                        incrementalAccountID: resultIncrementAccountID,
+                        accountDocID: receivedStringData,
+                        UserLevel: "Employee",
+                        createdAt: serverTimestamp(),
+                        ProfilePictureURL: downloadURL,
+                        Personal_Information: {
+                          // Add other fields based on your form
+                          CSCID: addDataSheetForm.inputCsId.value.trim(),
+                          FirstName: addDataSheetForm.inputFirstName.value.trim(),
+                          MiddleName: addDataSheetForm.inputMiddleName.value.trim(),
+                          SurName: addDataSheetForm.inputSurName.value.trim(),
+                          ExName: addDataSheetForm.inputExName.value.trim(),
+                          Gender: addDataSheetForm.gender.value.trim(),
+                          Birthdate: addDataSheetForm.Birthdate.value.trim(),
+                          PlaceBirth: addDataSheetForm.PlaceBirth.value.trim(),
+                          CivilStatus: addDataSheetForm.inputStatus.value.trim(),
+                          Email: addDataSheetForm.inputEmail.value.trim(),
+                          MobileNumber: addDataSheetForm.inputMnumber.value.trim(),
+                          TelNum: addDataSheetForm.inputTel.value.trim(),
+                          Height: addDataSheetForm.inputHeight.value.trim(),
+                          BloodType: addDataSheetForm.inputWeight.value.trim(),
+                          GSIS: addDataSheetForm.InputGsis.value.trim(),
+                          PagIbig: addDataSheetForm.InputPagibig.value.trim(),
+                          PhilHealth: addDataSheetForm.inputPhealth.value.trim(),
+                          SSS: addDataSheetForm.inputSSS.value.trim(),
+                          Tin: addDataSheetForm.inputTIN.value.trim(),
+                          Agency: addDataSheetForm.InputAgency.value.trim(),
+                          Citizen: addDataSheetForm.inputCitizen.value.trim(),
+                          Naturalize: addDataSheetForm.naturalization.value.trim(),
+                          Country: addDataSheetForm.inputCountry.value.trim(),
+                          HouseBlock: addDataSheetForm.inputHouse.value.trim(),
+                          Street: addDataSheetForm.inputStreet.value.trim(),
+                          Subdivision: addDataSheetForm.InputSub.value.trim(),
+                          Barangay: addDataSheetForm.inputBarangay.value.trim(),
+                          Municipality: addDataSheetForm.inputMun.value.trim(),
+                          Subdivision: addDataSheetForm.InputSub.value.trim(),
+                          Province: addDataSheetForm.InputProv.value.trim(),
+                          ZipCode: addDataSheetForm.inputZip.value.trim(),
+                        },
+                        SpouseDetails: {
+                          SpouseFirstName: addDataSheetForm.inputSpouseFirstName.value.trim(),
+                          SpouseMiddleName: addDataSheetForm.inputSpouseMiddleName.value.trim(),
+                          SpouseSurName: addDataSheetForm.inputSpouseSurName.value.trim(),
+                          SpouseExName: addDataSheetForm.inputSpouseExName.value.trim(),
+                          SpouseOccupation: addDataSheetForm.inputSpouseOccupation.value.trim(),
+                          SpouseEmployer: addDataSheetForm.inputSpouseEmployer.value.trim(),
+                          SpouseBusinessAdd: addDataSheetForm.inputSpouseBusinessAdd.value.trim(),
+                          SpouseTelNum: addDataSheetForm.inputSpouseTelNo.value.trim(),
+                        },
+                        FatherDetails: {
+                          FatherFirstName: addDataSheetForm.inputFatherFirstName.value.trim(),
+                          FatherMiddleName: addDataSheetForm.inputFatherMiddleName.value.trim(),
+                          FatherSurName: addDataSheetForm.inputFatherSurName.value.trim(),
+                          FatherExName: addDataSheetForm.inputFatherExName.value.trim()
+                        },
+                        MotherDetails: {
+                          MotherFirstName: addDataSheetForm.inputMotherFirstName.value.trim(),
+                          MotherMiddleName: addDataSheetForm.inputMotherMiddleName.value.trim(),
+                          MotherSurName: addDataSheetForm.inputMotherSurName.value.trim(),
+                          MotherMaidenName: addDataSheetForm.inputMotherMaiden.value.trim()
+                        },
+                        NumberChildren: addDataSheetForm.numberOfChildren.value.trim(),
+                        ChildrenDetails: []
+                      };
 
-                      const formData = []
+                      try {
+                        const numberChildren = document.getElementById("numberOfChildren").value;
 
-                      for (let i = 1; i <= numberChildren; i++) {
-                        employeeData.ChildrenDetails.push({
-                          ChildrenFirstName: document.getElementById(`inputChildrenFirstName${i}`).value.trim(),
-                          ChiildrenMiddleName: document.getElementById(`inputChildrenMiddleName${i}`).value.trim(),
-                          ChiildrenSurName: document.getElementById(`inputChildrenSurName${i}`).value.trim(),
-                          ChiildrenExName: document.getElementById(`inputChildrenExName${i}`).value.trim(),
-                        });
+                        const formData = []
 
-
+                        for (let i = 1; i <= numberChildren; i++) {
+                          employeeData.ChildrenDetails.push({
+                            ChildrenFirstName: document.getElementById(`inputChildrenFirstName${i}`).value.trim(),
+                            ChiildrenMiddleName: document.getElementById(`inputChildrenMiddleName${i}`).value.trim(),
+                            ChiildrenSurName: document.getElementById(`inputChildrenSurName${i}`).value.trim(),
+                            ChiildrenExName: document.getElementById(`inputChildrenExName${i}`).value.trim(),
+                          });
+                        }  
+                        AddEmployeeDataFirestore('#employeeDataSheet', employeeData, receivedStringData)
                       }
-                      AddEmployeeDataFirestore('#employeeDataSheet', employeeData, receivedStringData)
-                    }
-                    catch {
-                      alert("Please provide the required fields in children.")
-                    }
-                  })
+                      catch {
+                        alert("Please provide the required fields in children.")
+                      }
+                    })
+                  }); 
 
               });
             } else {
@@ -286,8 +291,6 @@ export function FetchCurrentUser() {
 }
 
 export function AddEmployeeDataFirestore(querySelctorID, employeeData, currentDocumentID) {
-
-  console.log(querySelctorID, employeeData, currentDocumentID)
   const TestcolRef = collection(db, 'User Account');
   const EmployeecolRef = collection(db, 'Employee Information');
   //const addDataSheetForm = document.querySelector(querySelctorID);
@@ -900,3 +903,35 @@ export function fetchEmployeeData() {
 
 
 window.addEventListener('load', fetchEmployeeData)
+
+
+
+
+async function GetIncrementalID() {
+  const EmployeecolRef = collection(db, 'Employee Information');
+
+  try {
+      const querySnapshot = await getDocs(EmployeecolRef);
+
+      // Check kung mayroong dokumento sa koleksyon
+      if (!querySnapshot.empty) {
+          // Kunin ang unang dokumento (maari mo baguhin depende sa iyong requirements)
+          const firstDocData = querySnapshot.docs[0].data();
+
+          // Check kung mayroong field na "incrementalAccountID" sa dokumento
+          if (firstDocData.incrementalAccountID) {
+              const accountID = firstDocData.incrementalAccountID;
+
+              return accountID + 1;
+          } else {
+              return 1000;
+          }
+      } else {
+          // Kung walang dokumento, maaari mong i-handle dito
+          return 1000;
+      }
+  } catch (error) {
+      console.error('Error sa pagkuha ng dokumento: ', error);
+      return 1; // O i-handle ang error depende sa iyong pangangailangan
+  }
+}
