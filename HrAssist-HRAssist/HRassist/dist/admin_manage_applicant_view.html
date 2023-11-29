@@ -220,7 +220,7 @@
       </li><!-- End Accounts Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="a#">
+        <a class="nav-link collapsed" href="admin_search_employee_view.html">
             <i class="bi bi-search"></i>
             <span>Search Employee</span>
         </a>
@@ -229,7 +229,7 @@
       <li class="nav-heading">Recruitment, Selection, & Placement</li>
 
       <li class="nav-item">
-          <a class="nav-link collapsed" href="admin_manage_applicant_view.html">
+          <a class="nav-link" href="admin_manage_applicant_view.html">
               <i class="bi bi-people"></i>
               <span>Manage Applicant</span>
           </a>
@@ -243,7 +243,7 @@
       </li><!-- End Job Vacancy Nav -->
 
       <li class="nav-item">
-          <a class="nav-link collapsed" href="#">
+          <a class="nav-link collapsed" href="admin_employee_registry_view.html">
               <i class="bi bi-person"></i>
               <span>Manage Employee</span>
           </a>
@@ -259,7 +259,7 @@
       </li><!-- End Training & Seminar Nav -->
 
       <li class="nav-item">
-          <a class="nav-link collapsed" href="#">
+          <a class="nav-link collapsed" href="calendar.html">
               <i class="bx bxs-calendar"></i>
               <span>Calendar & Scheduling</span>
           </a>
@@ -268,21 +268,21 @@
       <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
 
       <li class="nav-item">
-          <a class="nav-link collapsed" href="#">
+          <a class="nav-link collapsed" href="admin_request.html">
               <i class="bi bi-envelope"></i>
               <span>Employee Request</span>
           </a>
       </li><!-- End Request Nav -->
 
       <li class="nav-item">
-          <a class="nav-link collapsed" href="#">
+          <a class="nav-link collapsed" href="admin-dtr.html">
               <i class="bi bi-clock"></i>
               <span>DTR</span>
           </a>
       </li><!-- End DTR Nav -->
 
       <li class="nav-item">
-          <a class="nav-link collapsed" href="#">
+          <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
               <i class="bi bi-check-square"></i>
               <span>IPCR</span>
           </a>
@@ -291,7 +291,7 @@
       <li class="nav-heading">REWARDS AND RECOGNITION</li>
 
       <li class="nav-item">
-          <a class="nav-link collapsed" href="#">
+          <a class="nav-link collapsed" href="admin_rewards_view.html">
               <i class="bi bi-award"></i>
               <span>Award</span>
           </a>
@@ -385,7 +385,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr data-href="admin_applicant_status.html">
                                     <td>1</td>
                                     <td>Juan Dela Cruz</td>
                                     <td>10/06/2023</td>
@@ -395,7 +395,7 @@
                                         <button><i class="bx bx-trash"></i></button>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr data-href="admin_applicant_status.html">
                                     <td>2</td>
                                     <td>Lebron James</td>
                                     <td>10/06/2023</td>
@@ -405,7 +405,7 @@
                                         <button><i class="bx bx-trash"></i></button>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr data-href="admin_applicant_status.html">
                                     <td>3</td>
                                     <td>Stephen Curry</td>
                                     <td>10/06/2023</td>
@@ -417,7 +417,20 @@
                                 </tr>
                             </tbody>
                         </table>
-                             
+
+                        <script>
+                          document.addEventListener("DOMContentLoaded", () => {
+                            const rows = document.querySelectorAll("tr[data-href]");
+
+                            rows.forEach(row => {
+                              row.addEventListener("click", () => {
+                                window.location.href = row.dataset.href;
+                              
+                              });
+                            });
+                          });
+                        </script> 
+
                     </div>
                 </div>
             </div>

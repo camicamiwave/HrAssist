@@ -137,10 +137,41 @@
                 z-index: 1;
             }
 
+            #progress-num .step span {
+                font-size: 12px; /* Adjust text size as needed */
+                text-align: left;
+                display: inline-flex;
+                margin-top: 5px; /* Adjust spacing between number and text */
+                color: #000000;
+            }
+
             #progress-num .step.active {
                 border-color: lightseagreen;
                 background-color: lightseagreen;
                 color: #fff;
+            }
+
+            .button-container {
+                display: flex;
+                justify-content: space-between; /* Adjust as needed */
+                gap: 30px;
+            }
+
+            .prev-btn,
+            .next-btn {
+                /* Add styling for buttons */
+                padding: 8px 16px;
+                background-color: #3498db;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            /* Additional styling as needed */
+            .prev-btn:hover,
+            .next-btn:hover {
+                background-color: #2980b9;
             }
 
         </style>
@@ -333,29 +364,21 @@
                     </a>
                 </li>
 
-                <li class="nav-heading">LGU Information</li>
-
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="admin-offices.html">
-                        <i class="bx bxs-buildings"></i>
-                        <span>Offices</span>
+                    <a class="nav-link collapsed" href="admin_search_employee_view.html">
+                        <i class="bi bi-search"></i>
+                        <span>Search Employee</span>
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="calendar.html">
-                        <i class="bx bxs-calendar"></i>
-                        <span>Calendar</span>
-                    </a>
-                </li>
-
-                <li class="nav-heading">Recruitment</li>
+                <li class="nav-heading">Recruitment, Selection, & Placement</li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="bi bi-people"></i>
                         <span>Manage Applicant</span>
                     </a>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
@@ -364,41 +387,10 @@
                     </a>
                 </li>
 
-                <li class="nav-heading">Employee Registration</li>
-
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="admin_employee_registry_list.html">
                         <i class="bi bi-person-workspace"></i>
-                        <span>Employee Registry</span>
-                    </a>
-
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="admin_search_employee_view.html">
-                        <i class="bi bi-search"></i>
-                        <span>Search Employee</span>
-                    </a>
-                </li>
-
-                <li class="nav-heading">Employement Tools</li>
-
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="admin_request.html">
-                        <i class="bi bi-envelope"></i>
-                        <span>Request</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="admin_rewards_view.html">
-                        <i class="bi bi-gift"></i>
-                        <span>Rewards</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="admin-dtr.html">
-                        <i class="bi bi-folder"></i>
-                        <span>Reports</span>
+                        <span>Manage Employee</span>
                     </a>
                 </li>
 
@@ -412,12 +404,43 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="admin_materials.html">
-                        <i class="bx bxs-folder-open"></i>
-                        <span>Materials</span>
+                    <a class="nav-link collapsed" href="calendar.html">
+                        <i class="bx bxs-calendar"></i>
+                        <span>Calendar & Scheduling</span>
                     </a>
                 </li>
 
+                <li class="nav-heading">Performance Management System</li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="admin_request.html">
+                        <i class="bi bi-envelope"></i>
+                        <span>Employee Request</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="admin-dtr.html">
+                        <i class="bi bi-clock"></i>
+                        <span>DTR</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="admin-ipcr.html">
+                        <i class="bi bi-check-square"></i>
+                        <span>IPCR</span>
+                    </a>
+                </li>
+
+                <li class="nav-heading">Rewards And Recognition</li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="admin_rewards_view.html">
+                        <i class="bi bi-gift"></i>
+                        <span>Award</span>
+                    </a>
+                </li>
             </ul>
         </aside><!-- End Sidebar-->
 
@@ -450,9 +473,8 @@
                                 <!-- Profile picture image-->
                                 <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
                                 <!-- Profile picture help block-->
-                                <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                                <!-- Profile picture upload button-->
-                                <button class="btn btn-primary" type="button">Upload new image</button>
+                                <div class="small font-italic text-muted mb-1">Applicant ID: 10000</div>
+                                <div class="small font-italic text-muted mb-4">Applicant Status: Applied</div>
                             </div>
                         </div>
                     </div>
@@ -463,14 +485,16 @@
                             <div id="progress">
                                 <div id="progress-bar"></div>
                                 <ul id="progress-num">
-                                  <li class="step active">1</li>
-                                  <li class="step">2</li>
-                                  <li class="step">3</li>
-                                  <li class="step">4</li>
+                                  <li class="step active">1 <span>Applied</span></li>
+                                  <li class="step">2 <span>Applied</span></li></li>
+                                  <li class="step">3 <span>Applied</span></li></li>
+                                  <li class="step">4 <span>Applied</span></li></li>
                                 </ul>
                             </div>
-                            <button id="progress-prev" class="btn" disabled>Prev</button>
-                            <button id="progress-next" class="btn">Next</button>
+                            <div class="button_container">
+                                <button id="progress-next" class="btn">Proceed</button>
+                                <button id="progress-prev" class="btn" disabled>Reject</button>
+                            </div>
                             <script>
                                 const progressBar = document.getElementById("progress-bar");
                                 const progressNext = document.getElementById("progress-next");
