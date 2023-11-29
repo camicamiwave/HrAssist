@@ -385,7 +385,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr data-href="admin_applicant_status.html">
                                     <td>1</td>
                                     <td>Juan Dela Cruz</td>
                                     <td>10/06/2023</td>
@@ -395,7 +395,7 @@
                                         <button><i class="bx bx-trash"></i></button>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr data-href="admin_applicant_status.html">
                                     <td>2</td>
                                     <td>Lebron James</td>
                                     <td>10/06/2023</td>
@@ -405,7 +405,7 @@
                                         <button><i class="bx bx-trash"></i></button>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr data-href="admin_applicant_status.html">
                                     <td>3</td>
                                     <td>Stephen Curry</td>
                                     <td>10/06/2023</td>
@@ -417,7 +417,20 @@
                                 </tr>
                             </tbody>
                         </table>
-                             
+
+                        <script>
+                          document.addEventListener("DOMContentLoaded", () => {
+                            const rows = document.querySelectorAll("tr[data-href]");
+
+                            rows.forEach(row => {
+                              row.addEventListener("click", () => {
+                                window.location.href = row.dataset.href;
+                              
+                              });
+                            });
+                          });
+                        </script> 
+
                     </div>
                 </div>
             </div>
