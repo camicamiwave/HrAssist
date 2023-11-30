@@ -52,16 +52,19 @@
   width: 100%;
   height: 3vw;
   background-color: #ffffff;
-  color: #000000; 
+  color: #000000da; 
   font-family: 'poppins';
-  font-size: 90%;
+  font-size: 68%;
   outline: 1px solid #10c295;
+  font-weight: 500;
   margin-bottom: 2%;
 }
 
 .custom-account-btn {
   background-color: #0a8566;
   color: #ffffff;
+  font-size: 80%;
+  font-weight: 500; 
   width: 100%;
   outline: 1px solid #10c295;
   margin-bottom: 2%;
@@ -250,7 +253,7 @@
     .card-header {
         padding: 1rem 1.35rem;
         margin-bottom: 0;
-        background-color: #0dad85;
+        background-color: #0a8b6b;
         border-bottom: 1px solid rgba(33, 40, 50, 0.125);
     }
 

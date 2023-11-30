@@ -13,6 +13,7 @@ import {
 } from 'firebase/firestore';
 
 import { firebaseConfig } from './server.js';
+import { fetchEmployeeInfo } from './fetch_employee_info.js';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -147,3 +148,83 @@ function TestAccountCreation() {
 }
 
 window.addEventListener('load', TestAccountCreation);
+
+
+function fetchAccountInformation(){
+    
+  const urlParams = new URLSearchParams(window.location.search);
+  const receivedStringData = urlParams.get('data'); 
+
+  const accountLayout = document.getElementById('accountLayout')
+  const accountLayoutNone = document.getElementById('accountLayoutNone')
+
+  if (receivedStringData){
+    accountLayout.style.display = 'none';
+    accountLayoutNone.style.display = 'block'; 
+
+    const EmployeecolRef = collection(db, 'Employee Information');
+    const UsercolRef = collection(db, 'User Account');
+
+    fetchEmployeeInfo(EmployeecolRef, receivedStringData, "documentID").then((dataRetrieved) => {
+        const data = dataRetrieved;        
+
+        const userID = data.accountID
+        const employeeProfile = document.getElementById('employeeProfile')
+        const accountUsername = document.getElementById('accountUsername')
+        
+        employeeProfile.src = data.ProfilePictureURL
+        accountUsername.innerHTML = data.EmployeeUsername
+
+        
+        fetchEmployeeInfo(UsercolRef, userID, "documentID").then((dataRetrieved) => {
+            const Accountdata = dataRetrieved;      
+
+            console.log(Accountdata)
+
+            const accountStatus = document.getElementById('accountStatus')
+            const accountEmail = document.getElementById('accountEmail')
+
+            accountStatus.innerHTML = Accountdata.AccountStatus
+            accountEmail.innerHTML = Accountdata.Email
+
+            const activateBtn = document.getElementById('activateBtn')
+            const deactivateBtn = document.getElementById('deactivateBtn')
+
+            activateBtn.addEventListener('click', (e) => {
+                accountStatusEditor(Accountdata.documentID, "Active")
+            }) 
+            
+            deactivateBtn.addEventListener('click', (e) => {
+                accountStatusEditor(Accountdata.documentID, "Deactivated")
+            })
+
+        })  
+
+    })
+    
+  } else {
+    accountLayout.style.display = 'block';
+    accountLayoutNone.style.display = 'none';       
+    }
+
+}
+
+
+window.addEventListener('load', fetchAccountInformation);
+
+function accountStatusEditor(documentId, accountStatus) {
+
+    alert(`Account ${accountStatus}`)
+
+    const userCollectionRef = collection(db, 'User Account'); 
+
+    return setDoc(doc(userCollectionRef, documentId), { AccountStatus: accountStatus }, { merge: true }).then(()=>{
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const receivedStringData = urlParams.get('data'); 
+        const received201FileData = urlParams.get('201filedoc'); 
+
+        window.location.href = `admin_201file_account.html?data=${encodeURIComponent(receivedStringData)}&201filedoc=${encodeURIComponent(received201FileData)}`;
+    })
+    
+}
