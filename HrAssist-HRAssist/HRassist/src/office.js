@@ -215,6 +215,7 @@ function fetchOffices() {
             // You can now use the documentId as needed
         }
     });    
+    
 }
 
 

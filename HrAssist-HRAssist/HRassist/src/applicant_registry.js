@@ -52,19 +52,19 @@ function GetApplicantTable() {
       // Extracting date only from createdAt
       const dateString = createdAt.toLocaleDateString();
 
-      /*
+      
       // Create and populate table cells
       // Create an image element
       const imageElement = document.createElement('img');
 
       // Set the src attribute to the image URL
-      imageElement.src = "https://firebasestorage.googleapis.com/v0/b/hrassist-lgusanvicente.appspot.com/o/Applicant%2FRequirements%2F1699720150322_bcert.png?alt=media&token=31d4f8c5-a4f2-4070-b104-624f27975f63";
+      imageElement.src = data.ProfilePicURL;
       // Append the image element to the table cell
       const profileCell = document.createElement('td');
-      profileCell.appendChild(imageElement);*/
+      profileCell.appendChild(imageElement);
 
       const idCell = document.createElement('td');
-      idCell.textContent = id;
+      idCell.textContent = data.ApplicantID;
 
       const nameCell = document.createElement('td');
       nameCell.textContent = ApplicantFullName;
@@ -108,6 +108,7 @@ function GetApplicantTable() {
 
       // Append cells to the row 
       //row.appendChild(profileCell); 
+      row.appendChild(profileCell)
       row.appendChild(idCell);
       row.appendChild(nameCell);
       row.appendChild(jobApplicationDateCell);
@@ -122,6 +123,10 @@ function GetApplicantTable() {
 
 
 window.addEventListener('load', GetApplicantTable);
+
+
+
+
 
 export function FetchCurrentUser() {
   return new Promise((resolve, reject) => {

@@ -35,7 +35,8 @@
     "account_status": "node account_status.js",
     "dtr": "node dtr.js",
     "office": "node office.js",
-    "organizational_chart": "node organizational_chart.js"
+    "organizational_chart": "node organizational_chart.js",
+    "manage_employee": "node manage_employee.js"
   },
   "keywords": [],
   "author": "",
