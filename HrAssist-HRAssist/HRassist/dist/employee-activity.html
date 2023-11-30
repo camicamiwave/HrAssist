@@ -28,6 +28,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatF">
 
   <!-- Template Main CSS File -->
   <link href="css/employee-activity.css" rel="stylesheet">
@@ -254,7 +255,7 @@
       <li class="nav-heading">Employee Tool</li>
 
       <li class="nav-item">
-        <a class="nav-link " href="employee_home.html">
+        <a class="nav-link collapsed" href="employee_home.html">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -273,16 +274,9 @@
 
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="employee-activity.html">
+        <a class="nav-link" href="employee-activity.html">
           <i class="bx bxs-user-account"></i>
           <span>Activities</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="employee-calendar.html">
-          <i class="bx bxs-briefcase"></i>
-          <span>Job Vacancy</span>
         </a>
       </li>
 
@@ -316,325 +310,339 @@
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
-
     <div class="pagetitle">
-      <h1>Calendar</h1>
+      <h1>Activities</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="employee_home.html">Home</a></li>
-          <li class="breadcrumb-item active">Calendar</li>
+          <li class="breadcrumb-item active">Activities</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
+    <br>
 
-    <section class="section dashboard">
+    <!--START CONTENT HERE-->
+    <div class="container">
       <div class="row">
-
-        <!-- Left side columns -->
-        <div class="col-lg-12">
-          <div class="row">
-
-            <!--START YOUR CONTENT HERE -->
-            <div id="schedule" class="pt90 pb90">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-8 mr-auto ml-auto text-center">
-                            <div class="center-title mb60">
-                                <h2>Event Schedule</h2>
-                                <p class="lead">
-                                    02 - 04 November 2016.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row margin-b-30">
-                        <div class="col-md-10 mr-auto ml-auto">
-                            <div>
-            
-                                <!-- Nav tabs -->
-                                <ul class="nav tabs-schedule nav-tabs list-inline" role="tablist">
-                                    <li role="presentation" class="nav-item"><a class="nav-link active show" href="#01" aria-controls="01" role="tab" data-toggle="tab" aria-selected="true">Day 1 <span>1 November 2016</span></a></li>
-                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#02" aria-controls="02" role="tab" data-toggle="tab" aria-selected="false">Day 2 <span>2 November 2016</span></a></li>
-                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#03" aria-controls="03" role="tab" data-toggle="tab" aria-selected="false">Day 3 <span>3 November 2016</span></a></li>
-                                </ul>
-            
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane fade active show" id="01">
-                                        <div class="row margin-b-30">
-                                            <div class="col-sm-3 event-info">
-                                                <span>Monday</span>
-                                                <span>9:00 AM to 10:45 AM</span>
-                                                <span class="event-hall">Basement R1</span>
-                                            </div>
-                                            <div class="col-sm-9 event-detail">
-                                                <h3><a href="#">Introducing bootstrap4 features</a></h3>
-                                                <div class="row margin-b-20">
-                                                    <div class="col-sm-2">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="img-fluid">
-                                                    </div>
-                                                    <div class="col-sm-10">
-                                                        <h4>Nikita Miller</h4>
-                                                        <p>
-                                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings, the master-builder of human happiness
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-2">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" class="img-fluid">
-                                                    </div>
-                                                    <div class="col-sm-10">
-                                                        <h4>Johathan Doe</h4>
-                                                        <p>
-                                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings, the master-builder of human happiness
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row margin-b-30">
-                                            <div class="col-sm-3 event-info">
-                                                <span>Monday</span>
-                                                <span>11:00 AM to 11:45 AM</span>
-                                                <span class="event-hall">Basement R1</span>
-                                            </div>
-                                            <div class="col-sm-9 event-detail">
-                                                <h3><a href="#">Roadmap about bootstrap updates</a></h3>
-                                                <div class="row">
-                                                    <div class="col-sm-2">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" class="img-fluid">
-                                                    </div>
-                                                    <div class="col-sm-10">
-                                                        <h4>Robert</h4>
-                                                        <p>
-                                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings, the master-builder of human happiness
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row margin-b-30" style="opacity: 0.7;">
-                                            <div class="col-sm-3 event-info">
-                                                <span>Monday</span>
-                                                <span>1:00 AM to 2:00 AM</span>
-                                                <span class="event-hall">Fulkari Restaurant</span>
-                                            </div>
-                                            <div class="col-sm-9 event-detail">
-                                                <h3><a href="#">lunch</a></h3>
-                                                <p>
-                                                    But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings, the master-builder of human happiness
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-3 event-info">
-                                                <span>Monday</span>
-                                                <span>2:00 AM to 4:30 AM</span>
-                                                <span class="event-hall">Basement R1</span>
-                                            </div>
-                                            <div class="col-sm-9 event-detail">
-                                                <h3><a href="#">Bootstrap with AngularJs</a></h3>
-                                                <div class="row">
-                                                    <div class="col-sm-2">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" class="img-fluid">
-                                                    </div>
-                                                    <div class="col-sm-10">
-                                                        <h4>Smitha Doe</h4>
-                                                        <p>
-                                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings, the master-builder of human happiness
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="02">
-                                        <div class="row margin-b-30">
-                                            <div class="col-sm-3 event-info">
-                                                <span>Monday</span>
-                                                <span>9:00 AM to 10:45 AM</span>
-                                                <span class="event-hall">Basement R1</span>
-                                            </div>
-                                            <div class="col-sm-9 event-detail">
-                                                <h3><a href="#">Introducing bootstrap4 features</a></h3>
-                                                <div class="row margin-b-20">
-                                                    <div class="col-sm-2">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="img-fluid">
-                                                    </div>
-                                                    <div class="col-sm-10">
-                                                        <h4>Nikita Miller</h4>
-                                                        <p>
-                                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings, the master-builder of human happiness
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-2">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" class="img-fluid">
-                                                    </div>
-                                                    <div class="col-sm-10">
-                                                        <h4>Johathan Doe</h4>
-                                                        <p>
-                                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings, the master-builder of human happiness
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row margin-b-30">
-                                            <div class="col-sm-3 event-info">
-                                                <span>Monday</span>
-                                                <span>11:00 AM to 11:45 AM</span>
-                                                <span class="event-hall">Basement R1</span>
-                                            </div>
-                                            <div class="col-sm-9 event-detail">
-                                                <h3><a href="#">Roadmap about bootstrap updates</a></h3>
-                                                <div class="row">
-                                                    <div class="col-sm-2">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" class="img-fluid">
-                                                    </div>
-                                                    <div class="col-sm-10">
-                                                        <h4>Robert</h4>
-                                                        <p>
-                                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings, the master-builder of human happiness
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row margin-b-30" style="opacity: 0.7;">
-                                            <div class="col-sm-3 event-info">
-                                                <span>Monday</span>
-                                                <span>1:00 AM to 2:00 AM</span>
-                                                <span class="event-hall">Fulkari Restaurant</span>
-                                            </div>
-                                            <div class="col-sm-9 event-detail">
-                                                <h3><a href="#">lunch</a></h3>
-                                                <p>
-                                                    But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings, the master-builder of human happiness
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-3 event-info">
-                                                <span>Monday</span>
-                                                <span>2:00 AM to 4:30 AM</span>
-                                                <span class="event-hall">Basement R1</span>
-                                            </div>
-                                            <div class="col-sm-9 event-detail">
-                                                <h3><a href="#">Bootstrap with AngularJs</a></h3>
-                                                <div class="row">
-                                                    <div class="col-sm-2">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" class="img-fluid">
-                                                    </div>
-                                                    <div class="col-sm-10">
-                                                        <h4>Smitha Doe</h4>
-                                                        <p>
-                                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings, the master-builder of human happiness
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade " id="03">
-                                        <div class="row margin-b-30">
-                                            <div class="col-sm-3 event-info">
-                                                <span>Wednesday</span>
-                                                <span>9:00 AM to 10:45 AM</span>
-                                                <span class="event-hall">Basement R1</span>
-                                            </div>
-                                            <div class="col-sm-9 event-detail">
-                                                <h3><a href="#">Lorem ipsum dolor sit amet</a></h3>
-                                                <div class="row margin-b-20">
-                                                    <div class="col-sm-2">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="" class="img-fluid">
-                                                    </div>
-                                                    <div class="col-sm-10">
-                                                        <h4>John Miller</h4>
-                                                        <p>
-                                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings, the master-builder of human happiness
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-2">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="img-fluid">
-                                                    </div>
-                                                    <div class="col-sm-10">
-                                                        <h4>Adam Doe</h4>
-                                                        <p>
-                                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings, the master-builder of human happiness
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row margin-b-30">
-                                            <div class="col-sm-3 event-info">
-                                                <span>Wednesday</span>
-                                                <span>11:00 AM to 11:45 AM</span>
-                                                <span class="event-hall">Basement R1</span>
-                                            </div>
-                                            <div class="col-sm-9 event-detail">
-                                                <h3><a href="#">Roadmap about bootstrap updates</a></h3>
-                                                <div class="row">
-                                                    <div class="col-sm-2">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" class="img-fluid">
-                                                    </div>
-                                                    <div class="col-sm-10">
-                                                        <h4>Robert</h4>
-                                                        <p>
-                                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings, the master-builder of human happiness
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row margin-b-30" style="opacity: 0.7;">
-                                            <div class="col-sm-3 event-info">
-                                                <span>Wednesday</span>
-                                                <span>1:00 AM to 2:00 AM</span>
-                                                <span class="event-hall">Fulkari Restaurant</span>
-                                            </div>
-                                            <div class="col-sm-9 event-detail">
-                                                <h3><a href="#">lunch</a></h3>
-                                                <p>
-                                                    But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings, the master-builder of human happiness
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-3 event-info">
-                                                <span>Wednesday</span>
-                                                <span>2:00 AM to 4:30 AM</span>
-                                                <span class="event-hall">Basement R1</span>
-                                            </div>
-                                            <div class="col-sm-9 event-detail">
-                                                <h3><a href="#">Closing ceremony</a></h3>
-                                                <div class="row">
-                                                    <div class="col-sm-2">
-                                                        <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" class="img-fluid">
-                                                    </div>
-                                                    <div class="col-sm-10">
-                                                        <h4>Smitha Doe</h4>
-                                                        <p>
-                                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings, the master-builder of human happiness
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+          <div class="col-xl-5">
+              <div class="card">
+                  <div class="card-body">
+                      <div class="dropdown float-end">
+                          <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="mdi mdi-dots-vertical"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-end">
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item">Edit</a>
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item">Delete</a>
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item">Block</a>
+                          </div>
+                      </div>
+                      <div class="d-flex align-items-start">
+                          <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
+                          <div class="w-100 ms-3">
+                              <h4 class="my-0">Juan Garcia</h4>
+                              <p class="text-muted">employee</p>
+                              <button type="button" class="btn btn-soft-primary btn-xs waves-effect mb-2 waves-light">Follow</button>
+                              <button type="button" class="btn btn-soft-success btn-xs waves-effect mb-2 waves-light">Message</button>
+                          </div>
+                      </div>
+  
+                      <div class="mt-3">
+                          <h4 class="font-13 text-uppercase">About Me :</h4>
+                          <p class="text-muted font-13 mb-3">
+                              Hi I'm Johnathn Deo,has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+                          </p>
+                          <p class="text-muted mb-2 font-13"><strong>Full Name :</strong> <span class="ms-2">Geneva D. McKnight</span></p>
+                      
+                          <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span class="ms-2">(123) 123 1234</span></p>
+                      
+                          <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span class="ms-2">user@email.domain</span></p>
+                      
+                          <p class="text-muted mb-1 font-13"><strong>Location :</strong> <span class="ms-2">USA</span></p>
+                      </div>                                    
+  
+                      <ul class="social-list list-inline mt-3 mb-0">
+                          <li class="list-inline-item">
+                              <a href="javascript: void(0);" class="social-list-item text-center border-primary text-primary"><i class="mdi mdi-facebook"></i></a>
+                          </li>
+                          <li class="list-inline-item">
+                              <a href="javascript: void(0);" class="social-list-item text-center border-danger text-danger"><i class="mdi mdi-google"></i></a>
+                          </li>
+                          <li class="list-inline-item">
+                              <a href="javascript: void(0);" class="social-list-item text-center border-info text-info"><i class="mdi mdi-twitter"></i></a>
+                          </li>
+                          <li class="list-inline-item">
+                              <a href="javascript: void(0);" class="social-list-item text-center border-secondary text-secondary"><i class="mdi mdi-github"></i></a>
+                          </li>
+                      </ul>   
+                  </div>                                 
+              </div> <!-- end card -->
+  
+              <div class="card">
+                  <div class="card-body">
+                      <div class="dropdown float-end">
+                          <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="mdi mdi-dots-vertical"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-end">
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item">Profit</a>
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                          </div>
+                      </div>
+  
+                      <h4 class="header-title mb-3">Team Members <i class="mdi mdi-account-multiple ms-1"></i></h4>
+  
+                      <div class="list-group">
+                          <a href="#" class="list-group-item list-group-item-action">
+                              <div class="d-flex align-items-center pb-1" id="tooltips-container">
+                                  <img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent" alt="">
+                                  <div class="w-100 ms-2">
+                                      <h5 class="mb-1">Herbert Stewart<i class="mdi mdi-check-decagram text-info ms-1"></i></h5>
+                                      <p class="mb-0 font-13 text-muted">Co Founder</p>
+                                  </div>
+                                  <i class="mdi mdi-chevron-right h2"></i>
+                              </div>
+                          </a>
+                          <a href="#" class="list-group-item list-group-item-action">
+                              <div class="d-flex align-items-center pb-1" id="tooltips-container">
+                                  <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent" alt="">
+                                  <div class="w-100 ms-2">
+                                      <h5 class="mb-1">Terry Mouser</h5>
+                                      <p class="mb-0 font-13 text-muted">Web Designer</p>
+                                  </div>
+                                  <i class="mdi mdi-chevron-right h2"></i>
+                              </div>
+                          </a>
+                          <a href="#" class="list-group-item list-group-item-action">
+                              <div class="d-flex align-items-center pb-1" id="tooltips-container">
+                                  <img src="https://bootdey.com/img/Content/avatar/avatar8.png" class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent" alt="">
+                                  <div class="w-100 ms-2">
+                                      <h5 class="mb-1">Adam Barney</h5>
+                                      <p class="mb-0 font-13 text-muted">PHP Developer</p>
+                                  </div>
+                                  <i class="mdi mdi-chevron-right h2"></i>
+                              </div>
+                          </a>
+                          <a href="#" class="list-group-item list-group-item-action">
+                              <div class="d-flex align-items-center pb-1" id="tooltips-container">
+                                  <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle img-fluid avatar-md img-thumbnail bg-transparent" alt="">
+                                  <div class="w-100 ms-2">
+                                      <h5 class="mb-1">Michal Chang</h5>
+                                      <p class="mb-0 font-13 text-muted">UI/UX Designer</p>
+                                  </div>
+                                  <i class="mdi mdi-chevron-right h2"></i>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="card">
+                  <div class="card-body">
+                      <div class="dropdown float-end">
+                          <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="mdi mdi-dots-vertical"></i>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-end">
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item">Profit</a>
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                          </div>
+                      </div>
+  
+                      <div class="list-group">
+                          <a href="#" class="my-1">
+                              <div class="d-flex align-items-start" id="tooltips-container">
+                                  <div class="">
+                                      <i class="mdi mdi-circle h3 text-primary"></i>
+                                  </div>
+                                  <div class="w-100 ms-2">
+                                      <h5 class="mb-1 mt-0">New Admin Layout Discuss</h5>
+                                      <ul class="list-inline text-muted font-12">
+                                          <li class="list-inline-item"><i class="mdi mdi-calendar-blank-outline me-1"></i>10 May 2021</li>
+                                          <li class="list-inline-item"> - </li>
+                                          <li class="list-inline-item"><i class="mdi mdi-clock-time-eight-outline me-1"></i>09:00am <span class="px-1">To</span> 10:30am</li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </a>
+                          <a href="#" class="my-1">
+                              <div class="d-flex align-items-start" id="tooltips-container">
+                                  <div class="">
+                                      <i class="mdi mdi-circle h3 text-pink"></i>
+                                  </div>
+                                  <div class="w-100 ms-2">
+                                      <h5 class="mb-1 mt-0">Landing Pages Planning</h5>
+                                      <ul class="list-inline text-muted font-12">
+                                          <li class="list-inline-item"><i class="mdi mdi-calendar-blank-outline me-1"></i>10 May 2021</li>
+                                          <li class="list-inline-item"> - </li>
+                                          <li class="list-inline-item"><i class="mdi mdi-clock-time-eight-outline me-1"></i>02:00pm <span class="px-1">To</span> 4:00pm</li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </a>
+                          <a href="#" class="my-1">
+                              <div class="d-flex align-items-start" id="tooltips-container">
+                                  <div class="">
+                                      <i class="mdi mdi-circle h3 text-success"></i>
+                                  </div>
+                                  <div class="w-100 ms-2">
+                                      <h5 class="mb-1 mt-0">Meet Our Clients</h5>
+                                      <ul class="list-inline text-muted font-12">
+                                          <li class="list-inline-item"><i class="mdi mdi-calendar-blank-outline me-1"></i>11 May 2021</li>
+                                          <li class="list-inline-item"> - </li>
+                                          <li class="list-inline-item"><i class="mdi mdi-clock-time-eight-outline me-1"></i>08:00am <span class="px-1">To</span> 11:20am</li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </a>
+                          <a href="#" class="my-1">
+                              <div class="d-flex align-items-start" id="tooltips-container">
+                                  <div class="">
+                                      <i class="mdi mdi-circle h3 text-warning"></i>
+                                  </div>
+                                  <div class="w-100 ms-2">
+                                      <h5 class="mb-1 mt-0">Project Discussion</h5>
+                                      <ul class="list-inline text-muted font-12">
+                                          <li class="list-inline-item"><i class="mdi mdi-calendar-blank-outline me-1"></i>11 May 2021</li>
+                                          <li class="list-inline-item"> - </li>
+                                          <li class="list-inline-item"><i class="mdi mdi-clock-time-eight-outline me-1"></i>12:00am <span class="px-1">To</span> 03:00am</li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </a>
+                          <a href="#" class="my-1">
+                              <div class="d-flex align-items-start" id="tooltips-container">
+                                  <div class="">
+                                      <i class="mdi mdi-circle h3 text-dark"></i>
+                                  </div>
+                                  <div class="w-100 ms-2">
+                                      <h5 class="mb-1 mt-0">Businees Meeting</h5>
+                                      <ul class="list-inline text-muted font-12">
+                                          <li class="list-inline-item"><i class="mdi mdi-calendar-blank-outline me-1"></i>12 May 2021</li>
+                                          <li class="list-inline-item"> - </li>
+                                          <li class="list-inline-item"><i class="mdi mdi-clock-time-eight-outline me-1"></i>08:30am <span class="px-1">To</span> 10:00am</li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </a>
+                          
+                      </div>
+                  </div>
+              </div>
+          </div> <!-- end col-->
+  
+                 <div class="col-lg-7 col-xl-6">
+                <div data-aos="fade-up" class="tab-content aos-init aos-animate" id="myTabContent">
+                    <div class="tab-pane fade active show" id="day1" role="tabpanel" aria-labelledby="d1-tab">
+                        <ul class="pt-4 list-unstyled mb-0">
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">9:00
+                                    AM - 10:00 AM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4>Registration and Coffee</h4>
+                                    <p class="mb-0">
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                        officia deserunt mollit anim id est laborum.
+                                    </p>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">10:00
+                                    AM - 11:00 AM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4>Culpa qui officia deserunt</h4>
+                                    <p class="mb-0">
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                        officia deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">11:00
+                                    AM - 12:30 PM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4>Excepteur sint occaecat cupidatat</h4>
+                                    <p class="mb-0">
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                        officia deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">12:30
+                                    PM - 1:30 PM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4>Lunch break</h4>
+                                    <p class="mb-0">
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                        officia deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="day2" role="tabpanel" aria-labelledby="d2-tab">
+                        <ul class="pt-4 list-unstyled mb-0">
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">9:00
+                                    AM - 10:00 AM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4>Excepteur sint occaecat</h4>
+                                    <p class="mb-0">
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                        officia deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">10:00
+                                    AM - 11:00 AM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4>Culpa qui officia deserunt</h4>
+                                    <p class="mb-0">
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                        officia deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">11:00
+                                    AM - 12:30 PM</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4>Excepteur sint occaecat cupidatat</h4>
+                                    <p class="mb-0">
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                        officia deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                            </li>
+              
+                       
+                        </ul>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+  
+  </div>
 
-            <!--END YOUR CONTENT-->
+    <!--END YOUR CONTENT-->
 
   </main><!-- End #main -->
 
