@@ -141,7 +141,7 @@ var chart = new OrgChart(document.getElementById("tree"), {
     ]
 });
 
-chart.nodeCircleMenuUI.on('click', function (sender, args) {
+chart.nodeCircleMenuUI.on('click', function (sender, args) { 
     switch (args.menuItem.text) {
         case "Details": chart.editUI.show(args.nodeId, true);
             break;
@@ -213,7 +213,8 @@ chart.load([
     { id: 15, stpid: "sales-team", name: "Tyler Chavez", title: "Sales Manager", img: "https://cdn.balkan.app/shared/15.jpg" },
     { id: 16, pid: 15, name: "Raylee Allen", title: "Sales", img: "https://cdn.balkan.app/shared/16.jpg" },
     { id: 17, pid: 15, name: "Kris Horne", title: "Sales Guru", img: "https://cdn.balkan.app/shared/8.jpg" },
-    { id: 18, pid: "top-management", name: "Leslie Mcclain", title: "Personal assistant", img: "https://cdn.balkan.app/shared/9.jpg", tags: ["assistant", "menu-without-add"] }
+    { id: 18, pid: "top-management", name: "Leslie Mcclain", title: "Personal assistant", img: "https://cdn.balkan.app/shared/9.jpg", tags: ["assistant", "menu-without-add"] },
+    
 ]);
 
 function preview() {
@@ -248,4 +249,9 @@ function addDepartment(nodeId) {
 
 function addManager(nodeId) {
     chart.addNode({ id: OrgChart.randomId(), stpid: nodeId });
+}
+
+
+function test123(){
+    console.log("Heyy123334")
 }

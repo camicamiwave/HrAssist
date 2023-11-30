@@ -31,7 +31,9 @@ module.exports = {
         employee_leave_form: './src/employee_leave_form.js',
         employee_pass_slip: './src/employee_pass_slip.js',
         account_status: './src/account_status.js',
-        dtr: './src/dtr.js'
+        dtr: './src/dtr.js',
+        office: './src/office.js',
+        organizational_chart: './src/organizational_chart.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),

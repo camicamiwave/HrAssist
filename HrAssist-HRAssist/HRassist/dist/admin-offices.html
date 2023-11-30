@@ -2,653 +2,747 @@
 
 <html lang="en">
 
-    <head>
-        <!-- Boxicons CSS -->
-        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/admin-offices.css" />
-        <!-- Favicon -->
-        <link href="img/hrlogo.svg" rel="icon">
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<head>
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/admin-offices.css" />
+    <!-- Favicon -->
+    <link href="img/hrlogo.svg" rel="icon">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <title>HR Assist - Admin</title>
-        <meta content="" name="description">
-        <meta content="" name="keywords">
+    <title>HR Assist - Admin</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
-        <!-- Favicons -->
-        <link href="assets/img/favicon.png" rel="icon">
-        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-        <!-- Google Fonts -->
-        <link href="https://fonts.gstatic.com" rel="preconnect">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
 
-        <!-- Vendor CSS Files -->
-        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-        <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-        <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-        <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-        <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-        <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="css/employee-template.css" rel="stylesheet">
-
-    </head>
-
-    <body>
-    <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
-
-    
-    <div class="d-flex align-items-center justify-content-center">
-      <a href="admin_dashboard.html" class="logo d-flex align-items-center mx-auto">
-        <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">Assist</span>
-      </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
-
-    <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div><!-- End Search Bar -->
-
-    <nav class="header-nav ms-auto">
-      <ul class="d-flex align-items-center">
-
-        <li class="nav-item d-block d-lg-none">
-          <a class="nav-link nav-icon search-bar-toggle " href="#">
-            <i class="bi bi-search"></i>
-          </a>
-        </li><!-- End Search Icon-->
-
-        <li class="nav-item dropdown">
-
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-bell"></i>
-            <span class="badge bg-primary badge-number">4</span>
-          </a><!-- End Notification Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-            <li class="dropdown-header">
-              You have 4 new notifications
-              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-exclamation-circle text-warning"></i>
-              <div>
-                <h4>Lorem Ipsum</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>30 min. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-x-circle text-danger"></i>
-              <div>
-                <h4>Atque rerum nesciunt</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>1 hr. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-check-circle text-success"></i>
-              <div>
-                <h4>Sit rerum fuga</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>2 hrs. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-info-circle text-primary"></i>
-              <div>
-                <h4>Dicta reprehenderit</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>4 hrs. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li class="dropdown-footer">
-              <a href="#">Show all notifications</a>
-            </li>
-
-          </ul><!-- End Notification Dropdown Items -->
-
-        </li><!-- End Notification Nav -->
-
-
-        <li class="nav-item dropdown pe-3">
-
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
-          </a><!-- End Profile Iamge Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
-              <h6 id="hoverUserName">Juan Garcia</h6>
-              <span id="userLevel">Employee</span>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-person"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
-            </li>
-
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
-
-      </ul>
-    </nav><!-- End Icons Navigation -->
-
-  </header><!-- End Header -->
-
- <!-- ======= Sidebar ======= -->
- <aside id="sidebar" class="sidebar">
-    <ul class="sidebar-nav" id="sidebar-nav">
-      <li class="nav-heading">ADMIN TOOL</li>
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="admin_dashboard.html">
-                <i class="bi bi-grid"></i>
-                <span>Dashboard</span>
-            </a>
-        </li><!-- End Dashboard Nav -->
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="admin_accounts_view.html">
-                <i class="bx bxs-user-account"></i>
-                <span>Accounts</span>
-            </a>
-        </li><!-- End Accounts Nav -->
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="a#">
-              <i class="bi bi-search"></i>
-              <span>Search Employee</span>
-          </a>
-      </li><!-- End Search Nav -->
-  
-        <li class="nav-heading">Recruitment, Selection, & Placement</li>
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="admin_manage_applicant_view.html">
-                <i class="bi bi-people"></i>
-                <span>Manage Applicant</span>
-            </a>
-        </li><!-- End Manage Applicant Nav -->
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
-                <i class="bx bxs-briefcase"></i>
-                <span>Job Vacancy</span>
-            </a>
-        </li><!-- End Job Vacancy Nav -->
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
-                <i class="bi bi-person"></i>
-                <span>Manage Employee</span>
-            </a>
-        </li><!-- End Manage Employee Nav -->
-  
-        <li class="nav-heading">LEARNING & DEVELOPMENT</li>
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
-                <i class="bx bxs-group"></i>
-                <span>Training & Seminar</span>
-            </a>
-        </li><!-- End Training & Seminar Nav -->
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
-                <i class="bx bxs-calendar"></i>
-                <span>Calendar & Scheduling</span>
-            </a>
-        </li><!-- End Calendar & Scheduling Nav -->
-  
-        <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
-                <i class="bi bi-envelope"></i>
-                <span>Employee Request</span>
-            </a>
-        </li><!-- End Request Nav -->
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
-                <i class="bi bi-clock"></i>
-                <span>DTR</span>
-            </a>
-        </li><!-- End DTR Nav -->
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
-                <i class="bi bi-check-square"></i>
-                <span>IPCR</span>
-            </a>
-        </li><!-- End IPCR Nav -->
-  
-        <li class="nav-heading">REWARDS AND RECOGNITION</li>
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
-                <i class="bi bi-award"></i>
-                <span>Award</span>
-            </a>
-        </li><!-- End Award Nav -->
-    </ul>
-  </aside><!-- End Sidebar -->
-    </ul>
-
-  </aside><!-- End Sidebar-->
-
-  <main id="main" class="main">
-
-    <div class="pagetitle">
-      <h1>Offices</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Offices</li>
-        </ol>
-      </nav>
-    </div><!-- End Page Title -->
-
-    <section class="section dashboard">
-            <!--START YOUR CONTENT HERE -->
-                <div class="content-wrapper">
-                    <div class="organization-container">
-                        <a class="org-link" href="organizational_chart.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Office of the Municipal Mayor</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Office of the Municipal Vice Mayor</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Office of the Sangguniang Bayan Legislative</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Office of the Sangguniang Bayan Secretariat</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="img/offices logo/Business Permit and Licensing Office logo.png" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Business Permit and Licensing Office </h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div> 
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Human Resource Management Office</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="img/offices logo/Municipal Accounting Office logo.png" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Municipal Accounting Office</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="img/offices logo/Municipal Agriculture Office logo.png" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Municipal Agriculture Office</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Municipal Assessor's Office</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="img/offices logo/Municipal Budget Office logo.png" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Municipal Budget Office</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Office of the Municipal Civil Registrar</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="img/offices logo/Municipal Disaster Risk Reduction and Management Office Logo.png" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Municipal Disaster Risk Reduction and Management Office</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Management Office</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Municipal Engineering Office</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="img/offices logo/Department of Health logo.png" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Municipal Health Office</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Municipal Planning & Development Office</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="img/offices logo/Municipal Social Welfare and Development Office logo.png" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Municipal Social Welfare and Development Office</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="img/offices logo/Municipal Traffic and Public Safety Office logo.png" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Municipal Traffic and Public Safety Office</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Municipal Treasurer's Office</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                    <div class="organization-container">
-                        <a class="org-link" href="forms/add_organization.html">
-                            <div class="details">
-                                <div class="org-left">
-                                    <img class="org-logo" src="img/offices logo/Department of Tourism logo.png" alt="Organization Logo" width="80" height="80"/>
-                                </div>
-                                <div class="org-right">
-                                    <h3 class="org-name">Municipal Tourism Office</h3>
-                                    <div class="num-orgmember">
-                                        <img src="assets/images/offices/members.png"/> 32 Members
-                                    </div>
-                                </div>
-                            </div>
-                        </a> 
-                    </div>
-                </div>
-    </section>
-            <!--END YOUR CONTENT-->
-
-  </main><!-- End #main -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/chart.js/chart.umd.js"></script>
-  <script src="assets/vendor/echarts/echarts.min.js"></script>
-  <script src="assets/vendor/quill/quill.min.js"></script>
-  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>        
-
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-        <!-- JavaScript -->
-        <script src="js/script.js"></script>
-    
-        <!-- Database Javascript -->  
-        <script src="bundles/auth.bundle.js"></script>   
-        <script src="bundles/applicant_registry.bundle.js"></script>   
-        <script src="bundles/navbar.bundle.js"></script>
-    </body>
+    <!-- Template Main CSS File -->
+    <link href="css/employee-template.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+
+        <div class="d-flex align-items-center justify-content-center">
+            <a href="admin_dashboard.html" class="logo d-flex align-items-center mx-auto">
+                <img src="assets/img/logo.png" alt="">
+                <span class="d-none d-lg-block">Assist</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+
+        <div class="search-bar">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+        </div><!-- End Search Bar -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li><!-- End Search Icon-->
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-bell"></i>
+                        <span class="badge bg-primary badge-number">4</span>
+                    </a><!-- End Notification Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                        <li class="dropdown-header">
+                            You have 4 new notifications
+                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-exclamation-circle text-warning"></i>
+                            <div>
+                                <h4>Lorem Ipsum</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>30 min. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-x-circle text-danger"></i>
+                            <div>
+                                <h4>Atque rerum nesciunt</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>1 hr. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-check-circle text-success"></i>
+                            <div>
+                                <h4>Sit rerum fuga</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>2 hrs. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            <div>
+                                <h4>Dicta reprehenderit</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>4 hrs. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="dropdown-footer">
+                            <a href="#">Show all notifications</a>
+                        </li>
+
+                    </ul><!-- End Notification Dropdown Items -->
+
+                </li><!-- End Notification Nav -->
+
+
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture"
+                            class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
+                    </a><!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6 id="hoverUserName">Juan Garcia</h6>
+                            <span id="userLevel">Employee</span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-person"></i>
+                                <span>My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-gear"></i>
+                                <span>Account Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                                <i class="bi bi-question-circle"></i>
+                                <span>Need Help?</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
+                    </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-heading">ADMIN TOOL</li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="admin_dashboard.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="admin_accounts_view.html">
+                    <i class="bx bxs-user-account"></i>
+                    <span>Accounts</span>
+                </a>
+            </li><!-- End Accounts Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="a#">
+                    <i class="bi bi-search"></i>
+                    <span>Search Employee</span>
+                </a>
+            </li><!-- End Search Nav -->
+
+            <li class="nav-heading">Recruitment, Selection, & Placement</li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="admin_manage_applicant_view.html">
+                    <i class="bi bi-people"></i>
+                    <span>Manage Applicant</span>
+                </a>
+            </li><!-- End Manage Applicant Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
+                    <i class="bx bxs-briefcase"></i>
+                    <span>Job Vacancy</span>
+                </a>
+            </li><!-- End Job Vacancy Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                    <i class="bi bi-person"></i>
+                    <span>Manage Employee</span>
+                </a>
+            </li><!-- End Manage Employee Nav -->
+
+            <li class="nav-heading">LEARNING & DEVELOPMENT</li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+                    <i class="bx bxs-group"></i>
+                    <span>Training & Seminar</span>
+                </a>
+            </li><!-- End Training & Seminar Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                    <i class="bx bxs-calendar"></i>
+                    <span>Calendar & Scheduling</span>
+                </a>
+            </li><!-- End Calendar & Scheduling Nav -->
+
+            <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                    <i class="bi bi-envelope"></i>
+                    <span>Employee Request</span>
+                </a>
+            </li><!-- End Request Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                    <i class="bi bi-clock"></i>
+                    <span>DTR</span>
+                </a>
+            </li><!-- End DTR Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                    <i class="bi bi-check-square"></i>
+                    <span>IPCR</span>
+                </a>
+            </li><!-- End IPCR Nav -->
+
+            <li class="nav-heading">REWARDS AND RECOGNITION</li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                    <i class="bi bi-award"></i>
+                    <span>Award</span>
+                </a>
+            </li><!-- End Award Nav -->
+        </ul>
+    </aside><!-- End Sidebar -->
+    </ul>
+
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Offices</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item">Offices</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+
+
+        <section class="section dashboard">
+            <!--START YOUR CONTENT HERE -->
+            <button class="btn btn-success" style="float: right;" data-bs-toggle="modal" data-bs-target="#officeModal">+ Add Office</button><br><br>
+
+          <!-- Modal -->
+          <div class="modal fade" id="officeModal" tabindex="-1" role="dialog" aria-labelledby="yearModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="editModalLabel">Add Year</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>                
+                <div class="modal-body">
+                  <form id="officeForm"> 
+                    <div class="col-md-12">
+                        <label for="withinDetails"><small>Department Name <span style="color: red;">*</span></small></label><br>
+                        <input type="text" id="departmentName" class="form-control"
+                            placeholder="Department Name" required>
+                    </div><br>
+                    <div class="col-md-12">
+                        <label for="withinDetails"><small>Logo:</small></label><br>
+                        <input type="file" id="logoFileInput" class="form-control">
+                    </div>
+
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    onclick="hideYearModal()">Close</button>
+                  <input type="button" id="addOfficeBtn" class="btn btn-primary" value="Save">
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <script>
+            function hideYearModal() {
+              // Hide the modal
+              $('#officeModal').modal('hide');
+            }
+
+            function openYearModal() {
+              // Show the modal
+              $('#officeModal').modal('show');
+            }
+          </script>
+
+            <!-- OFFICE LAYOUT -->
+
+            <div class="content-wrapper">
+                <div class="organization-container">
+                    <a class="org-link" >
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo" id='logoImg' src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80"
+                                    height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name" id="officeName"></h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+            <!--                
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80"
+                                    height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Office of the Municipal Vice Mayor</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80"
+                                    height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Office of the Sangguniang Bayan Legislative</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80"
+                                    height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Office of the Sangguniang Bayan Secretariat</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo"
+                                    src="img/offices logo/Business Permit and Licensing Office logo.png"
+                                    alt="Organization Logo" width="80" height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Business Permit and Licensing Office </h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80"
+                                    height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Human Resource Management Office</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo" src="img/offices logo/Municipal Accounting Office logo.png"
+                                    alt="Organization Logo" width="80" height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Municipal Accounting Office</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo" src="img/offices logo/Municipal Agriculture Office logo.png"
+                                    alt="Organization Logo" width="80" height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Municipal Agriculture Office</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80"
+                                    height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Municipal Assessor's Office</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo" src="img/offices logo/Municipal Budget Office logo.png"
+                                    alt="Organization Logo" width="80" height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Municipal Budget Office</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80"
+                                    height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Office of the Municipal Civil Registrar</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo"
+                                    src="img/offices logo/Municipal Disaster Risk Reduction and Management Office Logo.png"
+                                    alt="Organization Logo" width="80" height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Municipal Disaster Risk Reduction and Management Office</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80"
+                                    height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Management Office</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80"
+                                    height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Municipal Engineering Office</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo" src="img/offices logo/Department of Health logo.png"
+                                    alt="Organization Logo" width="80" height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Municipal Health Office</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80"
+                                    height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Municipal Planning & Development Office</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo"
+                                    src="img/offices logo/Municipal Social Welfare and Development Office logo.png"
+                                    alt="Organization Logo" width="80" height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Municipal Social Welfare and Development Office</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo"
+                                    src="img/offices logo/Municipal Traffic and Public Safety Office logo.png"
+                                    alt="Organization Logo" width="80" height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Municipal Traffic and Public Safety Office</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo" src="https://bit.ly/3ubuq5o" alt="Organization Logo" width="80"
+                                    height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Municipal Treasurer's Office</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="organization-container">
+                    <a class="org-link" href="forms/add_organization.html">
+                        <div class="details">
+                            <div class="org-left">
+                                <img class="org-logo" src="img/offices logo/Department of Tourism logo.png"
+                                    alt="Organization Logo" width="80" height="80" />
+                            </div>
+                            <div class="org-right">
+                                <h3 class="org-name">Municipal Tourism Office</h3>
+                                <div class="num-orgmember">
+                                    <img src="assets/images/offices/members.png" /> 32 Members
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>-->
+        </section>
+        <!--END YOUR CONTENT-->
+
+    </main><!-- End #main -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+            <!-- jQuery should be loaded before Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.min.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+    <!-- Database Javascript -->
+    <script src="bundles/auth.bundle.js"></script>
+    <script src="bundles/navbar.bundle.js"></script>
+    <script src="bundles/office.bundle.js"></script>
+
+</body>
 
 </html>

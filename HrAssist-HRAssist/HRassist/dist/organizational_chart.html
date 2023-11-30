@@ -2,47 +2,53 @@
 
 <html lang="en">
 
-    <head>
-        <!-- Boxicons CSS -->
-        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/org-chart.css" />
+<head>
+  <!-- Boxicons CSS -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/org-chart.css" />
 
-        <!--Org Chart-->>
-        <script src="www.[yourdomain].com/OrgChart.js"></script>
-        
-        <!-- Favicon -->
-        <link href="img/hrlogo.svg" rel="icon">
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!--Org Chart-->>
+  <script src="www.[yourdomain].com/OrgChart.js"></script>
 
-        <title>Offices</title>
-        <meta content="" name="description">
-        <meta content="" name="keywords">
+  <!-- Favicon -->
+  <link href="img/hrlogo.svg" rel="icon">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <!-- Favicons -->
-        <link href="assets/img/favicon.png" rel="icon">
-        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <title>Employees</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-        <!-- Google Fonts -->
-        <link href="https://fonts.gstatic.com" rel="preconnect">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-        <!-- Vendor CSS Files -->
-        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-        <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-        <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-        <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-        <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-        <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="css/employee-template.css" rel="stylesheet">
 
-    </head>
+</head>
 
-    <body>
-    <!-- ======= Header ======= -->
+<body>
+  <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
@@ -149,14 +155,14 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile.png" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Juan Luna</span>
+            <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Juan Garcia</h6>
-              <span>Employee</span>
+              <h6 id="hoverUserName">Juan Garcia</h6>
+              <span id="userLevel">Employee</span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -208,8 +214,8 @@
   </header><!-- End Header -->
 
   <!-- ======= Sidebar ======= -->
- <!-- ======= Sidebar ======= -->
- <aside id="sidebar" class="sidebar">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-heading">Admin Tool</li>
@@ -320,36 +326,144 @@
     </ul>
 
   </aside><!-- End Sidebar-->
-    </ul>
+  </ul>
 
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Offices</h1>
+      <h1>Employees</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item"><a href="admin-offices.html">Offices</a></li>
-          <li class="breadcrumb-item">Department Name</li>
+          <li class="breadcrumb-item">Employees</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
+    <br>
+    <button class="btn btn-success" style="float: right;" data-bs-toggle="modal" data-bs-target="#orgchartModal">+
+      Designation</button><br><br>
+
+    <!-- Modal -->
+    <div class="modal fade" id="orgchartModal" tabindex="-1" role="dialog" aria-labelledby="yearModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Add Year</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="organizationChartForm">
+
+              <div class="col-md-12">
+              <h7>Office Name: <span>&nbsp;<b id="officeNameSpan">John Erwin</b></span></h7>
+              <br><hr>
+              </div>
+
+              <div class="col-md-12">
+                <label for="withinDetails"><small>Designation Name <span style="color: red;">*</span></small></label><br>
+                <input type="text" id="designationName" class="form-control" placeholder="Designation Name" required>
+              </div><br>
+ 
+              <div class="col-md-12">
+                <label for="designationName"><small><i>Tick the box if head of office:</i></small></label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="form-check-input" id="headOfOffice" type="checkbox" value="Head of Office" aria-label="Checkbox for following text input">
+                <label for="headOfOffice"><small><i>Head of Office</i></small></label>
+                
+              </div><br>
+            
+
+              <div class="col-md-12">
+                <label for="withinDetails"><small>Description</span></small></label><br>
+                <textarea id="descriptionText" class="form-control" placeholder="Description"></textarea>
+            </div><br>
+                          
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+              onclick="hideYearModal()">Close</button>
+            <input type="button" id="addOfficeBtn" class="btn btn-primary" value="Save">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      function hideYearModal() {
+        // Hide the modal
+        $('#orgchartModal').modal('hide');
+      }
+
+      function openYearModal() {
+        // Show the modal
+        $('#orgchartModal').modal('show');
+      }
+    </script>
+
+
+
+
+
+
+    <h3 class="text-center" id="officeNameLabel"></h3>
+    <br>
 
     <section class="section dashboard">
-            <!--START YOUR CONTENT HERE -->
-                <div class="content-wrapper">
-                    <div class="organization-container">
-                        <div style="width:100%; height:700px;" id="tree"></div>
-                    </div>
-                </div>
+      <div class="content-wrapper">
+        <div class="organization-container" style="padding: 16px;">
+          
+          <table class="table table-hover" id="yearTable">
+            <thead>
+              <tr class="table-primary ">
+                <th scope="col">ID</th>
+                <th scope="col">Designation</th>
+                <th scope="col">Head</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>  
+            <tbody id="annualRecordBody">
+              <tr>
+                <td>1</td>
+                <td>Municipal Agriculture</td>
+                <td>Yes</td>
+                <td><button class="btn btn-danger"><i class="bx bx-trash"></i></button></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>      
     </section>
-            <!--END YOUR CONTENT-->
+
+    <section class="section dashboard" style="display: none;">
+      <!--START YOUR CONTENT HERE -->
+      <div class="content-wrapper">
+        <div class="organization-container">
+          <div style="width:100%; height:700px;" id="tree"></div>
+        </div>
+      </div>
+    </section>
+    <!--END YOUR CONTENT-->
 
   </main><!-- End #main -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- jQuery should be loaded before Bootstrap JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -362,16 +476,17 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>        
+  <script src="assets/js/main.js"></script>
 
-        <!-- JavaScript -->
-        <script src="js/orgchart.js"></script>
-        <script src="js/organizational-chart.js"></script>
-    
-        <!-- Database Javascript -->  
-        <script src="bundles/auth.bundle.js"></script>   
-        <script src="bundles/applicant_registry.bundle.js"></script>   
-        <script src="bundles/navbar.bundle.js"></script>
-    </body>
+  <!-- JavaScript -->
+  <script src="js/orgchart.js"></script>
+  <script src="js/organizational-chart.js"></script>
+
+  <!-- Database Javascript -->
+  <script src="bundles/auth.bundle.js"></script>
+  <script src="bundles/navbar.bundle.js"></script>
+  <script src="bundles/organizational_chart.bundle.js"></script>
+
+</body>
 
 </html>
