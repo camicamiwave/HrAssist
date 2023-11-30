@@ -352,85 +352,20 @@
                               <input type="text" name="query" placeholder="Search for Activities" title="Enter search keyword" id="txtInputTable" style="margin-left: 52vw;">
                             </div>
                         </div>
-                        <table class="content-table" id="applicantTable">
+                        <table class="content-table" id="trainingTable">
                             <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Training Name</th>
+                                    <th>Subject</th>
                                     <th>Participant</th>
-                                    <th>Start Date</th>
-                                    <th>End Date</th>
-                                    <th>Location</th>
+                                    <th>Organizer</th>
+                                    <th>Start Date</th> 
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody id="tableDetails">
-                                <tr>
-                                    <td>1</td>
-                                    <td>Team Building</td>
-                                    <td>MAO</td>
-                                    <td>10/10/2023</td>
-                                    <td>10/15/2023</td>
-                                    <td>Vinzons</td>
-                                    <td>
-                                      <a href = "admin_training_content.html"><button  style="background-color: #08533F; color: white; border-radius: 8px;">View</button></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Soft-Skill Development</td>
-                                    <td>MHO</td>
-                                    <td>08/01/2023</td>
-                                    <td>08/10/2023</td>
-                                    <td>Labo</td>
-                                    <td>
-                                      <a href = "admin_training_content.html"><button  style="background-color: #08533F; color: white; border-radius: 8px;">View</button></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Technical Software</td>
-                                    <td>MTPSO</td>
-                                    <td>07/20/2023</td>
-                                    <td>07/30/2023</td>
-                                    <td>Daet</td>
-                                    <td>
-                                      <a href = "admin_training_content.html"><button  style="background-color: #08533F; color: white; border-radius: 8px;">View</button></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Seminar</td>
-                                    <td>MAO</td>
-                                    <td>06/10/2023</td>
-                                    <td>06/12/2023</td>
-                                    <td>Daet</td>
-                                    <td>
-                                      <a href = "admin_training_content.html"><button  style="background-color: #08533F; color: white; border-radius: 8px;">View</button></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Seminar</td>
-                                    <td>MHO</td>
-                                    <td>06/10/2023</td>
-                                    <td>06/20/2023</td>
-                                    <td>Labo</td>
-                                    <td>
-                                      <a href = "admin_training_content.html"><button  style="background-color: #08533F; color: white; border-radius: 8px;">View</button></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Team Building</td>
-                                    <td>MTPSO</td>
-                                    <td>06/10/2023</td>
-                                    <td>10/10/2023</td>
-                                    <td>Vinzons</td>
-                                    <td>
-                                      <a href = "admin_training_content.html"><button  style="background-color: #08533F; color: white; border-radius: 8px;">View</button></a>
-                                    </td>
-                                </tr>
+                            <tbody >
+                                
                             </tbody>
                         </table>
                     </div>
@@ -489,6 +424,8 @@
         <!-- Database Javascript -->
         <script src="bundles/auth.bundle.js"></script>   
         <script src="bundles/navbar.bundle.js"></script> 
+        <script src="bundles/training_list.bundle.js  "></script> 
+        
         <script src="js/sidebar.js"></script>
 
      

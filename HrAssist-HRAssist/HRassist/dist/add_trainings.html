@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/admin-dtr.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>HR Assist - Admin</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicon -->
+  <link href="img/hricon.png" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="css/employee-template.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+
+        <div class="d-flex align-items-center justify-content-center">
+            <a href="admin_dashboard.html" class="logo d-flex align-items-center mx-auto">
+                <img src="assets/img/logo.png" alt="">
+                <span class="d-none d-lg-block">Assist</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+
+        <div class="search-bar">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <input type="text" id="searchInput" name="query" placeholder="Search" title="Enter search keyword">
+                <ul id="searchSuggestions"></ul>
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+        </div><!-- End Search Bar -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li><!-- End Search Icon-->
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-bell"></i>
+                        <span class="badge bg-primary badge-number">4</span>
+                    </a><!-- End Notification Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                        <li class="dropdown-header">
+                            You have 4 new notifications
+                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-exclamation-circle text-warning"></i>
+                            <div>
+                                <h4>Lorem Ipsum</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>30 min. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-x-circle text-danger"></i>
+                            <div>
+                                <h4>Atque rerum nesciunt</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>1 hr. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-check-circle text-success"></i>
+                            <div>
+                                <h4>Sit rerum fuga</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>2 hrs. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            <div>
+                                <h4>Dicta reprehenderit</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>4 hrs. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="dropdown-footer">
+                            <a href="#">Show all notifications</a>
+                        </li>
+
+                    </ul><!-- End Notification Dropdown Items -->
+
+                </li><!-- End Notification Nav -->
+
+
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
+                      </a><!-- End Profile Iamge Icon -->
+            
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                          <h6 id="hoverUserName"></h6>
+                          <span id="userLevel"></span>
+                        </li>
+                        <li>
+                          <hr class="dropdown-divider">
+                        </li>
+            
+            
+                        <li>
+                          <a class="dropdown-item d-flex align-items-center" href="admin-users-profile.html">
+                            <i class="bi bi-person"></i>
+                            <span>My Profile</span>
+                          </a>
+                        </li>
+                        <li>
+                          <hr class="dropdown-divider">
+                        </li>
+            
+                        
+                        <li>
+                          <a class="dropdown-item d-flex align-items-center" id="navbar_signout_btn">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span>Sign Out</span>
+                          </a>
+                        </li>
+            
+                      </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-heading">ADMIN TOOL</li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_dashboard.html">
+              <i class="bi bi-grid"></i>
+              <span>Dashboard</span>
+            </a>
+          </li><!-- End Dashboard Nav -->
+    
+          <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+              <li>
+                <a href="admin_201file_account.html">
+                  <i class="bi bi-circle"></i><span>Add Employee</span>
+                </a>
+              </li>
+              <li>
+                <a href="admin_employee_registry_list.html">
+                  <i class="bi bi-circle"></i><span>Employee List</span>
+                </a>
+              </li>
+              <li>
+                <a href="admin_201file_account.html">
+                  <i class="bi bi-circle"></i><span>Edit Employee</span>
+                </a>
+              </li>
+              <li>
+                <a href="admin_search_employee_view.html">
+                  <i class="bi bi-circle"></i><span>Search Employee</span>
+                </a>
+              </li>
+            </ul>
+
+          </li><!-- End Components Nav -->
+    
+          <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-person"></i><span>Manage Applicant</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+              <li>
+                <a href="admin_add_applicant.html">
+                  <i class="bi bi-circle"></i><span>Add Applicant</span>
+                </a>
+              </li>
+              <li>
+                <a href="admin_manage_applicant_view.html">
+                  <i class="bi bi-circle"></i><span>Applicant List</span>
+                </a>
+              </li>
+              
+              <li>
+                <a href="admin_search_applicant.html">
+                  <i class="bi bi-circle"></i><span>Search Applicant</span>
+                </a>
+              </li>
+            </ul>
+          </li><!-- End Forms Nav -->
+    
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
+                <i class="bx bxs-briefcase"></i>
+                <span>Job Vacancy</span>
+            </a>
+        </li><!-- End Job Vacancy Nav -->
+    
+        <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+              <i class="bi bi-bar-chart-line"></i>
+              <span>Employee Performance</span>
+            </a>
+          </li><!-- End F.A.Q Page Nav -->
+    
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin-IPCRF-search.html">
+              <i class="bi bi-check-square"></i>
+              <span>Employee IPCRF</span>
+            </a>
+          </li><!-- End Contact Page Nav -->
+    
+          <li class="nav-heading">Rewards & RECOGNITION</li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+              <i class="bi bi-award"></i>
+              <span>Award</span>
+            </a>
+          </li><!-- End Register Page Nav -->
+    
+          <li class="nav-heading">LEARNING DEVELOPMENT</li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+              <i class="bi bi-people-fill"></i>
+              <span>Training & Seminar</span>
+            </a>
+          </li><!-- End Login Page Nav -->
+    
+          <li class="nav-heading">CONFIGURATION</li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-gear"></i><span>Configuration</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+              <li>
+                <a href="admin-offices.html">
+                  <i class="bi bi-circle"></i><span>Office</span>
+                </a>
+              </li>
+              <li>
+                <a href="admin_accounts_view.html">
+                  <i class="bi bi-circle"></i><span>Accounts</span>
+                </a>
+              </li>
+              <li>
+                <a href="calendar.html">
+                  <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
+                </a>
+              </li>
+            </ul>
+          </li><!-- End Icons Nav -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_request.html">
+              <i class="bi bi-calendar"></i>
+              <span>Leave Management</span>
+            </a>
+          </li><!-- End Login Page Nav -->
+          <li class="nav-item">
+            <a class="nav-link" href="admin_dtr_form.html">
+              <i class="bi bi-clock"></i>
+              <span>DTR</span>
+            </a>
+          </li><!-- End Login Page Nav -->
+    
+    
+        </ul>
+    
+      </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>DTR</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="admin_dashboard.html">Home</a></li>
+                    <li class="breadcrumb-item">DTR</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard">
+
+            <!--START YOUR CONTENT HERE -->
+            <div class="content-wrapper">
+                <div class="table">
+                    <div class="select-employee">
+                        <div class="container"><br>
+                            <h2 style="color:#08533F">Daily Time Record </h2>
+
+
+                            <label style="color:#08533F">Search Employee</label><br><br>
+ 
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label><small>First Name:</small></label>
+                                        <input id="searchEmployeeFname" type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label><small>Middle Name:</small></label>
+                                        <input id="searchEmployeeMname" type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label><small>Last Name:</small></label>
+                                        <input id="searchEmployeeLname" type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label><small>Ex Name:</small></label>
+                                        <input id="searchEmployeeExName" type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="container">
+
+                                    <button type="submit" class="btn btn-success"
+                                        style="width: 100%; background-color: #08533F; color: white;"
+                                        id="searchEmployeeBtn">Search Employee</button>
+                                    <hr>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--START YOUR CONTENT HERE -->
+            <div class="content-wrapper" id="DTR_Section" style="display: none;">
+                <div class="table">
+
+                    <div class="container"><br>
+                        <label style="color:#08533F"><small>CS Form 48</small></label><br>
+                        <hr> 
+                    </div>
+
+                    <div class="select-employee">
+                        <div class="container">
+                           
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label><small>For the month of:</small></label>
+                                        <select class="form-control" id="monthSelector">
+                                            <option>--- Select Month ---</option>
+                                            <option value="January">January</option>
+                                            <option value="Febuary">Febuary</option>
+                                            <option value="March">March</option>
+                                            <option value="April">April</option>
+                                            <option value="May">May</option>
+                                            <option value="June">June</option>
+                                            <option value="July">July</option>
+                                            <option value="August">August</option>
+                                            <option value="September">September</option>
+                                            <option value="October">October</option>
+                                            <option value="November">November</option>
+                                            <option value="December">December</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label><small>Year:</small></label>
+                                        <select class="form-control" id="yearSelctor">
+                                            <option>--- Select Year ---</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2027">2027</option>
+                                            <option value="2028">2028</option>
+                                            <option value="2029">2029</option>
+                                            <option value="2030">2030</option>
+                                            <option value="2031">2031</option>
+                                            <option value="2032">2032</option>
+                                            <option value="2033">2033</option>
+                                            <option value="2034">2034</option>
+                                            <option value="2035">2035</option>
+                                        </select>
+                                    </div>
+                                </div><br>
+                                
+                            </div>
+
+                            <div class="container">
+                                <table>
+                                    <tr>
+                                        <td style="font-size: 15px;">NO. OF TIMES TARDY:</td>
+                                        <td><input type="text" id="noTimesTardy" class="input-box" disabled="true"
+                                                placeholder="0"></td>
+                                        <td style="font-size: 15px;">NO. OF TIMES UNDERTIME:</td>
+                                        <td style="font-size: 15px;"><input type="text" disabled="true"
+                                                id="noTimesUndertime" class="input-box" placeholder="0"></td>
+                                        <td style="font-size: 15px;">NO. OF PASS SLIP</td>
+                                        <td><input type="text" id="noPassSlip" class="input-box" disabled="true"
+                                                placeholder="0"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 15px;">NO. OF HOURS TARDY:</td>
+                                        <td><input type="text" id="noHoursTardy" class="input-box" placeholder="0"
+                                                disabled="true"></td>
+                                        <td style="font-size: 15px;">NO. OF HOURS UNDERTIME</td>
+                                        <td><input type="text" id="noHoursUndertime" class="input-box" placeholder="0"
+                                                disabled="true"></td>
+                                        <td style="font-size: 15px;">NO. OF LEAVE:</td>
+                                        <td><input type="text" id="noLeave" class="input-box" placeholder="0"
+                                                disabled="true"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 15px;">NO. OF MINS TARDY:</td>
+                                        <td><input type="text" id="noMinsTardy" class="input-box" placeholder="0"
+                                                disabled="true"></td>
+                                        <td style="font-size: 15px;">NO. OF MINS UNDERTIME:</td>
+                                        <td><input type="text" id="noMinsUndertime" class="input-box" placeholder="0"
+                                                disabled="true"></td>
+                                        <td style="font-size: 15px;"></td>
+                                        <td></td>
+                                    </tr>
+
+                                </table><br><br>
+
+                                <div class="col-12">
+                                    <div class="card recent-sales overflow-auto">
+                                <br>
+                                <br>
+                                <hr>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="table">
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Day</th>
+                                <th>AM In</th>
+                                <th>AM Out</th>
+                                <th>PM In</th>
+                                <th>PM Out</th>
+                                <th>Hours</th>
+                                <th>Mins</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dtrContainer">
+                            <!-- Row content will be dynamically generated here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <form id="dtrForm">
+                    <!-- Optional: You can add other form elements here -->
+                </form>
+
+                <script>
+                    // Function to create a time input element
+                    function createTimeInput(id, disabled = true) {
+                        const input = document.createElement('input');
+                        input.type = 'time';
+                        input.id = id;
+                        input.disabled = disabled; // Set disabled property
+                        return input;
+                    }
+
+                    // Function to create a number input element
+                    function createNumberInput(id, disabled = true) {
+                        const input = document.createElement('input');
+                        input.type = 'number';
+                        input.id = id;
+                        input.disabled = disabled; // Set disabled property
+                        return input;
+                    }
+
+                    // Function to create a row for a specific day with a checkbox
+                    function createDtrRow(day) {
+                        const tr = document.createElement('tr');
+                        tr.id = `dtrDay${day}`;
+
+                        // Checkbox column
+                        const checkboxCell = document.createElement('td');
+                        const checkboxInput = document.createElement('input');
+                        checkboxInput.type = 'checkbox';
+                        checkboxInput.id = `day${day}-checkbox`;
+                        checkboxCell.appendChild(checkboxInput);
+                        tr.appendChild(checkboxCell);
+
+                        // Day column
+                        const dayCell = document.createElement('td');
+                        const dayHeading = document.createElement('h7');
+                        dayHeading.textContent = day;
+                        dayCell.appendChild(dayHeading);
+                        tr.appendChild(dayCell);
+
+                        // Time columns
+                        for (let i = 0; i < 4; i++) {
+                            const timeInput = createTimeInput(`day${day}-time${i}`);
+                            const td = document.createElement('td');
+                            td.appendChild(timeInput);
+                            tr.appendChild(td);
+                        }
+
+                        // Hours and minutes columns
+                        for (let i = 0; i < 2; i++) {
+                            const numberInput = createNumberInput(`day${day}-${i === 0 ? 'hours' : 'mins'}`);
+                            const td = document.createElement('td');
+                            td.appendChild(numberInput);
+                            tr.appendChild(td);
+                        }
+
+                        return tr;
+                    }
+
+                    // Function to update Hours and Mins based on time inputs
+                    function updateHoursAndMins(day) {
+                        const checkbox = document.getElementById(`day${day}-checkbox`);
+                        const amIn = document.getElementById(`day${day}-time0`);
+                        const amOut = document.getElementById(`day${day}-time1`);
+                        const pmIn = document.getElementById(`day${day}-time2`);
+                        const pmOut = document.getElementById(`day${day}-time3`);
+
+                        const hoursInput = document.getElementById(`day${day}-hours`);
+                        const minsInput = document.getElementById(`day${day}-mins`);
+
+                        if (checkbox.checked) {
+                            const calculateTimeDifference = (time1, time2) => {
+                                const time1Array = time1.split(':').map(Number);
+                                const time2Array = time2.split(':').map(Number);
+
+                                let hoursDiff = time2Array[0] - time1Array[0];
+                                let minsDiff = time2Array[1] - time1Array[1];
+
+                                // Adjust if minutes go below 0 or above 60
+                                if (minsDiff < 0) {
+                                    minsDiff += 60;
+                                    hoursDiff -= 1;
+                                } else if (minsDiff >= 60) {
+                                    minsDiff -= 60;
+                                    hoursDiff += 1;
+                                }
+
+                                return {
+                                    hours: hoursDiff < 0 ? hoursDiff + 24 : hoursDiff,
+                                    mins: minsDiff,
+                                };
+                            };
+
+                            const amDiff = calculateTimeDifference(amIn.value, amOut.value);
+                            const pmDiff = calculateTimeDifference(pmIn.value, pmOut.value);
+
+                            let totalHours = amDiff.hours + pmDiff.hours;
+                            let totalMins = amDiff.mins + pmDiff.mins;
+
+                            // Adjust if total minutes exceed 60
+                            if (totalMins >= 60) {
+                                totalHours += Math.floor(totalMins / 60);
+                                totalMins %= 60;
+                            }
+
+                            hoursInput.value = totalHours;
+                            minsInput.value = totalMins;
+                        } else {
+                            // If checkbox is not checked, clear the values and disable inputs
+                            hoursInput.value = '';
+                            minsInput.value = '';
+                        }
+
+                        // Enable or disable input fields based on checkbox state
+                        const inputs = [amIn, amOut, pmIn, pmOut, hoursInput, minsInput];
+                        inputs.forEach(input => {
+                            input.disabled = !checkbox.checked;
+                        });
+                    }
+
+                    // Function to add event listeners to time inputs and checkbox
+                    function addTimeInputListeners(day) {
+                        const amIn = document.getElementById(`day${day}-time0`);
+                        const amOut = document.getElementById(`day${day}-time1`);
+                        const pmIn = document.getElementById(`day${day}-time2`);
+                        const pmOut = document.getElementById(`day${day}-time3`);
+                        const checkbox = document.getElementById(`day${day}-checkbox`);
+
+                        [amIn, amOut, pmIn, pmOut, checkbox].forEach((input) => {
+                            input.addEventListener('input', () => {
+                                updateHoursAndMins(day);
+                            });
+                        });
+                    }
+
+                    // Function to generate DTR form for days 1 to 31
+                    function generateDtrForm() {
+                        const dtrContainer = document.getElementById('dtrContainer');
+
+                        for (let day = 1; day <= 31; day++) {
+                            const dtrRow = createDtrRow(day);
+                            dtrContainer.appendChild(dtrRow);
+
+                            // Add event listeners to time inputs and checkbox for each day
+                            addTimeInputListeners(day);
+                        }
+                    }
+
+                    window.addEventListener('load', generateDtrForm);
+                </script>
+
+                <script>
+                    function getDtrFormValues() {
+                        const dtrRows = document.querySelectorAll('#dtrContainer tr');
+
+                        const dtrData = [];
+
+                        dtrRows.forEach((row) => {
+                            const checkbox = row.querySelector('input[type="checkbox"]');
+
+                            // Check if the checkbox is checked
+                            if (checkbox.checked) {
+                                const day = row.querySelector('h7').textContent;
+
+                                const timeInputs = row.querySelectorAll('input[type="time"]');
+                                const times = Array.from(timeInputs).map((input) => input.value);
+
+                                const numberInputs = row.querySelectorAll('input[type="number"]');
+                                const numbers = Array.from(numberInputs).map((input) => input.value);
+
+                                const rowData = {
+                                    day: day,
+                                    amIn: times[0],
+                                    amOut: times[1],
+                                    pmIn: times[2],
+                                    pmOut: times[3],
+                                    hours: numbers[0],
+                                    mins: numbers[1],
+                                };
+
+                                dtrData.push(rowData);
+                            }
+                        });
+
+                        console.log('DTR Form Values:', dtrData);
+                        return dtrData;
+                    }
+                </script>
+                <br>
+
+                <button type="button" class="btn btn-success" id="dtrSubmitBtn" style="float: right; width: 20%; background-color: #08533F;">Save Record</button>
+                
+                </form>
+                </tbody>
+                </table>
+            </div>
+            </div>
+        </section>
+
+        <!--END YOUR CONTENT-->
+
+    </main><!-- End #main -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.min.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+    <!-- Database Javascript -->
+    <script src="bundles/auth.bundle.js"></script>
+    <script src="bundles/navbar.bundle.js"></script>
+    <script src="bundles/dtr.bundle.js"></script>
+
+</body>
+
+</html>

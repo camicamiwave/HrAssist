@@ -49,7 +49,10 @@
     "retrieve_attachments": "node retrieve_attachments.js",
     "search_edit_employee": "node search_edit_employee.js",
     "employee_complain": "node employee_complain.js",
-    "calendar": "node calendar.js"
+    "calendar": "node calendar.js",
+    "training": "node training.js",
+    "training_memo": "node training_memo.js",
+    "training_list": "node training_list.js"
   },
   "keywords": [],
   "author": "",
