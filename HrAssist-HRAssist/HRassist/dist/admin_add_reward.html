@@ -2,21 +2,21 @@
 
 <html lang="en">
 
-    <head>
-        <!-- Boxicons CSS -->
-        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-        <title>HR Assist - Admin</title>
-        <link rel="stylesheet" href="css/admin.css" />
-        <!-- Favicon -->
+<head>
+  <!-- Boxicons CSS -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>HR Assist - Admin</title>
+  <link rel="stylesheet" href="css/admin.css" />
+  <!-- Favicon -->
 
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Add Reward</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-        <!-- Favicon -->
+  <!-- Favicon -->
   <link href="img/hricon.png" rel="icon">
 
   <!-- Google Fonts -->
@@ -360,10 +360,11 @@
                       <input id="searchEmployeeExName" type="text" class="form-control">
                     </div>
                     <br><br>
-                    <br><br> 
+                    <br><br>
 
                     <button type="button" class="btn btn-success"
-                      style="width: 100%; background-color: #08533F; color: white; display: block;" id="searchEmployeeBtn">Search
+                      style="width: 100%; background-color: #08533F; color: white; display: block;"
+                      id="searchEmployeeBtn">Search
                       Employee</button>
 
                   </div>
@@ -375,31 +376,31 @@
                 <div class="user-details">
                   <div class="input-box">
                     <span class="details">Office:</span>
-                    <input type="text" id="officeSelecor" disabled>  
+                    <input type="text" id="officeSelecor" disabled>
                     </select>
                   </div>
-                  
+
                   <div class="input-box">
                     <span class="details">Designation:</span>
-                    <input type="text" id="designationSelecor" disabled> 
+                    <input type="text" id="designationSelecor" disabled>
                   </div>
 
                   <div class="input-box">
                     <span class="details">Date Issued</span>
-                    <input type="date" placeholder="Enter Ext. Name">
+                    <input type="date" id="dateIssued" placeholder="Enter Ext. Name">
                   </div>
                 </div>
                 <div class="job-details">
                   <div class="input-box">
                     <span class="details">Token</span>
-                    <input type="text" placeholder="Enter Token">
+                    <input type="text" id="tokenInput" placeholder="Enter Token">
                   </div>
                   <div class="input-box">
                     <span class="details">Description (Optional)</span>
-                    <textarea placeholder="Write description here..."></textarea>
+                    <textarea id="descriptionInput" placeholder="Write description here..."></textarea>
                   </div>
                 </div>
-                <button class="submit">Save</button>
+                <button id="rewardsaveBtn" type="button" class="submit">Save</button>
               </form>
             </div>
           </div>

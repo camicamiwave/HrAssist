@@ -168,9 +168,6 @@ function fetchOfficeEmployee() {
                 const deleteIcon = document.createElement('i');
                 deleteIcon.classList.add('bx', 'bx-trash');
 
-
-                
-    
                 // Add a click event listener to the delete button
                 deleteButton.addEventListener('click', () => {
                     // Move the Swal.fire confirmation inside the event listener

@@ -329,26 +329,35 @@
                                 <p>Filter</p>
                             </div>
                         </div>
-                        <table class="content-table" id="applicantTable">
+
+                        <style>
+                          /* Add custom styles here */
+                          .table-limit-text {
+                            table-layout: fixed;
+                          }
+                      
+                          .table-limit-text td {
+                            max-width: 100px; /* Set your desired maximum width */
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                          }
+                        </style>
+
+                        <table class="content-table" id="rewardsTable">
                             <thead>
                                 <tr>
-                                    <th>Send to</th>
-                                    <th>Gift</th>
-                                    <th>Message</th>
-                                    <th>Set on</th>
-                                    <th>Sent by</th>
-                                    <th>Status</th>
+                                    <th>ID</th>
+                                    <th>Recipient</th>
+                                    <!--<th>Office</th>-->
+                                    <th>Designation</th>
+                                    <th>Token</th>
+                                    <th>Date Issued</th> 
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                              
                             </tbody>
                         </table>
                     </div>
@@ -383,6 +392,7 @@
         <!-- Database Javascript -->
         <script src="bundles/auth.bundle.js"></script>   
         <script src="bundles/navbar.bundle.js"></script> 
+        <script src="bundles/rewards.bundle.js"></script> 
     </body>
 
 </html>

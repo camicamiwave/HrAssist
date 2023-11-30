@@ -105,33 +105,205 @@ export function SearchEmployee() {
 window.addEventListener('load', SearchEmployee)
 
 
-function fetchAppointment(){
+function fetchAppointment() {
 
     try {
         const EmployeecolRef = collection(db, '201File Information');
+        const RewardcolRef = collection(db, 'Reward Information');
 
         const rewardsForm = document.querySelector('#rewardsForm')
+        const rewardsaveBtn = document.getElementById('rewardsaveBtn')
+
+        const searchbtn = document.getElementById('searchEmployeeBtn')
 
         const urlParams = new URLSearchParams(window.location.search);
         const receivedStringData = urlParams.get('data');
-        
-        if (receivedStringData){
+
+        if (receivedStringData) {
             fetchEmployeeInfo(EmployeecolRef, receivedStringData, 'employeeDocID').then((dataRetrieved) => {
                 const File201Data = dataRetrieved;
-    
+
                 rewardsForm.officeSelecor.value = File201Data.Appointment_Details.Office
                 rewardsForm.designationSelecor.value = File201Data.Appointment_Details.PositionTitle
 
+                rewardsaveBtn.addEventListener('click', (e) => {
 
-                
-            })    
+                    const rewardDetails = {
+                        createdAt: serverTimestamp(),
+                        employeeDocID: receivedStringData,
+                        Rewards_Details: {
+                            EmployeeDesignation: rewardsForm.designationSelecor.value,
+                            EmployeeOffice: rewardsForm.officeSelecor.value,
+                            DateIssued: rewardsForm.dateIssued.value,
+                            Token: rewardsForm.tokenInput.value,
+                            Description: rewardsForm.descriptionInput.value
+                        }
+                    }
+
+
+                    Swal.fire({
+                        title: "Are you sure?",
+                        text: "Rewards will be saved on the system",
+                        icon: "question",
+                        showCancelButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Confirm"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Add a document to the nested collection and get the document reference
+                            return addDoc(RewardcolRef, rewardDetails)
+                                .then((docRef) => {
+                                    const EmpcustomDocId = docRef.id;
+                                    // Assuming downloadURLs is defined somewhere
+                                    return setDoc(doc(RewardcolRef, EmpcustomDocId), { rewardDocID: EmpcustomDocId }, { merge: true });
+
+                                }).then(() => {
+                                    Swal.fire({
+                                        title: 'Saved successfully!',
+                                        text: 'Rewards has been saved.',
+                                        icon: 'success',
+                                    });
+
+                                    rewardsForm.reset()
+
+                                    rewardsForm.style.display = 'none'
+                                    searchbtn.style.display = 'block'
+
+
+                                })
+                                .catch((error) => {
+                                    console.error('Error adding document:', error);
+                                });
+
+                        } else {
+                            // If the user clicks "Cancel", return a resolved promise
+                            return Promise.resolve();
+                        }
+                    }).catch((error) => {
+                        console.error("Error occurred:", error);
+                        // You can handle the error here, e.g., show a custom error message to the user
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'An error occurred while processing your transaction. Please try again.',
+                            icon: 'error',
+                        });
+                    });
+                })
+            })
         }
-    
-    
-    } catch{
+
+    } catch {
         console.log("No employee appointment found...")
     }
 
 }
 
 window.addEventListener('load', fetchAppointment)
+
+
+
+
+async function GetEmployeeTable() {
+
+    const RewardcolRef = collection(db, 'Reward Information');
+    const EmployeecolRef = collection(db, 'Employee Information');
+    const q = query(RewardcolRef, orderBy('createdAt'));
+
+    try {
+        const employeeTable = document.getElementById('rewardsTable');
+        const tbody = employeeTable.querySelector('tbody');
+
+        let num = 0;
+  
+      onSnapshot(q, async (snapshot) => {
+        tbody.innerHTML = '';
+  
+        if (!snapshot.empty) {
+          for (const doc of snapshot.docs) {
+            const data = doc.data();
+            const id = doc.id; 
+  
+            const EmployeeID = data.employeeDocID
+
+  
+            const row = document.createElement('tr');
+  
+            // Get designation from another collection
+            try {
+              const dataRetrieved = await fetchEmployeeInfo(EmployeecolRef, EmployeeID, "documentID");
+  
+              const idCell = document.createElement('td');
+              idCell.textContent = num + 1;
+
+            
+               console.log(dataRetrieved, 'asfas')
+  
+              const retrievefullName = `${dataRetrieved.Personal_Information.FirstName} ${dataRetrieved.Personal_Information.SurName}`;
+              
+              const nameCell = document.createElement('td');
+              nameCell.textContent = retrievefullName;
+  
+              //const officeCell = document.createElement('td');
+              //officeCell.textContent = data.Rewards_Details.EmployeeOffice;
+  
+              const designationCell = document.createElement('td');
+              designationCell.textContent = data.Rewards_Details.EmployeeDesignation;
+  
+              const tokenCell = document.createElement('td');
+              tokenCell.textContent = data.Rewards_Details.Token
+
+              const dataIssueCell = document.createElement('td');
+              dataIssueCell.textContent = data.Rewards_Details.DateIssued
+  
+              const deleteButtonCell = document.createElement('td');
+  
+              const deleteButton = document.createElement('button');
+              deleteButton.classList.add('btn', 'btn-primary');
+  
+              const deleteIcon = document.createElement('i');
+              deleteIcon.classList.add('bx', 'bx-edit');
+  
+              // Add a click event listener to the delete button
+              deleteButton.addEventListener('click', () => {
+                console.log('Row ID clicked:', id);
+  
+                window.location.href = `admin_201file_pds.html?data=${encodeURIComponent(dataRetrieved.documentID)}`;
+  
+              })
+  
+              deleteButton.appendChild(deleteIcon);
+              deleteButtonCell.appendChild(deleteButton);
+   
+              row.appendChild(idCell);
+              row.appendChild(nameCell);
+              //row.appendChild(officeCell);
+              row.appendChild(designationCell);
+              row.appendChild(tokenCell);
+              row.appendChild(dataIssueCell);
+              row.appendChild(deleteButtonCell);
+  
+              tbody.appendChild(row);
+  
+              num++
+            } catch (error) {
+              console.error('Error fetching designation:', error);
+            }
+          }
+        } else {
+          const noRecordsRow = document.createElement('tr');
+          const noRecordsCell = document.createElement('td');
+          noRecordsCell.setAttribute('colspan', '7');
+          noRecordsCell.textContent = 'No records found';
+          noRecordsRow.appendChild(noRecordsCell);
+          tbody.appendChild(noRecordsRow);
+        }
+      });
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }
+  
+  window.addEventListener('load', GetEmployeeTable);
+  
+  
