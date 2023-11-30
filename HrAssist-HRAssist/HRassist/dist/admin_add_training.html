@@ -31,9 +31,16 @@
         <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
         <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
+        <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
         <!-- Template Main CSS File -->
         <link href="css/employee-template.css" rel="stylesheet">
+        <link href="css/employeeview.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+
+    <!-- Template Main CSS File -->
+    <link href="css/datasheet.css" rel="stylesheet">
     </head>
 
     <body>
@@ -361,48 +368,149 @@
             <section class="section dashboard">     
                     <!--START YOUR CONTENT HERE -->
                  
-                        <div class="content-wrapper">
-                            <div class="table">
-                                <div class="container">
-                                    <header>Add Training & Seminars</header>
-                                    <div class="content">
-                                      <form action="#">
+                    <div class="content-wrapper">
+                        <div class="table">
+                            <div class="container">
+                                <header>Add Training & Seminars</header>
+                                <div class="content">
+                                    <form id="trainingForm">
                                         <div class="user-details">
                                             <div class="input-box">
                                                 <span class="details">Title</span>
-                                                <input type="text">
-                                              </div>
-                                              <div class="input-box">
+                                                <input type="text" id="title" name="title" required>
+                                            </div>
+                                            <div class="input-box">
                                                 <span class="details">Description</span>
-                                                <input type="text">
-                                              </div>
-                                              <div class="input-box">
+                                                <input type="text" id="description" name="description" required>
+                                            </div>
+                                            <div class="input-box">
                                                 <span class="details">Host Department</span>
-                                                <input type="text">
-                                              </div>
-                                          <div class="input-box">
-                                            <span class="details">Participants</span>
-                                            <input type="text">
-                                          </div>
-                                          <div class="input-box">
-                                            <span class="details">Start Date</span>
-                                            <input type="date">
-                                          </div>
-                                          <div class="input-box">
-                                            <span class="details">End Date</span>
-                                            <input type="date">
-                                          </div>
-                                          <div class="input-box">
-                                            <span class="details">Purpose</span>
-                                            <input type="text" style="width: 210%;">
-                                          </div>
+                                                <input type="text" id="hostDepartment" name="hostDepartment" required>
+                                            </div>
+                                            <div class="input-box">
+                                                <span class="details">Participants</span>
+                                                <input type="text" id="participants" name="participants" required>
+                                            </div>
+                                            <div class="input-box">
+                                                <span class="details">Start Date</span>
+                                                <input type="date" id="startDate" name="startDate" required>
+                                            </div>
+                                            <div class="input-box">
+                                                <span class="details">End Date</span>
+                                                <input type="date" id="endDate" name="endDate">
+                                            </div>
+                                            <div class="input-box">
+                                                <span class="details">Purpose</span>
+                                                <input type="text" id="purpose" style="width: 890px;" name="purpose" required>
+                                            </div>
+                                            
+                                            <br>
+                                            <!-- Add the necessary jQuery library -->
+                                            <script s src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                                            <button type="button" style="background-color:#0a8566; outline-color: #0a8566; margin-left:607px ;" class="btn btn-warning btn-add-work-experience" id="addNewButton" >
+                                                <i class="bi bi-plus"></i> Attach File
+                                            </button>
+                                            <br><br>
+                                            
+                                            <form id="employeeAttachments">
+                                                <table class="table table-hover">
+                                                    <thead>
+                                                        <tr style="background-color: rgb(236, 236, 235);">
+                                                            <th scope="col" style="width: 15%; text-align: center;">ID</th>
+                                                            <th scope="col" style="width: 60%; text-align: center">File Name</th>
+                                                            <th scope="col" class="text-center" style="width: 30%; text-align: center">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="fileListBody">
+                                                        <!-- File rows will be added dynamically here -->
+                                                    </tbody>
+                                                </table>
+                                            </form>
+                                            
+                                            <script>
+                                                $(document).ready(function () {
+                                                    // Array to store uploaded files
+                                                    window.AttachmentuploadedFiles = [];
+                                                    window.AttachmentFiles = [];
+                                            
+                                                    // Function to update file list and renumber
+                                                    function updateFileList() {
+                                                        $("#fileListBody").empty(); // Clear the existing rows
+                                                        for (let i = 0; i < AttachmentuploadedFiles.length; i++) {
+                                                            const file = AttachmentuploadedFiles[i];
+                                            
+                                                            const row = $("<tr>");
+                                                            const fileNameCell = $("<td class='file-name' style='width: 15%; text-align: center;'>");
+                                                            const actionCell = $("<td class='text-center' style='width: 60%; text-align: center'>");
+                                                            const deleteButton = $("<button type='button' class='btn btn-danger btn-delete-file' style = 'width: 100px; margin-left:50px; margin-top:-5px;  margin-bottom:-5px;'><i class='bi bi-trash'></i> Delete</button>");
+                                            
+                                                            const fileRow = $("<div><p class='file-link'>" + file.name + "</p></div>");
+                                                            fileNameCell.append(fileRow);
+                                            
+                                                            // Add the row to the table
+                                                            actionCell.append(deleteButton);
+                                                            row.append("<th scope='row'>" + (i + 1) + "</th>", fileNameCell, actionCell);
+                                                            $("#fileListBody").append(row);
+                                            
+                                                            // Delete button click event
+                                                            deleteButton.click(function () {
+                                                                // Implement your logic to delete the uploaded file
+                                                                AttachmentuploadedFiles.splice(i, 1); // Remove the file from the array
+                                                                updateFileList(); // Update the file list after deletion
+                                                            });
+                                                        }
+                                                    }
+                                            
+                                                    // Add New button click event
+                                                    $("#addNewButton").click(function () {
+                                                        const fileInput = $("<input type='file' class='file-input' style='display: none;' />");
+                                            
+                                                        fileInput.change(function () {
+                                                            const files = this.files;
+                                            
+                                                            if (files.length > 0) {
+                                                                for (let i = 0; i < files.length; i++) {
+                                                                    const fileName = files[i].name;
+                                            
+                                                                    // Store file information in the array
+                                                                    AttachmentuploadedFiles.push({
+                                                                        id: AttachmentuploadedFiles.length + 1,
+                                                                        name: fileName,
+                                                                        // Add other file information if needed
+                                                                    });
+                
+                                                                    AttachmentFiles.push(files[i])
+                                                                }
+                                            
+                                                                updateFileList(); // Update the file list after adding files
+                                                            }
+                                                        });
+                                            
+                                                        fileInput.click();
+                                                    });
+                                            
+                                                    // Example function to retrieve uploaded files
+                                                    function getUploadedFiles() {
+                                                        console.log(AttachmentuploadedFiles, 'Hey...')
+                                                        return AttachmentuploadedFiles;
+                                                    }
+                                                });
+                                            </script>
+                                            
                                         </div>
-                                        <button type="button" class="submit">Save</button>
-                                      </form>
-                                    </div>
-                              </div>
-                          </div>
-                      </div>
+                                        
+                                        <a href="admin_training_content.html"><button type="button" class="submit" style="background-color: #0a8566; width: 100%; color: white; padding: 8px; border-radius: 5px;" >Save</button></a>
+                                    </form>
+                    
+                                    <!-- Display area for the submitted values -->
+                                    <div id="displayValues"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
             </section>
                     <!--END YOUR CONTENT-->
         
@@ -423,8 +531,12 @@
           <!-- Template Main JS File -->
           <script src="assets/js/main.js"></script>
         
-
-        
+          <script src="bundles/employee_leave_form.bundle.js"></script>
+          <script src="js/datasheet.js"></script>
+        <script src="bundles/auth.bundle.js"></script> 
+        <script src="bundles/file201.bundle.js"></script>
+        <script src="bundles/fetch_employee_info.bundle.js"></script> 
+        <script src="bundles/employee_attachments.bundle.js"></script>
 
         <!-- JavaScript -->
         <script src="js/script.js"></script>
