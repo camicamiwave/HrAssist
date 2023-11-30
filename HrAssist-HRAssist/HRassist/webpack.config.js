@@ -36,7 +36,8 @@ module.exports = {
         organizational_chart: './src/organizational_chart.js',
         manage_employee: './src/manage_employee.js',
         rewards: './src/rewards.js',
-        applicant_status: './src/applicant_status.js'
+        applicant_status: './src/applicant_status.js',
+        leave_management: './src/applicant_status.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),

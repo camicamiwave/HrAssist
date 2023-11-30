@@ -225,11 +225,11 @@
         </a>
       </li>
 
-
+      
       <li class="nav-item">
-        <a class="nav-link collapsed" href="employee-activity.html">
-          <i class="bx bxs-user-account"></i>
-          <span>Activities</span>
+        <a class="nav-link collapsed" href="employee-complaint.html">
+          <i class="bi bi-send-plus"></i>
+          <span>Employee Concerns</span>
         </a>
       </li>
 
@@ -247,7 +247,6 @@
           <span>Login</span>
         </a>
       </li>
-
     </ul>
 
   </aside><!-- End Sidebar-->
@@ -281,8 +280,7 @@
 
       <a type="button" class="btn btn-success btn-sm" href="employee_request_form.html">+ Apply Leave</a>
 
-      <!--<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#applyLeaveModal"
-        data-whatever="@mdo" href="employee_request_form.html">+ Apply Leave</button>-->
+
     </div>
     <hr>
 
@@ -352,7 +350,6 @@
       </div>
     </div>
 
-
     <!--Button End-->
 
     <section class="section dashboard">
@@ -363,8 +360,8 @@
           <div class="row">
 
  <!--START NOW-->
-<!-- Absenses Card -->
-<div class="col-xxl-4 col-md-6">
+<!-- Leave In formation -->
+<div class="col-xxl-4 col-md-12">
   <div class="card info-card sales-card">
 
     <div class="filter">
@@ -381,63 +378,27 @@
     </div>
 
     <div class="card-body">
-      <h5 class="card-title">Absense <span>| This Month</span></h5>
-
+      <h5 class="card-title">Leave <span>| Information</span></h5>
       <div class="d-flex align-items-center">
-
         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
            <img src="assets/img/dashboard/dash1.png" alt="1">
         </div>
         <div class="ps-3">
-          <h6>10</h6>
-          <div class="ps-3">
-          
-            <span class="text-muted small pt-2 ps-1">total absenses</span>
-
-          </div>
-         
+          <h6>Types of Leave</h6> 
+        <div class="b"><button onclick="redirectToAnotherPage()">View</button></div>
         </div>
       </div>
     </div>
-
   </div>
 </div><!-- End Absenses Card -->
-
-
-           <!-- Leave Card -->
-           <div class="col-xxl-4 col-md-6">
-            <div class="card info-card revenue-card">
-
-              <div class="filter">
-                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                  </li>
-
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
-                </ul>
-              </div>
-
-              <div class="card-body">
-                <h5 class="card-title">Leaves <span>| This Month</span></h5>
-
-                <div class="d-flex align-items-center">
-                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <img src="assets/img/dashboard/dash2.png" alt="1">
-                  </div>
-                  <div class="ps-3">
-                    <h6>14</h6>
-                    <span class="text-muted small pt-2 ps-1">remaining leaves</span>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-          </div><!-- End Leave Card -->
-
+<style>
+.b {
+  position: absolute;
+  margin-top: -30px;
+  width: 250px;
+  left: 540px
+}
+</style>
 
            <!-- Upcoming Activitie -->
            <div class="col-12">
@@ -512,13 +473,11 @@
 
             </div>
           </div><!-- End Recent Sales -->
-
  
         </div>
       </div><!-- End Left side columns -->
 
-      
-
+    
       <!-- Right side columns -->
       <div class="col-lg-4">
 
@@ -601,7 +560,7 @@
           </div>
         </section>
       
-      </main><!-- End #main -->
+
 
 
  <!--EM-->
@@ -635,6 +594,12 @@
 
   <script src="bundles/navbar.bundle.js"></script>
   <script src="bundles/employee_pass_slip.bundle.js"></script>
+
+  <script>
+    function redirectToAnotherPage() {
+        window.location.href = 'employee-leave-info.html';
+    }
+  </script>
 
 </body>
 

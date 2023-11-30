@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Leave-Information</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+  
+  
+
+  <!-- Template Main CSS File -->
+  <link href="css/employee-template.css" rel="stylesheet">
+  <link href="css/employee-leave-info.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="employee_home.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">Assist</span>
+
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+    
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile.png" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Juan Luna</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Juan Garcia</h6>
+              <span>Employee</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="employee-users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-heading">Employee Tool</li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+      </li><!-- End Components Nav -->
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bx bxs-calendar-alt"></i>
+          <span>Request</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="employee-complaint.html">
+          <i class="bi bi-send-plus"></i>
+          <span>Employee Concerns</span>
+        </a>
+      </li>
+
+      
+      <li class="nav-heading">Employee Profile</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="users-profile.html">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a><!-- End Register Page Nav -->
+ 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="login.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Login</span>
+        </a>
+      </li>
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-login.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Login</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Leave Information</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="employee_home.html">Home</a></li>
+          <li class="breadcrumb-item active">Leave</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="row">
+
+            <!--START YOUR CONTENT HERE -->
+             <!-- Absenses Card -->
+             <div class="container">
+                <div class="row">
+
+
+                <div class="col-md-4 col-xl-3" id="vacationleave">
+                    <div class="card bg-c-blue order-card">
+                        <div class="card-block">
+                            <h6 class="m-b-20">Vacation leave</h6>
+                            <h2 class="text-right"><img src="assets/img/dashboard/leave3.png" alt="1"><span>5</span></h2>
+                            <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Vacation Leave</h5>
+                                  
+                              </div>
+                              <div class="modal-body">
+                                  <p style="text-align: justify;">It shall be filed <b>five (5) days in advance</b>, whenever possible, of the effective date of such leave. 
+                                    Vacation leave within in the Philippines or abroad shall be indicated in the form for purposes of
+                                     securing travel authority and completing clearance from money and work accountabilities.</p>
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="redirectToAnotherPage()">Apply Now</button>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal">Close</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                    
+                  <div class="col-md-4 col-xl-3" id="forcedleave">
+                        <div class="card bg-c-green order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Mandatory/Forced leave</h6>
+                                <h2 class="text-right"><img src="assets/img/dashboard/leave9.png" alt="1"></i><span>5</span></h2>
+                                <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                            </div>
+                        </div>
+                  </div>
+
+                  <div class="modal fade" id="myforcedleave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Mandatory/Forced Leave</h5>
+                                
+                            </div>
+                            <div class="modal-body">
+                                <p style="text-align: justify;"> <b>Annual five-day vacation leave</b> shall be forfeited if not taken during the year. 
+                                  In case the scheduled leave has been cancelled in the exigency of the service by the head of agency, it shall no longer be deducted from the accumulated vacation leave. Availment of one (1) day or more Vacation Leave (VL) shall be considered for complying the 
+                                  mandatory/forced leave subject to the conditions under Section 25, Rule XVI of the Omnibus Rules Implementing E.O. No. 292.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="redirectToAnotherPage()">Apply Now</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal1">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                    <div class="col-md-4 col-xl-3" id="sickleave">
+                        <div class="card bg-c-blue order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Sick leave</h6>
+                                <h2 class="text-right"><img src="assets/img/dashboard/sick.png" alt="1"></i><span>5</span></h2>
+                                <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="mysickleave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Sick Leave</h5>
+                                  
+                              </div>
+                              <div class="modal-body">
+                                  <p style="text-align: justify;"><ul>
+                                    <li>
+                                      It shall be filed immediately upon employee's return from such leave.
+                                    </li>
+                                    <br>
+                                    <li>
+                                      If filed in <b>advance or exceeding five (5) days</b>, application shall be accompanied by a medical certificate. 
+                                      In case medical consultation was not availed of, an affidavit should be executed by an applicant.
+                                    </li>
+                                  </ul> </p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="redirectToAnotherPage()">Apply Now</button>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal2">Close</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                    
+                    <div class="col-md-4 col-xl-3" id="maternityleave">
+                        <div class="card bg-c-pink order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Maternity leave</h6>
+                                <h2 class="text-right"><img src="assets/img/dashboard/maternity.png" alt="1"></i><span>5</span></h2>
+                                <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="mymaternityleave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Maternity Leave - 105 days</h5>
+                              
+                          </div>
+                          <div class="modal-body">
+                              <p style="text-align: justify;"><ul>
+                                <li>Proof of pregnancy e.g. ultrasound, doctors certificate on the expected date of deliver.</li>
+                                <br>
+                                <li>Accomplished Notice of Allocation of Maternity Leave Credits (CS Form No. 6a), if needed.</li>
+                                <br>
+                                <li>Seconded female employees shall enjoy maternity leave with full pay in the recipient agency.</li>
+                              </ul> </p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="redirectToAnotherPage()">Apply Now</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal3">Close</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+
+            <!--Another-->
+            <!-- Absenses Card -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xl-3" id="paternityleave">
+                        <div class="card bg-c-blue order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Paternity leave</h6>
+                                <h2 class="text-right"><img src="assets/img/dashboard/father.png" alt="1"></i><span>5</span></h2>
+                                <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="mypaternityleave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Paternity Leave - 7 days</h5>
+                                  
+                              </div>
+                              <div class="modal-body">
+                                  <p style="text-align: justify;">
+                                    Proof of child’s delivery e.g. birth certificate, medical certificate and marriage contract </p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="redirectToAnotherPage()">Apply Now</button>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal4">Close</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                    
+                    <div class="col-md-4 col-xl-3" id="specialleave">
+                        <div class="card bg-c-green order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Special Privilege leave</h6>
+                                <h2 class="text-right"><img src="assets/img/dashboard/special.png" alt="1"></i><span>5</span></h2>
+                                <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="myspecialleave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Special Privilege Leave - 3 days</h5>
+                              </div>
+                              <div class="modal-body">
+                                  <p style="text-align: justify;">
+                                    It shall be filed/approved for <b>at least one (1) week prior to availment</b>, except on emergency cases. Special privilege 
+                                    leave within the Philippines or abroad shall be indicated 
+                                    in the form for purposes of securing travel authority and completing clearance from money and work accountabilities. </p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="redirectToAnotherPage()">Apply Now</button>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal5">Close</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                    
+                    <div class="col-md-4 col-xl-3" id="soloparentleave">
+                        <div class="card bg-c-blue order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Solo Parent leave</h6>
+                                <h2 class="text-right"><img src="assets/img/dashboard/solo.png" alt="1"></i><span>5</span></h2>
+                                <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="mysoloparentleave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Solo Parent Leave - 7 days</h5>
+                              </div>
+                              <div class="modal-body">
+                                  <p style="text-align: justify;">
+                                    It shall be filed <b>in advance or whenever possible five (5) days</b> before going on such leave with updated Solo Parent 
+                                    Identification Card.</p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="redirectToAnotherPage()">Apply Now</button>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal6">Close</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                    
+                    <div class="col-md-4 col-xl-3" id="studyleave">
+                        <div class="card bg-c-pink order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Study leave</h6>
+                                <h2 class="text-right"><img src="assets/img/dashboard/study.png" alt="1"></i><span>5</span></h2>
+                                <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="mystudyleave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Study Leave - upto 6 months</h5>
+                          </div>
+                          <div class="modal-body">
+                              <p style="text-align: justify;">
+                                <ul>
+                                  <li>Shall meet the agency’s internal requirements, if any;</li>
+                                  <br>
+                                  <li>Contract between the agency head or authorized representative and the employee concerned.</li>
+                                </ul> </p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="redirectToAnotherPage()">Apply Now</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal7">Close</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <!--Another-->
+            <!-- Absenses Card -->
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4 col-xl-3" id="vawcleave">
+                        <div class="card bg-c-blue order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">VAWC leave</h6>
+                                <h2 class="text-right"><img src="assets/img/dashboard/leave3.png" alt="1"></i><span>5</span></h2>
+                                <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="myvawcleave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">VAWC Leave - 10 days</h5>
+                              </div>
+                              <div class="modal-body">
+                                  <p style="text-align: justify;">
+                                    <ul>
+                                      <li>It shall be filed in advance or immediately upon the woman employee’s return from such leave.</li>
+                                      <br>
+                                      <li>It shall be accompanied by any of the following supporting documents:
+                                          <ol type="a">
+                                            <br>
+                                            <li>Barangay Protection Order (BPO) obtained from the barangay;</li>
+                                            <br>
+                                            <li>Temporary/Permanent Protection Order (TPO/PPO) obtained from the court;</li><br>
+                                           <li>If the protection order is not yet issued by the barangay or the court, a certification issued by the Punong Barangay/Kagawad or 
+                                            Prosecutor or the Clerk of Court that the application for the BPO,TPO or PPO has been filed with the said office shall be sufficient to support the application for the ten-day leave; or</li>
+                                          <li>In the absence of the BPO/TPO/PPO or the certification, a police report specifying the details of the occurrence of violence on the victim and a medical certificate may be considered, at the discretion of the 
+                                            immediate supervisor of the woman employee concerned.</li>
+                                          </ol>                
+                                      </li>
+                                    </ul> </p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="redirectToAnotherPage()">Apply Now</button>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal8">Close</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                    
+                    <div class="col-md-4 col-xl-3" id="rehableave">
+                        <div class="card bg-c-green order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Rehabilitation leave</h6>
+                                <h2 class="text-right"><img src="assets/img/dashboard/rehabilitation.png" alt="1"></i><span>5</span></h2>
+                                <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="myrehableave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Rehabilitation Leave - up to 6 months</h5>
+                              </div>
+                              <div class="modal-body">
+                                  <p style="text-align: justify;">
+                                    <ul>
+                                      <li>Application shall be made within one (1) week from the time of the accident except when a longer period is warranted.</li>
+                                      <br>
+                                      <li>Letter request supported by relevant reports such as the police report, if any,</li>
+                                      <br>
+                                      <li>Medical certificate on the nature of the injuries, the course of treatment involved, and the need to undergo rest, recuperation, and rehabilitation, as the case may be.</li>
+                                      <br>
+                                      <li>Written concurrence of a government physician should be obtained relative to the recommendation for rehabilitation if the attending physician is a private practitioner, particularly on the duration of the period of rehabilitation.</li>
+                                    </ul> </p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="redirectToAnotherPage()">Apply Now</button>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal9">Close</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                    
+                    <div class="col-md-4 col-xl-3" id="specialwomenleave">
+                        <div class="card bg-c-yellow order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Special leave benefits for women</h6>
+                                <h2 class="text-right"><img src="assets/img/dashboard/mother.png" alt="1"></i><span>5</span></h2>
+                                <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="myspecialwomenleave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Special leave benefits for women – up to 2 months</h5>
+                              </div>
+                              <div class="modal-body">
+                                  <p style="text-align: justify;">
+                                    <ul>
+                                      <li>The application <b>may be filed in advance, that is, at least five (5) days prior</b> to the scheduled date of the gynecological surgery that 
+                                        will be undergone by the employee. In case of emergency, the application for special leave shall be filed 
+                                        immediately upon employee’s return but during confinement the agency shall be notified of said surgery</li>
+                                      <br>
+                                      <li>The application shall be accompanied by a medical certificate filled out by the proper medical authorities, e.g. 
+                                        the attending surgeon accompanied by a clinical summary reflecting the gynecological disorder which shall be addressed or was
+                                         addressed by the said surgery; the histopathological report; the operative technique used for the surgery; the duration of the surgery including the peri- operative period 
+                                        (period of confinement around surgery); as well as the employees estimated period of recuperation for the same.</li>
+                                    </ul> </p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="redirectToAnotherPage()">Apply Now</button>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal10">Close</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                    
+                    <div class="col-md-4 col-xl-3" id="specialemergencyleave">
+                        <div class="card bg-c-pink order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Special Emergency (Calamamity) leave</h6>
+                                <h2 class="text-right"><img src="assets/img/dashboard/front-line.png" alt="1"></i><span>5</span></h2>
+                                <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="myspecialemergencyleave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Special Emergency (Calamity) leave – up to 5 days</h5>
+                              </div>
+                              <div class="modal-body">
+                                  <p style="text-align: justify;">
+                                    <ul>
+                                      <li>The special emergency leave can be applied for a <b>maximum of five
+                                        (5) straight working days</b> or staggered basis within thirty (30) days from the actual 
+                                        occurrence of the natural calamity/disaster. Said privilege shall be enjoyed once a year, not in every instance of calamity or disaster.</li>
+                                      <br>
+                                      <li>The head of office shall take full responsibility for the grant of special emergency leave and verification of the employee’s eligibility to 
+                                        be granted thereof. Said verification shall include: validation of place of residence based on latest available records of the affected employee; '
+                                        verification that the place of residence is covered in the declaration of calamity area by the proper government agency; and such other proofs as may be necessary.</li>
+                                    </ul> </p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="redirectToAnotherPage()">Apply Now</button>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal11">Close</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <!--Another-->
+            <!-- Absenses Card -->
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4 col-xl-3" id="monetizationleave">
+                        <div class="card bg-c-blue order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Monetization of leave credits</h6>
+                                <h2 class="text-right"><img src="assets/img/dashboard/responsibility 1.png" alt="1"></i><span>5</span></h2>
+                                <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="mymonetizationleave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Monetization of leave credits</h5>
+                              </div>
+                              <div class="modal-body">
+                                  <p style="text-align: justify;">
+                                    Application for monetization of fifty percent (50%) or more of the accumulated leave credits shall be 
+                                    accompanied by letter request to the head of the agency stating the valid and justifiable reasons. </p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="redirectToAnotherPage()">Apply Now</button>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal12">Close</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                <div class="col-md-4 col-xl-3" id="terminalleave">
+                    <div class="card bg-c-green order-card">
+                        <div class="card-block">
+                            <h6 class="m-b-20">Terminal leave</h6>
+                            <h2 class="text-right"><img src="assets/img/dashboard/leave1.png" alt="1"><span>5</span></h2>
+                            <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="myterminalleave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Terminal Leave</h5>
+                          </div>
+                          <div class="modal-body">
+                              <p style="text-align: justify;">
+                                Proof of employee’s resignation or retirement or separation from the service. </p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="redirectToAnotherPage()">Apply Now</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal13">Close</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+                <div class="col-md-4 col-xl-3" id="adoptionleave">
+                  <div class="card bg-c-yellow order-card">
+                      <div class="card-block">
+                          <h6 class="m-b-20">Adoption Leave</h6>
+                          <h2 class="text-right"><img src="assets/img/dashboard/adoption.png" alt="1"></i><span>5</span></h2>
+                          <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="modal fade" id="myadoptionleave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Adoption Leave</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p style="text-align: justify;">
+                              Application for adoption leave shall be filed with an authenticated copy of the Pre-Adoptive 
+                              Placement Authority issued by the Department of Social Welfare and Development (DSWD). </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="redirectToAnotherPage()">Apply Now</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal14">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                  
+
+                
+                
+            </div>
+          </div>
+            <!--END YOUR CONTENT-->
+
+            <script>
+              document.getElementById("vacationleave").addEventListener("click", function() {
+                  $('#myModal').modal('show');
+              });
+          
+              document.getElementById("closemodal").addEventListener("click", function() {
+                  $('#myModal').modal('hide');
+              });
+          
+              document.getElementById("forcedleave").addEventListener("click", function() {
+                  $('#myforcedleave').modal('show');
+              });
+              document.getElementById("closemodal1").addEventListener("click", function() {
+                  $('#myforcedleave').modal('hide');
+              });
+          
+              document.getElementById("sickleave").addEventListener("click", function() {
+                  $('#mysickleave').modal('show');
+              });
+              document.getElementById("closemodal2").addEventListener("click", function() {
+                  $('#mysickleave').modal('hide');
+              });
+          
+              document.getElementById("maternityleave").addEventListener("click", function() {
+                  $('#mymaternityleave').modal('show');
+              });
+              document.getElementById("closemodal3").addEventListener("click", function() {
+                  $('#mymaternityleave').modal('hide');
+              });
+          
+              document.getElementById("paternityleave").addEventListener("click", function() {
+                  $('#mypaternityleave').modal('show');
+              });
+              document.getElementById("closemodal4").addEventListener("click", function() {
+                  $('#mypaternityleave').modal('hide');
+              });
+          
+              document.getElementById("specialleave").addEventListener("click", function() {
+                  $('#myspecialleave').modal('show');
+              });
+              document.getElementById("closemodal5").addEventListener("click", function() {
+                  $('#myspecialleave').modal('hide');
+              });
+          
+              document.getElementById("soloparentleave").addEventListener("click", function() {
+                  $('#mysoloparentleave').modal('show');
+              });
+              document.getElementById("closemodal6").addEventListener("click", function() {
+                  $('#mysoloparentleave').modal('hide');
+              });
+          
+              document.getElementById("studyleave").addEventListener("click", function() {
+                  $('#mystudyleave').modal('show');
+              });
+              document.getElementById("closemodal7").addEventListener("click", function() {
+                  $('#mystudyleave').modal('hide');
+              });
+          
+              document.getElementById("vawcleave").addEventListener("click", function() {
+                  $('#myvawcleave').modal('show');
+              });
+              document.getElementById("closemodal8").addEventListener("click", function() {
+                  $('#myvawcleave').modal('hide');
+              });
+          
+              document.getElementById("rehableave").addEventListener("click", function() {
+                  $('#myrehableave').modal('show');
+              });
+              document.getElementById("closemodal9").addEventListener("click", function() {
+                  $('#myrehableave').modal('hide');
+              });
+
+              document.getElementById("specialwomenleave").addEventListener("click", function() {
+                  $('#myspecialwomenleave').modal('show');
+              });
+              document.getElementById("closemodal10").addEventListener("click", function() {
+                  $('#myspecialwomenleave').modal('hide');
+              });
+
+              document.getElementById("specialemergencyleave").addEventListener("click", function() {
+                  $('#myspecialemergencyleave').modal('show');
+              });
+              document.getElementById("closemodal11").addEventListener("click", function() {
+                  $('#myspecialemergencyleave').modal('hide');
+              });
+
+              document.getElementById("monetizationleave").addEventListener("click", function() {
+                  $('#mymonetizationleave').modal('show');
+              });
+              document.getElementById("closemodal12").addEventListener("click", function() {
+                  $('#mymonetizationleave').modal('hide');
+              });
+ 
+              document.getElementById("terminalleave").addEventListener("click", function() {
+                  $('#myterminalleave').modal('show');
+              });
+              document.getElementById("closemodal13").addEventListener("click", function() {
+                  $('#myterminalleave').modal('hide');
+              });
+
+              document.getElementById("adoptionleave").addEventListener("click", function() {
+                  $('#myadoptionleave').modal('show');
+              });
+              document.getElementById("closemodal14").addEventListener("click", function() {
+                  $('#myadoptionleave').modal('hide');
+              });
+          </script>
+          
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    function redirectToAnotherPage() {
+        window.location.href = 'employee_request_form.html';
+    }
+  </script>
+
+  <script src="bundles/navbar.bundle.js"></script>
+  
+</body>
+
+</html>
