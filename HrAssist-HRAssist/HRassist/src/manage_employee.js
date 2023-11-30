@@ -54,7 +54,7 @@ function fetchDepartments() {
                             <h2 class="title" id="officeName">${officeName}</h2>
                         </div>
                         <div class="footer">
-                            <a href="admin_employee_registry_list.html?officeID=${encodeURIComponent(officeId)}" class="button">Open →</a>
+                            <a href="admin_employee_registry_list.html?officeID=${encodeURIComponent(officeId)}?&officeName=${encodeURIComponent(officeName)}" class="button">Open →</a>
                         </div>
                     </div>
                 </div>

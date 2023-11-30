@@ -97,6 +97,7 @@ export function AddEmployeeDataSheet() {
                       const employeeData = {
                         incrementalAccountID: resultIncrementAccountID,
                         accountDocID: receivedStringData,
+                        employmentStatus: 'Active',
                         UserLevel: "Employee",
                         createdAt: serverTimestamp(),
                         ProfilePictureURL: downloadURL,
