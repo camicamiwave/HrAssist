@@ -27,76 +27,89 @@ const db = getFirestore()
 async function GetEmployeeTable() {
   const EmployeecolRef = collection(db, 'Employee Information');
   const File201colRef = collection(db, '201File Information');
+
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const receivedStringData = urlParams.get('officeID');
+  const receivedOfficeName = urlParams.get('officeName');
+
   const q = query(EmployeecolRef, orderBy('createdAt'));
+  const query201 = query(File201colRef, where("Appointment_Details.Office", "==", receivedOfficeName))
+
 
   try {
     const employeeTable = document.getElementById('employeeTable');
     const tbody = employeeTable.querySelector('tbody');
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const receivedStringData = urlParams.get('officeID');
-    const receivedOfficeName = urlParams.get('officeName');
 
-    onSnapshot(q, async (snapshot) => {
+    onSnapshot(query201, async (snapshot) => {
       tbody.innerHTML = '';
 
       if (!snapshot.empty) {
         for (const doc of snapshot.docs) {
           const data = doc.data();
           const id = doc.id;
+          const employee_ID = data.employeeDocID
+
+          console.log(data, receivedOfficeName)
+
           const row = document.createElement('tr');
 
           // Get designation from another collection
           try {
-            const dataRetrieved = await fetchEmployeeInfo(File201colRef, id, "employeeDocID");
-            const designation = dataRetrieved.Appointment_Details.PositionTitle;
-            
-            console.log(dataRetrieved.Appointment_Details.Office , receivedStringData)
+            const dataRetrieved = await fetchEmployeeInfo(EmployeecolRef, employee_ID, "documentID");
 
-            if (dataRetrieved.Appointment_Details.Office === receivedOfficeName){
-              
-              const imageElement = document.createElement('img');
-              imageElement.src = data.ProfilePictureURL;
-              const profileCell = document.createElement('td');
-              profileCell.appendChild(imageElement);
-    
-              const idCell = document.createElement('td');
-              idCell.textContent = data.incrementalAccountID;
-    
-              const retrievefullName = `${data.Personal_Information.FirstName} ${data.Personal_Information.SurName}`;
-              const nameCell = document.createElement('td');
-              nameCell.textContent = retrievefullName;
-    
-  
-              const jobPositionCell = document.createElement('td');
-              jobPositionCell.textContent = designation;
-  
-              const genderCell = document.createElement('td');
-              genderCell.textContent = data.Personal_Information.Gender;
-  
-              const statusCell = document.createElement('td');
-              statusCell.textContent = data.employmentStatus;
-  
-              const jobTitleCell = document.createElement('td');
-              jobTitleCell.textContent = data.email;
-  
-              row.addEventListener('click', () => {
-                console.log('Row ID clicked:', id);
-              });
-  
-              row.appendChild(profileCell);
-              row.appendChild(idCell);
-              row.appendChild(nameCell);
-              row.appendChild(jobPositionCell);
-              row.appendChild(genderCell);
-              row.appendChild(statusCell);
-              row.appendChild(jobTitleCell);
-  
-              tbody.appendChild(row);
-  
-            } else {
-              console.log("No records yet")
-            }
+            const imageElement = document.createElement('img');
+            imageElement.src = dataRetrieved.ProfilePictureURL;
+
+            const profileCell = document.createElement('td');
+            profileCell.appendChild(imageElement);
+
+            const idCell = document.createElement('td');
+            idCell.textContent = dataRetrieved.incrementalAccountID;
+
+            const retrievefullName = `${dataRetrieved.Personal_Information.FirstName} ${dataRetrieved.Personal_Information.SurName}`;
+            const nameCell = document.createElement('td');
+            nameCell.textContent = retrievefullName;
+
+            const jobPositionCell = document.createElement('td');
+            jobPositionCell.textContent = data.Appointment_Details.PositionTitle;
+
+            const genderCell = document.createElement('td');
+            genderCell.textContent = dataRetrieved.Personal_Information.Gender;
+
+            const statusCell = document.createElement('td');
+            statusCell.textContent = dataRetrieved.employmentStatus;
+
+            const deleteButtonCell = document.createElement('td');
+
+            const deleteButton = document.createElement('button');
+            deleteButton.classList.add('btn', 'btn-primary');
+
+            const deleteIcon = document.createElement('i');
+            deleteIcon.classList.add('bx', 'bx-edit');
+
+            // Add a click event listener to the delete button
+            deleteButton.addEventListener('click', () => {
+              console.log('Row ID clicked:', id);
+
+              window.location.href = `admin_201file_pds.html?data=${encodeURIComponent(dataRetrieved.documentID)}`;
+
+            })
+
+            deleteButton.appendChild(deleteIcon);
+            deleteButtonCell.appendChild(deleteButton);
+
+            row.appendChild(profileCell);
+            row.appendChild(idCell);
+            row.appendChild(nameCell);
+            row.appendChild(jobPositionCell);
+            row.appendChild(genderCell);
+            row.appendChild(statusCell);
+            row.appendChild(deleteButtonCell);
+
+            tbody.appendChild(row);
+
 
           } catch (error) {
             console.error('Error fetching designation:', error);
