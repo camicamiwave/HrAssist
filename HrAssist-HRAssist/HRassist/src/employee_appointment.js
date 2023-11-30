@@ -52,7 +52,7 @@ function AddAppointmentData() {
         employeeDocID: receivedStringData,
         createdAt: serverTimestamp(),
         Appointment_Details: {
-          PositionTitle: addDataSheetForm.inputPosTitle.value.trim(),
+          PositionTitle: addDataSheetForm.positionSelector.value.trim(),
           PositionCategory: addDataSheetForm.inputPosCategory.value.trim(),
           Office: addDataSheetForm.inputOffice.value.trim(),
           SalaryGrade: addDataSheetForm.inputSJP.value.trim(),
@@ -132,9 +132,9 @@ export function fetchAppointmentData() {
       const addDataSheetForm = document.querySelector("#employeeAppointmentForm");
 
       if (data.Appointment_Details) {
-        //addDataSheetForm.inputPosTitle.value = data.Appointment_Details.PositionTitle,
+        addDataSheetForm.positionSelector.value = data.Appointment_Details.PositionTitle,
         addDataSheetForm.inputPosCategory.value = data.Appointment_Details.PositionCategory
-        //addDataSheetForm.inputOffice.value = data.Appointment_Details.Office
+        addDataSheetForm.inputOffice.value = data.Appointment_Details.Office
         addDataSheetForm.inputSJP.value = data.Appointment_Details.SalaryGrade
         addDataSheetForm.inputAmount.value = data.Appointment_Details.Compensation
         addDataSheetForm.inputNatofApp.value = data.Appointment_Details.NatureAppointment
