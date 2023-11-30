@@ -81,9 +81,9 @@
 
 .d-flex a {
   display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+  text-align: left;
+  align-items: left;
+  justify-content: left;
   text-decoration: none; /* Remove underline for links */
 }
 
