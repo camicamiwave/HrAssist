@@ -171,17 +171,23 @@ function SearchYearCredit(leaveCreditsCollectionRef, File201Document) {
 
 
                     // Assuming you want to add the employeeDocID to the URL without reloading
-                    const url = `admin_201file_leave.html?data=${encodeURIComponent(receivedStringData)}&201filedoc=${encodeURIComponent(received201filedoc)}&leave_id=${encodeURIComponent(leaveCreditData.leavecreditDocID)}`;
+                    const url = `admin_201file_leave.html?data=${encodeURIComponent(receivedStringData)}&201filedoc=${encodeURIComponent(File201Document)}&leave_id=${encodeURIComponent(leaveCreditData.leavecreditDocID)}`;
 
                     // Use pushState to update the URL
                     window.history.pushState({ path: url }, '', url);
 
                     Employee201LeaveCredit(leaveCreditsCollectionRef, leaveCreditData.leavecreditDocID)
 
+
+
                 } else {
                     // Data not found
                     alert("Record not found");
                 }
+
+
+            }).then(() => {
+                fetchEmployeeLeaveCredit()
             })
             .catch((error) => {
                 // Error handler
@@ -198,52 +204,112 @@ function SearchYearCredit(leaveCreditsCollectionRef, File201Document) {
 function fetchLeaveCreditAnnual(leaveCreditsCollectionRef, File201Document) {
 
     const colRef = collection(db, 'Applicant Information');
-    const que = query(leaveCreditsCollectionRef);
+    const que = query(leaveCreditsCollectionRef, orderBy('LeaveCreditStatus'));
 
     // Assuming you have Firestore data in the 'employees' array
     const employeeTable = document.getElementById('yearTable');
     const tbody = employeeTable.querySelector('#annualRecordBody');
 
-    let num = 1;
-
     onSnapshot(que, (snapshot) => {
         // Clear the existing rows in the table body
         tbody.innerHTML = '';
 
-        snapshot.docs.forEach((doc) => {
-            const data = doc.data();
-            const id = doc.id;
+        let num = 0;
+        snapshot.docs.forEach((leavedoc) => {
+            const data = leavedoc.data();
+            const id = leavedoc.id;
             const row = document.createElement('tr');
 
+            const currentYear = new Date().getFullYear(); 
+
+            if (data.LeaveCreditStatus === "Present"){
+                if (data.YearCovered !== currentYear.toString()){
+                    console.log("tamaaa", data.leavecreditDocID)
+                    
+                    const leaveCreditsCollectionRef1 = collection(db, '201File Information', File201Document, 'Leave_Credits');
+
+                    return setDoc(doc(leaveCreditsCollectionRef1, data.leavecreditDocID), { LeaveCreditStatus: "" }, { merge: true });
+                }
+            } else if (data.LeaveCreditStatus !== "Present") {
+                if (data.YearCovered === currentYear.toString()){
+
+                    const leaveCreditsCollectionRef1 = collection(db, '201File Information', File201Document, 'Leave_Credits');
+
+                    return setDoc(doc(leaveCreditsCollectionRef1, data.leavecreditDocID), { LeaveCreditStatus: "Present" }, { merge: true });
+
+                }
+            }
+
+            num++; // Increment num for each row
 
             const idCell = document.createElement('td');
-            idCell.textContent = num;
+            idCell.textContent = num; // Use the incremented num value
 
             const yearCell = document.createElement('td');
             yearCell.textContent = data.YearCovered;
 
+            const statusCell = document.createElement('td');
+            statusCell.textContent = data.LeaveCreditStatus;
+
             const actionCell = document.createElement('td');
-            actionCell.innerHTML = '<button onclick="openEditModal()" class="btn btn-danger">Delete</button>';
+            actionCell.innerHTML = '<button class="btn btn-danger">Delete</button>';
 
             // Add a click event listener to the row
-            row.addEventListener('click', () => {
-                console.log('Row ID clicked:', id);
+            actionCell.addEventListener('click', () => {
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "All employee's leave credit record for this year will be lost",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Confirm"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // If the user clicks "Confirm"
+                        console.log('Row ID clicked:', id);
+
+                        // Reference to the Leave_Credits collection
+                        const leaveCreditsCollectionRef1 = collection(db, '201File Information', File201Document, 'Leave_Credits');
+
+                        console.log('leaveCreditsCollectionRef1:', leaveCreditsCollectionRef1);
+                        console.log('id:', id);
+
+                        DeleteYearDocument(leaveCreditsCollectionRef1, id);
+                    } else {
+                        // Handle the case where the user cancels the action
+                    }
+                });
             });
 
             row.appendChild(idCell);
             row.appendChild(yearCell);
+            row.appendChild(statusCell);
             row.appendChild(actionCell);
 
             // Append the row to the table body
             tbody.appendChild(row);
-            
-            num++;
         });
-
     }, (error) => {
         console.error('Error fetching documents:', error);
     });
+}
 
+
+//window.addEventListener('load', fetchLeaveCreditAnnual);
+
+function DeleteYearDocument(leaveCreditsCollectionRef1, id) {
+
+    const docRef = doc(leaveCreditsCollectionRef1, id)
+
+    deleteDoc(docRef)
+        .then(() => {
+            Swal.fire({
+                title: 'Deleted Successfully!',
+                text: 'All employee record deleted on that year.',
+                icon: 'success',
+            });
+        })
 }
 
 
@@ -272,6 +338,7 @@ function AddYearLeaveRecord() {
             // Reference to the nested collection within the document
             const leaveCreditsCollectionRef = collection(employeeDocumentRef, 'Leave_Credits');
 
+            
             Swal.fire({
                 title: "Are you sure?",
                 text: "Your request will be recorded",
@@ -283,12 +350,85 @@ function AddYearLeaveRecord() {
             }).then((result) => {
                 if (result.isConfirmed) {
 
+                    const currentDate = new Date();
+
+                    const year = currentDate.getFullYear();
+                    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+                    const day = String(currentDate.getDate()).padStart(2, '0');
+
+                    const formattedDate = `${year}-${month}-${day}`;
+
                     const leaveDetails = {
-                        LeaveCreditStatus: 'Active',
                         createdAt: serverTimestamp(),
-                        YearCovered: yearSelectorForm.yearSelctor.value,
-                        file201documentID: documentID
+                        YearCovered: yearSelectorForm.yearSelctor.value.trim(),
+                        file201documentID: documentID,
+                        Leave_Credit: {
+                            'Sick Leave': {
+                                LeaveType: "Sick Leave",
+                                RemainingUnits: 0,
+                                AsOf: formattedDate
+                            },
+                            'Vacation Leave': {
+                                LeaveType: "Vacation Leave",
+                                RemainingUnits: 0,
+                                AsOf: formattedDate
+                            },
+                            'Maternity Leave': {
+                                LeaveType: "Maternity Leave",
+                                RemainingUnits: 105,
+                                AsOf: formattedDate
+                            },
+                            'Mandatory/Forced Leave': {
+                                LeaveType: "Mandatory/Forced Leave",
+                                RemainingUnits: 5,
+                                AsOf: formattedDate
+                            },
+                            'Paternity Leave': {
+                                LeaveType: "Paternity Leave",
+                                RemainingUnits: 7,
+                                AsOf: formattedDate
+                            },
+                            'Special Privilege Leave': {
+                                LeaveType: "Special Privilege Leave",
+                                RemainingUnits: 3,
+                                AsOf: formattedDate
+                            },
+                            'Solo Parent Leave': {
+                                LeaveType: "Solo Parent Leave",
+                                RemainingUnits: 7,
+                                AsOf: formattedDate
+                            },
+                            'Study Leave': {
+                                LeaveType: "Study Leave",
+                                RemainingUnits: 180,
+                                AsOf: formattedDate
+                            },
+                            '10-Day VAWC Leave': {
+                                LeaveType: "10-Day VAWC Leave",
+                                RemainingUnits: 10,
+                                AsOf: formattedDate
+                            },
+                            'Rehabilitation Priviledge': {
+                                LeaveType: "Rehabilitation Priviledge",
+                                RemainingUnits: 180,
+                                AsOf: formattedDate
+                            },
+                            'Special Leave Benefits for Women': {
+                                LeaveType: "Special Leave Benefits for Women",
+                                RemainingUnits: 60,
+                                AsOf: formattedDate
+                            },
+                            'Special Emergency (Calamity) Leave': {
+                                LeaveType: "Special Emergency (Calamity) Leave",
+                                RemainingUnits: 5,
+                                AsOf: formattedDate
+                            },
+
+
+                        }
+
                     };
+
 
                     // Add a document to the nested collection and get the document reference
                     return addDoc(leaveCreditsCollectionRef, leaveDetails)
@@ -296,8 +436,31 @@ function AddYearLeaveRecord() {
                             const EmpcustomDocId = docRef.id;
 
 
-                            // Assuming downloadURLs is defined somewhere
-                            return setDoc(doc(leaveCreditsCollectionRef, EmpcustomDocId), { leavecreditDocID: EmpcustomDocId }, { merge: true });
+                            const currentYear = new Date().getFullYear();
+                            console.log(currentYear, 'asdfsd');
+
+                            if (yearSelectorForm.yearSelctor.value === currentYear.toString()) {
+
+                                console.log('log')
+                                const leaveCreditDetails = {
+                                    leavecreditDocID: EmpcustomDocId,
+                                    LeaveCreditStatus: 'Present'
+                                }
+                                // Assuming downloadURLs is defined somewhere
+                                return setDoc(doc(leaveCreditsCollectionRef, EmpcustomDocId), leaveCreditDetails, { merge: true });
+
+                            } else {
+
+                                const leaveCreditDetails = {
+                                    leavecreditDocID: EmpcustomDocId,
+                                    LeaveCreditStatus: ''
+                                }
+
+                                // Assuming downloadURLs is defined somewhere
+                                return setDoc(doc(leaveCreditsCollectionRef, EmpcustomDocId), leaveCreditDetails, { merge: true });
+
+                            }
+
 
                         }).then(() => {
                             Swal.fire({
@@ -341,6 +504,7 @@ window.addEventListener('load', AddYearLeaveRecord);
 export function fetchEmployeeLeaveCredit() {
 
     try {
+        const urlParams = new URLSearchParams(window.location.search);
 
         const receivedleave_id = urlParams.get('leave_id');
         const receivedfile201 = urlParams.get('201filedoc');
@@ -356,8 +520,6 @@ export function fetchEmployeeLeaveCredit() {
                 const leaveTypeData = leaveTypeDoc.data();
                 const leaveDetails = leaveTypeData.Leave_Credit
                 const id = leaveTypeData.id;
-
-                console.log(leaveDetails, 'asfas')
 
                 var tableBody = document.getElementById('fileListBody');
 
@@ -390,13 +552,20 @@ export function fetchEmployeeLeaveCredit() {
 
                         // Assuming you have created the button and assigned it to the variable 'editButton'
                         const editButton = document.createElement('button');
+
                         editButton.textContent = 'Edit';
                         editButton.className = 'btn btn-primary';
                         editButton.id = `${leaveType}`;
 
                         // Add an event listener to the button
                         editButton.addEventListener('click', function () {
-                            test(leaveDetails, leaveType);
+                            const leaveData = leaveDetails[this.id]
+
+                            leaveCreditLeaveType.value = leaveData.LeaveType
+                            leaveCreditRemainingUnits.value = leaveData.RemainingUnits
+                            leaveCreditAsOfNow.value = leaveData.AsOf
+                            
+                            openEditModal();
                         });
 
                         // Append the button to the cell (cell6 in this case)
@@ -417,10 +586,3 @@ export function fetchEmployeeLeaveCredit() {
     }
 }
 
-window.addEventListener('load', fetchEmployeeLeaveCredit)
-
-function test(leaveData, leaveType) {
-    console.log("Clicked ID:", leaveType);
-    console.log(leaveData, 'sdfsd');
-    // Rest of your function...
-}

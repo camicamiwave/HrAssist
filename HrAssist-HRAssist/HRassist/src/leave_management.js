@@ -259,7 +259,7 @@ function GetLeaveManagementStatus() {
                 const employeeDocumentRef = doc(File201colRef, file201DocID);
                 const leaveCreditsCollectionRef = collection(employeeDocumentRef, 'Leave_Credits');
 
-                const file201query = query(leaveCreditsCollectionRef, where("LeaveCreditStatus", "==", "Active"))
+                const file201query = query(leaveCreditsCollectionRef, where("LeaveCreditStatus", "==", "Present"))
 
                 onSnapshot(file201query, (snapshot) => {
                     snapshot.docs.forEach((filedoc) => {
