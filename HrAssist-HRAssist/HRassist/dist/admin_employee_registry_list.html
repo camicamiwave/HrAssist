@@ -206,7 +206,7 @@
       <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-heading">ADMIN TOOL</li>
           <li class="nav-item">
-              <a class="nav-link" href="admin_dashboard.html">
+              <a class="nav-link collapsed" href="admin_dashboard.html">
                   <i class="bi bi-grid"></i>
                   <span>Dashboard</span>
               </a>
@@ -248,7 +248,7 @@
         </li><!-- End Job Vacancy Nav -->
   
           <li class="nav-item">
-              <a class="nav-link collapsed" href="admin_manage_applicant_view.html">
+              <a class="nav-link" href="admin_manage_applicant_view.html">
                   <i class="bi bi-people"></i>
                   <span>Manage Applicant</span>
               </a>
@@ -323,8 +323,7 @@
                   <div class="content-wrapper">
                       <div class="table">
                           <div class="table-header">
-                              <p>Filter</p>
-                              <a href="admin_201file_account.html"><button class="btn-add" style="padding: 10px 20px; color: #ffffff; background-color: #08533F; border-radius: 12px;">+ Add Employee</button></a>
+                              <a href="admin_201file_account.html"><button class="btn-add" style="padding: 10px 20px; color: #ffffff; background-color: #08533F; border-radius: 12px; margin-left: 757px;">+ Add Employee</button></a>
                           </div>
                           <section class="hero-section">
                             <div class="content">
@@ -336,9 +335,9 @@
                                   <li><a href="#">Part-Time</a></li>
                                 </ul>
                               </div>
-                              <form action="#" class="search-form">
-                                <input type="text" placeholder="Search for any job vacancy..." required>
-                                <button class="material-symbols-outlined" type="sumbit">search</button>
+                              <form class="search-form" method="POST" action="#">
+                                <input type="text" name="query" placeholder="Search for Job Vacancy" title="Enter search keyword" required>
+                                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
                               </form>
                             </div>
                           </section>

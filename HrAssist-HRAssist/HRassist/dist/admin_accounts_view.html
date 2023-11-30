@@ -325,29 +325,51 @@
                 <div class="content-wrapper">
                     <div class="table">
                         <div class="table-header">
-                            <p>List of Applicants</p>
-                            <a href="admin-account.html"><button class="add-new">+ Add Account</button></a>
+                            <p>List of Accounts</p>
+                            <a href="admin-account.html"><button class="add-new" style = "background-color: #08533F; color: white; border-radius: 5px;">+ Add Account</button></a>
                         </div>
                         <div class="table-header">
                             <div class="group">
                                 <p>Filter</p>
+                                <select id="category" onchange="filterData()">
+                                  <option value="all">All</option>
+                                  <option value="admin">Admin</option>
+                                  <option value="applicant">Applicant</option>
+                                  <option value="employee">Employee</option>
+                              </select>
                             </div>
                         </div>
+                        <script>
+                          function filterData() {
+                              var selectedCategory = document.getElementById('category').value;
+                              var dataRows = document.querySelectorAll('.data-row');
+                      
+                              dataRows.forEach(function (row) {
+                                  var rowCategory = row.getAttribute('data-category');
+                                  if (selectedCategory === 'all' || selectedCategory === rowCategory) {
+                                      row.style.display = 'table-row';
+                                  } else {
+                                      row.style.display = 'none';
+                                  }
+                              });
+                          }
+                      </script>
+                      
                         <table class="content-table" id="accountTable">
                             <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Email</th>
-                                    <th>Category</th>
+                                    <th id="category">Category</th>
                                     <th>Account Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr class="data-row" data-category="applicant">
                                     <td id="accountIdNum">1</td>
                                     <td id="accountName">Juan Dela Cruz</td>
-                                    <td id="accountUserLevel">Applicant</td>
+                                    <td id="category">Applicant</td>
                                     <td id="accountStatus">Active</td>
 
                                     <td>
