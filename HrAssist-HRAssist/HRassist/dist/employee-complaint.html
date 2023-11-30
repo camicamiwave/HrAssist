@@ -144,14 +144,14 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile.png" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Juan Luna</span>
+            <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Juan Garcia</h6>
-              <span>Employee</span>
+              <h6 id="hoverUserName"></h6>
+              <span id="userLevel"></span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -167,26 +167,7 @@
               <hr class="dropdown-divider">
             </li>
 
-            <!--
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li> -->
+          
 
             <li>
               <a class="dropdown-item d-flex align-items-center" href="#">
@@ -342,31 +323,32 @@
                       </div>
               
                       <div class="col-lg-12 contact-form__wrapper p-5 order-lg-1">
-                          <form action="#" class="contact-form form-validate" novalidate="novalidate">
+                          <form id="complaintForm" class="contact-form form-validate" novalidate="novalidate">
                               <div class="row">
                                 <h5>Please complete the form below for your complaints.</h5>
                                 
                                 <hr>
+                                <!--
                                   <div class="col-sm-12 mb-3">
                                       <div class="form-group">
                                           <label class="required-field" for="Date">Date of filling the form:</label>
-                                          <input type="date" class="form-control" id="Date" name="Date">
+                                          <input type="date" class="form-control" id="complaintDate" name="Date" required>
                                       </div>
                                   </div>
-              
+                                -->
                     
               
                                   <div class="col-sm-12 mb-3">
                                       <div class="form-group">
                                           <label class="required-field" for="CompName">Complainant's Name:</label>
-                                          <input type="text" class="form-control" id="CompName" name="CompName">
+                                          <input type="text" class="form-control" id="CompName" name="CompName" required>
                                       </div>
                                   </div>
               
                                   <div class="col-sm-12 mb-3">
                                       <div class="form-group">
                                           <label for="email">Email</label>
-                                          <input type="text" class="form-control" id="email" name="email">
+                                          <input type="text" class="form-control" id="ComplaintEmail" name="email" required>
                                       </div>
                                   </div>
                                   <hr>
@@ -374,7 +356,7 @@
                                   <div class="col-sm-12 mb-3">
                                       <div class="form-group">
                                           <label class="required-field" for="message">The complaint is regarding:</label>
-                                          <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                                          <textarea class="form-control" id="ComplaintMessage" name="message" rows="4" required></textarea>
                                       </div>
                                   </div>
 
@@ -382,26 +364,26 @@
                                   <div class="col-sm-12 mb-3">
                                     <div class="form-group">
                                         <label class="required-field" for="complaint">The nature of complaint:</label>
-                                        <textarea class="form-control" id="complaint" name="complaint" rows="4"></textarea>
+                                        <textarea class="form-control" id="NatureOfComplaint" name="complaint" rows="4" required></textarea>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-12 mb-3">
                                   <div class="form-group">
                                       <label for="name">Name of the company/person against which/whom the complaint is filed:</label>
-                                      <input type="text" class="form-control" id="name" name="name">
+                                      <input type="text" class="form-control" id="PersonComplaint" name="name" required>
                                   </div>
                               </div>
 
                               <div class="col-sm-12 mb-3">
                                 <div class="form-group">
                                     <label class="required-field" for="details">The specific details of the complaint:</label>
-                                    <textarea class="form-control" id="details" name="details" rows="4"></textarea>
+                                    <textarea class="form-control" id="ComplaintDetails" name="details" rows="4"></textarea>
                                 </div>
                             </div>
               
                                   <div class="col-sm-12 mb-3">
-                                      <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                                      <button type="button" id="complaintSubmit" name="submit" class="btn btn-primary">Submit</button>
                                   </div>
               
                               </div>
@@ -484,6 +466,7 @@
   <script src="assets/js/main.js"></script>
 
   <script src="bundles/navbar.bundle.js"></script>
+  <script src="bundles/employee_complain.bundle.js"></script>
   
 </body>
 

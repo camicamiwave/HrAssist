@@ -142,21 +142,22 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile.png" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Juan Luna</span>
+            <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Juan Garcia</h6>
-              <span>Employee</span>
+              <h6 id="hoverUserName"></h6>
+              <span id="userLevel"></span>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
+
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="employee-users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="admin-users-profile.html">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>
@@ -165,28 +166,9 @@
               <hr class="dropdown-divider">
             </li>
 
+            
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" id="navbar_signout_btn">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -206,7 +188,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-heading">ADMIN TOOL</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link collapsed" href="admin_dashboard.html">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -345,6 +327,8 @@
     </ul>
 
   </aside><!-- End Sidebar-->
+  
+  <!--START CONTENT-->
 
   <main id="main" class="main">
 
@@ -392,405 +376,136 @@
               <!-- Card stats -->
               <div class="row g-6 mb-6">
                   
-                  <div class="col-xl-6 col-sm-6 col-12">
+                  <div class="col-xl-6 col-sm-6 col-12" id="top1">
                       <div class="card shadow border-0">
                           <div class="card-body">
                               <div class="row">
                                   <div class="col">
-                                      <span class="h6 font-semibold text-muted text-sm d-block mb-2">New projects</span>
-                                      <span class="h3 font-bold mb-0">320</span>
+                                      <span class="h6 font-semibold text-muted text-sm d-block mb-2">Top Performing Employees</span>
+                                      <span class="h3 font-bold mb-0">View List</span>
                                   </div>
                                   <div class="col-auto">
-                                      <div class="icon icon-shape bg-primary text-white text-lg rounded-circle">
-                                          <i class="bi bi-people"></i>
+                                      <div class="icon icon-shape text-lg rounded-circle">
+                                         <img class="" src="img/topmedal.png" alt="Profile Picture">
+                                       
                                       </div>
                                   </div>
                               </div>
                               <div class="mt-2 mb-0 text-sm">
                                   <span class="badge badge-pill bg-soft-success text-success me-2">
-                                      <i class="bi bi-arrow-up me-1"></i>80%
+                                      <i class="bi bi-arrow-up me-1"></i>
                                   </span>
-                                  <span class="text-nowrap text-xs text-muted">Since last month</span>
+                                  <span class="text-nowrap text-xs text-muted">This month / December</span>
                               </div>
                           </div>
                       </div>
                   </div>
-                  <div class="col-xl-6 col-sm-6 col-12">
-                      <div class="card shadow border-0">
-                          <div class="card-body">
-                              <div class="row">
-                                  <div class="col">
-                                      <span class="h6 font-semibold text-muted text-sm d-block mb-2">Total hours</span>
-                                      <span class="h3 font-bold mb-0">4.100</span>
-                                  </div>
-                                  <div class="col-auto">
-                                      <div class="icon icon-shape bg-info text-white text-lg rounded-circle">
-                                          <i class="bi bi-clock-history"></i>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="mt-2 mb-0 text-sm">
-                                  <span class="badge badge-pill bg-soft-danger text-danger me-2">
-                                      <i class="bi bi-arrow-down me-1"></i>-5%
-                                  </span>
-                                  <span class="text-nowrap text-xs text-muted">Since last month</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+
+
+                  <div class="modal fade" id="mytop1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Top Performing Employees</h5>
+                            </div>
+                            <div class="modal-body">
+                              <table class="table table-hover">
+                                <thead>
+                                  <tr>
+                                    <th> </th>
+                                    <th>Last Name</th>
+                                    <th>First Name</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td> <img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;"></td>
+                                    <td>Albos</td>
+                                    <td>John Erwin</td>
+                                  </tr>
+                                  <tr>
+                                    <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;"> </td>
+                                    <td>Binas</td>
+                                    <td>Camila</td>
+                                  </tr>
+                                  <tr>
+                                    <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;"> </td>
+                                    <td>Ar-jay</td>
+                                    <td>De la Fuente</td>
+                                  </tr>
+                                  <tr>
+                                    <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;"> </td>
+                                    <td>Donita Rose</td>
+                                    <td>Gadil</td>
+                                  </tr>
+                                  <tr>
+                                    <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;"> </td>
+                                    <td>Arriana Mae</td>
+                                    <td>Malubay</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             
               </div>
               <div class="card shadow border-0 mb-7">
                   <div class="card-header">
                       <h5 class="mb-0">Employees Performance Ranking</h5>
                   </div>
-                  <div class="table-responsive">
-                      <table class="table table-hover table-nowrap">
-                          <thead class="thead-light">
-                              <tr>
-                                  <th scope="col">ID</th>
-                                  <th scope="col">Name</th>
-                                  <th scope="col">Date</th>
-                                  <th scope="col">Company</th>
-                                  <th scope="col">Offer</th>
-                                  <th scope="col">Meeting</th>
-                                  <th></th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                  <td>
-                                      <img alt="..." src="img/medal.png" class="avatar avatar-sm rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Jason Martinez
-                                      </a>
-                                  </td>
-                                  <td>
-                                      Feb 15, 2023
-                                  </td>
-                                  <td>
-                                      <img alt="..." src="https://bytewebster.com/img/logo.png" class="avatar avatar-xs rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                          Bytewebster
-                                      </a>
-                                  </td>
-                                  <td>
-                                      $3.500
-                                  </td>
-                                  <td>
-                                      <span class="badge badge-lg badge-dot">
-                                          <i class="bg-success"></i>Scheduled
-                                      </span>
-                                  </td>
-                                  <td class="text-end">
-                                      <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                      <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                          <i class="bi bi-trash"></i>
-                                      </button>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>
-                                    <img alt="..." src="img/medal2.png" class="avatar avatar-sm rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Ashley Williams
-                                      </a>
-                                  </td>
-                                  <td>
-                                      Apr 15, 2023
-                                  </td>
-                                  <td>
-                                      <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-2.png" class="avatar avatar-xs rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Netguru
-                                      </a>
-                                  </td>
-                                  <td>
-                                      $2.750
-                                  </td>
-                                  <td>
-                                      <span class="badge badge-lg badge-dot">
-                                          <i class="bg-warning"></i>Postponed
-                                      </span>
-                                  </td>
-                                  <td class="text-end">
-                                      <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                      <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                          <i class="bi bi-trash"></i>
-                                      </button>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>
-                                    <img alt="..." src="img/medal3.png" class="avatar avatar-sm rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Melissa Chen
-                                      </a>
-                                  </td>
-                                  <td>
-                                      Mar 20, 2023
-                                  </td>
-                                  <td>
-                                      <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-3.png" class="avatar avatar-xs rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Figma
-                                      </a>
-                                  </td>
-                                  <td>
-                                      $4.200
-                                  </td>
-                                  <td>
-                                      <span class="badge badge-lg badge-dot">
-                                          <i class="bg-success"></i>Scheduled
-                                      </span>
-                                  </td>
-                                  <td class="text-end">
-                                      <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                      <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                          <i class="bi bi-trash"></i>
-                                      </button>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>
-                                      <img alt="..." src="https://images.unsplash.com/photo-1612422656768-d5e4ec31fac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Emily Davis
-                                      </a>
-                                  </td>
-                                  <td>
-                                      Feb 15, 2023
-                                  </td>
-                                  <td>
-                                      <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-4.png" class="avatar avatar-xs rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Mailchimp
-                                      </a>
-                                  </td>
-                                  <td>
-                                      $3.500
-                                  </td>
-                                  <td>
-                                      <span class="badge badge-lg badge-dot">
-                                          <i class="bg-dark"></i>Not discussed
-                                      </span>
-                                  </td>
-                                  <td class="text-end">
-                                      <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                      <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                          <i class="bi bi-trash"></i>
-                                      </button>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>
-                                      <img alt="..." src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Thomas Nguyen
-                                      </a>
-                                  </td>
-                                  <td>
-                                      Apr 10, 2023
-                                  </td>
-                                  <td>
-                                      <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-5.png" class="avatar avatar-xs rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Webpixels
-                                      </a>
-                                  </td>
-                                  <td>
-                                      $1.500
-                                  </td>
-                                  <td>
-                                      <span class="badge badge-lg badge-dot">
-                                          <i class="bg-danger"></i>Canceled
-                                      </span>
-                                  </td>
-                                  <td class="text-end">
-                                      <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                      <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                          <i class="bi bi-trash"></i>
-                                      </button>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>
-                                      <img alt="..." src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Jason Martinez
-                                      </a>
-                                  </td>
-                                  <td>
-                                      Feb 15, 2023
-                                  </td>
-                                  <td>
-                                      <img alt="..." src="https://bytewebster.com/img/logo.png" class="avatar avatar-xs rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="https://www.bytewebster.com/">
-                                          Bytewebster
-                                      </a>
-                                  </td>
-                                  <td>
-                                      $3.500
-                                  </td>
-                                  <td>
-                                      <span class="badge badge-lg badge-dot">
-                                          <i class="bg-success"></i>Scheduled
-                                      </span>
-                                  </td>
-                                  <td class="text-end">
-                                      <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                      <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                          <i class="bi bi-trash"></i>
-                                      </button>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>
-                                      <img alt="..." src="https://images.unsplash.com/photo-1610271340738-726e199f0258?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Ashley Williams
-                                      </a>
-                                  </td>
-                                  <td>
-                                      Apr 15, 2023
-                                  </td>
-                                  <td>
-                                      <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-2.png" class="avatar avatar-xs rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Netguru
-                                      </a>
-                                  </td>
-                                  <td>
-                                      $2.750
-                                  </td>
-                                  <td>
-                                      <span class="badge badge-lg badge-dot">
-                                          <i class="bg-warning"></i>Postponed
-                                      </span>
-                                  </td>
-                                  <td class="text-end">
-                                      <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                      <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                          <i class="bi bi-trash"></i>
-                                      </button>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>
-                                      <img alt="..." src="https://images.unsplash.com/photo-1610878722345-79c5eaf6a48c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Melissa Chen
-                                      </a>
-                                  </td>
-                                  <td>
-                                      Mar 20, 2023
-                                  </td>
-                                  <td>
-                                      <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-3.png" class="avatar avatar-xs rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Figma
-                                      </a>
-                                  </td>
-                                  <td>
-                                      $4.200
-                                  </td>
-                                  <td>
-                                      <span class="badge badge-lg badge-dot">
-                                          <i class="bg-success"></i>Scheduled
-                                      </span>
-                                  </td>
-                                  <td class="text-end">
-                                      <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                      <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                          <i class="bi bi-trash"></i>
-                                      </button>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>
-                                      <img alt="..." src="https://images.unsplash.com/photo-1612422656768-d5e4ec31fac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Emily Davis
-                                      </a>
-                                  </td>
-                                  <td>
-                                      Feb 15, 2023
-                                  </td>
-                                  <td>
-                                      <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-4.png" class="avatar avatar-xs rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Mailchimp
-                                      </a>
-                                  </td>
-                                  <td>
-                                      $3.500
-                                  </td>
-                                  <td>
-                                      <span class="badge badge-lg badge-dot">
-                                          <i class="bg-dark"></i>Not discussed
-                                      </span>
-                                  </td>
-                                  <td class="text-end">
-                                      <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                      <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                          <i class="bi bi-trash"></i>
-                                      </button>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>
-                                      <img alt="..." src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Thomas Nguyen
-                                      </a>
-                                  </td>
-                                  <td>
-                                      Apr 10, 2023
-                                  </td>
-                                  <td>
-                                      <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-5.png" class="avatar avatar-xs rounded-circle me-2">
-                                      <a class="text-heading font-semibold" href="#">
-                                          Webpixels
-                                      </a>
-                                  </td>
-                                  <td>
-                                      $1.500
-                                  </td>
-                                  <td>
-                                      <span class="badge badge-lg badge-dot">
-                                          <i class="bg-danger"></i>Canceled
-                                      </span>
-                                  </td>
-                                  <td class="text-end">
-                                      <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                      <button type="button" onclick="showSweetAlert()" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                          <i class="bi bi-trash"></i>
-                                      </button>
-                                  </td>
-                              </tr>
-                          </tbody>
-                      </table>
-                  </div>
-                  <div class="card-footer border-0 py-5">
-                      <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
-                      <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                          <li class="page-item"><a class="page-link disabled" href="#">Previous</a></li>
-                          <li class="page-item"><a class="page-link bg-info text-white" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
-                          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                      </nav>
-                  </div>
-              </div>
-          </div>
-      </main>
-  </div>
-</div>
-            <!--END YOUR CONTENT-->
 
-  </main><!-- End #main -->
+                  <!--Start the table here-->
+                     <!--Table-->
+
+            <section class="section">
+              <div class="row">
+                <div class="col-lg-12">
+
+                  <div class="card">
+                    <div class="card-body">
+               
+                      <!--START YOUR CONTENT HERE -->
+
+                      <!-- Table with stripped rows -->
+
+                      <div class="table-responsive-lg">
+                        <table class="table datatable" style="font-size: 14px;" id="ipcrfTable">
+                          <thead>
+                            <tr>
+                              <th><b>No.</b></th>
+                              <th>Name of Employee</th>
+                              <th>Department</th>
+                              <th>Position Title</th>
+                              <th>Semester</th>
+                              <th>Descriptive Rating</th>
+                              <th>Numerical Rating</th>
+                              <th>Status</th>
+
+                            </tr>
+                          </thead>
+                          <tbody  > 
+                            
+                          </tbody>
+                        </table>
+                        <!-- End Table with stripped rows -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              </div>
+            </section>
+
+          </main><!-- End #main -->
+
+        
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -809,6 +524,20 @@
   <script src="js/script3.js"></script>
 
   <script src="bundles/navbar.bundle.js"></script>
+  <script src="bundles/auth.bundle.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+                  document.getElementById("top1").addEventListener("click", function() {
+                  $('#mytop1').modal('show');
+              });
+          
+              document.getElementById("closemodal").addEventListener("click", function() {
+                  $('#mytop1').modal('hide');
+              });
+  </script>
   
 </body>
 
