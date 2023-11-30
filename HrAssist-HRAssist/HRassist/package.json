@@ -36,7 +36,8 @@
     "dtr": "node dtr.js",
     "office": "node office.js",
     "organizational_chart": "node organizational_chart.js",
-    "manage_employee": "node manage_employee.js"
+    "manage_employee": "node manage_employee.js",
+    "rewards": "node rewards.js"
   },
   "keywords": [],
   "author": "",

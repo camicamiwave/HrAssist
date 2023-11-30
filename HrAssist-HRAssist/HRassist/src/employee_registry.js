@@ -132,6 +132,8 @@ async function GetEmployeeTable() {
 window.addEventListener('load', GetEmployeeTable);
 
 
+
+
 export function SearchEmployee() {
   // Assuming you have an HTML form with id="employeeDataSheet"
   const SearchEmployeeForm = document.querySelector("#SearchEmployeeForm");
@@ -148,9 +150,7 @@ export function SearchEmployee() {
     const ExtName = SearchEmployeeForm.inputExtName.value
 
     console.log(`Fullname:${FirstName}${MiddleName}${LastName}${ExtName}`)
-
-    //alert(`Fullname:${LastName} ${FirstName} ${MiddleName} ${ExtName}`)
-
+    
     try {
 
       const conditions = [
