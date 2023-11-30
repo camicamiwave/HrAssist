@@ -59,10 +59,10 @@
                 font-size: 0.875rem;
                 font-weight: 400;
                 line-height: 1;
-                color: #69707a;
+                color: #000000;
                 background-color: #fff;
                 background-clip: padding-box;
-                border: 1px solid #c5ccd6;
+                border: 1px solid #08533F;
                 -webkit-appearance: none;
                 -moz-appearance: none;
                 appearance: none;
@@ -70,22 +70,6 @@
                 transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
             }
 
-            .nav-borders .nav-link.active {
-                color: #0061f2;
-                border-bottom-color: #0061f2;
-            }
-            .nav-borders .nav-link {
-                color: #69707a;
-                border-bottom-width: 0.125rem;
-                border-bottom-style: solid;
-                border-bottom-color: transparent;
-                padding-top: 0.5rem;
-                padding-bottom: 0.5rem;
-                padding-left: 0;
-                padding-right: 0;
-                margin-left: 1rem;
-                margin-right: 1rem;
-            }
 
             #progress {
                 padding: 20px 15px 0 15px;
@@ -151,10 +135,13 @@
                 color: #fff;
             }
 
-            .button-container {
+            .button_container {
+                padding: 10px;
                 display: flex;
-                justify-content: space-between; /* Adjust as needed */
+                justify-content: center; /* Center the buttons */
                 gap: 30px;
+                margin-top: 10px; /* Add margin-top */
+                margin-bottom: 10px; /* Add margin-bottom */
             }
 
             .prev-btn,
@@ -174,6 +161,254 @@
                 background-color: #2980b9;
             }
 
+            .wrap{
+                width: 100%;
+                margin: 0px auto;
+                text-align: center;
+            }
+
+            .wrap h1{
+                font-size: 70px;
+            }
+
+            .wrap h1 span{
+                color: #F42A54;
+            }
+            
+            .contribute {
+                position: fixed;
+                right: -20px;
+                top: 20px;
+                width: 16em;
+                height: 10em;
+                overflow: hidden;
+                transform: rotate(45deg);
+            }
+
+            .contribute p {
+                padding: 3px;
+                background-color: #444444;
+            }
+
+            .contribute p a {
+                border-top: 1px dashed white;
+                border-bottom: 1px dashed white;
+                display: block;
+                color: white;
+                text-decoration: none;
+                padding: 2px 0px;
+            }
+
+            .open-modal {
+                justify-content: center;
+                background-color: #fff;
+                border-radius: 5px;
+                border: 1px solid #08533F;
+                color: #000000;
+                font-size: 14px;
+                padding: 5px;
+                transition: all 0.2s ease;
+                display: flex;
+                margin: 2px;
+                min-width: 150px;
+            }
+
+            .open-modal:hover {
+                cursor: pointer;
+                background-color: #1f8f3e;
+                color: #fff;
+            }
+
+            @media (max-width: 500px){
+                .wrap {
+                    width: 100%;
+                }
+            }
+
+            .pure-modal .checkbox{
+                display: none;
+            }
+
+            /* Gray background */
+            .pure-modal .pure-modal-overlay{
+                opacity: 0;
+                transition: all 0.3s ease;
+                width: 50%;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: -100;
+                transform: scale(1);
+                display: none;
+                background-color: rgba(0,0,0,0.5);
+            }
+
+            /* Box */
+            .pure-modal .pure-modal-wrap{
+                background: #fdfbfb;
+                border-radius: 0.2em;
+                box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+                letter-spacing: 0.05em;
+                line-height: 1.6;
+                padding: 10px;
+                width: 60%;
+                margin: 20px auto;
+                align-self: flex-start;
+                transition: all 0.5s ease;
+                height: 95%;
+            }
+
+            .pure-modal .pure-modal-wrap.small{
+                width: 30%;
+            }
+
+            .pure-modal .pure-modal-wrap.full{
+                width: 100%;
+                height: 100%;
+            }
+
+            .pure-modal .pure-modal-wrap.a-center {
+                align-self: center;
+            }
+
+            .pure-modal .pure-modal-wrap.from-left {
+                transform: translateX(-100%);
+            }
+
+            .pure-modal .pure-modal-wrap.from-right {
+                transform: translateX(100%);
+            }
+
+            .pure-modal .pure-modal-wrap.from-top {
+                transform: translateY(-100%);
+            }
+
+            .pure-modal .pure-modal-wrap.from-bottom {
+                transform: translateY(100%);
+            }
+
+            /* Close button */
+            .pure-modal .pure-modal-overlay .close{
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                background: #282c34;
+                border-radius: 50%;
+                justify-content: center;
+                position: absolute;
+                right: -10px;
+                top: -10px;
+                font-size: 15px;
+                width: 30px;
+                height: 30px;
+                color: #d1d1d1;
+            }
+
+            .pure-modal .pure-modal-overlay .close:hover{
+                cursor: pointer;
+                background-color: #d1d1d1;
+                color: #4b5361;
+                transition: all 0.3s ease;
+            }
+
+
+            .pure-modal .o-close {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                left: 0;
+                top: 0;
+                z-index: -100;
+            }
+
+            .pure-modal input:checked ~ .o-close {
+                z-index: 9998;
+            }
+
+            .pure-modal input:checked ~ .pure-modal-overlay{
+                transform: scale(1);
+                opacity:1;
+                z-index: 9997;
+                overflow: auto;
+                display: flex;
+                animation-duration: 0.5s;
+                animation-name: fade-in;
+                -moz-animation-duration: 0.5s;
+                -moz-animation-name: fade-in;
+                -webkit-animation-duration: 0.5s;
+                -webkit-animation-name: fade-in;
+            }
+
+            .pure-modal input:checked ~ .pure-modal-overlay .pure-modal-wrap {
+                transform: translateY(0);
+                z-index: 9999;
+            }
+
+            /* Responsive Design */
+            /* Tablet size */
+            @media (max-width: 800px){
+                .pure-modal .pure-modal-wrap {
+                    width: 80%;
+                    padding: 20px;
+                }
+            }
+
+            /* Phone size */
+            @media (max-width: 500px){
+                .pure-modal .pure-modal-wrap {
+                    width: 90%;
+                }
+            }
+
+            /* Fadein from display:none */
+            @keyframes fade-in {
+                0% {
+                    display: none;
+                    opacity: 0;
+                }
+                1% {
+                    display: flex;
+                    opacity: 0;
+                }
+                100% {
+                    display: flex;
+                    opacity: 1;
+                }
+            }
+
+            @-moz-keyframes fade-in {
+                0% {
+                    display: none;
+                    opacity: 0;
+                }
+                1% {
+                    display: flex;
+                    opacity: 0;
+                }
+                100% {
+                    display: flex;
+                    opacity: 1;
+                }
+            }
+
+            @-webkit-keyframes fade-in {
+                0% {
+                    display: none;
+                    opacity: 0;
+                }
+                1% {
+                    display: flex;
+                    opacity: 0;
+                }
+                100% {
+                    display: flex;
+                    opacity: 1;
+                }
+            }
+
         </style>
     
     </head>
@@ -182,11 +417,10 @@
         <!-- ======= Header ======= -->
         <header id="header" class="header fixed-top d-flex align-items-center">
 
-            <div class="d-flex align-items-center justify-content-between">
-                <a href="index.html" class="logo d-flex align-items-center">
-                    <img src="assets/img/logo.png" alt="">
-                    <span class="d-none d-lg-block">Assist</span>
-
+            <div class="d-flex align-items-center justify-content-center">
+                <a href="admin_dashboard.html" class="logo d-flex align-items-center mx-auto">
+                  <img src="assets/img/logo.png" alt="">
+                  <span class="d-none d-lg-block">Assist</span>
                 </a>
                 <i class="bi bi-list toggle-sidebar-btn"></i>
             </div><!-- End Logo -->
@@ -347,102 +581,100 @@
         <!-- ======= Sidebar ======= -->
         <aside id="sidebar" class="sidebar">
             <ul class="sidebar-nav" id="sidebar-nav">
-
-                <li class="nav-heading">Admin Tool</li>
-
+            <li class="nav-heading">ADMIN TOOL</li>
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="admin_dashboard.html">
                         <i class="bi bi-grid"></i>
                         <span>Dashboard</span>
                     </a>
-                </li>
-
+                </li><!-- End Dashboard Nav -->
+        
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="admin_accounts_view.html">
                         <i class="bx bxs-user-account"></i>
                         <span>Accounts</span>
                     </a>
-                </li>
-
+                </li><!-- End Accounts Nav -->
+        
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="admin_search_employee_view.html">
-                        <i class="bi bi-search"></i>
-                        <span>Search Employee</span>
-                    </a>
-                </li>
-
+                <a class="nav-link collapsed" href="admin_search_employee_view.html">
+                    <i class="bi bi-search"></i>
+                    <span>Search Employee</span>
+                </a>
+            </li><!-- End Search Nav -->
+        
                 <li class="nav-heading">Recruitment, Selection, & Placement</li>
-
+        
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="admin_manage_applicant_view.html">
                         <i class="bi bi-people"></i>
                         <span>Manage Applicant</span>
                     </a>
-                </li>
-
+                </li><!-- End Manage Applicant Nav -->
+        
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
                         <i class="bx bxs-briefcase"></i>
                         <span>Job Vacancy</span>
                     </a>
-                </li>
-
+                </li><!-- End Job Vacancy Nav -->
+        
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="admin_employee_registry_list.html">
-                        <i class="bi bi-person-workspace"></i>
+                    <a class="nav-link collapsed" href="admin_employee_registry_view.html">
+                        <i class="bi bi-person"></i>
                         <span>Manage Employee</span>
                     </a>
-                </li>
-
-                <li class="nav-heading">Learning & Development</li>
-
+                </li><!-- End Manage Employee Nav -->
+        
+                <li class="nav-heading">LEARNING & DEVELOPMENT</li>
+        
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
                         <i class="bx bxs-group"></i>
                         <span>Training & Seminar</span>
                     </a>
-                </li>
-
+                </li><!-- End Training & Seminar Nav -->
+        
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="calendar.html">
                         <i class="bx bxs-calendar"></i>
                         <span>Calendar & Scheduling</span>
                     </a>
-                </li>
-
-                <li class="nav-heading">Performance Management System</li>
-
+                </li><!-- End Calendar & Scheduling Nav -->
+        
+                <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+        
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="admin_request.html">
                         <i class="bi bi-envelope"></i>
                         <span>Employee Request</span>
                     </a>
-                </li>
-
+                </li><!-- End Request Nav -->
+        
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="admin-dtr.html">
                         <i class="bi bi-clock"></i>
                         <span>DTR</span>
                     </a>
-                </li>
-
+                </li><!-- End DTR Nav -->
+        
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="admin-ipcr.html">
+                    <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
                         <i class="bi bi-check-square"></i>
                         <span>IPCR</span>
                     </a>
-                </li>
-
-                <li class="nav-heading">Rewards And Recognition</li>
-
+                </li><!-- End IPCR Nav -->
+        
+                <li class="nav-heading">REWARDS AND RECOGNITION</li>
+        
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="admin_rewards_view.html">
-                        <i class="bi bi-gift"></i>
+                        <i class="bi bi-award"></i>
                         <span>Award</span>
                     </a>
-                </li>
+                </li><!-- End Award Nav -->
             </ul>
-        </aside><!-- End Sidebar-->
+        </aside><!-- End Sidebar -->
 
         <main id="main" class="main">
 
@@ -474,7 +706,7 @@
                                 <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
                                 <!-- Profile picture help block-->
                                 <div class="small font-italic text-muted mb-1">Applicant ID: 10000</div>
-                                <div class="small font-italic text-muted mb-4">Applicant Status: Applied</div>
+                                <div class="small font-italic text-muted mb-4">Applicant Status: Reviewed</div>
                             </div>
                         </div>
                     </div>
@@ -485,15 +717,15 @@
                             <div id="progress">
                                 <div id="progress-bar"></div>
                                 <ul id="progress-num">
-                                  <li class="step active">1 <span>Applied</span></li>
-                                  <li class="step">2 <span>Applied</span></li></li>
-                                  <li class="step">3 <span>Applied</span></li></li>
-                                  <li class="step">4 <span>Applied</span></li></li>
+                                  <li class="step active">1 <span>Reviewed</span></li>
+                                  <li class="step">2 <span>Interviewed</span></li></li>
+                                  <li class="step">3 <span>Assessment</span></li></li>
+                                  <li class="step">4 <span>Hired</span></li></li>
                                 </ul>
                             </div>
                             <div class="button_container">
-                                <button id="progress-next" class="btn">Proceed</button>
-                                <button id="progress-prev" class="btn" disabled>Reject</button>
+                                <button id="progress-next" class="btn" style="background-color: #08533F; color: #fff;">Proceed</button>
+                                <button id="progress-prev" class="btn" disabled style="background-color: #FF0000; color: #fff;">Reject</button>
                             </div>
                             <script>
                                 const progressBar = document.getElementById("progress-bar");
@@ -508,27 +740,26 @@
                                         active = steps.length;
                                     }
                                     updateProgress();
-                                    });
+                                });
 
-                                    progressPrev.addEventListener("click", () => {
-                                    active--;
-                                    if (active < 1) {
-                                        active = 1;
-                                    }
-                                    updateProgress();
-                                    });
-                                
+                                progressPrev.addEventListener("click", () => {
+                                    // Change behavior to simulate a cancel button
+                                    progressBar.style.backgroundColor = "red";
+                                    progressNext.disabled = true;
+                                    progressPrev.disabled = true;
+                                });
+
                                 const updateProgress = () => {
                                     // toggle active class on list items
                                     steps.forEach((step, i) => {
                                         if (i < active) {
-                                        step.classList.add("active");
+                                            step.classList.add("active");
                                         } else {
-                                        step.classList.remove("active");
+                                            step.classList.remove("active");
                                         }
                                     });
                                     // set progress bar width  
-                                    progressBar.style.width = 
+                                    progressBar.style.width =
                                         ((active - 1) / (steps.length - 1)) * 93 + "%";
                                     // enable disable prev and next buttons
                                     if (active === 1) {
@@ -539,7 +770,7 @@
                                         progressPrev.disabled = false;
                                         progressNext.disabled = false;
                                     }
-                                    };
+                                };
                             </script>
                             <div class="card-body">
                                 <form>
@@ -618,8 +849,40 @@
                                         <label class="small mb-1" for="inputAddress">Address</label>
                                         <input class="form-control" id="inputAddress" type="text" placeholder="Enter your address">
                                     </div>
-                                    <!-- Save changes button-->
-                                    <button class="btn btn-primary" type="button">Save changes</button>
+                                    <div class="mb-3">
+                                        <label class="small mb-1" for="inputResume">Attached Resume</label>
+                                        <div class="wrap">
+                                            <!-- Center modal -->
+                                            <div class="pure-modal">
+                                                <input id="modal-trigger-center" class="checkbox" type="checkbox">
+                                                <div class="pure-modal-overlay">
+                                                    <label for="modal-trigger-center" class="o-close"></label>
+                                                    <div class="pure-modal-wrap a-center">
+                                                        <label for="modal-trigger-center" class="close">&#10006;</label>
+                                                        <object
+                                                            data="https://d1wqtxts1xzle7.cloudfront.net/33824099/Research_Paper_on_Basic_of_Artificial_Neural_Network-libre.pdf?1401389277=&response-content-disposition=inline%3B+filename%3DResearch_Paper_on_Basic_of_Artificial_Ne.pdf&Expires=1701341995&Signature=HQ7ak3nZjSdONeER2Kl5pb0Gw7SSnS3N1l6f8TiLGY9ofMnQtgN~V5BERzDTcCZWpK0bYCnoZQIXH9xZTE0DlBIwbzKpMwiBERamyg8-gGLL8g0jJp2DjNAtLMoJPJRXKKAkuOlt34vjSpvZUDpsMRykzg9MZ2-gtUSkCAXWE~~yunlh~Pk9gLHVUUSiNBxGdKZR3ro5U21rNEZr2Ao34npsi6g-FbZeczSHefmwrIisQSNu0NmILSTJHzbG8lgL-gwrauOC8aZgZR99zSNjiT4x1UEIVZA9MdEoHnjPfaDrl1PC8psEfi9I5TVcB4x3Zh6MA3pPPzU1Zy0AHx4s-A__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA"
+                                                            type="application/pdf"
+                                                            width="100%"
+                                                            height="100%"
+                                                            aria-labelledby="PDF document"
+                                                        >
+                                                            <p>
+                                                                Your browser does not support PDFs.
+                                                                <a href="document.pdf">Download the PDF</a>
+                                                            </p>
+                                                        </object>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Modal -->
+                                        <label for="modal-trigger-center" class="open-modal">View Attached Resume</label>
+                                    </div>
+                                    <div class="text-center">
+                                        <!-- Save changes button-->
+                                        <button class="btn btn-primary" type="button">Save changes</button>
+                                    </div>
+                                    
                                 </form>
                             </div>
                         </div>
