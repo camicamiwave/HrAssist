@@ -75,6 +75,7 @@ function addOffice(){
                             .catch(error => {
                                 console.error('Error adding document: ', error);
                             });
+
                     } else {
                         alert('Office name is required.')
                     }
@@ -138,7 +139,9 @@ function fetchOffices() {
     const OfficecolRef = collection(db, 'Office Information');
     const officesContainer = document.querySelector('.organization-container');
 
-    onSnapshot(OfficecolRef, (snapshot) => {
+    const que = query(OfficecolRef, orderBy('createdAt'))
+
+    onSnapshot(que, (snapshot) => {
         officesContainer.innerHTML = '';
 
         snapshot.docs.forEach((doc) => {
@@ -147,9 +150,6 @@ function fetchOffices() {
 
             const officeName = data.OfficeName;
             const officeLogo = data.logoURL; 
-
-            console.log(officeName)
-            console.log(officeLogo)
 
             // Create HTML elements for each office
             const officeElement = document.createElement('div');
@@ -184,6 +184,11 @@ function fetchOffices() {
 
             const numOrgMembersDiv = document.createElement('div');
             numOrgMembersDiv.classList.add('num-orgmember');
+            if (data.TotalDesignated){
+                numOrgMembersDiv.innerHTML = `<i class="bx bx-user"></i> &nbsp;&nbsp;${data.TotalDesignated} Designation`;
+            } else {
+                numOrgMembersDiv.innerHTML = `<i class="bx bx-user"></i> &nbsp;&nbsp; 0 Designation`;
+            }
             //numOrgMembersDiv.innerHTML = `<img src="assets/images/offices/members.png" /> ${numMembers} Members`;
 
             // Append created elements to the container

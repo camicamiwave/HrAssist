@@ -421,7 +421,13 @@
       <div class="content-wrapper">
         <div class="organization-container" style="padding: 16px;">
           
-          <table class="table table-hover" id="yearTable">
+          <style>
+            td, th{
+              text-align: center;
+            }
+          </style>
+
+          <table class="table table-hover" id="organizationTable">
             <thead>
               <tr class="table-primary ">
                 <th scope="col">ID</th>
@@ -430,13 +436,8 @@
                 <th scope="col">Action</th>
               </tr>
             </thead>  
-            <tbody id="annualRecordBody">
-              <tr>
-                <td>1</td>
-                <td>Municipal Agriculture</td>
-                <td>Yes</td>
-                <td><button class="btn btn-danger"><i class="bx bx-trash"></i></button></td>
-              </tr>
+            <tbody > 
+              
             </tbody>
           </table>
 

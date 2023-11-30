@@ -236,6 +236,7 @@ function fetchLeaveCreditAnnual(leaveCreditsCollectionRef, File201Document) {
 
             // Append the row to the table body
             tbody.appendChild(row);
+            
             num++;
         });
 
