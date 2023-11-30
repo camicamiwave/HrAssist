@@ -33,7 +33,8 @@ module.exports = {
         account_status: './src/account_status.js',
         dtr: './src/dtr.js',
         office: './src/office.js',
-        organizational_chart: './src/organizational_chart.js'
+        organizational_chart: './src/organizational_chart.js',
+        manage_employee: './src/manage_employee.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),
