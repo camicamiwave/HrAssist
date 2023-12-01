@@ -404,6 +404,7 @@ export function AddApplicantionForm() {
                         userID: currentUserUID,
                         ApplicantStatus: "Pending",
                         JobApply: "",
+                        ApplicationProgess: 1,
                         ApplicantID: applicantID,
                         createdAt: serverTimestamp(),
                         ApplicantProfilePicture: ApplicantProfileURL,
