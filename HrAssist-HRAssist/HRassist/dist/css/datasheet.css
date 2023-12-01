@@ -58,6 +58,7 @@
   outline: 1px solid #10c295;
   font-weight: 500;
   margin-bottom: 2%;
+  text-align: center;
 }
 
 .custom-account-btn {
@@ -68,6 +69,7 @@
   width: 100%;
   outline: 1px solid #10c295;
   margin-bottom: 2%;
+  text-align: center;
 }
 
 .btn-group {

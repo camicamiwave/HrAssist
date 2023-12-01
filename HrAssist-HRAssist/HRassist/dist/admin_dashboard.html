@@ -39,6 +39,7 @@
 
   <!-- Template Main CSS File -->
   <link href="css/employee-template.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 
 
 </head>
@@ -335,335 +336,213 @@
       </nav>
     </div><!-- End Page Title -->
 
-    <section class="section dashboard">
-
       <!--START YOUR CONTENT HERE -->
 
-      <div class="content-wrapper">
-        <div class="page-header">
+      <section class="section dashboard">
+        <div class="row">
+  
+          <!-- Left side columns -->
+          <div class="col-lg-8">
+            <div class="row">
+  
+              <!-- Total number of employee Card -->
+              <div class="col-xxl-6 col-md-6">
+                <div class="card info-card sales-card">
+  
+                  <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                      </li>
+  
+                      <li><a class="dropdown-item" href="#">Today</a></li>
+                      <li><a class="dropdown-item" href="#">This Month</a></li>
+                      <li><a class="dropdown-item" href="#">This Year</a></li>
+                    </ul>
+                  </div>
+  
+                  <div class="card-body">
+                    <h5 class="card-title">Employees <span>| This Month</span></h5>
+  
+                    <div class="d-flex align-items-center">
+  
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                         <img src="assets/img/dashboard/dash1.png" alt="1">
+                      </div>
+                      <div class="ps-3">
+                        <h6>10</h6>
+                        <div class="ps-3">
+                        
+                          <span class="text-muted small pt-2 ps-1">number of employees</span>
+    
+                        </div>
+                       
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+              </div><!-- End Absenses Card -->
+  
+              <!-- Leave Card -->
+              <div class="col-xxl-4 col-md-6">
+                <div class="card info-card revenue-card">
+  
+                  <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                      </li>
+  
+                      <li><a class="dropdown-item" href="#">Today</a></li>
+                      <li><a class="dropdown-item" href="#">This Month</a></li>
+                      <li><a class="dropdown-item" href="#">This Year</a></li>
+                    </ul>
+                  </div>
+  
+                  <div class="card-body">
+                    <h5 class="card-title">Pending leaves <span>| This Month</span></h5>
+  
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <img src="assets/img/dashboard/leave3.png" alt="1">
+                      </div>
+                      <div class="ps-3">
+                        <h6>14</h6>
+                        <span class="text-muted small pt-2 ps-1">total pending leaves</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div><!-- End Leave Card -->
+
+              <!-- Pending Request Days -->
+<div class="col-xxl-4 col-md-12">
+  <div class="card info-card revenue-card">
+    <div class="filter">
+      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+        <li class="dropdown-header text-start">
+          <h6>Filter</h6>
+        </li>
+        <li><a class="dropdown-item" href="#">Today</a></li>
+        <li><a class="dropdown-item" href="#">This Month</a></li>
+        <li><a class="dropdown-item" href="#">This Year</a></li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title" id="pendingLabel">Available Positions <span>| This Month</span></h5>
+      <div class="d-flex align-items-center">
+        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+          <img src="assets/img/dashboard/vacancy.png" alt="1">
         </div>
-        <div class="container">
-          <div class="row">
-            <div class="row mb-4">
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card board1 fill1">
-                  <div class="card-body">
-                    <div class="card_widget_header">
-                      <label>Employees</label>
-                      <h4>700</h4>
-                    </div>
-                    <div class="card_widget_img">
-                      <img src="img/dashboard/dash1.png" alt="card-img" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card board1 fill2 ">
-                  <div class="card-body">
-                    <div class="card_widget_header">
-                      <label>Accounts</label>
-                      <h4>30</h4>
-                    </div>
-                    <div class="card_widget_img">
-                      <img src="img/dashboard/dash2.png" alt="card-img" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card board1 fill3 ">
-                  <div class="card-body">
-                    <div class="card_widget_header">
-                      <label>Leaves</label>
-                      <h4>9</h4>
-                    </div>
-                    <div class="card_widget_img">
-                      <img src="img/dashboard/dash3.png" alt="card-img" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card board1 fill4 ">
-                  <div class="card-body">
-                    <div class="card_widget_header">
-                      <label>Applicants</label>
-                      <h4>200</h4>
-                    </div>
-                    <div class="card_widget_img">
-                      <img src="img/dashboard/dash4.png" alt="card-img" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4 col-md-12">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Active LGU Employees</h4>
-                  <div class="mt-2" style="height:283px; width:100%;">
-                    <canvas class="donutChart"></canvas>
-                  </div>
-                  <ul class="list-style-none mb-0">
-                    <li class="mt-3">
-                      <i class="fas fa-circle text-danger font-10 me-2"></i>
-                      <span class="text-muted">Permanent</span>
-                      <span class="text-dark float-end font-weight-medium"></span>
-                    </li>
-                    <li>
-                      <i class="fas fa-circle text-primary font-10 me-2"></i>
-                      <span class="text-muted">Job Order</span>
-                      <span class="text-dark float-end font-weight-medium"></span>
-                    </li>
-                    <li>
-                      <i class="fas fa-circle text-primary font-10 me-2"></i>
-                      <span class="text-muted">Part-time</span>
-                      <span class="text-dark float-end font-weight-medium"></span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-8">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex align-items-start">
-                    <h4 class="card-title mb-0">Attendance</h4>
-                  </div>
-                  <div class="pl-4 mb-5">
-                    <div class="stats ct-charts position-relative" style="height: 315px;">
-
-                    </div>
-                  </div>
-                  <ul class="list-inline text-center mt-4 mb-0">
-                    <li class="list-inline-item text-muted fst-italic">Attendance for this Month</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-lg-8">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-4">
-                    <h4 class="card-title">Rewards</h4>
-                    <div class="ms-auto">
-                      <div class="dropdown sub-dropdown">
-                        <button class="btn btn-link text-muted dropdown-toggle" type="button" id="dd1"
-                          data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i data-feather="more-vertical"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd1">
-                          <a class="dropdown-item" href="#">Insert</a>
-                          <a class="dropdown-item" href="#">Update</a>
-                          <a class="dropdown-item" href="#">Delete</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="table-responsive">
-                    <table class="table no-wrap v-middle mb-0">
-                      <thead>
-                        <tr class="border-0">
-                          <th class="border-0 font-14 font-weight-medium text-muted">Category
-                          </th>
-                          <th class="border-0 font-14 font-weight-medium text-muted px-2">To
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="border-top-0 px-2 py-4">
-                            <div class="d-flex no-block align-items-center">
-                              <div class="">
-                                <h5 class="text-dark mb-0 font-14 font-weight-medium">Best Office Award</h5>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="border-top-0 text-muted px-2 py-4 font-14">MAO</td>
-                        </tr>
-                        <tr>
-                          <td class="border-top-0 px-2 py-4">
-                            <div class="d-flex no-block align-items-center">
-                              <div class="">
-                                <h5 class="text-dark mb-0 font-14 font-weight-medium">Best Employee Award</h5>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="border-top-0 text-muted px-2 py-4 font-14">Juan Dela Cruz</td>
-                        </tr>
-                        <tr>
-                          <td class="border-top-0 px-2 py-4">
-                            <div class="d-flex no-block align-items-center">
-                              <div class="">
-                                <h5 class="text-dark mb-0 font-14 font-weight-medium">Regional Award</h5>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="border-top-0 text-muted px-2 py-4 font-14">LGU</td>
-                        </tr>
-                        <tr>
-                          <td class="border-top-0 px-2 py-4">
-                            <div class="d-flex no-block align-items-center">
-                              <div class="">
-                                <h5 class="text-dark mb-0 font-14 font-weight-medium">Punctual Award</h5>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="border-top-0 text-muted px-2 py-4 font-14">John Doe</td>
-                        </tr>
-
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Upcoming Activities</h4>
-                  <div class="mt-4 activity">
-                    <div class="d-flex align-items-start border-left-line pb-3">
-                      <div>
-                        <a href="javascript:void(0)" class="btn btn-info btn-circle mb-2 btn-item">
-                          <i data-feather="shopping-cart"></i>
-                        </a>
-                      </div>
-                      <div class="ms-3 mt-2">
-                        <h5 class="text-dark font-weight-medium mb-2">Team Building</h5>
-                        <p class="font-14 mb-2 text-muted">All employees of MAO are invovled<br> Cannon 5M
-                          Camera.
-                        </p>
-                        <span class="font-weight-light font-14 text-muted">10/10/2023</span>
-                      </div>
-                    </div>
-                    <div class="d-flex align-items-start border-left-line pb-3">
-                      <div>
-                        <a href="javascript:void(0)" class="btn btn-danger btn-circle mb-2 btn-item">
-                          <i data-feather="message-square"></i>
-                        </a>
-                      </div>
-                      <div class="ms-3 mt-2">
-                        <h5 class="text-dark font-weight-medium mb-2">Seminar</h5>
-                        <p class="font-14 mb-2 text-muted">For all MTPSO employee<br>
-                          ticket</p>
-                        <span class="font-weight-light font-14 text-muted">06/10/2023</span>
-                      </div>
-                    </div>
-                    <div class="d-flex align-items-start border-left-line">
-                      <div>
-                        <a href="javascript:void(0)" class="btn btn-cyan btn-circle mb-2 btn-item">
-                          <i data-feather="bell"></i>
-                        </a>
-                      </div>
-                      <div class="ms-3 mt-2">
-                        <h5 class="text-dark font-weight-medium mb-2">Soft-Skill Development</h5>
-                        <p class="font-14 mb-2 text-muted">MHO are the participant of this event</p>
-                        <span class="font-weight-light font-14 mb-1 d-block text-muted">08/01/2023</span>
-                        <a href="javascript:void(0)" class="font-14 border-bottom pb-1 border-info">Load More</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-4">
-                    <h4 class="card-title">Interviews</h4>
-                    <div class="ms-auto">
-                      <div class="dropdown sub-dropdown">
-                        <button class="btn btn-link text-muted dropdown-toggle" type="button" id="dd1"
-                          data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i data-feather="more-vertical"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd1">
-                          <a class="dropdown-item" href="#">Insert</a>
-                          <a class="dropdown-item" href="#">Update</a>
-                          <a class="dropdown-item" href="#">Delete</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="table-responsive">
-                    <table class="table no-wrap v-middle mb-0">
-                      <thead>
-                        <tr class="border-0">
-                          <th class="border-0 font-14 font-weight-medium text-muted">Applicant</th>
-                          <th class="border-0 font-14 font-weight-medium text-muted px-2">Job
-                          </th>
-                          <th class="border-0 font-14 font-weight-medium text-muted">Interviewer</th>
-                          <th class="border-0 font-14 font-weight-medium text-muted text-center">Status</th>
-                          <th class="border-0 font-14 font-weight-medium text-muted text-center">Schedule</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="border-top-0 px-2 py-4">
-                            <div class="d-flex no-block align-items-center">
-                              <div class="">
-                                <h5 class="text-dark mb-0 font-16 font-weight-medium">Hanna
-                                  Gover</h5>
-                                <span class="text-muted font-14">hgover@gmail.com</span>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="border-top-0 text-muted px-2 py-4 font-14">Designer</td>
-                          <td class="border-top-0 text-muted px-2 py-4 font-14">Juan Dela Cruz</td>
-                          <td class="font-weight-medium text-dark border-top-0 px-2 py-4">complete</td>
-                          <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">Face-to-Face
-                            Interview</td>
-
-                        </tr>
-                        <tr>
-                          <td class="border-top-0 px-2 py-4">
-                            <div class="d-flex no-block align-items-center">
-                              <div class="">
-                                <h5 class="text-dark mb-0 font-16 font-weight-medium">JulianJosephs</h5>
-                                <span class="text-muted font-14">Josephs@gmail.com</span>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="border-top-0 text-muted px-2 py-4 font-14">Janitor</td>
-                          <td class="border-top-0 text-muted px-2 py-4 font-14">Philip Jacque</td>
-                          <td class="font-weight-medium text-dark border-top-0 px-2 py-4">upcoming</td>
-                          <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">Face-to-Face
-                            Interview</td>
-
-                        </tr>
-                        <tr>
-                          <td class="border-top-0 px-2 py-4">
-                            <div class="d-flex no-block align-items-center">
-                              <div class="">
-                                <h5 class="text-dark mb-0 font-16 font-weight-medium">JanPetrovic</h5>
-                                <span class="text-muted font-14">Jpet@gmail.com</span>
-                              </div>
-                            </div>
-                          </td>
-                          <td class="border-top-0 text-muted px-2 py-4 font-14">Assistant</td>
-                          <td class="border-top-0 text-muted px-2 py-4 font-14">Jen Gomez</td>
-                          <td class="font-weight-medium text-dark border-top-0 px-2 py-4">upcoming</td>
-                          <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">Telephonic
-                            Interview</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="ps-3">
+          <h6 id="totalRequest">3</h6>
+          <span class="text-muted small pt-2 ps-1">total available job positions</span>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</div><!-- End Pending Request Days -->
+
+<!-- Activities Card -->
+</div>
+</div><!-- End Left side columns -->
+
+<!-- Right side columns -->
+<div class="col-lg-4">
+  <!-- Recent Activity -->
+  <div class="card">
+    <div class="filter">
+      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+        <li class="dropdown-header text-start">
+          <h6>Filter</h6>
+        </li>
+        <li><a class="dropdown-item" href="#">Today</a></li>
+        <li><a class="dropdown-item" href="#">This Month</a></li>
+        <li><a class="dropdown-item" href="#">This Year</a></li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Upcoming Activities <span>| Today</span></h5>
+      <div class="activity">
+        <!-- Activity items go here -->
+        <div class="activity-item d-flex">
+          <div class="activite-label">11/28/23</div>
+          <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+          <div class="activity-content">
+            PGS Core <a href="#" class="fw-bold text-dark">meeting</a> a quarterly meeting is held.
+          </div>
+        </div><!-- End activity item-->
+
+        <div class="activity-item d-flex">
+          <div class="activite-label">12/1/23</div>
+          <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
+          <div class="activity-content">
+            Cascading Framework Technical Sessions
+          </div>
+        </div><!-- End activity item-->
+
+        <div class="activity-item d-flex">
+          <div class="activite-label">12/18/23</div>
+          <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
+          <div class="activity-content">
+            Meeting with dswd officials
+          </div>
+        </div><!-- End activity item-->
+
+        <div class="activity-item d-flex">
+          <div class="activite-label">12/25/23</div>
+          <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
+          <div class="activity-content">
+            DSWD Scorecard <a href="#" class="fw-bold text-dark"></a>Summit
+          </div>
+        </div><!-- End activity item-->
+
+        <div class="activity-item d-flex">
+          <div class="activite-label">01/05/24</div>
+          <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
+          <div class="activity-content">
+            PGS Core <a href="#" class="fw-bold text-dark">meeting</a> a quarterly meeting is held.
+          </div>
+        </div><!-- End activity item-->
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pie Chart -->
+<div class="col-lg-8">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Employee Status</h5>
+      <div id="pieChart"></div>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          new ApexCharts(document.querySelector("#pieChart"), {
+            series: [44, 43, 22],
+            chart: {
+              height: 350,
+              type: 'pie',
+              toolbar: {
+                show: true
+              }
+            },
+            labels: ['Permanent', 'Job Order', 'Part Time']
+          }).render();
+        });
+      </script>
+    </div>
+  </div>
+</div>
+</div><!-- End Right side columns -->
+</div>
+</section>
 
     <!--END YOUR CONTENT-->
 
