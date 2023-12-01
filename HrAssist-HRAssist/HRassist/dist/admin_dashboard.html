@@ -19,9 +19,8 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Favicon -->
+  <link href="img/hricon.png" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -41,8 +40,7 @@
   <!-- Template Main CSS File -->
   <link href="css/employee-template.css" rel="stylesheet">
 
-  <!-- Favicon -->
-  <link href="img/hrlogo.svg" rel="icon">
+
 </head>
 
 <body>
@@ -159,8 +157,8 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6 id="hoverUserName">Juan Garcia</h6>
-              <span id="userLevel">Employee</span>
+              <h6 id="hoverUserName"></h6>
+              <span id="userLevel"></span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -232,6 +230,18 @@
         </li><!-- End Accounts Nav -->
   
         <li class="nav-item">
+          <a class="nav-link collapsed" href="admin-offices.html">
+              <i class="bx bxs-building-house"></i>
+              <span>Office</span>
+          </a>
+      </li><!-- End Accounts Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_dtr_form.html">
+            <i class="bi bi-clock"></i>
+            <span>DTR</span>
+        </a>
+    </li><!-- End DTR Nav -->
+        <li class="nav-item">
           <a class="nav-link collapsed" href="admin_search_employee_view.html">
               <i class="bi bi-search"></i>
               <span>Search Employee</span>
@@ -241,18 +251,26 @@
         <li class="nav-heading">Recruitment, Selection, & Placement</li>
   
         <li class="nav-item">
+          <a class="nav-link collapsed" href="admin_201file_account.html">
+            <i class="bi bi-file-text"></i>
+            <span>201 File</span>
+          </a>
+      </li><!-- End Manage Employee Nav -->
+      
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
+              <i class="bx bxs-briefcase"></i>
+              <span>Job Vacancy</span>
+          </a>
+      </li><!-- End Job Vacancy Nav -->
+
+        <li class="nav-item">
             <a class="nav-link collapsed" href="admin_manage_applicant_view.html">
                 <i class="bi bi-people"></i>
                 <span>Manage Applicant</span>
             </a>
         </li><!-- End Manage Applicant Nav -->
   
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
-                <i class="bx bxs-briefcase"></i>
-                <span>Job Vacancy</span>
-            </a>
-        </li><!-- End Job Vacancy Nav -->
   
         <li class="nav-item">
             <a class="nav-link collapsed" href="admin_employee_registry_view.html">
@@ -260,6 +278,7 @@
                 <span>Manage Employee</span>
             </a>
         </li><!-- End Manage Employee Nav -->
+
   
         <li class="nav-heading">LEARNING & DEVELOPMENT</li>
   
@@ -285,13 +304,6 @@
                 <span>Employee Request</span>
             </a>
         </li><!-- End Request Nav -->
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="admin_dtr_form.html">
-                <i class="bi bi-clock"></i>
-                <span>DTR</span>
-            </a>
-        </li><!-- End DTR Nav -->
   
         <li class="nav-item">
             <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
@@ -679,8 +691,7 @@
   <script src="js/admin-chart.js"></script>
 
   <!-- Database Javascript -->
-  <script src="bundles/auth.bundle.js"></script>
-  <script src="bundles/applicant_registry.bundle.js"></script>
+  <script src="bundles/auth.bundle.js"></script> 
   <script src="bundles/navbar.bundle.js"></script>
 
 </body>

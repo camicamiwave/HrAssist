@@ -22,6 +22,7 @@ function calculateLeaveCredits(start_date, end_date) {
 
 // Example usage Static palang toh
 const startDate = "2023-01-01";
-const endDate = "2023-04-30";
+const endDate = new Date();
 const result = calculateLeaveCredits(startDate, endDate);
 console.log(`The overall leave credits for the employee are: ${result} days`);
+console.log(endDate);

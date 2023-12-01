@@ -157,3 +157,35 @@ function(){
 
 // function for the dropdown menu
 
+// Get all dropdowns
+var dropdowns = document.querySelectorAll('.dropdown');
+
+// Add click event listener to each dropdown
+dropdowns.forEach(function (dropdown) {
+    var input = dropdown.querySelector('.selected');
+    var menu = dropdown.querySelector('.menu');
+
+    // Toggle dropdown menu visibility
+    input.addEventListener('click', function () {
+        menu.classList.toggle('show');
+    });
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.addEventListener('click', function (event) {
+        if (!event.target.matches('.dropdown')) {
+            var openDropdown = document.querySelector('.menu.show');
+            if (openDropdown && !openDropdown.contains(event.target)) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    });
+
+    // Set the selected option
+    var options = menu.querySelectorAll('li');
+    options.forEach(function (option) {
+        option.addEventListener('click', function () {
+            input.value = option.textContent;
+            menu.classList.remove('show');
+        });
+    });
+});

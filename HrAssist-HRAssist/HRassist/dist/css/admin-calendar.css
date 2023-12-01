@@ -151,29 +151,7 @@ button:hover {
     color: var(--grey-color);
 }
 
-/* sidebar */
-.sidebar {
-    background-color: var(--white-color);
-    width: 300px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    padding: 80px 20px;
-    z-index: 100;
-    overflow-y: scroll;
-    box-shadow: 0 0 1px var(--grey-color-light);
-    transition: all 0.5s ease;
-}
 
-.sidebar.close {
-    padding: 60px 0;
-    width: 80px;
-}
-
-.sidebar::-webkit-scrollbar {
-    display: none;
-}
 
 .menu_content {
     position: relative;
@@ -436,7 +414,7 @@ button:hover {
 
 .calendar-container{
     position: relative;
-    width: 900px;
+    width: 600px;
     height: 600px;
     min-height: 0 auto;
     padding: 5px;
@@ -610,38 +588,44 @@ button:hover {
 /* ----------------------------------------- MODAL FORM ----------------------------------- */
 /* ---------------------------------------------------------------------------------------- */
 
-.bg-modal {
-    width: 80%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    top: 0;
+
+ /* Add this CSS to your existing styles */
+.content-wrapper {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    display: none;
 }
-  
-.modal-content {
-    width: 450px;
-    height: 450px;
-    background-color: white;
-    border-radius: 8px;
-    position: relative;
+
+.calendar-and-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
-  
+
+.calendar-container {
+    margin-right: 10px;
+}
+
+.add-event-form {
+    flex-grow: 1;
+    max-width: 400px;
+}
+ 
 .formHeader{
     height: 40px;
-    background-color: #27ae60;
+    background-color: #074b39;
     overflow: hidden;
-    border-radius: 8px 8px 0 0;
+    width: 300px;
+    
 }
   
 .formHeader h3{
     color: white;
-    margin: 8px;
+    margin: 3px;
     padding-left: 10px;
     font-weight: normal;
+    font-family: "Poppins", sans-serif;
+    
 }
   
 .close {
@@ -668,17 +652,18 @@ button:hover {
   
 .form-content {
     margin: 20px 20px 20px 40px;
+    border-radius: 20px;
 }
   
 .column-left {
-    width: 50%;
-    float: left;
+    /* width: 20%; */
+    float: none;
 }
   
 .column-right{
-    margin-top: 1px;
-    width: 50%;
-    float: right;
+
+    /* width: 50%; */
+    float: none;
 }
   
 .modal-content .form-content .add-event input {
@@ -751,27 +736,9 @@ button:hover {
 }
   
 .form-content .dropdown.active::after {
-    right: 28px;
+    right: 20px;
 } 
    
-.menu {
-    list-style: none;
-    padding: 0.2em 0.5em;
-    background:#fafafa;
-    border: 1px solid #f5f5f5;
-    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
-    border-radius: 0.5em;
-    color: black;
-    position: absolute;
-    top: 2em;
-    left: 50%;
-    width: 100%;
-    transform: translateX(-50%);
-    opacity: 0;
-    display: none;
-    transition: 0.2s;
-    z-index: 1;
-}
   
 .menu li {
     padding: 0.7em 0.5em;
@@ -792,4 +759,27 @@ button:hover {
     display: block;
     opacity: 1;
 }
-   
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.menu li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}

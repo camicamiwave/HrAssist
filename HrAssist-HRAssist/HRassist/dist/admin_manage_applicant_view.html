@@ -7,8 +7,7 @@
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
         <title>HR Assist - Admin</title>
         <link rel="stylesheet" href="css/admin.css" />
-        <!-- Favicon -->
-        <link href="img/hrlogo.svg" rel="icon">
+
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -16,9 +15,8 @@
         <meta content="" name="description">
         <meta content="" name="keywords">
 
-        <!-- Favicons -->
-        <link href="assets/img/favicon.png" rel="icon">
-        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+        <!-- Favicon -->
+  <link href="img/hricon.png" rel="icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -150,8 +148,8 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6 id="hoverUserName">Juan Garcia</h6>
-              <span id="userLevel">Employee</span>
+              <h6 id="hoverUserName"></h6>
+              <span id="userLevel"></span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -220,6 +218,19 @@
       </li><!-- End Accounts Nav -->
 
       <li class="nav-item">
+        <a class="nav-link collapsed" href="admin-offices.html">
+            <i class="bx bxs-building-house"></i>
+            <span>Office</span>
+        </a>
+    </li><!-- End Accounts Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="admin_dtr_form.html">
+          <i class="bi bi-clock"></i>
+          <span>DTR</span>
+      </a>
+    </li>
+
+      <li class="nav-item">
         <a class="nav-link collapsed" href="admin_search_employee_view.html">
             <i class="bi bi-search"></i>
             <span>Search Employee</span>
@@ -273,13 +284,6 @@
               <span>Employee Request</span>
           </a>
       </li><!-- End Request Nav -->
-
-      <li class="nav-item">
-          <a class="nav-link collapsed" href="admin-dtr.html">
-              <i class="bi bi-clock"></i>
-              <span>DTR</span>
-          </a>
-      </li><!-- End DTR Nav -->
 
       <li class="nav-item">
           <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
@@ -377,6 +381,7 @@
                         <table class="content-table" id="applicantTable">
                             <thead>
                                 <tr>
+                                  <th></th>
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Application Date</th>
@@ -385,6 +390,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <!--
                                 <tr data-href="admin_applicant_status.html">
                                     <td>1</td>
                                     <td>Juan Dela Cruz</td>
@@ -395,26 +401,7 @@
                                         <button><i class="bx bx-trash"></i></button>
                                     </td>
                                 </tr>
-                                <tr data-href="admin_applicant_status.html">
-                                    <td>2</td>
-                                    <td>Lebron James</td>
-                                    <td>10/06/2023</td>
-                                    <td>Scheduled</td>
-                                    <td>
-                                        <button><i class="bx bx-edit"></i></button>
-                                        <button><i class="bx bx-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr data-href="admin_applicant_status.html">
-                                    <td>3</td>
-                                    <td>Stephen Curry</td>
-                                    <td>10/06/2023</td>
-                                    <td>Not Qualified</td>
-                                    <td>
-                                        <button><i class="bx bx-edit"></i></button>
-                                        <button><i class="bx bx-trash"></i></button>
-                                    </td>
-                                </tr>
+                                -->
                             </tbody>
                         </table>
 
@@ -460,8 +447,7 @@
         <script src="js/script.js"></script>
     
         <!-- Database Javascript -->  
-        <script src="bundles/auth.bundle.js"></script>   
-        <script src="bundles/applicant_registry.bundle.js"></script>   
+        <script src="bundles/auth.bundle.js"></script>    
         <script src="bundles/navbar.bundle.js"></script>
         
     </body>

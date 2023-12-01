@@ -16,6 +16,7 @@ import {
 
 import { firebaseConfig } from './server.js';
 import { UserLoginChecker } from './page_restriction.js';
+import { fetchEmployeeInfo } from './fetch_employee_info.js';
 
 
 // init firebase app
@@ -23,85 +24,115 @@ const app = initializeApp(firebaseConfig)
 
 const db = getFirestore()
 
-const colRef = collection(db, 'Applicant Information')
-
-const q = query(colRef, orderBy('createdAt'))
-
-const auth = getAuth();
-
-const storage = getStorage(app);
+async function GetEmployeeTable() {
+  const EmployeecolRef = collection(db, 'Employee Information');
+  const File201colRef = collection(db, '201File Information');
 
 
-function GetEmployeeTable() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const receivedStringData = urlParams.get('officeID');
+  const receivedOfficeName = urlParams.get('officeName');
+
+  const q = query(EmployeecolRef, orderBy('createdAt'));
+  const query201 = query(File201colRef, where("Appointment_Details.Office", "==", receivedOfficeName))
+
+
   try {
-    // Assuming you have Firestore data in the 'employees' array
     const employeeTable = document.getElementById('employeeTable');
     const tbody = employeeTable.querySelector('tbody');
 
-    onSnapshot(q, (snapshot) => {
-      // Clear the existing rows in the table body
+
+    onSnapshot(query201, async (snapshot) => {
       tbody.innerHTML = '';
 
-      snapshot.docs.forEach((doc) => {
-        const data = doc.data();
-        const id = doc.id;
-        const row = document.createElement('tr');
+      if (!snapshot.empty) {
+        for (const doc of snapshot.docs) {
+          const data = doc.data();
+          const id = doc.id;
+          const employee_ID = data.employeeDocID
 
-        // Create and populate table cells
-        // Create an image element
-        const imageElement = document.createElement('img');
+          console.log(data, receivedOfficeName)
 
-        // Set the src attribute to the image URL
-        imageElement.src = "https://firebasestorage.googleapis.com/v0/b/hrassist-lgusanvicente.appspot.com/o/Applicant%2FRequirements%2F1699720150322_bcert.png?alt=media&token=31d4f8c5-a4f2-4070-b104-624f27975f63";
+          const row = document.createElement('tr');
 
-        // Append the image element to the table cell
-        const profileCell = document.createElement('td');
-        profileCell.appendChild(imageElement);
+          // Get designation from another collection
+          try {
+            const dataRetrieved = await fetchEmployeeInfo(EmployeecolRef, employee_ID, "documentID");
 
-        const idCell = document.createElement('td');
-        idCell.textContent = id;
+            const imageElement = document.createElement('img');
+            imageElement.src = dataRetrieved.ProfilePictureURL;
 
-        const nameCell = document.createElement('td');
-        nameCell.textContent = data.username;
+            const profileCell = document.createElement('td');
+            profileCell.appendChild(imageElement);
 
-        const jobPositionCell = document.createElement('td');
-        jobPositionCell.textContent = data.userRole;
+            const idCell = document.createElement('td');
+            idCell.textContent = dataRetrieved.incrementalAccountID;
 
-        const officeCell = document.createElement('td');
-        officeCell.textContent = data.username;
+            const retrievefullName = `${dataRetrieved.Personal_Information.FirstName} ${dataRetrieved.Personal_Information.SurName}`;
+            const nameCell = document.createElement('td');
+            nameCell.textContent = retrievefullName;
 
-        const genderCell = document.createElement('td');
-        genderCell.textContent = data.username;
+            const jobPositionCell = document.createElement('td');
+            jobPositionCell.textContent = data.Appointment_Details.PositionTitle;
 
-        const jobTitleCell = document.createElement('td');
-        jobTitleCell.textContent = data.email;
+            const genderCell = document.createElement('td');
+            genderCell.textContent = dataRetrieved.Personal_Information.Gender;
 
-        // Add a click event listener to the row
-        row.addEventListener('click', () => {
-          console.log('Row ID clicked:', id);
-        });
+            const statusCell = document.createElement('td');
+            statusCell.textContent = dataRetrieved.employmentStatus;
 
-        // Append cells to the row
-        row.appendChild(profileCell);
-        row.appendChild(idCell);
-        row.appendChild(nameCell);
-        row.appendChild(jobPositionCell);
-        row.appendChild(officeCell);
-        row.appendChild(genderCell);
-        row.appendChild(jobTitleCell);
+            const deleteButtonCell = document.createElement('td');
 
-        // Append the row to the table body
-        tbody.appendChild(row);
-      });
+            const deleteButton = document.createElement('button');
+            deleteButton.classList.add('btn', 'btn-primary');
+
+            const deleteIcon = document.createElement('i');
+            deleteIcon.classList.add('bx', 'bx-edit');
+
+            // Add a click event listener to the delete button
+            deleteButton.addEventListener('click', () => {
+              console.log('Row ID clicked:', id);
+
+              window.location.href = `admin_201file_pds.html?data=${encodeURIComponent(dataRetrieved.documentID)}`;
+
+            })
+
+            deleteButton.appendChild(deleteIcon);
+            deleteButtonCell.appendChild(deleteButton);
+
+            row.appendChild(profileCell);
+            row.appendChild(idCell);
+            row.appendChild(nameCell);
+            row.appendChild(jobPositionCell);
+            row.appendChild(genderCell);
+            row.appendChild(statusCell);
+            row.appendChild(deleteButtonCell);
+
+            tbody.appendChild(row);
+
+
+          } catch (error) {
+            console.error('Error fetching designation:', error);
+          }
+        }
+      } else {
+        const noRecordsRow = document.createElement('tr');
+        const noRecordsCell = document.createElement('td');
+        noRecordsCell.setAttribute('colspan', '7');
+        noRecordsCell.textContent = 'No records found';
+        noRecordsRow.appendChild(noRecordsCell);
+        tbody.appendChild(noRecordsRow);
+      }
     });
-
-  } catch {
-    console.log("No data detected...")
+  } catch (error) {
+    console.error('Error fetching data:', error);
   }
 }
 
-
 window.addEventListener('load', GetEmployeeTable);
+
+
+
 
 export function SearchEmployee() {
   // Assuming you have an HTML form with id="employeeDataSheet"
@@ -119,9 +150,7 @@ export function SearchEmployee() {
     const ExtName = SearchEmployeeForm.inputExtName.value
 
     console.log(`Fullname:${FirstName}${MiddleName}${LastName}${ExtName}`)
-
-    //alert(`Fullname:${LastName} ${FirstName} ${MiddleName} ${ExtName}`)
-
+    
     try {
 
       const conditions = [

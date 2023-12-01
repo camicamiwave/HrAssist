@@ -7,6 +7,7 @@
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
         <title>HR Assist - Admin</title>
         <link rel="stylesheet" href="css/admin-calendar.css" />
+        <link rel="stylesheet" href="css/admin.css" />
         <!-- Favicon -->
         <link href="img/hrlogo.svg" rel="icon">
         <meta charset="utf-8">
@@ -222,7 +223,18 @@
                 <span>Accounts</span>
             </a>
         </li><!-- End Accounts Nav -->
-
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="admin-offices.html">
+              <i class="bx bxs-building-house"></i>
+              <span>Office</span>
+          </a>
+      </li><!-- End Accounts Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_dtr_form.html">
+            <i class="bi bi-clock"></i>
+            <span>DTR</span>
+        </a>
+      </li>
         <li class="nav-item">
           <a class="nav-link collapsed" href="admin_search_employee_view.html">
               <i class="bi bi-search"></i>
@@ -279,13 +291,6 @@
         </li><!-- End Request Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="admin_dtr_form.html">
-                <i class="bi bi-clock"></i>
-                <span>DTR</span>
-            </a>
-        </li><!-- End DTR Nav -->
-
-        <li class="nav-item">
             <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
                 <i class="bi bi-check-square"></i>
                 <span>IPCR</span>
@@ -317,89 +322,92 @@
 
     <section class="section dashboard">
 
-            <!--START YOUR CONTENT HERE -->
-
-                <div class="content-wrapper">
-                    <button id="btnAddEvent" class="add-event">+ Add Event</button>
-                    <div class="calendar-container">
-                        <div class="calendar">
-                            <div class="month">
-                                <i class="bx bxs-chevron-left prev"></i>
-                                <div class="date">november 2023</div>
-                                <i class="bx bxs-chevron-right next"></i>
+      <!-- START YOUR CONTENT HERE -->
+  
+      <div class="content-wrapper">
+          <div class="calendar-and-form">
+              <div class="calendar-container">
+                  <div class="calendar">
+                      <div class="month">
+                          <i class="bx bxs-chevron-left prev"></i>
+                          <div class="date">november 2023</div>
+                          <i class="bx bxs-chevron-right next"></i>
+                      </div>
+                      <div class="weekdays">
+                          <div>Sun</div>
+                          <div>Mon</div>
+                          <div>Tue</div>
+                          <div>Wed</div>
+                          <div>Thu</div>
+                          <div>Fri</div>
+                          <div>Sat</div>
+                      </div>
+                      <div class="days">
+                          <!-- code in js -->
+                      </div>
+                      <div class="go-to">
+                          <div class="go-date">
+                              <input type="text" class="date-input" placeholder="mm/yyyy" style="margin-right: 0px;" />
+                              <button class="btnGo" style="margin-left: 0px;">Go</button>
+                          </div>
+                          <button class="btnToday">Today</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="add-event-form">
+                  <div class="formHeader">
+                      <h3 style="text-align: center;">ADD EVENT</h3>
+                      <div class="close">&times;</div>
+                  </div>
+                  <div class="form-content" style="width: 300px; height: 553px; margin-left: 0px; margin-top: 2px; border-radius: 8px;  overflow: hidden;">
+                    <form class="add-event" action="">
+                        <div class="column-left" style="height: 550px; margin-top: 13px; margin-bottom: 13px;">
+                            <label for="event-name">Event Name</label> <br>
+                            <input type="text" class="event-name" required="required" style="margin-bottom: 13px; width: 250px;" /> <br>
+                
+                            <label for="event-date">Event Date</label> <br>
+                            <input type="date" class="event-date" style="margin-bottom: 13px; width: 250px;" /> <br>
+                
+                            <label for="start-from">Category</label> <br>
+                            <div>
+                              <select name="category" id="category" style="width: 250px; margin-bottom: 13px;">
+                                <option value="personal">Personal</option>
+                                <option value="holiday">Holiday</option>
+                                <option value="work">Work-Related</option>
+                              </select>
                             </div>
-                            <div class="weekdays">
-                                <div>Sun</div>
-                                <div>Mon</div>
-                                <div>Tue</div>
-                                <div>Wed</div>
-                                <div>Thu</div>
-                                <div>Fri</div>
-                                <div>Sat</div>
+                
+                            <label for="start-from">Start From</label> <br>
+                            <input type="datetime-local" class="start-from" style="width: 250px; margin-bottom: 13px;" />
+                            
+                            <div>
+                              <label for="event-frequency">Event Frequency</label> <br>
+                              <select name="frequency" id="frequency" style="width: 250px; margin-bottom: 13px;">
+                                <option value="whole day">Whole Day</option>
+                                <option value="extended">Extended</option>
+                                <option value="timely">Timely</option>
+                                </select>
                             </div>
-                            <div class="days">
-                            <!--code in js-->
-                            </div>
-                            <div class="go-to">
-                                <div class="go-date">
-                                    <input type="text" class="date-input" placeholder="mm/yyyy" style="margin-right: 0px;"/>
-                                    <button class="btnGo" style="margin-left: 0px;">Go</button>
-                                </div>
-                                <button class="btnToday">Today</button>
-                            </div>
-                        </div>   
-                    </div>
-
-                    <!-- Modal Section-->
-
-                    <div class="bg-modal">
-                        <div class="modal-content">
-                            <div class="formHeader">
-                                <h3>ADD EVENT</h3>
-                                <div class="close">&times;</div>
-                            </div>
-                            <div class="form-content">
-                                <form class="add-event" action="">
-                                <label for="event-name">Event Name</label> <br>
-                                <input type="text" class="event-name" required="required" style="width: 95%"/> <br>
-                                <div class="column-left">
-                                    <label for="event-date">Event Date</label> <br>
-                                    <input type="date" class="event-date"/> <br>
-                                    <label for="start-from">Category</label> <br>
-                                    <div class="dropdown">
-                                        <input type="text" class="selected" readonly placeholder="Select Option" style="width: 178px;"/>
-                                        <ul class="menu">
-                                            <li class="active">Personal</li>
-                                            <li>Holiday</li>
-                                            <li>Work-related</li>
-                                        </ul>
-                                    </div>
-                                    <label for="start-from">Start From</label> <br>
-                                    <input type="datetime-local" class="start-from" style="width: 178px"/>
-                                </div>
-                                <div class="column-right">
-                                    <label for="event-frequency">Event Frequency</label> <br>
-                                    <div class="dropdown">
-                                        <input type="text" class="selected" readonly placeholder="Select Option" style="width: 178px;"/>
-                                        <ul class="menu">
-                                            <li class="active">Whole Day</li>
-                                            <li>Extended</li>
-                                            <li>Timely</li>
-                                        </ul>
-                                    </div>
-                                    <label for="tag-color">Event Tag Color</label> <br>
-                                    <input type="color" class="tag-color" style="width: 68px; height: 40px; float: left; margin-right: 2px" id="send" oninput="result.value=send.value">
-                                    <input type="text" class="hex-code" id="result" style="width: 110px"/>
-                                    <label for="end-to">End to</label> <br>
-                                    <input type="datetime-local" class="end-to" style="width: 180px"/>
-                                </div>
-                                <button id="btnSubmit" style="width: 80px; border-radius: 20px; margin-top: 10px">Submit</button>
-                                </form>
-                            </div>
+                            <div>
+                            <label for="tag-color">Event Tag Color</label> <br>
+                            <input type="color" class="tag-color" style="width: 68px; height: 30px; float: left; margin-right: 2px; margin-bottom: 8px;" id="send" oninput="result.value=send.value">
+                            <input type="text" class="hex-code" id="result" style="width: 180px; margin-bottom: 8px;" />
+                          </div>  
+                          <div>
+                            <label for="end-to" style="margin-left: -69px;">End to</label> <br>
+                            <input type="datetime-local" class="end-to" style="width: 250px; margin-bottom: 13px;" />
+                          </div>  
+                            <button id="btnSubmit" style="width: 250px; border-radius: 20px; margin-top: 10px;">Submit</button>
                         </div>
-                    </div> 
+                    </form>
                 </div>
-    </section>
+              </div>
+            </div>
+      </div>
+  
+      <!-- END YOUR CONTENT -->
+  
+  </section>
     
             <!--END YOUR CONTENT-->
 

@@ -151,29 +151,6 @@ button:hover {
     color: var(--grey-color);
 }
 
-/* sidebar */
-.sidebar {
-    background-color: var(--white-color);
-    width: 300px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    padding: 80px 20px;
-    z-index: 100;
-    overflow-y: scroll;
-    box-shadow: 0 0 1px var(--grey-color-light);
-    transition: all 0.5s ease;
-}
-
-.sidebar.close {
-    padding: 60px 0;
-    width: 80px;
-}
-
-.sidebar::-webkit-scrollbar {
-    display: none;
-}
 
 .menu_content {
     position: relative;
