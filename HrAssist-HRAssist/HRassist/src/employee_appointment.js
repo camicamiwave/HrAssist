@@ -219,3 +219,4 @@ function fetchOfficeDesignation() {
 }
 
 window.addEventListener('load', fetchOfficeDesignation);
+

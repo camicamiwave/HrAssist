@@ -18,6 +18,9 @@
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -57,26 +60,7 @@
             margin-bottom: 0;
             background-color: rgba(33, 40, 50, 0.03);
             border-bottom: 1px solid rgba(33, 40, 50, 0.125);
-        }
-
-        .form-control,
-        .dataTable-input {
-            display: block;
-            width: 100%;
-            padding: 0.875rem 1.125rem;
-            font-size: 0.875rem;
-            font-weight: 400;
-            line-height: 1;
-            color: #000000;
-            background-color: #fff;
-            background-clip: padding-box;
-            border: 1px solid #08533F;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            border-radius: 0.35rem;
-            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        }
+        } 
 
 
         #progress {
@@ -538,17 +522,18 @@
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
+                        <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture"
+                            class="rounded-circle">
                         <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
-                      </a><!-- End Profile Iamge Icon -->
-            
-                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                    </a><!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                          <h6 id="hoverUserName"></h6>
-                          <span id="userLevel"></span>
+                            <h6 id="hoverUserName"></h6>
+                            <span id="userLevel"></span>
                         </li>
                         <li>
-                          <hr class="dropdown-divider">
+                            <hr class="dropdown-divider">
                         </li>
 
                         <li>
@@ -706,7 +691,59 @@
             </nav>
         </div><!-- End Page Title -->
 
-        <button type="button" class="btn btn-success" style="float: right;">+ Schedule</button><br><br><br>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#scheduleModal"
+            style="float: right;">+ Schedule Interview</button><br><br><br>
+
+        <!-- Modal -->
+        <div class="modal fade" id="scheduleModal" tabindex="-1" role="dialog" aria-labelledby="yearModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">Add Schedule Interview</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="scheduleForm">
+                            <div class="col-md-12">
+                                <label for="withinDetails"><small>Schedule Date<span
+                                            style="color: #ff0000;"> *</span></small></label><br>
+                                <input type="date" id="scheduleDate" class="form-control" required>
+                            </div><br>
+                            <div class="col-md-12">
+                                <label for="withinDetails"><small>Schedule Time<span
+                                            style="color: #ff0000;"> *</span></small></label><br>
+                                <input type="time" id="scheduleTime" class="form-control" required>
+                            </div><br>
+                            <div class="col-md-12">
+                                <label for="withinDetails"><small>Description</small></label><br>
+                                <textarea id="scheduleDescription" class="form-control" placeholder="Description"></textarea>
+                            </div><br>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                            onclick="hideScheduleModal()">Close</button>
+                        <input type="button" id="addScheduleBtn" class="btn btn-primary" value="Save">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function hideScheduleModal() {
+                // Hide the modal
+                $('#scheduleModal').modal('hide');
+            }
+
+            function openScheduleModal() {
+                // Show the modal
+                $('#scheduleModal').modal('show');
+            }
+        </script>
+
 
         <section class="section dashboard">
             <div class="row justify-content-center">
@@ -714,7 +751,8 @@
                     <div class="card d-flex justify-content-center">
                         <div class="card-header text-left">Applicant</div>
                         <div class="card-body text-center">
-                            <img class="img-account-profile rounded-circle mb-2" id="applicantProfile" alt="Applicant Profile">
+                            <img class="img-account-profile rounded-circle mb-2" id="applicantProfile"
+                                alt="Applicant Profile">
                             <!-- Profile picture help block-->
                             <h5 class="card-title mb-0" id="applicantFullName">John Erwin S. Albos</h5>
                             <p class="mt-0">Applicant</p>
@@ -729,12 +767,12 @@
                             </p>
 
                             <div id="scheduleContainer" style="display: block;">
-                                <p class="card-text d-flex justify-content-between align-items-center text-left" >
+                                <p class="card-text d-flex justify-content-between align-items-center text-left">
                                     <span>Scheduled:</span>
-                                    <span  id="applicantScheduled">None</span>
-                                </p>    
+                                    <span id="applicantScheduled">None</span>
+                                </p>
                             </div>
-                            
+
                             <br>
 
 
@@ -865,12 +903,13 @@
 
                                                 <div class="col-md-6">
                                                     <p class="card-text text-right" style="text-align: right;">
-                                                        <span id="applicantAddress">Panol Drive Purok - 1 Brgy. Camambugan Daet, Camarines Norte</span>
+                                                        <span id="applicantAddress">Panol Drive Purok - 1 Brgy.
+                                                            Camambugan Daet, Camarines Norte</span>
                                                     </p>
                                                 </div>
-                                                
+
                                             </div>
-                                            <hr> 
+                                            <hr>
                                         </div>
 
                                     </div>
@@ -882,7 +921,8 @@
 
                             <div class="text-center">
                                 <!-- Save changes button-->
-                                <button class="btn btn-primary" type="button" style="display: none;">Save changes</button>
+                                <button class="btn btn-primary" type="button" style="display: none;">Save
+                                    changes</button>
                             </div>
                             </form>
 
@@ -897,68 +937,53 @@
 
 
 
-                    <script>
-                        const progressBar = document.getElementById("progress-bar");
-                        const progressNext = document.getElementById("progress-next");
-                        const progressPrev = document.getElementById("progress-prev");
-                        const progressBack = document.getElementById("progress-back");
+            <script>
+                const progressBar = document.getElementById("progress-bar");
+                const progressNext = document.getElementById("progress-next");
+                const progressPrev = document.getElementById("progress-prev");
+                const progressBack = document.getElementById("progress-back");
 
-                        const steps = document.querySelectorAll(".step");
-                        let active = 1;
+                const steps = document.querySelectorAll(".step");
+                let active;
 
-                        progressNext.addEventListener("click", () => {
-                            active++;
-                            if (active > steps.length) {
-                                active = steps.length;
-                            }
-                            console.log(active)
-                            updateProgress();
-                        });
+                if (active === 4) {
+                    // Change behavior to simulate a cancel button
+                    progressBar.style.backgroundColor = "blue";
+                    progressNext.disabled = true;
+                    progressPrev.disabled = true;
+                    progressBack.disabled = true;
 
-                        progressBack.addEventListener('click', () => {
+                }
 
-                            if (active !== 1) {
-                                active--;
-                            }  
 
-                            console.log(active)
-                            updateProgress();
-                        })
+                const updateProgress = () => {
+                    // toggle active class on list items
+                    steps.forEach((step, i) => {
+                        if (i < active) {
+                            step.classList.add("active");
+                        } else {
+                            step.classList.remove("active");
+                        }
+                    });
+                    // set progress bar width  
+                    progressBar.style.width =
+                        ((active - 1) / (steps.length - 1)) * 93 + "%";
+                    // enable disable prev and next buttons
+                    if (active === 1) {
+                        progressPrev.disabled = true;
+                    } else if (active === steps.length) {
+                        progressNext.disabled = true;
+                    } else {
+                        progressPrev.disabled = false;
+                        progressNext.disabled = false;
+                    }
+                };
 
-                        progressPrev.addEventListener("click", () => {
-                            // Change behavior to simulate a cancel button
-                            progressBar.style.backgroundColor = "red";
-                            progressNext.disabled = true;
-                            progressPrev.disabled = true;
-                            progressBack.disabled = true;
-                        });
 
-                        const updateProgress = () => {
-                            // toggle active class on list items
-                            steps.forEach((step, i) => {
-                                if (i < active) {
-                                    step.classList.add("active");
-                                } else {
-                                    step.classList.remove("active");
-                                }
-                            });
-                            // set progress bar width  
-                            progressBar.style.width =
-                                ((active - 1) / (steps.length - 1)) * 93 + "%";
-                            // enable disable prev and next buttons
-                            if (active === 1) {
-                                progressPrev.disabled = true;
-                            } else if (active === steps.length) {
-                                progressNext.disabled = true;
-                            } else {
-                                progressPrev.disabled = false;
-                                progressNext.disabled = false;
-                            }
-                        };
-                    </script>
+            </script>
 
-                    <!--END YOUR CONTENT-->
-                </div>
+            <!--END YOUR CONTENT-->
+            </div>
             </div>
             </div>
         </section>
@@ -967,6 +992,11 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
+
+    <!-- jQuery should be loaded before Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -981,8 +1011,8 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
-    
-    <!-- Database Javascript -->   
+
+    <!-- Database Javascript -->
     <script src="bundles/applicant_status.bundle.js"></script>
 
 </body>
