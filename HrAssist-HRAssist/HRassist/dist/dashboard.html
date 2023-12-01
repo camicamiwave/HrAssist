@@ -2,43 +2,46 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Employee-DataSheet</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+  <title>Employee-DataSheet</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-    <!-- Favicons -->
-    <link href="img/favicon.png" rel="icon">
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
-    <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
-    <link href="css/admin-IPCRF.css" rel="stylesheet">
-    <link href="css/employee-template.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="css/admin-IPCRF.css" rel="stylesheet">
+  <link href="css/employee-template.css" rel="stylesheet">
+
+  <!-- CSS LANG TO PARA SA SIDEBAR NA DROPDOWN (EDIT NYO NALANG IF EVER MAY CHANGES :) -->
+  <link href="css/sidebar_dropdown.css" rel="stylesheet">
 
 
 </head>
 
 <body>
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top d-flex align-items-center">
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
 
-        
+
     <div class="d-flex align-items-center justify-content-center">
       <a href="admin_dashboard.html" class="logo d-flex align-items-center mx-auto">
         <img src="assets/img/logo.png" alt="">
@@ -46,287 +49,315 @@
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
-  
-        <div class="search-bar">
-          <form class="search-form d-flex align-items-center" method="POST" action="#">
-            <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-            <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-          </form>
-        </div><!-- End Search Bar -->
-  
-        <nav class="header-nav ms-auto">
-          <ul class="d-flex align-items-center">
-  
-            <li class="nav-item d-block d-lg-none">
-              <a class="nav-link nav-icon search-bar-toggle " href="#">
-                <i class="bi bi-search"></i>
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6 id="hoverUserName">Juan Garcia</h6>
+              <span id="userLevel">Employee</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
               </a>
-            </li><!-- End Search Icon-->
-  
-            <li class="nav-item dropdown">
-  
-              <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                <i class="bi bi-bell"></i>
-                <span class="badge bg-primary badge-number">4</span>
-              </a><!-- End Notification Icon -->
-  
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-                <li class="dropdown-header">
-                  You have 4 new notifications
-                  <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-  
-                <li class="notification-item">
-                  <i class="bi bi-exclamation-circle text-warning"></i>
-                  <div>
-                    <h4>Lorem Ipsum</h4>
-                    <p>Quae dolorem earum veritatis oditseno</p>
-                    <p>30 min. ago</p>
-                  </div>
-                </li>
-  
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-  
-                <li class="notification-item">
-                  <i class="bi bi-x-circle text-danger"></i>
-                  <div>
-                    <h4>Atque rerum nesciunt</h4>
-                    <p>Quae dolorem earum veritatis oditseno</p>
-                    <p>1 hr. ago</p>
-                  </div>
-                </li>
-  
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-  
-                <li class="notification-item">
-                  <i class="bi bi-check-circle text-success"></i>
-                  <div>
-                    <h4>Sit rerum fuga</h4>
-                    <p>Quae dolorem earum veritatis oditseno</p>
-                    <p>2 hrs. ago</p>
-                  </div>
-                </li>
-  
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-  
-                <li class="notification-item">
-                  <i class="bi bi-info-circle text-primary"></i>
-                  <div>
-                    <h4>Dicta reprehenderit</h4>
-                    <p>Quae dolorem earum veritatis oditseno</p>
-                    <p>4 hrs. ago</p>
-                  </div>
-                </li>
-  
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li class="dropdown-footer">
-                  <a href="#">Show all notifications</a>
-                </li>
-  
-              </ul><!-- End Notification Dropdown Items -->
-  
-            </li><!-- End Notification Nav -->
-  
-  
-            <li class="nav-item dropdown pe-3">
-  
-              <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
-                <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
-              </a><!-- End Profile Iamge Icon -->
-    
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                <li class="dropdown-header">
-                  <h6 id="hoverUserName">Juan Garcia</h6>
-                  <span id="userLevel">Employee</span>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-  
-                <li>
-                  <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                    <i class="bi bi-person"></i>
-                    <span>My Profile</span>
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-  
-                <li>
-                  <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                    <i class="bi bi-gear"></i>
-                    <span>Account Settings</span>
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-  
-                <li>
-                  <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                    <i class="bi bi-question-circle"></i>
-                    <span>Need Help?</span>
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-  
-                <li>
-                  <a class="dropdown-item d-flex align-items-center" id="navbar_signout_btn">
-                    <i class="bi bi-box-arrow-right"></i>
-                    <span>Sign Out</span>
-                  </a>
-                </li>
-  
-              </ul><!-- End Profile Dropdown Items -->
-            </li><!-- End Profile Nav -->
-  
-          </ul>
-        </nav><!-- End Icons Navigation -->
-  
-      </header><!-- End Header -->
-  
-        <!-- ======= Sidebar ======= -->
-        <aside id="sidebar" class="sidebar">
-          <ul class="sidebar-nav" id="sidebar-nav">
-            <li class="nav-heading">ADMIN TOOL</li>
-              <li class="nav-item">
-                  <a class="nav-link collapsed" href="admin_dashboard.html">
-                      <i class="bi bi-grid"></i>
-                      <span>Dashboard</span>
-                  </a>
-              </li><!-- End Dashboard Nav -->
-        
-              <li class="nav-item">
-                  <a class="nav-link collapsed" href="admin_accounts_view.html">
-                      <i class="bx bxs-user-account"></i>
-                      <span>Accounts</span>
-                  </a>
-              </li><!-- End Accounts Nav -->
-        
-              <li class="nav-item">
-                <a class="nav-link collapsed" href="admin_search_employee_view.html">
-                    <i class="bi bi-search"></i>
-                    <span>Search Employee</span>
-                </a>
-            </li><!-- End Search Nav -->
-        
-              <li class="nav-heading">Recruitment, Selection, & Placement</li>
-        
-              <li class="nav-item">
-                  <a class="nav-link collapsed" href="admin_manage_applicant_view.html">
-                      <i class="bi bi-people"></i>
-                      <span>Manage Applicant</span>
-                  </a>
-              </li><!-- End Manage Applicant Nav -->
-        
-              <li class="nav-item">
-                  <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
-                      <i class="bx bxs-briefcase"></i>
-                      <span>Job Vacancy</span>
-                  </a>
-              </li><!-- End Job Vacancy Nav -->
-        
-              <li class="nav-item">
-                  <a class="nav-link collapsed" href="admin_employee_registry_view.html">
-                      <i class="bi bi-person"></i>
-                      <span>Manage Employee</span>
-                  </a>
-              </li><!-- End Manage Employee Nav -->
-        
-              <li class="nav-heading">LEARNING & DEVELOPMENT</li>
-        
-              <li class="nav-item">
-                  <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
-                      <i class="bx bxs-group"></i>
-                      <span>Training & Seminar</span>
-                  </a>
-              </li><!-- End Training & Seminar Nav -->
-        
-              <li class="nav-item">
-                  <a class="nav-link collapsed" href="calendar.html">
-                      <i class="bx bxs-calendar"></i>
-                      <span>Calendar & Scheduling</span>
-                  </a>
-              </li><!-- End Calendar & Scheduling Nav -->
-        
-              <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
-        
-              <li class="nav-item">
-                  <a class="nav-link collapsed" href="admin_request.html">
-                      <i class="bi bi-envelope"></i>
-                      <span>Employee Request</span>
-                  </a>
-              </li><!-- End Request Nav -->
-        
-              <li class="nav-item">
-                  <a class="nav-link collapsed" href="admin-dtr.html">
-                      <i class="bi bi-clock"></i>
-                      <span>DTR</span>
-                  </a>
-              </li><!-- End DTR Nav -->
-        
-              <li class="nav-item">
-                  <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
-                      <i class="bi bi-check-square"></i>
-                      <span>IPCR</span>
-                  </a>
-              </li><!-- End IPCR Nav -->
-        
-              <li class="nav-heading">REWARDS AND RECOGNITION</li>
-        
-              <li class="nav-item">
-                  <a class="nav-link collapsed" href="admin_rewards_view.html">
-                      <i class="bi bi-award"></i>
-                      <span>Award</span>
-                  </a>
-              </li><!-- End Award Nav -->
-          </ul>
-        </aside><!-- End Sidebar -->
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
 
-        
-    <main id="main">
-        <!--START YOUR CONTENT HERE-->
-        
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
 
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" id="navbar_signout_btn">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-heading">ADMIN TOOL</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_dashboard.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-heading">Recruitment, Selection, & Placement</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_employee_registry_view.html">
+          <i class="bi bi-people"></i>
+          <span>Manage Employee</span>
+        </a>
+
+        <!-- Dropdown Content -->
+        <div class="dropdown">
+          <a href="admin_201file_account.html" class="dropdown-item"><i class="bi bi-person-plus"></i> Add Employee</a>
+          <a href="#" class="dropdown-item"><i class="bi bi-clipboard"></i> Employee List</a>
+          <a href="#" class="dropdown-item"><i class="bi bi-pencil"></i> Edit Employee</a>
+          <a href="#" class="dropdown-item"><i class="bi bi-search"></i> Search Employee</a>
+          <!-- Add more dropdown items as needed -->
+        </div>
+      </li><!-- End Manage Employee Nav -->
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_manage_applicant_view.html">
+          <i class="bi bi-person"></i>
+          <span>Manage Applicant</span>
+        </a>
+
+        <!-- Dropdown Content -->
+        <div class="dropdown">
+          <a href="#" class="dropdown-item"><i class="bi bi-clipboard"></i> Applicant List</a> 
+          <a href="admin_add_applicant.html" class="dropdown-item"><i class="bi bi-person-plus"></i> Add Applicant</a>
+          <a href="#" class="dropdown-item"><i class="bi bi-search"></i> Search Applicant</a>
+          <!-- Add more dropdown items as needed -->
+        </div>
+
+      </li><!-- End Manage Applicant Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link" href="admin_job_vacancy_view.html">
+          <i class="bx bxs-briefcase"></i>
+          <span>Job Vacancy</span>
+        </a>
+      </li>
+
+
+      <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
+          <i class="bi bi-bar-chart-line"></i>
+          <span>Employee Performance</span>
+        </a>
+      </li><!-- End IPCR Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
+          <i class="bi bi-check-square"></i>
+          <span>Employee IPCR</span>
+        </a>
+      </li><!-- End IPCR Nav -->
+
+
+      <li class="nav-heading">REWARDS AND RECOGNITION</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_rewards_view.html">
+          <i class="bi bi-award"></i>
+          <span>Award</span>
+        </a>
+      </li><!-- End Award Nav -->
+
+      <li class="nav-heading">LEARNING & DEVELOPMENT</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+          <i class="bx bxs-group"></i>
+          <span>Training & Seminar</span>
+        </a>
+      </li><!-- End Training & Seminar Nav -->
+
+
+      <li class="nav-heading">Configuration</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_request.html">
+          <i class="bi bi-gear"></i>
+          <span>Configuration</span>
+        </a>
+
+      <!-- Dropdown Content -->
+      <div class="dropdown">
+        <a href="#" class="dropdown-item"><i class="bx bxs-building-house"></i> Office</a>
+        <a href="#" class="dropdown-item"><i class="bx bxs-user-account"></i> Accounts</a> 
+        <a href="#" class="dropdown-item"><i class="bx bxs-calendar"></i> Calendar & Scheduling</a> 
+        <!-- Add more dropdown items as needed -->
+      </div>
+
+      </li><!-- End Request Nav -->
+
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_request.html">
+          <i class="bi bi-calendar"></i>
+          <span>Leave Management</span>
+        </a>
+      </li><!-- End Request Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin-dtr.html">
+          <i class="bi bi-clock"></i>
+          <span>DTR</span>
+        </a>
+      </li><!-- End DTR Nav -->
  
-        <!--END YOUR CONTENT HERE-->
-    </main><!-- End #main -->
-    
+    </ul>
+  </aside><!-- End Sidebar -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Vendor JS Files -->
-    <script src="vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="vendor/php-email-form/validate.js"></script>
+  <main id="main">
+    <!--START YOUR CONTENT HERE-->
 
-    <!-- Template Main JS File -->
-    <script src="js/datasheet.js"></script>
-    <script src="assets/js/main.js"></script>
-    
-    <script src="bundles/auth.bundle.js"></script> 
-    <script src="bundles/file201.bundle.js"></script> 
-    <script src="bundles/employee_appointment.bundle.js"></script> 
-    <script src="bundles/fetch_employee_info.bundle.js"></script> 
+
+
+    <!--END YOUR CONTENT HERE-->
+  </main><!-- End #main -->
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="js/datasheet.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script src="bundles/auth.bundle.js"></script>
+  <script src="bundles/file201.bundle.js"></script>
+  <script src="bundles/employee_appointment.bundle.js"></script>
+  <script src="bundles/fetch_employee_info.bundle.js"></script>
 
 
 </body>
