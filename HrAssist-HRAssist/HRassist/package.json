@@ -37,7 +37,8 @@
     "office": "node office.js",
     "organizational_chart": "node organizational_chart.js",
     "manage_employee": "node manage_employee.js",
-    "rewards": "node rewards.js"
+    "rewards": "node rewards.js",
+    "applicant_status": "node applicant_status.js"
   },
   "keywords": [],
   "author": "",

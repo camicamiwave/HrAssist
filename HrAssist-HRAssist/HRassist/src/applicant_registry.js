@@ -74,38 +74,35 @@ function GetApplicantTable() {
 
       const applicantStatusCell = document.createElement('td');
       applicantStatusCell.textContent = data.ApplicantStatus;
-
+      
+      if (data.ApplicantStatus.toLowerCase() === 'pending') {
+        applicantStatusCell.classList.add('text-danger', );
+        applicantStatusCell.style.fontWeight = 'bold';
+      } else if (data.ApplicantStatus === 'Hired') {
+        applicantStatusCell.classList.add('text-primary');
+        applicantStatusCell.style.fontWeight = 'bold';
+      }
+      
       // Add button
       // Create a button element for actions and add it to the row
       const actionCell = document.createElement('td');
       const actionButtonEdit = document.createElement('button');
       //actionButtonEdit.textContent = 'Edit'; // Customize the button label
-      actionButtonEdit.classList.add('btn', 'bx', 'bx-edit', 'mx-2'); // You can use Bootstrap's 'btn' and 'btn-primary' classes
+      actionButtonEdit.classList.add('btn', 'bx', 'bx-show', 'mx-5'); // You can use Bootstrap's 'btn' and 'btn-primary' classes
 
       actionButtonEdit.addEventListener('click', () => {
         // Define an action for the Edit button (e.g., edit the record)
         // You can add your specific logic here
         console.log('Edit button clicked for record with ID:', id);
-      });
 
-      const actionButtonDelete = document.createElement('button');
-      //actionButtonDelete.textContent = 'Delete'; // Customize the button label
-      actionButtonDelete.classList.add('btn', 'bx', 'bx-trash'); // You can use Bootstrap's 'btn' and 'btn-danger' classes
+        window.location.href = `admin_applicant_status.html?data=${encodeURIComponent(id)}`;
 
-      actionButtonDelete.addEventListener('click', () => {
-
-        console.log('Delete button clicked for record with ID:', id);
 
       });
+ 
 
-      actionCell.appendChild(actionButtonEdit);
-      actionCell.appendChild(actionButtonDelete);
-
-      // Add a click event listener to the row
-      row.addEventListener('click', () => {
-        console.log('Row ID clicked:', id);
-      });
-
+      actionCell.appendChild(actionButtonEdit); 
+ 
       // Append cells to the row 
       //row.appendChild(profileCell); 
       row.appendChild(profileCell)
