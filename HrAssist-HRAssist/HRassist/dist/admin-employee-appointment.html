@@ -5,30 +5,34 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Employee-DataSheet</title>
+  <title>Employee-Info</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicon -->
-  <link href="img/hricon.png" rel="icon">
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="css/datasheet.css" rel="stylesheet">
   <link href="css/employee-template.css" rel="stylesheet">
-
+  <link href="css/datasheet.css" rel="stylesheet">
+  <link href="css/admin-employee-profile.css" rel="stylesheet">
 
 </head>
 
@@ -37,10 +41,11 @@
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
-    <div class="d-flex align-items-center justify-content-center">
-      <a href="admin_dashboard.html" class="logo d-flex align-items-center mx-auto">
-        <img src="assets/img/logo.png" alt="" style="margin-left: -140px;">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="employee_home.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
         <span class="d-none d-lg-block">Assist</span>
+
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -51,7 +56,7 @@
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
-
+    
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
 
@@ -140,21 +145,21 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
+            <img src="assets/img/profile.png" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Juan Luna</span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6 id="hoverUserName"></h6>
-              <span id="userLevel"></span>
+              <h6>Juan Garcia</h6>
+              <span>Employee</span>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            
+
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="employee-users-profile.html">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>
@@ -198,12 +203,13 @@
 
   </header><!-- End Header -->
 
+  <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-heading">ADMIN TOOL</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="admin_dashboard.html">
+        <a class="nav-link collapsed" href="index.html">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -216,22 +222,22 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a class="nav-link" href="admin_201file_account.html">
+            <a href="components-alerts.html">
               <i class="bi bi-circle"></i><span>Add Employee</span>
             </a>
           </li>
           <li>
-            <a href="admin_employee_registry_list.html">
+            <a href="components-accordion.html">
               <i class="bi bi-circle"></i><span>Employee List</span>
             </a>
           </li>
           <li>
-            <a href="admin_201file_account.html">
+            <a href="components-badges.html">
               <i class="bi bi-circle"></i><span>Edit Employee</span>
             </a>
           </li>
           <li>
-            <a href="admin_search_employee_view.html">
+            <a href="components-breadcrumbs.html">
               <i class="bi bi-circle"></i><span>Search Employee</span>
             </a>
           </li>
@@ -244,18 +250,18 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="admin_add_applicant.html">
+            <a href="forms-elements.html">
               <i class="bi bi-circle"></i><span>Add Applicant</span>
             </a>
           </li>
           <li>
-            <a href="admin_manage_applicant_view.html">
+            <a href="forms-layouts.html">
               <i class="bi bi-circle"></i><span>Applicant List</span>
             </a>
           </li>
           
           <li>
-            <a href="#">
+            <a href="forms-validation.html">
               <i class="bi bi-circle"></i><span>Search Applicant</span>
             </a>
           </li>
@@ -278,7 +284,7 @@
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="admin-IPCRF-search.html">
+        <a class="nav-link collapsed" href="pages-contact.html">
           <i class="bi bi-check-square"></i>
           <span>Employee IPCRF</span>
         </a>
@@ -286,7 +292,7 @@
 
       <li class="nav-heading">REWARDS & RECOGNITION</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="pages-register.html">
           <i class="bi bi-award"></i>
           <span>Award</span>
         </a>
@@ -294,7 +300,7 @@
 
       <li class="nav-heading">LEARNING DEVELOPMENT</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+        <a class="nav-link collapsed" href="pages-login.html">
           <i class="bi bi-people-fill"></i>
           <span>Training & Seminar</span>
         </a>
@@ -307,17 +313,17 @@
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="admin-offices.html">
+            <a href="icons-bootstrap.html">
               <i class="bi bi-circle"></i><span>Office</span>
             </a>
           </li>
           <li>
-            <a href="admin_accounts_view.html">
+            <a href="icons-remix.html">
               <i class="bi bi-circle"></i><span>Accounts</span>
             </a>
           </li>
           <li>
-            <a href="calendar.html">
+            <a href="icons-boxicons.html">
               <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
             </a>
           </li>
@@ -329,8 +335,8 @@
           <span>Leave Management</span>
         </a>
       </li><!-- End Login Page Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="admin_dtr_form.html">
+      <li class="nav-item"> 
+        <a class="nav-link collapsed" href="pages-login.html">
           <i class="bi bi-clock"></i>
           <span>DTR</span>
         </a>
@@ -341,81 +347,56 @@
 
   </aside><!-- End Sidebar-->
 
-  <main id="main">
-    <div class="pagetitle">
-      <h1>List of Employee</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item"><a href="admin_employee_registry_view.html">Registry View</a></li>
-          <li class="breadcrumb-item"><a href="admin_employee_registry_list.html">Registry List</a></li>
-          <li class="breadcrumb-item"><a href="admin_employee_registry_list.html">Add Account</a></li>
-          <li class="breadcrumb-item"><a href="admin_employee_pds.html">Personal Data Sheet</a></li>
-          <li class="breadcrumb-item active">Appointment</li>
-        </ol>
-      </nav>
-    </div><!-- End Page Title -->
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
-
-      <div class="container">
-        <div class="d-flex w-100" style = "margin-left: -365px ; font-size: 20px; font-family: Poppins; font-weight: bold;">
-          <h1 class="mx-auto text-center custom-text">Employee 201 Files </h1>
-      </div>
-
-      <div class="d-flex w-100" style="font-weight: bold;">
-        <a type="button" id="AccountBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn" style="font-weight: bold; font-size: 14px;">Account</a>
-        <a type="button" id="PersonalInfoBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn"style="font-weight: bold; font-size: 14px;">Personal Data
-          Sheet</a>
-        <a type="button" id="AppointmentBtn"
-          class="btn btn-success flex-fill rounded-0 custom-account-btn" style="font-weight: bold; font-size: 14px;">Appointment</a>
-        <a type="button" id="AttachmentBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn" style="font-weight: bold; font-size: 14px;">Attachments</a>
-        <a type="button" id="LeaveCreditBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn"style="font-weight: bold; font-size: 14px;">Leave
-          Credits</a>
-      </div>
-
-        <div class="d-flex w-100">
-          <h1 class="mx-auto text-center custom-text">Appointment Information</h1>
-        </div>
-      </div>
+  <main id="main" class="main">
 
 
-      <div class="container">
-        <div class="row">
+    <section class="section dashboard">
+      <div class="row">
 
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="row">
 
-          <div class="col-md-12">
-            <div class="fb-profile-block">
-              <div class="fb-profile-block-thumb cover-container"></div>
-              <div class="profile-img">
-                <a href="#" id="profileLink">
-                  <img class="" id="applicantProfilePic" src="img/profile.png" alt="Profile Picture">
-                </a>
-              </div>
-
-              <div class="profile-active">
-                <p id="account_status_label"> </p>
-              </div>
-              <div class="profile-name">
-                <h2 id="profile_name_id"></h2>
-              </div>
-              <div class="profile-hr">
-                <h6 id="jobPositionTitle"></h6>
-              </div>
-
-              <div class="fb-profile-block-menu">
-                <div class="block-menu">
-                  <ul>
-
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br><br>
-      <!--Personal Data-->
+            <!--START YOUR CONTENT HERE -->
+            
+            <div class="container">
+                <div class="view-account">
+                    <section class="module">
+                        <div class="module-inner">
+                            <div class="side-bar">
+                                <div class="user-info">
+                                    <img class="img-profile img-circle img-responsive center-block" src="img/admin/user.jpg" alt="">
+                                    <ul class="meta list list-unstyled">
+                                        <li class="name"> <h5><strong>Camila Binas</strong></h5>
+                                            <p>DSWD Employee</p>
+                                        </li>
+                                       
+                                    </ul>
+                                </div>
+                                <nav class="side-menu">
+                                    <ul class="nav">
+                                      <li><a href="admin-employee-profile.html"><span class="fa fa-user"></span> Profile</a></li>
+                                      <li><a href="admin-employee-datasheet.html"><span class="bi bi-file-earmark-person"></span> Personal Data Sheet</a></li>
+                                      <li class="active"><a href="admin-employee-appointment.html"><span class="bi bi-calendar-event"></span> Appointment</a></li>
+                                      <li><a href="admin-employee-attachment.html"><span class="bi bi-paperclip"></span> Attachments</a></li>
+                                      <li><a href="admin-employee-leave.html"><span class="bi bi-calendar-week"></span> Leave credits</a></li>
+                                      <li><a href="#"><span class="bi bi-emoji-smile"></span> Behavior</a></li>
+                                      <li><a href="#"><span class="bi bi-activity"></span> Activity</a></li>                                 
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="content-panel">
+                               
+                                <form class="form-horizontal">
+                                    <fieldset class="fieldset">
+                                      
+                                        <div class="form-group avatar">
+                                        
+                                           
+                                        </div>
+                                       
+                                        <!--Content Here-->
+                                              <!--Personal Data-->
 
 
 
@@ -588,29 +569,28 @@
 
     </section><!-- End Breadcrumbs -->
 
+
+                                        <!--END YOUR CONTENT-->
+
   </main><!-- End #main -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="js/datasheet.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <script src="bundles/auth.bundle.js"></script>
-  <script src="bundles/file201.bundle.js"></script>
-  <script src="bundles/employee_appointment.bundle.js"></script>
-  <script src="bundles/fetch_employee_info.bundle.js"></script>
-
-
+  <script src="bundles/navbar.bundle.js"></script>
+  
 </body>
 
 </html>
