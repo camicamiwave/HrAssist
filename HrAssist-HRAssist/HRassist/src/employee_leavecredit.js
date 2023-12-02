@@ -284,6 +284,7 @@ function AddYearLeaveRecord() {
                 if (result.isConfirmed) {
 
                     const leaveDetails = {
+                        LeaveCreditStatus: 'Active',
                         createdAt: serverTimestamp(),
                         YearCovered: yearSelectorForm.yearSelctor.value,
                         file201documentID: documentID

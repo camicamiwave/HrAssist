@@ -333,7 +333,7 @@
 
               <br>
               <div class="table-responsive-lg table-primary">
-                <table id="leaveManagement" class="table table-hover" style="font-family: poppins; font-size: 14px; text-align: center;">
+                <table  class="table table-hover" style="font-family: poppins; font-size: 14px; text-align: center;">
                   <thead>
                     <tr class="table-light content-table">
                       <th scope="col">ID</th>
@@ -399,7 +399,8 @@
       <div class="content-wrapper">
         <div class="table">
           <div class="table-header">
-            <p>List of Employee Request</p>
+            <div class="card-header text-left"><i class="bi bi-calendar" style="font-size: 17px;"></i>&nbsp;&nbsp; Leave
+              Management</div>
           </div>
           <div class="table-header">
             <div class="group">
@@ -407,7 +408,7 @@
             </div>
           </div>
 
-          <table class="content-table">
+          <table class="content-table" id="leaveManagement" style="font-size: 14px;">
             <thead>
               <tr>
                 <th></th>
@@ -420,7 +421,7 @@
               </tr>
             </thead>
             <tbody> 
-              
+
             </tbody>
           </table>
         </div>
@@ -463,8 +464,8 @@
   <script src="js/script.js"></script>
 
   <!-- Database Javascript -->
+  <script src="bundles/leave_management.bundle.js"></script>
   <script src="bundles/auth.bundle.js"></script>
-  <script src="bundles/applicant_registry.bundle.js"></script>
   <script src="bundles/navbar.bundle.js"></script>
 
 </body>
