@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Boxicons CSS -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>HR Assist - Admin</title>
+  <link rel="stylesheet" href="css/admin.css" />
+  <link rel="stylesheet" href="css/admin2.css" />
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Admin</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicon -->
+  <link href="img/hricon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/employee-template.css" rel="stylesheet">
+  <link href="css/employee-template.css" rel="stylesheet">
+
+  <style type="text/css">
+    body{
+      margin-top:20px;
+      background-color: #f0f2f5;
+    }
+    .dropdown-list-image {
+      position: relative;
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+    .dropdown-list-image img {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+    .btn-light {
+      color: #2cdd9b;
+      background-color: #e5f7f0;
+      border-color: #d8f7eb;
+    }
+  </style>
+
+</head>
+
+<body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="admin_dashboard.html" class="logo d-flex align-items-center mx-auto">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">Assist</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6 id="hoverUserName"></h6>
+              <span id="userLevel"></span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="admin-users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" id="navbar_signout_btn">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+ 
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-heading">ADMIN TOOL</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_dashboard.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="admin_201file_account.html">
+              <i class="bi bi-circle"></i><span>Add Employee</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_employee_registry_list.html">
+              <i class="bi bi-circle"></i><span>Employee List</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_201file_account.html">
+              <i class="bi bi-circle"></i><span>Edit Employee</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_search_employee_view.html">
+              <i class="bi bi-circle"></i><span>Search Employee</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-person"></i><span>Manage Applicant</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="admin_add_applicant.html">
+              <i class="bi bi-circle"></i><span>Add Applicant</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_manage_applicant_view.html">
+              <i class="bi bi-circle"></i><span>Applicant List</span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="admin_search_applicant.html">
+              <i class="bi bi-circle"></i><span>Search Applicant</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
+            <i class="bx bxs-briefcase"></i>
+            <span>Job Vacancy</span>
+        </a>
+    </li><!-- End Job Vacancy Nav -->
+
+    <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-bar-chart-line"></i>
+          <span>Employee Performance</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin-IPCRF-search.html">
+          <i class="bi bi-check-square"></i>
+          <span>Employee IPCRF</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-heading">REWARDS & RECOGNITION</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-award"></i>
+          <span>Award</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li class="nav-heading">LEARNING DEVELOPMENT</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+          <i class="bi bi-people-fill"></i>
+          <span>Training & Seminar</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+      <li class="nav-heading">CONFIGURATION</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gear"></i><span>Configuration</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="admin-offices.html">
+              <i class="bi bi-circle"></i><span>Office</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_accounts_view.html">
+              <i class="bi bi-circle"></i><span>Accounts</span>
+            </a>
+          </li>
+          <li>
+            <a href="calendar.html">
+              <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Icons Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_request.html">
+          <i class="bi bi-calendar"></i>
+          <span>Leave Management</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_dtr_form.html">
+          <i class="bi bi-clock"></i>
+          <span>Daily Time Record</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Notifications</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Notification List</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+    
+      <!--START YOUR CONTENT HERE -->
+
+      <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 right">
+                <div class="box shadow-sm rounded bg-white mb-3">
+                    <div class="box-title border-bottom p-3">
+                        <h6 class="m-0">Recent</h6>
+                    </div>
+                    <div class="box-body p-0">
+                        <div class="p-3 d-flex align-items-center bg-light border-bottom osahan-post-header">
+                            <div class="dropdown-list-image mr-3">
+                                <img class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" />
+                            </div>
+                            <div class="font-weight-bold mr-3">
+                                <div class="text-truncate">DAILY RUNDOWN: WEDNESDAY</div>
+                                <div class="small">Income tax sops on the cards, The bias in VC funding, and other top news for you</div>
+                            </div>
+                            <span class="ml-auto mb-auto">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-light btn-sm rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="mdi mdi-dots-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-delete"></i> Delete</button>
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-close"></i> Turn Off</button>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="text-right text-muted pt-1">3d</div>
+                            </span>
+                        </div>
+                        <div class="p-3 d-flex align-items-center osahan-post-header">
+                            <div class="dropdown-list-image mr-3">
+                                <img class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                            </div>
+                            <div class="font-weight-bold mr-3">
+                                <div class="mb-2">We found a job at askbootstrap Ltd that you may be interested in Vivamus imperdiet venenatis est...</div>
+                                <button type="button" class="btn btn-outline-success btn-sm">View Jobs</button>
+                            </div>
+                            <span class="ml-auto mb-auto">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-light btn-sm rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="mdi mdi-dots-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-delete"></i> Delete</button>
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-close"></i> Turn Off</button>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="text-right text-muted pt-1">4d</div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box shadow-sm rounded bg-white mb-3">
+                    <div class="box-title border-bottom p-3">
+                        <h6 class="m-0">Earlier</h6>
+                    </div>
+                    <div class="box-body p-0">
+                        <div class="p-3 d-flex align-items-center border-bottom osahan-post-header">
+                            <div class="dropdown-list-image mr-3 d-flex align-items-center bg-danger justify-content-center rounded-circle text-white">DRM</div>
+                            <div class="font-weight-bold mr-3">
+                                <div class="text-truncate">DAILY RUNDOWN: MONDAY</div>
+                                <div class="small">Nunc purus metus, aliquam vitae venenatis sit amet, porta non est.</div>
+                            </div>
+                            <span class="ml-auto mb-auto">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-light btn-sm rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="mdi mdi-dots-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" style="">
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-delete"></i> Delete</button>
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-close"></i> Turn Off</button>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="text-right text-muted pt-1">3d</div>
+                            </span>
+                        </div>
+                        <div class="p-3 d-flex align-items-center border-bottom osahan-post-header">
+                            <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" /></div>
+                            <div class="font-weight-bold mr-3">
+                                <div class="text-truncate">DAILY RUNDOWN: SATURDAY</div>
+                                <div class="small">Pellentesque semper ex diam, at tristique ipsum varius sed. Pellentesque non metus ullamcorper</div>
+                            </div>
+                            <span class="ml-auto mb-auto">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-light btn-sm rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="mdi mdi-dots-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-delete"></i> Delete</button>
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-close"></i> Turn Off</button>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="text-right text-muted pt-1">3d</div>
+                            </span>
+                        </div>
+                        <div class="p-3 d-flex align-items-center border-bottom osahan-post-header">
+                            <div class="dropdown-list-image mr-3">
+                                <img class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
+                            </div>
+                            <div class="font-weight-bold mr-3">
+                                <div class="mb-2"><span class="font-weight-normal">Congratulate Gurdeep Singh Osahan (iamgurdeeposahan)</span> for 5 years at Askbootsrap Pvt.</div>
+                                <button type="button" class="btn btn-outline-success btn-sm">Say congrats</button>
+                            </div>
+                            <span class="ml-auto mb-auto">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-light btn-sm rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="mdi mdi-dots-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-delete"></i> Delete</button>
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-close"></i> Turn Off</button>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="text-right text-muted pt-1">4d</div>
+                            </span>
+                        </div>
+                        <div class="p-3 d-flex align-items-center border-bottom osahan-post-header">
+                            <div class="dropdown-list-image mr-3">
+                                <img class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" />
+                            </div>
+                            <div class="font-weight-bold mr-3">
+                                <div>
+                                    <span class="font-weight-normal">Congratulate Mnadeep singh (iamgurdeeposahan)</span> for 4 years at Askbootsrap Pvt.
+                                    <div class="small text-success"><i class="fa fa-check-circle"></i> You sent Mandeep a message</div>
+                                </div>
+                            </div>
+                            <span class="ml-auto mb-auto">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-light btn-sm rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="mdi mdi-dots-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-delete"></i> Delete</button>
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-close"></i> Turn Off</button>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="text-right text-muted pt-1">4d</div>
+                            </span>
+                        </div>
+                        <div class="p-3 d-flex align-items-center border-bottom osahan-post-header">
+                            <div class="dropdown-list-image mr-3 d-flex align-items-center bg-success justify-content-center rounded-circle text-white">M</div>
+                            <div class="font-weight-bold mr-3">
+                                <div class="text-truncate">DAILY RUNDOWN: MONDAY</div>
+                                <div class="small">Nunc purus metus, aliquam vitae venenatis sit amet, porta non est.</div>
+                            </div>
+                            <span class="ml-auto mb-auto">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-light btn-sm rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="mdi mdi-dots-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-delete"></i> Delete</button>
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-close"></i> Turn Off</button>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="text-right text-muted pt-1">3d</div>
+                            </span>
+                        </div>
+                        <div class="p-3 d-flex align-items-center border-bottom osahan-post-header">
+                            <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" /></div>
+                            <div class="font-weight-bold mr-3">
+                                <div class="text-truncate">DAILY RUNDOWN: SATURDAY</div>
+                                <div class="small">Pellentesque semper ex diam, at tristique ipsum varius sed. Pellentesque non metus ullamcorper</div>
+                            </div>
+                            <span class="ml-auto mb-auto">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-light btn-sm rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="mdi mdi-dots-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-delete"></i> Delete</button>
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-close"></i> Turn Off</button>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="text-right text-muted pt-1">3d</div>
+                            </span>
+                        </div>
+                        <div class="p-3 d-flex align-items-center border-bottom osahan-post-header">
+                            <div class="dropdown-list-image mr-3">
+                                <img class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                            </div>
+                            <div class="font-weight-bold mr-3">
+                                <div class="mb-2"><span class="font-weight-normal">Congratulate Gurdeep Singh Osahan (iamgurdeeposahan)</span> for 5 years at Askbootsrap Pvt.</div>
+                                <button type="button" class="btn btn-outline-success btn-sm">Say congrats</button>
+                            </div>
+                            <span class="ml-auto mb-auto">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-light btn-sm rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="mdi mdi-dots-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-delete"></i> Delete</button>
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-close"></i> Turn Off</button>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="text-right text-muted pt-1">4d</div>
+                            </span>
+                        </div>
+                        <div class="p-3 d-flex align-items-center osahan-post-header">
+                            <div class="dropdown-list-image mr-3">
+                                <img class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
+                            </div>
+                            <div class="font-weight-bold mr-3">
+                                <div>
+                                    <span class="font-weight-normal">Congratulate Mnadeep singh (iamgurdeeposahan)</span> for 4 years at Askbootsrap Pvt.
+                                    <div class="small text-success"><i class="fa fa-check-circle"></i> You sent Mandeep a message</div>
+                                </div>
+                            </div>
+                            <span class="ml-auto mb-auto">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-light btn-sm rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="mdi mdi-dots-vertical"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-delete"></i> Delete</button>
+                                        <button class="dropdown-item" type="button"><i class="mdi mdi-close"></i> Turn Off</button>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="text-right text-muted pt-1">4d</div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!--END YOUR CONTENT-->
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript"></script>
+  
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+
+  <!-- JavaScript -->
+  <script src="js/admin-chart.js"></script>
+
+  <!-- Database Javascript -->
+  <script src="bundles/auth.bundle.js"></script> 
+  <script src="bundles/navbar.bundle.js"></script>
+
+  
+
+</body>
+
+</html>
