@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Education-201file</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicon -->
+  <link href="img/hricon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/datasheet.css" rel="stylesheet">
+  <link href="css/employee-template.css" rel="stylesheet">
+
+  
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="admin_dashboard.html" class="logo d-flex align-items-center mx-auto">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">Assist</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+  
+        <div class="search-bar">
+          <form class="search-form d-flex align-items-center" method="POST" action="#">
+            <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+            <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+          </form>
+        </div><!-- End Search Bar -->
+  
+        <nav class="header-nav ms-auto">
+          <ul class="d-flex align-items-center">
+  
+            <li class="nav-item d-block d-lg-none">
+              <a class="nav-link nav-icon search-bar-toggle " href="#">
+                <i class="bi bi-search"></i>
+              </a>
+            </li><!-- End Search Icon-->
+  
+            <li class="nav-item dropdown">
+  
+              <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                <i class="bi bi-bell"></i>
+                <span class="badge bg-primary badge-number">4</span>
+              </a><!-- End Notification Icon -->
+  
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                <li class="dropdown-header">
+                  You have 4 new notifications
+                  <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+                <li class="notification-item">
+                  <i class="bi bi-exclamation-circle text-warning"></i>
+                  <div>
+                    <h4>Lorem Ipsum</h4>
+                    <p>Quae dolorem earum veritatis oditseno</p>
+                    <p>30 min. ago</p>
+                  </div>
+                </li>
+  
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+                <li class="notification-item">
+                  <i class="bi bi-x-circle text-danger"></i>
+                  <div>
+                    <h4>Atque rerum nesciunt</h4>
+                    <p>Quae dolorem earum veritatis oditseno</p>
+                    <p>1 hr. ago</p>
+                  </div>
+                </li>
+  
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+                <li class="notification-item">
+                  <i class="bi bi-check-circle text-success"></i>
+                  <div>
+                    <h4>Sit rerum fuga</h4>
+                    <p>Quae dolorem earum veritatis oditseno</p>
+                    <p>2 hrs. ago</p>
+                  </div>
+                </li>
+  
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+                <li class="notification-item">
+                  <i class="bi bi-info-circle text-primary"></i>
+                  <div>
+                    <h4>Dicta reprehenderit</h4>
+                    <p>Quae dolorem earum veritatis oditseno</p>
+                    <p>4 hrs. ago</p>
+                  </div>
+                </li>
+  
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li class="dropdown-footer">
+                  <a href="#">Show all notifications</a>
+                </li>
+  
+              </ul><!-- End Notification Dropdown Items -->
+  
+            </li><!-- End Notification Nav -->
+  
+  
+            <li class="nav-item dropdown pe-3">
+  
+              <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
+                <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
+              </a><!-- End Profile Iamge Icon -->
+    
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                <li class="dropdown-header">
+                  <h6 id="hoverUserName">Juan Garcia</h6>
+                  <span id="userLevel">Employee</span>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+                <li>
+                  <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                    <i class="bi bi-person"></i>
+                    <span>My Profile</span>
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+                <li>
+                  <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                    <i class="bi bi-gear"></i>
+                    <span>Account Settings</span>
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+                <li>
+                  <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                    <i class="bi bi-question-circle"></i>
+                    <span>Need Help?</span>
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+  
+                <li>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Sign Out</span>
+                  </a>
+                </li>
+  
+              </ul><!-- End Profile Dropdown Items -->
+            </li><!-- End Profile Nav -->
+  
+          </ul>
+        </nav><!-- End Icons Navigation -->
+  
+      </header><!-- End Header -->
+  
+      <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-heading">ADMIN TOOL</li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="index.html">
+              <i class="bi bi-grid"></i>
+              <span>Dashboard</span>
+            </a>
+          </li><!-- End Dashboard Nav -->
+    
+          <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+              <li>
+                <a href="components-alerts.html">
+                  <i class="bi bi-circle"></i><span>Add Employee</span>
+                </a>
+              </li>
+              <li>
+                <a href="components-accordion.html">
+                  <i class="bi bi-circle"></i><span>Employee List</span>
+                </a>
+              </li>
+              <li>
+                <a href="components-badges.html">
+                  <i class="bi bi-circle"></i><span>Edit Employee</span>
+                </a>
+              </li>
+              <li>
+                <a href="components-breadcrumbs.html">
+                  <i class="bi bi-circle"></i><span>Search Employee</span>
+                </a>
+              </li>
+            </ul>
+          </li><!-- End Components Nav -->
+    
+          <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-person"></i><span>Manage Applicant</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+              <li>
+                <a href="forms-elements.html">
+                  <i class="bi bi-circle"></i><span>Add Applicant</span>
+                </a>
+              </li>
+              <li>
+                <a href="forms-layouts.html">
+                  <i class="bi bi-circle"></i><span>Applicant List</span>
+                </a>
+              </li>
+              
+              <li>
+                <a href="forms-validation.html">
+                  <i class="bi bi-circle"></i><span>Search Applicant</span>
+                </a>
+              </li>
+            </ul>
+          </li><!-- End Forms Nav -->
+    
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
+                <i class="bx bxs-briefcase"></i>
+                <span>Job Vacancy</span>
+            </a>
+        </li><!-- End Job Vacancy Nav -->
+    
+        <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#">
+              <i class="bi bi-bar-chart-line"></i>
+              <span>Employee Performance</span>
+            </a>
+          </li><!-- End F.A.Q Page Nav -->
+    
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="pages-contact.html">
+              <i class="bi bi-check-square"></i>
+              <span>Employee IPCRF</span>
+            </a>
+          </li><!-- End Contact Page Nav -->
+    
+          <li class="nav-heading">REWARDS & RECOGNITION</li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="pages-register.html">
+              <i class="bi bi-award"></i>
+              <span>Award</span>
+            </a>
+          </li><!-- End Register Page Nav -->
+    
+          <li class="nav-heading">LEARNING DEVELOPMENT</li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="pages-login.html">
+              <i class="bi bi-people-fill"></i>
+              <span>Training & Seminar</span>
+            </a>
+          </li><!-- End Login Page Nav -->
+    
+          <li class="nav-heading">CONFIGURATION</li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-gear"></i><span>Configuration</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+              <li>
+                <a href="icons-bootstrap.html">
+                  <i class="bi bi-circle"></i><span>Office</span>
+                </a>
+              </li>
+              <li>
+                <a href="icons-remix.html">
+                  <i class="bi bi-circle"></i><span>Accounts</span>
+                </a>
+              </li>
+              <li>
+                <a href="icons-boxicons.html">
+                  <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
+                </a>
+              </li>
+            </ul>
+          </li><!-- End Icons Nav -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="pages-login.html">
+              <i class="bi bi-calendar"></i>
+              <span>Leave Management</span>
+            </a>
+          </li><!-- End Login Page Nav -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="pages-login.html">
+              <i class="bi bi-clock"></i>
+              <span>DTR</span>
+            </a>
+          </li><!-- End Login Page Nav -->
+    
+    
+        </ul>
+    
+      </aside><!-- End Sidebar-->
+
+    <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs" id="EducationSection">
+
+        <div class="container">
+            <div class="d-flex w-100">
+                <h1 class="mx-auto text-center custom-text-label">Employee 201 Files</h1>
+            </div>
+
+            <div class="d-flex w-100">
+                <a type="button" id="AccountBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn"
+                    href="201file_account.html">Account</a>
+                <a type="button" id="PersonalInfoBtn"
+                    class="btn btn-success flex-fill rounded-0 custom-account-btn">Personal Information</a>
+                <a type="button" id="AppointmentBtn"
+                    class="btn btn-success flex-fill rounded-0 custom-201-btn">Appointment</a>
+                <a type="button" id="AttachmentBtn"
+                    class="btn btn-success flex-fill rounded-0 custom-201-btn">Attachments</a>
+                <a type="button" id="LeaveCreditBtn"
+                    class="btn btn-success flex-fill rounded-0 custom-201-btn">Leave Credits</a>
+            </div>
+
+            <div class="d-flex w-100">
+                <h1 class="mx-auto text-center custom-text">Personal Data Sheet</h1>
+            </div>
+        </div>
+
+      
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="fb-profile-block">
+                        <div class="fb-profile-block-thumb cover-container"></div>
+                        <div class="profile-img">
+                            <a href="#">
+                                <img class="" id="applicantProfilePic" src="img/profile.png" alt="">        
+                            </a>
+                        </div>
+                        
+                        <div class="profile-name" >
+                            <h2 id="profile_name_id"></h2>
+                        </div> 
+                        
+                        <div class="fb-profile-block-menu">
+                            <div class="block-menu">
+                                <ul>
+                                    <li><a href="datasheet.html" id="201Personal">Personal</a></li>
+                                    <li><a href="Education-21Files.html" id="201Education" >Education</a></li>
+                                    <li><a href="OtherInfo-201file.html" id="201Other" >Other Information</a></li>
+                                    <li><a href="signature-201file.html" id="201Signature">Signature</a></li>  
+                                </ul>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <!-- EMPLOYEE EDUCATION -->
+                <!--Education-->
+                
+    <div class="container custom-container-pds">
+        <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <br>
+                            <div class="card-header"><strong>III. EDUCATION BACKGROUND</strong></div>
+                            <br>
+                            <div class="small mb-1">Please provide full details</div>
+                            <!-- TABLE -->
+                            <br>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12"> 
+                                        <form id="EducationForm">
+                                            <table class="table table-hover" id="worked">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Level</th>
+                                                        <th>School Name</th>
+                                                        <th>Basic Education/degree/course</th>
+                                                        <th>From</th>
+                                                        <th>To</th>
+                                                        <th>Highes level/units earned (If not graduated)</th>
+                                                        <th>Scholarship/academic honors received</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody> 
+                                                    <tr>
+                                                        <th scope="row">Elementary</th>
+                                                        <td>
+                                                            <input class="form-control" id="elemSchoolName" name="elemSchoolName" type="text" />
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" id="elemGrade" name="elemGrade" type="text" />
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" id="elemFrom" name="elemFrom" type="text" />
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" id="elemTo" name="elemTo" type="text" />
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" id="elemHighestLevel" name="elemHighestLevel" type="text" />
+                                                        </td>
+                                                        <td>
+                                                            <input class="form-control" id="elemScholarship" name="elemScholarship" type="text" />
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                    <th scope="row">Secondary</th>
+                                                    <td>
+                                                        <input class="form-control" name="secondSchoolName" id="secondSchoolName" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="secondGrade" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="secondFrom" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="secondTo" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="secondHighestLevel" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="secondScholarship" type="text" />
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Vocational/Trade Course</th>
+                                                    <td>
+                                                        <input class="form-control" name="vocationalSchoolName" id="vocationalSchoolName" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="vocationalGrade" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="vocationalFrom" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="vocationalTo" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="vocationalHighestLevel" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="vocationalScholarship" type="text" />
+                                                    </td>
+                                                    
+                                                    
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">College</th>
+                                                    <td>
+                                                        <input class="form-control" name="collegeSchoolName" id="collegeSchoolName" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="collegeGrade" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="collegeFrom" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="collegeTo" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="collegeHighestLevel" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="collegeScholarship" type="text" />
+                                                    </td>
+                                                     
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Graduate School</th>
+                                                    <td>
+                                                        <input class="form-control" name="graduateSchoolName" id="graduateSchoolName" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="graduateGrade" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="graduateFrom" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="graduateTo" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="graduateHighestLevel" type="text" />
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" id="graduateScholarship" type="text" />
+                                                    </td> 
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                         
+                                        <input type="submit" id="EducationSubmitBtn" name="EducationSubmitBtn" class="btn btn-success" value="Save">
+                                        </form>
+                                        
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        </div>
+    </div>
+
+    <style>
+        /* Custom styles for the table header */
+        th {
+          text-align: center;
+          font-weight: bold;
+          font-size:small;
+
+        }
+
+      </style>
+
+        
+    </section><!-- End Breadcrumbs -->
+
+</main><!-- End #main -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Sweet Alert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Vendor JS Files -->
+<script src="vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="vendor/glightbox/js/glightbox.min.js"></script>
+<script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="vendor/swiper/swiper-bundle.min.js"></script>
+<script src="vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="js/datasheet.js"></script>
+
+<!-- Database JS File -->
+<script src="bundles/auth.bundle.js"></script>
+<script src="assets/js/main.js"></script>   
+<script src="bundles/PDS.bundle.js"></script>    
+<script src="bundles/fetch_employee_info.bundle.js"></script>    
+<script src="bundles/file201.bundle.js"></script>
+
+</body>
+
+</html>

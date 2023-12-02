@@ -1,0 +1,3 @@
+# HrAssist
+The Human Resource Management Information System (HRMIS) implemented by the Local Government Unit (LGU) of San Vicente is a comprehensive and efficient solution for managing its workforce. This system improves HR processes and employee engagement by monitoring and maintaining the municipality's human resources.
+The HRMIS includes various features like applicant recruitment management, employee profiling, leave and pass slip tracking, performance evaluation, and self-service options. It enables analysis and reporting, allowing LGU San Vicente to make informed decisions about talent management and HR strategies.

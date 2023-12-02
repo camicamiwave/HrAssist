@@ -1,0 +1,785 @@
+/* Import Google font - Poppins */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+.sidebar:hover + .main-content {
+    margin-left: 300px; /* Adjust this value according to your sidebar width */
+    transition: margin-left 0.5s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --white-color: #fff;
+    --blue-color: #4070f4;
+    --grey-color: #707070;
+    --grey-color-light: #aaa;
+}
+
+body {
+    background-color: #D9D9D9;
+    transition: all 0.5s ease;
+}
+
+body.dark {
+    background-color: #333;
+}
+
+body.dark {
+    --white-color: #333;
+    --blue-color: #fff;
+    --grey-color: #f2f2f2;
+    --grey-color-light: #aaa;
+}
+
+h1, .h1 {
+    font-size: calc(1.375rem + 1.5vw); }
+    @media (min-width: 1200px) {
+        h1, .h1 {
+            font-size: 2.5rem; } }
+  
+h2, .h2 {
+    font-size: calc(1.325rem + 0.9vw); }
+    @media (min-width: 1200px) {
+        h2, .h2 {
+            font-size: 2rem; } }
+  
+h3, .h3 {
+    font-size: calc(1.3rem + 0.6vw); }
+    @media (min-width: 1200px) {
+        h3, .h3 {
+            font-size: 1.75rem; } }
+  
+h4, .h4 {
+    font-size: calc(1.275rem + 0.3vw); }
+    @media (min-width: 1200px) {
+        h4, .h4 {
+            font-size: 1.5rem; } }
+  
+h5, .h5 {
+    font-size: 1.25rem; }
+  
+h6, .h6 {
+    font-size: 1rem; }
+  
+p {
+    margin-top: 0;
+    margin-bottom: 1rem; }
+
+button {
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #1f8f3e;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* ---------------------------------------- NAVBAR ---------------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    z-index: 1000;
+    box-shadow: 0 0 2px var(--grey-color-light);
+}
+
+.logo_item {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--blue-color);
+}
+
+.navbar img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.navbar img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.search_bar {
+    height: 35px;
+    max-width: 430px;
+    width: 100%;
+}
+
+.search_bar input {
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    font-size: 18px;
+    outline: none;
+    background-color: var(--white-color);
+    color: var(--grey-color);
+    border: 1px solid var(--grey-color-light);
+    padding: 0 20px;
+}
+
+.navbar_content {
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+}
+
+.navbar_content i {
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--grey-color);
+}
+
+
+
+.menu_content {
+    position: relative;
+}
+
+.menu_title {
+    margin: 15px 0;
+    padding: 0 20px;
+    font-size: 18px;
+}
+
+.sidebar.close .menu_title {
+    padding: 6px 30px;
+}
+
+.menu_title::before {
+    color: var(--grey-color);
+    white-space: nowrap;
+}
+
+.menu_admin_tools::before {
+    content: "Admin Tools";
+}
+
+.lgu_information::before {
+    content: "LGU Information";
+}
+
+.recruitment::before {
+    content: "Recruitment";
+}
+
+.employee_registration::before {
+    content: "Employee Registration";
+}
+
+.employment_tools::before {
+    content: "Employment Tools";
+}
+
+.learning_nd_development::before {
+    content: "Learning & Development";
+}
+
+.sidebar.close .menu_title::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 18px;
+    border-radius: 12px;
+    background: var(--grey-color-light);
+}
+
+.menu_items {
+    padding: 0;
+    list-style: none;
+}
+
+.active{
+    background-color: #08533F;
+    color: var(--white-color);
+    border-radius: 10px;
+}
+
+.navlink_icon {
+    position: relative;
+    font-size: 22px;
+    min-width: 50px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.navlink_icon::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: calc(100% + 100px);
+    left: -20px;
+}
+
+.navlink_icon:hover {
+    background: #08533F;
+}
+
+.sidebar .nav_link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 4px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--grey-color);
+    white-space: nowrap;
+}
+
+.sidebar.close .navlink {
+    display: none;
+}
+
+.nav_link:hover {
+    color: var(--white-color);
+    background: #08533F;
+}
+
+.sidebar.close .nav_link:hover {
+    background: var(--white-color);
+}
+
+.submenu_item {
+    cursor: pointer;
+}
+
+.submenu {
+    display: none;
+}
+
+.submenu_item .arrow-left {
+    position: absolute;
+    right: 10px;
+    display: inline-block;
+    margin-right: auto;
+}
+
+.sidebar.close .submenu {
+    display: none;
+}
+
+.show_submenu ~ .submenu {
+    display: block;
+}
+
+.show_submenu .arrow-left {
+    transform: rotate(90deg);
+}
+
+.submenu .sublink {
+  padding: 15px 15px 15px 52px;
+}
+
+.bottom_content {
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    width: 260px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.bottom {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0;
+    justify-content: space-around;
+    padding: 18px 0;
+    text-align: center;
+    width: 115%;
+    color: var(--grey-color);
+    border-top: 1px solid var(--grey-color-light);
+    background-color: var(--white-color);
+}
+
+.bottom i {
+    font-size: 20px;
+}
+
+.bottom span {
+    font-size: 18px;
+}
+.sidebar.close .bottom_content {
+    width: 50px;
+    left: 15px;
+}
+
+.sidebar.close .bottom span {
+    display: none;
+}
+
+.sidebar.hoverable .collapse_sidebar {
+    display: none;
+}
+
+#sidebarOpen {
+     display: none;
+}
+
+/* Add this CSS to make #main responsive when hovering over the sidebar */
+.sidebar:hover ~ #main {
+    margin-left: 300px; /* Adjust this value according to your sidebar width */
+    transition: margin-left 0.5s ease;
+}
+
+
+/* ---------------------------------------------------------------------------------------- */
+/* ----------------------------------------- MAIN ----------------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
+
+
+#main {
+    transition: margin-left 0.5s ease;
+    padding: 16px;
+    margin-top: 70px;
+    margin-left: 80px;
+    margin-right: 10px;
+}
+
+/* Add this CSS to make #main responsive when the sidebar is expanded */
+.sidebar.expand ~ #main {
+    margin-right: 15px;
+    margin-left: 310px; /* Adjust this value according to your sidebar width */
+    transition: margin-left 0.5s ease;
+}
+
+/* Add this CSS to make #main responsive when the sidebar is collapsed */
+.sidebar.close ~ #main {
+    margin-right: 10px;
+    margin-left: 90px;
+}
+
+.page-header {
+    margin: 0 0 1.5rem 0; 
+}
+  
+.page-title {
+    color: #000000;
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+}
+
+.page-title .page-title-icon {
+    display: inline-block;
+    margin-right: 15px;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    text-align: center;
+    -webkit-box-shadow: 0px 3px 8.3px 0.7px rgba(31, 143, 62, 0.35);
+    box-shadow: 0px 3px 8.3px 0.7px rgba(31, 143, 62, 0.35); 
+    background-color: #08533F;
+    color:#ffffff;
+}
+    
+.page-title .page-title-icon i {
+    font-size: .9375rem;
+    line-height: 36px; }
+
+/* ---------------------------------------------------------------------------------------- */
+/* ----------------------------------------- CALENDAR ---------------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
+
+.add-event {
+    display: flex;
+    
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #08533F;
+}
+
+.calendar-container{
+    position: relative;
+    width: 600px;
+    height: 600px;
+    min-height: 0 auto;
+    padding: 5px;
+    color: #fff;
+    display: flex; 
+    border-radius: 10px;
+    background-color: #063A2C;
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+    }
+  
+.calendar{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex; 
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #878895;
+    border-radius: 10px;
+    background-color: #fff;
+}
+  
+.calendar .month{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+  
+.calendar .month .prev,
+.calendar .month .next {
+    cursor: pointer;
+ }
+  
+.calendar .month .prev:hover,
+.calendar .month .next:hover {
+    color: #07cdae;
+}
+  
+.calendar .weekdays {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+  
+.calendar .weekdays div {
+    width: 14.28%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.calendar .days {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-bottom: 15px;
+}
+  
+.calendar .days .day{
+    width: 14.28%;
+    height: 53px;
+    display: flex;
+    justify-content: right;
+    border: 1px solid #f5f5f5;
+    font-size: 12px;
+    font-weight: 300;
+    color: #096F53;
+    padding: 5px 5px 5px 0;
+    border: 1px solid #f5f5f5;
+}
+  
+.calendar .days .prev-date,
+.calendar .days .next-date {
+    color: #b3b3b3;
+}
+  
+.calendar .days .today {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    background-color: #00674B;
+    
+ }
+  
+.calendar .days .today::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 10px 2px #00674B;
+}
+
+.calendar .days .event {
+    position: relative;
+}
+  
+.calendar .days .event::after {
+    content: "";
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    width: 75%;
+    height: 6px;
+    border-radius: 30px;
+    transform: translateX(-50%);
+    background-color: #00674B;
+}
+  
+.calendar .go-to {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+  
+.calendar .go-to .go-date {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #00674B;;
+}
+   
+.calendar .go-to .go-date input{
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 0 20px;
+}
+  
+.calendar .go-to button {
+    padding: 5px 10px;
+    border: 1px solid #00674B;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.calendar .go-to button:hover {
+    background-color: #063A2C;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* ----------------------------------------- MODAL FORM ----------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
+
+
+ /* Add this CSS to your existing styles */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar-and-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.calendar-container {
+    margin-right: 10px;
+}
+
+.add-event-form {
+    flex-grow: 1;
+    max-width: 400px;
+}
+ 
+.formHeader{
+    height: 40px;
+    background-color: #074b39;
+    overflow: hidden;
+    width: 300px;
+    
+}
+  
+.formHeader h3{
+    color: white;
+    margin: 3px;
+    padding-left: 10px;
+    font-weight: normal;
+    font-family: "Poppins", sans-serif;
+    
+}
+  
+.close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    right: 0;
+    color: black;
+    font-size: 28px;
+    align-items: center;
+    justify-content: center; 
+    margin-top: 5px;
+    margin-right: 5px;
+}
+  
+.close:hover {
+    border-radius: 20px;
+    color: tomato;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+  
+.form-content {
+    margin: 20px 20px 20px 40px;
+    border-radius: 20px;
+}
+  
+.column-left {
+    /* width: 20%; */
+    float: none;
+}
+  
+.column-right{
+
+    /* width: 50%; */
+    float: none;
+}
+  
+.modal-content .form-content .add-event input {
+    margin: 5px 0 15px 0;
+    border-color: black;
+}
+  
+.modal-content .form-content .add-event input::placeholder {
+    color: gray;
+}
+  
+  
+.dropdown {
+    min-width: 15em;
+    position: relative;
+}
+   
+.dropdown * {
+    box-sizing: border-box;
+ }
+   
+.select {
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 0.5em;
+    padding: 1em;
+    cursor: pointer;
+}
+   
+.select-clicked {
+    border: 2px solid gray;
+}
+  
+.form-content .dropdown input{
+    cursor: pointer;
+ }
+   
+.form-content .dropdown::before {
+    content: "";
+    position: absolute;
+    top: 25px;
+    right: 85px;
+    width: 12px;
+    height: 2px;
+    background-color: gray;
+    z-index: 10;
+    transform: rotate(40deg);
+    transition: 0.5s;
+}
+  
+.form-content .dropdown.active::before {
+    right: 20px;
+} 
+  
+.form-content .dropdown::after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    right: 77px;
+    width: 12px;
+    height: 2px;
+    background-color: gray;
+    z-index: 10;
+    transform: rotate(-40deg);
+    transition: 0.5s;
+}
+  
+.form-content .dropdown.active::after {
+    right: 20px;
+} 
+   
+  
+.menu li {
+    padding: 0.7em 0.5em;
+    margin: 0.3em 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+  
+.menu li{
+    background: #dedede;
+}
+  
+.active {
+    background: #d4d4d4;
+}
+  
+.menu-open {
+    display: block;
+    opacity: 1;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.menu li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}

@@ -1,0 +1,30 @@
+.nav-item:hover .dropdown {
+    display: block; 
+}
+
+.dropdown {
+    display: none;
+    padding-left: 20px; /* Adjust the spacing as needed */
+    margin-top: 10px; /* Adjust the top margin to control the gap below the dropdown */
+}
+
+.dropdown-item {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    text-decoration: none;
+    color: #08533F; 
+    font-family: "Poppins", sans-serif;
+}
+
+/* Add styling for the icons */
+.bi, .bx {
+    margin-right: 5px;
+}
+
+/* Add hover effect for dropdown items */
+.dropdown-item:hover {
+    background-color: #e5e5e5; /* Background color on hover */
+    color: #08533F; /* Change text color on hover if needed */
+}
