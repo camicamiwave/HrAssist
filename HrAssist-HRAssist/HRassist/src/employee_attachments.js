@@ -11,7 +11,7 @@ import {
     addDoc, deleteDoc, doc,
     query, where,
     orderBy, serverTimestamp,
-    getDoc, updateDoc, setDoc
+    getDoc, updateDoc, setDoc, arrayUnion
 } from 'firebase/firestore'
 
 import { firebaseConfig } from './server.js';
@@ -76,15 +76,17 @@ export function Employee201Attachment() {
 
                     Promise.all(uploadPromises)
                         .then(() => {
+
                             const attachmentsData = {
                                 AttachmentURLs: fileURLs
                             };
-
+                            
                             const EmployeecolRef = collection(db, '201File Information');
                             const employeeDocRef = doc(EmployeecolRef, receivedString201File);
+                            
+                            // Gamitin ang setDoc upang ilagay ang data sa dokumento
+                            setDoc(employeeDocRef, { AttachmentURLs: arrayUnion(...fileURLs) }, { merge: true });
 
-                            // Use setDoc to set the data in the document
-                            setDoc(employeeDocRef, attachmentsData, { merge: true });
                         })
                         .then(() => {
                             console.log("Attachments added successfully...");
@@ -94,7 +96,7 @@ export function Employee201Attachment() {
                                 title: "Your work has been saved",
                                 showConfirmButton: false,
                                 timer: 1500
-                              });
+                            });
                             // Optionally, perform additional actions after attachments are added
                             //window.location.href = `201file_leave.html?data=${encodeURIComponent(receivedStringData)}`;
                         }).then(() => {
@@ -117,12 +119,14 @@ export function Employee201Attachment() {
 
 window.addEventListener('load', Employee201Attachment);
 
-export function fetchEmployee201Attachment() { 
+export function fetchEmployee201Attachment() {
     try {
         // get the current employee data
         const EmployeecolRef = collection(db, '201File Information');
         fetchEmployeeInfo(EmployeecolRef, receivedStringData, "employeeDocID").then((dataRetrieved) => {
             const attachmentData = dataRetrieved.AttachmentURLs;
+
+            console.log(dataRetrieved.documentID)
 
             var tableBody = document.getElementById('fileListBody');
 
@@ -142,7 +146,66 @@ export function fetchEmployee201Attachment() {
                     // Set values for each cell
                     cell1.innerHTML = num; // You can set an ID or index here
                     cell2.innerHTML = `<a href='${attachmentData[index]}' style='width: 60%; text-align: center'>Docs${num}</a>`;
-                    cell3.innerHTML = '<button onclick="performAction()" class="btn btn-primary" style="width: 50%; text-align: center">Delete</button>';
+                    //cell3.innerHTML = '<button type="button" class="btn btn-danger" style="width: 40%; text-align: center">Delete</button>';
+
+                    // Assuming you have created the button and assigned it to the variable 'editButton'
+                    const deleteButton = document.createElement('button');
+
+                    deleteButton.textContent = `Delete`;
+                    deleteButton.className = 'btn btn-danger';
+                    deleteButton.id = `deletebtn${index}`;
+                    deleteButton.type = 'button'
+
+                    console.log(attachmentData,'asfsaf')
+
+                    // Add an event listener to the button
+                    deleteButton.addEventListener('click', function () {
+                        console.log('delete mo', index)
+
+
+                        Swal.fire({
+                            title: "Are you sure?",
+                            text: "Employee's attachment will be lost",
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#3085d6",
+                            cancelButtonColor: "#d33",
+                            confirmButtonText: "Confirm"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                // If the user clicks "Confirm"
+
+                                const itemList = attachmentData
+
+                                // Alisin ang unang item (index 0)
+                                itemList.splice(index, 1);
+
+                                const newattachments = {
+                                    AttachmentURLs: itemList
+                                }
+
+                                const EmployeecolRef = collection(db, '201File Information');
+                                const employeeDocRef = doc(EmployeecolRef, dataRetrieved.documentID);
+
+
+                                // Use setDoc to set the data in the document
+                                return setDoc(employeeDocRef, newattachments,  { merge: true }).then(() => {
+                                    alert('Attachment deleted successfully')
+                                }).then(() => {
+                                    window.location.href = `admin_201file_attachments.html?data=${encodeURIComponent(receivedStringData)}&201filedoc=${encodeURIComponent(dataRetrieved.documentID)}`;
+                                })
+
+                            } else {
+                                // Handle the case where the user cancels the action
+                            }
+                        });
+
+
+                    });
+
+                    cell3.appendChild(deleteButton);
+
+
                 }
                 num++;
             }
