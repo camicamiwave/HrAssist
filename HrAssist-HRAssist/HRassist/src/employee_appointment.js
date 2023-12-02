@@ -132,7 +132,7 @@ export function fetchAppointmentData() {
       const addDataSheetForm = document.querySelector("#employeeAppointmentForm");
 
       if (data.Appointment_Details) {
-        addDataSheetForm.positionSelector.value = data.Appointment_Details.PositionTitle,
+        addDataSheetForm.positionSelector.value = data.Appointment_Details.PositionTitle
         addDataSheetForm.inputPosCategory.value = data.Appointment_Details.PositionCategory
         addDataSheetForm.inputOffice.value = data.Appointment_Details.Office
         addDataSheetForm.inputSJP.value = data.Appointment_Details.SalaryGrade

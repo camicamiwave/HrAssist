@@ -39,7 +39,8 @@
     "manage_employee": "node manage_employee.js",
     "rewards": "node rewards.js",
     "applicant_status": "node applicant_status.js",
-    "leave_management": "node leave_management.js"
+    "leave_management": "node leave_management.js",
+    "ipcrf": "node ipcrf.js"
   },
   "keywords": [],
   "author": "",

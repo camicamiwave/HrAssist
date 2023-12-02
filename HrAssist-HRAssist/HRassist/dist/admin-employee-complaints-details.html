@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Employee-Info</title>
+  <title>UPDATED TEMPLATE</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -27,12 +27,8 @@
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-
   <!-- Template Main CSS File -->
   <link href="css/employee-template.css" rel="stylesheet">
-  <link href="css/datasheet.css" rel="stylesheet">
-  <link href="css/admin-employee-profile.css" rel="stylesheet">
 
 </head>
 
@@ -214,6 +210,8 @@
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
+      
+      <hr>
 
       <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
       <li class="nav-item">
@@ -306,6 +304,7 @@
         </a>
       </li><!-- End Login Page Nav -->
 
+      <hr>
       <li class="nav-heading">CONFIGURATION</li>
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
@@ -335,7 +334,7 @@
           <span>Leave Management</span>
         </a>
       </li><!-- End Login Page Nav -->
-      <li class="nav-item"> 
+      <li class="nav-item">
         <a class="nav-link collapsed" href="pages-login.html">
           <i class="bi bi-clock"></i>
           <span>DTR</span>
@@ -349,234 +348,29 @@
 
   <main id="main" class="main">
 
+    <div class="pagetitle">
+      <h1>Calendar</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="employee_home.html">Home</a></li>
+          <li class="breadcrumb-item active">Calendar</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
 
     <section class="section dashboard">
       <div class="row">
 
         <!-- Left side columns -->
-        <div class="col-lg-12">
+        <div class="col-lg-8">
           <div class="row">
 
             <!--START YOUR CONTENT HERE -->
             
-            <div class="container">
-                <div class="view-account">
-                    <section class="module">
-                        <div class="module-inner">
-                            <div class="side-bar">
-                                <div class="user-info">
-                                    <img class="img-profile img-circle img-responsive center-block" src="img/admin/user.jpg" alt="">
-                                    <ul class="meta list list-unstyled">
-                                        <li class="name"> <h5><strong>Camila Binas</strong></h5>
-                                            <p>DSWD Employee</p>
-                                        </li>
-                                       
-                                    </ul>
-                                </div>
-                                <nav class="side-menu">
-                                    <ul class="nav">
-                                      <li><a href="admin-employee-profile.html"><span class="fa fa-user"></span> Profile</a></li>
-                                      <li><a href="admin-employee-datasheet.html"><span class="bi bi-file-earmark-person"></span> Personal Data Sheet</a></li>
-                                      <li class="active"><a href="admin-employee-appointment.html"><span class="bi bi-calendar-event"></span> Appointment</a></li>
-                                      <li><a href="admin-employee-attachment.html"><span class="bi bi-paperclip"></span> Attachments</a></li>
-                                      <li><a href="admin-employee-leave.html"><span class="bi bi-calendar-week"></span> Leave credits</a></li>
-                                      <li><a href="#"><span class="bi bi-emoji-smile"></span> Behavior</a></li>
-                                      <li><a href="#"><span class="bi bi-activity"></span> Activity</a></li>                                 
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div class="content-panel">
-                               
-                                
-        
-                                        <div class="form-group avatar">
-                                        
-                                          <div class="container">
-                                            <div class="row">
-                                              <div class="d-flex">
-                                                <h1 class="mx-auto text-center custom-text" style="padding-right: 8vw;">Appointment</h1>
-                                              </div>
-                                    
-                                            </div>
-                                          </div>
-                                        </div>
-                                       
-                                        <!--Content Here-->
-                                              <!--Personal Data-->
+            
+            
 
-
-
-      <div class="container custom-container-pds">
-        <br>
-
-        <!--Personal Data-->
-        <div class="container">
-          <div class="row">
-
-            <!-- Account details card-->
-
-            <div class="container"><br>
-              <label style="color:#08533F"><small>CS Form 33 - A</small></label><br>
-              <hr>
-            </div>
-
-            <div class="col-md-12">
-              <br>
-              <div class="card-header"><strong>I. Appointment Information</strong></div>
-
-              <form id="employeeAppointmentForm">
-                <div class="card-body">
-                  <!-- Form Row-->
-                  <div class="row gx-3 mb-1">
-                    <label class="medium mb-1" for="inputForm">Please provide necessary
-                      information</label><br><br>
-                    <hr><br>
-                    <label class="medium mb-2" for="inputCsId">Job Details</label>
-                    <!-- Form Group (first name)--><br><br>
-
-                    <div class="row gx-3 mb-1">
-                      <div class="col-md-4">
-                        <label class="small mb-1" for="inputOffice">Office</label>
-                        <select class="form-control" name="inputOffice" id="inputOffice">
-                          <option>Select</option>   
-                        </select>
-                      </div>
-
-                      <!-- Form Group (first name)-->
-                      <div class="col-md-4">
-                        <label class="small mb-1" for="inputPosTitle">Position Title</label>
-                        <select class="form-control" name="officeSelector" id="positionSelector">
-                          <option>Select</option>
-                        </select>
-                        <!--<input class="form-control" id="inputPosTitle" type="text"
-                                                    placeholder="Enter job details">-->
-                      </div>
-
-                      <!-- Form Group (middle name)-->
-                      <div class="col-md-4">
-                        <label class="small mb-1" for="inputPosCategory">Nature of Appointment</label>
-                        <select class="form-control" name="" id="inputPosCategory">
-                          <option value="">Select</option>
-                          <option value="SG">Regular</option>
-                          <option value="JG">Casual</option>
-                          <option value="PG">Job Order</option>
-                        </select>
-                      </div>
-
-
-
-                    </div>
-                  </div>
-
-                  <hr>
-                  <!-- Form Row-->
-                  <div class="row gx-3 mb-1">
-                    <label class="medium mb-2" for="inputCsId">Salary</label>
-                    <!-- Form Group (first name)--><br><br>
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputSJP">SG/JG/PG</label>
-                      <select class="form-control" name="" id="inputSJP">
-                        <option value="">Select</option>
-                        <option value="SG">SG</option>
-                        <option value="JG">JG</option>
-                        <option value="PG">PG</option>
-                      </select>
-                    </div>
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputAmount">Compensation Per Month</label>
-                      <input class="form-control" id="inputAmount" type="text" placeholder="Enter Amount">
-                    </div>
-                  </div>
-                  </hr>
-                  <hr>
-                  <!-- Form Row-->
-                  <div class="row gx-3 mb-1">
-                    <label class="medium mb-2" for="inputAppointment">Appointment</label><br><br>
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputNatofApp">Nature of Appointment:</label>
-                      <select class="form-control" name="" id="inputNatofApp">
-                        <option value="">Select</option>
-                        <option value="Original">Original</option>
-                        <option value="Promotion">Promotion</option>
-                        <option value="Transfer">Transfer</option>
-                        <option value="Reappointment">Reappointment</option>
-                        <option value="Reinstatement">Reinstatement</option>
-                        <option value="Reclassification">Reclassification</option>
-                        <option value="Demotion">Demotion</option>
-                      </select>
-                    </div>
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputVice">Vice:</label>
-                      <input class="form-control" id="inputVice" type="text" placeholder="Enter Vice">
-                    </div>
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputWho">Who:</label>
-                      <input type="text" class="form-control" name="" id="inputWho">
-
-                      </select>
-                    </div>
-
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputPlant">Plantilla Item No.:</label>
-                      <input class="form-control" id="inputPlant" type="text" placeholder="Enter Plantilla Item No.">
-                    </div>
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputPage">Page:</label>
-                      <input class="form-control" id="inputPage" type="text" placeholder="Enter Page">
-                    </div>
-                  </div>
-                  </hr>
-                  <hr>
-                  <!-- Form Row-->
-                  <div class="row gx-3 mb-1">
-                    <label class="medium mb-2" for="inputCsId">Appointing Officer</label><br><br>
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputAppOff">Appointing Officer</label>
-                      <input class="form-control" id="inputAppOff" type="text" placeholder="Enter Appointing Officer">
-                    </div>
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputDate">Date of Signing</label>
-                      <input class="form-control" id="inputDate" type="date" placeholder="Enter Appointing Officer">
-                    </div>
-                  </div>
-
-
-                  <hr>
-                  <label for="fileInput">Upload employee's appointment form:</label><br><br>
-                  <input type="file" id="fileInput" onchange="displayFileName()">
-                  <div id="fileNameDisplay"></div>
-
-                  <script>
-                    function displayFileName() {
-                      const fileInput = document.getElementById('fileInput');
-                      const fileNameDisplay = document.getElementById('fileNameDisplay');
-
-                      // Check if a file is selected
-                      if (fileInput.files.length > 0) {
-                        // Display the selected file name
-                        fileNameDisplay.textContent = `Selected File: ${fileInput.files[0].name}`;
-                      } else {
-                        // No file selected
-                        fileNameDisplay.textContent = 'No file selected';
-                      }
-                    }
-                  </script>
-                  <br>
-                  <hr>
-                  <input type="submit" id="appointmentSubmitBtn" name="appointmentSubmitBtn"
-                    class="btn btn-success submit-btn" value="Save">
-
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-    </section><!-- End Breadcrumbs -->
-
-
-                                        <!--END YOUR CONTENT-->
+            <!--END YOUR CONTENT-->
 
   </main><!-- End #main -->
 
