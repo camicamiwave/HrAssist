@@ -16,6 +16,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -223,14 +224,6 @@
         </a>
       </li><!-- End Profile Page Nav -->
 
-      
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="employee-complaint.html">
-          <i class="bi bi-send-plus"></i>
-          <span>Employee Concerns</span>
-        </a>
-      </li>
-
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
@@ -277,7 +270,12 @@
         </a>
       </li>
 
-
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="employee-complaint.html">
+          <i class="bi bi-send-plus"></i>
+          <span>Employee Concerns</span>
+        </a>
+      </li>
 
       <li class="nav-heading">Employee Profile</li>
 
@@ -311,11 +309,11 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Calendar</h1>
+      <h1>Employee Concerns</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="employee_home.html">Home</a></li>
-          <li class="breadcrumb-item active">Calendar</li>
+          <li class="breadcrumb-item active">Employee Concerns</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -324,12 +322,143 @@
       <div class="row">
 
         <!-- Left side columns -->
-        <div class="col-lg-8">
+        <div class="col-lg-12">
           <div class="row">
 
             <!--START YOUR CONTENT HERE -->
             
-            
+            <div class="container">
+              <div class="contact__wrapper shadow-lg mt-n9">
+                  <div class="row no-gutters">
+                      <div class="col-lg-12 contact-info__wrapper gradient-brand-color p-5 order-lg-1">
+                          <h1 class="color--white mb-6">We are here to assist you!
+
+                          </h1>
+                                <p>Complaint letters effectively provide details to the appropriate individuals so they can address any instances of hostility that have developed between employees. </p>
+                 
+                      </div>
+              
+                      <div class="col-lg-12 contact-form__wrapper p-5 order-lg-1">
+                          <form action="#" class="contact-form form-validate" novalidate="novalidate">
+                              <div class="row">
+                                <h5>Please complete the form below for your complaints.</h5>
+                                
+                                <hr>
+                                  <div class="col-sm-12 mb-3">
+                                      <div class="form-group">
+                                          <label class="required-field" for="Date">Date of filling the form:</label>
+                                          <input type="date" class="form-control" id="Date" name="Date">
+                                      </div>
+                                  </div>
+              
+                    
+              
+                                  <div class="col-sm-12 mb-3">
+                                      <div class="form-group">
+                                          <label class="required-field" for="CompName">Complainant's Name:</label>
+                                          <input type="text" class="form-control" id="CompName" name="CompName">
+                                      </div>
+                                  </div>
+              
+                                  <div class="col-sm-12 mb-3">
+                                      <div class="form-group">
+                                          <label for="email">Email</label>
+                                          <input type="text" class="form-control" id="email" name="email">
+                                      </div>
+                                  </div>
+                                  <hr>
+              
+                                  <div class="col-sm-12 mb-3">
+                                      <div class="form-group">
+                                          <label class="required-field" for="message">The complaint is regarding:</label>
+                                          <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                                      </div>
+                                  </div>
+
+                                  
+                                  <div class="col-sm-12 mb-3">
+                                    <div class="form-group">
+                                        <label class="required-field" for="complaint">The nature of complaint:</label>
+                                        <textarea class="form-control" id="complaint" name="complaint" rows="4"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 mb-3">
+                                  <div class="form-group">
+                                      <label for="name">Name of the company/person against which/whom the complaint is filed:</label>
+                                      <input type="text" class="form-control" id="name" name="name">
+                                  </div>
+                              </div>
+
+                              <div class="col-sm-12 mb-3">
+                                <div class="form-group">
+                                    <label class="required-field" for="details">The specific details of the complaint:</label>
+                                    <textarea class="form-control" id="details" name="details" rows="4"></textarea>
+                                </div>
+                            </div>
+              
+                                  <div class="col-sm-12 mb-3">
+                                      <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                                  </div>
+              
+                              </div>
+                          </form>
+                      </div>
+                      <!-- End Contact Form Wrapper -->
+              
+                  </div>
+              </div>
+          </div>
+
+          <style>
+                      body{
+              margin-top:20px;
+              background:#eee;
+          }
+          .gradient-brand-color {
+              background-image: -webkit-linear-gradient(0deg, #08533F 0%, #08533F 100%);
+              background-image: -ms-linear-gradient(0deg, #08533F 0%, #08533F 100%);
+              color: #fff;
+          }
+          .contact-info__wrapper {
+              overflow: hidden;
+              border-radius: .625rem .625rem 0 0
+          }
+
+          @media (min-width: 1024px) {
+              .contact-info__wrapper {
+                  border-radius: 0 .625rem .625rem 0;
+                  padding: 5rem !important
+              }
+          }
+          .contact-info__list span.position-absolute {
+              left: 0
+          }
+          .z-index-101 {
+              z-index: 101;
+          }
+          .list-style--none {
+              list-style: none;
+          }
+          .contact__wrapper {
+              background-color: #fff;
+              border-radius: 0 0 .625rem .625rem
+          }
+
+          @media (min-width: 1024px) {
+              .contact__wrapper {
+                  border-radius: .625rem 0 .625rem .625rem
+              }
+          }
+          @media (min-width: 1024px) {
+              .contact-form__wrapper {
+                  padding: 5rem !important
+              }
+          }
+          .shadow-lg, .shadow-lg--on-hover:hover {
+              box-shadow: 0 1rem 3rem rgba(132,138,163,0.1) !important;
+          }
+          </style>
             
 
             <!--END YOUR CONTENT-->
