@@ -203,13 +203,12 @@
 
   </header><!-- End Header -->
 
-  <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-heading">ADMIN TOOL</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link collapsed" href="admin_dashboard.html">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -222,22 +221,22 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="components-alerts.html">
+            <a href="admin_201file_account.html">
               <i class="bi bi-circle"></i><span>Add Employee</span>
             </a>
           </li>
           <li>
-            <a href="components-accordion.html">
+            <a href="admin_employee_registry_list.html">
               <i class="bi bi-circle"></i><span>Employee List</span>
             </a>
           </li>
           <li>
-            <a href="components-badges.html">
+            <a href="admin_201file_account.html">
               <i class="bi bi-circle"></i><span>Edit Employee</span>
             </a>
           </li>
           <li>
-            <a href="components-breadcrumbs.html">
+            <a href="admin_search_employee_view.html">
               <i class="bi bi-circle"></i><span>Search Employee</span>
             </a>
           </li>
@@ -250,18 +249,18 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="forms-elements.html">
+            <a class="nav-link" href="admin_add_applicant.html">
               <i class="bi bi-circle"></i><span>Add Applicant</span>
             </a>
           </li>
           <li>
-            <a href="forms-layouts.html">
+            <a href="admin_manage_applicant_view.html">
               <i class="bi bi-circle"></i><span>Applicant List</span>
             </a>
           </li>
           
           <li>
-            <a href="forms-validation.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Search Applicant</span>
             </a>
           </li>
@@ -284,7 +283,7 @@
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
+        <a class="nav-link collapsed" href="admin-IPCRF-search.html">
           <i class="bi bi-check-square"></i>
           <span>Employee IPCRF</span>
         </a>
@@ -292,7 +291,7 @@
 
       <li class="nav-heading">REWARDS & RECOGNITION</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
+        <a class="nav-link collapsed" href="#">
           <i class="bi bi-award"></i>
           <span>Award</span>
         </a>
@@ -300,7 +299,7 @@
 
       <li class="nav-heading">LEARNING DEVELOPMENT</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
           <i class="bi bi-people-fill"></i>
           <span>Training & Seminar</span>
         </a>
@@ -313,17 +312,17 @@
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="icons-bootstrap.html">
+            <a href="admin-offices.html">
               <i class="bi bi-circle"></i><span>Office</span>
             </a>
           </li>
           <li>
-            <a href="icons-remix.html">
+            <a href="admin_accounts_view.html">
               <i class="bi bi-circle"></i><span>Accounts</span>
             </a>
           </li>
           <li>
-            <a href="icons-boxicons.html">
+            <a href="calendar.html">
               <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
             </a>
           </li>
@@ -336,7 +335,7 @@
         </a>
       </li><!-- End Login Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="admin_dtr_form.html">
           <i class="bi bi-clock"></i>
           <span>DTR</span>
         </a>
@@ -346,6 +345,8 @@
     </ul>
 
   </aside><!-- End Sidebar-->
+
+
   <main id="main">
     <div class="pagetitle">
       <h1>List of Employee</h1>
@@ -367,20 +368,20 @@
     <section class="breadcrumbs" id="#Filelayout">
 
       <div class="container">
-        <div class="d-flex w-100">
-          <h1 class="mx-auto text-center custom-text-label">Employee 201 Files </h1>
-        </div>
+        <div class="d-flex w-100" style = "margin-left: -365px ; font-size: 20px; font-family: Poppins; font-weight: bold;">
+          <h1 class="mx-auto text-center custom-text">Employee 201 Files </h1>
+      </div>
 
-        <div class="d-flex w-100">
-          <a type="button" id="AccountBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Account</a>
-          <a type="button" id="PersonalInfoBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Personal Data
-            Sheet</a>
-          <a type="button" id="AppointmentBtn"
-            class="btn btn-success flex-fill rounded-0 custom-201-btn">Appointment</a>
-          <a type="button" id="AttachmentBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn">Attachments</a>
-          <a type="button" id="LeaveCreditBtn" class="btn btn-success flex-fill rounded-0 custom-account-btn">Leave
-            Credits</a>
-        </div>
+      <div class="d-flex w-100" style="font-weight: bold;">
+        <a type="button" id="AccountBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn" style="font-weight: bold; font-size: 14px;">Account</a>
+        <a type="button" id="PersonalInfoBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn"style="font-weight: bold; font-size: 14px;">Personal Data
+          Sheet</a>
+        <a type="button" id="AppointmentBtn"
+          class="btn btn-success flex-fill rounded-0 custom-201-btn" style="font-weight: bold; font-size: 14px;">Appointment</a>
+        <a type="button" id="AttachmentBtn" class="btn btn-success flex-fill rounded-0 custom-201-btn" style="font-weight: bold; font-size: 14px;">Attachments</a>
+        <a type="button" id="LeaveCreditBtn" class="btn btn-success flex-fill rounded-0 custom-account-btn"style="font-weight: bold; font-size: 14px;">Leave
+          Credits</a>
+      </div>
 
         <div class="d-flex w-100">
           <h1 class="mx-auto text-center custom-text">Leave Credits</h1>

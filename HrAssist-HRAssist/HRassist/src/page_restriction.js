@@ -36,6 +36,8 @@ export function UserLoginChecker(Account_UserID, User_Action) {
         //console.log("User login...123");
         const userlevel = employees[0].UserLevel;
 
+        console.log(employees[0].AccountStatus)
+
         // get the current path of user
         const currentPath = window.location.pathname;
         if (employees[0].AccountStatus === "Deactivated") {
