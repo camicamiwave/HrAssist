@@ -20,6 +20,12 @@
   <!-- Favicon -->
   <link href="img/hricon.png" rel="icon">
 
+      <script src= 
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> 
+        </script> 
+        <script src= 
+    "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"> 
+        </script> 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link
@@ -361,13 +367,15 @@
       </nav>
     </div><!-- End Page Title -->
 
-
+    
     <section class="section dashboard" style="display: none">
       <div class="row justify-content-center">
         <div class="col-md-12">
           <div class="card d-flex justify-content-center">
             <div class="card-header text-left"><i class="bi bi-calendar" style="font-size: 17px;"></i>&nbsp;&nbsp; Leave
               Management</div>
+
+              
             <div class="card-body text-center">
 
               <br>
@@ -383,7 +391,7 @@
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody >
                     <tr>
                       <th scope="row">1</th>
                       <td>Mark Kim</td>
@@ -435,6 +443,7 @@
     
     <section class="section dashboard">
       <!--START YOUR CONTENT HERE -->
+      <input type="text" class="form-control" placeholder="Search Here" id="txtInputTable" style="width: 15vw; float: right; margin-bottom: 2vh;">
       <div class="content-wrapper">
         <div class="table">
           <div class="table-header">
@@ -459,7 +468,7 @@
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody> 
+            <tbody id="tableDetails"> 
 
             </tbody>
           </table>
@@ -472,6 +481,18 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
+
+    <script>
+       $(document).ready(function () { 
+            $("#txtInputTable").on("keyup", function () { 
+                var value = $(this).val().toLowerCase();      
+                $("#tableDetails tr").filter(function () { 
+                    $(this).toggle($(this).text() 
+                      .toLowerCase().indexOf(value) > -1) 
+                }); 
+            }); 
+        }); 
+  </script>
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -499,6 +520,8 @@
 
 
 
+
+
   <!-- JavaScript -->
   <script src="js/script.js"></script>
 
@@ -506,6 +529,8 @@
   <script src="bundles/leave_management.bundle.js"></script>
   <script src="bundles/auth.bundle.js"></script>
   <script src="bundles/navbar.bundle.js"></script>
+
+  
 
 </body>
 
