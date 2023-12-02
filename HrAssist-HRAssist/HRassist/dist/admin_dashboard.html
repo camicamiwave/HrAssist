@@ -39,7 +39,7 @@
 
   <!-- Template Main CSS File -->
   <link href="css/employee-template.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="css/employee-template.css" rel="stylesheet">
 
 
 </head>
@@ -212,117 +212,148 @@
   </header><!-- End Header -->
 
  
-   <!-- Sidebar -->
-   <aside id="sidebar" class="sidebar">
+  <aside id="sidebar" class="sidebar">
+
     <ul class="sidebar-nav" id="sidebar-nav">
-      <li class="nav-heading">ADMIN TOOL</li>
-        <li class="nav-item">
-            <a class="nav-link" href="admin_dashboard.html">
-                <i class="bi bi-grid"></i>
-                <span>Dashboard</span>
+        <li class="nav-heading">ADMIN TOOL</li>
+      <li class="nav-item">
+        <a class="nav-link" href="admin_dashboard.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="admin_201file_account.html">
+              <i class="bi bi-circle"></i><span>Add Employee</span>
             </a>
-        </li><!-- End Dashboard Nav -->
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="admin_accounts_view.html">
-                <i class="bx bxs-user-account"></i>
-                <span>Accounts</span>
+          </li>
+          <li>
+            <a href="admin_employee_registry_list.html">
+              <i class="bi bi-circle"></i><span>Employee List</span>
             </a>
-        </li><!-- End Accounts Nav -->
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="admin-offices.html">
-              <i class="bx bxs-building-house"></i>
-              <span>Office</span>
-          </a>
-      </li><!-- End Accounts Nav -->
+          </li>
+          <li>
+            <a href="admin_201file_account.html">
+              <i class="bi bi-circle"></i><span>Edit Employee</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_search_employee_view.html">
+              <i class="bi bi-circle"></i><span>Search Employee</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-person"></i><span>Manage Applicant</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="admin_add_applicant.html">
+              <i class="bi bi-circle"></i><span>Add Applicant</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_manage_applicant_view.html">
+              <i class="bi bi-circle"></i><span>Applicant List</span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Search Applicant</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
+            <i class="bx bxs-briefcase"></i>
+            <span>Job Vacancy</span>
+        </a>
+    </li><!-- End Job Vacancy Nav -->
+
+    <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-bar-chart-line"></i>
+          <span>Employee Performance</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin-IPCRF-search.html">
+          <i class="bi bi-check-square"></i>
+          <span>Employee IPCRF</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-heading">REWARDS & RECOGNITION</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-award"></i>
+          <span>Award</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li class="nav-heading">LEARNING DEVELOPMENT</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+          <i class="bi bi-people-fill"></i>
+          <span>Training & Seminar</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+      <li class="nav-heading">CONFIGURATION</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gear"></i><span>Configuration</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="admin-offices.html">
+              <i class="bi bi-circle"></i><span>Office</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_accounts_view.html">
+              <i class="bi bi-circle"></i><span>Accounts</span>
+            </a>
+          </li>
+          <li>
+            <a href="calendar.html">
+              <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Icons Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-login.html">
+          <i class="bi bi-calendar"></i>
+          <span>Leave Management</span>
+        </a>
+      </li><!-- End Login Page Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="admin_dtr_form.html">
-            <i class="bi bi-clock"></i>
-            <span>DTR</span>
+          <i class="bi bi-clock"></i>
+          <span>DTR</span>
         </a>
-    </li><!-- End DTR Nav -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="admin_search_employee_view.html">
-              <i class="bi bi-search"></i>
-              <span>Search Employee</span>
-          </a>
-      </li><!-- End Search Nav -->
-  
-        <li class="nav-heading">Recruitment, Selection, & Placement</li>
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="admin_201file_account.html">
-            <i class="bi bi-file-text"></i>
-            <span>201 File</span>
-          </a>
-      </li><!-- End Manage Employee Nav -->
-      
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
-              <i class="bx bxs-briefcase"></i>
-              <span>Job Vacancy</span>
-          </a>
-      </li><!-- End Job Vacancy Nav -->
+      </li><!-- End Login Page Nav -->
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="admin_manage_applicant_view.html">
-                <i class="bi bi-people"></i>
-                <span>Manage Applicant</span>
-            </a>
-        </li><!-- End Manage Applicant Nav -->
-  
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="admin_employee_registry_view.html">
-                <i class="bi bi-person"></i>
-                <span>Manage Employee</span>
-            </a>
-        </li><!-- End Manage Employee Nav -->
 
-  
-        <li class="nav-heading">LEARNING & DEVELOPMENT</li>
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
-                <i class="bx bxs-group"></i>
-                <span>Training & Seminar</span>
-            </a>
-        </li><!-- End Training & Seminar Nav -->
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="calendar.html">
-                <i class="bx bxs-calendar"></i>
-                <span>Calendar & Scheduling</span>
-            </a>
-        </li><!-- End Calendar & Scheduling Nav -->
-  
-        <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="admin_request.html">
-                <i class="bi bi-envelope"></i>
-                <span>Employee Request</span>
-            </a>
-        </li><!-- End Request Nav -->
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
-                <i class="bi bi-check-square"></i>
-                <span>IPCR</span>
-            </a>
-        </li><!-- End IPCR Nav -->
-  
-        <li class="nav-heading">REWARDS AND RECOGNITION</li>
-  
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="admin_rewards_view.html">
-                <i class="bi bi-award"></i>
-                <span>Award</span>
-            </a>
-        </li><!-- End Award Nav -->
     </ul>
-  </aside><!-- End Sidebar -->
+
+  </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
@@ -363,7 +394,7 @@
                   </div>
   
                   <div class="card-body">
-                    <h5 class="card-title">Employees <span>| This Month</span></h5>
+                    <h5 class="card-title">Employees <span>| Today</span></h5>
   
                     <div class="d-flex align-items-center">
   
@@ -403,7 +434,7 @@
                   </div>
   
                   <div class="card-body">
-                    <h5 class="card-title">Pending leaves <span>| This Month</span></h5>
+                    <h5 class="card-title">Pending leaves <span>| Today</span></h5>
   
                     <div class="d-flex align-items-center">
                       <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -420,37 +451,109 @@
               </div><!-- End Leave Card -->
 
               <!-- Pending Request Days -->
-<div class="col-xxl-4 col-md-12">
-  <div class="card info-card revenue-card">
-    <div class="filter">
-      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-        <li class="dropdown-header text-start">
-          <h6>Filter</h6>
-        </li>
-        <li><a class="dropdown-item" href="#">Today</a></li>
-        <li><a class="dropdown-item" href="#">This Month</a></li>
-        <li><a class="dropdown-item" href="#">This Year</a></li>
-      </ul>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title" id="pendingLabel">Available Positions <span>| This Month</span></h5>
-      <div class="d-flex align-items-center">
-        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-          <img src="assets/img/dashboard/vacancy.png" alt="1">
-        </div>
-        <div class="ps-3">
-          <h6 id="totalRequest">3</h6>
-          <span class="text-muted small pt-2 ps-1">total available job positions</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div><!-- End Pending Request Days -->
+            <div class="col-xxl-4 col-md-12">
+              <div class="card info-card revenue-card">
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title" id="pendingLabel">Available Positions <span>| Today</span></h5>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <img src="assets/img/dashboard/vacancy.png" alt="1">
+                    </div>
+                    <div class="ps-3">
+                      <h6 id="totalRequest">3</h6>
+                      <span class="text-muted small pt-2 ps-1">total available job positions</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Pending Request Days -->
 
-<!-- Activities Card -->
-</div>
-</div><!-- End Left side columns -->
+            <!-- Job Vacancy -->
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Job Vacancy <span>| Today</span></h5>
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Customer</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><a href="#">1</a></th>
+                        <td>Brandon Jacob</td>
+                        <td><a href="#" class="text-primary">At praesentium minu</a></td>
+                        <td>$64</td>
+                        
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">2</a></th>
+                        <td>Bridie Kessler</td>
+                        <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
+                        <td>$47</td>
+                        
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">3</a></th>
+                        <td>Ashleigh Langosh</td>
+                        <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
+                        <td>$147</td>
+                        
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">4</a></th>
+                        <td>Angus Grady</td>
+                        <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
+                        <td>$67</td>
+                        
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">5</a></th>
+                        <td>Raheem Lehner</td>
+                        <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
+                        <td>$165</td>
+                        
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div><!-- End Job Vacancy -->
+              </div>
+                  </div><!-- End Left side columns -->
 
 <!-- Right side columns -->
 <div class="col-lg-4">
@@ -533,35 +636,6 @@
   </section>
   
 </div>
-
-<!-- Pie Chart -->
-<div class="col-lg-8">
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Employee Status</h5>
-      <div id="pieChart"></div>
-      <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          new ApexCharts(document.querySelector("#pieChart"), {
-            series: [44, 43, 22],
-            chart: {
-              height: 350,
-              type: 'pie',
-              toolbar: {
-                show: true
-              }
-            },
-            labels: ['Permanent', 'Job Order', 'Part Time']
-          }).render();
-        });
-      </script>
-    </div>
-  </div>
-</div>
-</div><!-- End Right side columns -->
-</div>
-
-
 
 
     <!--END YOUR CONTENT-->

@@ -204,107 +204,149 @@
   </header><!-- End Header -->
 
   
-<!-- ======= Sidebar ======= -->
-<aside id="sidebar" class="sidebar">
-  <ul class="sidebar-nav" id="sidebar-nav">
-    <li class="nav-heading">ADMIN TOOL</li>
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-heading">ADMIN TOOL</li>
       <li class="nav-item">
-          <a class="nav-link collapsed" href="admin_dashboard.html">
-              <i class="bi bi-grid"></i>
-              <span>Dashboard</span>
-          </a>
+        <a class="nav-link collapsed" href="admin_dashboard.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
       </li><!-- End Dashboard Nav -->
 
+      <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
       <li class="nav-item">
-          <a class="nav-link" href="admin_accounts_view.html">
-              <i class="bx bxs-user-account"></i>
-              <span>Accounts</span>
-          </a>
-      </li><!-- End Accounts Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="admin-offices.html">
-            <i class="bx bxs-building-house"></i>
-            <span>Office</span>
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
+          
         </a>
-    </li><!-- End Accounts Nav -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="admin_dtr_form.html">
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="admin_201file_account.html">
+              <i class="bi bi-circle"></i><span>Add Employee</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_employee_registry_list.html">
+              <i class="bi bi-circle"></i><span>Employee List</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_201file_account.html">
+              <i class="bi bi-circle"></i><span>Edit Employee</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_search_employee_view.html">
+              <i class="bi bi-circle"></i><span>Search Employee</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-person"></i><span>Manage Applicant</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="admin_add_applicant.html">
+              <i class="bi bi-circle"></i><span>Add Applicant</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_manage_applicant_view.html">
+              <i class="bi bi-circle"></i><span>Applicant List</span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Search Applicant</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
+            <i class="bx bxs-briefcase"></i>
+            <span>Job Vacancy</span>
+        </a>
+    </li><!-- End Job Vacancy Nav -->
+
+    <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-bar-chart-line"></i>
+          <span>Employee Performance</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin-IPCRF-search.html">
+          <i class="bi bi-check-square"></i>
+          <span>Employee IPCRF</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-heading">REWARDS & RECOGNITION</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-award"></i>
+          <span>Award</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li class="nav-heading">LEARNING DEVELOPMENT</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+          <i class="bi bi-people-fill"></i>
+          <span>Training & Seminar</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+      <li class="nav-heading">CONFIGURATION</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gear"></i><span>Configuration</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="admin-offices.html">
+              <i class="bi bi-circle"></i><span>Office</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="admin_accounts_view.html">
+              <i class="bi bi-circle"></i><span>Accounts</span>
+            </a>
+          </li>
+          <li>
+            <a href="calendar.html">
+              <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Icons Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-login.html">
+          <i class="bi bi-calendar"></i>
+          <span>Leave Management</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_dtr_form.html">
           <i class="bi bi-clock"></i>
           <span>DTR</span>
-      </a>
-    </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="admin_search_employee_view.html">
-            <i class="bi bi-search"></i>
-            <span>Search Employee</span>
         </a>
-    </li><!-- End Search Nav -->
+      </li><!-- End Login Page Nav -->
 
-      <li class="nav-heading">Recruitment, Selection, & Placement</li>
 
-      <li class="nav-item">
-          <a class="nav-link collapsed" href="admin_manage_applicant_view.html">
-              <i class="bi bi-people"></i>
-              <span>Manage Applicant</span>
-          </a>
-      </li><!-- End Manage Applicant Nav -->
+    </ul>
 
-      <li class="nav-item">
-          <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
-              <i class="bx bxs-briefcase"></i>
-              <span>Job Vacancy</span>
-          </a>
-      </li><!-- End Job Vacancy Nav -->
-
-      <li class="nav-item">
-          <a class="nav-link collapsed" href="admin_employee_registry_view.html">
-              <i class="bi bi-person"></i>
-              <span>Manage Employee</span>
-          </a>
-      </li><!-- End Manage Employee Nav -->
-
-      <li class="nav-heading">LEARNING & DEVELOPMENT</li>
-
-      <li class="nav-item">
-          <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
-              <i class="bx bxs-group"></i>
-              <span>Training & Seminar</span>
-          </a>
-      </li><!-- End Training & Seminar Nav -->
-
-      <li class="nav-item">
-          <a class="nav-link collapsed" href="calendar.html">
-              <i class="bx bxs-calendar"></i>
-              <span>Calendar & Scheduling</span>
-          </a>
-      </li><!-- End Calendar & Scheduling Nav -->
-
-      <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
-
-      <li class="nav-item">
-          <a class="nav-link collapsed" href="admin_request.html">
-              <i class="bi bi-envelope"></i>
-              <span>Employee Request</span>
-          </a>
-      </li><!-- End Request Nav -->
-
-      <li class="nav-item">
-          <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
-              <i class="bi bi-check-square"></i>
-              <span>IPCR</span>
-          </a>
-      </li><!-- End IPCR Nav -->
-
-      <li class="nav-heading">REWARDS AND RECOGNITION</li>
-
-      <li class="nav-item">
-          <a class="nav-link collapsed" href="admin_rewards_view.html">
-              <i class="bi bi-award"></i>
-              <span>Award</span>
-          </a>
-      </li><!-- End Award Nav -->
-  </ul>
-</aside><!-- End Sidebar -->
+  </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
@@ -325,29 +367,51 @@
                 <div class="content-wrapper">
                     <div class="table">
                         <div class="table-header">
-                            <p>List of Applicants</p>
-                            <a href="admin-account.html"><button class="add-new">+ Add Account</button></a>
+                            <p>List of Accounts</p>
+                            <a href="admin-account.html"><button class="add-new" style = "background-color: #08533F; color: white; border-radius: 5px;">+ Add Account</button></a>
                         </div>
                         <div class="table-header">
                             <div class="group">
                                 <p>Filter</p>
+                                <select id="category" onchange="filterData()">
+                                  <option value="all">All</option>
+                                  <option value="admin">Admin</option>
+                                  <option value="applicant">Applicant</option>
+                                  <option value="employee">Employee</option>
+                              </select>
                             </div>
                         </div>
+                        <script>
+                          function filterData() {
+                              var selectedCategory = document.getElementById('category').value;
+                              var dataRows = document.querySelectorAll('.data-row');
+                      
+                              dataRows.forEach(function (row) {
+                                  var rowCategory = row.getAttribute('data-category');
+                                  if (selectedCategory === 'all' || selectedCategory === rowCategory) {
+                                      row.style.display = 'table-row';
+                                  } else {
+                                      row.style.display = 'none';
+                                  }
+                              });
+                          }
+                      </script>
+                      
                         <table class="content-table" id="accountTable">
                             <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Email</th>
-                                    <th>Category</th>
+                                    <th id="category">Category</th>
                                     <th>Account Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr class="data-row" data-category="applicant">
                                     <td id="accountIdNum">1</td>
                                     <td id="accountName">Juan Dela Cruz</td>
-                                    <td id="accountUserLevel">Applicant</td>
+                                    <td id="category">Applicant</td>
                                     <td id="accountStatus">Active</td>
 
                                     <td>

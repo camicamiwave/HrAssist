@@ -222,6 +222,14 @@
         </a>
       </li>
 
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="employee-complaint.html">
+          <i class="bi bi-send-plus"></i>
+          <span>Employee Concerns</span>
+        </a>
+      </li>
+
       <li class="nav-heading">Employee Profile</li>
 
       <li class="nav-item">
@@ -260,45 +268,6 @@
         <div class="col-lg-8">
           <div class="row">
 
-            <!-- Absents Card -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title">Absents <span>| This Month</span></h5>
-
-                  <div class="d-flex align-items-center">
-
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                       <img src="assets/img/dashboard/dash1.png" alt="1">
-                    </div>
-                    <div class="ps-3">
-                      <h6>10</h6>
-                      <div class="ps-3">
-                      
-                        <span class="text-muted small pt-2 ps-1">total absenses</span>
-  
-                      </div>
-                     
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div><!-- End Absenses Card -->
 
             <!-- Leave Card -->
             <div class="col-xxl-4 col-md-6">
@@ -318,7 +287,7 @@
                 </div>
 
                 <div class="card-body">
-                  <h5 class="card-title">Leaves <span>| This Month</span></h5>
+                  <h5 class="card-title">Leave Credits </h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -326,7 +295,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>14</h6>
-                      <span class="text-muted small pt-2 ps-1">remaining leaves</span>
+                      <span class="text-muted small pt-2 ps-1">total leave credits</span>
                     </div>
                   </div>
                 </div>
@@ -334,73 +303,6 @@
               </div>
             </div><!-- End Leave Card -->
 
-            <!-- Worked Days -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card revenue-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title">Worked Days <span>| This Month</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <img src="assets/img/dashboard/dash3.png" alt="1">
-                    </div>
-                    <div class="ps-3">
-                      <h6>19</h6>
-                      <span class="text-muted small pt-2 ps-1">remaining work days</span>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-            </div><!-- End Work Days Card -->
-
-            <!-- Pending Request Days -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card revenue-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title" id="pendingLabel">Pending <span>| This Month</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <img src="assets/img/dashboard/dash5.png" alt="1">
-                    </div>
-                    <div class="ps-3">
-                      <h6 id="totalRequest">3</h6>
-                      <span class="text-muted small pt-2 ps-1">total request</span>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-            </div><!-- Pending Request Days -->
 
             <!-- Activities Card -->
         
@@ -475,6 +377,24 @@
 
                 </div>
 
+              </div>
+
+              <div class="card mb-4">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="img/workpolicy.PNG" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">CSC Work Policy</h5>
+                      <br>
+                      <p class="card-text" style="text-align: justify;">All government officials and employees are required to render eight (8) working hours a day for five working days a week or a total of forty (40) 
+                        hours a week, exclusive of time for lunch.</p>
+              
+                      <button class="btn btn-primary" onclick="redirectToAnotherPage()">Read More</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div><!-- End Recent Sales -->
 
@@ -608,10 +528,13 @@
           </div><!-- End News & Updates -->
 
         </div><!-- End Right side columns -->
+        
           </div>
           </div>
 
         </div>
+
+        
 
       </div>
     </section>
@@ -636,6 +559,12 @@
   
   <script src="bundles/navbar.bundle.js"></script>
   <script src="bundles/employee_interface.bundle.js"></script>
+
+  <script>
+     function redirectToAnotherPage() {
+        window.location.href = 'https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/11/49201#:~:text=All%20government%20officials%20and%20employees,00%20a.m.%20%E2%80%94%2012%3A00%20a.m.';
+    }
+  </script>
 
 </body>
 

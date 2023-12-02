@@ -221,7 +221,15 @@
       <li class="nav-item">
         <a class="nav-link" href="employee-request.html">
           <i class="bx bxs-calendar-alt"></i>
-          <span>Request</span>
+          <span>Request</span> 
+        </a>
+      </li>
+
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="employee-complaint.html">
+          <i class="bi bi-send-plus"></i>
+          <span>Employee Concerns</span>
         </a>
       </li>
 
@@ -377,7 +385,7 @@
         </div>
         <div class="ps-3">
           <h6>Types of Leave</h6> 
-        <div class="b"><button>View</button></div>
+        <div class="b"><button onclick="redirectToAnotherPage()">View</button></div>
         </div>
       </div>
     </div>
@@ -552,7 +560,7 @@
           </div>
         </section>
       
-      </main><!-- End #main -->
+
 
 
  <!--EM-->
@@ -586,6 +594,12 @@
 
   <script src="bundles/navbar.bundle.js"></script>
   <script src="bundles/employee_pass_slip.bundle.js"></script>
+
+  <script>
+    function redirectToAnotherPage() {
+        window.location.href = 'employee-leave-info.html';
+    }
+  </script>
 
 </body>
 
