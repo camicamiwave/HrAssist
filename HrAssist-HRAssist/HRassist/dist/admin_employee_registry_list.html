@@ -362,8 +362,7 @@
                   <div class="content-wrapper">
                       <div class="table">
                           <div class="table-header">
-                              <p>Filter</p>
-                              <a href="admin_201file_account.html"><button class="btn-add" style="padding: 10px 20px; color: #ffffff; background-color: #08533F; border-radius: 12px;">+ Add Employee</button></a>
+                              <a href="admin_201file_account.html"><button class="btn-add" style="padding: 10px 20px; color: #ffffff; background-color: #08533F; border-radius: 12px; margin-left: 757px;">+ Add Employee</button></a>
                           </div>
                           <section class="hero-section">
                             <div class="content">
@@ -375,9 +374,9 @@
                                   <li><a href="#">Part-Time</a></li>
                                 </ul>
                               </div>
-                              <form action="#" class="search-form">
-                                <input type="text" placeholder="Search for any job vacancy..." required>
-                                <button class="material-symbols-outlined" type="sumbit">search</button>
+                              <form class="search-form" method="POST" action="#">
+                                <input type="text" name="query" placeholder="Search for Job Vacancy" title="Enter search keyword" required>
+                                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
                               </form>
                             </div>
                           </section>

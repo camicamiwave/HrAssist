@@ -26,19 +26,20 @@ function convertToLeaveEquivalence(totalMinutes) {
     return converted;
 }
 
-function subtractLeaveCredits(remainingLeaveCredits, leaveEquivalence) {
-    remainingLeaveCredits -= leaveEquivalence;
+function subtractLeaveCredits(remainingLeaveCredits, leaveEquivalence, absences = 0) {
+    remainingLeaveCredits -= leaveEquivalence + absences;
     return Math.max(remainingLeaveCredits, 0);
 }
 
-// Example usage
+// Change these values
 const tardinessMinutes = 120;
 const undertimeMinutes = 480;
+const absencesHours = 16;
 let remainingLeaveCredits = 24;
 
 const totalMinutes = tardinessMinutes + undertimeMinutes;
 const leaveEquivalence = convertToLeaveEquivalence(totalMinutes);
-remainingLeaveCredits = subtractLeaveCredits(remainingLeaveCredits, leaveEquivalence);
+remainingLeaveCredits = subtractLeaveCredits(remainingLeaveCredits, leaveEquivalence, absencesHours / 8);
 
 console.log(`Leave equivalence: ${leaveEquivalence.toFixed(3)}`);
 console.log(`Remaining leave credits: ${remainingLeaveCredits.toFixed(3)} days`);
