@@ -17,6 +17,9 @@
     <!-- Favicon -->
   <link href="img/hricon.png" rel="icon">
 
+  <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+  <script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -367,15 +370,16 @@
                           <section class="hero-section">
                             <div class="content">
                               <div class="popular-tags">
-                                Filter:
-                                <ul class="tags">
-                                  <li><a href="#">All</a></li>
-                                  <li><a href="#">Full-Time</a></li>
-                                  <li><a href="#">Part-Time</a></li>
-                                </ul>
+                                <div class="group" style="position: relative;">
+                                  <p style="margin-top: 2vh;">Filter</p>
+                                  <select id="filterdropdown" style="margin-left: 5vh; position: absolute; top: -10px; width: 10vw; margin-top: 2vh;">
+                                    <option value="all">All</option>
+                                    <option value="fulltime">Full-Time</option>
+                                    <option value="partime">Part-Time</option>
+                                </select>
                               </div>
                               <form class="search-form" method="POST" action="#">
-                                <input type="text" name="query" placeholder="Search for Job Vacancy" title="Enter search keyword" required>
+                                <input type="text" name="query" placeholder="Search for Job Vacancy" title="Enter search keyword" id="txtInputTable" required style="margin-left: 54vw; width: 15vw; margin-bottom: -1vh;">
                                 <button type="submit" title="Search"><i class="bi bi-search"></i></button>
                               </form>
                             </div>
@@ -392,7 +396,7 @@
                                       <th>Action</th> 
                                   </tr>
                               </thead>
-                              <tbody>
+                              <tbody id="tableDetails">
                                   <!--
                                   <tr>
                                       <td><img src="img/admin/user.jpg"></td>
@@ -412,6 +416,33 @@
     </main><!-- End #main -->
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      $(document).ready(function () { 
+      $("#txtInputTable").on("keyup", function () { 
+          var value = $(this).val().toLowerCase();      
+          $("#tableDetails tr").filter(function () { 
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1) 
+          }); 
+      });
+  
+      $('#filterdropdown').on('change', function(){
+          var selectedCategory = $(this).val().toLowerCase(); // Convert to lowercase
+          if (selectedCategory === 'all') {
+              $('#employeeTable tbody tr').show();
+          } else {
+              $('#employeeTable tbody tr').hide();
+  
+              // Capitalize the first letter of selectedCategory
+              selectedCategory = selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1);
+  
+              $('#employeeTable tbody tr:has(td:contains("' + selectedCategory + '"))').show();
+          }
+      });
+  });
+  </script>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
