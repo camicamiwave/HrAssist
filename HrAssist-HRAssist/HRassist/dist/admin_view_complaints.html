@@ -507,13 +507,12 @@
         </nav><!-- End Icons Navigation -->
 
     </header><!-- End Header -->
-
     <aside id="sidebar" class="sidebar">
 
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-heading">ADMIN TOOL</li>
           <li class="nav-item">
-            <a class="nav-link collapsed" href="admin_dashboard.html">
+            <a class="nav-link" href="admin_dashboard.html">
               <i class="bi bi-grid"></i>
               <span>Dashboard</span>
             </a>
@@ -536,7 +535,7 @@
                 </a>
               </li>
               <li>
-                <a href="components-badges.html">
+                <a href="admin_201file_account.html">
                   <i class="bi bi-circle"></i><span>Edit Employee</span>
                 </a>
               </li>
@@ -592,11 +591,12 @@
               <i class="bi bi-check-square"></i>
               <span>Employee IPCRF</span>
             </a>
+            
           </li><!-- End Contact Page Nav -->
     
           <li class="nav-heading">REWARDS & RECOGNITION</li>
           <li class="nav-item">
-            <a class="nav-link collapsed" href="pages-register.html">
+            <a class="nav-link collapsed" href="#">
               <i class="bi bi-award"></i>
               <span>Award</span>
             </a>
@@ -627,14 +627,14 @@
                 </a>
               </li>
               <li>
-                <a href="calendar">
+                <a href="calendar.html">
                   <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
                 </a>
               </li>
             </ul>
           </li><!-- End Icons Nav -->
           <li class="nav-item">
-            <a class="nav-link" href="admin_request.html">
+            <a class="nav-link collapsed" href="admin_request.html">
               <i class="bi bi-calendar"></i>
               <span>Leave Management</span>
             </a>
@@ -654,12 +654,11 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Leave Request</h1>
+            <h1>Employee Complaint</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="admin_request.html">Request</a></li>
-                    <li class="breadcrumb-item active">View Request</li>
+                    <li class="breadcrumb-item active">View Complaint</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -743,118 +742,18 @@
                                         style="font-family: poppins; font-weight: 300; font-size: 20px; " for="inputApplicantStatus"><b><span id="statusRequest"></span></b></label>
                                 </div>
                             </div>
-
-
-                            <button id="approveBtn" class="btn m-0" data-bs-toggle="modal"
-                            data-bs-target="#approveModal"
-                                style="background-color: rgba(0, 183, 255, 0.733); color: #fff;">Approve</button>
-
-                            <button id="declineBtn" class="btn m-2" data-bs-toggle="modal"
-                                data-bs-target="#declineModal" style="background-color: #ff0000a4; color: #fff;">Decline</button>
+                        
                         </div>
 
                     </div>
                 </div>
 
 
-                <!-- Modal -->
-                <div class="modal fade" id="declineModal" tabindex="-1" role="dialog" aria-labelledby="yearModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="editModalLabel">Decline Leave Request</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-
-                                <form id="declineRequestForm">
-
-                                    <div class="col-md-12"> 
-                                        <label for="withinDetails"><small>Reason</span></small></label><br>
-                                        <textarea id="descriptionText" rows="3" class="form-control" placeholder="Reason"></textarea>
-                                    </div><br>
-                                </form>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                                    onclick="hideDeclineModal()">Close</button>
-                                <input type="button" id="submitApproveBtn" class="btn btn-primary" value="Save">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Modal -->
-                <div class="modal fade" id="approveModal" tabindex="-1" role="dialog" aria-labelledby="yearModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="editModalLabel">Approve Leave Request</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-
-                                <form id="approveRequestForm">
-                                    
-                                    <div class="col-md-12">
-                                        <h7>Remaining Leave: <span>&nbsp;<b id="remainingLeaveNameSpan" >15</b></span></h7>
-                                        <br><hr>
-                                    </div>
-
-                                                            
-                                    <div class="col-md-12">
-                                        <label for="designationName"><small><b>Note: </b><i>The total units of leave taken will be automatically deducted from the total leave credits.</i></small></label>
-                                    </div><br>
-
-                                    <div class="col-md-12">
-                                        <label for="withinDetails"><small>Total units of leave taken: <span style="color: red;">*</span></small></label><br>
-                                        <input type="number" id="designationName" class="form-control" required>
-                                      </div><br>
-
-                                    
-                                      <div class="col-md-12"> 
-                                        <label for="withinDetails"><small>Reason:</span></small></label><br>
-                                        <textarea id="descriptionText" rows="3" class="form-control" placeholder="Reason"></textarea>
-                                    </div><br>
-
-                                </form>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                                    onclick="hideApproveModal()">Close</button>
-                                <input type="button" id="submitApproveBtn1" class="btn btn-primary" value="Save">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <script>
-                    function hideDeclineModal() {
-                        // Hide the modal
-                        $('#declineModal').modal('hide');
-                    }
-
-                    function hideApproveModal() {
-                        // Hide the modal
-                        $('#approveModal').modal('hide');
-                    }
-
-                </script>
-
-
+            
                 <div class="col-xl-8">
                     <!-- Profile picture card-->
                     <div class="card mb-4 mb-xl-3">
-                        <div class="card-header">Leave Request</div>
+                        <div class="card-header">Employee Complaint</div>
                         <div class="card-body text-left">
 
                             <br>
@@ -875,361 +774,67 @@
                             </section> <br>
 
                             <div class="container application-form">
-                                <form id="requestLeaveForm">
-                                    <div class="container">
-                                        <h3 class="text-center">Application For Leave</h3>
-                                    </div>
-                                    <hr><br>
+                                <form action="#" class="contact-form form-validate" novalidate="novalidate">
                                     <div class="row">
-
-                                        <small>
-                                            <p class="fst-italic">*Leave blank if not applicable</p>
-                                        </small>
-                                        <h6>Types of leave to be availed of</h6>
-                                        <div class="form-group">
-                                            <select class="form-control" id="leaveTypeSelector"
-                                                onchange="showHideOtherInput()" disabled>
-                                                <option>--- Select ---</option>
-                                                <option value="Vacation Leave">Vacation Leave</option>
-                                                <option value="Mandatory/Forced Leave">Mandatory/Forced
-                                                    Leave</option>
-                                                <option value="Sick Leave">Sick Leave</option>
-                                                <option value="Maternity Leave">Maternity Leave</option>
-                                                <option value="Paternity Leave">Paternity Leave</option>
-                                                <option value="Special Privilege Leave">Special
-                                                    Privilege Leave</option>
-                                                <option value="Solo Parent Leave">Solo Parent Leave
-                                                </option>
-                                                <option value="Study Leave">Study Leave</option>
-                                                <option value="10-Day VAWC Leave">10-Day VAWC Leave
-                                                </option>
-                                                <option value="Rehabilitation Priviledge">Rehabilitation
-                                                    Priviledge</option>
-                                                <option value="Special Leave Benefits for Women">Special
-                                                    Leave Benefits for Women</option>
-                                                <option value="Special Emergency (Calamity) Leave">
-                                                    Special Emergency (Calamity) Leave
-                                                </option>
-                                                <option value="Adoption Leave">Adoption Leave</option>
-                                                <option value="Others">Others</option>
-                                            </select>
-                                        </div>
-                                    </div><br>
-
-
-                                    <!-- FOR PLEASE SPECIFY -->
-                                    <div id="otherLeaveInput" style="display: none;" class="form-group">
-                                        <label for="otherLeaveReason">Please specify:</label>
-                                        <input type="text" class="form-control" id="otherLeaveReason"
-                                            placeholder="Specify other leave reason" disabled>
-                                        <br>
-                                    </div>
-
-
-                                    <!-- Vacation Leave for specify -->
-                                    <div class="form-group" id="specifyVacationCheckbox" style="display: none;">
-                                        <label for="leaveType">In case of Vacation/Special Privilege
-                                            Leave:</label><br><br>
-
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <input type="radio" id="vacationLeave" name="vacationLocation"
-                                                        value="Within the Philippines" disabled>
-                                                    <label for="withinThePhilippines">Within the
-                                                        Philippines</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label for="withinDetails">Please specify:</label>
-                                                    <input type="text" id="withinDetails" class="form-control"
-                                                        placeholder="Specify details"disabled>
-                                                </div>
-                                                <br>
+                                     
+                                      
+                                      <hr>
+                                        <div class="col-sm-12 mb-3">
+                                            <div class="form-group">
+                                                <label class="required-field" for="Date">Date of filling the form:</label>
+                                                <input type="date" class="form-control" id="Date" name="Date">
                                             </div>
                                         </div>
-                                        <br>
-                                        <div id="abroadSpecifyForm" class="form-group">
-                                            <div class="row">
-
-                                                <div class="col-md-6">
-                                                    <input type="radio" id="vacationLeave" name="vacationLocation"
-                                                        value="Abroad (Specify)" disabled>
-                                                    <label for="abroadSpecify">Abroad (Specify)</label>
-                                                </div>
-                                                <br>
-                                                <br>
-                                                <div class="col-md-6">
-                                                    <label for="abroadDetails">Please specify:</label>
-                                                    <input type="text" id="abroadDetails" class="form-control"
-                                                        placeholder="Specify details" disabled>
-                                                </div>
-
+                    
+                          
+                    
+                                        <div class="col-sm-12 mb-3">
+                                            <div class="form-group">
+                                                <label class="required-field" for="CompName">Complainant's Name:</label>
+                                                <input type="text" class="form-control" id="CompName" name="CompName">
                                             </div>
                                         </div>
-
-                                        <br>
-                                    </div>
-
-
-                                    <!-- Sick Leave for specify -->
-                                    <div class="form-group" id="specifySickCheckbox" style="display: none;">
-                                        <label for="leaveType">In case of Sick Leave:</label><br><br>
-
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <input type="radio" id="sickLeave" name="inHospital"
-                                                        value="In Hospital" disabled>
-                                                    <label for="inHospital">In Hospital</label>
-                                                </div>
-                                                <br>
-                                                <div class="col-md-6">
-                                                    <label for="inputInHospital">Please specify:</label>
-                                                    <input type="text" id="inputInHospital" class="form-control"
-                                                        placeholder="Specify illness" disabled>
-                                                </div>
+                    
+                                        <div class="col-sm-12 mb-3">
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input type="text" class="form-control" id="email" name="email">
                                             </div>
                                         </div>
-                                        <br>
-                                        <div id="sickSpecifyForm" class="form-group">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <input type="radio" id="sickLeave" name="inHospital"
-                                                        value="Out Patient" disabled>
-                                                    <label for="outPatient">Out Patient</label>
-                                                </div>
-                                                <br>
-                                                <div class="col-md-6">
-                                                    <label for="inputoutPatient">Please specify:</label>
-                                                    <input type="text" id="inputoutPatient" class="form-control"
-                                                        placeholder="Specify illness" disabled>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <br>
-                                    </div>
-
-                                    <!-- Special Leave for Women for specify -->
-                                    <div class="form-group" id="specifyWomenCheckbox" style="display: none;">
-                                        <label for="leaveType">In case of Special Leave Benefit for
-                                            Women:</label><br><br>
-
-                                        <div id="SpecialLeaveWomenForm" class="form-group">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <label for="inputSpecialLeaveWomen">Please
-                                                        specify:</label>
-                                                    <input type="text" id="inputSpecialLeaveWomen" class="form-control"
-                                                        placeholder="Specify illness" disabled>
-                                                </div>
-                                            </div>
-                                            <br>
-                                        </div>
-                                    </div>
-
-                                    <!-- Study Leave for specify -->
-                                    <div class="form-group" id="specifyStudyCheckbox" style="display: none;">
-                                        <label for="leaveType">In case of Study Leave:</label><br><br>
-
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <input type="radio" id="studyLeave" name="studyLeave"
-                                                        value="MasterDegree" disabled>
-                                                    <label for="masterDegree">Completion of Master's
-                                                        Degree</label>
-                                                </div>
-                                                <br>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <div id="sickSpecifyForm" class="form-group">
-                                            <div class="col-md-6">
-                                                <input type="radio" id="studyLeave" name="studyLeave" value="Board" disabled>
-                                                <label for="outPatient">BAR/Board Examination Review
-                                                    Other</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <label for="inputInHospital">Purpose:</label>
-                                                <input type="text" id="inputInHospital" disabled class="form-control"
-                                                    placeholder="">
-                                            </div>
-                                            <br><br>
-                                        </div>
-
-
-                                    </div>
-                                    <br>
-
-
-                                    <script>
-                                        function showHideOtherInput() {
-                                            var leaveTypeSelect = document.getElementById('leaveTypeSelector');
-                                            var otherLeaveInput = document.getElementById('otherLeaveInput');
-                                            var specifyVacationCheckbox = document.getElementById('specifyVacationCheckbox');
-                                            var specifySickCheckbox = document.getElementById('specifySickCheckbox')
-                                            var specifyWomenCheckbox = document.getElementById('specifyWomenCheckbox')
-                                            var specifyStudyCheckbox = document.getElementById('specifyStudyCheckbox')
-
-                                            if (leaveTypeSelect.value === 'Others') {
-                                                otherLeaveInput.style.display = 'block';
-                                                specifyVacationCheckbox.style.display = 'none';
-                                                specifySickCheckbox.style.display = 'none';
-                                                specifyWomenCheckbox.style.display = 'none';
-                                                specifyStudyCheckbox.style.display = 'none';
-
-                                            } else if (leaveTypeSelect.value === 'Vacation Leave') {
-                                                otherLeaveInput.style.display = 'none';
-                                                specifyVacationCheckbox.style.display = 'block';
-                                                specifySickCheckbox.style.display = 'none';
-                                                specifyWomenCheckbox.style.display = 'none';
-                                                specifyStudyCheckbox.style.display = 'none';
-
-                                            } else if (leaveTypeSelect.value === 'Sick Leave') {
-                                                otherLeaveInput.style.display = 'none';
-                                                specifyVacationCheckbox.style.display = 'none';
-                                                specifySickCheckbox.style.display = 'block';
-                                                specifyWomenCheckbox.style.display = 'none'
-                                                specifyStudyCheckbox.style.display = 'none';
-
-                                            } else if (leaveTypeSelect.value === 'Special Leave Benefits for Women') {
-                                                otherLeaveInput.style.display = 'none';
-                                                specifyVacationCheckbox.style.display = 'none';
-                                                specifySickCheckbox.style.display = 'none';
-                                                specifyWomenCheckbox.style.display = 'block'
-                                                specifyStudyCheckbox.style.display = 'none';
-
-                                            } else if (leaveTypeSelect.value === 'Study Leave') {
-                                                otherLeaveInput.style.display = 'none';
-                                                specifyVacationCheckbox.style.display = 'none';
-                                                specifySickCheckbox.style.display = 'none';
-                                                specifyWomenCheckbox.style.display = 'none'
-                                                specifyStudyCheckbox.style.display = 'block';
-
-                                            } else {
-                                                otherLeaveInput.style.display = 'none';
-                                                specifyVacationCheckbox.style.display = 'none';
-                                                specifySickCheckbox.style.display = 'none';
-                                                specifyWomenCheckbox.style.display = 'none'
-                                                specifyStudyCheckbox.style.display = 'none';
-                                            }
-                                        }
-                                    </script>
-                                    <hr>
-                                    <h6>Details of Leave</h6>
-
-                                    <!-- Study Leave for specify -->
-                                    <div class="form-group" id="specifyStudyCheckbox">
-                                        <input type="radio" id="detailsOfLeave" name="leaveType"
-                                            value="Monetization Leave">
-                                        <label for="inStudyLeave">&nbsp;&nbsp;Monetization of Leave
-                                            Credit</label><br>
-                                        <input type="radio" id="detailsOfLeave" name="leaveType" value="Terminal Leave">
-                                        <label for="barSpecify">&nbsp;&nbsp;Terminal Leave</label><br>
-                                    </div>
-
-                                    <!-- Study Leave for specify -->
-                                    <div class="form-group" id="specifyStudyCheckbox" style="display: none;">
-                                        <label for="leaveType">In case of Study Leave:</label><br><br>
-
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <input type="radio" id="studyLeave" name="studyLeave"
-                                                        value="MasterDegree">
-                                                    <label for="masterDegree">Completion of Master's
-                                                        Degree</label>
-                                                </div>
-                                                <br>
-                                                <div class="col-md-6">
-                                                    <input type="radio" id="studyLeave" name="studyLeave" value="Board">
-                                                    <label for="outPatient">BAR/Board Examination Review
-                                                        Other</label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div id="sickSpecifyForm" class="form-group">
-                                            <br>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <label for="inputInHospital">Purpose:</label>
-                                                    <input type="text" id="inputInHospital" class="form-control"
-                                                        placeholder="Specify illness">
-                                                </div>
-                                                <br>
-
-                                            </div>
-                                        </div>
-
-                                        <br>
-                                    </div>
-
-
-                                    <!-- Inclusive Date for specify -->
-                                    <div class="form-group" id="inclusiveDates">
-                                        <br>
                                         <hr>
-
-                                        <h6>Inclusive Dates</h6>
-                                        <br>
-                                        <div class="form-group row">
-                                            <div class="col-md-6">
-                                                <label for="inclusiveDates">Start Date:</label>
-                                                <input type="date" class="form-control" id="startDate"
-                                                    name="inclusiveDates" value="MasterDegree">
+                    
+                                        <div class="col-sm-12 mb-3">
+                                            <div class="form-group">
+                                                <label class="required-field" for="message">The complaint is regarding:</label>
+                                                <textarea class="form-control" id="message" name="message" rows="4"></textarea>
                                             </div>
-
-                                            <div class="col-md-6">
-                                                <label for="inclusiveDates">End Date:</label>
-                                                <input type="date" class="form-control" id="endDate"
-                                                    name="inclusiveDates" value="Board">
-                                            </div>
-                                        </div><br>
-                                        <hr>
-                                    </div>
-
-
-                                    <!-- Inclusive Date for specify -->
-                                    <div class="form-group" id="inclusiveDates">
-                                        <h6>Attachments:</h6>
-                                        <br>
-
+                                        </div>
+      
                                         
-                                        <style>
-                                            .attachment-list {
-                                                list-style-type: none;
-                                                /* Remove default list bullets */
-                                                padding: 0;
-                                                /* Remove default padding */
-                                            }
-
-                                            .attachment-list-item {
-                                                margin-bottom: 5px;
-                                                /* Adjust spacing between list items */
-                                            }
-
-                                            .attachment-link {
-                                                color: blue;
-                                                /* Customize the link color */
-                                                cursor: pointer;
-                                                text-decoration: underline;
-                                            }
-                                        </style>
-
-                                        <div class="form-group row" id="manyfileOnly">
-                                            <div class="col-md-12">
-                                                <div class="wrap">
-                                                    <label>View Attached Documents:</label><br>
-                                                    <ul id="attachmentList" class="attachment-list"></ul>
-                                                </div>
-                                            </div>
+                                        <div class="col-sm-12 mb-3">
+                                          <div class="form-group">
+                                              <label class="required-field" for="complaint">The nature of complaint:</label>
+                                              <textarea class="form-control" id="complaint" name="complaint" rows="4"></textarea>
+                                          </div>
+                                      </div>
+      
+                                      <div class="col-sm-12 mb-3">
+                                        <div class="form-group">
+                                            <label for="name">Name of the company/person against which/whom the complaint is filed:</label>
+                                            <input type="text" class="form-control" id="name" name="name">
                                         </div>
+                                    </div>
+      
+                                    <div class="col-sm-12 mb-3">
+                                      <div class="form-group">
+                                          <label class="required-field" for="details">The specific details of the complaint:</label>
+                                          <textarea class="form-control" id="details" name="details" rows="4"></textarea>
+                                      </div>
+                                  </div>
+                    
+                    
+                                    </div>
+                                </form>
 
                                         <div class="form-group row" id="onefileOnly" style="display: none;">
                                             <div class="col-md-12">
@@ -1333,72 +938,7 @@
                 }
             </style>
 
-            <div class="row justify-content-center">
-
-                <!-- Left side columns -->
-                <div class="col-lg-10">
-                    <div class="row">
-
-                        <!--START YOUR CONTENT HERE -->
-
-                        <div class="row gutters-sm">
-                            <div class="col-md-4 mb-3" style="width: 100%; display: none;">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex flex-column align-items-center text-center">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
-                                                class="rounded-circle" width="150">
-                                            <div class="mt-3">
-                                                <h4>Full Name</h4>
-                                                <p class="text-secondary mb-1">Department</p>
-                                                <p class="text-muted font-size-sm">Position</p>
-                                                <p class="text-secondary mb-1"><i class='bx bx-phone'></i> Contact No.
-                                                </p>
-                                                <p class="text-secondary mb-1"> <i class='bx bx-envelope'></i> Email</p>
-                                                <button class="btn btn-primary"
-                                                    style="background-color:#3498db; color: #fff;">View Profile</button>
-                                                <button class="btn btn-primary"
-                                                    style="background-color:#08533F; color: #fff;">Confirm</button>
-
-
-
-
-                                                <div class="wrap">
-                                                    <!-- Center modal -->
-                                                    <div class="pure-modal">
-                                                        <input id="modal-trigger-mix" class="checkbox" type="checkbox">
-                                                        <div class="pure-modal-overlay">
-                                                            <label for="modal-trigger-mix" class="o-close"></label>
-                                                            <div class="pure-modal-wrap a-center from-bottom"
-                                                                style="height: 48%; width: 50%">
-                                                                <label for="modal-trigger-mix"
-                                                                    class="close">&#10006;</label>
-                                                                <h5>Indicate the Reason</h5>
-                                                                <form>
-                                                                    <textarea id="textarea" name="textarea" rows="10"
-                                                                        cols="80" style=" resize: none;"></textarea>
-                                                                    <button class="btn btn-primary"
-                                                                        style="background-color:#08533F; color: #fff;">Confirm</button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Modal -->
-                                                    <label for="modal-trigger-mix" class="open-modal"
-                                                        style="background-color: #F42A54; color: #fff; margin-top: 5px;">Reject</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!--END YOUR CONTENT-->
-                </div>
-            </div>
+         
             </div>
         </section>
 
