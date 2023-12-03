@@ -41,6 +41,74 @@
   <link href="css/employee-template.css" rel="stylesheet">
   <link href="css/employee-template.css" rel="stylesheet">
 
+  <style>
+
+    .widget .panel, .widget.panel {
+      overflow: hidden;
+    }
+
+    .widget {
+      margin-bottom: 20px;
+      border: 0;
+    }
+
+    .row-table {
+      display: table;
+      table-layout: fixed;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    }
+
+    .row-flush>[class*=col-] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .row-table>[class*=col-] {
+      display: table-cell;
+      float: none;
+      table-layout: fixed;
+      vertical-align: middle;
+    }
+
+    .widget .lateral-picture {
+      position: relative;
+      display: block;
+      height: 240px;
+      width: auto;
+      overflow: hidden;
+    }
+
+    .widget .lateral-picture>img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-height: 100%;
+      width: auto;
+    }
+
+    .align-middle {
+      vertical-align: middle;
+    }
+
+    .p-lg {
+      padding: 15px!important;
+    }
+
+    .btn {
+      border-radius: 3px;
+      font-size: 13px;
+      border-color: transparent;
+      -webkit-appearance: none;
+      outline: 0!important;
+      -webkit-transition: all .1s;
+      -o-transition: all .1s;
+      transition: all .1s;
+    }
+
+  </style>
+
 
 </head>
 
@@ -217,7 +285,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-heading">ADMIN TOOL</li>
       <li class="nav-item">
-        <a class="nav-link" href="admin_dashboard.html">
+        <a class="nav-link collapsed" href="admin_dashboard.html">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -359,289 +427,67 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>Event List</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
+          <li class="breadcrumb-item active">Event List</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-
-      <!--START YOUR CONTENT HERE -->
-
-      <section class="section dashboard">
-        <div class="row">
-  
-          <!-- Left side columns -->
-          <div class="col-lg-8">
-            <div class="row">
-  
-              <!-- Total number of employee Card -->
-              <div class="col-xxl-6 col-md-6">
-                <div class="card info-card sales-card">
-  
-                  <div class="filter">
-                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                      <li class="dropdown-header text-start">
-                        <h6>Filter</h6>
-                      </li>
-  
-                      <li><a class="dropdown-item" href="#">Today</a></li>
-                      <li><a class="dropdown-item" href="#">This Month</a></li>
-                      <li><a class="dropdown-item" href="#">This Year</a></li>
-                    </ul>
-                  </div>
-  
-                  <div class="card-body">
-                    <h5 class="card-title">Employees <span>| Today</span></h5>
-  
-                    <div class="d-flex align-items-center">
-  
-                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                         <img src="assets/img/dashboard/dash1.png" alt="1">
-                      </div>
-                      <div class="ps-3">
-                        <h6>10</h6>
-                        <div class="ps-3">
-                        
-                          <span class="text-muted small pt-2 ps-1">number of employees</span>
     
-                        </div>
-                       
+        <!--START YOUR CONTENT HERE -->
+
+        <div class="container">
+          <div class="row">
+              <div class="col-md-6">
+                <!-- START widget-->
+                <div class="panel widget" style="background-color: #689589; border-radius: 12px;">
+                   <div class="row row-table row-flush">
+                      <div class="col-xs-5">
+                         <picture class="lateral-picture">
+                            <img src="https://www.bootdey.com/image/400x400/FFB6C1/000000" alt="">
+                         </picture>
                       </div>
-                    </div>
-                  </div>
-  
-                </div>
-              </div><!-- End Absenses Card -->
-  
-              <!-- Leave Card -->
-              <div class="col-xxl-4 col-md-6">
-                <div class="card info-card revenue-card">
-  
-                  <div class="filter">
-                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                      <li class="dropdown-header text-start">
-                        <h6>Filter</h6>
-                      </li>
-  
-                      <li><a class="dropdown-item" href="#">Today</a></li>
-                      <li><a class="dropdown-item" href="#">This Month</a></li>
-                      <li><a class="dropdown-item" href="#">This Year</a></li>
-                    </ul>
-                  </div>
-  
-                  <div class="card-body">
-                    <h5 class="card-title">Pending leaves <span>| Today</span></h5>
-  
-                    <div class="d-flex align-items-center">
-                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                        <img src="assets/img/dashboard/leave3.png" alt="1">
+                      <div class="col-xs-7 align-middle p-lg">
+                         <p>
+                            <span class="text-lg">16</span>Aug</p>
+                         <p>
+                            <strong>EVENT INVITATION</strong>
+                         </p>
+                         <p>Donec posuere neque in elit luctus tempor consequat enim egestas. Nulla dictum egestas leo at lobortis.</p>
+                         <div class="pull-right"><a href="#" class="btn btn-success btn-sm" style="width: 100%;">View Attached Document</a>
+                         </div>
                       </div>
-                      <div class="ps-3">
-                        <h6>14</h6>
-                        <span class="text-muted small pt-2 ps-1">total pending leaves</span>
+                   </div>
+                </div>
+                <!-- END widget-->
+              </div>
+              <div class="col-md-6">
+                <!-- START widget-->
+                <div class="panel widget" style="background-color: #689589; border-radius: 12px;">
+                   <div class="row row-table row-flush">
+                      <div class="col-xs-5">
+                         <picture class="lateral-picture">
+                            <img src="https://www.bootdey.com/image/400x400/87CEFA/000000" alt="">
+                         </picture>
                       </div>
-                    </div>
-                  </div>
-                  
+                      <div class="col-xs-7 align-middle p-lg">
+                         <p>
+                            <span class="text-lg">16</span>Aug</p>
+                         <p>
+                            <strong>EVENT INVITATION</strong>
+                         </p>
+                         <p>Donec posuere neque in elit luctus tempor consequat enim egestas. Nulla dictum egestas leo at lobortis.</p>
+                         <div class="pull-right"><a href="#" class="btn btn-success btn-sm" style="width: 100%;">View Attached Document</a>
+                         </div>
+                      </div>
+                   </div>
                 </div>
-              </div><!-- End Leave Card -->
-
-              <!-- Pending Request Days -->
-            <div class="col-xxl-4 col-md-12">
-              <div class="card info-card revenue-card">
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title" id="pendingLabel">Available Positions <span>| Today</span></h5>
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <img src="assets/img/dashboard/vacancy.png" alt="1">
-                    </div>
-                    <div class="ps-3">
-                      <h6 id="totalRequest">3</h6>
-                      <span class="text-muted small pt-2 ps-1">total available job positions</span>
-                    </div>
-                  </div>
-                </div>
+                <!-- END widget-->
               </div>
-            </div><!-- End Pending Request Days -->
-
-            <!-- Job Vacancy -->
-            <div class="col-12">
-              <div class="card recent-sales overflow-auto">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title">Job Vacancy <span>| Today</span></h5>
-                  <style>
-                    .text-left {
-                      text-align: left;
-                    }
-                  </style>
-                  <table class="table table-borderless datatable">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Job Name</th>
-                        <th scope="col">Department</th>
-                        <th scope="col">Total</th>
-                        
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"><a href="#">1</a></th>
-                        <td>Administrative Assistant III</td>
-                        <td><a href="#" class="text-primary">DSWD</a></td>
-                        <td>2</td>
-                        
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">2</a></th>
-                        <td>Administrative Aide III</td>
-                        <td><a href="#" class="text-primary">HRM</a></td>
-                        <td>1</td>
-                        
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">3</a></th>
-                        <td>Administrative Assistant V</td>
-                        <td><a href="#" class="text-primary">DOHr</a></td>
-                        <td>2</td>
-                        
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">4</a></th>
-                        <td>Supervising Administrative Officer</td>
-                        <td><a href="#" class="text-primar">Health Office</a></td>
-                        <td>2</td>
-                        
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">5</a></th>
-                        <td>Chief Administrative Officer</td>
-                        <td><a href="#" class="text-primary">Agriculture Office</a></td>
-                        <td>1</td>
-                        
-                      </tr>
-                    </tbody>
-                  </table>
-
-                </div>
-
-              </div>
-            </div><!-- End Job Vacancy -->
-              </div>
-                  </div><!-- End Left side columns -->
-
-          <!-- Right side columns -->
-          <div class="col-lg-4">
-            <!-- Recent Activity -->
-            <div class="card">
-              <div class="filter">
-                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                  </li>
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Upcoming Activities <span>| Today</span></h5>
-                <div class="activity">
-                  <!-- Activity items go here -->
-                  <div class="activity-item d-flex">
-                    <div class="activite-label">11/28/23</div>
-                    <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-                    <div class="activity-content">
-                      PGS Core <a href="#" class="fw-bold text-dark">meeting</a> a quarterly meeting is held.
-                    </div>
-                  </div><!-- End activity item-->
-
-                  <div class="activity-item d-flex">
-                    <div class="activite-label">12/1/23</div>
-                    <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-                    <div class="activity-content">
-                      Cascading Framework Technical Sessions
-                    </div>
-                  </div><!-- End activity item-->
-
-                  <div class="activity-item d-flex">
-                    <div class="activite-label">12/18/23</div>
-                    <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
-                    <div class="activity-content">
-                      Meeting with dswd officials
-                    </div>
-                  </div><!-- End activity item-->
-
-                  <div class="activity-item d-flex">
-                    <div class="activite-label">12/25/23</div>
-                    <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
-                    <div class="activity-content">
-                      DSWD Scorecard <a href="#" class="fw-bold text-dark"></a>Summit
-                    </div>
-                  </div><!-- End activity item-->
-
-                  <div class="activity-item d-flex">
-                    <div class="activite-label">01/05/24</div>
-                    <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
-                    <div class="activity-content">
-                      PGS Core <a href="#" class="fw-bold text-dark">meeting</a> a quarterly meeting is held.
-                    </div>
-                  </div><!-- End activity item-->
-
-                </div>
-              </div>
-            </div>
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">HR Policy</h5>
-              <img src="img/hrpolicy.png" class="img-fluid mb-3" alt="HR Policy Image">
-              <p class="card-text" style="text-align: justify;">
-                In CSC Resolution No. 1701009 dated June 16, 2017, the Commission adopted and promulgated the 2017 Omnibus Rules on 
-                Appointments and Other Human Resource 
-                Actions (ORAOHRA) to govern the preparation, submission of, and actions to be 
-                taken on appointments and other human resource movements in the Philippine government.
-              </p>
-              <button class="btn btn-primary" onclick="redirectToAnotherPage()">Read More</button>
-            </div>
           </div>
-  </section>
-  
-</div>
-
-
-    <!--END YOUR CONTENT-->
+          </div>
 
   </main><!-- End #main -->
 

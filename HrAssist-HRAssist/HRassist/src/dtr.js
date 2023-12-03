@@ -69,8 +69,7 @@ function SearchEmployee() {
                         const url = `admin_dtr_form.html?data=${encodeURIComponent(employeeDocID)}`;
 
                         // Use pushState to update the URL
-                        window.history.pushState({ path: url }, '', url);
-                        searchEmployeeBtn.style.display = 'none';
+                        window.history.pushState({ path: url }, '', url); 
                         //window.location.href = `admin_201file_pds.html?data=${encodeURIComponent(employeeDocID)}`;
                     });
                 } else {
