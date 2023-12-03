@@ -36,6 +36,9 @@
         <!-- Template Main CSS File -->
         <link href="css/employee-template.css" rel="stylesheet">
 
+        <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+
     </head>
 
     <body>
@@ -363,7 +366,7 @@
     <section class="section dashboard">
 
             <!--START YOUR CONTENT HERE -->
-
+            <input type="text" class="form-control" placeholder="Search Here" id="txtInputTable" style="width: 15vw; float: right; margin-bottom: 2vh;">
                 <div class="content-wrapper">
                     <div class="table">
                         <div class="table-header">
@@ -373,7 +376,7 @@
                         <div class="table-header">
                             <div class="group">
                                 <p>Filter</p>
-                                <select id="category" onchange="filterData()">
+                                <select id="filterdropdown">
                                   <option value="all">All</option>
                                   <option value="admin">Admin</option>
                                   <option value="applicant">Applicant</option>
@@ -381,21 +384,7 @@
                               </select>
                             </div>
                         </div>
-                        <script>
-                          function filterData() {
-                              var selectedCategory = document.getElementById('category').value;
-                              var dataRows = document.querySelectorAll('.data-row');
-                      
-                              dataRows.forEach(function (row) {
-                                  var rowCategory = row.getAttribute('data-category');
-                                  if (selectedCategory === 'all' || selectedCategory === rowCategory) {
-                                      row.style.display = 'table-row';
-                                  } else {
-                                      row.style.display = 'none';
-                                  }
-                              });
-                          }
-                      </script>
+
                       
                         <table class="content-table" id="accountTable">
                             <thead>
@@ -407,7 +396,7 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="tableDetails">
                                 <tr class="data-row" data-category="applicant">
                                     <td id="accountIdNum">1</td>
                                     <td id="accountName">Juan Dela Cruz</td>
@@ -432,6 +421,8 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -441,6 +432,32 @@
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+
+
+  <script>
+    $(document).ready(function () { 
+    $("#txtInputTable").on("keyup", function () { 
+        var value = $(this).val().toLowerCase();      
+        $("#tableDetails tr").filter(function () { 
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1) 
+        }); 
+    });
+
+    $('#filterdropdown').on('change', function(){
+        var selectedCategory = $(this).val().toLowerCase(); // Convert to lowercase
+        if (selectedCategory === 'all') {
+            $('#accountTable tbody tr').show();
+        } else {
+            $('#accountTable tbody tr').hide();
+
+            // Capitalize the first letter of selectedCategory
+            selectedCategory = selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1);
+
+            $('#accountTable tbody tr:has(td:contains("' + selectedCategory + '"))').show();
+        }
+    });
+});
+</script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>    
