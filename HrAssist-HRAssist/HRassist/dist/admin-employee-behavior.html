@@ -385,7 +385,7 @@
                                 </nav>
                             </div>
                             <div class="content-panel">
-                              <h5 class="mx-auto text-center custom-text" style="padding-right: 8vw; color: #1f8f3e; font-family: Poppins;"><b>Employee Personal Info</b></h5>
+                              <h5 class="mx-auto text-center custom-text" style="padding-right: 8vw; color: #1f8f3e; font-family: Poppins;"><b>Employee Performance</b></h5>
                               <br>
                                 <form class="form-horizontal">
                                     <fieldset class="fieldset">
@@ -396,125 +396,162 @@
                                         </div>
                                        
                                         <!--Content Here-->
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="profile-head">
-                                                    <div class="profiles col-xs-8 col-xs-push-2  col-sm-10 col-sm-push-1 thumbnail">
-                                                        <div class="col-md-3 col-sm-3 col-xs-12">
-                                                            
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <div class="row">
-                                                                <span class="col-sm-12"><h5>Basic Information</h5></span>
-                                                                <br> <br>
-
-                                                                <div class="col-md-4 col-sm-6 col-xs-12">
-
-                                                                    <ul>
-                                                                        <span>Full Name: </span><br>
-                                                                        <span>Birthday: </span><br>
-                                                                        <span>Legal gender: </span><br>
-                                                                        <span>Marital status:</span><br>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="col-md-4 col-sm-6 col-xs-12">
-                                                                    
-                                                                    <ul>
-                                                                       
-                                                                       <span class="fieldset-title">Camila Binas</span><br>
-                                                                       <span class="fieldset-title">02//11/02</span><br>
-                                                                       <span class="fieldset-title">Female</span><br>
-                                                                       <span class="fieldset-title">Single</span><br>
-                                                                    </ul>
-                                                                </div>
+                                                    <!-- table -->
+                                                    
+                                                    <div class="col-12">
+                                                        <div class="card recent-sales overflow-auto">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <br>
+                                                                <label><small>For the month of:</small></label>
+                                                                <select class="form-control" id="monthSelector">
+                                                                    <option>--- Select Month ---</option>
+                                                                    <option value="January">January</option>
+                                                                    <option value="Febuary">Febuary</option>
+                                                                    <option value="March">March</option>
+                                                                    <option value="April">April</option>
+                                                                    <option value="May">May</option>
+                                                                    <option value="June">June</option>
+                                                                    <option value="July">July</option>
+                                                                    <option value="August">August</option>
+                                                                    <option value="September">September</option>
+                                                                    <option value="October">October</option>
+                                                                    <option value="November">November</option>
+                                                                    <option value="December">December</option>
+                                                                </select>
                                                             </div>
-                                                        </div>
-                                                        <hr>
-
-                                                     
-                                                        <div class="col-md-12">
-                                                            <div class="row">
-                                                                <span class="col-sm-12"><h5>Contact Information</h5></span>
-                                                                <br> <br>
-
-                                                                <div class="col-md-4 col-sm-6 col-xs-12">
-
-                                                                    <ul>
-                                                                        <span>Work phone: </span><br>
-                                                                        <span>Work email: </span><br>
-                                                                        <span>Address: </span><br>
-                                                                        
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="col-md-8 col-sm-6 col-xs-12">
-                                                                    
-                                                                    <ul>
-                                                                       <span class="fieldset-title">(639)515020789</span><br>
-                                                                       <span class="fieldset-title">camilabinas@gmail.com</span><br>
-                                                                       <span class="fieldset-title">Purok-II Brgy. Plaridel Basud, Camarines Norte</span><br>
-                                                                      
-                                                                    </ul>
-                                                                </div>
+                                                            <div class="col-md-6">
+                                                                <br>
+                                                                <label><small>Year:</small></label>
+                                                                <select class="form-control" id="yearSelctor">
+                                                                    <option>--- Select Year ---</option>
+                                                                    <option value="2023">2023</option>
+                                                                    <option value="2024">2024</option>
+                                                                    <option value="2025">2025</option>
+                                                                    <option value="2026">2026</option>
+                                                                    <option value="2027">2027</option>
+                                                                    <option value="2028">2028</option>
+                                                                    <option value="2029">2029</option>
+                                                                    <option value="2030">2030</option>
+                                                                    <option value="2031">2031</option>
+                                                                    <option value="2032">2032</option>
+                                                                    <option value="2033">2033</option>
+                                                                    <option value="2034">2034</option>
+                                                                    <option value="2035">2035</option>
+                                                                </select>
                                                             </div>
-                                                        </div>
-                                                        <hr>
-
-                                                           <!--Emergency Contact-->
-                                                           <div class="col-md-12">
-                                                            <div class="row">
-                                                                <span class="col-sm-12"><h5>Job details</h5></span>
-                                                                <br> <br>
-
-                                                                <div class="col-md-4 col-sm-6 col-xs-12">
-
-                                                                    <ul>
-                                                                        <span>Job title: </span><br>
-                                                                        <span>Employee ID: </span><br>
-                                                                        <span>Location: </span><br>
-                                                                        <span>Employee type: </span><br>
-                                                                        <span>Department: </span><br>
-                                                                        <span>Start date: </span><br>
-                                                                        
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="col-md-8 col-sm-6 col-xs-12">
-                                                                    
-                                                                    <ul>
-                                                                       <span class="fieldset-title">DSWD Employee</span><br>
-                                                                       <span class="fieldset-title">21020</span><br>
-                                                                       <span class="fieldset-title">San Vicente, Camarines Norte</span><br>
-                                                                       <span class="fieldset-title">Full Time</span><br>
-                                                                       <span class="fieldset-title">DSWD</span><br>
-                                                                       <span class="fieldset-title">08/01/2022</span><br>
-                                                                      
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <!--End Emergency Contact-->
-
+                                                        </div><br>
+                                                        
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <!--End Content Here-->
-                                   
-                                    </fieldset>
-                                    <hr>
-                                </form>
-                            </div>
-                        </div>
 
-                        
+          
+  
+                  <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                      </li>
+  
+                      
+                      <li><a class="dropdown-item" href="#">This Month</a></li>
+                     
+                    </ul>
+                  </div>
+  
+                  <div class="card-body">
+                    <h5 class="card-title">Daily Time Record <span>| Month</span></h5>
+  
+                    <table class="table table-borderless datatable">
+                      <thead>
+                        <tr>
+                          <th scope="col">ID:</th>
+                          <th scope="col">Month</th>
+                          <th scope="col">No. times tardy</th>
+                          <th scope="col">No. hours tardy:</th>
+                          <th scope="col">No. mins tardy:</th>
+                          <th scope="col">No. times undertime:</th>
+                          <th scope="col">No. hours undertime:</th>
+                          <th scope="col">No. mins undertime:</th>
+                         
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row"><a href="#">#2143</a></th>
+                          <td>January</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          
+                        </tr>
+                        <tr>
+                          <th scope="row"><a href="#">#2144</a></th>
+                          <td>February</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          
+                        </tr>
+                        <tr>
+                          <th scope="row"><a href="#">#2145</a></th>
+                          <td>March</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          
+                        </tr>
+                        <tr>
+                          <th scope="row"><a href="#">#2146</a></th>
+                          <td>April</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          
+                          
+                        </tr>
+                        <tr>
+                          <th scope="row"><a href="#">#2147</a></th>
+                          <td>May</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          
+                        </tr>
+                      </tbody>
+                    </table>
+                    <br>
 
-                    </section>
+                <button type="button" class="btn btn-success" id="dtrSubmitBtn" style="float: right; width: 20%; background-color: #08533F;">Save Record</button>
+                
+  
+                  </div>
+  
                 </div>
+              </div><!-- End Tables -->
+  
+  
             </div>
-            
-
-            <!--END YOUR CONTENT-->
+          </div><!-- End Left side columns -->
+                                        
+                                        <!--END YOUR CONTENT-->
 
   </main><!-- End #main -->
 
@@ -534,6 +571,18 @@
   <script src="assets/js/main.js"></script>
 
   <script src="bundles/navbar.bundle.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+    <!-- Database Javascript -->
+    <script src="bundles/auth.bundle.js"></script>
+    <script src="bundles/navbar.bundle.js"></script>
+    <script src="bundles/dtr.bundle.js"></script>
   
 </body>
 
