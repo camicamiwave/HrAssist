@@ -1182,3 +1182,26 @@ h6 {
   font-size: 13px;
   color: #08533F;
 }
+
+#searchSuggestions2 {
+  margin-top: 24vh;
+  margin-left: 5vw;
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 15vw;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 1;
+}
+
+#searchSuggestions2 li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+#searchSuggestions2 li:hover {
+  background-color: #f5f5f5;
+}

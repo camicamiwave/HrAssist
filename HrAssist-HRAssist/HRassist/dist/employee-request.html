@@ -31,6 +31,8 @@
   <!-- Template Main CSS File -->
   <link href="css/employeeview.css" rel="stylesheet">
 
+
+
 </head>
 
 <body>
@@ -49,7 +51,8 @@
 
     <div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <input type="text" id="searchInput2" name="query" placeholder="Search" title="Enter search keyword">
+        <ul id="searchSuggestions2"></ul>
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
@@ -366,15 +369,7 @@
 
     <div class="filter">
       <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-        <li class="dropdown-header text-start">
-          <h6>Filter</h6>
-        </li>
-
-        <li><a class="dropdown-item" href="#">Today</a></li>
-        <li><a class="dropdown-item" href="#">This Month</a></li>
-        <li><a class="dropdown-item" href="#">This Year</a></li>
-      </ul>
+      
     </div>
 
     <div class="card-body">
@@ -385,7 +380,7 @@
         </div>
         <div class="ps-3">
           <h6>Types of Leave</h6> 
-        <div class="b"><button onclick="redirectToAnotherPage()">View</button></div>
+        <div class="b"><button onclick="redirectToAnotherPage()" class="btn btn-success btn-sm">View</button></div>
         </div>
       </div>
     </div>
