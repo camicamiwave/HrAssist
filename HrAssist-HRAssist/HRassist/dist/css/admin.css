@@ -1402,3 +1402,26 @@ form .button input:hover{
     flex: 0 0 auto;
     width: 25%;
   }
+
+  #searchSuggestions {
+    margin-top: 24vh;
+    margin-left: 5vw;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 15vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1;
+}
+
+#searchSuggestions li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+#searchSuggestions li:hover {
+    background-color: #f5f5f5;
+}
