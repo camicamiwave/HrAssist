@@ -38,7 +38,9 @@ module.exports = {
         rewards: './src/rewards.js',
         applicant_status: './src/applicant_status.js',
         leave_management: './src/leave_management.js',
-        ipcrf: './src/ipcrf.js'
+        ipcrf: './src/ipcrf.js',
+        ipcrf_list: './src/ipcrf_list.js',
+        individual_ipcrf: './src/individual_ipcrf.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),
