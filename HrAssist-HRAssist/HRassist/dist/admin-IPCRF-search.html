@@ -362,8 +362,16 @@
             </nav>
         </div><!-- End Page Title -->
 
-        <section class="section dashboard">
+        <style>
+            .center-card {
+                margin: 0 auto;
+                text-align: center;
+                /* Optional, depende sa iyong kagustuhan */
+            }
+        </style>
 
+
+        <section class="section dashboard">
             <!--START YOUR CONTENT HERE -->
             <div class="content-wrapper">
                 <div class="table">
@@ -404,82 +412,218 @@
                     </div>
                 </div>
             </div>
+        </section>
 
 
-            <!--START YOUR CONTENT HERE -->
-            <div class="content-wrapper" id="IPCRF-Section" style="display: block;">
-                <div class="table">
+        
+        <div class="col-xl-12" style="display: none;" id="listofAttachmentsRetrieved">
+            <!-- Profile picture card-->
+            <div class="card mb-4 mb-xl-3">
+                <div class="card-header">List of submitted IPCRF</div>
+                <div class="card-body text-left">
+                    <br>
+                    <small>
+                        <p >IPCRF for the Semester:&nbsp;&nbsp;<b id="ipcrfSemesterDate"></b></p>
+                    </small>
+                    <small>
+                        <p >IPCRF for the Year:&nbsp;&nbsp;<b id="ipcrfSemesterYear"></b></p>
+                    </small>
+                    <small>
+                        <p >Total Rating:&nbsp;&nbsp;<b id="ipcrfTotalRating"></b></p>
+                    </small>
 
-                    <div class="container"><br>
-                        <label style="color:#08533F"><small>CS Form 48</small></label><br>
-                        <hr>
-
+                    <br>
+                
+                    <div class="table-responsive-lg" >
+                        <table class="table table-hover " style="text-align: center; font-size: 12px padding 5px;">
+                            <thead>
+                            <tr class="table-primary">
+                                <th scope="col"></th>
+                                <th scope="col">File</th>
+                                <th scope="col">Action</th> 
+                            </tr>
+                            </thead>
+                            <tbody id="AttachmentsUrl">
+                            <tr> 
+                            
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="select-employee">
-                        <div class="container">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label><small>For the month of:</small></label>
-                                        <select class="form-control" id="monthSelector">
-                                            <option>--- Select Month ---</option>
-                                            <option value="January">January</option>
-                                            <option value="Febuary">Febuary</option>
-                                            <option value="March">March</option>
-                                            <option value="April">April</option>
-                                            <option value="May">May</option>
-                                            <option value="June">June</option>
-                                            <option value="July">July</option>
-                                            <option value="August">August</option>
-                                            <option value="September">September</option>
-                                            <option value="October">October</option>
-                                            <option value="November">November</option>
-                                            <option value="December">December</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label><small>Year:</small></label>
-                                        <select class="form-control" id="yearSelctor">
-                                            <option>--- Select Year ---</option>
-                                            <option value="2023">2023</option>
-                                            <option value="2024">2024</option>
-                                            <option value="2025">2025</option>
-                                            <option value="2026">2026</option>
-                                            <option value="2027">2027</option>
-                                            <option value="2028">2028</option>
-                                            <option value="2029">2029</option>
-                                            <option value="2030">2030</option>
-                                            <option value="2031">2031</option>
-                                            <option value="2032">2032</option>
-                                            <option value="2033">2033</option>
-                                            <option value="2034">2034</option>
-                                            <option value="2035">2035</option>
-                                        </select>
-                                    </div>
-                                </div><br>
 
+        <section class="section dashboard">
+
+            
+            <div class="row justify-content-center">
+
+                <div class="col-xl-4" style="display: none;" id="ipcrfScheduleChecker">
+                    <div class="card mb-4 mb-xl-3">
+                        <div class="card-header">Check Records</div>
+                        <div class="card-body text-center">
+                            <br>
+
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (first name)-->
+                                <br><br>
+                                <div class="col-md-12">
+                                    <div class="container">
+                                        <div class="row" style="text-align: left;">
+                                            <div class="col-md-12">
+
+                                                <label><small>For the semester of:</small></label>
+                                                <select class="form-control" id="semesterSelector"
+                                                    style="font-size: 13px; height: 40px;">
+                                                    <option>--- Select Semester ---</option>
+                                                    <option value="1st Semester">1st Semester</option>
+                                                    <option value="2nd Semester">2nd Semester</option>
+                                                </select>
+                                            </div>
+
+                                            <br><br><br>
+
+                                            <div class="col-md-12">
+                                                <label><small>Year:</small></label>
+                                                <select class="form-control" id="yearSelctor"
+                                                    style="font-size: 13px; height: 40px;">
+                                                    <option>--- Select Year ---</option>
+                                                    <option value="2023">2023</option>
+                                                    <option value="2024">2024</option>
+                                                    <option value="2025">2025</option>
+                                                    <option value="2026">2026</option>
+                                                    <option value="2027">2027</option>
+                                                    <option value="2028">2028</option>
+                                                    <option value="2029">2029</option>
+                                                    <option value="2030">2030</option>
+                                                    <option value="2031">2031</option>
+                                                    <option value="2032">2032</option>
+                                                    <option value="2033">2033</option>
+                                                    <option value="2034">2034</option>
+                                                    <option value="2035">2035</option>
+                                                </select>
+                                            </div>
+                                        </div><br>
+
+                                        <div class="container">
+                                            <button type="submit" class="btn btn-success float-right"
+                                                style="width: 100%; background-color: #08533F; color: white;"
+                                                id="ipcrfCheckRecordBtn">Check Record</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
- 
-                            <br>
-                            <br>
-                            <hr>
                         </div>
                     </div>
-
-
                 </div>
 
+                
+
+                <div class="col-xl-8" style="display: none;" id="ipcrfFormLayout">
+                    <!-- Profile picture card-->
+                    <div class="card mb-4 mb-xl-3">
+                        <div class="card-header">IPCRF Form</div>
+                        <div class="card-body text-left">
+
+                            <div class="container application-form">
+                                <form id="ipcrfLeaveForm">
+                                    <small>
+                                        <p class="fst-italic"><b>Note: </b> Please provide the required</p><br> 
+                                    </small>
+
+
+                                    <div class="container mt-1">
+                                        <h6>Upload your IPCRF File here: <span style="color: red;">*</span></h6>
+                                        <input class="form-control" type="file" id="formFileMultiple" multiple required/><br><br>
+                                
+                                        <!-- Preview Section -->
+                                        <section id="filePreviewSection"></section>
+                                    </div>
+                                    
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <h6>Total Rating: <span style="color: red;">*</span></h6>
+                                            <input type="number" class="form-control" id="totalRating"
+                                                name="inclusiveDates" required>
+                                        </div>
+                                        <br><br><br><br>
+                                        <div class="col-md-12">
+                                            <label for="withinDetails"><small>Description</small></label><br>
+                                            <textarea id="IPCRFdescription" class="form-control" placeholder="Description"></textarea>
+                                        </div><br>
+
+                                    </div><br><br>
+
+                                    
+                                    <div class="modal-footer">
+                                        <button type="button" id="SaveIPCRF" class="btn btn-secondary" data-dismiss="modal">Save</button> 
+                                    </div>
+
+                                </form>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <button type="button" class="btn btn-success" id="dtrSubmitBtn"
-                style="float: right; width: 20%; background-color: #08533F;">Save Record</button>
 
-            </form>
-            </tbody>
-            </table>
-            </div>
-            </div>
+            <style>
+                .right-aligned-btn {
+                    text-align: right;
+                    margin-top: 20px;
+
+                }
+            </style>
+
+            <!--Button End-->
+            <style>
+                .responsive-section {
+                    display: flex;
+                    align-items: flex-start;
+                    /* Change to flex-start to align items at the top */
+                    justify-content: center;
+                    height: 100%;
+                    text-align: center;
+                    margin-right: 10%;
+                }
+
+                .responsive-container {
+                    display: flex;
+                    align-items: center;
+                    margin: 0 auto;
+                    max-width: 100%;
+                    /* Adjust the max-width as needed */
+                    width: 100%;
+                }
+
+                .responsive-img {
+                    width: 100px;
+                    height: 100px;
+                    margin-right: 5%;
+                }
+
+                .application-form {
+                    background-color: rgba(255, 255, 255, 0.774);
+                    border-radius: 10px;
+                    width: 100%;
+                    padding: 5%;
+                }
+
+                @media (max-width: 768px) {
+                    .responsive-container {
+                        flex-direction: column;
+                    }
+
+                    .responsive-img {
+                        margin-right: 0;
+                        margin-bottom: 10px;
+                    }
+                }
+            </style>
+
         </section>
 
         <!--END YOUR CONTENT-->

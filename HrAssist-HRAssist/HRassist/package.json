@@ -40,7 +40,9 @@
     "rewards": "node rewards.js",
     "applicant_status": "node applicant_status.js",
     "leave_management": "node leave_management.js",
-    "ipcrf": "node ipcrf.js"
+    "ipcrf": "node ipcrf.js",
+    "ipcrf_list": "node ipcrf_list.js",
+    "individual_ipcrf": "node individual_ipcrf.js"
   },
   "keywords": [],
   "author": "",
