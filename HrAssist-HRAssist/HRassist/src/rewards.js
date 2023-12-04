@@ -27,7 +27,7 @@ const db = getFirestore()
 
 export function SearchEmployee() {
     // Assuming you have an HTML form with id="employeeDataSheet"
-    const SearchEmployeeForm = document.querySelector("#rewardsForm");
+    const SearchEmployeeForm = document.querySelector("#RewardsForm");
     const EmployeecolRef = collection(db, 'Employee Information');
 
     const searchbtn = document.getElementById('searchEmployeeBtn')
@@ -76,7 +76,7 @@ export function SearchEmployee() {
                         //window.location.href = `admin_201file_pds.html?data=${encodeURIComponent(employeeDocID)}`;
 
                         // Assuming you want to add the employeeDocID to the URL without reloading
-                        const url = `admin_add_reward.html?data=${encodeURIComponent(employeeDocID)}`;
+                        const url = `admin_add_Rewards.html?data=${encodeURIComponent(employeeDocID)}`;
 
                         // Use pushState to update the URL
                         window.history.pushState({ path: url }, '', url);
@@ -109,10 +109,10 @@ function fetchAppointment() {
 
     try {
         const EmployeecolRef = collection(db, '201File Information');
-        const RewardcolRef = collection(db, 'Reward Information');
+        const RewardscolRef = collection(db, 'Rewards Information');
 
-        const rewardsForm = document.querySelector('#rewardsForm')
-        const rewardsaveBtn = document.getElementById('rewardsaveBtn')
+        const RewardsForm = document.querySelector('#RewardsForm')
+        const RewardsaveBtn = document.getElementById('RewardsaveBtn')
 
         const searchbtn = document.getElementById('searchEmployeeBtn')
 
@@ -123,20 +123,20 @@ function fetchAppointment() {
             fetchEmployeeInfo(EmployeecolRef, receivedStringData, 'employeeDocID').then((dataRetrieved) => {
                 const File201Data = dataRetrieved;
 
-                rewardsForm.officeSelecor.value = File201Data.Appointment_Details.Office
-                rewardsForm.designationSelecor.value = File201Data.Appointment_Details.PositionTitle
+                RewardsForm.officeSelecor.value = File201Data.Appointment_Details.Office
+                RewardsForm.designationSelecor.value = File201Data.Appointment_Details.PositionTitle
 
-                rewardsaveBtn.addEventListener('click', (e) => {
+                RewardsaveBtn.addEventListener('click', (e) => {
 
-                    const rewardDetails = {
+                    const RewardsDetails = {
                         createdAt: serverTimestamp(),
                         employeeDocID: receivedStringData,
                         Rewards_Details: {
-                            EmployeeDesignation: rewardsForm.designationSelecor.value,
-                            EmployeeOffice: rewardsForm.officeSelecor.value,
-                            DateIssued: rewardsForm.dateIssued.value,
-                            Token: rewardsForm.tokenInput.value,
-                            Description: rewardsForm.descriptionInput.value
+                            EmployeeDesignation: RewardsForm.designationSelecor.value,
+                            EmployeeOffice: RewardsForm.officeSelecor.value,
+                            DateIssued: RewardsForm.dateIssued.value,
+                            Token: RewardsForm.tokenInput.value,
+                            Description: RewardsForm.descriptionInput.value
                         }
                     }
 
@@ -152,11 +152,11 @@ function fetchAppointment() {
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // Add a document to the nested collection and get the document reference
-                            return addDoc(RewardcolRef, rewardDetails)
+                            return addDoc(RewardscolRef, RewardsDetails)
                                 .then((docRef) => {
                                     const EmpcustomDocId = docRef.id;
                                     // Assuming downloadURLs is defined somewhere
-                                    return setDoc(doc(RewardcolRef, EmpcustomDocId), { rewardDocID: EmpcustomDocId }, { merge: true });
+                                    return setDoc(doc(RewardscolRef, EmpcustomDocId), { RewardsDocID: EmpcustomDocId }, { merge: true });
 
                                 }).then(() => {
                                     Swal.fire({
@@ -165,9 +165,9 @@ function fetchAppointment() {
                                         icon: 'success',
                                     });
 
-                                    rewardsForm.reset()
+                                    RewardsForm.reset()
 
-                                    rewardsForm.style.display = 'none'
+                                    RewardsForm.style.display = 'none'
                                     searchbtn.style.display = 'block'
 
 
@@ -206,12 +206,12 @@ window.addEventListener('load', fetchAppointment)
 
 async function GetEmployeeTable() {
 
-    const RewardcolRef = collection(db, 'Reward Information');
+    const RewardscolRef = collection(db, 'Rewards Information');
     const EmployeecolRef = collection(db, 'Employee Information');
-    const q = query(RewardcolRef, orderBy('createdAt'));
+    const q = query(RewardscolRef, orderBy('createdAt'));
 
     try {
-        const employeeTable = document.getElementById('rewardsTable');
+        const employeeTable = document.getElementById('RewardsTable');
         const tbody = employeeTable.querySelector('tbody');
 
         let num = 0;
