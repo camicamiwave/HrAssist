@@ -31,18 +31,17 @@ async function GetEmployeeTable() {
 
   const urlParams = new URLSearchParams(window.location.search);
   const receivedStringData = urlParams.get('officeID');
-  const receivedOfficeName = urlParams.get('officeName');
+  //const receivedOfficeName = urlParams.get('officeName');
 
-  const q = query(EmployeecolRef, orderBy('createdAt'));
-  const query201 = query(File201colRef, where("Appointment_Details.Office", "==", receivedOfficeName))
-
-
+  const q = query(File201colRef, orderBy('createdAt'));
+  //const query201 = query(File201colRef, where("Appointment_Details.Office", "==", receivedOfficeName))
+ 
   try {
     const employeeTable = document.getElementById('employeeTable');
     const tbody = employeeTable.querySelector('tbody');
 
 
-    onSnapshot(query201, async (snapshot) => {
+    onSnapshot(q, async (snapshot) => {
       tbody.innerHTML = '';
 
       if (!snapshot.empty) {
@@ -50,8 +49,6 @@ async function GetEmployeeTable() {
           const data = doc.data();
           const id = doc.id;
           const employee_ID = data.employeeDocID
-
-          console.log(data, receivedOfficeName)
 
           const row = document.createElement('tr');
 
@@ -72,11 +69,14 @@ async function GetEmployeeTable() {
             const nameCell = document.createElement('td');
             nameCell.textContent = retrievefullName;
 
+            const officeCell = document.createElement('td');
+            officeCell.textContent = data.Appointment_Details.Office;
+
             const jobPositionCell = document.createElement('td');
             jobPositionCell.textContent = data.Appointment_Details.PositionTitle;
 
-            const genderCell = document.createElement('td');
-            genderCell.textContent = dataRetrieved.Personal_Information.Gender;
+            const employmentStatusCell = document.createElement('td');
+            employmentStatusCell.textContent = data.Appointment_Details.PositionCategory;
 
             const statusCell = document.createElement('td');
             statusCell.textContent = dataRetrieved.employmentStatus;
@@ -85,15 +85,16 @@ async function GetEmployeeTable() {
 
             const deleteButton = document.createElement('button');
             deleteButton.classList.add('btn', 'btn-primary');
+            deleteButton.innerHTML = 'View'
 
             const deleteIcon = document.createElement('i');
-            deleteIcon.classList.add('bx', 'bx-edit');
+            //deleteIcon.classList.add('bx', 'bx-edit');
 
             // Add a click event listener to the delete button
             deleteButton.addEventListener('click', () => {
               console.log('Row ID clicked:', id);
 
-              window.location.href = `admin_201file_pds.html?data=${encodeURIComponent(dataRetrieved.documentID)}`;
+              window.location.href = `admin-employee-profile.html?data=${encodeURIComponent(dataRetrieved.documentID)}`;
 
             })
 
@@ -103,8 +104,9 @@ async function GetEmployeeTable() {
             row.appendChild(profileCell);
             row.appendChild(idCell);
             row.appendChild(nameCell);
+            row.appendChild(officeCell);
             row.appendChild(jobPositionCell);
-            row.appendChild(genderCell);
+            row.appendChild(employmentStatusCell);
             row.appendChild(statusCell);
             row.appendChild(deleteButtonCell);
 
@@ -174,7 +176,7 @@ export function SearchEmployee() {
 
             console.log(data);
             alert("A record was retrieved.");
-            window.location.href = `admin_201file_pds.html?data=${encodeURIComponent(employeeDocID)}`;
+            window.location.href = `admin-employee-profile.html?data=${encodeURIComponent(employeeDocID)}`;
           });
         } else {
           alert("No record retrieved.");
