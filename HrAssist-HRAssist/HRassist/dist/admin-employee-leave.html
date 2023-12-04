@@ -15,7 +15,9 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +34,6 @@
   <!-- Template Main CSS File -->
   <link href="css/employee-template.css" rel="stylesheet">
   <link href="css/admin-employee-profile.css" rel="stylesheet">
-  <link href="css/datasheet.css" rel="stylesheet">
 
 </head>
 
@@ -53,11 +54,11 @@
     <div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
         <input type="text" id="searchInput" name="query" placeholder="Search" title="Enter search keyword">
-            <ul id="searchSuggestions"></ul>
+        <ul id="searchSuggestions"></ul>
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
-    
+
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
 
@@ -190,7 +191,7 @@
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
-        <li class="nav-heading">ADMIN TOOL</li>
+      <li class="nav-heading">ADMIN TOOL</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="admin_dashboard.html">
           <i class="bi bi-grid"></i>
@@ -242,7 +243,7 @@
               <i class="bi bi-circle"></i><span>Applicant List</span>
             </a>
           </li>
-          
+
           <li>
             <a href="forms-validation.html">
               <i class="bi bi-circle"></i><span>Search Applicant</span>
@@ -253,12 +254,12 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
-            <i class="bx bxs-briefcase"></i>
-            <span>Job Vacancy</span>
+          <i class="bx bxs-briefcase"></i>
+          <span>Job Vacancy</span>
         </a>
-    </li><!-- End Job Vacancy Nav -->
+      </li><!-- End Job Vacancy Nav -->
 
-    <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+      <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="bi bi-bar-chart-line"></i>
@@ -333,368 +334,357 @@
   <main id="main" class="main">
 
 
+    <style>
+      .vertical-menu {
+        background-color: #ffffff;
+        width: 100%;
+        /* Define the width of the vertical menu */
+      }
+
+      .vertical-menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .vertical-menu li {
+        text-align: center;
+      }
+
+      .vertical-menu a {
+        display: block;
+        text-align: left;
+        color: #08533fe8;
+        font-weight: 500;
+        font-family: 'poppins';
+        padding: 14px 16px;
+        text-decoration: none;
+        border-bottom: 1px solid white;
+        /* Add a border between menu items */
+        transition: background-color 0.3s;
+        /* Add a smooth transition effect */
+      }
+
+      .vertical-menu a:hover {
+        background-color: #08533f1e;
+        /* Change the background color on hover */
+      }
+
+      .active1 {
+        background-color: #08533f0e;
+        border-radius: 5px;
+      }
+    </style>
+
+
     <section class="section dashboard">
-      <div class="row">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card d-flex justify-content-center">
+            <div class="card-header text-left">Basic Information</div>
+            <div class="card-body text-center">
+              <br>
+              <h4 class="card-title mb-0" id="applicantFullName" style="font-size: 20px; "></h4>
+              <br>
+              <img class="img-account-profile rounded-circle mb-2" id="applicantProfile" 
+                style="width: 40%;" alt="Applicant Profile">
+              <br><br>
 
-        <!-- Left side columns -->
-        <div class="col-lg-12">
-          <div class="row">
 
-            <!--START YOUR CONTENT HERE -->
-            
-            <div class="container">
-                <div class="view-account">
-                    <section class="module">
-                        <div class="module-inner">
-                            <div class="side-bar">
-                                <div class="user-info">
-                                    <img class="img-profile img-circle img-responsive center-block" src="img/admin/user.jpg" alt="">
-                                    <ul class="meta list list-unstyled">
-                                        <li class="name"> <h5><strong>Camila Binas</strong></h5>
-                                            <p>DSWD Employee</p>
-                                        </li>
-                                       
-                                    </ul>
-                                </div>
-                                <nav class="side-menu">
-                                    <ul class="nav">
-                                        <li><a href="admin-employee-profile.html"><span class="fa fa-user"></span> Profile</a></li>
-                                        <li><a href="admin-employee-datasheet.html"><span class="bi bi-file-earmark-person"></span> Personal Data Sheet</a></li>
-                                        <li><a href="admin-employee-appointment.html"><span class="bi bi-calendar-event"></span> Appointment</a></li>
-                                        <li><a href="admin-employee-attachment.html"><span class="bi bi-paperclip"></span> Attachments</a></li>
-                                        <li class="active"><a href="admin-employee-leave.html"><span class="bi bi-calendar-week"></span> Leave credits</a></li>
-                                        <li><a href="#"><span class="bi bi-emoji-smile"></span> Behavior</a></li>
-                                        <li><a href="#"><span class="bi bi-activity"></span> Activity</a></li>
-                                                                             
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div class="content-panel">
-                                <div class="form-group avatar">                
-                                  
-                                        <!--Content Here-->
-                                    
-                                          <div class="container">
-                                            <div class="row">
-                                              <div class="d-flex">
-                                                <h1 class="mx-auto text-center custom-text" style="padding-right: 8vw;">Leave Credits</h1>
-                                              </div>
-                                    
-                                            </div>
-                                          </div>
-                                          <br><br>
-                                          <!--Personal Data-->
-                                    
-                                          <style>
-                                            .column-col {
-                                              background-color: white;
-                                              border-radius: 5px;
-                                            }
-                                          </style>
+              <div class="row gx-3 mb-3">
+                <div class="col-md-12">
+                  <label class="large mb-1"
+                    style="font-family: poppins; font-weight: 500; font-size: 13px; color: rgb(57, 57, 226);"
+                    for="inputApplicantStatus"><i class="bi bi-telephone">&nbsp;&nbsp;&nbsp;</i><span
+                      id="empPhone"></span></label>
 
-                                          
-                                    
-                                    
-                                    
-                                          <div class="row">
-                                    
-                                            <div class="col-md-4 mr-2 mx-auto year-table-container">
-                                              <div class="container"><br>
-                                                <h6>Select Record</h6>
-                                                
-                                                <label><small>Year:</small></label>
-                                                <select class="form-control" id="yearSelctor" style="height: 3%; font-size: 12px;">
-                                                  <option>--- Select Year ---</option>
-                                                  <option value="2023">2023</option>
-                                                  <option value="2024">2024</option>
-                                                  <option value="2025">2025</option>
-                                                  <option value="2026">2026</option>
-                                                  <option value="2027">2027</option>
-                                                  <option value="2028">2028</option>
-                                                  <option value="2029">2029</option>
-                                                  <option value="2030">2030</option>
-                                                  <option value="2031">2031</option>
-                                                  <option value="2032">2032</option>
-                                                  <option value="2033">2033</option>
-                                                  <option value="2034">2034</option>
-                                                  <option value="2035">2035</option>
-                                                </select>
-                                    
-                                                <button type="button" id="selectYearBtn" name="selectYearBtn" class="btn btn-success submit-btn"
-                                                  style="width: 100%">Select Year</button>
-                                              </div><br>
-                                            </div>
-                                    
-                                            <div class="col-md-7 mx-auto year-table-container">
-                                              <div class="container">
-                                                
-                                                <div class="row">
-                                                  <div class="col-md-6">
-                                                    <br><h6>Annual Record</h6><br>
-                                                  </div>
-                                                  <div class="col-md-6" >
-                                                    <button type="button" id="addYearBtn" name="saveBtn" class="btn btn-success submit-btn"
-                                                      style="width: 50%; float: right;" onclick="openYearModal()">+ Add Year</button>
-                                                  </div>
-                                                </div>
-                                                
-                                                <table class="table table-hover" id="yearTable">
-                                                  <thead>
-                                                    <tr>
-                                                      <th scope="col" style="width: 10%;">ID</th>
-                                                      <th scope="col" style="width: 20%;">Year</th>
-                                                      <th scope="col" class="text-center" style="width: 20%;">Action</th>
-                                                    </tr>
-                                                  </thead>  
-                                                  <tbody id="annualRecordBody">
-                                    
-                                                  </tbody>
-                                                </table>
-                                    
-                                              </div>
-                                            </div>
-                                    
-                                          </div>
-                                          <br>
-                                          <br>
-                                    
-                                              <!-- Modal -->
-                                              <div class="modal fade" id="yearModal" tabindex="-1" role="dialog" aria-labelledby="yearModalLabel"
-                                                aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                  <div class="modal-content">
-                                                    <div class="modal-header">
-                                                      <h5 class="modal-title" id="editModalLabel">Add Year</h5>
-                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                      </button>
-                                                    </div>                
-                                                    <div class="modal-body">
-                                                      <form id="yearSelectorForm"> 
-                                    
-                                                        <label><small class="font-italic">Select the year for employee's the leave credit record.</small></label><br>
-                                    
-                                                        <label><small>Select Year:</small></label>
-                                                        <select class="form-control" id="yearSelctor" style="height: 3%; font-size: 15px;">
-                                                          <option>--- Select Year ---</option>
-                                                          <option value="2023">2023</option>
-                                                          <option value="2024">2024</option>
-                                                          <option value="2025">2025</option>
-                                                          <option value="2026">2026</option>
-                                                          <option value="2027">2027</option>
-                                                          <option value="2028">2028</option>
-                                                          <option value="2029">2029</option>
-                                                          <option value="2030">2030</option>
-                                                          <option value="2031">2031</option>
-                                                          <option value="2032">2032</option>
-                                                          <option value="2033">2033</option>
-                                                          <option value="2034">2034</option>
-                                                          <option value="2035">2035</option>
-                                                        </select><br> 
-                                    
-                                                      </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                                                        onclick="hideYearModal()">Close</button>
-                                                      <input type="button" id="addYearSubmitBtn" class="btn btn-primary" value="Add Year">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                    
-                                    
-                                              <script>
-                                                function hideYearModal() {
-                                                  // Hide the modal
-                                                  $('#yearModal').modal('hide');
-                                                }
-                                    
-                                                function openYearModal() {
-                                                  // Show the modal
-                                                  $('#yearModal').modal('show');
-                                                }
-                                              </script>
-                                    
-                                    
-                                    
-                                    
-                                          <!-- LEAVE CREDIT SECTION -->
-                                          <div class="container custom-container-pds mx-auto" id="leaveCreditRecordLayout" style="width: 100%; display: none;">
-                                            <br>
-                                            <style>
-                                              table {
-                                                width: 80%;
-                                              }
-                                    
-                                              td {
-                                                text-align: center; 
-                                                font-size: 14px;
-                                              }
-                                    
-                                              th {
-                                                text-align: center; 
-                                                font-weight: 700;
-                                              }
-                                    
-                                              h6 {
-                                                font-weight: 700;
-                                              }
-                                            </style>
-                                    
-                                    
-                                            <div class="container" >
-                                    
-                                              <div class="row">
-                                                <div class="col-md-6">
-                                                  <h6>Leave Credits Record</h6>
-                                                </div>
-                                                <div class="col-md-6" >
-                                                  <button type="button" id="LeaveCreditsaveBtn" name="saveBtn" class="btn btn-success submit-btn"
-                                                    style="width: 50%; float: right;" onclick="openEditModal()">+ Add Leave</button>
-                                                </div>
-                                              </div>
-                                              <br>
-                                    
-                                              <table class="table table-hover">
-                                                <thead>
-                                                  <tr>
-                                                    <th scope="col" style="width: 3%;"></th>
-                                                    <th scope="col" style="width: 10%;">ID</th>
-                                                    <th scope="col" style="width: 20%;">Leave Type</th>
-                                                    <th scope="col" style="width: 20%;">Total Units</th>
-                                                    <th scope="col" style="width: 20%;">As of</th>
-                                                    <th scope="col" class="text-center" style="width: 20%;">Action</th>
-                                                  </tr>
-                                                </thead>
-                                                <tbody id="fileListBody">
-                                    
-                                                </tbody>
-                                              </table>
-                                    
-                                              <!-- Modal -->
-                                              <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
-                                                aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                  <div class="modal-content">
-                                                    <div class="modal-header">
-                                                      <h5 class="modal-title" id="editModalLabel">Add Leave</h5>
-                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                      </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                      <form id="leaveCreditForm">
-                                                        <!-- Add your input fields here -->
-                                                        <label for="leaveType">Leave Type:</label>
-                                                        <select class="form-control" id="leaveCreditLeaveType" style="height: 20%;" type="select"
-                                                          onchange="showHideOtherInput()" required>
-                                                          <option value="">Select</option>
-                                                          <option value="Vacation Leave">Vacation Leave</option>
-                                                          <option value="Sick Leave">Sick Leave</option>
-                                                          <option value="Study Leave">Study Leave</option>
-                                                          <option value="Maternity Leave">Maternity Leave</option>
-                                                          <option value="Paternity Leave">Paternity Leave</option>
-                                                          <option value="Solo Parent Leave">Solo Parent Leave</option>
-                                                          <option value="10-Day VAWC Leave">10-Day VAWC Leave</option>
-                                                          <option value="Mandatory/Forced Leave">Mandatory/Forced Leave</option>
-                                                          <option value="Special Privilege Leave">Special Privilege Leave</option>
-                                                          <option value="Rehabilitation Priviledge">Rehabilitation Priviledge</option>
-                                                          <option value="Special Leave Benefits for Women">Special Leave Benefits for Women</option>
-                                                          <option value="Special Emergency (Calamity) Leave">Special Emergency (Calamity) Leave
-                                                          </option>
-                                                          <option value="Adoption Leave">Adoption Leave</option>
-                                                          <option value="Others">Others</option>
-                                                        </select>
-                                    
-                                    
-                                                        <!-- FOR PLEASE SPECIFY -->
-                                                        <div id="otherLeaveInput" style="display: none;" class="form-group">
-                                                          <br>
-                                                          <label for="otherLeaveReason">Please specify:</label>
-                                                          <input type="text" class="form-control" id="otherLeaveType"
-                                                            placeholder="Specify other leave type">
-                                                          <br>
-                                                        </div>
-                                    
-                                                        <script>
-                                                          function showHideOtherInput() {
-                                                            var leaveTypeSelect = document.getElementById('leaveCreditLeaveType');
-                                                            var otherLeaveInput = document.getElementById('otherLeaveInput');
-                                    
-                                                            if (leaveTypeSelect.value === 'Others') {
-                                                              otherLeaveInput.style.display = 'block';
-                                                            } else {
-                                                              otherLeaveInput.style.display = 'none';
-                                                            }
-                                                          }
-                                                        </script>
-                                    
-                                                        <label for="remainingUnits">Total Units:</label>
-                                                        <input type="number" id="leaveCreditRemainingUnits" class="form-control">
-                                                        <label for="remainingUnits">As of:</label>
-                                                        <input type="date" id="leaveCreditAsOfNow" class="form-control">
-                                                      </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                                                        onclick="hideEditModal()">Close</button>
-                                                      <input type="submit" id="leaveSaveChanges" class="btn btn-primary" value="Save changes">
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                    
-                                    
-                                              <script>
-                                                function hideEditModal() {
-                                                  // Hide the modal
-                                                  $('#editModal').modal('hide');
-                                                }
-                                    
-                                                function openEditModal() {
-                                                  // Show the modal
-                                                  
-                                                  $('#editModal').modal('show');
-                                                }
-                                                
-                                                function openEditModal1(leaveData) {
-                                                  // Show the modal
-                                    
-                                                  console.log(leaveData)
-                                                  
-                                                  $('#editModal').modal('show');
-                                                }
-                                              </script>
-                                    
-                                            </div>
-                                          </div>
-                                          <br>
-                                          <br>
-                                    
-                                        </section><!-- End Breadcrumbs -->
-                                    
-
-                                        <!--End Content Here-->
-                                   
-                                    </fieldset>
-                                    <hr>
-                                </form>a
-                            </div>
-                        </div>
-
-                        
-
-                    </section>
                 </div>
-            </div>
-            
+              </div>
+              <div class="row gx-3 mb-3">
+                <div class="col-md-12">
+                  <label class="large mb-1"
+                    style="font-family: poppins; font-weight: 500; font-size: 13px; color: rgb(57, 57, 226);"
+                    for="inputApplicantStatus"><i class="bi bi-envelope"></i>&nbsp;&nbsp;&nbsp;
+                    <span id="empEmail"></span> </label>
+                </div>
+              </div>
+              <hr>
 
-            <!--END YOUR CONTENT-->
+
+              <nav class="vertical-menu">
+                <ul>
+                  <li ><a href="#" id="overviewPDS"><span class="bi bi-bar-chart"></span>&nbsp;&nbsp;&nbsp;Overview</a>
+                  </li>
+                  <li ><a href="#" id="personalPDS"><span
+                        class="bi bi-file-earmark-person"></span>&nbsp;&nbsp;&nbsp;Personal Data
+                      Sheet</a></li>
+                  <li><a href="#" id="appointmentPDS"><span
+                        class="bi bi-calendar-event"></span>&nbsp;&nbsp;&nbsp;Appointment</a></li>
+                  <li><a href="#" id="attachmentsPDS"><span
+                        class="bi bi-paperclip"></span>&nbsp;&nbsp;&nbsp;Attachments</a></li>
+                  <li class="active1"><a href="#" id="leavecreditsPDS"><span class="bi bi-calendar-week"></span>&nbsp;&nbsp;&nbsp;Leave
+                      Credits</a></li>
+                  <li><a href="#" id="behaviorPDS"><span class="bi bi-info-circle"></span>&nbsp;&nbsp;&nbsp;Performance</a>
+                  </li>
+                  <li><a href="#" id="activityPDS"><span class="bi bi-activity"></span>&nbsp;&nbsp;&nbsp;Activity</a>
+                  </li>
+                </ul>
+              </nav>
+
+
+
+              <br>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Second Container with Column -->
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">Leave Credits</div>
+            <div class="card-body">
+              <br>
+              <div class="row">
+                <div class="col-md-9">
+                  <br>
+                  <div class="container">
+                    <h1 style="margin-top: -12px; font-size: 40px; font-weight: 600; font-family: poppins;" >Total Leave Credits
+                    </h1><br>
+
+                    <p>As of Year:</p>
+
+                    <div class="col-md-6">
+                      <select class="form-control" id="yearSelctor" style="height: 3%; font-size: 12px;"> 
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                        <option value="2032">2032</option>
+                        <option value="2033">2033</option>
+                        <option value="2034">2034</option>
+                        <option value="2035">2035</option>
+                      </select>
+                    </div>
+                    
+                    <p class="card-text"></p>
+
+                  </div>
+                </div>
+
+ 
+              </div><br>
+
+
+              <div class="container"><br>
+
+                <div class="row">
+                  
+                  <!-- First Column -->
+                  <div class="col-md-4 d-flex flex-column" style="height: 100%;">
+                    <div class="card" style="flex-grow: 1;">
+                      <div class="card-body" style="background-color: #67aeff; color: white; border-radius: 2%;">
+                        <h5 class="card-title" style="color: white;">Vacation Leave</h5> 
+                        <h2 class="text-right"><img src="assets/img/dashboard/leave3.png" alt="1"><span id="vacationLeave">0</span></h2>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <!-- Second Column -->
+                  <div class="col-md-4 d-flex flex-column" style="height: 100%;">
+                    <div class="card" style="flex-grow: 1;">
+                      <div class="card-body" style="background-color: #45dcbe; color: white; border-radius: 2%;">
+                        <h5 class="card-title" style="color: white;">Sick Leave</h5> 
+                        <h2 class="text-right"><img src="assets/img/dashboard/sick.png" alt="1"></i><span id="sickLeave">0</span></h2>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <!-- Third Column -->
+                  <div class="col-md-4 d-flex flex-column" style="height: 100%;">
+                    <div class="card" style="flex-grow: 1;">
+                      <div class="card-body" style="background-color: #ff758c;  color: white; border-radius: 2%;">
+                        <h5 class="card-title" style="color: white; font-size: 13px;">Mandatory / Forced leave</h5> 
+                        <h2 class="text-right"><img src="assets/img/dashboard/leave9.png" alt="1"><span id="mandatoryLeave">0</span></h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+ 
+              <div class="container">
+                <div class="row">              
+                    <!-- First Column -->
+                    <div class="col-md-4 d-flex flex-column" style="height: 100%;">
+                      <div class="card" style="flex-grow: 1;">
+                        <div class="card-body" style="background-color: #67aeff; color: white; border-radius: 2%;">
+                          <h5 class="card-title" style="color: white; font-size: 14px;">Special Privilege Leave</h5> 
+                          <h2 class="text-right"><img src="assets/img/dashboard/special.png" alt="1"></i><span id="specialPrevilidgeLeave">0</span></h2>
+                        </div>
+                      </div>
+                    </div>
+                
+                    <!-- Second Column -->
+                    <div class="col-md-4 d-flex flex-column" style="height: 100%; ">
+                      <div class="card" style="flex-grow: 1;">
+                        <div class="card-body" style="background-color: #45dcbe; color: white; border-radius: 2%;">
+                          <h5 class="card-title" style="color: white;">Paternity Leave</h5> 
+                          <h2 class="text-right"><img src="assets/img/dashboard/father.png" alt="1"></i><span id="paternityLeave">0</span></h2>
+                        </div>
+                      </div>
+                    </div>
+                
+                    <!-- Third Column -->
+                    <div class="col-md-4 d-flex flex-column" style="height: 100%;">
+                      <div class="card" style="flex-grow: 1;">
+                        <div class="card-body" style="background-color: #ff758c;  color: white; border-radius: 2%;">
+                          <h5 class="card-title" style="color: white; font-size: 13px;">Maternity Leave</h5> 
+                          <h2 class="text-right"><img src="assets/img/dashboard/maternity.png"><span id="maternityLeave">0</span></h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+ 
+
+
+                <div class="container">
+                  <div class="row">              
+                      <!-- First Column -->
+                      <div class="col-md-4 d-flex flex-column" style="height: 100%;">
+                        <div class="card" style="flex-grow: 1;">
+                          <div class="card-body" style="background-color: #67aeff; color: white; border-radius: 2%;">
+                            <h5 class="card-title" style="color: white; font-size: 14px;">Solo Parent</h5> 
+                            <h2 class="text-right"><img src="assets/img/dashboard/solo.png" alt="1"></i><span id="soloParentLeave">0</span></h2>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <!-- Second Column -->
+                      <div class="col-md-4 d-flex flex-column" style="height: 100%; ">
+                        <div class="card" style="flex-grow: 1;">
+                          <div class="card-body" style="background-color: #45dcbe; color: white; border-radius: 2%;">
+                            <h5 class="card-title" style="color: white;">Study Leave</h5> 
+                            <h2 class="text-right"><img src="assets/img/dashboard/study.png" alt="1"></i><span id="studyLeave">0</span></h2>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <!-- Third Column -->
+                      <div class="col-md-4 d-flex flex-column" style="height: 100%;">
+                        <div class="card" style="flex-grow: 1;">
+                          <div class="card-body" style="background-color: #ff758c;  color: white; border-radius: 2%;">
+                            <h5 class="card-title" style="color: white; font-size: 13px;">VAWC Leave</h5> 
+                            <h2 class="text-right"><img src="assets/img/dashboard/leave3.png"><span id="vawcLeave">0</span></h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="container">
+                    <div class="row">              
+                        <!-- First Column -->
+                        <div class="col-md-4 d-flex flex-column" style="height: 100%;">
+                          <div class="card" style="flex-grow: 1;">
+                            <div class="card-body" style="background-color: #67aeff; color: white; border-radius: 2%;">
+                              <h5 class="card-title" style="color: white; font-size: 14px;">Rehabilitation leave</h5> 
+                              <h2 class="text-right"><img src="assets/img/dashboard/rehabilitation.png" alt="1"></i><span id="rehabilitationLeave">0</span></h2>
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <!-- Second Column -->
+                        <div class="col-md-4 d-flex flex-column" style="height: 100%; ">
+                          <div class="card" style="flex-grow: 1;">
+                            <div class="card-body" style="background-color: #fcc474; color: white; border-radius: 2%;">
+                              <h5 class="card-title" style="color: white; font-size: 14px;">Special leave benefits for women</h5> 
+                              <h2 class="text-right"><img src="assets/img/dashboard/mother.png" alt="1"></i><span id="womenSpecialLeave">0</span></h2>
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <!-- Third Column -->
+                        <div class="col-md-4 d-flex flex-column" style="height: 100%;">
+                          <div class="card" style="flex-grow: 1;">
+                            <div class="card-body" style="background-color: #ff758c;  color: white; border-radius: 2%;">
+                              <h5 class="card-title" style="color: white; font-size: 13px;">Special Emergency (Calamamity) leave</h5> 
+                              <h2 class="text-right"><img src="assets/img/dashboard/front-line.png"><span id="emergencyLeave">0</span></h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    
+
+                  <div class="container">
+                    <div class="row">              
+                        <!-- First Column -->
+                        <div class="col-md-4 d-flex flex-column" style="height: 100%;">
+                          <div class="card" style="flex-grow: 1;">
+                            <div class="card-body" style="background-color: #67aeff; color: white; border-radius: 2%;">
+                              <h5 class="card-title" style="color: white; font-size: 14px;">Adoption Leave</h5> 
+                              <h2 class="text-right"><img src="assets/img/dashboard/adoption.png" alt="1"></i><span id="adoptionLeave">0</span></h2>
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <!-- Second Column -->
+                        <div class="col-md-4 d-flex flex-column" style="height: 100%; ">
+                          <div class="card" style="flex-grow: 1;">
+                            <div class="card-body" style="background-color: #fcc474; color: white; border-radius: 2%;">
+                              <h5 class="card-title" style="color: white; font-size: 14px;">Monetization of leave credits</h5> 
+                              <h2 class="text-right"><img src="assets/img/dashboard/monetize 1.png" alt="1"></i><span id="monetizationLeave">0</span></h2>
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <!-- Third Column -->
+                        <div class="col-md-4 d-flex flex-column" style="height: 100%;">
+                          <div class="card" style="flex-grow: 1;">
+                            <div class="card-body" style="background-color: #ff758c;  color: white; border-radius: 2%;">
+                              <h5 class="card-title" style="color: white; font-size: 13px;">Terminal Leave</h5> 
+                              <h2 class="text-right"><img src="assets/img/dashboard/leave1.png"><span id="terminalLeave">0</span></h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+   
+
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!--END YOUR CONTENT-->
+      </div>
+      </div>
+      </div>
+    </section>
+
+    <br><br><br><br>
+
+
+
+
 
   </main><!-- End #main -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -706,13 +696,16 @@
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <!-- PDS NAVIGATOR -->
+  <script src="js/pds-profile.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script src="bundles/navigator201.bundle.js"></script>
   <script src="bundles/navbar.bundle.js"></script>
-  
+  <script src="bundles/retrieve_leave.bundle.js"></script>
+
 </body>
 
 </html>

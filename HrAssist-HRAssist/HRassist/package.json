@@ -52,7 +52,8 @@
     "calendar": "node calendar.js",
     "training": "node training.js",
     "training_memo": "node training_memo.js",
-    "training_list": "node training_list.js"
+    "training_list": "node training_list.js",
+    "retrieve_leave": "node retrieve_leave.js"
   },
   "keywords": [],
   "author": "",

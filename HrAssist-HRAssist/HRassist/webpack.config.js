@@ -50,7 +50,8 @@ module.exports = {
         calendar: './src/calendar.js',
         training: './src/training.js',
         training_memo: './src/training_memo.js',
-        training_list: './src/training_list.js'
+        training_list: './src/training_list.js',
+        retrieve_leave: './src/retrieve_leave.js'
         
     },
     output: {
