@@ -376,13 +376,13 @@
               <!-- Card stats -->
               <div class="row g-6 mb-6">
                   
-                  <div class="col-xl-6 col-sm-6 col-12">
+                  <div class="col-xl-6 col-sm-6 col-12" id="top1">
                       <div class="card shadow border-0">
                           <div class="card-body">
                               <div class="row">
                                   <div class="col">
-                                      <span class="h6 font-semibold text-muted text-sm d-block mb-2">Top 1 Performing Employee</span>
-                                      <span class="h3 font-bold mb-0">Camila Binas</span>
+                                      <span class="h6 font-semibold text-muted text-sm d-block mb-2">Top Performing Employees</span>
+                                      <span class="h3 font-bold mb-0">View List</span>
                                   </div>
                                   <div class="col-auto">
                                       <div class="icon icon-shape text-lg rounded-circle">
@@ -400,29 +400,59 @@
                           </div>
                       </div>
                   </div>
-                  <div class="col-xl-6 col-sm-6 col-12">
-                      <div class="card shadow border-0">
-                          <div class="card-body">
-                              <div class="row">
-                                  <div class="col">
-                                      <span class="h6 font-semibold text-muted text-sm d-block mb-2">Top 2 Performing Employee</span>
-                                      <span class="h3 font-bold mb-0">Camila Cabelo</span>
-                                  </div>
-                                  <div class="col-auto">
-                                    <div class="icon icon-shape text-lg rounded-circle">
-                                        <img class="" src="assets/img/dashboard/medal2.png" alt="Profile Picture">
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="mt-2 mb-0 text-sm">
-                                  <span class="badge badge-pill bg-soft-success text-success me-2">
-                                    <i class="bi bi-arrow-up me-1"></i>
-                                  </span>
-                                  <span class="text-nowrap text-xs text-muted">This month / December / </span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+
+
+                  <div class="modal fade" id="mytop1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Top Performing Employees</h5>
+                            </div>
+                            <div class="modal-body">
+                              <table class="table table-hover">
+                                <thead>
+                                  <tr>
+                                    <th> </th>
+                                    <th>Last Name</th>
+                                    <th>First Name</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td> <img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;"></td>
+                                    <td>Albos</td>
+                                    <td>John Erwin</td>
+                                  </tr>
+                                  <tr>
+                                    <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;"> </td>
+                                    <td>Binas</td>
+                                    <td>Camila</td>
+                                  </tr>
+                                  <tr>
+                                    <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;"> </td>
+                                    <td>Ar-jay</td>
+                                    <td>De la Fuente</td>
+                                  </tr>
+                                  <tr>
+                                    <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;"> </td>
+                                    <td>Donita Rose</td>
+                                    <td>Gadil</td>
+                                  </tr>
+                                  <tr>
+                                    <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;"> </td>
+                                    <td>Arriana Mae</td>
+                                    <td>Malubay</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             
               </div>
               <div class="card shadow border-0 mb-7">
@@ -494,6 +524,19 @@
   <script src="js/script3.js"></script>
 
   <script src="bundles/navbar.bundle.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+                  document.getElementById("top1").addEventListener("click", function() {
+                  $('#mytop1').modal('show');
+              });
+          
+              document.getElementById("closemodal").addEventListener("click", function() {
+                  $('#mytop1').modal('hide');
+              });
+  </script>
   
 </body>
 
