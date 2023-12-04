@@ -446,42 +446,53 @@
         <style>
           .linear-menu {
             background-color: #fffcfc;
+            padding: 0;
+            overflow-x: auto; /* Enable horizontal scrolling */
           }
-
+        
           .linear-menu ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
+            white-space: nowrap; /* Prevent line breaks */
           }
-
+        
           .linear-menu li {
-            flex: 1;
+            flex: 0 0 auto; /* Prevent flex items from growing */
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            height: 100%;
           }
-
+        
           .linear-menu a {
-            display: block;
-            font-weight: 500;
-            color: rgb(22, 22, 22);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #08533f;
+            color: #ffffff;
             text-align: center;
-            padding: 14px 16px;
+            padding: 5px 32px;
             text-decoration: none;
             border-bottom: 2px solid transparent;
             /* Initially, set a transparent border */
             transition: border-bottom 0.3s;
             /* Add a smooth transition effect */
+            height: 100%;
+            font-size: 14px;
+            font-weight: 500;
+            width: 100%;
+            border: 1px solid #1f8f3e;
+            white-space: nowrap; /* Prevent text wrapping */
           }
-
+        
           .linear-menu a:hover {
-            background-color: #1f202017;
+            background-color: #1f8f3e;
             /*border-bottom: 2px solid white;*/
             /* Change the border color on hover */
           }
         </style>
-
-
-
-
 
         <!-- Second Container with Column -->
         <div class="col-md-8">
@@ -493,17 +504,17 @@
                 <label style="color:#1f2020; font-weight: 1000"><small><b>CS Form 212</b></small></label><br>
               </div>
 
-
               <nav class="linear-menu">
                 <ul>
                   <li><a href="#" id="personalPDSSec">Personal</a></li>
                   <li><a href="#" id="educPDS">Education & Eligibility</a></li>
-                  <li><a href="#" id="workExpPDS">Work Experience</a></li>
+                  <li><a href="#" id="workExpPDS" >Work Experience</a></li>
                   <li><a href="#" id="trainingPDS">Trainings</a></li>
                   <li><a href="#" id="otherInfoPDS">Other Info</a></li>
                   <li><a href="#" id="esignaturePDS">E - Signature</a></li>
                 </ul>
               </nav>
+
               <br>  
               <section id="personalPDSLayout" style="display: block;">
                 <div class="container custom-container-pds"> 
@@ -1391,6 +1402,8 @@
   <script src="bundles/navigator201.bundle.js"></script>
   <script src="bundles/navbar.bundle.js"></script>
   <script src="bundles/auth.bundle.js"></script>
+  <script src="js/sidebar.js"></script>
+
 
 
 </body>
