@@ -112,7 +112,7 @@ h6 {
 
 .dropdown-menu .dropdown-footer a {
   color: #444444;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .dropdown-menu .dropdown-footer a:hover {

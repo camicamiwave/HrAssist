@@ -39,8 +39,7 @@
 
   <!-- Template Main CSS File -->
   <link href="css/employee-template.css" rel="stylesheet">
-  <link href="css/employee-template.css" rel="stylesheet">
-
+  
 </head>
 
 <body>
@@ -538,7 +537,90 @@
 
               </div>
             </div><!-- End Job Vacancy -->
+
+            <div class="col-12">
+              <div class="card">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="user-dashboard-info-box table-responsive mb-0 bg-white p-4 shadow-sm">
+                      <table class="table manage-candidates-top mb-0">
+                        <h5 class="card-title">Employee Complaints</h5>
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th class="text-center">Date Filed</th>
+                            <th class="action text-right">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="candidates-list">
+                            <td class="title">
+                              <div class="thumb">
+                                <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+                              </div>
+                              <div class="candidate-list-details">
+                                <div class="candidate-list-info">
+                                  <div class="candidate-list-title">
+                                    <p class="mb-0" style="padding-left: 5vw;"><a href="#">John Erwin Albos</a></p>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                            <td class="candidate-list-favourite-time text-center">
+                              <p>12/01/2023<p>
+                            </td>
+                            <td>
+                              <button class="btn" style="background-color: #08533F; color: #eeeeee;" onclick="redirectToAnotherPage2()">View</button>
+                            </td>
+                          </tr>
+                          <tr class="candidates-list">
+                            <td class="title">
+                              <div class="thumb">
+                                <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                              </div>
+                              <div class="candidate-list-details">
+                                <div class="candidate-list-info">
+                                  <div class="candidate-list-title">
+                                    <p class="mb-0" style="padding-left: 5vw; color: #000;"><a href="#">Ar-jay De La Fuente</a></p>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                            <td class="candidate-list-favourite-time text-center">
+                              <p>12/03/2023</p>
+                            </td>
+                            <td>
+                              <button class="btn" style="background-color: #08533F; color: #eeeeee;" onclick="redirectToAnotherPage2()">View</button>
+                            </td>
+                          </tr>
+                          <tr class="candidates-list">
+                            <td class="title">
+                              <div class="thumb">
+                                <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="">
+                              </div>
+                              <div class="candidate-list-details">
+                                <div class="candidate-list-info">
+                                  <div class="candidate-list-title">
+                                    <p class="mb-0" style="padding-left: 5vw;"><a href="#">Jan Christian King</a></p>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                            <td class="candidate-list-favourite-time text-center">
+                              <p>12/04/2023</p>
+                            </td>
+                            <td>
+                              <button class="btn" style="background-color: #08533F; color: #eeeeee" onclick="redirectToAnotherPage2()">View</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+          </div>
                   </div><!-- End Left side columns -->
 
           <!-- Right side columns -->
@@ -642,8 +724,6 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-
-
   <!-- JavaScript -->
   <script src="js/admin-chart.js"></script>
 
@@ -654,6 +734,10 @@
   <script>
     function redirectToAnotherPage() {
         window.location.href = 'https://csc.gov.ph/downloads/2017-oraohra';
+    }
+
+    function redirectToAnotherPage2() {
+        window.location.href = 'admin_complaint_view.html';
     }
   </script>
 
