@@ -44,13 +44,24 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="#services">Hiring</a></li>
-                    <li><a class="nav-link scrollto " href="#portfolio">Activities</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                    <li><a class="getstarted scrollto" id="landing_login_btn">Login</a></li>
-                </ul>
+                    <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+                    <li><a class="nav-link scrollto" href="about.html">About Us</a></li>
+                    <li><a class="nav-link scrollto" href="job-list.html">Hiring</a></li>
+                    <li><a class="nav-link scrollto" href="contact.html">Contact</a></li>  
+                    <li class="dropdown">
+                      <a class="nav-link scrollto" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle" style="width: 2.5vw; height: 5vh;">
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="profileDropdown" style="margin-left: -5vw;">
+                        <li> <a class="dropdown-item d-flex align-items-center" href="applicant_profile.html">
+                          <i class="bi bi-person"></i>
+                          <span style="margin-right: 4vw;">My Profile</span>
+                        </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" id="landing_login_btn" style="padding-left: 3.5vw;"> <i class="bi bi-box-arrow-right"></i>Login</a></li>
+                      </ul>
+                    </li>
+                  </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
@@ -69,11 +80,9 @@
             <!-- Account page navigation-->
             <!-- Account page navigation-->
             <nav class="nav nav-borders">
-                <a class="nav-link  active" id="profileTab">Profile</a>
-                <a class="nav-link" id="statusTab">Status</a>
-                <a class="nav-link" id="securityTab">Security</a>
-
-
+                <a class="nav-link  active" id="profileTab" href="profile.html">Profile</a>
+                <a class="nav-link" id="statusTab" href="applicant_status.html">Status</a>
+                <a class="nav-link" id="securityTab" href="applicant_security.html">Security</a>
             </nav>
 
             <hr class="mt-0 mb-6">
@@ -108,18 +117,18 @@
                                     </div>
                                     <!-- Form Group (last name)-->
                                     <div class="col-md-6">
-                                        <label class="small mb-1" for="inputStatus" id="ApplicantStatus">Pending</label> 
+                                        <label class="small mb-1" for="inputStatus" id="ApplicantStatus">Not Currently Applied</label> 
                                     </div>
                                 </div>
 
                                 <div class="row gx-3 mb-3">
                                     <!-- Form Group (last name)-->
                                     <div class="col-md-6">
-                                        <label class="small mb-1" for="inputLastName">Job Apply:</label> 
+                                        <label class="small mb-1" for="inputLastName">Job Applied:</label> 
                                     </div>
                                     <!-- Form Group (first name)-->
                                     <div class="col-md-6">
-                                        <label class="small mb-1" for="inputFirstName" id="JobApply">Treasurer</label> 
+                                        <label class="small mb-1" for="inputFirstName" id="JobApply">N/A</label> 
                                     </div>
                                 </div>
                                 
@@ -131,7 +140,7 @@
                                     </div>
                                     <!-- Form Group (first name)-->
                                     <div class="col-md-6">
-                                        <label class="small mb-1" for="inputFirstName" id="dateSubmitted">11/22/2023</label> 
+                                        <label class="small mb-1" for="inputFirstName" id="dateSubmitted">N/A</label> 
                                     </div>
                                 </div>
 
