@@ -39,6 +39,7 @@
 
   <!-- Template Main CSS File -->
   <link href="css/employee-template.css" rel="stylesheet">
+  <link href="css/style3.css" rel="stylesheet"> <!--First link mo muna 'tong na ito'-->
   
 </head>
 
@@ -193,44 +194,45 @@
 
  <!--Side Bar-->
   <aside id="sidebar" class="sidebar">
-
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-heading">ADMIN TOOL</li>
-      <li class="nav-item">
-        <a class="nav-link" href="admin_dashboard.html">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
 
-      <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="admin_201file_account.html">
-              <i class="bi bi-circle"></i><span>Add Employee</span>
+        <li class="nav-item">
+            <a class="nav-link" id="dashboard" href="admin_dashboard.html">
+                <i class="bi bi-grid"></i>
+                <span>Dashboard</span>
             </a>
-          </li>
-          <li>
-            <a href="admin_employee_registry_list.html">
-              <i class="bi bi-circle"></i><span>Employee List</span>
+        </li><!-- End Dashboard Nav -->
+
+        <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-          </li>
-          <li>
-            <a href="admin_edit_employee.html">
-              <i class="bi bi-circle"></i><span>Edit Employee</span>
-            </a>
-          </li>
-          <li>
-            <a href="admin_search_employee_view.html">
-              <i class="bi bi-circle"></i><span>Search Employee</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Components Nav -->
+            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a class="nav-link collapsed" id="addemployee" href="admin_201file_account.html">
+                        <i class="bi bi-circle"></i><span>Add Employee</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="employeelist" href="admin_employee_registry_list.html">
+                        <i class="bi bi-circle"></i><span>Employee List</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="editemployee" href="admin_search_employee_view.html">
+                        <i class="bi bi-circle"></i><span>Edit Employee</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="searchemployee" href="admin_search_employee_view.html">
+                        <i class="bi bi-circle"></i><span>Search Employee</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Components Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
@@ -347,6 +349,36 @@
         </ol>
       </nav>
     </div><!-- End Page Title -->
+
+    <div class="h-screen flex-grow-1 overflow-y-lg-auto">
+
+
+      <!--Copy mo lang 'to tas paste mo kung saan mo gusto, kung ayaw mo 'di wag-->
+      <!-- Header -->
+      <header class="bg-surface-primary border-bottom pt-6">
+          <div class="container-fluid">
+              <div class="mb-npx">
+                  <div class="row align-items-center">
+                      <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+                          <!-- Title -->
+                          <h1 class="h2 mb-0 ls-tight">
+                              </h1>
+                      </div>
+
+                  <!-- Nav -->
+                  <ul class="nav nav-tabs mt-4 overflow-x border-0">
+                      
+                  </ul>
+              </div>
+          </div>
+      </header>
+      <!--Syempre hanggang dito lang-->
+
+
+
+      <!-- Main -->
+      <main class="py-6 bg-surface-secondary">
+          <div class="container-fluid">
 
       <!--START YOUR CONTENT HERE -->
 
@@ -698,6 +730,8 @@
               </p>
               <button class="btn btn-primary" onclick="redirectToAnotherPage()">Read More</button>
             </div>
+          </div>
+          </div>
           </div>
   </section>
   

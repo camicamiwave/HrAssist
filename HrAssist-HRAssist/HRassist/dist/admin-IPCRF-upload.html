@@ -165,8 +165,9 @@
               <hr class="dropdown-divider">
             </li>
 
+
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="admin-users-profile.html">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>
@@ -193,44 +194,44 @@
 
   <!--Sidebar-->
   <aside id="sidebar" class="sidebar">
-
     <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-heading">ADMIN TOOL</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="admin_dashboard.html">
+        <a class="nav-link collapsed" href="index.html">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
-      <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="admin_201file_account.html">
-              <i class="bi bi-circle"></i><span>Add Employee</span>
+        <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-          </li>
-          <li>
-            <a href="admin_employee_registry_list.html">
-              <i class="bi bi-circle"></i><span>Employee List</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-badges.html">
-              <i class="bi bi-circle"></i><span>Edit Employee</span>
-            </a>
-          </li>
-          <li>
-            <a href="admin_search_employee_view.html">
-              <i class="bi bi-circle"></i><span>Search Employee</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Components Nav -->
+            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a class="nav-link collapsed" id="addemployee" href="admin_201file_account.html">
+                        <i class="bi bi-circle"></i><span>Add Employee</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="employeelist" href="admin_employee_registry_list.html">
+                        <i class="bi bi-circle"></i><span>Employee List</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="editemployee" href="admin_search_employee_view.html">
+                        <i class="bi bi-circle"></i><span>Edit Employee</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="searchemployee" href="admin_search_employee_view.html">
+                        <i class="bi bi-circle"></i><span>Search Employee</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Components Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
@@ -238,18 +239,18 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="admin_add_applicant.html">
+            <a href="forms-elements.html">
               <i class="bi bi-circle"></i><span>Add Applicant</span>
             </a>
           </li>
           <li>
-            <a href="admin_manage_applicant_view.html">
+            <a href="forms-layouts.html">
               <i class="bi bi-circle"></i><span>Applicant List</span>
             </a>
           </li>
 
           <li>
-            <a href="admin_search_applicant.html">
+            <a href="forms-validation.html">
               <i class="bi bi-circle"></i><span>Search Applicant</span>
             </a>
           </li>
@@ -262,7 +263,7 @@
           <span>Job Vacancy</span>
         </a>
       </li><!-- End Job Vacancy Nav -->
-
+  
       <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
@@ -272,7 +273,7 @@
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="pages-contact.html">
           <i class="bi bi-check-square"></i>
           <span>Employee IPCRF</span>
         </a>
@@ -280,7 +281,7 @@
 
       <li class="nav-heading">Rewards & RECOGNITION</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="admin_rewards_view.html">
+        <a class="nav-link collapsed" href="pages-register.html">
           <i class="bi bi-award"></i>
           <span>Rewards</span>
         </a>
@@ -288,7 +289,7 @@
 
       <li class="nav-heading">LEARNING DEVELOPMENT</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+        <a class="nav-link collapsed" href="pages-login.html">
           <i class="bi bi-people-fill"></i>
           <span>Training & Seminar</span>
         </a>
@@ -301,32 +302,32 @@
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="admin-offices.html">
+            <a href="icons-bootstrap.html">
               <i class="bi bi-circle"></i><span>Office</span>
             </a>
           </li>
           <li>
-            <a href="admin_accounts_view.html">
+            <a href="icons-remix.html">
               <i class="bi bi-circle"></i><span>Accounts</span>
             </a>
           </li>
           <li>
-            <a href="calendar">
+            <a href="icons-boxicons.html">
               <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
             </a>
           </li>
         </ul>
       </li><!-- End Icons Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="admin_request.html">
+        <a class="nav-link collapsed" href="pages-login.html">
           <i class="bi bi-calendar"></i>
           <span>Leave Management</span>
         </a>
       </li><!-- End Login Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="admin_dtr_form.html">
-          <i class="bi sbi-clock"></i>
-          <span>Daily Time Record</span>
+        <a class="nav-link collapsed" href="pages-login.html">
+          <i class="bi bi-clock"></i>
+          <span>DTR</span>
         </a>
       </li><!-- End Login Page Nav -->
 
@@ -439,6 +440,10 @@
   <script src="assets/js/main.js"></script>
 
   <script src="bundles/ipcrf_list.bundle.js"></script>
+
+  <!-- Database Javascript -->
+  <script src="bundles/auth.bundle.js"></script> 
+  <script src="bundles/navbar.bundle.js"></script>
 
 </body>
 
