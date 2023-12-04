@@ -15,7 +15,9 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -56,7 +58,7 @@
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
-    
+
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
 
@@ -207,7 +209,7 @@
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
-        <li class="nav-heading">ADMIN TOOL</li>
+      <li class="nav-heading">ADMIN TOOL</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="index.html">
           <i class="bi bi-grid"></i>
@@ -259,7 +261,7 @@
               <i class="bi bi-circle"></i><span>Applicant List</span>
             </a>
           </li>
-          
+
           <li>
             <a href="forms-validation.html">
               <i class="bi bi-circle"></i><span>Search Applicant</span>
@@ -270,12 +272,12 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
-            <i class="bx bxs-briefcase"></i>
-            <span>Job Vacancy</span>
+          <i class="bx bxs-briefcase"></i>
+          <span>Job Vacancy</span>
         </a>
-    </li><!-- End Job Vacancy Nav -->
+      </li><!-- End Job Vacancy Nav -->
 
-    <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+      <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="bi bi-bar-chart-line"></i>
@@ -350,176 +352,219 @@
   <main id="main" class="main">
 
 
+    <style>
+      .vertical-menu {
+        background-color: #ffffff;
+        width: 100%;
+        /* Define the width of the vertical menu */
+      }
+
+      .vertical-menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .vertical-menu li {
+        text-align: center;
+      }
+
+      .vertical-menu a {
+        display: block;
+        text-align: left;
+        color: #08533fe8;
+        font-weight: 500;
+        font-family: 'poppins';
+        padding: 14px 16px;
+        text-decoration: none;
+        border-bottom: 1px solid white;
+        /* Add a border between menu items */
+        transition: background-color 0.3s;
+        /* Add a smooth transition effect */
+      }
+
+      .vertical-menu a:hover {
+        background-color: #08533f1e;
+        /* Change the background color on hover */
+      }
+
+      .active1 {
+        background-color: #08533f0e;
+        border-radius: 5px;
+      }
+    </style>
+
+
     <section class="section dashboard">
-      <div class="row">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card d-flex justify-content-center">
+            <div class="card-header text-left">Basic Information</div>
+            <div class="card-body text-center">
+              <br>
+              <h4 class="card-title mb-0" id="applicantFullName" style="font-size: 20px; "></h4>
+              <br>
+              <img class="img-account-profile rounded-circle mb-2" id="applicantProfile" 
+                style="width: 40%;" alt="Applicant Profile">
+              <br><br>
 
-        <!-- Left side columns -->
-        <div class="col-lg-12">
-          <div class="row">
 
-            <!--START YOUR CONTENT HERE -->
-            
-            <div class="container">
-                <div class="view-account">
-                    <section class="module">
-                        <div class="module-inner">
-                            <div class="side-bar">
-                                <div class="user-info">
-                                    <img class="img-profile img-circle img-responsive center-block" src="img/admin/user.jpg" alt="">
-                                    <ul class="meta list list-unstyled">
-                                        <li class="name"> <h5><strong>Camila Binas</strong></h5>
-                                            <p>DSWD Employee</p>
-                                        </li>
-                                       
-                                    </ul>
-                                </div>
-                                <nav class="side-menu">
-                                    <ul class="nav">
-                                      <li class="active"><a href="admin-employee-profile.html"><span class="fa fa-user"></span> Profile</a></li>
-                                      <li><a href="admin-employee-datasheet.html"><span class="bi bi-file-earmark-person"></span> Personal Data Sheet</a></li>
-                                      <li><a href="admin-employee-appointment.html"><span class="bi bi-calendar-event"></span> Appointment</a></li>
-                                      <li><a href="admin-employee-attachment.html"><span class="bi bi-paperclip"></span> Attachments</a></li>
-                                      <li><a href="admin-employee-leave.html"><span class="bi bi-calendar-week"></span> Leave credits</a></li>
-                                      <li><a href="#"><span class="bi bi-emoji-smile"></span> Behavior</a></li>
-                                      <li><a href="#"><span class="bi bi-activity"></span> Activity</a></li>                             
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div class="content-panel">
-                              <h5 class="mx-auto text-center custom-text" style="padding-right: 8vw; color: #1f8f3e; font-family: Poppins;"><b>Employee Personal Info</b></h5>
-                              <br>
-                                <form class="form-horizontal">
-                                    <fieldset class="fieldset">
-                                        
-                                        <div class="form-group avatar">
-                                        
-                                           
-                                        </div>
-                                       
-                                        <!--Content Here-->
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="profile-head">
-                                                    <div class="profiles col-xs-8 col-xs-push-2  col-sm-10 col-sm-push-1 thumbnail">
-                                                        <div class="col-md-3 col-sm-3 col-xs-12">
-                                                            
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <div class="row">
-                                                                <span class="col-sm-12"><h5>Basic Information</h5></span>
-                                                                <br> <br>
+              <div class="row gx-3 mb-3">
+                <div class="col-md-12">
+                  <label class="large mb-1"
+                    style="font-family: poppins; font-weight: 500; font-size: 13px; color: rgb(57, 57, 226);"
+                    for="inputApplicantStatus"><i class="bi bi-telephone">&nbsp;&nbsp;&nbsp;</i><span
+                      id="empPhone"></span></label>
 
-                                                                <div class="col-md-4 col-sm-6 col-xs-12">
-
-                                                                    <ul>
-                                                                        <span>Full Name: </span><br>
-                                                                        <span>Birthday: </span><br>
-                                                                        <span>Legal gender: </span><br>
-                                                                        <span>Marital status:</span><br>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="col-md-4 col-sm-6 col-xs-12">
-                                                                    
-                                                                    <ul>
-                                                                       
-                                                                       <span class="fieldset-title">Camila Binas</span><br>
-                                                                       <span class="fieldset-title">02//11/02</span><br>
-                                                                       <span class="fieldset-title">Female</span><br>
-                                                                       <span class="fieldset-title">Single</span><br>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <hr>
-
-                                                     
-                                                        <div class="col-md-12">
-                                                            <div class="row">
-                                                                <span class="col-sm-12"><h5>Contact Information</h5></span>
-                                                                <br> <br>
-
-                                                                <div class="col-md-4 col-sm-6 col-xs-12">
-
-                                                                    <ul>
-                                                                        <span>Work phone: </span><br>
-                                                                        <span>Work email: </span><br>
-                                                                        <span>Address: </span><br>
-                                                                        
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="col-md-8 col-sm-6 col-xs-12">
-                                                                    
-                                                                    <ul>
-                                                                       <span class="fieldset-title">(639)515020789</span><br>
-                                                                       <span class="fieldset-title">camilabinas@gmail.com</span><br>
-                                                                       <span class="fieldset-title">Purok-II Brgy. Plaridel Basud, Camarines Norte</span><br>
-                                                                      
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <hr>
-
-                                                           <!--Emergency Contact-->
-                                                           <div class="col-md-12">
-                                                            <div class="row">
-                                                                <span class="col-sm-12"><h5>Job details</h5></span>
-                                                                <br> <br>
-
-                                                                <div class="col-md-4 col-sm-6 col-xs-12">
-
-                                                                    <ul>
-                                                                        <span>Job title: </span><br>
-                                                                        <span>Employee ID: </span><br>
-                                                                        <span>Location: </span><br>
-                                                                        <span>Employee type: </span><br>
-                                                                        <span>Department: </span><br>
-                                                                        <span>Start date: </span><br>
-                                                                        
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="col-md-8 col-sm-6 col-xs-12">
-                                                                    
-                                                                    <ul>
-                                                                       <span class="fieldset-title">DSWD Employee</span><br>
-                                                                       <span class="fieldset-title">21020</span><br>
-                                                                       <span class="fieldset-title">San Vicente, Camarines Norte</span><br>
-                                                                       <span class="fieldset-title">Full Time</span><br>
-                                                                       <span class="fieldset-title">DSWD</span><br>
-                                                                       <span class="fieldset-title">08/01/2022</span><br>
-                                                                      
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <!--End Emergency Contact-->
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!--End Content Here-->
-                                   
-                                    </fieldset>
-                                    <hr>
-                                </form>
-                            </div>
-                        </div>
-
-                        
-
-                    </section>
                 </div>
-            </div>
-            
+              </div>
+              <div class="row gx-3 mb-3">
+                <div class="col-md-12">
+                  <label class="large mb-1"
+                    style="font-family: poppins; font-weight: 500; font-size: 13px; color: rgb(57, 57, 226);"
+                    for="inputApplicantStatus"><i class="bi bi-envelope"></i>&nbsp;&nbsp;&nbsp;
+                    <span id="empEmail"></span> </label>
+                </div>
+              </div>
+              <hr>
 
-            <!--END YOUR CONTENT-->
+
+              <nav class="vertical-menu">
+                <ul>
+                  <li class="active1"><a href="#" id="overviewPDS"><span class="bi bi-bar-chart"></span>&nbsp;&nbsp;&nbsp;Overview</a>
+                  </li>
+                  <li ><a href="#" id="personalPDS"><span
+                        class="bi bi-file-earmark-person"></span>&nbsp;&nbsp;&nbsp;Personal Data
+                      Sheet</a></li>
+                  <li><a href="#" id="appointmentPDS"><span
+                        class="bi bi-calendar-event"></span>&nbsp;&nbsp;&nbsp;Appointment</a></li>
+                  <li><a href="#" id="attachmentsPDS"><span
+                        class="bi bi-paperclip"></span>&nbsp;&nbsp;&nbsp;Attachments</a></li>
+                  <li><a href="#" id="leavecreditsPDS"><span class="bi bi-calendar-week"></span>&nbsp;&nbsp;&nbsp;Leave
+                      Credits</a></li>
+                  <li><a href="#" id="behaviorPDS"><span class="bi bi-emoji-smile"></span>&nbsp;&nbsp;&nbsp;Behavior</a>
+                  </li>
+                  <li><a href="#" id="activityPDS"><span class="bi bi-activity"></span>&nbsp;&nbsp;&nbsp;Activity</a>
+                  </li>
+                </ul>
+              </nav>
+
+
+
+              <br>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Second Container with Column -->
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">Overview</div>
+            <div class="card-body">
+              <br>
+              <div class="row">
+                <div class="col-md-9">
+                  <br>
+                  <div class="container">
+                    <h1 style="margin-top: -12px; font-size: 40px; font-weight: 600; font-family: poppins;" id="employeeFullName">
+                    </h1><br>
+                    <h5><span id="empDesignation">Administrative Aide</span> | <span id="employmentStatus">Full time</span></h5>
+                    <p>Date of signing: <span id="startOfAppointment">January 12, 2023</span></p>
+                    
+                    <p class="card-text"></p>
+
+                  </div>
+                </div>
+
+                <div class="col-md-2">
+
+                  <div class="container mt-3">
+                    <!-- Button with Dropdown -->
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-primary" style=" width: 120px;">Action</button>
+                      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Resigned</a>
+                        <a class="dropdown-item" href="#">End of Contract</a>
+                        <a class="dropdown-item" href="#">Retired</a>
+                        <a class="dropdown-item" href="#">Fired</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div><br>
+
+
+              <div class="container">
+                <div class="row">
+                  <!-- First Column -->
+                  <div class="col-md-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Role</h5>
+                        <p class="card-text">Employee</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Second Column -->
+                  <div class="col-md-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Column 2</h5>
+                        <p class="card-text">More content goes here.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Third Column -->
+                  <div class="col-md-4">
+                    <div class="card">
+                      <div class="card-body">
+
+
+                        <h5 class="card-title">Column 3</h5>
+                        <p class="card-text">Even more content goes here.</p>
+
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!--END YOUR CONTENT-->
+      </div>
+      </div>
+      </div>
+    </section>
+
+    <br><br><br><br>
+
+
+
+
 
   </main><!-- End #main -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -531,11 +576,15 @@
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
+  <!-- PDS NAVIGATOR -->
+  <script src="js/pds-profile.js"></script>
+
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script src="bundles/navigator201.bundle.js"></script>
   <script src="bundles/navbar.bundle.js"></script>
-  
+
 </body>
 
 </html>

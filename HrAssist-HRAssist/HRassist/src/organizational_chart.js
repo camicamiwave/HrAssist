@@ -235,10 +235,6 @@ function fetchOfficeEmployee() {
         }
     });
 
-
-
-
-
 }
 
 window.addEventListener('load', fetchOfficeEmployee)

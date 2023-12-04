@@ -42,7 +42,9 @@
     "leave_management": "node leave_management.js",
     "ipcrf": "node ipcrf.js",
     "ipcrf_list": "node ipcrf_list.js",
-    "individual_ipcrf": "node individual_ipcrf.js"
+    "individual_ipcrf": "node individual_ipcrf.js",
+    "retrieve_pds": "node retrieve_pds.js",
+    "navigator201": "node 201navigator.js"
   },
   "keywords": [],
   "author": "",
