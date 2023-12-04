@@ -129,7 +129,6 @@ function fetchOfficeEmployee() {
         officeNameLabel.innerHTML = employeeInfo.OfficeName
         officeNameSpan.innerHTML = employeeInfo.OfficeName
 
-
     })
     
     const employeeDocumentRef = doc(OfficecolRef, receivedOfficeID);

@@ -353,21 +353,29 @@
                                 <div class="content">
                                     <form id="trainingForm">
                                         <div class="user-details">
+ 
+                                          <div class="input-box">
+                                            <span class="details">Memorandum No</span>
+                                            <input type="number" id="memoNum" name="title" required>
+                                        </div>
                                             <div class="input-box">
                                                 <span class="details">Title</span>
                                                 <input type="text" id="title" name="title" required>
                                             </div>
                                             <div class="input-box">
-                                                <span class="details">Description</span>
+                                                <span class="details">Subject</span>
                                                 <input type="text" id="description" name="description" required>
                                             </div>
                                             <div class="input-box">
-                                                <span class="details">Host Department</span>
+                                                <span class="details">Sponsored/Organizer</span>
                                                 <input type="text" id="hostDepartment" name="hostDepartment" required>
                                             </div>
                                             <div class="input-box">
-                                                <span class="details">Participants</span>
-                                                <input type="text" id="participants" name="participants" required>
+                                                <span class="details">Participants</span> 
+                                                <select id="participants">
+                                                  <option>Select</option> 
+                                                  <option value="All">All</option> 
+                                                </select> 
                                             </div>
                                             <div class="input-box">
                                                 <span class="details">Start Date</span>
@@ -377,39 +385,43 @@
                                                 <span class="details">End Date</span>
                                                 <input type="date" id="endDate" name="endDate">
                                             </div>
-                                            <div class="input-box">
+
+                                            <div class="container">
                                                 <span class="details">Purpose</span>
-                                                <input type="text" id="purpose" style="width: 890px;" name="purpose" required>
+                                                <textarea type="text" rows="3" id="purpose" style="width: 100%;" name="purpose" required></textarea>
                                             </div>
                                             
                                             <br>
-                                            <!-- Add the necessary jQuery library -->
+                                            
+  
+                                            
                                             <script s src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
                                             <button type="button" style="background-color:#0a8566; outline-color: #0a8566; margin-left:607px ;" class="btn btn-warning btn-add-work-experience" id="addNewButton" >
                                                 <i class="bi bi-plus"></i> Attach File
                                             </button>
                                             <br><br>
                                             
-                                            <form id="employeeAttachments">
-                                                <table class="table table-hover">
+                                            <form >
+                                                <table class="table table-hover" >
                                                     <thead>
                                                         <tr style="background-color: rgb(236, 236, 235);">
-                                                            <th scope="col" style="width: 15%; text-align: center;">ID</th>
-                                                            <th scope="col" style="width: 60%; text-align: center">File Name</th>
+                                                            <th scope="col" style="width: 15%; text-align: left;">ID</th>
+                                                            <th scope="col" style="width: 60%; text-align: left">File Name</th>
                                                             <th scope="col" class="text-center" style="width: 30%; text-align: center">Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody id="fileListBody">
-                                                        <!-- File rows will be added dynamically here -->
+                                                      
                                                     </tbody>
                                                 </table>
                                             </form>
                                             
+                                            
                                             <script>
                                                 $(document).ready(function () {
                                                     // Array to store uploaded files
-                                                    window.AttachmentuploadedFiles = [];
-                                                    window.AttachmentFiles = [];
+                                                    AttachmentuploadedFiles = [];
+                                                    AttachmentFiles = [];
                                             
                                                     // Function to update file list and renumber
                                                     function updateFileList() {
@@ -418,9 +430,9 @@
                                                             const file = AttachmentuploadedFiles[i];
                                             
                                                             const row = $("<tr>");
-                                                            const fileNameCell = $("<td class='file-name' style='width: 15%; text-align: center;'>");
-                                                            const actionCell = $("<td class='text-center' style='width: 60%; text-align: center'>");
-                                                            const deleteButton = $("<button type='button' class='btn btn-danger btn-delete-file' style = 'width: 100px; margin-left:50px; margin-top:-5px;  margin-bottom:-5px;'><i class='bi bi-trash'></i> Delete</button>");
+                                                            const fileNameCell = $("<td class='file-name' style=' text-align: left;'>");
+                                                            const actionCell = $("<td class='text-center' style=' text-align: left'>");
+                                                            const deleteButton = $("<button type='button' class='btn btn-danger btn-delete-file' style = 'width: 100px; margin-left:50px; margin-top:-5px;  margin-bottom:-5px;'>Delete</button>");
                                             
                                                             const fileRow = $("<div><p class='file-link'>" + file.name + "</p></div>");
                                                             fileNameCell.append(fileRow);
@@ -463,6 +475,8 @@
                                                                 updateFileList(); // Update the file list after adding files
                                                             }
                                                         });
+
+                                                        
                                             
                                                         fileInput.click();
                                                     });
@@ -472,13 +486,19 @@
                                                         console.log(AttachmentuploadedFiles, 'Hey...')
                                                         return AttachmentuploadedFiles;
                                                     }
+
+
+                                                    
+
                                                 });
+                                                
                                             </script>
                                             
                                         </div>
                                         
-                                        <a href="admin_training_content.html"><button type="button" class="submit" style="background-color: #0a8566; width: 100%; color: white; padding: 8px; border-radius: 5px;" >Save</button></a>
+                                        <button type="button" id="trainingSubmitBtn" class="submit" style="background-color: #0a8566; width: 100%; color: white; padding: 8px; border-radius: 5px;" >Save</button>
                                     </form>
+ 
                     
                                     <!-- Display area for the submitted values -->
                                     <div id="displayValues"></div>
@@ -509,19 +529,17 @@
           <!-- Template Main JS File -->
           <script src="assets/js/main.js"></script>
         
-          <script src="bundles/employee_leave_form.bundle.js"></script>
           <script src="js/datasheet.js"></script>
-        <script src="bundles/auth.bundle.js"></script> 
-        <script src="bundles/file201.bundle.js"></script>
-        <script src="bundles/fetch_employee_info.bundle.js"></script> 
-        <script src="bundles/employee_attachments.bundle.js"></script>
+
+
+        <script src="bundles/training.bundle.js"></script>  
+        <script src="bundles/auth.bundle.js"></script>  
+        <script src="bundles/navbar.bundle.js"></script>  
+        
 
         <!-- JavaScript -->
         <script src="js/script.js"></script>
 
-        <!-- Database Javascript -->
-        <script src="bundles/auth.bundle.js"></script> 
-        <script src="bundles/navbar.bundle.js"></script>
     </body>
 
 </html>
