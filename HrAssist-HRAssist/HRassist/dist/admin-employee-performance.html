@@ -432,37 +432,37 @@
                     <h5 class="mb-0">Employee Performance by Department</h5>
                 </div>
 
- <!-- Bar Chart -->
-<div id="barChart"></div>
+                <!-- Bar Chart -->
+                <div id="barChart"></div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    new ApexCharts(document.querySelector("#barChart"), {
-      series: [{
-        data: [1.499, 1.499, 1.499, 1.499, 1.499, 1.499, 1.499, 5.000, 5.000, 5.000]
-      }],
-      chart: {
-        type: 'bar',
-        height: 350
-      },
-      plotOptions: {
-        bar: {
-          borderRadius: 4,
-          horizontal: true,
-        }
-      },
-      dataLabels: {
-        enabled: false
-      },
-      xaxis: {
-        categories: ['Municipal Treasurer Office', 'Business Permit and Licensing Office', 'Municipal Assessors Office', 'Municipal Engineering Office', 'Municipal Budget Office', 'Municipal Social Welfare and Development Office', 'Municipal Traffic & Public Safety Office',
-          'Municipal Health Office', 'Municipal Civil Registrar', 'Municipal Disaster Risk Reduction and Management Office'
-        ],
-      }
-    }).render();
-  });
-</script>
-<!-- End Bar Chart -->
+                <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    new ApexCharts(document.querySelector("#barChart"), {
+                    series: [{
+                        data: [1.499, 1.499, 1.499, 1.499, 1.499, 1.499, 1.499, 5.000, 5.000, 5.000]
+                    }],
+                    chart: {
+                        type: 'bar',
+                        height: 350
+                    },
+                    plotOptions: {
+                        bar: {
+                        borderRadius: 4,
+                        horizontal: true,
+                        }
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    xaxis: {
+                        categories: ['Municipal Treasurer Office', 'Business Permit and Licensing Office', 'Municipal Assessors Office', 'Municipal Engineering Office', 'Municipal Budget Office', 'Municipal Social Welfare and Development Office', 'Municipal Traffic & Public Safety Office',
+                        'Municipal Health Office', 'Municipal Civil Registrar', 'Municipal Disaster Risk Reduction and Management Office'
+                        ],
+                    }
+                    }).render();
+                });
+                </script>
+                <!-- End Bar Chart -->
 
 
                 
