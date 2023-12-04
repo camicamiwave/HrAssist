@@ -447,43 +447,46 @@
           .linear-menu {
             background-color: #fffcfc;
             padding: 0;
+            overflow-x: auto; /* Enable horizontal scrolling */
           }
-
+        
           .linear-menu ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
+            white-space: nowrap; /* Prevent line breaks */
           }
-
+        
           .linear-menu li {
-            flex: 1;
+            flex: 0 0 auto; /* Prevent flex items from growing */
             display: flex;
             justify-content: center;
             justify-items: center;
             height: 100%;
           }
-
+        
           .linear-menu a {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #08533F;
+            background-color: #08533f;
             color: #ffffff;
             text-align: center;
-            padding: 5px;
+            padding: 5px 32px;
             text-decoration: none;
             border-bottom: 2px solid transparent;
             /* Initially, set a transparent border */
             transition: border-bottom 0.3s;
             /* Add a smooth transition effect */
             height: 100%;
-            width: 100%;
             font-size: 14px;
             font-weight: 500;
+            width: 100%;
             border: 1px solid #1f8f3e;
+            white-space: nowrap; /* Prevent text wrapping */
           }
-
+        
           .linear-menu a:hover {
             background-color: #1f8f3e;
             /*border-bottom: 2px solid white;*/
