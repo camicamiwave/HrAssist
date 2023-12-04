@@ -427,8 +427,7 @@
                   <li class="active1"> <a href="#" id="behaviorPDS"><span
                         class="bi bi-info-circle"></span>&nbsp;&nbsp;&nbsp;Performance</a>
                   </li>
-                  <li><a href="#" id="activityPDS"><span class="bi bi-activity"></span>&nbsp;&nbsp;&nbsp;Activity</a>
-                  </li>
+                  
                 </ul>
               </nav>
 
@@ -447,14 +446,14 @@
             <div class="card-body">
               <br>
               <div class="row">
-                <div class="col-md-9">
-                  <h5 class="card-title">Daily Time Record <span></span></h5>
+                <div class="col-md-12">
+                  <h5 class="card-title">Individual Performance Commitment and Review Rating<span></span></h5>
                   <div class="container">
 
                     <p>As of Year:</p>
 
                     <div class="col-md-6">
-                      <select class="form-control" id="yearSelctor" style="height: 3%; font-size: 12px;">
+                      <select class="form-control" id="yearSelctorIPCRF" style="height: 3%; font-size: 12px;">
                         <option value="2023">2023</option>
                         <option value="2024">2024</option>
                         <option value="2025">2025</option>
@@ -474,6 +473,91 @@
                 </div>
               </div>
 
+              <br><br>
+              <div class="container" >
+                <div class="row">
+                  <!-- First Container -->
+                  
+                  <div class="col-md-6 d-flex flex-column" style="height: 100%; ">
+                    <div class="card" style="flex-grow: 1;">
+                      <div class="card-body" style=" color: black; border-radius: 2%;">
+                        <h5 class="card-title" style="color: black; ">First Semester Rating</h5> <br>
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <!-- Image -->
+                              <img src="assets/img/dashboard/mother.png" alt="1">
+                            </div>
+                            <div class="col-md-6">
+                              <!-- Text -->
+                              <h2 class="text-right" style="text-align: right;"><b><span id="firstsemIPCRFRating">0</span></b></h2>
+                              <p class="text-right" style="text-align: right;"><span id="firstsemIPCRFDescRating">Outstanding</span></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 d-flex flex-column" style="height: 100%; ">
+                    <div class="card" style="flex-grow: 1;">
+                      <div class="card-body" style=" color: rgb(0, 0, 0); border-radius: 2%;">
+                        <h5 class="card-title" style="color: black; ">Second Semester Rating</h5> <br>
+                        <div class="container">
+
+                          <div class="row">
+                            <div class="col-md-6">
+                              <!-- Image -->
+                              <img src="assets/img/dashboard/mother.png" alt="1">
+                            </div>
+                            <div class="col-md-6">
+                              <!-- Text -->
+                              <h2 class="text-right" style="text-align: right;"><b><span id="secondsemIPCRFRating">0</span></b></h2>
+                              <p class="text-right" style="text-align: right;"><span id="secondsemIPCRFDescRating">Outstanding</span></p>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div> 
+                  
+              </div>
+              
+
+              <br><hr><br>
+
+
+
+              
+                <div class="col-md-9">
+                  <h5 class="card-title">Daily Time Record <span></span></h5>
+                  <div class="container">
+
+                    <p>As of Year:</p>
+
+                    <div class="col-md-6">
+                      <select class="form-control" id="yearSelctorDTR" style="height: 3%; font-size: 12px;">
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                        <option value="2032">2032</option>
+                        <option value="2033">2033</option>
+                        <option value="2034">2034</option>
+                        <option value="2035">2035</option>
+                      </select>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
 
               <div class="container">
 
@@ -484,7 +568,7 @@
                       <div class="row">
                         <div class="card-body">
 
-                          <table class="table table-borderless datatable">
+                          <table class="table table-borderless datatable" id="dataTable">
                             <thead>
                               <tr>
                                 <th scope="col">ID:</th>
@@ -497,28 +581,8 @@
                                 <th scope="col">No. mins undertime:</th>
                               </tr>
                             </thead>
-                            <tbody>
-                              <tr>
-                                <th scope="row"><a href="#">#2143</a></th>
-                                <td>January</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                              </tr>
-
-                              <tr>
-                                <th scope="row"><a href="#">#2143</a></th>
-                                <td>Febuary</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                              </tr>
+                            <tbody id="DTRTable">
+                              
                               <!-- ... other rows ... -->
                             </tbody>
                           </table>
@@ -530,6 +594,10 @@
                 </div>
 
               </div>
+
+
+
+
 
             </div>
 
@@ -572,22 +640,9 @@
 
   <script src="bundles/navigator201.bundle.js"></script>
   <script src="bundles/navbar.bundle.js"></script>
-  <script src="bundles/retrieve_leave.bundle.js"></script>
+  <script src="bundles/retrieve_behavior.bundle.js"></script>
+  <script src="bundles/navigator201.bundle.js"></script>
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-
-
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
-
-    <!-- Database Javascript -->
-    <script src="bundles/auth.bundle.js"></script>
-    <script src="bundles/navbar.bundle.js"></script>
-    <script src="bundles/dtr.bundle.js"></script>
-    <script src="js/sidebar.js"></script>
-
-    
 </body>
 
 </html>
