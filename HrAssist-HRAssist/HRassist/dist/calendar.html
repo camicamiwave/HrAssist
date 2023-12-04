@@ -2,50 +2,62 @@
 
 <html lang="en">
 
-    <head>
-        <!-- Boxicons CSS -->
-        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-        <title>HR Assist - Admin</title>
-        <link rel="stylesheet" href="css/admin-calendar.css" />  
-        <!-- Favicon -->
-        <link href="img/hrlogo.svg" rel="icon">
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<head>
+  <!-- Boxicons CSS -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>HR Assist - Admin</title>
+  <link rel="stylesheet" href="css/admin-calendar.css" />
+  <!-- Favicon -->
+  <link href="img/hrlogo.svg" rel="icon">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <title>Calendar</title>
-        <meta content="" name="description">
-        <meta content="" name="keywords">
+  <title>Calendar</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-        <!-- Favicons -->
-        <link href="assets/img/favicon.png" rel="icon">
-        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-        <!-- Google Fonts -->
-        <link href="https://fonts.gstatic.com" rel="preconnect">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
-        <!-- Vendor CSS Files -->
-        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-        <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-        <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-        <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-        <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-        <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-         <!-- FullCalendar Files -->
-        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
+  <!-- FullCalendar Files -->
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
 
-        <!-- Template Main CSS File -->
-        <link href="css/employee-template.css" rel="stylesheet">
+    <!-- Bootstrap CSS (place this before your custom styles) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyIxSf2NR5R06Z/B1NpRLjp5X2tRDO+DVo" crossorigin="anonymous">
 
-    </head>
+    <!-- jQuery (place this before your custom scripts) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
-    <body>
-    <!-- ======= Header ======= -->
+    <!-- Bootstrap JS (place this after jQuery) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-i7QibGqKOSimBq4jL5B0M3tiKOMRPFwZZy6P+yiUyDiS7sDGIK6gUp5i77slbap/" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyIxSf2NR5R06Z/B1NpRLjp5X2tRDO+DVo" crossorigin="anonymous"></script>
+
+  <!-- Template Main CSS File -->
+  <link href="css/employee-template.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
-    
+
     <div class="d-flex align-items-center justify-content-center">
       <a href="admin_dashboard.html" class="logo d-flex align-items-center mx-auto">
         <img src="assets/img/logo.png" alt="">
@@ -172,7 +184,7 @@
               <hr class="dropdown-divider">
             </li>
 
-            
+
 
             <li>
               <a class="dropdown-item d-flex align-items-center" href="#">
@@ -189,11 +201,11 @@
 
   </header><!-- End Header -->
 
-  
+
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
-        <li class="nav-heading">ADMIN TOOL</li>
+      <li class="nav-heading">ADMIN TOOL</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="admin_dashboard.html">
           <i class="bi bi-grid"></i>
@@ -245,7 +257,7 @@
               <i class="bi bi-circle"></i><span>Applicant List</span>
             </a>
           </li>
-          
+
           <li>
             <a href="admin_search_applicant.html">
               <i class="bi bi-circle"></i><span>Search Applicant</span>
@@ -256,12 +268,12 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
-            <i class="bx bxs-briefcase"></i>
-            <span>Job Vacancy</span>
+          <i class="bx bxs-briefcase"></i>
+          <span>Job Vacancy</span>
         </a>
-    </li><!-- End Job Vacancy Nav -->
+      </li><!-- End Job Vacancy Nav -->
 
-    <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+      <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="bi bi-bar-chart-line"></i>
@@ -348,7 +360,7 @@
     <section class="section dashboard">
 
       <!-- START YOUR CONTENT HERE -->
-  
+
       <div class="content-wrapper">
         <div class="container">
           <div class="calendar-card">
@@ -359,10 +371,11 @@
             <div class="formHeader">
               <h3 style="text-align: center;">ADD EVENT</h3>
             </div>
-            <form class="add-event" action="">
+            <form class="add-event" id="calendarForm">
               <label for="event-name">Event Name</label> <br>
-              <input type="text" class="event-name" id="event-name" required="required" style="margin-bottom: 13px; width: 250px;" /> <br>
-          
+              <input type="text" class="event-name" id="event-name" required="required"
+                style="margin-bottom: 13px; width: 250px;" /> <br>
+
               <div>
                 <label for="participants">Participants</label> <br>
                 <select name="participants" id="participants" style="width: 250px; margin-bottom: 13px;">
@@ -374,36 +387,121 @@
 
               <div>
                 <label for="tag-color">Event Tag Color</label> <br>
-                <input type="color" class="tag-color" style="width: 68px; height: 30px; float: left; margin-right: 2px; margin-bottom: 8px;" id="send" oninput="result.value=send.value">
+                <input type="color" class="tag-color"
+                  style="width: 68px; height: 30px; float: left; margin-right: 2px; margin-bottom: 8px;" id="send"
+                  oninput="result.value=send.value">
                 <input type="text" class="hex-code" id="result" style="width: 180px; margin-bottom: 8px;" />
-              </div>  
+              </div>
 
               <div id="startEndFields">
                 <div>
-                    <label for="start-from">Start From</label> <br>
-                    <input type="datetime-local" class="start-from" id="start-from" style="width: 250px; margin-bottom: 13px;" />
+                  <label for="start-from">Start From</label> <br>
+                  <input type="datetime-local" class="start-from" id="start-from"
+                    style="width: 250px; margin-bottom: 13px;" />
                 </div>
                 <div>
-                    <label for="end-to">End to</label> <br>
-                    <input type="datetime-local" class="end-to" id="end-to" style="width: 250px; margin-bottom: 13px;" />
+                  <label for="end-to">End to</label> <br>
+                  <input type="datetime-local" class="end-to" id="end-to" style="width: 250px; margin-bottom: 13px;" />
                 </div>
-              </div>  
-              <button id="btnSubmit" style="width: 250px; border-radius: 20px; margin-top: 10px;">Submit</button>
+              </div>
+              <button id="btnSubmit" type="button"
+                style="width: 250px; border-radius: 20px; margin-top: 10px;">Save</button>
             </form>
           </div>
-         </div>        
+        </div>
       </div>
 
-      
+
+      <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete this event?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="confirmDelete">Delete</button>
+                    <button type="button" onclick="hideYearModal()" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      function hideYearModal() {
+        // Hide the modal
+        $('#deleteModal').modal('hide');
+      } 
+    </script>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="orgchartModal" tabindex="-1" role="dialog" aria-labelledby="yearModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Add Year</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="organizationChartForm">
+
+              <div class="col-md-12">
+              <h7>Office Name: <span>&nbsp;<b id="officeNameSpan">John Erwin</b></span></h7>
+              <br><hr>
+              </div>
+
+              <div class="col-md-12">
+                <label for="withinDetails"><small>Designation Name <span style="color: red;">*</span></small></label><br>
+                <input type="text" id="designationName" class="form-control" placeholder="Designation Name" required>
+              </div><br>
+ 
+              <div class="col-md-12">
+                <label for="designationName"><small><i>Tick the box if head of office:</i></small></label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="form-check-input" id="headOfOffice" type="checkbox" value="Head of Office" aria-label="Checkbox for following text input">
+                <label for="headOfOffice"><small><i>Head of Office</i></small></label>
+                
+              </div><br>
+            
+
+              <div class="col-md-12">
+                <label for="withinDetails"><small>Description</span></small></label><br>
+                <textarea id="descriptionText" class="form-control" placeholder="Description"></textarea>
+            </div><br>
+                          
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+              onclick="hideYearModal()">Close</button>
+            <input type="button" id="addOfficeBtn" class="btn btn-primary" value="Save">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
       <!-- END YOUR CONTENT -->
-  
-  </section>
-    
-            <!--END YOUR CONTENT-->
+
+    </section>
+
+    <!--END YOUR CONTENT-->
 
   </main><!-- End #main -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -414,19 +512,20 @@
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-  
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>    
-        
-        <!-- JavaScript -->
-        <script src="js/calendar.js"></script>
-        
-        <!-- Database Js-->
-        <script src="bundles/auth.bundle.js"></script>   
-        <script src="bundles/navbar.bundle.js"></script>
-        <script src="src/event.js"></script>
 
-    
-    </body>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- JavaScript -->
+  <script src="js/calendar.js"></script>
+
+  <!-- Database Js-->
+  <script src="bundles/calendar.bundle.js"></script>
+  <script src="bundles/auth.bundle.js"></script>
+  <script src="bundles/navbar.bundle.js"></script>
+  <!--<script src="src/event.js"></script>-->
+
+
+</body>
 
 </html>

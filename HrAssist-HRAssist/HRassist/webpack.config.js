@@ -44,7 +44,10 @@ module.exports = {
         retrieve_pds: './src/retrieve_pds.js', 
         navigator201: './src/201navigator.js',
         retrieve_appointment: './src/retrieve_appointment.js',
-        retrieve_attachments: './src/retrieve_attachments.js'
+        retrieve_attachments: './src/retrieve_attachments.js',
+        search_edit_employee: './src/search_edit_employee.js',
+        employee_complain: './src/employee_complain.js',
+        calendar: './src/calendar.js'
         
     },
     output: {
