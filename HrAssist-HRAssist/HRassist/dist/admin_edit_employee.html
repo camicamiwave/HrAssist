@@ -1,11 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+  <!-- Boxicons CSS -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/admin.css" />
+
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>IPCRF</title>
+  <title>HR Assist - Admin</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -26,19 +31,9 @@
   <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
 
   <!-- Template Main CSS File -->
-  <link href="css/employeeview.css" rel="stylesheet">
-  <link href="css/admin-IPCRF.css" rel="stylesheet">
-
-  <script>
-    function myFunction() {
-      window.print();
-    }
-  </script>
-
+  <link href="css/employee-template.css" rel="stylesheet">
 
 </head>
 
@@ -148,7 +143,6 @@
         </li><!-- End Notification Nav -->
 
 
-
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
@@ -158,8 +152,8 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6 id="hoverUserName"></h6>
-              <span id="userLevel"></span>
+              <h6 id="hoverUserName">Juan Garcia</h6>
+              <span id="userLevel">Employee</span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -176,8 +170,9 @@
             </li>
 
             
+
             <li>
-              <a class="dropdown-item d-flex align-items-center" id="navbar_signout_btn">
+              <a class="dropdown-item d-flex align-items-center" href="#">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -209,22 +204,22 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="components-alerts.html">
+            <a href="admin_201file_account.html">
               <i class="bi bi-circle"></i><span>Add Employee</span>
             </a>
           </li>
           <li>
-            <a href="components-accordion.html">
+            <a href="admin_employee_registry_list.html">
               <i class="bi bi-circle"></i><span>Employee List</span>
             </a>
           </li>
           <li>
-            <a href="components-badges.html">
+            <a href="admin_search_employee_view.html">
               <i class="bi bi-circle"></i><span>Edit Employee</span>
             </a>
           </li>
           <li>
-            <a href="components-breadcrumbs.html">
+            <a class="nav-link" href="admin_search_employee_view.html">
               <i class="bi bi-circle"></i><span>Search Employee</span>
             </a>
           </li>
@@ -237,18 +232,18 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="forms-elements.html">
+            <a href="admin_add_applicant.html">
               <i class="bi bi-circle"></i><span>Add Applicant</span>
             </a>
           </li>
           <li>
-            <a href="forms-layouts.html">
+            <a href="admin_manage_applicant_view.html">
               <i class="bi bi-circle"></i><span>Applicant List</span>
             </a>
           </li>
 
           <li>
-            <a href="forms-validation.html">
+            <a href="admin_search_applicant.html">
               <i class="bi bi-circle"></i><span>Search Applicant</span>
             </a>
           </li>
@@ -271,7 +266,7 @@
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
+        <a class="nav-link collapsed" href="admin-IPCRF-search.html">
           <i class="bi bi-check-square"></i>
           <span>Employee IPCRF</span>
         </a>
@@ -279,7 +274,7 @@
 
       <li class="nav-heading">Rewards & RECOGNITION</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
+        <a class="nav-link collapsed" href="admin-IPCRF-search.html">
           <i class="bi bi-award"></i>
           <span>Rewards</span>
         </a>
@@ -287,7 +282,7 @@
 
       <li class="nav-heading">LEARNING DEVELOPMENT</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
           <i class="bi bi-people-fill"></i>
           <span>Training & Seminar</span>
         </a>
@@ -300,30 +295,30 @@
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="icons-bootstrap.html">
+            <a href="admin-offices.html">
               <i class="bi bi-circle"></i><span>Office</span>
             </a>
           </li>
           <li>
-            <a href="icons-remix.html">
+            <a href="admin_accounts_view.html">
               <i class="bi bi-circle"></i><span>Accounts</span>
             </a>
           </li>
           <li>
-            <a href="icons-boxicons.html">
+            <a href="calendar.html">
               <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
             </a>
           </li>
         </ul>
       </li><!-- End Icons Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="admin_request.html">
           <i class="bi bi-calendar"></i>
           <span>Leave Management</span>
         </a>
       </li><!-- End Login Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="admin_dtr_form.html">
           <i class="bi bi-clock"></i>
           <span>DTR</span>
         </a>
@@ -333,96 +328,108 @@
     </ul>
 
   </aside><!-- End Sidebar-->
-
-
   <main id="main" class="main">
-    <!--START YOUR CONTENT HERE-->
 
-    <div class="container">
-      <div id="content" class="content p-0">
-        <div class="profile-header">
-          <div class="profile-header-cover"></div>
-          <div class="profile-header-content">
-            <div class="profile-header-img mb-1">
-              <img src="img/favicon.png" class="mb-2" alt="" />
-            </div>
+    <div class="pagetitle">
+      <h1>Edit Employee</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="admin_dashboard.html">Home</a></li>
+          <li class="breadcrumb-item active">Edit Employee</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
 
-            <div class="profile-header-info">
-              <br>
-              <h3 class="m-c-sm">SAN VINCENTE, CAMARINES NORTE</h3>
-              <p class="m-b-sm">(IPCRF) Individual Performance Commitment and Review Form</p>
-            </div>
+    <section class="section dashboard">
+
+      <div class="content-wrapper">
+        <div class="table"> 
+          <div class="table-header">
+            <p>Employee Personal Information</p>
           </div>
-        </div>
-      </div>
-    </div>
-    </div>
-    </div>
-    <br><br>
+          <div class="select-employee">
+            <div class="container"> 
+              <form id="SearchEmployeeForm">
 
-    <!--Table-->
-
-    <section class="section">
-      <div class="row">
-        <div class="col-lg-12">
-
-          <div class="card">
-            <div class="card-body">
-              <!--<h5 class="card-title">Upload IPCRF File Here:</h5>
-              <input class="form-control" type="file" id="formFileMultiple" multiple />-->
-
-
-              <h5 class="card-title">Employees Overall General Rating:</h5>
-              <br>
-
-
-              <a type="button" class="btn btn-primary" href="admin-IPCRF-search.html"><i
-                  class="bi bi-check-square"></i>&nbsp;&nbsp;Submit IPCRF</a>
-              <!--START YOUR CONTENT HERE -->
-
-              <br><br>
-              <br>
-              <!-- Table with stripped rows -->
-
-              <div class="table-responsive-lg">
-                <table class="table datatable" style="font-size: 14px;" id="ipcrfTable">
-                  <thead>
-                    <tr>
-                      <th><b>No.</b></th>
-                      <th>Name of Employee</th>
-                      <th>Department</th>
-                      <th>Position Title</th>
-                      <th>Semester</th>
-                      <th>Descriptive Rating</th>
-                      <th>Numerical Rating</th>
-                      <th>Status</th>
-
-                    </tr>
-                  </thead>
-                  <tbody  > 
-                    
-                  </tbody>
-                </table>
-                <!-- End Table with stripped rows -->
+              <div class="row">
+                <div class="col-md-3">
+                  <label><small>First Name:</small></label>
+                  <input id="inputFirstName" type="text" class="form-control">
+                </div>
+                <div class="col-md-3">
+                  <label><small>Middle Name:</small></label>
+                  <input id="inputMiddleName" type="text" class="form-control">
+                </div>
+                <div class="col-md-3">
+                  <label><small>Last Name:</small></label>
+                  <input id="inputLastName" type="text" class="form-control">
+                </div>
+                <div class="col-md-3">
+                  <label><small>Ex Name:</small></label>
+                  <input id="inputExtName" type="text" class="form-control">
+                </div>
               </div>
+
+              <div class="container">
+
+                <button type="submit" class="btn btn-success"
+                  style="width: 100%; background-color: #08533F; color: white;" id="submitBtn">Search
+                  Employee</button>
+                <hr>
+              </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-      </div>
-      </div>
+
+
+      <!--START YOUR CONTENT HERE 
+      <div class="content-wrapper">
+        <div class="table">
+          <div class="table-header">
+            <p>Employee Personal Information</p>
+          </div>
+          <div class="container" style="margin-top: -20px; margin-left: 30px;">
+            <form id="SearchEmployeeForm">
+              <div class="form first">
+                <div class="details ID">
+                  <div class="fields">
+                    <div class="input-field">
+                      <label>First Name</label>
+                      <input type="text" placeholder="Enter First Name" id="inputFirstName" name="inputFirstName">
+                    </div>
+                    <div class="input-field">
+                      <label>Middle Name</label>
+                      <input type="text" placeholder="Enter Middle Name" id="inputMiddleName" name="inputMiddleName">
+                    </div>
+                    <div class="input-field">
+                      <label>Last Name</label>
+                      <input type="text" placeholder="Enter Last Name" id="inputLastName" name="inputLastName">
+                    </div>
+                    <div class="input-field">
+                      <label>Ext. Name</label>
+                      <input type="text" placeholder="Enter Extension Name" id="inputExtName" name="inputExtName">
+                    </div>
+                  </div>
+                </div>
+
+                <button class="submit" id="submitBtn">Search Employee</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>-->
+
+
+
     </section>
+    <!--END YOUR CONTENT-->
 
   </main><!-- End #main -->
 
-
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
-  <!-- jQuery should be loaded before Bootstrap JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <!-- Bootstrap JS -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -437,7 +444,13 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <script src="bundles/ipcrf_list.bundle.js"></script>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+
+  <!-- Database JavaScript -->
+  <script src="bundles/employee_registry.bundle.js"></script>
+  <script src="bundles/navbar.bundle.js"></script>
 
 </body>
 
