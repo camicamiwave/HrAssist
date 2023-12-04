@@ -29,20 +29,17 @@ console.log("asfsffs123232")
 function fetchEmployee() {
     const EmployeecolRef = collection(db, 'Employee Information');
 
-
     const urlParams = new URLSearchParams(window.location.search);
     const receivedStringData = urlParams.get('data');
 
-    const tableBody = document.getElementById('ipcrfTable').getElementsByTagName('tbody')[0];
-
-    tableBody.innerHTML = '';
+    
 
     fetchEmployeeInfo(EmployeecolRef, receivedStringData, "documentID").then((dataRetrieved) => {
         const empdata = dataRetrieved;
         const file201DocID = empdata.documentID
-
-        console.log(empdata, 'HOYYYY')
  
+        console.log('HOYYYY')
+
         inputCsId.innerHTML = empdata.Personal_Information.CSCID
         inputFname.innerHTML = empdata.Personal_Information.FirstName
         inputMname.innerHTML = empdata.Personal_Information.MiddleName
