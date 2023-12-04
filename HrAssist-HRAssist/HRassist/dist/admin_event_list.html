@@ -3,16 +3,19 @@
 <html lang="en">
 
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <!-- Boxicons CSS -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <title>HR Assist - Admin</title>
   <link rel="stylesheet" href="css/admin.css" />
-  <!-- Favicon -->
-
+  <link rel="stylesheet" href="css/admin2.css" />
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Add Reward</title>
+  <title>Dashboard</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -36,14 +39,84 @@
 
   <!-- Template Main CSS File -->
   <link href="css/employee-template.css" rel="stylesheet">
+  <link href="css/employee-template.css" rel="stylesheet">
+
+  <style>
+
+    .widget .panel, .widget.panel {
+      overflow: hidden;
+    }
+
+    .widget {
+      margin-bottom: 20px;
+      border: 0;
+    }
+
+    .row-table {
+      display: table;
+      table-layout: fixed;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    }
+
+    .row-flush>[class*=col-] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .row-table>[class*=col-] {
+      display: table-cell;
+      float: none;
+      table-layout: fixed;
+      vertical-align: middle;
+    }
+
+    .widget .lateral-picture {
+      position: relative;
+      display: block;
+      height: 240px;
+      width: auto;
+      overflow: hidden;
+    }
+
+    .widget .lateral-picture>img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-height: 100%;
+      width: auto;
+    }
+
+    .align-middle {
+      vertical-align: middle;
+    }
+
+    .p-lg {
+      padding: 15px!important;
+    }
+
+    .btn {
+      border-radius: 3px;
+      font-size: 13px;
+      border-color: transparent;
+      -webkit-appearance: none;
+      outline: 0!important;
+      -webkit-transition: all .1s;
+      -o-transition: all .1s;
+      transition: all .1s;
+    }
+
+  </style>
+
+
 </head>
 
 <body>
-
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
-
+    
     <div class="d-flex align-items-center justify-content-center">
       <a href="admin_dashboard.html" class="logo d-flex align-items-center mx-auto">
         <img src="assets/img/logo.png" alt="">
@@ -137,7 +210,7 @@
               <hr class="dropdown-divider">
             </li>
             <li class="dropdown-footer">
-              <a href="#">Show all notifications</a>
+              <a href="admin_notification_list.html">Show all notifications</a>
             </li>
 
           </ul><!-- End Notification Dropdown Items -->
@@ -161,8 +234,9 @@
               <hr class="dropdown-divider">
             </li>
 
+
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="admin-users-profile.html">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>
@@ -192,7 +266,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" id="navbar_signout_btn">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -206,12 +280,13 @@
 
   </header><!-- End Header -->
 
+ 
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-heading">ADMIN TOOL</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link collapsed" href="admin_dashboard.html">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -224,22 +299,22 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="components-alerts.html">
+            <a href="admin_201file_account.html">
               <i class="bi bi-circle"></i><span>Add Employee</span>
             </a>
           </li>
           <li>
-            <a href="components-accordion.html">
+            <a href="admin_employee_registry_list.html">
               <i class="bi bi-circle"></i><span>Employee List</span>
             </a>
           </li>
           <li>
-            <a href="components-badges.html">
+            <a href="admin_201file_account.html">
               <i class="bi bi-circle"></i><span>Edit Employee</span>
             </a>
           </li>
           <li>
-            <a href="components-breadcrumbs.html">
+            <a href="admin_search_employee_view.html">
               <i class="bi bi-circle"></i><span>Search Employee</span>
             </a>
           </li>
@@ -252,18 +327,18 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="forms-elements.html">
+            <a href="admin_add_applicant.html">
               <i class="bi bi-circle"></i><span>Add Applicant</span>
             </a>
           </li>
           <li>
-            <a href="forms-layouts.html">
+            <a href="admin_manage_applicant_view.html">
               <i class="bi bi-circle"></i><span>Applicant List</span>
             </a>
           </li>
           
           <li>
-            <a href="forms-validation.html">
+            <a href="admin_search_applicant.html">
               <i class="bi bi-circle"></i><span>Search Applicant</span>
             </a>
           </li>
@@ -286,15 +361,16 @@
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
+        <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
           <i class="bi bi-check-square"></i>
           <span>Employee IPCRF</span>
         </a>
+        
       </li><!-- End Contact Page Nav -->
 
       <li class="nav-heading">REWARDS & RECOGNITION</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
+        <a class="nav-link collapsed" href="#">
           <i class="bi bi-award"></i>
           <span>Award</span>
         </a>
@@ -302,7 +378,7 @@
 
       <li class="nav-heading">LEARNING DEVELOPMENT</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
           <i class="bi bi-people-fill"></i>
           <span>Training & Seminar</span>
         </a>
@@ -315,32 +391,32 @@
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="icons-bootstrap.html">
+            <a href="admin-offices.html">
               <i class="bi bi-circle"></i><span>Office</span>
             </a>
           </li>
           <li>
-            <a href="icons-remix.html">
+            <a href="admin_accounts_view.html">
               <i class="bi bi-circle"></i><span>Accounts</span>
             </a>
           </li>
           <li>
-            <a href="icons-boxicons.html">
+            <a href="calendar.html">
               <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
             </a>
           </li>
         </ul>
       </li><!-- End Icons Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="admin_request.html">
           <i class="bi bi-calendar"></i>
           <span>Leave Management</span>
         </a>
       </li><!-- End Login Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="admin_dtr_form.html">
           <i class="bi bi-clock"></i>
-          <span>DTR</span>
+          <span>Daily Time Record</span>
         </a>
       </li><!-- End Login Page Nav -->
 
@@ -352,105 +428,67 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Rewards</h1>
+      <h1>Event List</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item"><a href="admin_rewards_view.html">Rewards</a></li>
-          <li class="breadcrumb-item active">Add Rewards</li>
+          <li class="breadcrumb-item active">Event List</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
+    
+        <!--START YOUR CONTENT HERE -->
 
-    <section class="section dashboard">
-      <!--START YOUR CONTENT HERE -->
-      <div class="content-wrapper">
-        <div class="page-header">
-          <h1 class="page-title">
-            <span class="page-title-icon">
-              <i class="bx bxs-gift"></i>
-            </span> Rewards
-          </h1>
-        </div>
-        <div class="table">
-          <div class="table-header">
-            <p>Appreciation Form</p>
-          </div>
-          <div class="container">
-            <header>Reward Details</header>
-            <div class="content">
-              <br>
-
-              <!--START YOUR CONTENT HERE -->
-              <div class="content-wrapper mb-0">
-                <div class="table">
-                  <div class="row">
-                    <div class="col-md-3">
-                      <label><small>First Name:</small></label>
-                      <input id="searchEmployeeFname" type="text" class="form-control">
-                    </div>
-                    <div class="col-md-3">
-                      <label><small>Middle Name:</small></label>
-                      <input id="searchEmployeeMname" type="text" class="form-control">
-                    </div>
-                    <div class="col-md-3">
-                      <label><small>Last Name:</small></label>
-                      <input id="searchEmployeeLname" type="text" class="form-control">
-                    </div>
-                    <div class="col-md-3">
-                      <label><small>Ex Name:</small></label>
-                      <input id="searchEmployeeExName" type="text" class="form-control">
-                    </div>
-                    <br><br>
-                    <br><br>
-
-                    <button type="button" class="btn btn-success"
-                      style="width: 100%; background-color: #08533F; color: white; display: block;"
-                      id="searchEmployeeBtn">Search
-                      Employee</button>
-
-                  </div>
-                  <hr>
+        <div class="container">
+          <div class="row">
+              <div class="col-md-6">
+                <!-- START widget-->
+                <div class="panel widget" style="background-color: #689589; border-radius: 12px;">
+                   <div class="row row-table row-flush">
+                      <div class="col-xs-5">
+                         <picture class="lateral-picture">
+                            <img src="https://www.bootdey.com/image/400x400/FFB6C1/000000" alt="">
+                         </picture>
+                      </div>
+                      <div class="col-xs-7 align-middle p-lg">
+                         <p>
+                            <span class="text-lg">16</span>Aug</p>
+                         <p>
+                            <strong>EVENT INVITATION</strong>
+                         </p>
+                         <p>Donec posuere neque in elit luctus tempor consequat enim egestas. Nulla dictum egestas leo at lobortis.</p>
+                         <div class="pull-right"><a href="#" class="btn btn-success btn-sm" style="width: 100%;">View Attached Document</a>
+                         </div>
+                      </div>
+                   </div>
                 </div>
+                <!-- END widget-->
               </div>
-
-              <form id="rewardsForm" style="display: none; margin-top: -3%;">
-                <div class="user-details">
-                  <div class="input-box">
-                    <span class="details">Office:</span>
-                    <input type="text" id="officeSelecor" disabled>
-                    </select>
-                  </div>
-
-                  <div class="input-box">
-                    <span class="details">Designation:</span>
-                    <input type="text" id="designationSelecor" disabled>
-                  </div>
-
-                  <div class="input-box">
-                    <span class="details">Date Issued</span>
-                    <input type="date" id="dateIssued" placeholder="Enter Ext. Name">
-                  </div>
+              <div class="col-md-6">
+                <!-- START widget-->
+                <div class="panel widget" style="background-color: #689589; border-radius: 12px;">
+                   <div class="row row-table row-flush">
+                      <div class="col-xs-5">
+                         <picture class="lateral-picture">
+                            <img src="https://www.bootdey.com/image/400x400/87CEFA/000000" alt="">
+                         </picture>
+                      </div>
+                      <div class="col-xs-7 align-middle p-lg">
+                         <p>
+                            <span class="text-lg">16</span>Aug</p>
+                         <p>
+                            <strong>EVENT INVITATION</strong>
+                         </p>
+                         <p>Donec posuere neque in elit luctus tempor consequat enim egestas. Nulla dictum egestas leo at lobortis.</p>
+                         <div class="pull-right"><a href="#" class="btn btn-success btn-sm" style="width: 100%;">View Attached Document</a>
+                         </div>
+                      </div>
+                   </div>
                 </div>
-                <div class="job-details">
-                  <div class="input-box">
-                    <span class="details">Token</span>
-                    <input type="text" id="tokenInput" placeholder="Enter Token">
-                  </div>
-                  <div class="input-box">
-                    <span class="details">Description (Optional)</span>
-                    <textarea id="descriptionInput" placeholder="Write description here..."></textarea>
-                  </div>
-                </div>
-                <button id="rewardsaveBtn" type="button" class="submit">Save</button>
-              </form>
-            </div>
+                <!-- END widget-->
+              </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!--END YOUR CONTENT-->
+          </div>
 
   </main><!-- End #main -->
 
@@ -470,14 +508,20 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+
+
   <!-- JavaScript -->
-  <script src="js/script.js"></script>
+  <script src="js/admin-chart.js"></script>
 
   <!-- Database Javascript -->
-  <script src="bundles/rewards.bundle.js"></script>
-  <script src="bundles/auth.bundle.js"></script>
+  <script src="bundles/auth.bundle.js"></script> 
   <script src="bundles/navbar.bundle.js"></script>
 
+  <script>
+    function redirectToAnotherPage() {
+        window.location.href = 'https://csc.gov.ph/downloads/2017-oraohra';
+    }
+  </script>
 
 </body>
 

@@ -24,6 +24,9 @@
     <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     
     <!-- Template Main CSS File -->
     <link href="css/datasheet.css" rel="stylesheet">
@@ -36,7 +39,6 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
-
     <div class="d-flex align-items-center justify-content-center">
       <a href="admin_dashboard.html" class="logo d-flex align-items-center mx-auto">
         <img src="assets/img/logo.png" alt="">
@@ -45,10 +47,10 @@
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
-
     <div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <input type="text" id="searchInput" name="query" placeholder="Search" title="Enter search keyword">
+        <ul id="searchSuggestions"></ul>
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
@@ -130,7 +132,7 @@
               <hr class="dropdown-divider">
             </li>
             <li class="dropdown-footer">
-              <a href="#">Show all notifications</a>
+              <a href="admin_notification_list.html">Show all notifications</a>
             </li>
 
           </ul><!-- End Notification Dropdown Items -->
@@ -147,15 +149,16 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6 id="hoverUserName">Juan Garcia</h6>
-              <span id="userLevel">Employee</span>
+              <h6 id="hoverUserName"></h6>
+              <span id="userLevel"></span>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
+
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="admin-users-profile.html">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>
@@ -228,7 +231,7 @@
             </a>
           </li>
           <li>
-            <a href="admin_201file_account.html">
+            <a href="admin_search_employee_view.html">
               <i class="bi bi-circle"></i><span>Edit Employee</span>
             </a>
           </li>
@@ -288,7 +291,7 @@
 
       <li class="nav-heading">REWARDS & RECOGNITION</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="admin-IPCRF-search.html">
           <i class="bi bi-award"></i>
           <span>Award</span>
         </a>

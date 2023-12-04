@@ -48,7 +48,8 @@
 
     <div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <input type="text" id="searchInput" name="query" placeholder="Search" title="Enter search keyword">
+            <ul id="searchSuggestions"></ul>
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
@@ -411,21 +412,23 @@
                 
                             <!-- Forum List -->
                             <div class="inner-main-body p-2 p-sm-3 collapse forum-content show">
-                                <div class="card mb-2">
+                                <a href="admin_complaint_view.html">
+                                  <div class="card mb-2">
                                     <div class="card-body p-2 p-sm-3">
-                                        <div class="media forum-item">
-                                            <a href="#" data-toggle="collapse" data-target=".forum-content"><img src="img/profile.png" class="mr-3 rounded-circle" width="50" alt="User" /></a>
-                                            <div class="media-body">
-                                                <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body">Realtime fetching data</a></h6>
-                                                <p class="text-secondary">
-                                                    lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet...
-                                                </p>
-                                               
-                                            </div>
-                                          
+                                      <div class="media forum-item">
+                                        <a href="#" data-toggle="collapse" data-target=".forum-content">
+                                          <img src="img/profile.png" class="mr-3 rounded-circle" width="50" alt="User" />
+                                        </a>
+                                        <div class="media-body">
+                                          <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body">Realtime fetching data</a></h6>
+                                          <p class="text-secondary">
+                                            lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet...
+                                          </p>
                                         </div>
+                                      </div>
                                     </div>
-                                </div>
+                                  </div>
+                                </a>
                                 <div class="card mb-2">
                                     <div class="card-body p-2 p-sm-3">
                                         <div class="media forum-item">

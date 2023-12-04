@@ -31,6 +31,9 @@
         <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
         <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
+        <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+
         <!-- Template Main CSS File -->
         <link href="css/employee-template.css" rel="stylesheet">
     </head>
@@ -49,7 +52,8 @@
 
     <div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <input type="text" id="searchInput" name="query" placeholder="Search" title="Enter search keyword">
+        <ul id="searchSuggestions"></ul>
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
@@ -404,18 +408,21 @@
                         <section class="hero-section">
                           <div class="content">
                             <div class="popular-tags">
-                              Filter:
-                              <ul class="tags">
-                                <li><a href="#">All</a></li>
-                                <li><a href="#">Applied</a></li>
-                                <li><a href="#">Interviewed</a></li>
-                                <li><a href="#">Hired</a></li>
-                                <li><a href="#">Rejected</a></li>
-                              </ul>
+
+                              <div class="group" style="position: relative;">
+                                <p>Filter</p>
+                                <select id="filterdropdown" style="margin-left: 5vh; position: absolute; top: -10px; width: 10vw;">
+                                  <option value="all">All</option>
+                                  <option value="applied">Applied</option>
+                                  <option value="interviewed">Interviewed</option>
+                                  <option value="hired">Hired</option>
+                                  <option value="rejected">Rejected</option>
+                              </select>
+                            </div>
+                              
                             </div>
                             <form action="#" class="search-form">
-                              <input type="text" placeholder="Search for any applicant..." required>
-                              <button class="material-symbols-outlined" type="sumbit">search</button>
+                              <input type="text" placeholder="Search for any applicant..." id="txtInputTable" required>
                             </form>
                           </div>
                         </section>
@@ -430,7 +437,7 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="tableDetails">
                                 <!--
                                 <tr data-href="admin_applicant_status.html">
                                     <td>1</td>
@@ -467,6 +474,33 @@
   </main><!-- End #main -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    $(document).ready(function () { 
+    $("#txtInputTable").on("keyup", function () { 
+        var value = $(this).val().toLowerCase();      
+        $("#tableDetails tr").filter(function () { 
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1) 
+        }); 
+    });
+
+    $('#filterdropdown').on('change', function(){
+        var selectedCategory = $(this).val().toLowerCase(); // Convert to lowercase
+        if (selectedCategory === 'all') {
+            $('#applicantTable tbody tr').show();
+        } else {
+            $('#applicantTable tbody tr').hide();
+
+            // Capitalize the first letter of selectedCategory
+            selectedCategory = selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1);
+
+            $('#applicantTable tbody tr:has(td:contains("' + selectedCategory + '"))').show();
+        }
+    });
+});
+</script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>

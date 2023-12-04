@@ -335,3 +335,98 @@
   }
 
 })();
+
+document.addEventListener('DOMContentLoaded', function () {
+  const searchInput = document.getElementById('searchInput');
+  const searchSuggestions = document.getElementById('searchSuggestions');
+
+  const links = {
+      "My Profile": "admin-users-profile.html",
+      "Manage Employee": "admin_201file_account.html",
+      "Manage Applicants": "admin_manage_applicant_view.html",
+      "Approve Request" : "admin_request.html"
+  };
+
+  searchInput.addEventListener('input', function () {
+      const inputValue = searchInput.value.toLowerCase();
+      const filteredLinks = Object.keys(links).filter(displayName =>
+          displayName.toLowerCase().includes(inputValue)
+      );
+      displaySuggestions(filteredLinks);
+  });
+
+
+  function displaySuggestions(suggestions) {
+
+      searchSuggestions.innerHTML = '';
+
+      // Display new suggestions
+      suggestions.forEach(displayName => {
+          const listItem = document.createElement('li');
+          listItem.textContent = displayName;
+          listItem.addEventListener('click', function () {
+              // Redirect to the corresponding page URL
+              window.location.href = links[displayName];
+          });
+          searchSuggestions.appendChild(listItem);
+      });
+
+      // Show or hide suggestions container
+      searchSuggestions.style.display = suggestions.length ? 'block' : 'none';
+  }
+
+  // Close suggestions when clicking outside the search bar
+  document.addEventListener('click', function (event) {
+      if (!event.target.matches('#searchInput')) {
+          searchSuggestions.style.display = 'none';
+      }
+  });
+});
+
+//Employee Search bar
+document.addEventListener('DOMContentLoaded', function () {
+  const searchInput = document.getElementById('searchInput2');
+  const searchSuggestions = document.getElementById('searchSuggestions2');
+
+  const links = {
+      "My Profile": "employee-users-profile.html",
+      "Request Leave": "employee-request.html",
+      "Request Locator Slip": "employee-request.html",
+      "Leave Guidelines" : "employee-leave-info.html"
+  };
+
+  searchInput.addEventListener('input', function () {
+      const inputValue = searchInput.value.toLowerCase();
+      const filteredLinks = Object.keys(links).filter(displayName =>
+          displayName.toLowerCase().includes(inputValue)
+      );
+      displaySuggestions(filteredLinks);
+  });
+
+
+  function displaySuggestions(suggestions) {
+
+      searchSuggestions.innerHTML = '';
+
+      // Display new suggestions
+      suggestions.forEach(displayName => {
+          const listItem = document.createElement('li');
+          listItem.textContent = displayName;
+          listItem.addEventListener('click', function () {
+              // Redirect to the corresponding page URL
+              window.location.href = links[displayName];
+          });
+          searchSuggestions.appendChild(listItem);
+      });
+
+      // Show or hide suggestions container
+      searchSuggestions.style.display = suggestions.length ? 'block' : 'none';
+  }
+
+  // Close suggestions when clicking outside the search bar
+  document.addEventListener('click', function (event) {
+      if (!event.target.matches('#searchInput2')) {
+          searchSuggestions.style.display = 'none';
+      }
+  });
+});
