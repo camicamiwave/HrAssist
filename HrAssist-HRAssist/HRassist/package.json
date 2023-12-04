@@ -54,7 +54,8 @@
     "training_memo": "node training_memo.js",
     "training_list": "node training_list.js",
     "retrieve_leave": "node retrieve_leave.js",
-    "retrieve_behavior": "node retrieve_behavior.js"
+    "retrieve_behavior": "node retrieve_behavior.js",
+    "retrieve_overview": "node retrieve_overview.js"
   },
   "keywords": [],
   "author": "",

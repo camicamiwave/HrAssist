@@ -52,8 +52,8 @@ module.exports = {
         training_memo: './src/training_memo.js',
         training_list: './src/training_list.js',
         retrieve_leave: './src/retrieve_leave.js',
-        retrieve_behavior: './src/retrieve_behavior.js'
-        
+        retrieve_behavior: './src/retrieve_behavior.js',
+        retrieve_overview: './src/retrieve_overview.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),

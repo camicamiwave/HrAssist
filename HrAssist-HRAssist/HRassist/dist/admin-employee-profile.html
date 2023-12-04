@@ -451,8 +451,8 @@
                   <div class="container">
                     <h1 style="margin-top: -12px; font-size: 40px; font-weight: 600; font-family: poppins;" id="employeeFullName">
                     </h1><br>
-                    <h5><span id="empDesignation">Administrative Aide</span> | <span id="employmentStatus">Full time</span></h5>
-                    <p>Date of signing: <span id="startOfAppointment">January 12, 2023</span></p>
+                    <h5><span id="empDesignation"></span> | <span id="employmentStatus"> </span></h5>
+                    <p>Date of signing: <span id="startOfAppointment"></span></p>
                     
                     <p class="card-text"></p>
 
@@ -469,11 +469,12 @@
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="visually-hidden">Toggle Dropdown</span>
                       </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Resigned</a>
-                        <a class="dropdown-item" href="#">End of Contract</a>
-                        <a class="dropdown-item" href="#">Retired</a>
-                        <a class="dropdown-item" href="#">Fired</a>
+                      <div class="dropdown-menu" id="dropdownMenu">
+                        <a class="dropdown-item" href="#" data-action="Active">Active</a>
+                        <a class="dropdown-item" href="#" data-action="Resigned">Resigned</a>
+                        <a class="dropdown-item" href="#" data-action="End of Contract">End of Contract</a>
+                        <a class="dropdown-item" href="#" data-action="Retired">Retired</a>
+                        <a class="dropdown-item" href="#" data-action="Fired">Fired</a>
                       </div>
                     </div>
                   </div>
@@ -489,8 +490,8 @@
                   <div class="col-md-4">
                     <div class="card">
                       <div class="card-body">
-                        <h5 class="card-title">Role</h5>
-                        <p class="card-text">Employee</p>
+                        <h5 style="font-size: 15px;" class="card-title">Employement Status</h5>
+                        <p class="card-text" id="employementStatus"></p>
                       </div>
                     </div>
                   </div>
@@ -564,6 +565,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script src="bundles/retrieve_overview.bundle.js"></script>
   <script src="bundles/navigator201.bundle.js"></script>
   <script src="bundles/navbar.bundle.js"></script>
   <script src="js/sidebar.js"></script>
