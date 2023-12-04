@@ -15,7 +15,9 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -52,11 +54,11 @@
     <div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
         <input type="text" id="searchInput" name="query" placeholder="Search" title="Enter search keyword">
-            <ul id="searchSuggestions"></ul>
+        <ul id="searchSuggestions"></ul>
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
-    
+
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
 
@@ -189,7 +191,7 @@
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
-        <li class="nav-heading">ADMIN TOOL</li>
+      <li class="nav-heading">ADMIN TOOL</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="admin_dashboard.html">
           <i class="bi bi-grid"></i>
@@ -241,7 +243,7 @@
               <i class="bi bi-circle"></i><span>Applicant List</span>
             </a>
           </li>
-          
+
           <li>
             <a href="forms-validation.html">
               <i class="bi bi-circle"></i><span>Search Applicant</span>
@@ -252,12 +254,12 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
-            <i class="bx bxs-briefcase"></i>
-            <span>Job Vacancy</span>
+          <i class="bx bxs-briefcase"></i>
+          <span>Job Vacancy</span>
         </a>
-    </li><!-- End Job Vacancy Nav -->
+      </li><!-- End Job Vacancy Nav -->
 
-    <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+      <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="bi bi-bar-chart-line"></i>
@@ -332,65 +334,290 @@
   <main id="main" class="main">
 
 
+    <style>
+      .vertical-menu {
+        background-color: #ffffff;
+        width: 100%;
+        /* Define the width of the vertical menu */
+      }
+
+      .vertical-menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .vertical-menu li {
+        text-align: center;
+      }
+
+      .vertical-menu a {
+        display: block;
+        text-align: left;
+        color: #08533fe8;
+        font-weight: 500;
+        font-family: 'poppins';
+        padding: 14px 16px;
+        text-decoration: none;
+        border-bottom: 1px solid white;
+        /* Add a border between menu items */
+        transition: background-color 0.3s;
+        /* Add a smooth transition effect */
+      }
+
+      .vertical-menu a:hover {
+        background-color: #08533f1e;
+        /* Change the background color on hover */
+      }
+
+      .active1 {
+        background-color: #08533f0e;
+        border-radius: 5px;
+      }
+
+      .widget .panel, .widget.panel {
+      overflow: hidden;
+      }
+
+      .widget {
+        margin-bottom: 20px;
+        border: 0;
+      }
+
+      .row-table {
+        display: table;
+        table-layout: fixed;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+      }
+
+      .row-flush>[class*=col-] {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .row-table>[class*=col-] {
+        display: table-cell;
+        float: none;
+        table-layout: fixed;
+        vertical-align: middle;
+      }
+
+      .widget .lateral-picture {
+        position: relative;
+        display: block;
+        height: 240px;
+        width: auto;
+        overflow: hidden;
+      }
+
+      .widget .lateral-picture>img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-height: 100%;
+        width: auto;
+      }
+
+      .align-middle {
+        vertical-align: middle;
+      }
+
+      .p-lg {
+        padding: 15px!important;
+      }
+
+      .btn {
+        border-radius: 3px;
+        font-size: 13px;
+        border-color: transparent;
+        -webkit-appearance: none;
+        outline: 0!important;
+        -webkit-transition: all .1s;
+        -o-transition: all .1s;
+        transition: all .1s;
+      }
+
+    </style>
+
+
     <section class="section dashboard">
-      <div class="row">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card d-flex justify-content-center">
+            <div class="card-header text-left">Basic Information</div>
+            <div class="card-body text-center">
+              <br>
+              <h4 class="card-title mb-0" id="applicantFullName" style="font-size: 20px; "></h4>
+              <br>
+              <img class="img-account-profile rounded-circle mb-2" id="applicantProfile" 
+                style="width: 40%;" alt="Applicant Profile">
+              <br><br>
 
-        <!-- Left side columns -->
-        <div class="col-lg-12">
-          <div class="row">
 
-            <!--START YOUR CONTENT HERE -->
-            
-            <div class="container">
-                <div class="view-account">
-                    <section class="module">
-                        <div class="module-inner">
-                            <div class="side-bar">
-                                <div class="user-info">
-                                    <img class="img-profile img-circle img-responsive center-block" src="img/admin/user.jpg" alt="">
-                                    <ul class="meta list list-unstyled">
-                                        <li class="name"> <h5><strong>Camila Binas</strong></h5>
-                                            <p>DSWD Employee</p>
-                                        </li>
-                                       
-                                    </ul>
-                                </div>
-                                <nav class="side-menu">
-                                    <ul class="nav">
-                                      <li class="active"><a href="admin-employee-profile.html"><span class="fa fa-user"></span> Profile</a></li>
-                                      <li><a href="admin-employee-datasheet.html"><span class="bi bi-file-earmark-person"></span> Personal Data Sheet</a></li>
-                                      <li><a href="admin-employee-appointment.html"><span class="bi bi-calendar-event"></span> Appointment</a></li>
-                                      <li><a href="admin-employee-attachment.html"><span class="bi bi-paperclip"></span> Attachments</a></li>
-                                      <li><a href="admin-employee-leave.html"><span class="bi bi-calendar-week"></span> Leave credits</a></li>
-                                      <li><a href="#"><span class="bi bi-emoji-smile"></span> Behavior</a></li>
-                                      <li><a href="#"><span class="bi bi-activity"></span> Activity</a></li>                             
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div class="content-panel">
-                              <h5 class="mx-auto text-center custom-text" style="padding-right: 8vw; color: #1f8f3e; font-family: Poppins;"><b>Employee Personal Info</b></h5>
-                              <br>
-                                <form class="form-horizontal">
-                                    <fieldset class="fieldset">
-                                        
-                                        <div class="form-group avatar">
-                                        
-                                           
-                                        </div>
-                                       
-                                        <!--Content Here-->
-                                        
+              <div class="row gx-3 mb-3">
+                <div class="col-md-12">
+                  <label class="large mb-1"
+                    style="font-family: poppins; font-weight: 500; font-size: 13px; color: rgb(57, 57, 226);"
+                    for="inputApplicantStatus"><i class="bi bi-telephone">&nbsp;&nbsp;&nbsp;</i><span
+                      id="empPhone"></span></label>
 
-                    </section>
                 </div>
-            </div>
-            
+              </div>
+              <div class="row gx-3 mb-3">
+                <div class="col-md-12">
+                  <label class="large mb-1"
+                    style="font-family: poppins; font-weight: 500; font-size: 13px; color: rgb(57, 57, 226);"
+                    for="inputApplicantStatus"><i class="bi bi-envelope"></i>&nbsp;&nbsp;&nbsp;
+                    <span id="empEmail"></span> </label>
+                </div>
+              </div>
+              <hr>
 
-            <!--END YOUR CONTENT-->
+
+              <nav class="vertical-menu">
+                <ul>
+                  <li ><a href="#" id="overviewPDS"><span class="bi bi-bar-chart"></span>&nbsp;&nbsp;&nbsp;Overview</a>
+                  </li>
+                  <li ><a href="#" id="personalPDS"><span
+                        class="bi bi-file-earmark-person"></span>&nbsp;&nbsp;&nbsp;Personal Data
+                      Sheet</a></li>
+                  <li><a href="#" id="appointmentPDS"><span
+                        class="bi bi-calendar-event"></span>&nbsp;&nbsp;&nbsp;Appointment</a></li>
+                  <li><a href="#" id="attachmentsPDS"><span
+                        class="bi bi-paperclip"></span>&nbsp;&nbsp;&nbsp;Attachments</a></li>
+                  <li><a href="#" id="leavecreditsPDS"><span class="bi bi-calendar-week"></span>&nbsp;&nbsp;&nbsp;Leave
+                      Credits</a></li>
+                  <li><a href="#" id="behaviorPDS"><span class="bi bi-info-circle"></span>&nbsp;&nbsp;&nbsp;Performance</a>
+                  </li>
+                  <li class="active1"><a href="#" id="activityPDS"><span class="bi bi-activity"></span>&nbsp;&nbsp;&nbsp;Activity</a>
+                  </li>
+                </ul>
+              </nav>
+
+
+
+              <br>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Second Container with Column -->
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">Activity</div>
+            <div class="card-body">
+              <br>
+              <div class="row">
+                <div class="col-md-9">
+                  <h5 class="card-title">Joined Activities <span></span></h5>
+                  <div class="container">
+
+                    <p>As of Year:</p>
+
+                    <div class="col-md-6">
+                      <select class="form-control" id="yearSelctor" style="height: 3%; font-size: 12px;"> 
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                        <option value="2032">2032</option>
+                        <option value="2033">2033</option>
+                        <option value="2034">2034</option>
+                        <option value="2035">2035</option>
+                      </select>
+                    </div>
+                    
+                    <p class="card-text"></p>
+
+                  </div>
+                </div>
+
+ 
+              </div><br>
+
+
+              <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                      <!-- START widget-->
+                      <div class="panel widget" style="background-color: #EBECF0; border-radius: 12px;">
+                         <div class="row row-table row-flush">
+                            <div class="col-xs-5">
+                               <picture class="lateral-picture">
+                                  <img src="https://www.bootdey.com/image/400x400/FFB6C1/000000" alt="">
+                               </picture>
+                            </div>
+                            <div class="col-xs-7 align-middle p-lg">
+                               <p>
+                                  <span class="text-lg">16</span>Aug</p>
+                               <p>
+                                  <strong>EVENT TITLE</strong>
+                               </p>
+                               <p>Donec posuere neque in elit luctus tempor consequat enim egestas. Nulla dictum egestas leo at lobortis.</p>
+                               <div class="pull-right"><a href="#" class="btn btn-success btn-sm" style="width: 100%;">View Attached Document</a>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                      <!-- END widget-->
+                    </div>
+                    <div class="col-md-6">
+                      <!-- START widget-->
+                      <div class="panel widget" style="background-color: #EBECF0; border-radius: 12px;">
+                         <div class="row row-table row-flush">
+                            <div class="col-xs-5">
+                               <picture class="lateral-picture">
+                                  <img src="https://www.bootdey.com/image/400x400/87CEFA/000000" alt="">
+                               </picture>
+                            </div>
+                            <div class="col-xs-7 align-middle p-lg">
+                               <p>
+                                  <span class="text-lg">16</span>Aug</p>
+                               <p>
+                                  <strong>EVENT TITLE</strong>
+                               </p>
+                               <p>Donec posuere neque in elit luctus tempor consequat enim egestas. Nulla dictum egestas leo at lobortis.</p>
+                               <div class="pull-right"><a href="#" class="btn btn-success btn-sm" style="width: 100%;">View Attached Document</a>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                      <!-- END widget-->
+                    </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!--END YOUR CONTENT-->
+      </div>
+      </div>
+      </div>
+    </section>
+
+    <br><br><br><br>
+
+
+
+
 
   </main><!-- End #main -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -402,11 +629,13 @@
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
+  <!-- PDS NAVIGATOR -->
+  <script src="js/pds-profile.js"></script>
+
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Database Javascript -->
-  <script src="bundles/auth.bundle.js"></script> 
+  <script src="bundles/navigator201.bundle.js"></script>
   <script src="bundles/navbar.bundle.js"></script>
   <script src="js/sidebar.js"></script>
 
