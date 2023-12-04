@@ -46,7 +46,10 @@
     "retrieve_pds": "node retrieve_pds.js",
     "navigator201": "node 201navigator.js",
     "retrieve_appointment": "node retrieve_appointment.js",
-    "retrieve_attachments": "node retrieve_attachments.js"
+    "retrieve_attachments": "node retrieve_attachments.js",
+    "search_edit_employee": "node search_edit_employee.js",
+    "employee_complain": "node employee_complain.js",
+    "calendar": "node calendar.js"
   },
   "keywords": [],
   "author": "",

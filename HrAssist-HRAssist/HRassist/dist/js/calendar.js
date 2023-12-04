@@ -1,3 +1,4 @@
+/*
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
 
@@ -26,6 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   calendar.render();
+
+
+
   document.getElementById('btnSubmit').addEventListener('click', function(event) {
       event.preventDefault(); 
   
@@ -36,10 +40,11 @@ document.addEventListener('DOMContentLoaded', function() {
       var endTo = document.querySelector('.end-to').value;
   
       var formData = {
-          title: eventName,
-          start: startFrom,
-          end: endTo,
-          color: tagColor
+        participants: participants, 
+        title: eventName,
+        start: startFrom,
+        end: endTo,
+        color: tagColor
       };
   
       // Add the new event to the calendar's events array
@@ -52,4 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(formData);
   });
 });
+*/
+
 
