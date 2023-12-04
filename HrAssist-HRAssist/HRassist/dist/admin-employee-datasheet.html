@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Employee-Info</title>
+  <title>Employee - Personal Data Sheet</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -455,6 +455,7 @@
 
 
               <br>
+              <hr>
             </div>
           </div>
         </div>
@@ -506,6 +507,9 @@
             <div class="card-header">Personal Data Sheet</div>
             <div class="card-body">
               <br>
+              <div class="container">
+                <label style="color:#1f2020; font-weight: 1000"><small><b>CS Form 212</b></small></label><br>
+              </div>
 
 
               <nav class="linear-menu">
@@ -518,18 +522,9 @@
                   <li><a href="#" id="esignaturePDS">E - Signature</a></li>
                 </ul>
               </nav>
-
-              <br>
-              <hr>
-              <div class="container">
-                <label style="color:#1f2020; font-weight: 1000"><small><b>CS Form 212</b></small></label><br>
-              </div>
-
-
+              <br>  
               <section id="personalPDSLayout" style="display: block;">
-                <div class="container custom-container-pds">
-                  <br>
-
+                <div class="container custom-container-pds"> 
                   <div class="container">
                     <div class="row">
                       <!-- Account details card-->
@@ -956,14 +951,7 @@
                                   <th scope="col">Time</th>
                                 </tr>
                               </thead>
-                              <tbody>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                              <tbody> 
 
                               </tbody>
                             </table>
@@ -1000,7 +988,7 @@
 
                           <div class="table-responsive-lg">
 
-                            <table class="table mx-auto text-center table-bordered" style="font-size: 12px;">
+                            <table class="table mx-auto text-center table-bordered" id="workExperienceTable" style="font-size: 12px;">
                               <thead>
                                 <tr>
                                   <th scope="col">NAME & ADDRESS OF ORGANIZATION</th>
@@ -1041,7 +1029,7 @@
 
                           <div class="table-responsive-lg">
 
-                            <table class="table mx-auto text-center table-bordered" style="font-size: 12px;">
+                            <table class="table mx-auto text-center table-bordered" id="workExperienceTable" style="font-size: 12px;">
                               <thead>
                                 <tr>
                                   <th scope="col">NAME & ADDRESS OF ORGANIZATION</th>
@@ -1082,12 +1070,11 @@
 
                           <div class="table-responsive-sm">
 
-                            <table class="table mx-auto text-center table-bordered" style="font-size: 12px;">
+                            <table class="table mx-auto text-center table-bordered" id="TrainingTable" style="font-size: 12px;">
                               <thead>
                                 <tr>
                                   <th scope="col">Title of learning and development interventions / trainings programs
-                                  </th>
-                                  <th scope="col">RATING (If applicable)</th>
+                                  </th> 
                                   <th scope="col">From</th>
                                   <th scope="col">To</th>
                                   <th scope="col">Number of Hours</th>
@@ -1137,7 +1124,7 @@
                           <div class="table-responsive-sm">
 
                             <table class="table table-bordered mx-auto text-center"
-                              style="font-size: 12px; width: 100%;">
+                              style="font-size: 12px; width: 100%;" id="otherInformationTable">
                               <thead>
                                 <tr>
                                   <th scope="col">SPECIAL SKILLS AND HOBBIES</th>
@@ -1183,58 +1170,58 @@
                       <tr>
                         <th scope="row"><label class="small mb-1" for="inputCsId1">a. within the third degree? </label>
                         </th>
-                        <td>No</td>
+                        <td id="thirdDegree"></td>
                       </tr>
                       <tr>
                         <th scope="row"><label class="small mb-1" for="inputCsId1">b. within the fourth degree (for
                             Local Government Unit
                             - Career Employees)? </label>
                         </th>
-                        <td>No</td>
+                        <td id="fourthDegree"></td>
                       </tr>
                       <tr>
                         <td colspan="2">
                           <label class="small mb-1" for="inputCsId1">If YES, give details</label><br>
 
-                          <label class="small mb-1" for="inputCsId1">Details: </label>
+                          <label class="small mb-1" for="inputCsId1">Details:<span id="thirdSpecify"></span> </label>
                         </td>
                       </tr>
                       <tr>
                         <th scope="row"><label class="small mb-1" for="inputCsId1">a. Have you ever been found guilty of
                             any administrative offense?</label></th>
-                        <td>No</td>
+                        <td id="guilty"></td>
                       </tr>
                       <tr>
                         <td colspan="2">
                           <label class="small mb-1" for="inputCsId1">If YES, give details</label><br>
 
-                          <label class="small mb-1" for="inputCsId1">Details: </label>
+                          <label class="small mb-1" for="inputCsId1">Details: <span id="guiltyspecify"></span></label>
                         </td>
                       </tr>
 
                       <tr>
                         <th scope="row"><label class="small mb-1" for="inputCsId1">b. Have you been criminally charged
                             before any court?</label></th>
-                        <td>No</td>
+                        <td id="crimalCourt"></td>
                       </tr>
                       <tr>
                         <td colspan="2">
                           <label class="small mb-1" for="inputCsId1">If YES, give details</label><br>
 
-                          <label class="small mb-1" for="inputCsId1">Details: </label>
+                          <label class="small mb-1" for="inputCsId1" id="criminalDetails">Details: </label>
                         </td>
                       </tr>
 
                       <tr>
                         <th scope="row"><label class="small mb-1" for="inputCsId1">Have you acquired the status of an
                             immigrant or permanent resident of another country?</label></th>
-                        <td>No</td>
+                        <td id="immigrant">No</td>
                       </tr>
                       <tr>
                         <td colspan="2">
                           <label class="small mb-1" for="inputCsId1">If YES, give details (country):</label><br>
 
-                          <label class="small mb-1" for="inputCsId1">Details: </label>
+                          <label class="small mb-1" for="inputCsId1" id="immigrantSpecify">Details: </label>
                         </td>
                       </tr>
 
@@ -1243,8 +1230,34 @@
                         <th scope="row"><label class="small mb-1" for="inputCsId1">Pursuant to: (a) Indigenous People's
                             Act (RA 8371); (b) Magna Carta for Disabled Persons (RA 7277); and (c) Solo Parents Welfare
                             Act of 2000 (RA8972), please answer the following items:</label></th>
-                        <td>No</td>
+                        <td id="inidigenous"></td>
                       </tr>
+
+                      <tr>
+                        <td colspan="2">
+                          <label class="small mb-1" for="inputCsId1">If YES, give details (country):</label><br>
+
+                          <label class="small mb-1" for="inputCsId1">Details: <span id="inidigenouscountry"></span></label>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <label class="small mb-1" for="inputCsId1">a. within the third degree?</label><br>
+                        </td>
+                        <td>
+                          <label class="small mb-1" for="inputCsId1" id=""></label><br>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2">
+                          <label class="small mb-1" for="inputCsId1">If YES, give details (country):</label><br>
+
+                          <label class="small mb-1" for="inputCsId1">Details: <span id="thirdDegree"></span></label>
+                        </td>
+                      </tr>
+
 
                       <tr>
                         <td>
@@ -1259,25 +1272,7 @@
                         <td colspan="2">
                           <label class="small mb-1" for="inputCsId1">If YES, give details (country):</label><br>
 
-                          <label class="small mb-1" for="inputCsId1">Details: </label>
-                        </td>
-                      </tr>
-
-
-                      <tr>
-                        <td>
-                          <label class="small mb-1" for="inputCsId1">a. within the third degree?</label><br>
-                        </td>
-                        <td>
-                          <label class="small mb-1" for="inputCsId1"></label><br>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td colspan="2">
-                          <label class="small mb-1" for="inputCsId1">If YES, give details (country):</label><br>
-
-                          <label class="small mb-1" for="inputCsId1">Details: </label>
+                          <label class="small mb-1" for="inputCsId1" >Details: </label>
                         </td>
                       </tr>
 
@@ -1286,7 +1281,7 @@
                           <label class="small mb-1" for="inputCsId1">b. Are you a person with disability?</label><br>
                         </td>
                         <td>
-                          <label class="small mb-1" for="inputCsId1"></label><br>
+                          <label class="small mb-1" for="inputCsId1" id="disability"></label><br>
                         </td>
                       </tr>
 
@@ -1294,7 +1289,7 @@
                         <td colspan="2">
                           <label class="small mb-1" for="inputCsId1">If YES, please specify ID No.:</label><br>
 
-                          <label class="small mb-1" for="inputCsId1">Details: </label>
+                          <label class="small mb-1" for="inputCsId1">Details: <span id="disabilitySpecify"></span></label>
                         </td>
                       </tr>
 
@@ -1302,7 +1297,7 @@
                         <td>
                           <label class="small mb-1" for="inputCsId1">c. Are you a solo parent?:</label><br>
 
-                          <label class="small mb-1" for="inputCsId1"></label>
+                          <label class="small mb-1" for="inputCsId1" id="soloParent"></label>
                         </td>
                       </tr>
 
@@ -1310,7 +1305,7 @@
                         <td colspan="2">
                           <label class="small mb-1" for="inputCsId1">If YES, please specify ID No.:</label><br>
 
-                          <label class="small mb-1" for="inputCsId1">Details: </label>
+                          <label class="small mb-1" for="inputCsId1">Details: <span id="soloParentSpecify"></span></label>
                         </td>
                       </tr>
 
@@ -1351,7 +1346,7 @@
                               <div class="row justify-content-center">
                                 <div class="col-md-4 image-container">
                                   <!-- Your image goes here -->
-                                  <img id="e-signature" width="100%" alt="Your Image">
+                                  <img id="e_signature" width="100%" alt="Your Image">
                                 </div>
                               </div>
                             </div>

@@ -42,7 +42,9 @@ module.exports = {
         ipcrf_list: './src/ipcrf_list.js',
         individual_ipcrf: './src/individual_ipcrf.js',
         retrieve_pds: './src/retrieve_pds.js', 
-        navigator201: './src/201navigator.js'
+        navigator201: './src/201navigator.js',
+        retrieve_appointment: './src/retrieve_appointment.js',
+        retrieve_attachments: './src/retrieve_attachments.js'
         
     },
     output: {

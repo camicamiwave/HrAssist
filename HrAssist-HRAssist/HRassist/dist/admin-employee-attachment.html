@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Employee-Info</title>
+  <title>Employee - Appointments</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -15,7 +15,9 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,10 +31,12 @@
 
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   <!-- Template Main CSS File -->
   <link href="css/employee-template.css" rel="stylesheet">
   <link href="css/admin-employee-profile.css" rel="stylesheet">
-  <link href="css/datasheet.css" rel="stylesheet">
 
 </head>
 
@@ -57,7 +61,7 @@
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
-    
+
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
 
@@ -208,7 +212,7 @@
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
-        <li class="nav-heading">ADMIN TOOL</li>
+      <li class="nav-heading">ADMIN TOOL</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="index.html">
           <i class="bi bi-grid"></i>
@@ -260,7 +264,7 @@
               <i class="bi bi-circle"></i><span>Applicant List</span>
             </a>
           </li>
-          
+
           <li>
             <a href="forms-validation.html">
               <i class="bi bi-circle"></i><span>Search Applicant</span>
@@ -271,12 +275,12 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
-            <i class="bx bxs-briefcase"></i>
-            <span>Job Vacancy</span>
+          <i class="bx bxs-briefcase"></i>
+          <span>Job Vacancy</span>
         </a>
-    </li><!-- End Job Vacancy Nav -->
+      </li><!-- End Job Vacancy Nav -->
 
-    <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+      <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="bi bi-bar-chart-line"></i>
@@ -351,212 +355,230 @@
   <main id="main" class="main">
 
 
+    <style>
+      .vertical-menu {
+        background-color: #ffffff;
+        width: 100%;
+        /* Define the width of the vertical menu */
+      }
+
+      .vertical-menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .vertical-menu li {
+        text-align: center;
+      }
+
+      .vertical-menu a {
+        display: block;
+        text-align: left;
+        color: #08533fe8;
+        font-weight: 500;
+        font-family: 'poppins';
+        padding: 14px 16px;
+        text-decoration: none;
+        border-bottom: 1px solid white;
+        /* Add a border between menu items */
+        transition: background-color 0.3s;
+        /* Add a smooth transition effect */
+      }
+
+      .vertical-menu a:hover {
+        background-color: #08533f1e;
+        /* Change the background color on hover */
+      }
+
+      .active1 {
+        background-color: #08533f0e;
+        border-radius: 5px;
+      }
+    </style>
+
+
     <section class="section dashboard">
-      <div class="row">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card d-flex justify-content-center">
+            <div class="card-header text-left">Basic Information</div>
+            <div class="card-body text-center">
+              <br>
+              <h4 class="card-title mb-0" id="applicantFullName" style="font-size: 20px; "></h4>
+              <br>
+              <img class="img-account-profile rounded-circle mb-2" id="applicantProfile" style="width: 40%;"
+                alt="Applicant Profile">
+              <br><br>
 
-        <!-- Left side columns -->
-        <div class="col-lg-12">
-          <div class="row">
 
-            <!--START YOUR CONTENT HERE -->
-            
-            <div class="container">
-                <div class="view-account">
-                    <section class="module">
-                        <div class="module-inner">
-                            <div class="side-bar">
-                                <div class="user-info">
-                                    <img class="img-profile img-circle img-responsive center-block" src="img/admin/user.jpg" alt="">
-                                    <ul class="meta list list-unstyled">
-                                        <li class="name"> <h5><strong>Camila Binas</strong></h5>
-                                            <p>DSWD Employee</p>
-                                        </li>
-                                       
-                                    </ul>
-                                </div>
-                                <nav class="side-menu">
-                                    <ul class="nav">
-                                      <li><a href="admin-employee-profile.html"><span class="fa fa-user"></span> Profile</a></li>
-                                      <li><a href="admin-employee-datasheet.html"><span class="bi bi-file-earmark-person"></span> Personal Data Sheet</a></li>
-                                      <li><a href="admin-employee-appointment.html"><span class="bi bi-calendar-event"></span> Appointment</a></li>
-                                      <li class="active"><a href="admin-employee-attachment.html"><span class="bi bi-paperclip"></span> Attachments</a></li>
-                                      <li><a href="admin-employee-leave.html"><span class="bi bi-calendar-week"></span> Leave credits</a></li>
-                                      <li><a href="#"><span class="bi bi-emoji-smile"></span> Behavior</a></li>
-                                      <li><a href="#"><span class="bi bi-activity"></span> Activity</a></li>                           
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div class="content-panel">
-                               
-                                <form class="form-horizontal">
-                                    <fieldset class="fieldset">
-                                     
-                                        <div class="form-group avatar">
-                                        
-                                           
-                                        </div>
-                                       
-                                        <!--Content Here-->
-                                         <!--Personal Data-->
-                <div class="container">
-                    <div class="row">
+              <div class="row gx-3 mb-3">
+                <div class="col-md-12">
+                  <label class="large mb-1"
+                    style="font-family: poppins; font-weight: 400; font-size: 13px; color: rgb(57, 57, 226);"
+                    for="inputApplicantStatus"><i class="bi bi-telephone">&nbsp;&nbsp;&nbsp;</i><span
+                      id="empPhone"></span></label>
 
-                        <!-- Account details card-->
-
-                        <div class="col-md-12">
-                            <br>
-                            <div class="card-header"><strong>I. Attachments Information</strong></div>
-                            <br>
-                            
-
-                            <p>Upload employee's attachments here</p><br>
-                            <!-- Add the necessary jQuery library -->
-                            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-                            <button type="button" class="btn btn-warning btn-add-work-experience" id="addNewButton">
-                                <i class="bi bi-plus"></i> Add New
-                            </button>
-                            <br><br>
-                            
-                            <form id="employeeAttachments">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr style="background-color: rgb(236, 236, 235);">
-                                            <th scope="col" style="width: 15%; text-align: center;">ID</th>
-                                            <th scope="col" style="width: 60%; text-align: center">File Name</th>
-                                            <th scope="col" class="text-center" style="width: 30%; text-align: center">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="fileListBody">
-                                        <!-- File rows will be added dynamically here -->
-                                    </tbody>
-                                </table>
-                            </form>
-                            
-                            <script>
-                                $(document).ready(function () {
-                                    // Array to store uploaded files
-                                    window.AttachmentuploadedFiles = [];
-                                    window.AttachmentFiles = [];
-                            
-                                    // Function to update file list and renumber
-                                    function updateFileList() {
-                                        $("#fileListBody").empty(); // Clear the existing rows
-                                        for (let i = 0; i < AttachmentuploadedFiles.length; i++) {
-                                            const file = AttachmentuploadedFiles[i];
-                            
-                                            const row = $("<tr>");
-                                            const fileNameCell = $("<td class='file-name' style='width: 15%; text-align: center;'>");
-                                            const actionCell = $("<td class='text-center' style='width: 60%; text-align: center'>");
-                                            const deleteButton = $("<button type='button' class='btn btn-danger btn-delete-file'><i class='bi bi-trash'></i> Delete</button>");
-                            
-                                            const fileRow = $("<div><p class='file-link'>" + file.name + "</p></div>");
-                                            fileNameCell.append(fileRow);
-                            
-                                            // Add the row to the table
-                                            actionCell.append(deleteButton);
-                                            row.append("<th scope='row'>" + (i + 1) + "</th>", fileNameCell, actionCell);
-                                            $("#fileListBody").append(row);
-                            
-                                            // Delete button click event
-                                            deleteButton.click(function () {
-                                                // Implement your logic to delete the uploaded file
-                                                AttachmentuploadedFiles.splice(i, 1); // Remove the file from the array
-                                                updateFileList(); // Update the file list after deletion
-                                            });
-                                        }
-                                    }
-                            
-                                    // Add New button click event
-                                    $("#addNewButton").click(function () {
-                                        const fileInput = $("<input type='file' class='file-input' style='display: none;' />");
-                            
-                                        fileInput.change(function () {
-                                            const files = this.files;
-                            
-                                            if (files.length > 0) {
-                                                for (let i = 0; i < files.length; i++) {
-                                                    const fileName = files[i].name;
-                            
-                                                    // Store file information in the array
-                                                    AttachmentuploadedFiles.push({
-                                                        id: AttachmentuploadedFiles.length + 1,
-                                                        name: fileName,
-                                                        // Add other file information if needed
-                                                    });
-
-                                                    AttachmentFiles.push(files[i])
-                                                }
-                            
-                                                updateFileList(); // Update the file list after adding files
-                                            }
-                                        });
-                            
-                                        fileInput.click();
-                                    });
-                            
-                                    // Example function to retrieve uploaded files
-                                    function getUploadedFiles() {
-                                        console.log(AttachmentuploadedFiles, 'Hey...')
-                                        return AttachmentuploadedFiles;
-                                    }
-                                });
-                            </script>
-                            
-                            <br><br><br>
-                            <hr>
-                            <style>
-                                .submit-btn-container {
-                                    text-align: right;
-                                }
-
-                                #appointmentSubmitBtn {
-                                    /* Adjust other styles as needed */
-                                    width: 10%;
-                                    margin-top: 10px;
-                                    /* Optional: Add some top margin for spacing */
-                                }
-                            </style>
-
-                            <div class="submit-btn-container">
-                                <button type="button" id="attachmentSubmitBtn" name="submitBtn"
-                                    class="btn btn-success submit-btn">Save</button>
-                            </div>
-                            </form>
-                        </div>
-                    </div>
                 </div>
+              </div>
+              <div class="row gx-3 mb-3">
+                <div class="col-md-12">
+                  <label class="large mb-1"
+                    style="font-family: poppins; font-weight: 300; font-size: 13px; color: rgb(57, 57, 226);"
+                    for="inputApplicantStatus"><i class="bi bi-envelope"></i>&nbsp;&nbsp;&nbsp;
+                    <span id="empEmail"></span> </label>
+                </div>
+              </div>
+              <hr>
+
+
+              <nav class="vertical-menu">
+                <ul>
+                  <li><a href="#" id="overviewPDS"><span class="bi bi-bar-chart"></span>&nbsp;&nbsp;&nbsp;Overview</a>
+                  </li>
+                  <li ><a id="personalPDS"><span
+                        class="bi bi-file-earmark-person"></span>&nbsp;&nbsp;&nbsp;Personal Data
+                      Sheet</a></li>
+                  <li ><a href="#" id="appointmentPDS"><span
+                        class="bi bi-calendar-event"></span>&nbsp;&nbsp;&nbsp;Appointment</a></li>
+                  <li class="active1"><a href="#" id="attachmentsPDS"><span
+                        class="bi bi-paperclip"></span>&nbsp;&nbsp;&nbsp;Attachments</a></li>
+                  <li><a href="#" id="leavecreditsPDS"><span class="bi bi-calendar-week"></span>&nbsp;&nbsp;&nbsp;Leave
+                      Credits</a></li>
+                  <li><a href="#" id="behaviorPDS"><span class="bi bi-emoji-smile"></span>&nbsp;&nbsp;&nbsp;Behavior</a>
+                  </li>
+                  <li><a href="#" id="activityPDS"><span class="bi bi-activity"></span>&nbsp;&nbsp;&nbsp;Activity</a>
+                  </li>
+                </ul>
+              </nav>
+
+
+
+              <br>
+              <hr>
             </div>
+          </div>
+        </div>
 
 
-        </section><!-- End Breadcrumbs -->
+        <style>
+          .linear-menu {
+            background-color: #fffcfc;
+          }
 
-                                                        <!--End Emergency Contact-->
+          .linear-menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+          }
 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+          .linear-menu li {
+            flex: 1;
+          }
 
-                                        <!--End Content Here-->
-                                   
-                                    </fieldset>
-                                    <hr>
-                                </form>
-                            </div>
-                        </div>
+          .linear-menu a {
+            display: block;
+            font-weight: 500;
+            color: rgb(22, 22, 22);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            /* Initially, set a transparent border */
+            transition: border-bottom 0.3s;
+            /* Add a smooth transition effect */
+          }
+
+          .linear-menu a:hover {
+            background-color: #1f202017;
+            /*border-bottom: 2px solid white;*/
+            /* Change the border color on hover */
+          }
+        </style>
+
+
+        
+
+
+        <!-- Second Container with Column -->
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">Attachments</div>
+            <div class="card-body"> 
+              <br> 
+
+              <section id="personalPDSLayout" style="display: block;">
+                <div class="container custom-container-pds">
+                  <br>
+
+                  <div class="container">
+                    <div class="row">
+                      <!-- Account details card-->
+
+
+                      <div class="card-body">
+                        <!-- Form Group (CS ID NO)-->
+
+
+                        <table class="table">
+                          <thead class="thead-light" >
+                            <tr>
+                              <th scope="col">ID</th>
+                              <th scope="col">File</th>
+                              <th scope="col">Action</th> 
+                            </tr>
+                          </thead>
+                          <tbody id="attachmentsTable">
+                             
+                          </tbody>
+                        </table>
 
                         
 
-                    </section>
-                </div>
-            </div>
-            
+                        <div class="row gx-3 mb-3" >
+                          <!-- Form Group (first name)-->
+                          <div class="col-md-12">
 
-            <!--END YOUR CONTENT-->
+
+
+
+
+                            <hr>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+              <br>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--END YOUR CONTENT-->
+      </div>
+      </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    <br><br><br><br>
+
 
   </main><!-- End #main -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -567,12 +589,17 @@
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- PDS NAVIGATOR -->
+  <script src="js/pds-profile.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script src="bundles/retrieve_attachments.bundle.js"></script>
+  <script src="bundles/navigator201.bundle.js"></script>
   <script src="bundles/navbar.bundle.js"></script>
-  
+
+
 </body>
 
 </html>
