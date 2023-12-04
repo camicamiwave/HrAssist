@@ -43,6 +43,7 @@ function AddEventsCalendar() {
             },
             EventStatus: 'Active'
         };
+        
 
         Swal.fire({
             title: 'Are you sure?',
@@ -132,7 +133,6 @@ function fetchCalendarActivites() {
 
                 // Access the ID of the event
                 var eventId = currentEvent.id;
-                 
 
                 Swal.fire({
                     title: "Are you sure?",
