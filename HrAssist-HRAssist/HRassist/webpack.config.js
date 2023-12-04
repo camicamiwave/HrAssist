@@ -47,7 +47,11 @@ module.exports = {
         retrieve_attachments: './src/retrieve_attachments.js',
         search_edit_employee: './src/search_edit_employee.js',
         employee_complain: './src/employee_complain.js',
-        calendar: './src/calendar.js'
+        calendar: './src/calendar.js',
+        training: './src/training.js',
+        training_memo: './src/training_memo.js',
+        training_list: './src/training_list.js',
+        retrieve_leave: './src/retrieve_leave.js'
         
     },
     output: {

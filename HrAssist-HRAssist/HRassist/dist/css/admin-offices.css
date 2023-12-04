@@ -209,11 +209,7 @@ button:hover {
     list-style: none;
 }
 
-.active{
-    background-color: #08533F;
-    color: var(--white-color);
-    border-radius: 10px;
-}
+
 
 .navlink_icon {
     position: relative;

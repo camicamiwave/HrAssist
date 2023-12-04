@@ -26,10 +26,25 @@ const receivedStringData = urlParams.get('data');
 
 export function fetchEmployeeInfo(collectionReference, recievedDocumentID, nameOfData) {
   return new Promise((resolve) => {
-
-
     const Employeeque = query(collectionReference, where(nameOfData, "==", recievedDocumentID));
 
+    
+    onSnapshot(Employeeque, (snapshot) => {
+      if (snapshot.empty) {
+        // No documents matched the query
+        resolve('None');
+        // Handle the case when there are no matching documents
+      } else {
+        // Documents matched the query
+        snapshot.docs.forEach((accountdocData) => {
+          const data = accountdocData.data();
+          resolve(data);
+        });
+      }
+    });
+
+
+    /*
     // for retrieving the current user
     onSnapshot(Employeeque, (snapshot) => {
       snapshot.docs.forEach((accountdocData) => {
@@ -37,7 +52,7 @@ export function fetchEmployeeInfo(collectionReference, recievedDocumentID, nameO
         resolve(data);
 
       })
-    })
+    })*/
   });
 }
 

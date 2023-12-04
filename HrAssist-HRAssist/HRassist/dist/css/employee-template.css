@@ -313,10 +313,7 @@ h6 {
   color: #899bbd;
 }
 
-.breadcrumb .active {
-  color: #51678f;
-  font-weight: 600;
-}
+
 
 /* Bordered Tabs */
 .nav-tabs-bordered {
