@@ -72,6 +72,9 @@ function EmployeeProfileNavigator() {
         const personalPDSLink = document.getElementById('personalPDS');
         personalPDSLink.setAttribute('href', `admin-employee-datasheet.html?data=${encodeURIComponent(receivedStringData)}`);
 
+        const attachmentsPDS = document.getElementById('attachmentsPDS');
+        attachmentsPDS.setAttribute('href', `admin-employee-attachment.html?data=${encodeURIComponent(receivedStringData)}`);
+
         const appointmentPDS = document.getElementById('appointmentPDS');
         appointmentPDS.setAttribute('href', `admin-employee-appointment.html?data=${encodeURIComponent(receivedStringData)}`);
 

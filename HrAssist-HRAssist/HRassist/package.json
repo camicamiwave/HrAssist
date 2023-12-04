@@ -44,7 +44,9 @@
     "ipcrf_list": "node ipcrf_list.js",
     "individual_ipcrf": "node individual_ipcrf.js",
     "retrieve_pds": "node retrieve_pds.js",
-    "navigator201": "node 201navigator.js"
+    "navigator201": "node 201navigator.js",
+    "retrieve_appointment": "node retrieve_appointment.js",
+    "retrieve_attachments": "node retrieve_attachments.js"
   },
   "keywords": [],
   "author": "",

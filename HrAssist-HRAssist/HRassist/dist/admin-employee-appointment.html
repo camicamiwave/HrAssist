@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Employee-Info</title>
+  <title>Employee - Appointments</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -15,7 +15,9 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,9 +31,11 @@
 
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   <!-- Template Main CSS File -->
   <link href="css/employee-template.css" rel="stylesheet">
-  <link href="css/datasheet.css" rel="stylesheet">
   <link href="css/admin-employee-profile.css" rel="stylesheet">
 
 </head>
@@ -53,11 +57,11 @@
     <div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
         <input type="text" id="searchInput" name="query" placeholder="Search" title="Enter search keyword">
-        <ul id="searchSuggestions"></ul>
+            <ul id="searchSuggestions"></ul>
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
-    
+
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
 
@@ -190,7 +194,7 @@
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
-        <li class="nav-heading">ADMIN TOOL</li>
+      <li class="nav-heading">ADMIN TOOL</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="admin_dashboard.html">
           <i class="bi bi-grid"></i>
@@ -242,7 +246,7 @@
               <i class="bi bi-circle"></i><span>Applicant List</span>
             </a>
           </li>
-          
+
           <li>
             <a href="forms-validation.html">
               <i class="bi bi-circle"></i><span>Search Applicant</span>
@@ -253,12 +257,12 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
-            <i class="bx bxs-briefcase"></i>
-            <span>Job Vacancy</span>
+          <i class="bx bxs-briefcase"></i>
+          <span>Job Vacancy</span>
         </a>
-    </li><!-- End Job Vacancy Nav -->
+      </li><!-- End Job Vacancy Nav -->
 
-    <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+      <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="bi bi-bar-chart-line"></i>
@@ -318,7 +322,7 @@
           <span>Leave Management</span>
         </a>
       </li><!-- End Login Page Nav -->
-      <li class="nav-item"> 
+      <li class="nav-item">
         <a class="nav-link collapsed" href="pages-login.html">
           <i class="bi bi-clock"></i>
           <span>DTR</span>
@@ -333,237 +337,311 @@
   <main id="main" class="main">
 
 
+    <style>
+      .vertical-menu {
+        background-color: #ffffff;
+        width: 100%;
+        /* Define the width of the vertical menu */
+      }
+
+      .vertical-menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .vertical-menu li {
+        text-align: center;
+      }
+
+      .vertical-menu a {
+        display: block;
+        text-align: left;
+        color: #08533fe8;
+        font-weight: 500;
+        font-family: 'poppins';
+        padding: 14px 16px;
+        text-decoration: none;
+        border-bottom: 1px solid white;
+        /* Add a border between menu items */
+        transition: background-color 0.3s;
+        /* Add a smooth transition effect */
+      }
+
+      .vertical-menu a:hover {
+        background-color: #08533f1e;
+        /* Change the background color on hover */
+      }
+
+      .active1 {
+        background-color: #08533f0e;
+        border-radius: 5px;
+      }
+    </style>
+
+
     <section class="section dashboard">
-      <div class="row">
-
-        <!-- Left side columns -->
-        <div class="col-lg-12">
-          <div class="row">
-
-            <!--START YOUR CONTENT HERE -->
-            
-            <div class="container">
-                <div class="view-account">
-                    <section class="module">
-                        <div class="module-inner">
-                            <div class="side-bar">
-                                <div class="user-info">
-                                    <img class="img-profile img-circle img-responsive center-block" src="img/admin/user.jpg" alt="">
-                                    <ul class="meta list list-unstyled">
-                                        <li class="name"> <h5><strong>Camila Binas</strong></h5>
-                                            <p>DSWD Employee</p>
-                                        </li>
-                                       
-                                    </ul>
-                                </div>
-                                <nav class="side-menu">
-                                    <ul class="nav">
-                                      <li><a href="admin-employee-profile.html"><span class="fa fa-user"></span> Profile</a></li>
-                                      <li><a href="admin-employee-datasheet.html"><span class="bi bi-file-earmark-person"></span> Personal Data Sheet</a></li>
-                                      <li class="active"><a href="admin-employee-appointment.html"><span class="bi bi-calendar-event"></span> Appointment</a></li>
-                                      <li><a href="admin-employee-attachment.html"><span class="bi bi-paperclip"></span> Attachments</a></li>
-                                      <li><a href="admin-employee-leave.html"><span class="bi bi-calendar-week"></span> Leave credits</a></li>
-                                      <li><a href="#"><span class="bi bi-emoji-smile"></span> Behavior</a></li>
-                                      <li><a href="#"><span class="bi bi-activity"></span> Activity</a></li>                                 
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div class="content-panel">
-                               
-                                
-        
-                                        <div class="form-group avatar">
-                                        
-                                          <div class="container">
-                                            <div class="row">
-                                              <div class="d-flex">
-                                                <h1 class="mx-auto text-center custom-text" style="padding-right: 8vw;">Appointment</h1>
-                                              </div>
-                                    
-                                            </div>
-                                          </div>
-                                        </div>
-                                       
-                                        <!--Content Here-->
-                                              <!--Personal Data-->
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card d-flex justify-content-center">
+            <div class="card-header text-left">Basic Information</div>
+            <div class="card-body text-center">
+              <br>
+              <h4 class="card-title mb-0" id="applicantFullName" style="font-size: 20px; "></h4>
+              <br>
+              <img class="img-account-profile rounded-circle mb-2" id="applicantProfile" style="width: 40%;"
+                alt="Applicant Profile">
+              <br><br>
 
 
+              <div class="row gx-3 mb-3">
+                <div class="col-md-12">
+                  <label class="large mb-1"
+                    style="font-family: poppins; font-weight: 400; font-size: 13px; color: rgb(57, 57, 226);"
+                    for="inputApplicantStatus"><i class="bi bi-telephone">&nbsp;&nbsp;&nbsp;</i><span
+                      id="empPhone"></span></label>
 
-      <div class="container custom-container-pds">
-        <br>
+                </div>
+              </div>
+              <div class="row gx-3 mb-3">
+                <div class="col-md-12">
+                  <label class="large mb-1"
+                    style="font-family: poppins; font-weight: 300; font-size: 13px; color: rgb(57, 57, 226);"
+                    for="inputApplicantStatus"><i class="bi bi-envelope"></i>&nbsp;&nbsp;&nbsp;
+                    <span id="empEmail"></span> </label>
+                </div>
+              </div>
+              <hr>
 
-        <!--Personal Data-->
-        <div class="container">
-          <div class="row">
 
-            <!-- Account details card-->
+              <nav class="vertical-menu">
+                <ul>
+                  <li><a href="#" id="overviewPDS"><span class="bi bi-bar-chart"></span>&nbsp;&nbsp;&nbsp;Overview</a>
+                  </li>
+                  <li ><a id="personalPDS"><span
+                        class="bi bi-file-earmark-person"></span>&nbsp;&nbsp;&nbsp;Personal Data
+                      Sheet</a></li>
+                  <li class="active1"><a href="#" id="appointmentPDS"><span
+                        class="bi bi-calendar-event"></span>&nbsp;&nbsp;&nbsp;Appointment</a></li>
+                  <li><a href="#" id="attachmentsPDS"><span
+                        class="bi bi-paperclip"></span>&nbsp;&nbsp;&nbsp;Attachments</a></li>
+                  <li><a href="#" id="leavecreditsPDS"><span class="bi bi-calendar-week"></span>&nbsp;&nbsp;&nbsp;Leave
+                      Credits</a></li>
+                  <li><a href="#" id="behaviorPDS"><span class="bi bi-emoji-smile"></span>&nbsp;&nbsp;&nbsp;Behavior</a>
+                  </li>
+                  <li><a href="#" id="activityPDS"><span class="bi bi-activity"></span>&nbsp;&nbsp;&nbsp;Activity</a>
+                  </li>
+                </ul>
+              </nav>
 
-            <div class="container"><br>
-              <label style="color:#08533F"><small>CS Form 33 - A</small></label><br>
+
+
+              <br>
               <hr>
             </div>
+          </div>
+        </div>
 
-            <div class="col-md-12">
+
+        <style>
+          .linear-menu {
+            background-color: #fffcfc;
+          }
+
+          .linear-menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+          }
+
+          .linear-menu li {
+            flex: 1;
+          }
+
+          .linear-menu a {
+            display: block;
+            font-weight: 500;
+            color: rgb(22, 22, 22);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            /* Initially, set a transparent border */
+            transition: border-bottom 0.3s;
+            /* Add a smooth transition effect */
+          }
+
+          .linear-menu a:hover {
+            background-color: #1f202017;
+            /*border-bottom: 2px solid white;*/
+            /* Change the border color on hover */
+          }
+        </style>
+
+
+        
+
+
+        <!-- Second Container with Column -->
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">Appointment Form</div>
+            <div class="card-body"> 
               <br>
-              <div class="card-header"><strong>I. Appointment Information</strong></div>
-
-              <form id="employeeAppointmentForm">
-                <div class="card-body">
-                  <!-- Form Row-->
-                  <div class="row gx-3 mb-1">
-                    <label class="medium mb-1" for="inputForm">Please provide necessary
-                      information</label><br><br>
-                    <hr><br>
-                    <label class="medium mb-2" for="inputCsId">Job Details</label>
-                    <!-- Form Group (first name)--><br><br>
-
-                    <div class="row gx-3 mb-1">
-                      <div class="col-md-4">
-                        <label class="small mb-1" for="inputOffice">Office</label>
-                        <select class="form-control" name="inputOffice" id="inputOffice">
-                          <option>Select</option>   
-                        </select>
-                      </div>
-
-                      <!-- Form Group (first name)-->
-                      <div class="col-md-4">
-                        <label class="small mb-1" for="inputPosTitle">Position Title</label>
-                        <select class="form-control" name="officeSelector" id="positionSelector">
-                          <option>Select</option>
-                        </select>
-                        <!--<input class="form-control" id="inputPosTitle" type="text"
-                                                    placeholder="Enter job details">-->
-                      </div>
-
-                      <!-- Form Group (middle name)-->
-                      <div class="col-md-4">
-                        <label class="small mb-1" for="inputPosCategory">Nature of Appointment</label>
-                        <select class="form-control" name="" id="inputPosCategory">
-                          <option value="">Select</option>
-                          <option value="SG">Regular</option>
-                          <option value="JG">Casual</option>
-                          <option value="PG">Job Order</option>
-                        </select>
-                      </div>
+              <div class="container">
+                <label style="color:#1f2020; font-weight: 1000"><small><b>CS Form 33 - A</b></small></label><br>
+              </div>
 
 
-
-                    </div>
-                  </div>
-
-                  <hr>
-                  <!-- Form Row-->
-                  <div class="row gx-3 mb-1">
-                    <label class="medium mb-2" for="inputCsId">Salary</label>
-                    <!-- Form Group (first name)--><br><br>
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputSJP">SG/JG/PG</label>
-                      <select class="form-control" name="" id="inputSJP">
-                        <option value="">Select</option>
-                        <option value="SG">SG</option>
-                        <option value="JG">JG</option>
-                        <option value="PG">PG</option>
-                      </select>
-                    </div>
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputAmount">Compensation Per Month</label>
-                      <input class="form-control" id="inputAmount" type="text" placeholder="Enter Amount">
-                    </div>
-                  </div>
-                  </hr>
-                  <hr>
-                  <!-- Form Row-->
-                  <div class="row gx-3 mb-1">
-                    <label class="medium mb-2" for="inputAppointment">Appointment</label><br><br>
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputNatofApp">Nature of Appointment:</label>
-                      <select class="form-control" name="" id="inputNatofApp">
-                        <option value="">Select</option>
-                        <option value="Original">Original</option>
-                        <option value="Promotion">Promotion</option>
-                        <option value="Transfer">Transfer</option>
-                        <option value="Reappointment">Reappointment</option>
-                        <option value="Reinstatement">Reinstatement</option>
-                        <option value="Reclassification">Reclassification</option>
-                        <option value="Demotion">Demotion</option>
-                      </select>
-                    </div>
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputVice">Vice:</label>
-                      <input class="form-control" id="inputVice" type="text" placeholder="Enter Vice">
-                    </div>
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputWho">Who:</label>
-                      <input type="text" class="form-control" name="" id="inputWho">
-
-                      </select>
-                    </div>
-
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputPlant">Plantilla Item No.:</label>
-                      <input class="form-control" id="inputPlant" type="text" placeholder="Enter Plantilla Item No.">
-                    </div>
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputPage">Page:</label>
-                      <input class="form-control" id="inputPage" type="text" placeholder="Enter Page">
-                    </div>
-                  </div>
-                  </hr>
-                  <hr>
-                  <!-- Form Row-->
-                  <div class="row gx-3 mb-1">
-                    <label class="medium mb-2" for="inputCsId">Appointing Officer</label><br><br>
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputAppOff">Appointing Officer</label>
-                      <input class="form-control" id="inputAppOff" type="text" placeholder="Enter Appointing Officer">
-                    </div>
-                    <div class="col-md-4">
-                      <label class="small mb-1" for="inputDate">Date of Signing</label>
-                      <input class="form-control" id="inputDate" type="date" placeholder="Enter Appointing Officer">
-                    </div>
-                  </div>
-
-
-                  <hr>
-                  <label for="fileInput">Upload employee's appointment form:</label><br><br>
-                  <input type="file" id="fileInput" onchange="displayFileName()">
-                  <div id="fileNameDisplay"></div>
-
-                  <script>
-                    function displayFileName() {
-                      const fileInput = document.getElementById('fileInput');
-                      const fileNameDisplay = document.getElementById('fileNameDisplay');
-
-                      // Check if a file is selected
-                      if (fileInput.files.length > 0) {
-                        // Display the selected file name
-                        fileNameDisplay.textContent = `Selected File: ${fileInput.files[0].name}`;
-                      } else {
-                        // No file selected
-                        fileNameDisplay.textContent = 'No file selected';
-                      }
-                    }
-                  </script>
+              <section id="personalPDSLayout" style="display: block;">
+                <div class="container custom-container-pds">
                   <br>
-                  <hr>
-                  <input type="submit" id="appointmentSubmitBtn" name="appointmentSubmitBtn"
-                    class="btn btn-success submit-btn" value="Save">
 
-              </form>
+                  <div class="container">
+                    <div class="row">
+                      <!-- Account details card-->
+
+
+                      <div class="card-body">
+                        <!-- Form Group (CS ID NO)-->
+
+                        <div class="row gx-3 mb-3" style="margin-top: 10px;">
+                          <!-- Form Group (first name)-->
+                          <div class="col-md-12">
+
+                              <p
+                                  class="card-text d-flex justify-content-between align-items-center text-left">
+                                  <span>Office:</span>
+                                  <span id="empOffice"></span>
+                              </p>
+                              <hr>
+
+                              <p
+                                  class="card-text d-flex justify-content-between align-items-center text-left">
+                                  <span>Position Title:</span>
+                                  <span id="empPositionTile"></span>
+                              </p>
+                              <hr>
+
+
+                              <p
+                                  class="card-text d-flex justify-content-between align-items-center text-left">
+                                  <span>Employment Status:</span>
+                                  <span id="empEmployementStatus"></span>
+                              </p>
+                              <hr>
+
+                              <p
+                                  class="card-text d-flex justify-content-between align-items-center text-left">
+                                  <span>SG/JG/PG:</span>
+                                  <span id="empsgjgpg"></span>
+                              </p>
+                              <hr>
+
+                              <p
+                                  class="card-text d-flex justify-content-between align-items-center text-left">
+                                  <span>Compensation Per Month:</span>
+                                  <span id="compensationPerMonth"></span>
+                              </p>
+                              <hr>
+
+                              <p
+                                  class="card-text d-flex justify-content-between align-items-center text-left">
+                                  <span>Nature of Appointment:</span>
+                                  <span id="natureOfAppointment"></span>
+                              </p>
+                              <hr>
+
+                              <p
+                                  class="card-text d-flex justify-content-between align-items-center text-left">
+                                  <span>Vice:</span>
+                                  <span id="vice"></span>
+                              </p>
+                              <hr>
+
+                              <p
+                                  class="card-text d-flex justify-content-between align-items-center text-left">
+                                  <span>Who:</span>
+                                  <span id="who"></span>
+                              </p>
+                              <hr>
+
+                              <p
+                                  class="card-text d-flex justify-content-between align-items-center text-left">
+                                  <span>Plantilla Item No:</span>
+                                  <span id="plantillaItemNo"></span>
+                              </p>
+                              <hr>
+
+                              <p
+                                  class="card-text d-flex justify-content-between align-items-center text-left">
+                                  <span>Page:</span>
+                                  <span id="page"></span>
+                              </p>
+                              <hr>
+
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <span>Appointing Officer:</span>
+                                  </div>
+
+                                  <div class="col-md-6">
+                                      <p class="card-text text-right" style="text-align: right;">
+                                          <span id="appointingOfficer"></span>
+                                      </p>
+                                  </div>
+
+                              </div>
+                              <hr>
+
+                              
+                              <div class="row">
+                                <div class="col-md-6">
+                                    <span>Date of Signing:</span>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <p class="card-text text-right" style="text-align: right;">
+                                        <span id="dateOfSigning"></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <hr>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+              <br>
+
+
             </div>
           </div>
         </div>
       </div>
 
+      <!--END YOUR CONTENT-->
+      </div>
+      </div>
+      </div>
+    </section>
 
-    </section><!-- End Breadcrumbs -->
 
 
-                                        <!--END YOUR CONTENT-->
+
+
+
+
+
+    <br><br><br><br>
+
 
   </main><!-- End #main -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -574,12 +652,17 @@
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- PDS NAVIGATOR -->
+  <script src="js/pds-profile.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script src="bundles/retrieve_appointment.bundle.js"></script>
+  <script src="bundles/navigator201.bundle.js"></script>
   <script src="bundles/navbar.bundle.js"></script>
-  
+
+
 </body>
 
 </html>

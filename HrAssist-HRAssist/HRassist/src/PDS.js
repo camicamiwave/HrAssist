@@ -600,22 +600,22 @@ export function Add201OtherInfo() {
 
     for (let i = 1; i < SpecialSkillIDS; i++) {
       const SpecialSkillDets = {
-        LearningTitle: document.getElementById(`LearningTitle${i}`).value.trim(),
+        LearningTitle: document.getElementById(`SpecialSkillsHobies${i}`).value.trim(),
       };
 
       // Create a key for each eligibility and add the data
       OtherInformationData.OtherInformation.SpecialSkills[`SpecialSkillDetails${i}`] = SpecialSkillDets;
     }
 
-    const AcademicID = SkillsID;
+    const AcademicID1 = AcademicID;
 
-    for (let i = 1; i < AcademicID; i++) {
+    for (let i = 1; i < AcademicID1; i++) {
       const AcademicDets = {
         AcademicName: document.getElementById(`AcademicName${i}`).value.trim(),
       };
 
       // Create a key for each eligibility and add the data
-      OtherInformationData.OtherInformation.AcademicDistinction[`AcademicDetail${i}`] = AcademicDets;
+      OtherInformationData.OtherInformation.AcademicDistinction[`AcademicName${i}`] = AcademicDets;
     }
 
     const OrgID = OrganizationID;

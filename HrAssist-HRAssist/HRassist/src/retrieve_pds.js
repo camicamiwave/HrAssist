@@ -24,21 +24,15 @@ const app = initializeApp(firebaseConfig)
 
 const db = getFirestore()
 
-console.log("asfsffs123232")
+const urlParams = new URLSearchParams(window.location.search);
+const receivedStringData = urlParams.get('data');
 
 function fetchEmployee() {
-    const EmployeecolRef = collection(db, 'Employee Information');
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const receivedStringData = urlParams.get('data');
-
-    
+    const EmployeecolRef = collection(db, 'Employee Information'); 
 
     fetchEmployeeInfo(EmployeecolRef, receivedStringData, "documentID").then((dataRetrieved) => {
         const empdata = dataRetrieved;
         const file201DocID = empdata.documentID
- 
-        console.log('HOYYYY')
 
         inputCsId.innerHTML = empdata.Personal_Information.CSCID
         inputFname.innerHTML = empdata.Personal_Information.FirstName
@@ -138,30 +132,30 @@ function fetchEmployee() {
         elementaryTo.innerHTML = empdata.Education_Details.Elementary.ElementaryTo
         elementaryUnits.innerHTML = empdata.Education_Details.Elementary.ElementaryLevel
         elementaryScholar.innerHTML = empdata.Education_Details.Elementary.ElementaryScholarship
-        
+
         secondaryHighSchool.innerHTML = empdata.Education_Details.Secondary.SecondarySchool
-        secondaryBasicDegree.innerHTML = empdata.Education_Details.Secondary.SecondaryGrade 
+        secondaryBasicDegree.innerHTML = empdata.Education_Details.Secondary.SecondaryGrade
         secondaryFrom.innerHTML = empdata.Education_Details.Secondary.SecondaryFrom
         secondaryTo.innerHTML = empdata.Education_Details.Secondary.SecondaryTo
         secondaryUnits.innerHTML = empdata.Education_Details.Secondary.SecondaryLevel
         secondaryScholar.innerHTML = empdata.Education_Details.Secondary.SecondaryScholarship
-        
+
         seniorHighName.innerHTML = empdata.Education_Details.Vocational.VocationalSchool
-        seniorHighDegree.innerHTML = empdata.Education_Details.Vocational.VocationalGrade 
+        seniorHighDegree.innerHTML = empdata.Education_Details.Vocational.VocationalGrade
         seniorHighFrom.innerHTML = empdata.Education_Details.Vocational.VocationalFrom
         seniorHighTo.innerHTML = empdata.Education_Details.Vocational.VocationalTo
         seniorHighUnits.innerHTML = empdata.Education_Details.Vocational.VocationalLevel
         seniorHighScholar.innerHTML = empdata.Education_Details.Vocational.VocationalScholarship
-        
+
         collegeName.innerHTML = empdata.Education_Details.College.CollegeSchool
-        collegeDegree.innerHTML = empdata.Education_Details.College.CollegeGrade 
+        collegeDegree.innerHTML = empdata.Education_Details.College.CollegeGrade
         collegeFrom.innerHTML = empdata.Education_Details.College.CollegeFrom
         collegeTo.innerHTML = empdata.Education_Details.College.CollegeTo
         collegeUnits.innerHTML = empdata.Education_Details.College.CollegeLevel
         collegeScholar.innerHTML = empdata.Education_Details.College.CollegeScholarship
 
         graduteName.innerHTML = empdata.Education_Details.Graduate.GraduateSchool
-        graduteDegree.innerHTML = empdata.Education_Details.Graduate.GraduateGrade 
+        graduteDegree.innerHTML = empdata.Education_Details.Graduate.GraduateGrade
         graduteFrom.innerHTML = empdata.Education_Details.Graduate.GraduateFrom
         graduteTo.innerHTML = empdata.Education_Details.Graduate.GraduateTo
         graduteUnits.innerHTML = empdata.Education_Details.Graduate.GraduateLevel
@@ -175,54 +169,255 @@ function fetchEmployee() {
 
 window.addEventListener('load', fetchEmployee)
 
-/*
-function fetchEligibility(){
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const receivedStringData = urlParams.get('data');
-
+function fetchEligibility() { 
     const EmployeecolRef = collection(db, 'Employee Information')
 
-    const tableBody = document.getElementById('eligibilityTable').getElementsByTagName('tbody')[0];
+    const employeeTable = document.getElementById('eligibilityTable');
+    const tbody = employeeTable.querySelector('tbody');
 
     const q = query(EmployeecolRef, where("documentID", "==", receivedStringData))
 
     onSnapshot(q, (snapshot) => {
 
-        tableBody.innerHTML = '';
+        tbody.innerHTML = '';
 
         snapshot.docs.forEach((empdoc) => {
             const data = empdoc.data();
             const id = empdoc.id;
+            const row = document.createElement('tr');
+
 
             const eligibilityData = data.OtherInformation.CSC_Eligibility.Eligibility
 
-            console.log(eligibilityData,' 123224')
+            // Append the image element to the table cell
+            const csceligibilityCell = document.createElement('td');
+            csceligibilityCell.textContent = eligibilityData.EligibilityName
+
+            const ratingCell = document.createElement('td');
+            ratingCell.textContent = eligibilityData.Rating;
+
+            const degreeCell = document.createElement('td');
+            degreeCell.textContent = eligibilityData.BasicDegree;
+
+            const datexamCell = document.createElement('td');
+            datexamCell.textContent = eligibilityData.ExamDate;
+
+            const placeexamCell = document.createElement('td');
+            placeexamCell.textContent = eligibilityData.ExamPlace;
+
+            const scholarCell = document.createElement('td');
+            scholarCell.textContent = eligibilityData.Scholarship;
+            
+            const licensedateCell = document.createElement('td');
+            licensedateCell.textContent = eligibilityData.LicenseDate;
+            
+            const licenseNumberCell = document.createElement('td');
+            licenseNumberCell.textContent = eligibilityData.LicenseNumber;
 
 
-            // Loop through the AttachmentURLs object and add rows to the table
-            for (const index in attachmentData) {
-                if (attachmentData.hasOwnProperty(index)) {
-                    var row = tableBody.insertRow();
-                    var cell1 = row.insertCell(0);
-                    var cell2 = row.insertCell(1);
-                    var cell3 = row.insertCell(2);
+            // Append cells to the row 
+            //row.appendChild(profileCell); 
+            row.appendChild(csceligibilityCell)
+            row.appendChild(ratingCell);
+            row.appendChild(degreeCell);
+            row.appendChild(datexamCell);
+            row.appendChild(placeexamCell);
+            row.appendChild(scholarCell);
+            row.appendChild(licensedateCell);
+            row.appendChild(licenseNumberCell);
 
-                    // Set values for each cell
-                    cell1.innerHTML = num; // You can set an ID or index here
-                    cell2.innerHTML = `<a href='${attachmentData[index]}' style='width: 60%; text-align: center'>Docs${num}</a>`;
-
-                    
-                    cell3.appendChild(viewButton);
-                }
-                
-            }
-
+            // Append the row to the table body
+            tbody.appendChild(row);
 
         })
     })
 
+
 }
 
 window.addEventListener('load', fetchEligibility)
-*/
+
+
+function fetchWorkExperience() {
+
+    const EmployeecolRef = collection(db, 'Employee Information')
+
+    const employeeTable = document.getElementById('workExperienceTable');
+    const tbody = employeeTable.querySelector('tbody');
+
+    const q = query(EmployeecolRef, where("documentID", "==", receivedStringData))
+
+    onSnapshot(q, (snapshot) => {
+
+        tbody.innerHTML = '';
+
+        snapshot.docs.forEach((empdoc) => {
+            const data = empdoc.data();
+            const id = empdoc.id;
+            const row = document.createElement('tr');
+
+            const workExpData = data.OtherInformation.WorkExperience.WorkExperienceDetails
+
+            console.log(workExpData.WorkName, 1232)
+ 
+            // Append the image element to the table cell
+            const WorkNamCell = document.createElement('td');
+            WorkNamCell.textContent = workExpData.WorkName
+
+            const WorkFromCell = document.createElement('td');
+            WorkFromCell.textContent = workExpData.WorkFrom;
+
+            const WorkToCell = document.createElement('td');
+            WorkToCell.textContent = workExpData.WorkTo;
+
+            const WorkNumHoursCell = document.createElement('td');
+            WorkNumHoursCell.textContent = workExpData.WorkNumHours;
+
+            const postionCell = document.createElement('td');
+            postionCell.textContent = workExpData.WorkPosition;
+ 
+
+            // Append cells to the row 
+            //row.appendChild(profileCell); 
+            row.appendChild(WorkNamCell)
+            row.appendChild(WorkFromCell);
+            row.appendChild(WorkToCell);
+            row.appendChild(WorkNumHoursCell);
+            row.appendChild(postionCell);  
+
+            // Append the row to the table body
+            tbody.appendChild(row);
+
+        })
+    })
+
+
+}
+
+window.addEventListener('load', fetchWorkExperience)
+
+
+
+function fetchTraining() {
+
+    const EmployeecolRef = collection(db, 'Employee Information')
+
+    const employeeTable = document.getElementById('TrainingTable');
+    const tbody = employeeTable.querySelector('tbody');
+
+    const q = query(EmployeecolRef, where("documentID", "==", receivedStringData))
+
+    onSnapshot(q, (snapshot) => {
+
+        tbody.innerHTML = '';
+
+        snapshot.docs.forEach((empdoc) => {
+            const data = empdoc.data();
+            const id = empdoc.id;
+            const row = document.createElement('tr');
+
+            const trainingData = data.OtherInformation.LearingDevelopment.LearingDevelopmentDetails
+ 
+            // Append the image element to the table cell
+            const trainingTitleCell = document.createElement('td');
+            trainingTitleCell.textContent = trainingData.LearningTitle
+
+            const trainingFromCell = document.createElement('td');
+            trainingFromCell.textContent = trainingData.LearningFrom;
+
+            const trainingToCell = document.createElement('td');
+            trainingToCell.textContent = trainingData.LearingTo;
+
+            const trainingHoursCell = document.createElement('td');
+            trainingHoursCell.textContent = trainingData.LearningHours;
+
+            const trainingLDCell = document.createElement('td');
+            trainingLDCell.textContent = trainingData.LearningLD;
+
+            
+            const trainingSponsoredCell = document.createElement('td');
+            trainingSponsoredCell.textContent = trainingData.LearningSponsored;
+ 
+
+            // Append cells to the row 
+            //row.appendChild(profileCell); 
+            row.appendChild(trainingTitleCell)
+            row.appendChild(trainingFromCell);
+            row.appendChild(trainingToCell);
+            row.appendChild(trainingHoursCell);
+            row.appendChild(trainingLDCell);  
+            row.appendChild(trainingSponsoredCell);  
+
+            // Append the row to the table body
+            tbody.appendChild(row);
+
+        })
+    })
+
+
+}
+
+window.addEventListener('load', fetchTraining)
+
+
+
+function fetchOtherInformation() {
+
+    const EmployeecolRef = collection(db, 'Employee Information')
+
+    const employeeTable = document.getElementById('otherInformationTable');
+    const tbody = employeeTable.querySelector('tbody');
+
+    const q = query(EmployeecolRef, where("documentID", "==", receivedStringData))
+
+    onSnapshot(q, (snapshot) => {
+
+        tbody.innerHTML = '';
+
+        snapshot.docs.forEach((empdoc) => {
+            const data = empdoc.data();
+            const id = empdoc.id;
+            const row = document.createElement('tr');
+
+            e_signature.src = data.EsignatureURL 
+
+
+            const otherinfoData = data.OtherInformation.Other_Information
+
+            thirdDegree.innerHTML = otherinfoData.RadioThirdDegree
+            fourthDegree.innerHTML = otherinfoData.RadioFourthDegree
+            thirdSpecify.innerHTML = otherinfoData.DegreeSpecify
+            guilty.innerHTML = otherinfoData.Guilty
+            guiltyspecify.innerHTML = otherinfoData.GuiltySpecify
+            crimalCourt.innerHTML = otherinfoData.CriminalRecord
+            criminalDetails.innerHTML = otherinfoData.CriminalRecordSpecify
+
+            inidigenous.innerHTML = otherinfoData.Indigenous
+            inidigenouscountry.innerHTML = otherinfoData.IndigenousSpecify
+
+            disability.innerHTML = otherinfoData.Disability
+            disabilitySpecify.innerHTML = otherinfoData.DisabilitySpecify
+
+            soloParent.innerHTML = otherinfoData.SoloParent
+            soloParentSpecify.innerHTML = otherinfoData.SoloParentSpecify            
+
+            const trainingData = data.OtherInformation.LearingDevelopment.LearingDevelopmentDetails
+ 
+            // Append the image element to the table cell
+            const trainingTitleCell = document.createElement('td');
+            trainingTitleCell.textContent = trainingData.LearningTitle 
+
+            // Append cells to the row  
+            row.appendChild(trainingTitleCell) 
+
+            // Append the row to the table body
+            tbody.appendChild(row);
+
+        })
+    })
+
+
+}
+
+window.addEventListener('load', fetchOtherInformation)
