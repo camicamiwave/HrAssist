@@ -6,8 +6,7 @@
         <!-- Boxicons CSS -->
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
         <title>HR Assist - Admin</title>
-        <link rel="stylesheet" href="css/admin-calendar.css" />
-        <link rel="stylesheet" href="css/admin.css" />
+        <link rel="stylesheet" href="css/admin-calendar.css" />  
         <!-- Favicon -->
         <link href="img/hrlogo.svg" rel="icon">
         <meta charset="utf-8">
@@ -33,6 +32,9 @@
         <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
         <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
         <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+         <!-- FullCalendar Files -->
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
 
         <!-- Template Main CSS File -->
         <link href="css/employee-template.css" rel="stylesheet">
@@ -292,11 +294,11 @@
         </a>
       </li><!-- End Contact Page Nav -->
 
-      <li class="nav-heading">REWARDS & RECOGNITION</li>
+      <li class="nav-heading">Rewards & RECOGNITION</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="bi bi-award"></i>
-          <span>Award</span>
+          <span>Rewards</span>
         </a>
       </li><!-- End Register Page Nav -->
 
@@ -366,86 +368,51 @@
       <!-- START YOUR CONTENT HERE -->
   
       <div class="content-wrapper">
-          <div class="calendar-and-form">
-              <div class="calendar-container">
-                  <div class="calendar">
-                      <div class="month">
-                          <i class="bx bxs-chevron-left prev"></i>
-                          <div class="date">november 2023</div>
-                          <i class="bx bxs-chevron-right next"></i>
-                      </div>
-                      <div class="weekdays">
-                          <div>Sun</div>
-                          <div>Mon</div>
-                          <div>Tue</div>
-                          <div>Wed</div>
-                          <div>Thu</div>
-                          <div>Fri</div>
-                          <div>Sat</div>
-                      </div>
-                      <div class="days">
-                          <!-- code in js -->
-                      </div>
-                      <div class="go-to">
-                          <div class="go-date">
-                              <input type="text" class="date-input" placeholder="mm/yyyy" style="margin-right: 0px;" />
-                              <button class="btnGo" style="margin-left: 0px;">Go</button>
-                          </div>
-                          <button class="btnToday">Today</button>
-                      </div>
-                  </div>
-              </div>
-              <div class="add-event-form">
-                  <div class="formHeader">
-                      <h3 style="text-align: center;">ADD EVENT</h3>
-                      <div class="close">&times;</div>
-                  </div>
-                  <div class="form-content" style="width: 300px; height: 553px; margin-left: 0px; margin-top: 2px; border-radius: 8px;  overflow: hidden;">
-                    <form class="add-event" action="">
-                        <div class="column-left" style="height: 550px; margin-top: 13px; margin-bottom: 13px;">
-                            <label for="event-name">Event Name</label> <br>
-                            <input type="text" class="event-name" required="required" style="margin-bottom: 13px; width: 250px;" /> <br>
-                
-                            <label for="event-date">Event Date</label> <br>
-                            <input type="date" class="event-date" style="margin-bottom: 13px; width: 250px;" /> <br>
-                
-                            <label for="start-from">Category</label> <br>
-                            <div>
-                              <select name="category" id="category" style="width: 250px; margin-bottom: 13px;">
-                                <option value="personal">Personal</option>
-                                <option value="holiday">Holiday</option>
-                                <option value="work">Work-Related</option>
-                              </select>
-                            </div>
-                
-                            <label for="start-from">Start From</label> <br>
-                            <input type="datetime-local" class="start-from" style="width: 250px; margin-bottom: 13px;" />
-                            
-                            <div>
-                              <label for="event-frequency">Event Frequency</label> <br>
-                              <select name="frequency" id="frequency" style="width: 250px; margin-bottom: 13px;">
-                                <option value="whole day">Whole Day</option>
-                                <option value="extended">Extended</option>
-                                <option value="timely">Timely</option>
-                                </select>
-                            </div>
-                            <div>
-                            <label for="tag-color">Event Tag Color</label> <br>
-                            <input type="color" class="tag-color" style="width: 68px; height: 30px; float: left; margin-right: 2px; margin-bottom: 8px;" id="send" oninput="result.value=send.value">
-                            <input type="text" class="hex-code" id="result" style="width: 180px; margin-bottom: 8px;" />
-                          </div>  
-                          <div>
-                            <label for="end-to" style="margin-left: -69px;">End to</label> <br>
-                            <input type="datetime-local" class="end-to" style="width: 250px; margin-bottom: 13px;" />
-                          </div>  
-                            <button id="btnSubmit" style="width: 250px; border-radius: 20px; margin-top: 10px;">Submit</button>
-                        </div>
-                    </form>
-                </div>
-              </div>
+        <div class="container">
+          <div class="calendar-card">
+            <div id="calendar"></div>
+          </div>
+
+          <div class="event-card">
+            <div class="formHeader">
+              <h3 style="text-align: center;">ADD EVENT</h3>
             </div>
+            <form class="add-event" action="">
+              <label for="event-name">Event Name</label> <br>
+              <input type="text" class="event-name" id="event-name" required="required" style="margin-bottom: 13px; width: 250px;" /> <br>
+          
+              <div>
+                <label for="participants">Participants</label> <br>
+                <select name="participants" id="participants" style="width: 250px; margin-bottom: 13px;">
+                  <option value="all">All Employee</option>
+                  <option value="department">Department</option>
+                  <option value="heads">Heads</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="tag-color">Event Tag Color</label> <br>
+                <input type="color" class="tag-color" style="width: 68px; height: 30px; float: left; margin-right: 2px; margin-bottom: 8px;" id="send" oninput="result.value=send.value">
+                <input type="text" class="hex-code" id="result" style="width: 180px; margin-bottom: 8px;" />
+              </div>  
+
+              <div id="startEndFields">
+                <div>
+                    <label for="start-from">Start From</label> <br>
+                    <input type="datetime-local" class="start-from" id="start-from" style="width: 250px; margin-bottom: 13px;" />
+                </div>
+                <div>
+                    <label for="end-to">End to</label> <br>
+                    <input type="datetime-local" class="end-to" id="end-to" style="width: 250px; margin-bottom: 13px;" />
+                </div>
+              </div>  
+              <button id="btnSubmit" style="width: 250px; border-radius: 20px; margin-top: 10px;">Submit</button>
+            </form>
+          </div>
+         </div>        
       </div>
-  
+
+      
       <!-- END YOUR CONTENT -->
   
   </section>
@@ -465,16 +432,17 @@
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-
+  
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>    
         
         <!-- JavaScript -->
         <script src="js/calendar.js"></script>
-
+        
         <!-- Database Js-->
         <script src="bundles/auth.bundle.js"></script>   
         <script src="bundles/navbar.bundle.js"></script>
+        <script src="src/event.js"></script>
 
     
     </body>

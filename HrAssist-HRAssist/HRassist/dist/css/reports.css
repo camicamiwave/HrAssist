@@ -28,7 +28,7 @@
   align-items: center;
 }
 
-.imgrewards {
+.imgRewards {
   aspect-ratio: 1.05;
   object-fit: contain;
   width: 30px;
@@ -93,7 +93,7 @@
 #Rewards{
   margin-top: -50px;
 }
-.imgrewards{
+.imgRewards{
   aspect-ratio: 1.05;
   object-fit: contain;
   width: 30px;
@@ -102,7 +102,7 @@
 
   }
 
-  .rewards {
+  .Rewards {
     color: #068e6b;
     text-align: center;
     letter-spacing: 1.56px;

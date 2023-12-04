@@ -1,4 +1,4 @@
-.rewards-title{
+.Rewards-title{
     color: #068e6b;
     font-weight: bold;
     text-align: left;
@@ -27,7 +27,7 @@ margin-bottom: 30px;
 margin-left: 90px;
 font: 500 24px Poppins, sans-serif;
 }
-.add_reward_btn{
+.add_Rewards_btn{
     background-color: #068e6b;
     color: white;
     padding: 10px 20px;
@@ -98,7 +98,7 @@ font: 500 24px Poppins, sans-serif;
     margin-top: 0px; /* Adjust margin as needed */
 
   }
-  .add_reward_btn2{
+  .add_Rewards_btn2{
     background-color: #068e6b;
     color: white;
     padding: 10px 20px;
