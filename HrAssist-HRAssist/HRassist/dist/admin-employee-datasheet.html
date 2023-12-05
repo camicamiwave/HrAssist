@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Employee - Personal Data Sheet</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Template Main CSS File -->
+  <link href="css/employee-template.css" rel="stylesheet">
+  <link href="css/admin-employee-profile.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="employee_home.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">Assist</span>
+
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" id="searchInput" name="query" placeholder="Search" title="Enter search keyword">
+            <ul id="searchSuggestions"></ul>
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+        <!--
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul>
+
+        </li> End Notification Nav -->
+
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6 id="hoverUserName"></h6>
+              <span id="userLevel"></span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="admin-users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            
+            <li>
+              <a class="dropdown-item d-flex align-items-center" id="navbar_signout_btn">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+ <!--Side Bar-->
+ <aside id="sidebar" class="sidebar">
+  <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-heading">ADMIN TOOL</li>
+
+      <li class="nav-item">
+          <a class="nav-link collapsed" id="dashboard" href="admin_dashboard.html">
+              <i class="bi bi-grid"></i>
+              <span>Dashboard</span>
+          </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
+
+      <li class="nav-item">
+          <a class="nav-link " data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+              <li>
+                  <a class="nav-link collapsed" id="addemployee" href="admin_201file_account.html">
+                      <i class="bi bi-circle"></i><span>Add Employee</span>
+                  </a>
+              </li>
+              <li>
+                  <a id="employeelist" href="admin_employee_registry_list.html">
+                      <i class="bi bi-circle"></i><span>Employee List</span>
+                  </a>
+              </li>
+              <li>
+                  <a id="editemployee" href="admin_search_employee_view.html">
+                      <i class="bi bi-circle"></i><span>Edit Employee</span>
+                  </a>
+              </li>
+              <li>
+                  <a id="searchemployee" href="admin_search_employee_view.html">
+                      <i class="bi bi-circle"></i><span>Search Employee</span>
+                  </a>
+              </li>
+          </ul>
+      </li><!-- End Components Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-person"></i><span>Manage Applicant</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="admin_add_applicant.html">
+            <i class="bi bi-circle"></i><span>Add Applicant</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin_manage_applicant_view.html">
+            <i class="bi bi-circle"></i><span>Applicant List</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="admin_search_applicant.html">
+            <i class="bi bi-circle"></i><span>Search Applicant</span>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Forms Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
+          <i class="bx bxs-briefcase"></i>
+          <span>Job Vacancy</span>
+      </a>
+  </li><!-- End Job Vacancy Nav -->
+
+  <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+    <li class="nav-item">
+      <a id  = "employeePerformance"class="nav-link collapsed" href="admin-employee-performance.html">
+        <i class="bi bi-bar-chart-line"></i>
+        <span>Employee Performance</span>
+      </a>
+    </li><!-- End F.A.Q Page Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
+        <i class="bi bi-check-square"></i>
+        <span>Employee IPCRF</span>
+      </a>
+      
+    </li><!-- End Contact Page Nav -->
+
+    <li class="nav-heading">Rewards & RECOGNITION</li>
+    <li class="nav-item">
+      <a class="nav-link collapsed"id = "rewards" href="#">
+        <i class="bi bi-award"></i>
+        <span>Rewards</span>
+      </a>
+    </li><!-- End Register Page Nav -->
+
+    <li class="nav-heading">LEARNING DEVELOPMENT</li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+        <i class="bi bi-people-fill"></i>
+        <span>Training & Seminar</span>
+      </a>
+    </li><!-- End Login Page Nav -->
+
+    <li class="nav-heading">CONFIGURATION</li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-gear"></i><span>Configuration</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="admin-offices.html">
+            <i class="bi bi-circle"></i><span>Office</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin_accounts_view.html">
+            <i class="bi bi-circle"></i><span>Accounts</span>
+          </a>
+        </li>
+        <li>
+          <a href="calendar.html">
+            <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Icons Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="admin_request.html">
+        <i class="bi bi-calendar"></i>
+        <span>Leave Management</span>
+      </a>
+    </li><!-- End Login Page Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="admin_dtr_form.html">
+        <i class="bi bi-clock"></i>
+        <span>Daily Time Record</span>
+      </a>
+    </li><!-- End Login Page Nav -->
+
+
+  </ul>
+
+</aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+
+    <style>
+      .vertical-menu {
+        background-color: #ffffff;
+        width: 100%;
+        /* Define the width of the vertical menu */
+      }
+
+      .vertical-menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .vertical-menu li {
+        text-align: center;
+      }
+
+      .vertical-menu a {
+        display: block;
+        text-align: left;
+        color: #08533fe8;
+        font-weight: 500;
+        font-family: 'poppins';
+        padding: 14px 16px;
+        text-decoration: none;
+        border-bottom: 1px solid white;
+        /* Add a border between menu items */
+        transition: background-color 0.3s;
+        /* Add a smooth transition effect */
+      }
+
+      .vertical-menu a:hover {
+        background-color: #08533f1e;
+        /* Change the background color on hover */
+      }
+
+      .active1 {
+        background-color: #08533f0e;
+        border-radius: 5px;
+      }
+    </style>
+
+
+    <section class="section dashboard">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card d-flex justify-content-center">
+            <div class="card-header text-left">Basic Information</div>
+            <div class="card-body text-center">
+              <br>
+              <h4 class="card-title mb-0" id="applicantFullName" style="font-size: 20px; "></h4>
+              <br>
+              <img class="img-account-profile rounded-circle mb-2" id="applicantProfile" style="width: 40%;"
+                alt="Applicant Profile">
+              <br><br>
+
+
+              <div class="row gx-3 mb-3">
+                <div class="col-md-12">
+                  <label class="large mb-1"
+                    style="font-family: poppins; font-weight: 400; font-size: 13px; color: rgb(57, 57, 226);"
+                    for="inputApplicantStatus"><i class="bi bi-telephone">&nbsp;&nbsp;&nbsp;</i><span
+                      id="empPhone"></span></label>
+
+                </div>
+              </div>
+              <div class="row gx-3 mb-3">
+                <div class="col-md-12">
+                  <label class="large mb-1"
+                    style="font-family: poppins; font-weight: 300; font-size: 13px; color: rgb(57, 57, 226);"
+                    for="inputApplicantStatus"><i class="bi bi-envelope"></i>&nbsp;&nbsp;&nbsp;
+                    <span id="empEmail"></span> </label>
+                </div>
+              </div>
+              <hr>
+
+
+              <nav class="vertical-menu">
+                <ul>
+                  <li><a href="#" id="overviewPDS"><span class="bi bi-bar-chart"></span>&nbsp;&nbsp;&nbsp;Overview</a>
+                  </li>
+                  <li class="active1"><a id="personalPDS"><span
+                        class="bi bi-file-earmark-person"></span>&nbsp;&nbsp;&nbsp;Personal Data
+                      Sheet</a></li>
+                  <li><a href="#" id="appointmentPDS"><span
+                        class="bi bi-calendar-event"></span>&nbsp;&nbsp;&nbsp;Appointment</a></li>
+                  <li><a href="#" id="attachmentsPDS"><span
+                        class="bi bi-paperclip"></span>&nbsp;&nbsp;&nbsp;Attachments</a></li>
+                  <li><a href="#" id="leavecreditsPDS"><span class="bi bi-calendar-week"></span>&nbsp;&nbsp;&nbsp;Leave
+                      Credits</a></li>
+                  <li><a href="#" id="behaviorPDS"><span class="bi bi-info-circle"></span>&nbsp;&nbsp;&nbsp;Performances</a>
+                  </li>
+                 
+                </ul>
+              </nav>
+
+
+
+              <br>
+              <hr>
+            </div>
+          </div>
+        </div>
+
+
+        <style>
+          .linear-menu {
+            background-color: #fffcfc;
+            padding: 0;
+            overflow-x: auto; /* Enable horizontal scrolling */
+          }
+        
+          .linear-menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            white-space: nowrap; /* Prevent line breaks */
+          }
+        
+          .linear-menu li {
+            flex: 0 0 auto; /* Prevent flex items from growing */
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            height: 100%;
+          }
+        
+          .linear-menu a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #08533f;
+            color: #ffffff;
+            text-align: center;
+            padding: 5px 32px;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            /* Initially, set a transparent border */
+            transition: border-bottom 0.3s;
+            /* Add a smooth transition effect */
+            height: 100%;
+            font-size: 14px;
+            font-weight: 500;
+            width: 100%;
+            border: 1px solid #1f8f3e;
+            white-space: nowrap; /* Prevent text wrapping */
+          }
+        
+          .linear-menu a:hover {
+            background-color: #1f8f3e;
+            /*border-bottom: 2px solid white;*/
+            /* Change the border color on hover */
+          }
+        </style>
+
+        <!-- Second Container with Column -->
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">Personal Data Sheet</div>
+            <div class="card-body">
+              <br>
+              <div class="container">
+                <label style="color:#1f2020; font-weight: 1000"><small><b>CS Form 212</b></small></label><br>
+              </div>
+
+              <nav class="linear-menu">
+                <ul>
+                  <li><a href="#" id="personalPDSSec">Personal</a></li>
+                  <li><a href="#" id="educPDS">Education & Eligibility</a></li>
+                  <li><a href="#" id="workExpPDS" >Work Experience</a></li>
+                  <li><a href="#" id="trainingPDS">Trainings</a></li>
+                  <li><a href="#" id="otherInfoPDS">Other Info</a></li>
+                  <li><a href="#" id="esignaturePDS">E - Signature</a></li>
+                </ul>
+              </nav>
+
+              <br>  
+              <section id="personalPDSLayout" style="display: block;">
+                <div class="container custom-container-pds"> 
+                  <div class="container">
+                    <div class="row">
+                      <!-- Account details card-->
+
+                      <div class="col-md-12">
+                        <div class="card-header"><strong>I. PERSONAL INFORMATION</strong></div>
+                        <br>
+
+
+                        <div class="card-body">
+                          <!-- Form Group (CS ID NO)-->
+
+                          <div class="row">
+                            <div class="col-md-12">
+                              <label class="small mb-1" for="inputCsId"><b>CS ID NO:</b></label>
+                              <label class="small mb-1" id="inputCsId"></label>
+                            </div>
+                          </div>
+                          <hr>
+
+
+                          <div class="row">
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId1"><b>First Name:</b> </label><br>
+                              <label class="small mb-1" id="inputFname"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId2"><b>Middle Name:</b></label><br>
+                              <label class="small mb-1" id="inputMname"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>Last Name:</b></label><br>
+                              <label class="small mb-1" id="inputLname"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>Ext Name:</b></label><br>
+                              <label class="small mb-1" id="inputExtname"></label>
+                            </div>
+                          </div>
+                          <hr>
+
+
+                          <div class="row">
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId1"><b>Gender:</b> </label><br>
+                              <label class="small mb-1" id="inputGender"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId2"><b>Birthdate:</b></label><br>
+                              <label class="small mb-1" id="inputBirthdate"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>Place of Birth:</b></label><br>
+                              <label class="small mb-1" id="inputPlaceBirth"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>Civil Status:</b></label><br>
+                              <label class="small mb-1" id="inputCivilStatus"></label>
+                            </div>
+                          </div>
+                          <hr>
+
+                          <div class="row ">
+                            <div class="col-md-3 ">
+                              <label class="small mb-1" for="inputCsId1"><b>Email:</b> </label><br>
+                              <label class="small mb-1" id="inputEmail"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId2"><b>Mobile Number:</b></label><br>
+                              <label class="small mb-1" id="inputMobileNum"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>Telephone Number:</b></label><br>
+                              <label class="small mb-1" id="inputTelephone"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>Height:</b></label><br>
+                              <label class="small mb-1" id="inputHeight"></label>
+                            </div>
+                          </div>
+                          <hr>
+
+                          <div class="row ">
+                            <div class="col-md-3 ">
+                              <label class="small mb-1" for="inputCsId1"><b>Weight:</b> </label><br>
+                              <label class="small mb-1" id="inputWeight"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId2"><b>Blood Type:</b></label><br>
+                              <label class="small mb-1" id="inputBloodType"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>GSIS ID NO:</b></label><br>
+                              <label class="small mb-1" id="inputGSISID"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>PAGIBIG ID NO:</b></label><br>
+                              <label class="small mb-1" id="inputPAGIBIGID"></label>
+                            </div>
+                          </div>
+                          <hr>
+
+                          <div class="row ">
+                            <div class="col-md-3 ">
+                              <label class="small mb-1" for="inputCsId1"><b>PHILHEALTH ID:</b> </label><br>
+                              <label class="small mb-1" id="inputPHILHEALTHID"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId2"><b>SSS NO:</b></label><br>
+                              <label class="small mb-1" id="inputSSSID"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>TIN NO:</b></label><br>
+                              <label class="small mb-1" id="inputTINID"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>AGENCY EMPLOYEE NO:</b></label><br>
+                              <label class="small mb-1" id="inputAGENCYID"></label>
+                            </div>
+                          </div>
+                          <hr>
+
+                          <div class="row ">
+                            <div class="col-md-3 ">
+                              <label class="small mb-1" for="inputCsId1"><b>Citizenship:</b> </label><br>
+                              <label class="small mb-1" id="inputFilipino"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId2"><b>If Dual Citizenship:</b></label><br>
+                              <label class="small mb-1" id="inputDualCitizen"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>Country:</b></label><br>
+                              <label class="small mb-1" id="inputCountry"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>House/Block/Lot No:</b></label><br>
+                              <label class="small mb-1" id="inputHouseBlock"></label>
+                            </div>
+                          </div>
+                          <hr>
+
+                          <div class="row ">
+                            <div class="col-md-3 ">
+                              <label class="small mb-1" for="inputCsId1"><b>Street:</b> </label><br>
+                              <label class="small mb-1" id="inputStreet"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId2"><b>Subdivision:</b></label><br>
+                              <label class="small mb-1" id="inputSubdivision"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>Barangay:</b></label><br>
+                              <label class="small mb-1" id="inputBarangay"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>City/Municipality:</b></label><br>
+                              <label class="small mb-1" id="inputCity"></label>
+                            </div>
+                          </div>
+                          <hr>
+
+                          <div class="row ">
+                            <div class="col-md-3 ">
+                              <label class="small mb-1" for="inputCsId1"><b>Province:</b> </label><br>
+                              <label class="small mb-1" id="inputProvince"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId2"><b>Zip Code:</b></label><br>
+                              <label class="small mb-1" id="inputZipCode"></label>
+                            </div>
+
+                          </div>
+                          <hr>
+                        </div>
+
+                        <div class="card-header"><strong>II. FAMILY BACKGROUND</strong></div>
+                        <br>
+                        <div class="card-body">
+                          <div class="small mb-1">Spouse Details</div>
+                          <br>
+
+                          <div class="row ">
+                            <div class="col-md-3 ">
+                              <label class="small mb-1" for="inputCsId1"><b>First Name:</b> </label><br>
+                              <label class="small mb-1" id="inputSpouseFname"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId2"><b>Middle Name:</b></label><br>
+                              <label class="small mb-1" id="inputSpouseMname"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>Last Name:</b></label><br>
+                              <label class="small mb-1" id="inputSpouseLname"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>ExtName:</b></label><br>
+                              <label class="small mb-1" id="inputSpouseExtName"></label>
+                            </div>
+                          </div>
+                          <hr>
+
+                          <div class="row ">
+                            <div class="col-md-3 ">
+                              <label class="small mb-1" for="inputCsId1"><b>Occupation:</b> </label><br>
+                              <label class="small mb-1" id="inputSpouseOccupation"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId2"><b>Employe/Business Name:</b></label><br>
+                              <label class="small mb-1" id="inputSpouseEmployer"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>Business Address:</b></label><br>
+                              <label class="small mb-1" id="inputSpouseBusinessAd"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>Telephone No:</b></label><br>
+                              <label class="small mb-1" id="inputSpouseTelPhone"></label>
+                            </div>
+                          </div>
+                          <hr>
+
+                          <div class="small mb-1">Father Details</div>
+                          <br>
+
+
+                          <div class="row ">
+                            <div class="col-md-3 ">
+                              <label class="small mb-1" for="inputCsId1"><b>First Name:</b> </label><br>
+                              <label class="small mb-1" id="inputFatherFname"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId2"><b>Middle Name:</b></label><br>
+                              <label class="small mb-1" id="inputFatherMname"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>Last Name:</b></label><br>
+                              <label class="small mb-1" id="inputFatherLname"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>ExtName:</b></label><br>
+                              <label class="small mb-1" id="inputFatherExtName"></label>
+                            </div>
+                          </div>
+                          <hr>
+
+
+                          <div class="small mb-1">Mother Details</div>
+                          <br>
+
+
+                          <div class="row ">
+                            <div class="col-md-3 ">
+                              <label class="small mb-1" for="inputCsId1"><b>First Name:</b> </label><br>
+                              <label class="small mb-1" id="inputMotherFname"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId2"><b>Middle Name:</b></label><br>
+                              <label class="small mb-1" id="inputMotherMname"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>Last Name:</b></label><br>
+                              <label class="small mb-1" id="inputMotherLname"></label>
+                            </div>
+
+                            <div class="col-md-3">
+                              <label class="small mb-1" for="inputCsId3"><b>Maiden Name:</b></label><br>
+                              <label class="small mb-1" id="inputMotherMaidenName"></label>
+                            </div>
+                          </div>
+                          <hr>
+  
+                          <div class="small mb-1">Children Details</div>
+                          <br>
+                          <div class="children-container"></div>
+                          <hr>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+
+
+              <section id="educationPDSLayout" style="display: none;">
+                <div class="container custom-container-pds">
+                  <br>
+
+                  <div class="container">
+                    <div class="row">
+                      <!-- Account details card-->
+
+                      <div class="col-md-12">
+                        <div class="card-header"><strong>III. EDUCATION BACKGROUND</strong></div>
+                        <br>
+                        <div class="card-body">
+                          <!-- Form Group (CS ID NO)-->
+
+                          <div class="table-responsive-lg">
+
+                            <table class="table mx-auto text-center table-bordered" style="font-size: 12px;">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Level</th>
+                                  <th scope="col">School Name</th>
+                                  <th scope="col">Basic Education /degree /course</th>
+                                  <th scope="col">From</th>
+                                  <th scope="col">To</th>
+                                  <th scope="col">Highest level / units earned (If not graduated)</th>
+                                  <th scope="col">Scholarship / academic honors received</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">Elementary</th>
+                                  <td id="elementarySchoolName"></td>
+                                  <td id="elementaryBasicDegree"></td>
+                                  <td id="elementaryFrom"></td>
+                                  <td id="elementaryTo"></td>
+                                  <td id="elementaryUnits"></td>
+                                  <td id="elementaryScholar"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Secondary</th>
+                                  <td id="secondaryHighSchool"></td>
+                                  <td id="secondaryBasicDegree"></td>
+                                  <td id="secondaryFrom"></td>
+                                  <td id="secondaryTo"></td>
+                                  <td id="secondaryUnits"></td>
+                                  <td id="secondaryScholar"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Vocational / Trade Course</th>
+                                  <td id="seniorHighName"></td>
+                                  <td id="seniorHighDegree"></td>
+                                  <td id="seniorHighFrom"></td>
+                                  <td id="seniorHighTo"></td>
+                                  <td id="seniorHighUnits"></td>
+                                  <td id="seniorHighScholar"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">College</th>
+                                  <td id="collegeName"></td>
+                                  <td id="collegeDegree"></td>
+                                  <td id="collegeFrom"></td>
+                                  <td id="collegeTo"></td>
+                                  <td id="collegeUnits"></td>
+                                  <td id="collegeScholar"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Graduate School</th>
+                                  <td id="graduteName"></td>
+                                  <td id="graduteDegree"></td>
+                                  <td id="graduteFrom"></td>
+                                  <td id="graduteTo"></td>
+                                  <td id="graduteUnits"></td>
+                                  <td id="graduteScholar"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <!-- ELIGIBILITY -->
+                      <div class="col-md-1-">
+                        <br><br>
+                        <br><br>
+                        <div class="card-header"><strong>IV. CIVIL SERVICE ELIGIBILITY</strong></div>
+                        <br>
+                        <div class="card-body" style="margin-left: -7%;">
+                          <!-- Form Group (CS ID NO)-->
+
+                          <div class="table-responsive-sm">
+
+                            <table class="table mx-auto text-center table-bordered" id="eligibilityTable" style="font-size: 12px;">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Career Service/RA 1080 (Board/Bar) Under Special Laws/CES/CSEE
+                                    Barangay Eligibility/ Drivers License</th>
+                                  <th scope="col">RATING (If applicable)</th>
+                                  <th scope="col">Basic Education/ degree / course</th>
+                                  <th scope="col">DATE OF EXAMINATION/ CONFERMENT</th>
+                                  <th scope="col">PLACE OF EXAMINATION/ CONFERMENT</th>
+                                  <th scope="col">Scholarship/ academic honors received</th>
+                                  <th scope="col">Date</th>
+                                  <th scope="col">Time</th>
+                                </tr>
+                              </thead>
+                              <tbody> 
+
+                              </tbody>
+                            </table>
+                          </div>
+
+                        </div>
+                      </div>
+
+
+
+
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+
+
+
+              <section id="workExpPDSLayout" style="display: none;">
+                <div class="container custom-container-pds">
+                  <br>
+
+                  <div class="container">
+                    <div class="row">
+                      <!-- Account details card-->
+
+                      <div class="col-md-12">
+                        <div class="card-header"><strong>V. WORK EXPERIENCE</strong></div>
+                        <br>
+                        <div class="card-body">
+                          <!-- Form Group (CS ID NO)-->
+
+                          <div class="table-responsive-lg">
+
+                            <table class="table mx-auto text-center table-bordered" id="workExperienceTable" style="font-size: 12px;">
+                              <thead>
+                                <tr>
+                                  <th scope="col">NAME & ADDRESS OF ORGANIZATION</th>
+                                  <th scope="col">FROM</th>
+                                  <th scope="col">TO</th>
+                                  <th scope="col">NUMBER OF HOURS</th>
+                                  <th scope="col">POSITION/NATURE OF WORK</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+
+              <section id="trainingPDSLayout" style="display: none;">
+                <div class="container custom-container-pds">
+                  <br>
+
+                  <div class="container">
+                    <div class="row">
+                      <!-- Account details card-->
+
+                      <div class="col-md-12">
+                        <div class="card-header"><strong>V. WORK EXPERIENCE</strong></div>
+                        <br>
+                        <div class="card-body">
+                          <!-- Form Group (CS ID NO)-->
+
+                          <div class="table-responsive-lg">
+
+                            <table class="table mx-auto text-center table-bordered" id="workExperienceTable" style="font-size: 12px;">
+                              <thead>
+                                <tr>
+                                  <th scope="col">NAME & ADDRESS OF ORGANIZATION</th>
+                                  <th scope="col">FROM</th>
+                                  <th scope="col">TO</th>
+                                  <th scope="col">NUMBER OF HOURS</th>
+                                  <th scope="col">POSITION/NATURE OF WORK</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+
+              <section id="learningPDSLayout" style="display: none;">
+                <div class="container custom-container-pds">
+                  <br>
+
+                  <div class="container">
+                    <div class="row">
+                      <!-- ELIGIBILITY -->
+                      <div class="col-md-1-">
+                        <div class="card-header"><strong>VI. LEARNING AND DEVELOPMENT (L&D) INTERVENTIONS/TRAINING
+                            PROGRAMS ATTENDED</strong></div>
+                        <br>
+                        <div class="card-body" style="margin-left: -5%;">
+                          <!-- Form Group (CS ID NO)-->
+
+                          <div class="table-responsive-sm">
+
+                            <table class="table mx-auto text-center table-bordered" id="TrainingTable" style="font-size: 12px;">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Title of learning and development interventions / trainings programs
+                                  </th> 
+                                  <th scope="col">From</th>
+                                  <th scope="col">To</th>
+                                  <th scope="col">Number of Hours</th>
+                                  <th scope="col">Type of LD</th>
+                                  <th scope="col">Conduct / Sponsored by</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+
+                              </tbody>
+                            </table>
+                          </div>
+
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <br>
+
+
+
+              <section id="otherInfoPDSLayout" style="display: none;">
+                <div class="container custom-container-pds">
+                  <div class="container">
+                    <div class="row">
+                      <!-- ELIGIBILITY -->
+                      <div class="col-md-1-">
+                        <div class="card-header"><strong>VII. OTHER INFORMATION</strong></div>
+                        <br>
+                        <div class="card-body">
+                          <!-- Form Group (CS ID NO)-->
+
+                          <div class="table-responsive-sm">
+
+                            <table class="table table-bordered mx-auto text-center"
+                              style="font-size: 12px; width: 100%;" id="otherInformationTable">
+                              <thead>
+                                <tr>
+                                  <th scope="col">SPECIAL SKILLS AND HOBBIES</th>
+                                  <th scope="col">NON-ACADEMIC DISTINCTIONS / RECOGNITION</th>
+                                  <th scope="col">MEMBERSHIP IN ASSOCIATION/ORGANIZATION</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col" colspan="2">
+                          <label class="small mb-1" for="inputCsId1"><b>Are you related by consanguinity or affinity to
+                              the
+                              appointing or recommending authority, or to the chief of bureau or office or to the person
+                              who
+                              has immediate supervision over you in the Office, Bureau or Department where you will be
+                              apppointed.</b> </label>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><label class="small mb-1" for="inputCsId1">a. within the third degree? </label>
+                        </th>
+                        <td id="thirdDegree"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><label class="small mb-1" for="inputCsId1">b. within the fourth degree (for
+                            Local Government Unit
+                            - Career Employees)? </label>
+                        </th>
+                        <td id="fourthDegree"></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <label class="small mb-1" for="inputCsId1">If YES, give details</label><br>
+
+                          <label class="small mb-1" for="inputCsId1">Details:<span id="thirdSpecify"></span> </label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><label class="small mb-1" for="inputCsId1">a. Have you ever been found guilty of
+                            any administrative offense?</label></th>
+                        <td id="guilty"></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <label class="small mb-1" for="inputCsId1">If YES, give details</label><br>
+
+                          <label class="small mb-1" for="inputCsId1">Details: <span id="guiltyspecify"></span></label>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <th scope="row"><label class="small mb-1" for="inputCsId1">b. Have you been criminally charged
+                            before any court?</label></th>
+                        <td id="crimalCourt"></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <label class="small mb-1" for="inputCsId1">If YES, give details</label><br>
+
+                          <label class="small mb-1" for="inputCsId1" id="criminalDetails">Details: </label>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <th scope="row"><label class="small mb-1" for="inputCsId1">Have you acquired the status of an
+                            immigrant or permanent resident of another country?</label></th>
+                        <td id="immigrant">No</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <label class="small mb-1" for="inputCsId1">If YES, give details (country):</label><br>
+
+                          <label class="small mb-1" for="inputCsId1" id="immigrantSpecify">Details: </label>
+                        </td>
+                      </tr>
+
+
+                      <tr>
+                        <th scope="row"><label class="small mb-1" for="inputCsId1">Pursuant to: (a) Indigenous People's
+                            Act (RA 8371); (b) Magna Carta for Disabled Persons (RA 7277); and (c) Solo Parents Welfare
+                            Act of 2000 (RA8972), please answer the following items:</label></th>
+                        <td id="inidigenous"></td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2">
+                          <label class="small mb-1" for="inputCsId1">If YES, give details (country):</label><br>
+
+                          <label class="small mb-1" for="inputCsId1">Details: <span id="inidigenouscountry"></span></label>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <label class="small mb-1" for="inputCsId1">a. within the third degree?</label><br>
+                        </td>
+                        <td>
+                          <label class="small mb-1" for="inputCsId1" id=""></label><br>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2">
+                          <label class="small mb-1" for="inputCsId1">If YES, give details (country):</label><br>
+
+                          <label class="small mb-1" for="inputCsId1">Details: <span id="thirdDegree"></span></label>
+                        </td>
+                      </tr>
+
+
+                      <tr>
+                        <td>
+                          <label class="small mb-1" for="inputCsId1">a. within the third degree?</label><br>
+                        </td>
+                        <td>
+                          <label class="small mb-1" for="inputCsId1"></label><br>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2">
+                          <label class="small mb-1" for="inputCsId1">If YES, give details (country):</label><br>
+
+                          <label class="small mb-1" for="inputCsId1" >Details: </label>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <label class="small mb-1" for="inputCsId1">b. Are you a person with disability?</label><br>
+                        </td>
+                        <td>
+                          <label class="small mb-1" for="inputCsId1" id="disability"></label><br>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2">
+                          <label class="small mb-1" for="inputCsId1">If YES, please specify ID No.:</label><br>
+
+                          <label class="small mb-1" for="inputCsId1">Details: <span id="disabilitySpecify"></span></label>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <label class="small mb-1" for="inputCsId1">c. Are you a solo parent?:</label><br>
+
+                          <label class="small mb-1" for="inputCsId1" id="soloParent"></label>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="2">
+                          <label class="small mb-1" for="inputCsId1">If YES, please specify ID No.:</label><br>
+
+                          <label class="small mb-1" for="inputCsId1">Details: <span id="soloParentSpecify"></span></label>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+              </section>
+
+
+
+              <section id="esignaturePDSLayout" style="display: none;">
+                <div class="container custom-container-pds">
+
+                  <div class="container">
+                    <div class="row">
+                      <!-- ELIGIBILITY -->
+                      <div class="col-md-1-">
+                        <div class="card-header"><strong>VIII. E-SIGNATURE</strong></div>
+                        <br>
+                        <div class="card-body">
+                          <!-- Form Group (CS ID NO)-->
+                          <div class="table-responsive-sm">
+
+                            <style>
+                              /* Add your custom styles here */
+                              .image-container {
+                                text-align: center;
+                              }
+
+                              .image-container img {
+                                max-width: 100%;
+                                height: auto;
+                                border-radius: 10px;
+                                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                              }
+                            </style>
+                            <br><br>
+                            <div class="container">
+                              <div class="row justify-content-center">
+                                <div class="col-md-4 image-container">
+                                  <!-- Your image goes here -->
+                                  <img id="e_signature" width="100%" alt="Your Image">
+                                </div>
+                              </div>
+                            </div>
+
+
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <br>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--END YOUR CONTENT-->
+      </div>
+      </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    <br><br><br><br>
+
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- PDS NAVIGATOR -->
+  <script src="js/pds-profile.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script src="bundles/retrieve_pds.bundle.js"></script>
+  <script src="bundles/navigator201.bundle.js"></script>
+  <script src="bundles/navbar.bundle.js"></script>
+  <script src="bundles/auth.bundle.js"></script>
+  <script src="js/sidebar.js"></script>
+
+
+
+</body>
+
+</html>

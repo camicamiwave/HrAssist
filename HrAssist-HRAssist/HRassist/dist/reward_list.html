@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appreciation Form</title>
+
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="Rewards_list_style.css">
+</head>
+<body>
+  <div class="main-container">
+    <img loading="lazy" src="Assets\gift-solid 1.png" class="image1" alt="Rewards" />
+    <div class="description">Rewards</div>
+  </div>
+
+<div class="Rewards-title">List of Rewards
+  <button class="add_Rewards_btn">+Add Rewards</button>
+</div>
+<hr>
+<div class = "filter-container">
+  <label for="filter" class="filter-label">Filter</label>
+  <select name="filter" class="form-select" data-el="form-select">
+    <option value="All">All</option>
+    <option value="Accounting">Accounting</option>
+    <option value="HR">HR</option>
+  </select>
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Search" class="search">
+    <img loading="lazy" src="Assets\Search Icon.png" class="search-icon" alt="Search">
+  </div>
+</div>
+<div class="table-container">
+  <table class="message-table">
+    <thead>
+      <tr>
+        <th>Send to</th>
+        <th>Token</th>
+        <th>Message</th>
+        <th>Sent on</th>
+        <th>Sent by</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <!--<tbody>
+      <tr>
+        <td>User 1</td>
+        <td>12345</td>
+        <td>Hello, how are you?</td>
+        <td>2023-11-12</td>
+        <td>Admin</td>
+        <td>Delivered</td>
+      </tr>-->
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+</div>
+<div class="centered-image-container">
+  <img loading="lazy" src="Assets\gift-solid 2.png" class="image2" alt="Rewards" />
+</div>
+<div class = "sent_token_text">
+  <p>Sent tokens will show up here<br>Once you send tokens to your users, you will see this activity here</p><br>
+  <button class="add_Rewards_btn2">+Add Rewards</button>
+</div>
+
+
+  <!-- Link to your JavaScript file -->
+  <script src="Rewards_list_js.js"></script>
+</body>

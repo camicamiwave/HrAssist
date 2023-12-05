@@ -1,0 +1,45 @@
+.calendar-card{
+    position: relative;
+    width: 70%;
+    height: 100%;
+    display: flex; 
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #878895;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 30px;
+    border: solid#074b39;
+    float: left;
+    margin: 5px;
+}
+
+.event-card{
+    position: relative;
+    width: 27%;
+    height: 100%;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #878895;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border: solid#074b39;
+   float: right;
+   margin: 5px;
+}
+
+.event-card .formHeader h3{
+    color: #074b39;
+}
+  
+.formHeader h3{
+    color: white;
+    margin: 3px;
+    padding-left: 10px;
+    font-weight: normal;
+    font-family: "Poppins", sans-serif; 
+}
+

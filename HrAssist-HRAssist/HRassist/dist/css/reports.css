@@ -1,0 +1,854 @@
+.sidebar:hover + .tab-content {
+  margin-left: 300px; /* Adjust this value according to your sidebar width */
+  transition: margin-left 0.5s ease;
+}
+
+.sidebar:hover ~ #main {
+    margin-left: 300px; /* Adjust this value according to your sidebar width */
+    transition: margin-left 0.5s ease;
+}
+.divider {
+    border: none;
+    height: 1px; /* Adjust the height of the divider as needed */
+    background-color: #ccc; /* Adjust the color of the divider as needed */
+    margin: 20px 0; /* Adjust the margin as needed */
+}
+.grayish-card {
+    background-color: #dcdcdc; /* Grayish background color */
+    border-radius: 15px; /* Rounded corners */
+    margin: 20px; /* Add some margin for spacing */
+    width: 400px; /* Set the width as needed */
+    margin-top: 20px;
+    margin-left: 0px;
+    width:100%;
+    height: 100%;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+}
+
+.imgRewards {
+  aspect-ratio: 1.05;
+  object-fit: contain;
+  width: 30px;
+  margin-left: 7px;
+}
+
+.card-header h4 {
+  margin-left: 10px; /* Adjust the margin as needed */
+}
+/* ---------------------------------------------------------------------------------------- */
+/* ----------------------------------------- MAIN ----------------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
+
+
+#main {
+  transition: margin-left 0.5s ease;
+  padding: 16px;
+  margin-top: 70px;
+  margin-left: 80px;
+  margin-right: 10px;
+}
+
+/* Add this CSS to make #main responsive when the sidebar is expanded */
+.sidebar.expand ~ #main {
+  margin-right: 15px;
+  margin-left: 310px; /* Adjust this value according to your sidebar width */
+  transition: margin-left 0.5s ease;
+}
+
+/* Add this CSS to make #main responsive when the sidebar is collapsed */
+.sidebar.close ~ #main {
+  margin-right: 10px;
+  margin-left: 90px;
+}
+
+.page-header {
+  margin: 0 0 1.5rem 0; 
+}
+
+.page-title {
+  color: #000000;
+  font-size: 1.125rem;
+  margin-bottom: 10px;
+}
+
+.page-title .page-title-icon {
+  display: inline-block;
+  margin-right: 15px;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  text-align: center;
+  -webkit-box-shadow: 0px 3px 8.3px 0.7px rgba(31, 143, 62, 0.35);
+  box-shadow: 0px 3px 8.3px 0.7px rgba(31, 143, 62, 0.35); 
+  background-color: #08533F;
+  color:#ffffff;
+}
+  
+.page-title .page-title-icon i {
+  font-size: .9375rem;
+  line-height: 36px; }
+#Rewards{
+  margin-top: -50px;
+}
+.imgRewards{
+  aspect-ratio: 1.05;
+  object-fit: contain;
+  width: 30px;
+  margin-left: 7px;
+  margin-top: -10px;
+
+  }
+
+  .Rewards {
+    color: #068e6b;
+    text-align: center;
+    letter-spacing: 1.56px;
+    align-self: center;
+    white-space: nowrap;
+    margin: auto 0;
+    font: 700 24px/36px Poppins, sans-serif;
+    margin-left: -770px; 
+  }
+
+  @media (max-width: 991px) {
+    .request {
+      white-space: initial;
+    }
+
+  }
+.card-header{
+
+    font-size: 25px;
+    margin-left: 0px;
+
+}
+.line{
+    margin-left: -3px;
+    align-self: self-start;
+}
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Lighter shade of gray for odd rows */
+
+}
+
+.table-striped tbody tr:nth-child(even) {
+    background-color: #dcdcdc; /* Darker shade of gray for even rows */
+}
+.table-striped{
+    width: fit-content;
+    font-size: 24px;
+    margin-left: 28px ;
+    align-content: center;
+}
+.table-striped th, .table-striped td {
+    padding: 0px; /* Add spacing to table cells */
+}
+
+/*Newly Hired*/
+.grayish-card1 {
+    background-color: #dcdcdc; /* Grayish background color */
+    border-radius: 15px; /* Rounded corners */
+    margin: 20px; /* Add some margin for spacing */
+    width: 550px; /* Set the width as needed */
+    margin-top: 90px;
+    margin-left: 50px;
+    width:100%;
+    height: 100%;
+}
+
+.card-header1{
+    font-size: 25px;
+    margin-left: 25px;
+    height:500px;
+    
+}
+.line1{
+    margin-left: -3px;
+    align-self: self-start;
+}
+.table-striped1 tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Lighter shade of gray for odd rows */
+
+}
+
+.table-striped1 tbody tr:nth-child(even) {
+    background-color: #dcdcdc; /* Darker shade of gray for even rows */
+}
+.table-striped1{
+    width: fit-content;
+    font-size: 16px;
+    margin-left: 28px ;
+    align-content: center;
+}
+.table-striped1 th, .table-striped td {
+    padding: 0px; /* Add spacing to table cells */
+}
+
+  @media (max-width: 991px) {
+    .main-container {
+      margin-top: 40px;
+    }
+  }
+
+  .img {
+    aspect-ratio: 1.18;
+    object-fit: contain;
+    object-position: center;
+    width: 45px;
+    overflow: hidden;
+    max-width: 100%;
+  }
+  .listofrew{
+    color: #068e6b;
+    text-align: left;
+    letter-spacing: 1.04px;
+    font: 500 18px/24px Poppins, sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-bottom: -40px;
+    margin-left: 5px;
+  }
+  .listnaddrew{
+    display: flex;
+    justify-content: space-between; /* or any other value depending on your layout */
+    align-items: center;
+    margin-top: -25px;
+    margin-left: 5px;
+  }
+.hr{
+  margin-top: 10px;
+  color: #4caf50;
+}
+  .reports {
+    color: #068e6b;
+    text-align: center;
+    letter-spacing: 1.56px;
+    align-self: start;
+    margin-top: 10px;
+    white-space: nowrap;
+    font: 700 24px/36px Poppins, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .reports {
+      white-space: initial;
+    }
+  }
+#table_acc{
+  font: 500 18px/24px Poppins, sans-serif;
+}
+  .tabs-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ddd;
+    transition: background-color 0.3s;
+  }
+  
+  .tab:hover {
+    background-color: #bbb;
+
+  }
+  .active-tab {
+    background-color: #4CAF50;
+    color: white;
+}
+  .tab-content h2 {
+    color: #068e6b;
+  }
+
+  .imgreports {
+    aspect-ratio: 1.18;
+    object-fit: contain;
+    object-position: center;
+    width: 45px;
+    margin-top: 10px;
+    margin-left: 15px;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .reportstitle {
+    color: #068e6b;
+    text-align: start;
+    letter-spacing: 1.56px;
+    align-self: start;
+    margin-top: -60px;
+    margin-left: 80px;
+    white-space: nowrap;
+    font: 700 24px/36px Poppins, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .reports {
+      white-space: initial;
+    }
+  }
+  /*most active*/
+  .grayish-card2 {
+    background-color: #dcdcdc; /* Grayish background color */
+    border-radius: 15px; /* Rounded corners */
+    margin: 20px; /* Add some margin for spacing */
+    width: 550px; /* Set the width as needed */
+
+    margin-top: -710px;
+    margin-left: 700px;
+    width: max-content;
+    
+}
+.card-header2{
+    font-size: 25px;
+    margin-left: 25px;
+}
+.line2{
+    margin-left: -3px;
+    align-self: self-start;
+}
+.table-striped2 tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Lighter shade of gray for odd rows */
+
+}
+
+.table-striped2 tbody tr:nth-child(even) {
+    background-color: #dcdcdc; /* Darker shade of gray for even rows */
+}
+.table-striped2{
+    width: fit-content;
+    font-size: 24px;
+    margin-left: 28px ;
+    align-content: center;
+}
+.table-striped2 th, .table-striped td {
+    padding: 0px; /* Add spacing to table cells */
+}
+.main-container {
+    align-self: start;
+    display: flex;
+
+    width: 170px;
+    max-width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  @media (max-width: 991px) {
+    .main-container {
+      margin-top: 40px;
+    }
+  }
+
+    /*-----------------------------------Account------------------------------------*/
+
+    .account-label{
+      margin-top: 10px;
+    }
+  #Accounts{
+    margin-top: -50px;
+  }
+  .account-container {
+    display: flex;
+    align-items: center;
+  }
+  .card-header h4 {
+    margin-left: 10px; /* Adjust the margin as needed */
+  }
+
+  .imgacc {
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
+  
+  .add_acc_btn{
+    background-color: #068e6b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font: 500 14px/24px Poppins, sans-serif;
+    cursor: pointer;
+    margin-left:450px;
+
+
+  }
+  .listofacc{
+    color: #068e6b;
+    text-align: left;
+    letter-spacing: 1.04px;
+    font: 500 14px/24px Poppins, sans-serif;
+    margin-top: 5px;
+    margin-left: 0px;
+    margin-bottom: -40px;
+  }
+  .listenadd{
+    display: flex;
+    justify-content: space-between; /* or any other value depending on your layout */
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .filter-container_acc {
+    display: flex;
+    align-items: center;
+    margin-left: 10px
+    
+  }
+
+  .form-select_acc {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #068e6b;
+
+    font-size: 16px; /* Adjust the font size */
+    width: fit-content; /* Adjust width as needed */
+    margin-left: 50px;
+
+
+    height: fit-content;
+  }
+  /* Style for the filter label */
+  .filter-label_acc {
+
+    font: 500 16px/24px Poppins, sans-serif;
+    margin-top: 10px;
+    margin-left: 50px;
+  }
+  .search-container_acc {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 820px;
+
+    
+  }
+  #search_acc {
+    padding-left: 12px;
+    border: 1px solid #068e6b;;
+    border-radius: 10px;
+    width: 200px; /* Adjust width as needed */
+  }
+  .search-icon_acc {
+    position: absolute;
+    right: 20px; /* Adjust right position as needed */
+    cursor: pointer;
+  }
+
+  .table-container {
+    
+    width: 100%;
+    font-size: 16px;
+    margin-left: 0px ;
+    align-content: center;
+  }
+  
+  .message-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .message-table th, .message-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .message-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .message-table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+
+  
+  button {
+    font-size: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+  }
+  
+  #activate-btn_acc {
+    background-color: #4caf50; /* Green color for Activate button */
+    color: white;
+    font-size: 12px;
+
+  }
+  
+  #terminate-btn_acc {
+    background-color: #f44336; /* Red color for Terminate button */
+    color: white;
+    font-size: 12px;
+
+  }
+
+
+
+
+/*------------------------------------------Request---------------------------------------------*/
+
+
+ #Request{
+  margin-top: -50px
+ }
+  .imgreports {
+    aspect-ratio: 1.18;
+    object-fit: contain;
+    object-position: center;
+    width: 45px;
+    margin-top: 20px;
+    margin-left: 10px;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .reportstitle {
+    color: #068e6b;
+    text-align: start;
+    letter-spacing: 1.56px;
+    align-self: start;
+    margin-top: -40px;
+    margin-left: 60px;
+    white-space: nowrap;
+    font: 700 24px/36px Poppins, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .reports {
+      white-space: initial;
+    }
+  }
+
+    #Request{
+      margin-top: -18px;
+    }  
+  .imgrequest {
+    aspect-ratio: 1.05;
+    object-fit: contain;
+    width: 30px;
+    margin-left: 7px;
+  }
+
+  .request {
+    color: #068e6b;
+    text-align: center;
+    letter-spacing: 1.56px;
+    align-self: center;
+    white-space: nowrap;
+    margin: auto 0;
+    font: 700 24px/36px Poppins, sans-serif;
+    margin-top:-30px;
+    margin-left: -770px; 
+  }
+
+  @media (max-width: 991px) {
+    .request {
+      white-space: initial;
+    }
+
+  }
+  .listofreq{
+    color: #068e6b;
+  text-align: left;
+  letter-spacing: 1.04px;
+  font: 500 18px/24px Poppins, sans-serif;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-left: 0px;
+  margin-bottom: -40px;
+}
+.listenadd{
+  display: flex;
+  justify-content: space-between; /* or any other value depending on your layout */
+  align-items: center;
+  margin-top: 10px;
+}
+
+  .filter-container {
+    display: flex;
+    align-items: center;
+    margin-top: 19px;
+    margin-left: 0px
+  }
+  .form-select {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #068e6b;
+    padding: 3px;
+    font-size: 16px;
+    width: fit-content;
+    margin-left: 20px;
+  }
+  /* Style for the filter label */
+  .filter-label {
+    margin-right: 10px;
+    font: 500 16px/24px Poppins, sans-serif;
+    color: #068e6b;;
+    font-weight: bold;
+  }
+  .search-container_req {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 100px;
+  }
+  .search_req {
+    padding: 8px 30px 8px 8px; /* Adjust padding as needed */
+    border: 1px solid #068e6b;;
+    border-radius: 5px;
+    width: 200px; /* Adjust width as needed */
+  }
+  .search-icon_req {
+    position: absolute;
+    right: 10px; /* Adjust right position as needed */
+    cursor: pointer;
+  }
+  /* Responsive Styles */
+@media (max-width: 700px) {
+  .search-container_req {
+    margin-left: 20px; /* Adjust margin-left for smaller screens */
+  }
+
+  .search_req {
+    width: 150px; /* Adjust width for smaller screens */
+  }
+
+  .search-icon_req {
+    right: 5px; /* Adjust right position for smaller screens */
+  }
+}
+  .filter-container1 {
+    display: flex;
+    align-items: normal;
+    margin-top: -37px;
+    margin-left: 350px;
+
+  }
+  .form-select1 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #068e6b;
+    padding: 3px;
+    font-size: 16px;
+    
+  }
+  .table-container1 {
+    
+    width: 80%;
+    margin-left: 140px;
+  }
+  
+  .message-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .message-table th, .message-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .message-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .message-table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  .account-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 0px;
+    margin-left: 0px;
+
+  }
+
+  
+  .activate-btn,
+  .terminate-btn {
+    padding: 5px 10px;
+    font-size: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+
+  }
+  
+  .activate-btn {
+    background-color: #4caf50; /* Green color for Activate button */
+    color: white;
+  }
+  
+  .terminate-btn {
+    background-color: #f44336; /* Red color for Terminate button */
+    color: white;
+  }
+
+
+
+  /*----------------------------------Applicants---------------------------------*/
+  #listofapp{
+    margin-top: 10px;
+  }
+  #Applicants{
+    margin-top: -50px;
+  }
+  .applicants{
+    margin-top:8px;
+  }
+  .imgapp {
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
+  .card-headerappfilt{
+    font: 500 16px/24px Poppins, sans-serif;
+    margin-top: 20px;
+  }
+  .add_app_btn{
+    background-color: #068e6b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font: 500 14px/24px Poppins, sans-serif;
+    cursor: pointer;
+    margin-left:395px;
+  }
+  .listenadd{
+    display: flex;
+      justify-content: space-between; /* or any other value depending on your layout */
+      align-items: center;
+      margin-top: 10px;
+  }
+
+  .addbtn{
+    margin-top: -25px
+  }
+
+  .form-select_app {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #068e6b;
+    padding-top: 5px;
+    font-size: 16px; /* Adjust the font size */
+    width: fit-content; /* Adjust width as needed */
+    margin-left: 100px;
+    margin-top: -35px;
+    height: fit-content;
+  }
+  /* Style for the filter label */
+  .filter-label {
+    margin-top: 25px;
+    font: 500 16px/24px Poppins, sans-serif;
+  }
+  .search-container_app {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 590px;
+    margin-top: -37px;
+  }
+  .search_app {
+    padding-left: 12px;
+    border: 1px solid #068e6b;;
+    border-radius: 10px;
+    width: 200px; /* Adjust width as needed */
+  }
+  .search-icon_app {
+    position: absolute;
+    right: 10px; /* Adjust right position as needed */
+    cursor: pointer;
+
+  }
+
+  .table-container {
+    
+    width: 100%;
+
+  }
+  
+  .message-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .message-table th, .message-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .message-table th {
+    background-color: #068e6b;;
+  }
+  
+  .message-table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  .view-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+
+  
+  #view-btn {
+    padding: 5px 10px;
+    font-size: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: blue; /* Blue color for Viewbutton */
+    color: white;
+
+  }
+  #btn_quali{
+    background-color: #28a745;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#btn_notquali{
+    background-color: #28a745;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+

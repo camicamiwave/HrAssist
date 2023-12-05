@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Boxicons CSS -->
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+        <title>HR Assist - Admin</title>
+        <link rel="stylesheet" href="css/admin-calendar.css" />
+        <!-- Favicon -->
+        <link href="img/hrlogo.svg" rel="icon">
+    </head>
+
+    <body>
+        <!-- navbar -->
+        <nav class="navbar">
+            <div class="logo_item">
+                <i class="bx bx-menu" id="sidebarOpen"></i>
+                <img src="img/hrmis.png" alt="" style="width: 60px; height: 40px; border-radius: 0%; margin-left: -15px;"></i>
+                <div class="search_bar">
+                    <input type="text" placeholder="Search" />
+                </div>
+            </div>    
+            <div class="navbar_content">
+                <i class="bi bi-grid"></i>
+                <i class='bx bx-sun' id="darkLight"></i>
+                <i class='bx bx-bell' ></i>
+                <img src="img/favicon.png" alt="" id="navbarProfilePicture" class="profile" />
+            </div>
+        </nav>
+
+        <!--sidebar-->
+        <nav class="sidebar">
+            <div class="menu_content">
+                <ul class="menu_items">
+                    <div class="menu_title menu_admin_tools"></div>
+                    <!-- duplicate these li tag if you want to add or remove navlink only -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin_dashboard.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-dashboard"></i>
+                        </span>
+                        <span class="navlink">Dashboard</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin_accounts_view.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-user-account"></i>
+                        </span>
+                        <span class="navlink">Accounts</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                </ul>
+                <ul class="menu_items">
+                    <div class="menu_title lgu_information"></div>
+                    <!-- duplicate these li tag if you want to add or remove navlink only -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin-offices.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-buildings"></i>
+                        </span>
+                        <span class="navlink">Offices</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!-- Start -->
+                    <li class="item active">
+                        <a href="calendar.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-calendar"></i>
+                        </span>
+                        <span class="navlink">Calendars</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                </ul>
+                <ul class="menu_items">
+                    <div class="menu_title recruitment"></div>
+                    <!-- duplicate these li tag if you want to add or remove navlink only -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin_manage_applicant_view.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-group"></i>
+                        </span>
+                        <span class="navlink">Manage Applicant</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin_job_vacancy_view.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-briefcase"></i>
+                        </span>
+                        <span class="navlink">Job Vacancy</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                </ul>
+                <ul class="menu_items">
+                    <div class="menu_title employee_registration"></div>
+                    <!-- duplicate these li tag if you want to add or remove navlink only -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin_employee_registry_view.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-user-detail"></i>
+                        </span>
+                        <span class="navlink">Employee Registry</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin_search_employee_view.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-search-alt-2"></i>
+                        </span>
+                        <span class="navlink">Search Employee</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                </ul>
+                <ul class="menu_items">
+                    <div class="menu_title employment_tools"></div>
+                    <!-- duplicate these li tag if you want to add or remove navlink only -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-folder"></i>
+                        </span>
+                        <span class="navlink">201 Files</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-calendar-alt"></i>
+                        </span>
+                        <span class="navlink">Request</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin_Rewards_view.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-gift"></i>
+                        </span>
+                        <span class="navlink">Rewards</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin-dtr.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-file"></i>
+                        </span>
+                        <span class="navlink">Reports</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                </ul>
+                <ul class="menu_items">
+                    <div class="menu_title learning_nd_development"></div>
+                    <!-- duplicate these li tag if you want to add or remove navlink only -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="admin_training_n_seminars_view.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-calendar-event"></i>
+                        </span>
+                        <span class="navlink">Training & Seminars</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                    <!-- Start -->
+                    <li class="item">
+                        <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-folder-open"></i>
+                        </span>
+                        <span class="navlink">Materials</span>
+                        </a>
+                    </li>
+                    <!-- End -->
+                </ul>
+            </div>
+            <!-- Sidebar Open / Close -->
+            <div class="bottom_content">
+                <div class="bottom expand_sidebar">
+                    <span> Expand</span>
+                    <i class='bx bx-log-in' ></i>
+                </div>
+                <div class="bottom collapse_sidebar">
+                    <span> Collapse</span>
+                    <i class='bx bx-log-out'></i>
+                </div>
+            </div>
+        </nav>
+
+        <div id="main">
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <h1 class="page-title">
+                        <span class="page-title-icon">
+                        <i class="bx bxs-calendar"></i>
+                        </span> Calendar
+                    </h1>
+                </div>
+                <button id="btnAddEvent" class="add-event">+ Add Event</button>
+                <div class="calendar-container">
+                    <div class="calendar">
+                        <div class="month">
+                            <i class="bx bxs-chevron-left prev"></i>
+                            <div class="date">november 2023</div>
+                            <i class="bx bxs-chevron-right next"></i>
+                        </div>
+                        <div class="weekdays">
+                            <div>Sun</div>
+                            <div>Mon</div>
+                            <div>Tue</div>
+                            <div>Wed</div>
+                            <div>Thu</div>
+                            <div>Fri</div>
+                            <div>Sat</div>
+                        </div>
+                        <div class="days">
+                        <!--code in js-->
+                        </div>
+                        <div class="go-to">
+                            <div class="go-date">
+                                <input type="text" class="date-input" placeholder="mm/yyyy" style="margin-right: 0px;"/>
+                                <button class="btnGo" style="margin-left: 0px;">Go</button>
+                            </div>
+                            <button class="btnToday">Today</button>
+                        </div>
+                    </div>   
+                </div>   
+            </div>
+            <!-- Modal Section-->
+            <div class="bg-modal">
+                <div class="modal-content">
+                    <div class="formHeader">
+                        <h3>ADD EVENT</h3>
+                        <div class="close">&times;</div>
+                    </div>
+                    <div class="form-content">
+                        <form class="add-event" action="">
+                        <label for="event-name">Event Name</label> <br>
+                        <input type="text" class="event-name" required="required" style="width: 95%"/> <br>
+                        <div class="column-left">
+                            <label for="event-date">Event Date</label> <br>
+                            <input type="date" class="event-date"/> <br>
+                            <label for="start-from">Category</label> <br>
+                            <div class="dropdown">
+                                <input type="text" class="selected" readonly placeholder="Select Option" style="width: 178px;"/>
+                                <ul class="menu">
+                                    <li class="active">Personal</li>
+                                    <li>Holiday</li>
+                                    <li>Work-related</li>
+                                </ul>
+                            </div>
+                            <label for="start-from">Start From</label> <br>
+                            <input type="datetime-local" class="start-from" style="width: 178px"/>
+                        </div>
+                        <div class="column-right">
+                            <label for="event-frequency">Event Frequency</label> <br>
+                            <div class="dropdown">
+                                <input type="text" class="selected" readonly placeholder="Select Option" style="width: 178px;"/>
+                                <ul class="menu">
+                                    <li class="active">Whole Day</li>
+                                    <li>Extended</li>
+                                    <li>Timely</li>
+                                </ul>
+                            </div>
+                            <label for="tag-color">Event Tag Color</label> <br>
+                            <input type="color" class="tag-color" style="width: 68px; height: 40px; float: left; margin-right: 2px" id="send" oninput="result.value=send.value">
+                            <input type="text" class="hex-code" id="result" style="width: 110px"/>
+                            <label for="end-to">End to</label> <br>
+                            <input type="datetime-local" class="end-to" style="width: 180px"/>
+                        </div>
+                        <button id="btnSubmit" style="width: 80px; border-radius: 20px; margin-top: 10px">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="js/calendar.js"></script>
+    
+    
+        <!-- Database Javascript -->  
+        <script src="bundles/auth.bundle.js"></script>   
+        <script src="bundles/applicant_registry.bundle.js"></script>   
+        <script src="bundles/navbar.bundle.js"></script>
+
+    </body>
+
+</html>

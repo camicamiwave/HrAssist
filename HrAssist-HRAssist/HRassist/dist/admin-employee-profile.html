@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Employee-Info</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/employee-template.css" rel="stylesheet">
+  <link href="css/admin-employee-profile.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="employee_home.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">Assist</span>
+
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" id="searchInput" name="query" placeholder="Search" title="Enter search keyword">
+        <ul id="searchSuggestions"></ul>
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+        <!--
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a>
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul>
+
+        </li> End Notification Nav -->
+
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6 id="hoverUserName"></h6>
+              <span id="userLevel"></span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="admin-users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            
+            <li>
+              <a class="dropdown-item d-flex align-items-center" id="navbar_signout_btn">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+
+ <!--Side Bar-->
+ <aside id="sidebar" class="sidebar">
+  <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-heading">ADMIN TOOL</li>
+
+      <li class="nav-item">
+          <a class="nav-link collapsed" id="dashboard" href="admin_dashboard.html">
+              <i class="bi bi-grid"></i>
+              <span>Dashboard</span>
+          </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
+
+      <li class="nav-item">
+          <a class="nav-link " data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+              <li>
+                  <a class="nav-link collapsed" id="addemployee" href="admin_201file_account.html">
+                      <i class="bi bi-circle"></i><span>Add Employee</span>
+                  </a>
+              </li>
+              <li>
+                  <a id="employeelist" href="admin_employee_registry_list.html">
+                      <i class="bi bi-circle"></i><span>Employee List</span>
+                  </a>
+              </li>
+              <li>
+                  <a id="editemployee" href="admin_search_employee_view.html">
+                      <i class="bi bi-circle"></i><span>Edit Employee</span>
+                  </a>
+              </li>
+              <li>
+                  <a id="searchemployee" href="admin_search_employee_view.html">
+                      <i class="bi bi-circle"></i><span>Search Employee</span>
+                  </a>
+              </li>
+          </ul>
+      </li><!-- End Components Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-person"></i><span>Manage Applicant</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="admin_add_applicant.html">
+            <i class="bi bi-circle"></i><span>Add Applicant</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin_manage_applicant_view.html">
+            <i class="bi bi-circle"></i><span>Applicant List</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="admin_search_applicant.html">
+            <i class="bi bi-circle"></i><span>Search Applicant</span>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Forms Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
+          <i class="bx bxs-briefcase"></i>
+          <span>Job Vacancy</span>
+      </a>
+  </li><!-- End Job Vacancy Nav -->
+
+  <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+    <li class="nav-item">
+      <a id  = "employeePerformance"class="nav-link collapsed" href="admin-employee-performance.html">
+        <i class="bi bi-bar-chart-line"></i>
+        <span>Employee Performance</span>
+      </a>
+    </li><!-- End F.A.Q Page Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
+        <i class="bi bi-check-square"></i>
+        <span>Employee IPCRF</span>
+      </a>
+      
+    </li><!-- End Contact Page Nav -->
+
+    <li class="nav-heading">Rewards & RECOGNITION</li>
+    <li class="nav-item">
+      <a class="nav-link collapsed"id = "rewards" href="#">
+        <i class="bi bi-award"></i>
+        <span>Rewards</span>
+      </a>
+    </li><!-- End Register Page Nav -->
+
+    <li class="nav-heading">LEARNING DEVELOPMENT</li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+        <i class="bi bi-people-fill"></i>
+        <span>Training & Seminar</span>
+      </a>
+    </li><!-- End Login Page Nav -->
+
+    <li class="nav-heading">CONFIGURATION</li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-gear"></i><span>Configuration</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="admin-offices.html">
+            <i class="bi bi-circle"></i><span>Office</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin_accounts_view.html">
+            <i class="bi bi-circle"></i><span>Accounts</span>
+          </a>
+        </li>
+        <li>
+          <a href="calendar.html">
+            <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Icons Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="admin_request.html">
+        <i class="bi bi-calendar"></i>
+        <span>Leave Management</span>
+      </a>
+    </li><!-- End Login Page Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="admin_dtr_form.html">
+        <i class="bi bi-clock"></i>
+        <span>Daily Time Record</span>
+      </a>
+    </li><!-- End Login Page Nav -->
+
+
+  </ul>
+
+</aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+
+    <style>
+      .vertical-menu {
+        background-color: #ffffff;
+        width: 100%;
+        /* Define the width of the vertical menu */
+      }
+
+      .vertical-menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .vertical-menu li {
+        text-align: center;
+      }
+
+      .vertical-menu a {
+        display: block;
+        text-align: left;
+        color: #08533fe8;
+        font-weight: 500;
+        font-family: 'poppins';
+        padding: 14px 16px;
+        text-decoration: none;
+        border-bottom: 1px solid white;
+        /* Add a border between menu items */
+        transition: background-color 0.3s;
+        /* Add a smooth transition effect */
+      }
+
+      .vertical-menu a:hover {
+        background-color: #08533f1e;
+        /* Change the background color on hover */
+      }
+
+      .active1 {
+        background-color: #08533f0e;
+        border-radius: 5px;
+      }
+    </style>
+
+
+    <section class="section dashboard">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card d-flex justify-content-center">
+            <div class="card-header text-left">Basic Information</div>
+            <div class="card-body text-center">
+              <br>
+              <h4 class="card-title mb-0" id="applicantFullName" style="font-size: 20px; "></h4>
+              <br>
+              <img class="img-account-profile rounded-circle mb-2" id="applicantProfile" 
+                style="width: 40%;" alt="Applicant Profile">
+              <br><br>
+
+
+              <div class="row gx-3 mb-3">
+                <div class="col-md-12">
+                  <label class="large mb-1"
+                    style="font-family: poppins; font-weight: 500; font-size: 13px; color: rgb(57, 57, 226);"
+                    for="inputApplicantStatus"><i class="bi bi-telephone">&nbsp;&nbsp;&nbsp;</i><span
+                      id="empPhone"></span></label>
+
+                </div>
+              </div>
+              <div class="row gx-3 mb-3">
+                <div class="col-md-12">
+                  <label class="large mb-1"
+                    style="font-family: poppins; font-weight: 500; font-size: 13px; color: rgb(57, 57, 226);"
+                    for="inputApplicantStatus"><i class="bi bi-envelope"></i>&nbsp;&nbsp;&nbsp;
+                    <span id="empEmail"></span> </label>
+                </div>
+              </div>
+              <hr>
+
+
+              <nav class="vertical-menu">
+                <ul>
+                  <li class="active1"><a href="#" id="overviewPDS"><span class="bi bi-bar-chart"></span>&nbsp;&nbsp;&nbsp;Overview</a>
+                  </li>
+                  <li ><a href="#" id="personalPDS"><span
+                        class="bi bi-file-earmark-person"></span>&nbsp;&nbsp;&nbsp;Personal Data
+                      Sheet</a></li>
+                  <li><a href="#" id="appointmentPDS"><span
+                        class="bi bi-calendar-event"></span>&nbsp;&nbsp;&nbsp;Appointment</a></li>
+                  <li><a href="#" id="attachmentsPDS"><span
+                        class="bi bi-paperclip"></span>&nbsp;&nbsp;&nbsp;Attachments</a></li>
+                  <li><a href="#" id="leavecreditsPDS"><span class="bi bi-calendar-week"></span>&nbsp;&nbsp;&nbsp;Leave
+                      Credits</a></li>
+                  <li><a href="#" id="behaviorPDS"><span class="bi bi-info-circle"></span>&nbsp;&nbsp;&nbsp;Performance</a>
+                  </li>
+                  
+                </ul>
+              </nav>
+
+
+
+              <br>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Second Container with Column -->
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">Overview</div>
+            <div class="card-body">
+              <br>
+              <div class="row">
+                <div class="col-md-9">
+                  <br>
+                  <div class="container">
+                    <h1 style="margin-top: -12px; font-size: 40px; font-weight: 600; font-family: poppins;" id="employeeFullName">
+                    </h1><br>
+                    <h5><span id="empDesignation"></span> | <span id="employmentStatus"> </span></h5>
+                    <p>Date of signing: <span id="startOfAppointment"></span></p>
+                    
+                    <p class="card-text"></p>
+
+                  </div>
+                </div>
+
+                <div class="col-md-2">
+
+                  <div class="container mt-3">
+                    <!-- Button with Dropdown -->
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-primary" style=" width: 80px;">Action</button>
+                      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" id="dropdownMenu">
+                        <a class="dropdown-item" href="#" data-action="Active">Active</a>
+                        <a class="dropdown-item" href="#" data-action="Resigned">Resigned</a>
+                        <a class="dropdown-item" href="#" data-action="End of Contract">End of Contract</a>
+                        <a class="dropdown-item" href="#" data-action="Retired">Retired</a>
+                        <a class="dropdown-item" href="#" data-action="Fired">Fired</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div><br>
+
+
+              <div class="container">
+                <div class="row">
+                  <!-- First Column -->
+                  <div class="col-md-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 style="font-size: 15px;" class="card-title">Employement Status</h5>
+                        <p class="card-text" id="employementStatus"></p>
+                      </div>
+                    </div>
+                  </div>
+
+                 
+
+                  </div>
+                  
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!--END YOUR CONTENT-->
+      </div>
+      </div>
+      </div>
+    </section>
+
+    <br><br><br><br>
+
+
+
+
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- PDS NAVIGATOR -->
+  <script src="js/pds-profile.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script src="bundles/retrieve_overview.bundle.js"></script>
+  <script src="bundles/navigator201.bundle.js"></script>
+  <script src="bundles/navbar.bundle.js"></script>
+  <script src="js/sidebar.js"></script>
+
+
+</body>
+
+</html>
