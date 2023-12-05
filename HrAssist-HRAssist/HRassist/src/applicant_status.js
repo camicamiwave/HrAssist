@@ -16,6 +16,7 @@ import {
 
 import { firebaseConfig } from './server.js';
 import { UserLoginChecker } from './page_restriction.js';
+import { fetchEmployeeInfo } from './fetch_employee_info.js';
 
 
 // init firebase app
@@ -30,6 +31,10 @@ const q = query(colRef, orderBy('createdAt'))
 const auth = getAuth();
 
 const storage = getStorage(app);
+
+
+
+
 
 export function FetchApplicationStatus() {
 
@@ -51,9 +56,9 @@ export function FetchApplicationStatus() {
         const ApplicantQue = query(TestcolRef, where('documentID', '==', customDocId))
 
         onSnapshot(ApplicantQue, (snapshot) => {
-            snapshot.docs.forEach((doc) => {
-                const data = doc.data();
-                const id = doc.id;
+            snapshot.docs.forEach((docap) => {
+                const data = docap.data();
+                const id = docap.id;
 
                 const applicantFullName = document.getElementById('applicantFullName');
                 const applicantID = document.getElementById('applicantID');
@@ -80,144 +85,151 @@ export function FetchApplicationStatus() {
                 applicantEmail.innerHTML = data.Personal_Information.Email
                 applicantAddress.innerHTML = data.Personal_Information.Address
 
-                active = data.ApplicationProgess;
-                updateProgress();
 
-                if (data.ApplicantScheduled) {
-                    applicantScheduled.innerHTML = data.ApplicantScheduled
+                if (data.interviewDocumentID.InterviewDate) {
+                    const ApplicantScheduled123 = `${data.interviewDocumentID.InterviewDate} | ${data.interviewDocumentID}`
+                    console.log(ApplicantScheduled123)
+                    applicantScheduled.innerHTML = ApplicantScheduled123
                     applicantScheduled.style.display = 'block'
                 }
 
+                active = data.ApplicationProgess;
+                
 
-                // checker if hired na
-                if (active === 4) {
-                    // Change behavior to simulate a cancel button
-                    progressBar.style.backgroundColor = "blue";
-                    progressNext.disabled = true;
-                    progressPrev.disabled = true;
-                    progressBack.disabled = true;
+                updateProgress();
+
+            
+
+
+            // checker if hired na
+            if (active === 4) {
+                // Change behavior to simulate a cancel button
+                progressBar.style.backgroundColor = "blue";
+                progressNext.disabled = true;
+                progressPrev.disabled = true;
+                progressBack.disabled = true;
+            }
+
+            if (data.ApplicantStatus === 'Rejected') {
+                // Change behavior to simulate a cancel button
+                progressBar.style.backgroundColor = "red";
+                progressNext.disabled = true;
+                progressPrev.disabled = true;
+                progressBack.disabled = true;
+            }
+
+            // for progess or next ------------------------------------->
+            progressNext.addEventListener("click", () => {
+
+                if (active > steps.length) {
+                    active = steps.length;
                 }
 
-                if (data.ApplicantStatus === 'Rejected') {
-                    // Change behavior to simulate a cancel button
-                    progressBar.style.backgroundColor = "red";
-                    progressNext.disabled = true;
-                    progressPrev.disabled = true;
-                    progressBack.disabled = true;
-                }
-
-                // for progess or next ------------------------------------->
-                progressNext.addEventListener("click", () => {
-
-                    if (active > steps.length) {
-                        active = steps.length;
-                    }
-
-                    if (active === 3) {
-                        Swal.fire({
-                            title: "Are you sure?",
-                            text: "Applicant's application status will be set as hired",
-                            icon: "question",
-                            showCancelButton: true,
-                            confirmButtonColor: "#3085d6",
-                            cancelButtonColor: "#d33",
-                            confirmButtonText: "Confirm"
-                        }).then((result) => {
-                            if (result.isConfirmed) {
-
-                                const datatoUpload = {
-                                    ApplicationProgess: active + 1,
-                                    ApplicantStatus: 'Hired'
-                                }
-
-                                ReturnDocumentID(customDocId, datatoUpload)
-
-                                Swal.fire({
-                                    title: 'Congratulations!',
-                                    text: "Applicant's application status is updated as hired.",
-                                    icon: 'success',
-                                });
-
-                            } else {
-                                active = 3
-                            }
-                        })
-
-                    } else {
-
-                        const datatoUpload = {
-                            ApplicationProgess: active + 1
-                        }
-
-                        ReturnDocumentID(customDocId, datatoUpload)
-                    }
-
-                    console.log(active)
-                    updateProgress();
-                });
-
-                // for back ------------------------------------->
-                progressBack.addEventListener('click', () => {
-
-                    if (active !== 1) {
-                        const datatoUpload = {
-                            ApplicationProgess: active - 1
-                        }
-
-                        ReturnDocumentID(customDocId, datatoUpload)
-                    }
-
-
-
-                    console.log(active)
-                    updateProgress();
-                })
-
-                progressPrev.addEventListener("click", () => {
-
+                if (active === 3) {
                     Swal.fire({
                         title: "Are you sure?",
-                        text: "You won't revert this",
+                        text: "Applicant's application status will be set as hired",
                         icon: "question",
                         showCancelButton: true,
                         confirmButtonColor: "#3085d6",
                         cancelButtonColor: "#d33",
-                        confirmButtonText: "Yes, Reject it"
+                        confirmButtonText: "Confirm"
                     }).then((result) => {
                         if (result.isConfirmed) {
 
                             const datatoUpload = {
-                                ApplicationProgess: active,
-                                ApplicantStatus: 'Rejected'
+                                ApplicationProgess: active + 1,
+                                ApplicantStatus: 'Hired'
                             }
 
                             ReturnDocumentID(customDocId, datatoUpload)
 
                             Swal.fire({
-                                title: 'Rejected!',
-                                text: "Applicant's application status is updated as rejected.",
+                                title: 'Congratulations!',
+                                text: "Applicant's application status is updated as hired.",
                                 icon: 'success',
                             });
 
-
-                            // Change behavior to simulate a cancel button
-                            progressBar.style.backgroundColor = "red";
-                            progressNext.disabled = true;
-                            progressPrev.disabled = true;
-                            progressBack.disabled = true;
-
+                        } else {
+                            active = 3
                         }
                     })
-                });
 
+                } else {
 
+                    const datatoUpload = {
+                        ApplicationProgess: active + 1
+                    }
+
+                    ReturnDocumentID(customDocId, datatoUpload)
+                }
+
+                console.log(active)
+                updateProgress();
             });
+
+            // for back ------------------------------------->
+            progressBack.addEventListener('click', () => {
+
+                if (active !== 1) {
+                    const datatoUpload = {
+                        ApplicationProgess: active - 1
+                    }
+
+                    ReturnDocumentID(customDocId, datatoUpload)
+                }
+
+
+
+                console.log(active)
+                updateProgress();
+            })
+
+            progressPrev.addEventListener("click", () => {
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't revert this",
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, Reject it"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+
+                        const datatoUpload = {
+                            ApplicationProgess: active,
+                            ApplicantStatus: 'Rejected'
+                        }
+
+                        ReturnDocumentID(customDocId, datatoUpload)
+
+                        Swal.fire({
+                            title: 'Rejected!',
+                            text: "Applicant's application status is updated as rejected.",
+                            icon: 'success',
+                        });
+
+
+                        // Change behavior to simulate a cancel button
+                        progressBar.style.backgroundColor = "red";
+                        progressNext.disabled = true;
+                        progressPrev.disabled = true;
+                        progressBack.disabled = true;
+
+                    }
+                })
+            });
+
 
         });
 
-    } catch {
-        console.log("There was an error...")
-    }
+    });
+
+} catch {
+    console.log("There was an error...")
+}
 }
 
 window.addEventListener('load', FetchApplicationStatus)
@@ -246,26 +258,19 @@ function AddInterviewSchedule() {
         addScheduleBtn.addEventListener('click', (e) => {
             const createdAt = serverTimestamp(); // Get the timestamp
 
-            const interviewDetails = {
-                createdAt: createdAt,
+            const interviewDetails = { 
                 InterviewDate: scheduleForm.scheduleDate.value.trim(),
                 InterviewTime: scheduleForm.scheduleTime.value.trim(),
                 InterviewDesc: scheduleForm.scheduleDescription.value.trim(),
             };
 
-            const designationCollectionRef = collection(db, 'Applicant Information', customDocId, 'Interviews');
+            const designationCollectionRef = collection(db, 'Applicant Information');
+            return setDoc(doc(designationCollectionRef, customDocId), { interviewDocumentID: interviewDetails }, { merge: true }).then(() => {
 
-            addDoc(designationCollectionRef, interviewDetails)
-                .then(docRef => {
-                    const documentId = docRef.id;
-                    return setDoc(doc(designationCollectionRef, documentId), { interviewDocumentID: documentId }, { merge: true });
-                }).then(() => {
-                    alert("Interview saved successfully...");
-                    scheduleForm.reset();
-                })
-                .catch(error => {
-                    console.error('Error adding document: ', error);
-                });
+                alert("Interview saved successfully...");
+                scheduleForm.reset();
+            })
+            
         });
 
     } catch (error) {

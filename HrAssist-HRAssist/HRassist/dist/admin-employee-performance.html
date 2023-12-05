@@ -384,8 +384,8 @@
                           <div class="card-body">
                               <div class="row">
                                   <div class="col">
-                                      <span class="h6 font-semibold text-muted text-sm d-block mb-2">Total number of Employee</span>
-                                      <span class="h3 font-bold mb-0">300</span>
+                                      <span class="h6 font-semibold text-muted text-sm d-block mb-2">LGU Total number of Active Employee</span>
+                                      <span class="h3 font-bold mb-0"><span id="totalActiveEmployee"></span></span>
                                   </div>
                                   <div class="col-auto">
                                       <div class="icon icon-shape text-lg rounded-circle">
@@ -409,8 +409,8 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <span class="h6 font-semibold text-muted text-sm d-block mb-2">IPCRF Overall General Rating</span>
-                                    <span class="h3 font-bold mb-0">4.5 / Outstanding</span>
+                                    <span class="h6 font-semibold text-muted text-sm d-block mb-2">LGU IPCRF Overall General Rating</span>
+                                    <span class="h3 font-bold mb-0"><span id="rating">3.5</span> / <span id="descRating">Outstanding</span></span>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape text-lg rounded-circle">
@@ -471,7 +471,7 @@
               </div>
               <div class="card shadow border-0 mb-7">
                   <div class="card-header">
-                      <h5 class="mb-0">All Employees Performance</h5>
+                      <h5 class="mb-0">All Employees with Tardiness or Undertime Record</h5>
                   </div>
 
                   <!--Start the table here-->
@@ -489,21 +489,18 @@
                       <!-- Table with stripped rows -->
 
                       <div class="table-responsive-lg">
-                        <table class="table datatable" style="font-size: 14px;" id="ipcrfTable">
+                        <table class="table datatable" style="font-size: 14px;" >
                           <thead>
                             <tr>
                               <th><b>No.</b></th>
                               <th>Name of Employee</th>
-                              <th>Department</th>
+                              <th>Office</th>
                               <th>Position Title</th>
-                              <th>Semester</th>
-                              <th>Descriptive Rating</th>
-                              <th>Numerical Rating</th>
-                              <th>Status</th>
-
+                              <th>Number of Tardiness</th> 
+                              <th>Number of Undertime</th> 
                             </tr>
                           </thead>
-                          <tbody  > 
+                          <tbody  id="ipcrfTable"> 
                             
                           </tbody>
                         </table>
@@ -538,6 +535,7 @@
   <script src="js/script3.js"></script>
 
   <script src="bundles/navbar.bundle.js"></script>
+  <script src="bundles/employee_performance.bundle.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

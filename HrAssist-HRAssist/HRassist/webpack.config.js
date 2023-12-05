@@ -34,8 +34,7 @@ module.exports = {
         dtr: './src/dtr.js',
         office: './src/office.js',
         organizational_chart: './src/organizational_chart.js',
-        manage_employee: './src/manage_employee.js',
-        Rewards: './src/Rewards.js',
+        manage_employee: './src/manage_employee.js', 
         applicant_status: './src/applicant_status.js',
         leave_management: './src/leave_management.js',
         ipcrf: './src/ipcrf.js',
@@ -53,7 +52,10 @@ module.exports = {
         training_list: './src/training_list.js',
         retrieve_leave: './src/retrieve_leave.js',
         retrieve_behavior: './src/retrieve_behavior.js',
-        retrieve_overview: './src/retrieve_overview.js'
+        retrieve_overview: './src/retrieve_overview.js',
+        employee_performance: './src/employee_performance.js', 
+        reward_information: './src/reward_information.js',
+        dashboard: './src/dashboard.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),

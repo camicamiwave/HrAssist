@@ -55,7 +55,10 @@
     "training_list": "node training_list.js",
     "retrieve_leave": "node retrieve_leave.js",
     "retrieve_behavior": "node retrieve_behavior.js",
-    "retrieve_overview": "node retrieve_overview.js"
+    "retrieve_overview": "node retrieve_overview.js",
+    "employee_performance": "node employee_performance.js",
+    "reward_information": "node reward_information.js",
+    "dashboard": "node dashboard.js"
   },
   "keywords": [],
   "author": "",

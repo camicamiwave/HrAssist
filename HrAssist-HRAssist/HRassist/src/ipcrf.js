@@ -273,6 +273,8 @@ export function SaveEmployeeIPCRF(dtrDetails) {
 
 function GetIPCRF() {
     const SaveIPCRF = document.getElementById('SaveIPCRF')
+    const File201colRef = collection(db, '201File Information');
+
 
     SaveIPCRF.addEventListener('click', (e) => {
 
@@ -281,28 +283,36 @@ function GetIPCRF() {
         const receivedipcrfid = urlParams.get('ipcrfID')
         const receivedretrieved_data = urlParams.get('retrieved_data')
 
-        if (semesterSelector.value && yearSelctor.value && totalRating.value) {
+        fetchEmployeeInfo(File201colRef, receivedStringData, "employeeDocID").then((dataRetrieved) => {
+            const empdata = dataRetrieved;
+            const file201DocID = empdata.documentID
+            console.log("fsafasfsafsa", empdata)
+            console.log("fsafasfsafsa", empdata.Appointment_Details.Office)
 
-            const IPCRF_Details = {
-                ForTheSemester: semesterSelector.value,
-                ForTheYear: yearSelctor.value,
-                TotalRating: totalRating.value,
-                Description: IPCRFdescription.value,
-                employeeDocID: receivedStringData,
-                createdAt: serverTimestamp()
-            }
+            if (semesterSelector.value && yearSelctor.value && totalRating.value) {
 
-            if (receivedretrieved_data === 'true') {
-                updateDocument(IPCRF_Details, receivedipcrfid, receivedretrieved_data)
-                return
+                const IPCRF_Details = {
+                    Office: empdata.Appointment_Details.Office,
+                    ForTheSemester: semesterSelector.value,
+                    ForTheYear: yearSelctor.value,
+                    TotalRating: totalRating.value,
+                    Description: IPCRFdescription.value,
+                    employeeDocID: receivedStringData,
+                    createdAt: serverTimestamp()
+                }
+
+                if (receivedretrieved_data === 'true') {
+                    updateDocument(IPCRF_Details, receivedipcrfid, receivedretrieved_data)
+                    return
+                } else {
+                    SaveEmployeeIPCRF(IPCRF_Details)
+                }
+
             } else {
-                SaveEmployeeIPCRF(IPCRF_Details)
+                alert("Please provide the necessary information.")
             }
 
-        } else {
-            alert("Please provide the necessary information.")
-        }
-
+        })
     })
 
 }
