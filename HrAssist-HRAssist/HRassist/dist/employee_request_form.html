@@ -34,6 +34,9 @@
     <!--Script To Generate PDF-->
     <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+
 </head>
 
 <body>
@@ -412,6 +415,7 @@
                     <br>
                 </div>
 
+               
                 <!-- Sick Leave for specify -->
                 <div class="form-group" id="specifySickCheckbox" style="display: none;">
                     <label for="leaveType">In case of Sick Leave:</label><br><br>
@@ -666,6 +670,89 @@
 
     <script src="bundles/navbar.bundle.js"></script>
     <script src="bundles/employee_leave_form.bundle.js"></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        var leaveForm = document.getElementById('requestLeaveForm');
+        var requestLeaveBtn = document.getElementById('requestLeaveBtn');
+
+            requestLeaveBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+
+
+                if (validateForm()) {
+                    console.log('Form is valid. Submitting...');
+
+                } else {
+                    console.log('Form is not valid. Please correct errors.');
+                }
+            });
+
+            function validateForm() {
+
+                var leaveoption = document.getElementById('leaveTypeSelector');
+                var vacationCheckBox = document.getElementById('specifyVacationCheckbox');
+                var sickCheckBox = document.getElementById('specifySickCheckbox');
+                var womenCheckBox = document.getElementById('specifyWomenCheckbox');
+                var studyCheckBox = document.getElementById('specifyStudyCheckbox');
+                var inclusives = document.getElementById('inclusiveDates');
+                var attachments = document.getElementById('inputAttachment');
+                var withinDetailsInput = document.getElementById('withinDetails');
+                var abroadDetailsInput = document.getElementById('abroadDetails');
+                var inHospitalInput = document.getElementById('inputInHospital');
+                var outPatientInput = document.getElementById('inputoutPatient'); 
+                var SpecialleavewomenInput = document.getElementById('inputSpecialLeaveWomen');
+
+        
+                if (!isValidString(withinDetailsInput.value)) {
+                    alert('Please enter a valid input!');
+                    return false;
+                }
+
+            
+                if (!isValidString(abroadDetailsInput.value)) {
+                    alert('Please enter a valid input!');
+                    return false;
+                }
+
+                if (!isValidString(inHospitalInput.value)) {
+                    alert('Please enter a valid input!');
+                    return false;
+                }
+
+                if (!isValidString(outPatientInput.value)) {
+                    alert('Please enter a valid input!');
+                    return false;
+                }
+                
+                if (!isValidString(SpecialleavewomenInput.value)) {
+                    alert('Please enter a valid input!');
+                    return false;
+                }
+
+                if (!isValidFileType(attachments)) {
+                    alert('Please upload a valid file (PDF, DOC/DOCX, PNG, or JPEG).');
+                    return false;
+                }
+
+                return true;
+            }
+
+
+            function isValidString(value) {
+
+                return /^[a-zA-Z\s]*$/.test(value.trim());
+            }
+
+            function isValidFileType(fileInput) {
+                var fileName = fileInput.value;
+                var fileExtension = fileName.split('.').pop().toLowerCase();
+                var allowedExtensions = ['pdf', 'doc', 'docx', 'png', 'jpeg', 'jpg'];
+                return allowedExtensions.includes(fileExtension);
+            }
+        });
+        </script>
 
 </body>
 
