@@ -9,7 +9,7 @@ import {
 import {
     getFirestore, collection, onSnapshot,
     addDoc, deleteDoc, doc,
-    query, where,
+    query, where, getDocs,
     orderBy, serverTimestamp,
     getDoc, updateDoc, setDoc
 } from 'firebase/firestore'
@@ -17,6 +17,9 @@ import {
 import { firebaseConfig } from './server.js';
 import { UserLoginChecker } from './page_restriction.js';
 import { fetchEmployeeInfo } from './fetch_employee_info.js';
+
+// Import ApexCharts library
+import ApexCharts from 'apexcharts';
 
 console.log("asfsafaqwwr")
 
@@ -34,8 +37,6 @@ function fetchEmployee() {
 
     onSnapshot(EmployeecolRef, (snapshot) => {
         const activeEmployees = snapshot.docs.filter(doc => doc.data().employmentStatus === 'Active').length;
-
-        console.log('Total number of active employees:', activeEmployees);
 
         totalActiveEmployee.innerHTML = activeEmployees
 
@@ -66,9 +67,6 @@ function fetchAverageIPCRFRating() {
         });
 
         const averageRating = numberOfEmployees > 0 ? totalRating / numberOfEmployees : 0;
-
-        console.log('Total rating of all employees:', totalRating);
-        console.log('Average rating of all employees:', averageRating);
 
         // If you want to display the average rating, you can do it here
         ratingElement.innerHTML = averageRating.toFixed(2);
@@ -137,60 +135,152 @@ function fetchAverageOfficeIPCRF() {
 
         const averageRating = calculateAverageRating(totalRating, snapshot.docs.length);
 
-        console.log('Total rating of all employees:', totalRating);
-        console.log('Average rating of all employees:', averageRating);
-
-        // Display average rating per office
-        console.log('Average rating per office:', officeAverageRatings);
-
-        // If you have a way to display per office ratings, you can do it here
-        // Example: displayOfficeRatings(officeAverageRatings);
-
-        // If you want to display the total number of employees, you can do it here
-        console.log('Total number of employees:', totalEmployees);
     });
 }
 
 window.addEventListener('load', fetchAverageOfficeIPCRF);
 
 
-async function RetrieveAllTardiness() {
-    try {
-        const EmployeecolRef = collection(db, 'DTR Information');
-        const File201colRef = collection(db, '201File Information');
-        const Employee123colRef = collection(db, 'Employee Information');
 
-        const tardyData = await fetchEmployeeInfo(EmployeecolRef, receivedStringData, "employeeDocID");
-        const file201data = await fetchEmployeeInfo(File201colRef, receivedStringData, "employeeDocID");
-        const empdata = await fetchEmployeeInfo(Employee123colRef, receivedStringData, "employeeDocID");
+function fetchPerformanceTable() {
+    const DTRcolRef = collection(db, 'DTR Information');
+    const EmployeecolRef = collection(db, 'Employee Information');
+    const File201colRef = collection(db, '201File Information');
 
-        var tableBody = document.getElementById('ipcrfTable');
+    const que = query(DTRcolRef);
+    const tableBody = document.getElementById('tadinessTable').getElementsByTagName('tbody')[0];
 
-        // Clear existing rows
-        tableBody.innerHTML = '';
+    // for retrieving the current user
+    onSnapshot(que, (snapshot) => {
+        try {
+            if (!snapshot.empty) {
+                // Clear existing table rows
+                tableBody.innerHTML = '';
 
-        let num = 1;
-        var row = tableBody.insertRow();
+                snapshot.docs.forEach((docData, index) => {
+                    const data = docData.data();
+                    const EmployeeDocID = data.employeeDocID;
 
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
-        var cell5 = row.insertCell(4);
-        var cell6 = row.insertCell(5);
+                    // Create a new row
+                    const newRow = tableBody.insertRow();
 
-        const fullName = `${empdata.Personal_Information.FirstName} ${empdata.Personal_Information.SurName}`;
-        cell1.innerHTML = num;
-        cell2.innerHTML = fullName;
-        cell3.innerHTML = file201data.Office;
-        cell4.innerHTML = file201data.PositionTitle;
-        cell5.innerHTML = tardyData.Tardy_Details.TotalTimesTardy;
-        cell6.innerHTML = file201data.Undertime_Details.TotalTimesUndertime;
+                    fetchEmployeeInfo(EmployeecolRef, EmployeeDocID, "documentID").then((dataRetrieved) => {
+                        const employeeData = dataRetrieved;
 
-        num++;
-    } catch (error) {
-        console.error("Error fetching data:", error);
-    }
+                        
+                        fetchEmployeeInfo(File201colRef, EmployeeDocID, "employeeDocID").then((dataRetrieved) => {
+                            const file201employeeData = dataRetrieved;
+
+                            // Add cells to the row with data
+                            const cellID = newRow.insertCell(0);
+                            const cell1 = newRow.insertCell(1);
+                            const cell2 = newRow.insertCell(2);
+                            const cell3 = newRow.insertCell(3);
+                            const cell4 = newRow.insertCell(4);
+                            const cell5 = newRow.insertCell(5); 
+                            
+                            // Apply CSS styling to center text in cells
+                            cellID.style.textAlign = 'left';
+                            cell1.style.textAlign = 'left';
+                            cell2.style.textAlign = 'left';
+                            cell3.style.textAlign = 'center';
+                            cell4.style.textAlign = 'center';
+                            cell5.style.textAlign = 'center';
+
+                            const fullName = `${employeeData.Personal_Information.FirstName} ${employeeData.Personal_Information.SurName} `
+
+                            // Populate cells with data
+                            cellID.textContent = index + 1; // Auto-increment ID
+                            cell1.textContent = fullName; 
+                            cell2.textContent = file201employeeData.Appointment_Details.Office; 
+                            cell3.textContent = file201employeeData.Appointment_Details.PositionTitle;  
+                            cell4.textContent = data.Tardy_Details.TotalTimesTardy;  
+                            cell5.textContent = data.Undertime_Details.TotalTimesUndertime;   
+
+                        })
+                    })                    
+                });
+            } else {
+                // Display a message when there are no records
+                tableBody.innerHTML = '<tr><td colspan="4">No records retrieved.</td></tr>';
+            }
+        } catch (error) {
+            console.error("Error fetching IPCRF data:", error);
+            // Handle error (e.g., display an error message)
+        }
+    });
 }
 
-window.addEventListener('load', RetrieveAllTardiness);
+window.addEventListener('load', fetchPerformanceTable);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Assuming you have Firebase initialized and db is your Firestore instance
+    const ipcRfColRef = collection(db, 'IPCRF Information');
+    const que = query(ipcRfColRef);
+
+    // Object to store total ratings and count per office
+    const officeRatings = {};
+
+    // Fetch IPCRF Information data
+    onSnapshot(que, (snapshot) => {
+        try {
+            if (!snapshot.empty) {
+                snapshot.docs.forEach((docData, index) => {
+                    const data = docData.data();
+                    const officeName = data.Office;
+
+                    // If the office doesn't exist in the ratings object, initialize it
+                    if (!officeRatings.hasOwnProperty(officeName)) {
+                        officeRatings[officeName] = {
+                            totalRating: 0,
+                            count: 0,
+                        };
+                    }
+
+                    // Add the rating to the total for the corresponding office
+                    officeRatings[officeName].totalRating += parseFloat(data.TotalRating || 0);
+                    // Increment the count for the corresponding office
+                    officeRatings[officeName].count += 1;
+                });
+
+                // Calculate average rating per office
+                const averageRatings = {};
+                for (const [officeName, ratingData] of Object.entries(officeRatings)) {
+                    averageRatings[officeName] = ratingData.totalRating / ratingData.count;
+                }
+
+                // Now averageRatings object contains the average ratings per office
+
+                // Now use the data to configure ApexCharts
+                const chartData = Object.values(averageRatings);
+                const chartCategories = Object.keys(averageRatings);
+
+                new ApexCharts(document.querySelector("#barChart"), {
+                    series: [{
+                        data: chartData,
+                    }],
+                    chart: {
+                        type: 'bar',
+                        height: 350
+                    },
+                    plotOptions: {
+                        bar: {
+                            borderRadius: 4,
+                            horizontal: true,
+                        }
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    xaxis: {
+                        categories: chartCategories,
+                    }
+                }).render();
+            }
+        } catch (error) {
+            console.error("Error fetching IPCRF data:", error);
+            // Handle error (e.g., display an error message)
+        }
+    });
+});

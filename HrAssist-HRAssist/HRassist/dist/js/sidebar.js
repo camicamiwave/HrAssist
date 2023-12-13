@@ -19,6 +19,7 @@ updateHrefById('addapplicant', 'admin_add_applicant.html');
 updateHrefById('searchapplicant', 'admin_search_applicant.html');
 
 // Update href for other anchor tags as needed
+updateHrefById('employeeOPCRF', 'admin_employee_opcrf.html');
 updateHrefById('employeePerformance', 'admin-employee-performance.html');
 updateHrefById('employeeIPCRF', 'admin-IPCRF-search.html');
 updateHrefById('rewards', 'admin-employee-reward.html');

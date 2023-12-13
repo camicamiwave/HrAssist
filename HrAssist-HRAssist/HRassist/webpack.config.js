@@ -55,7 +55,10 @@ module.exports = {
         retrieve_overview: './src/retrieve_overview.js',
         employee_performance: './src/employee_performance.js', 
         reward_information: './src/reward_information.js',
-        dashboard: './src/dashboard.js'
+        dashboard: './src/dashboard.js',
+        opcrf: './src/opcrf.js',
+        opcrf_list: './src/opcrf_list.js',
+        individual_opcrf: './src/individual_opcrf.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),

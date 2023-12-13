@@ -78,7 +78,6 @@ function fetchIPCRF(receivedStringData, selectedYear) {
                     const data = docData.data();
                     const employeeDocID = data.documentID;
 
-                    console.log(data, 121323);
 
                     if (data.ForTheSemester === "1st Semester") {
                         firstsemIPCRFRating.innerHTML = data.TotalRating;
