@@ -135,7 +135,7 @@ export function EmployeeRequestForm() {
                         } else {                
                             console.log('Form is not valid. Please correct errors.');
                         }
-                        
+
                     });
                 });
             });
@@ -194,7 +194,7 @@ function ReturnDocumentID(docRef) {
 
     const EmpcustomDocId = docRef.id;
     return setDoc(doc(RequestcolRef, EmpcustomDocId), { documentID: EmpcustomDocId }, { merge: true });
-}
+} 
 
 
 function validateForm() {
