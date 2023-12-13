@@ -75,59 +75,67 @@ export function EmployeeRequestForm() {
                     const employeeDocID = data.documentID;
 
                     leaveSubmitBtn.addEventListener('click', (e) => {
-                        if (pass_slip_form) {
-                            const leaveFormData = {
-                                employeeDocID: employeeDocID,
-                                createdAt: serverTimestamp(),
-                                RequestType: 'Pass Slip Leave',
-                                RequestStatus: 'Pending',
-                                Request_Details: {
-                                    PassSlipDate: document.getElementById('slipDate').value,
-                                    PassSlipTime: document.getElementById('slipTime').value,
-                                    PurposeSlip: document.getElementById('slipPurpose').value,
-                                    PurposeStatement: document.getElementById('purposeText').value
-                                }
-                            };
 
-                            Swal.fire({
-                                title: "Are you sure?",
-                                text: "Your pass slip will be recorded",
-                                icon: "question",
-                                showCancelButton: true,
-                                confirmButtonColor: "#3085d6",
-                                cancelButtonColor: "#d33",
-                                confirmButtonText: "Confirm"
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    return addDoc(RequestcolRef, leaveFormData);
-                                } else {
-                                    // User clicked "Cancel" or closed the dialog without confirming
-                                    return Promise.reject(new Error('User canceled'));
-                                }
-                            }).then((docRef) => {
-                                console.log(leaveFormData);
-                                ReturnDocumentID(docRef);
-                                return SaveAttachment(docRef);
-                            }).then(() => {
+                                        
+                        if (validateForm()) {
+
+                            if (pass_slip_form) {
+                                const leaveFormData = {
+                                    employeeDocID: employeeDocID,
+                                    createdAt: serverTimestamp(),
+                                    RequestType: 'Pass Slip Leave',
+                                    RequestStatus: 'Pending',
+                                    Request_Details: {
+                                        PassSlipDate: document.getElementById('slipDate').value,
+                                        PassSlipTime: document.getElementById('slipTime').value,
+                                        PurposeSlip: document.getElementById('slipPurpose').value,
+                                        PurposeStatement: document.getElementById('purposeText').value
+                                    }
+                                };
+
                                 Swal.fire({
-                                    title: 'Pass Slip Sent!',
-                                    text: 'Please wait for further updates.',
-                                    icon: 'success',
-                                });
-                                pass_slip_form.reset();
-                                console.log('Request saved...')
-                            }).catch((error) => {
-                                if (error.message !== 'User canceled') {
-                                    // Handle other errors
-                                    console.error("Error occurred:", error);
+                                    title: "Are you sure?",
+                                    text: "Your pass slip will be recorded",
+                                    icon: "question",
+                                    showCancelButton: true,
+                                    confirmButtonColor: "#3085d6",
+                                    cancelButtonColor: "#d33",
+                                    confirmButtonText: "Confirm"
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        return addDoc(RequestcolRef, leaveFormData);
+                                    } else {
+                                        // User clicked "Cancel" or closed the dialog without confirming
+                                        return Promise.reject(new Error('User canceled'));
+                                    }
+                                }).then((docRef) => {
+                                    console.log(leaveFormData);
+                                    ReturnDocumentID(docRef);
+                                    return SaveAttachment(docRef);
+                                }).then(() => {
                                     Swal.fire({
-                                        title: 'Error',
-                                        text: 'An error occurred while processing your request. Please try again.',
-                                        icon: 'error',
+                                        title: 'Pass Slip Sent!',
+                                        text: 'Please wait for further updates.',
+                                        icon: 'success',
                                     });
-                                }
-                            });
+                                    pass_slip_form.reset();
+                                    console.log('Request saved...')
+                                }).catch((error) => {
+                                    if (error.message !== 'User canceled') {
+                                        // Handle other errors
+                                        console.error("Error occurred:", error);
+                                        Swal.fire({
+                                            title: 'Error',
+                                            text: 'An error occurred while processing your request. Please try again.',
+                                            icon: 'error',
+                                        });
+                                    }
+                                });
+                            }
+                        } else {                
+                            console.log('Form is not valid. Please correct errors.');
                         }
+                        
                     });
                 });
             });
@@ -188,3 +196,52 @@ function ReturnDocumentID(docRef) {
     return setDoc(doc(RequestcolRef, EmpcustomDocId), { documentID: EmpcustomDocId }, { merge: true });
 }
 
+
+function validateForm() {
+
+
+         var locatorPurposeInput = document.getElementById('purposeText');
+         var slipDateInput = document.getElementById('slipDate');
+         var slipTimeInput = document.getElementById('slipTime');
+         var attachmentFileInput = document.getElementById('attachmentFile');
+
+            if (
+            slipDateInput.value.trim() === '' ||
+            slipTimeInput.value.trim() === '' ||
+            locatorPurposeInput.value.trim() === '' ||
+            attachmentFileInput.value.trim() === ''
+          ) {
+            alert('Please fill in all required fields.');
+            return false;
+          }
+         
+  
+          if (!isValidString(locatorPurposeInput.value)) {
+              alert('Please enter a valid input!');
+              return false;
+          }
+
+          if (!isValidFileType(attachmentFileInput)) {
+          alert('Please upload a valid file (PDF, DOC/DOCX, PNG, or JPEG).');
+          return false;
+      }
+
+          return true;
+      }
+
+
+      function isValidString(value) {
+
+          return /^[a-zA-Z\s]*$/.test(value.trim());
+      }
+
+      function isValidFileType(fileInput) {
+      var fileName = fileInput.value;
+
+      var fileExtension = fileName.split('.').pop().toLowerCase();
+
+
+      var allowedExtensions = ['pdf', 'doc', 'docx', 'png', 'jpeg', 'jpg'];
+
+      return allowedExtensions.includes(fileExtension);
+    }

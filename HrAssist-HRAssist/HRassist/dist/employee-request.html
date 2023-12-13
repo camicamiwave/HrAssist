@@ -586,67 +586,7 @@
   document.addEventListener('DOMContentLoaded', function () {
   var locatorform = document.getElementById('applyLeaveModal');
   var requestLocatorBtn = document.getElementById('applyPassSlip');
-
-    requestLocatorBtn.addEventListener('click', function (event) {
-          event.preventDefault();
-
-
-          if (validateForm()) {
-              console.log('Form is valid');
-
-          } else {
-              console.log('Form is not valid. Please correct errors.');
-          }
-      });
-
-      function validateForm() {
-
-
-         var locatorPurposeInput = document.getElementById('purposeText');
-         var slipDateInput = document.getElementById('slipDate');
-         var slipTimeInput = document.getElementById('slipTime');
-         var attachmentFileInput = document.getElementById('attachmentFile');
-
-            if (
-            slipDateInput.value.trim() === '' ||
-            slipTimeInput.value.trim() === '' ||
-            locatorPurposeInput.value.trim() === '' ||
-            attachmentFileInput.value.trim() === ''
-          ) {
-            alert('Please fill in all required fields.');
-            return false;
-          }
-         
-  
-          if (!isValidString(locatorPurposeInput.value)) {
-              alert('Please enter a valid input!');
-              return false;
-          }
-
-          if (!isValidFileType(attachmentFileInput)) {
-          alert('Please upload a valid file (PDF, DOC/DOCX, PNG, or JPEG).');
-          return false;
-      }
-
-          return true;
-      }
-
-
-      function isValidString(value) {
-
-          return /^[a-zA-Z\s]*$/.test(value.trim());
-      }
-
-      function isValidFileType(fileInput) {
-      var fileName = fileInput.value;
-
-      var fileExtension = fileName.split('.').pop().toLowerCase();
-
-
-      var allowedExtensions = ['pdf', 'doc', 'docx', 'png', 'jpeg', 'jpg'];
-
-      return allowedExtensions.includes(fileExtension);
-    }
+ 
   });
   </script>
 
