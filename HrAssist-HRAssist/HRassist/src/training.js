@@ -59,7 +59,7 @@ function fetchOfficeDesignation() {
   
 
 function AddTrainings() {
-    const CalendarcolRef = collection(db, 'Training Information');
+    const CalendarcolRef = collection(db, 'Calendar Information');
     document.getElementById('trainingSubmitBtn').addEventListener('click', () => {
 
         const leaveFormData = {
@@ -73,6 +73,13 @@ function AddTrainings() {
                 StartDate: document.getElementById('startDate').value.trim(),
                 EndDate: document.getElementById('endDate').value.trim(),
                 Purpose: document.getElementById('purpose').value.trim(),
+            },
+            formData: {
+                participants: document.getElementById('participants').value.trim(),
+                title: document.getElementById('title').value.trim(),
+                start: document.getElementById('startDate').value.trim(),
+                end: document.getElementById('endDate').value.trim(),
+                color: "#89CFF0"
             },
             TrainingStatus: 'Active'
         };
@@ -123,7 +130,7 @@ function AddTrainings() {
 
 
 function ReturnDocumentID(docRef) {
-    const RequestcolRef = collection(db, 'Training Information');
+    const RequestcolRef = collection(db, 'Calendar Information');
 
     const EmpcustomDocId = docRef.id;
     return setDoc(doc(RequestcolRef, EmpcustomDocId), { documentID: EmpcustomDocId }, { merge: true });
@@ -137,7 +144,7 @@ window.addEventListener('load', AddTrainings);
 
 function SaveAttachment(docRef) {
     const storageRef = ref(storage, "Training/Attachments");
-    const RequestcolRef = collection(db, 'Request Information');
+    const RequestcolRef = collection(db, 'Calendar Information');
 
     // Access the file input field
     //const fileInput = document.getElementById('inputAttachment');

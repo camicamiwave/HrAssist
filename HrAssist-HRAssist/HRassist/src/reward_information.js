@@ -24,6 +24,83 @@ const db = getFirestore()
 
 const storage = getStorage(app);
 
+
+
+
+function fetchPerformanceTable() {
+    const DTRcolRef = collection(db, 'DTR Information');
+    const EmployeecolRef = collection(db, 'Employee Information');
+    const File201colRef = collection(db, '201File Information');
+
+    const que = query(DTRcolRef);
+    const tableBody = document.getElementById('tadinessTable').getElementsByTagName('tbody')[0];
+
+    // for retrieving the current user
+    onSnapshot(que, (snapshot) => {
+        try {
+            if (!snapshot.empty) {
+                // Clear existing table rows
+                tableBody.innerHTML = '';
+
+                snapshot.docs.forEach((docData, index) => {
+                    const data = docData.data();
+                    const EmployeeDocID = data.employeeDocID;
+
+                    // Create a new row
+                    const newRow = tableBody.insertRow();
+
+                    fetchEmployeeInfo(EmployeecolRef, EmployeeDocID, "documentID").then((dataRetrieved) => {
+                        const employeeData = dataRetrieved;
+
+                        
+                        fetchEmployeeInfo(File201colRef, EmployeeDocID, "employeeDocID").then((dataRetrieved) => {
+                            const file201employeeData = dataRetrieved;
+
+                            // Add cells to the row with data
+                            const cellID = newRow.insertCell(0);
+                            const cell1 = newRow.insertCell(1);
+                            const cell2 = newRow.insertCell(2);
+                            const cell3 = newRow.insertCell(3);
+                            const cell4 = newRow.insertCell(4);
+                            const cell5 = newRow.insertCell(5); 
+                            
+                            // Apply CSS styling to center text in cells
+                            cellID.style.textAlign = 'left';
+                            cell1.style.textAlign = 'left';
+                            cell2.style.textAlign = 'left';
+                            cell3.style.textAlign = 'center';
+                            cell4.style.textAlign = 'center';
+                            cell5.style.textAlign = 'center';
+
+                            const fullName = `${employeeData.Personal_Information.FirstName} ${employeeData.Personal_Information.SurName} `
+
+                            // Populate cells with data
+                            cellID.textContent = index + 1; // Auto-increment ID
+                            cell1.textContent = fullName; 
+                            cell2.textContent = file201employeeData.Appointment_Details.Office; 
+                            cell3.textContent = file201employeeData.Appointment_Details.PositionTitle;  
+                            cell4.textContent = data.Tardy_Details.TotalTimesTardy;  
+                            cell5.textContent = data.Undertime_Details.TotalTimesUndertime;   
+
+                        })
+                    })                    
+                });
+            } else {
+                // Display a message when there are no records
+                tableBody.innerHTML = '<tr><td colspan="4">No records retrieved.</td></tr>';
+            }
+        } catch (error) {
+            console.error("Error fetching IPCRF data:", error);
+            // Handle error (e.g., display an error message)
+        }
+    });
+}
+
+window.addEventListener('load', fetchPerformanceTable);
+
+
+
+
 function fetchIPCRF() {
     const IPCRFcolRef = collection(db, 'IPCRF Information');
     const EmployeecolRef = collection(db, 'Employee Information');

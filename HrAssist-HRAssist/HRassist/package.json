@@ -58,7 +58,10 @@
     "retrieve_overview": "node retrieve_overview.js",
     "employee_performance": "node employee_performance.js",
     "reward_information": "node reward_information.js",
-    "dashboard": "node dashboard.js"
+    "dashboard": "node dashboard.js",
+    "opcrf": "node opcrf.js",
+    "opcrf_list": "node opcrf_list.js",
+    "individual_opcrf": "node individual_opcrf.js"
   },
   "keywords": [],
   "author": "",
@@ -68,6 +71,7 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "apexcharts": "^3.44.2",
     "firebase": "^10.5.2",
     "sweetalert2": "^11.6.13"
   }

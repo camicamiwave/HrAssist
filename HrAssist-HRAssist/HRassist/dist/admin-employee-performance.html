@@ -374,6 +374,7 @@
               </div>
           </div>
       </header>
+      
       <!-- Main -->
       <main class="py-6 bg-surface-secondary">
           <div class="container-fluid">
@@ -438,7 +439,8 @@
                 <div id="barChart"></div>
 
                 <script>
-                document.addEventListener("DOMContentLoaded", () => {
+                
+                /*document.addEventListener("DOMContentLoaded", () => {
                     new ApexCharts(document.querySelector("#barChart"), {
                     series: [{
                         data: [1.499, 1.499, 1.499, 1.499, 1.499, 1.499, 1.499, 5.000, 5.000, 5.000]
@@ -462,7 +464,7 @@
                         ],
                     }
                     }).render();
-                });
+                });*/
                 </script>
                 <!-- End Bar Chart -->
 
@@ -490,7 +492,7 @@
                       <!-- Table with stripped rows -->
 
                       <div class="table-responsive-lg">
-                        <table class="table datatable" style="font-size: 14px;" >
+                        <table class="table datatable" style="font-size: 14px;" id="tadinessTable">
                           <thead>
                             <tr>
                               <th><b>No.</b></th>
@@ -501,7 +503,7 @@
                               <th>Number of Undertime</th> 
                             </tr>
                           </thead>
-                          <tbody  id="ipcrfTable"> 
+                          <tbody  > 
                             
                           </tbody>
                         </table>

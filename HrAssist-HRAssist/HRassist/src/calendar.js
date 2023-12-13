@@ -31,9 +31,12 @@ function AddEventsCalendar() {
         const tagColor = document.querySelector('.tag-color').value;
         const startFrom = document.querySelector('.start-from').value;
         const endTo = document.querySelector('.end-to').value;
+        
+        const purposeLabel = document.getElementById('purpose').value;
 
         const leaveFormData = {
             createdAt: serverTimestamp(),
+            eventPurpose: purposeLabel,
             formData: {
                 participants: participants,
                 title: eventName,

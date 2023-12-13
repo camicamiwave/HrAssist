@@ -88,6 +88,51 @@ function fetchJobInfo() {
 
 window.addEventListener('load', fetchJobInfo);
 
+function fetchJobInfoTable() {
+    const EmployeecolRef = collection(db, 'Job Information');
+    const que = query(EmployeecolRef);
+    const tableBody = document.getElementById('jobInfoTable').getElementsByTagName('tbody')[0];
+
+    // for retrieving the current user
+    onSnapshot(que, (snapshot) => {
+        try {
+            if (!snapshot.empty) {
+                // Clear existing table rows
+                tableBody.innerHTML = '';
+
+                snapshot.docs.forEach((docData, index) => {
+                    const data = docData.data();
+                    const employeeDocID = data.documentID;
+
+                    // Create a new row
+                    const newRow = tableBody.insertRow();
+                    
+                    // Add cells to the row with data
+                    const cellID = newRow.insertCell(0);
+                    const cell1 = newRow.insertCell(1);
+                    const cell2 = newRow.insertCell(2);
+                    const cell3 = newRow.insertCell(3);
+                    // Add more cells as needed
+
+                    // Populate cells with data
+                    cellID.textContent = index + 1; // Auto-increment ID
+                    cell1.textContent = data.JobTitle; // Replace with the actual property name
+                    cell2.textContent = data.JobType; // Replace with the actual property name
+                    cell3.textContent = data.NumVacancy; // Replace with the actual property name
+                    // Populate more cells as needed
+                });
+            } else {
+                // Display a message when there are no records
+                tableBody.innerHTML = '<tr><td colspan="4">No records retrieved.</td></tr>';
+            }
+        } catch (error) {
+            console.error("Error fetching IPCRF data:", error);
+            // Handle error (e.g., display an error message)
+        }
+    });
+}
+
+window.addEventListener('load', fetchJobInfoTable);
 
 
 document.addEventListener("DOMContentLoaded", () => {
