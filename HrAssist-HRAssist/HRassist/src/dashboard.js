@@ -106,7 +106,7 @@ function fetchJobInfoTable() {
 
                     // Create a new row
                     const newRow = tableBody.insertRow();
-                    
+
                     // Add cells to the row with data
                     const cellID = newRow.insertCell(0);
                     const cell1 = newRow.insertCell(1);
@@ -183,3 +183,56 @@ function renderPieChart(series, labels) {
     }).render();
 }
 
+
+function getUpcomingActivities() {
+    const currentDate = new Date();
+    const futureDate = new Date();
+    futureDate.setDate(currentDate.getDate() + 5);
+    const container = document.getElementById("activity");
+
+    // Random design options
+    const badgeColors = ["text-success", "text-danger", "text-primary", "text-info", "text-warning"];
+
+    const Employeeque = query(collection(db, 'Calendar Information'),
+        where('formData.start', '>=', currentDate.toISOString()), // Convert to ISO string
+        where('formData.start', '<=', futureDate.toISOString())
+    );
+
+    onSnapshot(Employeeque, (snapshot) => {
+        if (snapshot.empty) {
+            // No documents matched the query
+            console.log('None');
+        } else {
+            // Documents matched the query
+            const data = snapshot.docs.map(doc => doc.data());
+            console.log(data, 'asfasfsafwqwewr');
+
+            // Clear existing content in the container
+            container.innerHTML = '';
+
+            // Loop through the retrieved data and append HTML to the container
+            data.forEach(activity => {
+                const badgeColor = badgeColors[Math.floor(Math.random() * badgeColors.length)];
+
+                // Extract year, month, and day from formData.start
+                const startDate = new Date(activity.formData.start);
+                const year = startDate.getFullYear();
+                const month = startDate.getMonth() + 1; // Months are zero-based
+                const day = startDate.getDate();
+
+                const activityHTML = `
+                    <div class="activity-item d-flex">
+                        <div class="activite-label">${year}/${month}/${day}</div>
+                        <i class='bi bi-circle-fill activity-badge ${badgeColor} align-self-start'></i>
+                        <div class="activity-content">  <a href="#" class="fw-bold text-dark">${activity.eventPurpose}</a><br> ${activity.eventPurpose}
+                        </div>
+                    </div>
+                `;
+
+                container.innerHTML += activityHTML;
+            });
+        }
+    });
+}
+
+window.addEventListener('load', getUpcomingActivities);
