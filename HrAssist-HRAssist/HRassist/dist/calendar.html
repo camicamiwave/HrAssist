@@ -539,60 +539,6 @@
   <script src="js/sidebar.js"></script>
   <!--<script src="src/event.js"></script>-->
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    var calendardetails = document.getElementById('calendarForm');
-    var submitbtn = document.getElementById('btnSubmit');
-  
-    submitbtn.addEventListener('click', function (event) {
-            event.preventDefault();
-  
-  
-            if (validateForm()) {
-                console.log('Form is valid. Submitting...');
-  
-            } else {
-                console.log('Form is not valid. Please correct errors.');
-            }
-        });
-  
-        function validateForm() {
-  
-  
-           var eventnameInput = document.getElementById('event-name');
-           var particpantInput = document.getElementById('participants');
-           var startfromInput = document.getElementById('start-from');
-           var endtoInput = document.getElementById('end-to');
-  
-              if (
-              eventnameInput.value.trim() === '' ||
-              particpantInput.value.trim() === '' ||
-              startfromInput.value.trim() === '' ||
-              endtoInput.value.trim() === ''
-            ) {
-              alert('Please fill in all required fields.');
-              return false;
-            }
-           
-    
-            if (!isValidString(eventnameInput.value)) {
-                alert('Please enter a valid input!');
-                return false;
-            }
-  
-            
-  
-            return true;
-        }
-  
-  
-        function isValidString(value) {
-  
-            return /^[a-zA-Z\s]*$/.test(value.trim());
-        }
-  
-    });
-    </script>
 
 
 </body>
