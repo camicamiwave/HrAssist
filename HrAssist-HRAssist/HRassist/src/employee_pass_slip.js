@@ -211,18 +211,34 @@ function validateForm() {
             locatorPurposeInput.value.trim() === '' ||
             attachmentFileInput.value.trim() === ''
           ) {
-            alert('Please fill in all required fields.');
+            //alert('Please fill in all required fields.');
+            console.log('Please fill in all required fields.');
+            Swal.fire({
+                title: 'Error',
+                text: 'Please fill in all required fields.',
+                icon: 'error',
+            });
             return false;
           }
          
   
           if (!isValidString(locatorPurposeInput.value)) {
-              alert('Please enter a valid input!');
+            console.log('Please enter a valid input!');
+            Swal.fire({
+                title: 'Error',
+                text: 'Please upload a valid file (PDF, DOC/DOCX, PNG, or JPEG).',
+                icon: 'error',
+            });
               return false;
           }
 
           if (!isValidFileType(attachmentFileInput)) {
-          alert('Please upload a valid file (PDF, DOC/DOCX, PNG, or JPEG).');
+            console.log('Please enter a valid input!');
+            Swal.fire({
+                title: 'Error',
+                text: 'Please upload a valid file (PDF, DOC/DOCX, PNG, or JPEG).',
+                icon: 'error',
+            });
           return false;
       }
 
