@@ -30,7 +30,7 @@ const receivedStringData = urlParams.get('data');
 export function fetchEmployeeTrainingMemo() {
     try {
         // get the current employee data
-        const EmployeecolRef = collection(db, 'Training Information');
+        const EmployeecolRef = collection(db, 'Calendar Information');
         fetchEmployeeInfo(EmployeecolRef, receivedStringData, "documentID").then((dataRetrieved) => {
             const trainingdata = dataRetrieved.TrainingDetails;
             memoNumber.innerHTML = trainingdata.MemoNun;
