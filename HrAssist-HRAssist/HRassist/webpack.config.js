@@ -58,7 +58,8 @@ module.exports = {
         dashboard: './src/dashboard.js',
         opcrf: './src/opcrf.js',
         opcrf_list: './src/opcrf_list.js',
-        individual_opcrf: './src/individual_opcrf.js'
+        individual_opcrf: './src/individual_opcrf.js',
+        dtr_summary: './src/dtr_summary.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),

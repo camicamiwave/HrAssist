@@ -61,7 +61,8 @@
     "dashboard": "node dashboard.js",
     "opcrf": "node opcrf.js",
     "opcrf_list": "node opcrf_list.js",
-    "individual_opcrf": "node individual_opcrf.js"
+    "individual_opcrf": "node individual_opcrf.js",
+    "dtr_summary": "node dtr_summary.js"
   },
   "keywords": [],
   "author": "",

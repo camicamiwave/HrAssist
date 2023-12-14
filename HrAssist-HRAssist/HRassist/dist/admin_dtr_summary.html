@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Boxicons CSS -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/admin.css" />
+
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>HR Assist - Summary</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicon -->
+  <link href="img/hricon.png" rel="icon">
+
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+  <script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+
+  <!-- Template Main CSS File -->
+  <link href="css/employee-template.css" rel="stylesheet">
+  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+
+    <div class="d-flex align-items-center justify-content-center">
+      <a href="admin_dashboard.html" class="logo d-flex align-items-center mx-auto">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">Assist</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" id="searchInput" name="query" placeholder="Search" title="Enter search keyword">
+            <ul id="searchSuggestions"></ul>
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+        <!--
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a>
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul>
+        </li> End Notification Nav -->
+
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile.png" alt="Profile" id="navbarProfilePicture" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2" id="navbarUserName"></span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6 id="hoverUserName"></h6>
+              <span id="userLevel"></span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="admin-users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            
+            <li>
+              <a class="dropdown-item d-flex align-items-center" id="navbar_signout_btn">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-heading">ADMIN TOOL</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_dashboard.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="admin_201file_account.html">
+              <i class="bi bi-circle"></i><span>Add Employee</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_employee_registry_list.html">
+              <i class="bi bi-circle"></i><span>Employee List</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-badges.html">
+              <i class="bi bi-circle"></i><span>Edit Employee</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_search_employee_view.html">
+              <i class="bi bi-circle"></i><span>Search Employee</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-person"></i><span>Manage Applicant</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="admin_add_applicant.html">
+              <i class="bi bi-circle"></i><span>Add Applicant</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_manage_applicant_view.html">
+              <i class="bi bi-circle"></i><span>Applicant List</span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="admin_search_applicant.html">
+              <i class="bi bi-circle"></i><span>Search Applicant</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
+            <i class="bx bxs-briefcase"></i>
+            <span>Job Vacancy</span>
+        </a>
+    </li><!-- End Job Vacancy Nav -->
+
+    <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-bar-chart-line"></i>
+          <span>Employee Performance</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
+          <i class="bi bi-check-square"></i>
+          <span>Employee IPCRF</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-heading">Rewards & RECOGNITION</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-register.html">
+          <i class="bi bi-award"></i>
+          <span>Rewards</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li class="nav-heading">LEARNING DEVELOPMENT</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+          <i class="bi bi-people-fill"></i>
+          <span>Training & Seminar</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+      <li class="nav-heading">CONFIGURATION</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gear"></i><span>Configuration</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="admin-offices.html">
+              <i class="bi bi-circle"></i><span>Office</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_accounts_view.html">
+              <i class="bi bi-circle"></i><span>Accounts</span>
+            </a>
+          </li>
+          <li>
+            <a href="calendar">
+              <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Icons Nav -->
+      <li class="nav-item">
+        <a class="nav-link" href="admin_request.html">
+          <i class="bi bi-calendar"></i>
+          <span>Leave Management</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_dtr_form.html">
+          <i class="bi bi-clock"></i>
+          <span>Daily Time Record</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>DTR Summary</h1><br>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="admin_dashboard.html">Home</a></li>
+          <li class="breadcrumb-item active">DTR Summary</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    
+
+
+    <div class="table">
+ 
+        <br>
+        <hr> 
+        <div class="select-employee">
+            <div class="container"> 
+
+                    <div class="row" style="margin-top: -5%;">
+                        <div class="col-md-6">
+                            <label><small>For the month of:</small></label>
+                            <select class="form-control" id="monthSelector">
+                                <option>--- Select Month ---</option>
+                                <option value="January">January</option>
+                                <option value="Febuary">Febuary</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label><small>Year:</small></label> 
+                            <select class="form-control" id="yearSelctor">
+                                <option>--- Select Year ---</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                                <option value="2031">2031</option>
+                                <option value="2032">2032</option>
+                                <option value="2033">2033</option>
+                                <option value="2034">2034</option>
+                                <option value="2035">2035</option>
+                            </select>
+                        </div>
+                    </div><br>
+
+                    <div class="row" style="margin-top: -2%;">
+                        <div class="col-md-6">
+                            <label><small>Year:</small></label> 
+                            <select class="form-control" id="weekSelctor">
+                                <option>--- Select Week ---</option>
+                                <option value="Week 1">Week 1</option>
+                                <option value="Week 2">Week 2</option>
+                                <option value="Week 3">Week 3</option>
+                                <option value="Week 4">Week 4</option> 
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label><small>Office:</small></label>
+                            <select class="form-control" id="inputOffice" name="inputOffice">
+                                
+                            </select>
+                        </div>
+                         
+                    </div><br>
+
+                    <div class="container">
+
+                        <button type="submit" class="btn btn-success"
+                            style="width: 100%; background-color: #08533F; color: white;"
+                            id="searchDTRBtn">Check Record</button>
+                        <hr>
+                    </div>
+                    
+                </div>
+ 
+            </div> 
+        </div>
+
+    </div>
+    
+    <section class="section dashboard" id="tableSectionDTRSummary" style="display: none;">
+      <!--START YOUR CONTENT HERE -->
+      <div class="content-wrapper">
+        <div class="table"> 
+          <div class="table-header"> 
+            <div class="group" style="position: relative;">
+              <p>Filter</p>
+                <select id="filterdropdown" style="margin-left: 4vw; position: absolute; top: 1opx; width: 10vw;">
+                    <option value="all">All</option>
+                    <option value="pending">Pending</option>
+                    <option value="approved">Approved</option>
+                    <option value="declined">Declined</option>
+                </select>            
+            </div>
+            
+              <input type="text" class="form-control" placeholder="Search Here" id="txtInputTable" style="width: 15vw; float: right; margin-bottom: 2vh;">
+          </div>
+
+          <table class="content-table" id="dtrSummary" style="font-size: 14px;">
+            <thead>
+                <tr >
+                  <th></th>
+                  <th></th>
+                  <th colspan="2">Work Hrs.</th> 
+                  <th colspan="2">Late In</th>
+                  <th colspan="2">Early Leave</th>
+                  <th colspan="2">Overtime</th>
+                  <th colspan="4"></th>
+                </tr>
+              <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Required</th>
+                <th>Actual</th>
+                <th>Time</th>
+                <th>Min</th>
+                <th>Time</th>
+                <th>Min</th>
+                <th>Regular</th>
+                <th>Special</th>
+                <th>Business Trip</th>
+                <th>Absent</th>
+                <th>Leave</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="tableDetails"> 
+                <tr>
+                    <td>1</td>
+                    <td>John Erwin Albos</td>
+                    <td>250.51</td>
+                    <td>1</td>
+                    <td>72</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>23.76</td>
+                    <td>23/9</td>
+                    <td>1</td>
+                    <td>14</td>
+                    <td>1</td>
+                    <td><button class="btn btn-primary" style="font-size: 14px;">Edit</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>John Erwin Albos</td>
+                    <td>250.51</td>
+                    <td>1</td>
+                    <td>72</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>23.76</td>
+                    <td>23/9</td>
+                    <td>1</td>
+                    <td>14</td>
+                    <td>1</td>
+                    <td><button class="btn btn-primary" style="font-size: 14px;">Edit</button></td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>John Erwin Albos</td>
+                    <td>250.51</td>
+                    <td>1</td>
+                    <td>72</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>23.76</td>
+                    <td>23/9</td>
+                    <td>1</td>
+                    <td>14</td>
+                    <td>1</td>
+                    <td><button class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" style="font-size: 14px;">Edit</button></td>
+                </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+       
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">DTR Form</h5>
+              </div>
+            
+              <div class="modal-body">
+                <form id="scheduleForm">
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <small><h6>Work Hrs</h6></small>
+                            </div>
+                            <div class="col-md-6">
+                                <small><h6>Late In</h6></small>
+                            </div>
+                        </div>
+ 
+                        <div class="row">
+                          <div class="col-md-3">
+
+                            
+                            <label for="requiredWorkHrs1"><small>Required</small></label><br>
+                            <select class="form-control" id="yearSelctor"> 
+                                <option value="205.51">205.51</option>
+                                <option value="196.54">196.54</option> 
+                            </select>
+                          </div> 
+                          <div class="col-md-3">
+                            <label for="actualWorkHrs1"><small>Actual</small></label><br>
+                            <input type="number" id="actualWorkHrs1" class="form-control" required>
+                          </div>
+                          <div class="col-md-3">
+                            <label for="actualWorkHrs2"><small>Time</small></label><br>
+                            <input type="number" id="actualWorkHrs2" class="form-control" required>
+                          </div>
+                          <div class="col-md-3">
+                            <label for="actualWorkHrs3"><small>Min.</small></label><br>
+                            <input type="number" id="actualWorkHrs3" class="form-control" required>
+                          </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <b><small><h6>Early Leave</h6></small></b>
+                            </div>
+                            <div class="col-md-6">
+                                <b><small><h6>Overtime</h6></small></b>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label for="requiredLateIn1"><small>Time</small></label><br>
+                            <input type="number" id="requiredLateIn1" class="form-control" required>
+                          </div>
+                          <div class="col-md-3">
+                            <label for="actualLateIn1"><small>Min.</small></label><br>
+                            <input type="number" id="actualLateIn1" class="form-control" required>
+                          </div>
+                          <div class="col-md-3">
+                            <label for="actualLateIn2"><small>Regular</small></label><br>
+                            <input type="number" id="actualLateIn2" class="form-control" required>
+                          </div>
+                          <div class="col-md-3">
+                            <label for="actualLateIn3"><small>Special</small></label><br>
+                            <input type="number" id="actualLateIn3" class="form-control" required>
+                          </div>
+                        </div>
+
+                        <hr>
+                        
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label for="requiredLateIn1"><small>ATND (Required/Actual)</small></label><br>
+                            <input type="number" id="requiredLateIn1" class="form-control" required>
+                          </div>
+                          <div class="col-md-3"><br>
+                            <label for="actualLateIn1"><small>Business Trip</small></label><br>
+                            <input type="number" id="actualLateIn1" class="form-control" required>
+                          </div>
+                          <div class="col-md-3"><br>
+                            <label for="actualLateIn2"><small>Absent</small></label><br>
+                            <input type="number" id="actualLateIn2" class="form-control" required>
+                          </div>
+                          <div class="col-md-3"><br>
+                            <label for="actualLateIn3"><small>Leave</small></label><br>
+                            <input type="number" id="actualLateIn3" class="form-control" required>
+                          </div>
+                        </div>
+
+                      </div> 
+                </form>
+
+            </div>   
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+
+        </div>
+    </div>
+    </div>
+
+      <!-- Modal -->
+      <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered custom-modal" role="document">
+          <div class="modal-content">      
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">DTR Form</h5>
+            </div>
+ 
+            <div class="modal-body">
+                <form id="scheduleForm">
+
+                    <h6>Work Hrs</h6><hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="col-md-6">
+                                <label for="withinDetails"><small>Required<span
+                                            style="color: #ff0000;"> *</span></small></label><br>
+                                <input type="number" id="scheduleDate" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="withinDetails"><small>Actual<span
+                                            style="color: #ff0000;"> *</span></small></label><br>
+                                <input type="number" id="scheduleTime" class="form-control" required>
+                            </div>
+                        </div>
+                            
+                        <div class="col-md-6">
+                            <div class="col-md-6">
+                                <label for="withinDetails"><small>Actual<span
+                                            style="color: #ff0000;"> *</span></small></label><br>
+                                <input type="number" id="scheduleTime" class="form-control" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="withinDetails"><small>Actual<span
+                                            style="color: #ff0000;"> *</span></small></label><br>
+                                <input type="number" id="scheduleTime" class="form-control" required>
+                            </div>
+                        </div><br>
+                    </div>
+                    <h6>Late In</h6><hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="withinDetails"><small>Required<span
+                                        style="color: #ff0000;"> *</span></small></label><br>
+                            <input type="number" id="scheduleDate" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="withinDetails"><small>Actual<span
+                                        style="color: #ff0000;"> *</span></small></label><br>
+                            <input type="number" id="scheduleTime" class="form-control" required>
+                        </div>
+                    </div>
+                     
+                </form> 
+            </div>
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <!--END YOUR CONTENT-->
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+    <script>
+       $(document).ready(function () { 
+            $("#txtInputTable").on("keyup", function () { 
+                var value = $(this).val().toLowerCase();      
+                $("#tableDetails tr").filter(function () { 
+                    $(this).toggle($(this).text() 
+                      .toLowerCase().indexOf(value) > -1) 
+                }); 
+            }); 
+
+            $('#filterdropdown').on('change', function(){
+            var selectedCategory = $(this).val().toLowerCase(); // Convert to lowercase
+            if (selectedCategory === 'all') {
+                $('#leaveManagement tbody tr').show();
+            } else {
+                $('#leaveManagement tbody tr').hide();
+
+            // Capitalize the first letter of selectedCategory
+            selectedCategory = selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1);
+
+            $('#leaveManagement tbody tr:has(td:contains("' + selectedCategory + '"))').show();
+        }
+    });
+        }); 
+  </script>
+
+
+
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+
+  <!-- DataTables JS -->
+  <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+
+
+
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+
+  <!-- Database Javascript --> 
+  <script src="bundles/dtr_summary.bundle.js"></script>
+  <script src="bundles/auth.bundle.js"></script>
+  <script src="bundles/navbar.bundle.js"></script>
+  <script src="js/sidebar.js"></script>
+
+
+  
+
+</body>
+
+</html>
