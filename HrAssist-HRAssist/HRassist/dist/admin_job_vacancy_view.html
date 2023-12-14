@@ -39,6 +39,204 @@
   <!-- Template Main CSS File -->
   <link href="css/employee-template.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <style>
+
+    .open-modal {
+      background-color: #3C3C3C;
+      border-radius: 2px;
+      box-shadow: 2px 2px 0 #F42A54;
+      color: white;
+      font-size: 20px;
+      padding: 10px;
+      transition: all 0.2s ease;
+      display: inline-block;
+      margin: 10px;
+      border-top: 1px solid transparent;
+      min-width: 150px;
+    }
+
+    .open-modal:hover {
+      cursor: pointer;
+      background-color: #E7E7E7;
+      color: #3C3C3C;
+      border-top: 1px solid #eEeeee;
+      box-shadow: 0.2px 0.2px 2px #F42A54;
+    }
+
+    @media (max-width: 500px){
+      .wrap {
+        width: 100%;
+      }
+    }
+
+    .pure-modal .checkbox{
+      display: none;
+    }
+
+    /* Gray background */
+    .pure-modal .pure-modal-overlay{
+      opacity: 0;
+      transition: all 0.3s ease;
+      width: 50%;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -100;
+      transform: scale(1);
+      display: none;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    /* Box */
+    .pure-modal .pure-modal-wrap{
+      background: #fdfbfb;
+      border-radius: 0.2em;
+      box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+      letter-spacing: 0.05em;
+      line-height: 1.6;
+      padding: 40px 65px;
+      width: 60%;
+      margin: 20px auto;
+      align-self: flex-start;
+      transition: all 0.5s ease;
+    }
+    .pure-modal .pure-modal-wrap.small{
+      width: 30%;
+    }
+    .pure-modal .pure-modal-wrap.full{
+      width: 100%;
+      height: 100%;
+    }
+
+    .pure-modal .pure-modal-wrap.a-center {
+      align-self: center;
+      margin-top: 470px;
+      margin-bottom: 50px;
+    }
+
+    /* Close button */
+    .pure-modal .pure-modal-overlay .close{
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      background: #282c34;
+      border-radius: 50%;
+      justify-content: center;
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      font-size: 15px;
+      width: 30px;
+      height: 30px;
+      color: #d1d1d1;
+    }
+
+    .pure-modal .pure-modal-overlay .close:hover{
+      cursor: pointer;
+      background-color: #d1d1d1;
+      color: #4b5361;
+      transition: all 0.3s ease;
+    }
+
+
+    .pure-modal .o-close {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: -100;
+    }
+
+    .pure-modal input:checked ~ .o-close {
+      z-index: 9998;
+    }
+    .pure-modal input:checked ~ .pure-modal-overlay{
+      transform: scale(1);
+      opacity:1;
+      z-index: 9997;
+      overflow: auto;
+      display: flex;
+      animation-duration: 0.5s;
+      animation-name: fade-in;
+      -moz-animation-duration: 0.5s;
+      -moz-animation-name: fade-in;
+      -webkit-animation-duration: 0.5s;
+      -webkit-animation-name: fade-in;
+    }
+    .pure-modal input:checked ~ .pure-modal-overlay .pure-modal-wrap {
+      transform: translateY(0);
+      z-index: 9999;
+    }
+
+    /* Responsive Design */
+    /* Tablet size */
+    @media (max-width: 800px){
+      .pure-modal .pure-modal-wrap {
+        width: 80%;
+        padding: 20px;
+      }
+    }
+
+    /* Phone size */
+    @media (max-width: 500px){
+      .pure-modal .pure-modal-wrap {
+        width: 90%;
+      }
+    }
+
+    /* Fadein from display:none */
+    @keyframes fade-in {
+      0% {
+        display: none;
+        opacity: 0;
+      }
+      1% {
+        display: flex;
+        opacity: 0;
+      }
+      100% {
+        display: flex;
+        opacity: 1;
+      }
+    }
+
+    @-moz-keyframes fade-in {
+      0% {
+        display: none;
+        opacity: 0;
+      }
+      1% {
+        display: flex;
+        opacity: 0;
+      }
+      100% {
+        display: flex;
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fade-in {
+      0% {
+        display: none;
+        opacity: 0;
+      }
+      1% {
+        display: flex;
+        opacity: 0;
+      }
+      100% {
+        display: flex;
+        opacity: 1;
+      }
+    }
+
+  </style>
+
 </head>
 
 <body>
@@ -419,6 +617,79 @@
       </div>
     </section>
     <!--END YOUR CONTENT-->
+
+    <label for="modal-trigger-center" class="open-modal">Open Modal</label>
+    <!-- Center modal -->
+    <div class="pure-modal">
+      <input id="modal-trigger-center" class="checkbox" type="checkbox">
+      <div class="pure-modal-overlay">
+        <label for="modal-trigger-center" class="o-close"></label>
+        <div class="pure-modal-wrap a-center">
+          <label for="modal-trigger-center" class="close">&#10006;</label>
+          <div class="container">
+            <header>Job Details</header>
+            <div class="content">
+              <form id="jobForm">
+                
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Job Title</span>
+                        <input type="text" placeholder="Enter Job Title" id="inputJobTitle">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Job Type</span>
+                        <select id="inputJobType" required>
+                            <option disabled selected>Select Job Type</option>
+                            <option>Full-Time</option>
+                            <option>Part-Time</option>
+                            <option>Contract</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Salary</span>
+                        <input type="text" placeholder="Enter Salary Amount" id="inputSalaryAmount">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Application Deadline</span>
+                        <input type="date" placeholder="Enter Date of Deadline" id="inputDate">
+                    </div>
+                </div>
+                <div class="job-details">
+                    <div class="input-box">
+                        <span class="details">Job Description</span>
+                        <textarea style="resize: none;" cols="128" rows="5" name="message" id="inputJobDesc" placeholder="Write description here..."></textarea>
+                        <a href="javascript:myClickHandler();" class="add" >+ Add Information</a>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Responsibility</span>
+                        <textarea style="resize: none;" cols="128" rows="5" name="message" id="inputJobResponsibility" placeholder="Write responsibility here..."></textarea>
+                        <a href="javascript:myClickHandler();" class="add">+ Add Information</a>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Qualification</span>
+                        <textarea style="resize: none;" cols="128" rows="5" name="message" id="inputJobQuality" placeholder="Write responsibility here..."></textarea>
+                        <a href="javascript:myClickHandler();" class="add" >+ Add Information</a>
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box">
+                      <span class="details">Number of Vacancy</span>
+                      <input type="number" placeholder="Enter No. of Vacancy" id="inputJobVacancy">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Location</span>
+                        <input type="text" placeholder="Enter Location" id="inputJobLocation">
+                    </div>
+
+                  </div>
+                <button type="button" class="submit" id="inputJobSubmit">Post Job</button>
+              </form>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal -->
 
   </main><!-- End #main -->
 

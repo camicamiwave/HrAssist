@@ -22,10 +22,58 @@ import { fetchEmployeeInfo } from './fetch_employee_info.js';
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
+function validateForm() {
+  
+  
+    var eventnameInput = document.getElementById('event-name');
+    var particpantInput = document.getElementById('participants');
+    var startfromInput = document.getElementById('start-from');
+    var endtoInput = document.getElementById('end-to');
+
+       if (
+       eventnameInput.value.trim() === '' ||
+       particpantInput.value.trim() === '' ||
+       startfromInput.value.trim() === '' ||
+       endtoInput.value.trim() === ''
+     ) {
+        console.log('Please fill in all required fields.');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please fill in all required fields.',
+            icon: 'error',
+        });
+       return false;
+     }
+    
+
+     if (!isValidString(eventnameInput.value)) {
+        console.log('Please input valid informatiom');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please input valid informatiom',
+            icon: 'error',
+        });
+         return false;
+     }
+
+     
+
+     return true;
+ }
+
+
+ function isValidString(value) {
+
+     return /^[a-zA-Z\s]*$/.test(value.trim());
+ }
+
 function AddEventsCalendar() {
     const CalendarcolRef = collection(db, 'Calendar Information');
 
     document.getElementById('btnSubmit').addEventListener('click', () => {
+
+        if  (validateForm()) {
+            
         const eventName = document.querySelector('.event-name').value;
         const participants = document.getElementById('participants').value;
         const tagColor = document.querySelector('.tag-color').value;
@@ -86,6 +134,11 @@ function AddEventsCalendar() {
                 });
             }
         });
+    } else {
+        console.log('Form is not valid. Please correct errors.');
+    }
+
+
     });
 }
 

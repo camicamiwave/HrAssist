@@ -84,6 +84,9 @@ export function EmployeeRequestForm() {
                     const employeeDocID = data.documentID;
 
                     leaveSubmitBtn.addEventListener('click', (e) => {
+
+                        if (validateForm()) {
+
                         if (leave_form) {
 
                             const leaveFormData = {
@@ -176,6 +179,10 @@ export function EmployeeRequestForm() {
                             });
                             
                         }
+
+                    } else {
+                        console.log('Form is not valid. Please correct errors.');
+                    }
                     })
 
                 })
@@ -239,5 +246,98 @@ function ReturnDocumentID(docRef) {
 
     const EmpcustomDocId = docRef.id;
     return setDoc(doc(RequestcolRef, EmpcustomDocId), { documentID: EmpcustomDocId }, { merge: true });
+}
+
+function validateForm() {
+
+    var leaveoption = document.getElementById('leaveTypeSelector');
+    var vacationCheckBox = document.getElementById('specifyVacationCheckbox');
+    var sickCheckBox = document.getElementById('specifySickCheckbox');
+    var womenCheckBox = document.getElementById('specifyWomenCheckbox');
+    var studyCheckBox = document.getElementById('specifyStudyCheckbox');
+    var inclusives = document.getElementById('inclusiveDates');
+    var attachments = document.getElementById('inputAttachment');
+    var withinDetailsInput = document.getElementById('withinDetails');
+    var abroadDetailsInput = document.getElementById('abroadDetails');
+    var inHospitalInput = document.getElementById('inputInHospital');
+    var outPatientInput = document.getElementById('inputoutPatient'); 
+    var SpecialleavewomenInput = document.getElementById('inputSpecialLeaveWomen');
+
+
+    if (!isValidString(withinDetailsInput.value)) {
+        console.log('Please enter a valid input!');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please enter a valid input',
+            icon: 'error',
+        });
+        return false;
+    }
+
+
+    if (!isValidString(abroadDetailsInput.value)) {
+        console.log('Please enter a valid input!');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please enter a valid input',
+            icon: 'error',
+        });
+        return false;
+    }
+
+    if (!isValidString(inHospitalInput.value)) {
+        console.log('Please enter a valid input!');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please enter a valid input',
+            icon: 'error',
+        });
+        return false;
+    }
+
+    if (!isValidString(outPatientInput.value)) {
+        console.log('Please enter a valid input!');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please enter a valid input',
+            icon: 'error',
+        });
+        return false;
+    }
+    
+    if (!isValidString(SpecialleavewomenInput.value)) {
+        console.log('Please enter a valid input!');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please enter a valid input',
+            icon: 'error',
+        });
+        return false;
+    }
+
+    if (!isValidFileType(attachments)) {
+        console.log('Please enter a valid input!');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please upload a valid file (PDF, DOC/DOCX, PNG, or JPEG).',
+            icon: 'error',
+        });
+        return false;
+    }
+
+    return true;
+}
+
+
+function isValidString(value) {
+
+    return /^[a-zA-Z\s]*$/.test(value.trim());
+}
+
+function isValidFileType(fileInput) {
+    var fileName = fileInput.value;
+    var fileExtension = fileName.split('.').pop().toLowerCase();
+    var allowedExtensions = ['pdf', 'doc', 'docx', 'png', 'jpeg', 'jpg'];
+    return allowedExtensions.includes(fileExtension);
 }
 
