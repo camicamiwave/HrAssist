@@ -356,13 +356,14 @@
     
 
 
-    <div class="table">
+    <!-- ito mahalaga -->
+    <div class="table" id="searchDTRLayout">
  
         <br>
         <hr> 
         <div class="select-employee">
             <div class="container"> 
-
+              
                     <div class="row" style="margin-top: -5%;">
                         <div class="col-md-6">
                             <label><small>For the month of:</small></label>
@@ -439,6 +440,7 @@
 
     </div>
     
+    <!-- ito mahalaga -->
     <section class="section dashboard" id="tableSectionDTRSummary" style="display: none;">
       <!--START YOUR CONTENT HERE -->
       <div class="content-wrapper">
@@ -466,7 +468,7 @@
                   <th colspan="2">Late In</th>
                   <th colspan="2">Early Leave</th>
                   <th colspan="2">Overtime</th>
-                  <th colspan="4"></th>
+                  <th colspan="5"></th>
                 </tr>
               <tr>
                 <th></th>
@@ -479,82 +481,51 @@
                 <th>Min</th>
                 <th>Regular</th>
                 <th>Special</th>
+                <th>ATND (Required/Actual)</th>
                 <th>Business Trip</th>
                 <th>Absent</th>
                 <th>Leave</th>
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody id="tableDetails"> 
-                <tr>
-                    <td>1</td>
-                    <td>John Erwin Albos</td>
-                    <td>250.51</td>
-                    <td>1</td>
-                    <td>72</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>2</td>
-                    <td>23.76</td>
-                    <td>23/9</td>
-                    <td>1</td>
-                    <td>14</td>
-                    <td>1</td>
-                    <td><button class="btn btn-primary" style="font-size: 14px;">Edit</button></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>John Erwin Albos</td>
-                    <td>250.51</td>
-                    <td>1</td>
-                    <td>72</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>2</td>
-                    <td>23.76</td>
-                    <td>23/9</td>
-                    <td>1</td>
-                    <td>14</td>
-                    <td>1</td>
-                    <td><button class="btn btn-primary" style="font-size: 14px;">Edit</button></td>
-                </tr>
+            <tbody id="tableDetails">  
 
-                <tr>
-                    <td>3</td>
+                <!--<tr>
+                    <td>1</td>
                     <td>John Erwin Albos</td>
-                    <td>250.51</td>
-                    <td>1</td>
-                    <td>72</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>2</td>
-                    <td>23.76</td>
-                    <td>23/9</td>
-                    <td>1</td>
-                    <td>14</td>
-                    <td>1</td>
+                    <td>40</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td><button class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" style="font-size: 14px;">Edit</button></td>
-                </tr>
+                </tr>-->
 
             </tbody>
           </table>
         </div>
       </div>
-    </section>
+    </section>    
        
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal fade bd-example-modal-lg" id="#dtrSummaryModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">DTR Form</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Employee's DTR Summary Form</h5>
               </div>
-            
+
               <div class="modal-body">
-                <form id="scheduleForm">
+                <form id="dtrSummaryForm">
 
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <small><h6>Work Hrs</h6></small>
                             </div>
                             <div class="col-md-6">
@@ -564,25 +535,27 @@
  
                         <div class="row">
                           <div class="col-md-3">
-
-                            
                             <label for="requiredWorkHrs1"><small>Required</small></label><br>
-                            <select class="form-control" id="yearSelctor"> 
-                                <option value="205.51">205.51</option>
-                                <option value="196.54">196.54</option> 
-                            </select>
+                            <select class="form-control" id="requiredSelector"> 
+                              <option value="40">40</option>
+                              <option value="32">32</option>  
+                              <option value="24">24</option>
+                              <option value="16">16</option>
+                              <option value="8">8</option>      
+                          </select> 
                           </div> 
+                          <!--
                           <div class="col-md-3">
                             <label for="actualWorkHrs1"><small>Actual</small></label><br>
-                            <input type="number" id="actualWorkHrs1" class="form-control" required>
-                          </div>
+                            <input type="number" id="actualWorkHours" class="form-control" value="40" disabled required>
+                          </div>-->
                           <div class="col-md-3">
                             <label for="actualWorkHrs2"><small>Time</small></label><br>
-                            <input type="number" id="actualWorkHrs2" class="form-control" required>
+                            <input type="number" id="actualWorkTime" class="form-control" required>
                           </div>
                           <div class="col-md-3">
                             <label for="actualWorkHrs3"><small>Min.</small></label><br>
-                            <input type="number" id="actualWorkHrs3" class="form-control" required>
+                            <input type="number" id="actualWorkMin" class="form-control" required>
                           </div>
                         </div>
                         
@@ -598,50 +571,51 @@
                         <div class="row">
                           <div class="col-md-3">
                             <label for="requiredLateIn1"><small>Time</small></label><br>
-                            <input type="number" id="requiredLateIn1" class="form-control" required>
+                            <input type="number" id="earyLeaveTime" class="form-control" required>
                           </div>
                           <div class="col-md-3">
                             <label for="actualLateIn1"><small>Min.</small></label><br>
-                            <input type="number" id="actualLateIn1" class="form-control" required>
+                            <input type="number" id="earyLeaveMin" class="form-control" required>
                           </div>
                           <div class="col-md-3">
                             <label for="actualLateIn2"><small>Regular</small></label><br>
-                            <input type="number" id="actualLateIn2" class="form-control" required>
+                            <input type="number" id="overtimeRegular" class="form-control" required>
                           </div>
                           <div class="col-md-3">
                             <label for="actualLateIn3"><small>Special</small></label><br>
-                            <input type="number" id="actualLateIn3" class="form-control" required>
+                            <input type="number" id="overtimeSpecial" class="form-control" required>
                           </div>
                         </div>
 
                         <hr>
                         
                         <div class="row">
-                          <div class="col-md-3">
+                          <!--<div class="col-md-3">
                             <label for="requiredLateIn1"><small>ATND (Required/Actual)</small></label><br>
-                            <input type="number" id="requiredLateIn1" class="form-control" required>
-                          </div>
+                            <input type="text" id="noATTND" class="form-control" value="5/5" disabled required>
+                          </div>-->
                           <div class="col-md-3"><br>
                             <label for="actualLateIn1"><small>Business Trip</small></label><br>
-                            <input type="number" id="actualLateIn1" class="form-control" required>
+                            <input type="number" id="noBusinessTrip" class="form-control" required>
                           </div>
                           <div class="col-md-3"><br>
                             <label for="actualLateIn2"><small>Absent</small></label><br>
-                            <input type="number" id="actualLateIn2" class="form-control" required>
+                            <input type="number" id="noAbsent" class="form-control" required>
                           </div>
                           <div class="col-md-3"><br>
                             <label for="actualLateIn3"><small>Leave</small></label><br>
-                            <input type="number" id="actualLateIn3" class="form-control" required>
+                            <input type="number" id="noLeave" class="form-control" required>
                           </div>
                         </div>
 
                       </div> 
                 </form>
 
+
             </div>   
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" id="dtrSummaryBtn">Save changes</button>
               </div>
 
         </div>
@@ -784,8 +758,10 @@
 
   <!-- JavaScript -->
   <script src="js/script.js"></script>
+  <script src="js/dtr_summary_calculator.js"></script>
 
   <!-- Database Javascript --> 
+  <script src="bundles/save_dtr_summary.bundle.js"></script>
   <script src="bundles/dtr_summary.bundle.js"></script>
   <script src="bundles/auth.bundle.js"></script>
   <script src="bundles/navbar.bundle.js"></script>

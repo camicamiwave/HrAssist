@@ -59,7 +59,8 @@ module.exports = {
         opcrf: './src/opcrf.js',
         opcrf_list: './src/opcrf_list.js',
         individual_opcrf: './src/individual_opcrf.js',
-        dtr_summary: './src/dtr_summary.js'
+        dtr_summary: './src/dtr_summary.js',
+        save_dtr_summary: './src/save_dtr_summary.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),
