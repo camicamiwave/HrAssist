@@ -404,7 +404,7 @@ function fetchDTRSummary() {
 
                                     // Subtract adjustedAbsentHours from totalAbsentHours
                                     const totalAbsentHours = roundToTwoDecimals(adjustedRequiredHours - (parseInt(adjustedAbsentHours, 10) || 0));
-
+                                     
                                     // Create an object to hold the updated data
                                     const updatedData = {
                                         RequiredHours: parseInt(requiredSelector.value, 10) || "" || "",
@@ -416,9 +416,34 @@ function fetchDTRSummary() {
                                         regularOvertime: parseInt(overtimeRegular.value, 10) || "",
                                         specialOvertime: parseInt(overtimeSpecial.value, 10) || "",
                                         businessTrip: parseInt(noBusinessTrip.value, 10) || "",
+                                        atnd: "",
                                         absent: parseInt(noAbsent.value, 10) || 0,
                                         leave: parseInt(noLeave.value, 10) || "",
                                     };
+
+                                    // Calculate antd based on totalAbsentHours
+                                    switch (true) {
+                                        case (totalAbsentHours >= 33 && totalAbsentHours <= 40):
+                                            updatedData.atnd = '5/5';
+                                            break;
+                                        case (totalAbsentHours >= 25 && totalAbsentHours <= 32):
+                                            updatedData.atnd = '5/4';
+                                            break;
+                                        case (totalAbsentHours >= 17 && totalAbsentHours <= 24):
+                                            updatedData.atnd = '5/3';
+                                            break;
+                                        case (totalAbsentHours >= 9 && totalAbsentHours <= 16):
+                                            updatedData.atnd = '5/2';
+                                            break;
+                                        case (totalAbsentHours >= 0 && totalAbsentHours <= 8):
+                                            updatedData.atnd = '5/1';
+                                            break;
+                                        // Handle other cases if needed
+                                        default:
+                                            updatedData.atnd = ''; // Set the desired default value
+                                            break;
+                                    }
+
 
                                     // Assuming you have the document ID you want to update
                                     const documentIdToUpdate = receivedStringData;
