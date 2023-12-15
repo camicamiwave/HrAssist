@@ -392,37 +392,33 @@ function fetchDTRSummary() {
                                     const adjustedActualHours = parseInt(actualWorkTime.value, 10) - (minsLateIn / 60) || 0;
 
                                     // Calculate the adjusted required hours
-const adjustedRequiredHours = parseInt(requiredSelector.value, 10) - (minsLateIn / 60) - (minsEarlyLeave / 60) || 0;
+                                    const adjustedRequiredHours = parseInt(requiredSelector.value, 10) - (minsLateIn / 60) - (minsEarlyLeave / 60) || 0;
 
-// Multiply the number of absences by 8 hours
-const adjustedAbsentHours = (parseInt(noAbsent.value, 10) || 0) * 8;
+                                    // Multiply the number of absences by 8 hours
+                                    const adjustedAbsentHours = (parseInt(noAbsent.value, 10) || 0) * 8;
 
-console.log(dtrEmployeeDetails.ActualHours)
+                                    console.log(dtrEmployeeDetails.ActualHours)
 
-// Subtract adjustedAbsentHours from adjustedRequiredHours
-const totalAbsentHours = (parseInt(adjustedRequiredHours, 10) || 0) - adjustedAbsentHours;
+                                    // Round a number to the nearest two decimals
+                                    const roundToTwoDecimals = (number) => Math.round((number + Number.EPSILON) * 100) / 100;
 
-// Round a number to the nearest two decimals
-const roundToTwoDecimals = (number) => Math.round((number + Number.EPSILON) * 100) / 100;
+                                    // Subtract adjustedAbsentHours from totalAbsentHours
+                                    const totalAbsentHours = roundToTwoDecimals(adjustedRequiredHours - (parseInt(adjustedAbsentHours, 10) || 0));
 
-// Calculate ActualHours and round it to two decimals
-const actualHours = totalAbsentHours < 0 ? 0 : totalAbsentHours;
-const roundedActualHours = roundToTwoDecimals(actualHours);
-
-// Create an object to hold the updated data
-const updatedData = {
-    RequiredHours: roundToTwoDecimals(parseInt(requiredSelector.value, 10) || "") || "",
-    ActualHours: roundedActualHours,
-    NoTimeLateIn: parseInt(actualWorkTime.value, 10) || "",
-    MinsLateIn: parseInt(actualWorkMin.value, 10) || "",
-    NoTimeEarlyLeave: parseInt(earyLeaveTime.value, 10) || "",
-    MinsEarlyLeave: parseInt(earyLeaveMin.value, 10) || "",
-    regularOvertime: parseInt(overtimeRegular.value, 10) || "",
-    specialOvertime: parseInt(overtimeSpecial.value, 10) || "",
-    businessTrip: parseInt(noBusinessTrip.value, 10) || "",
-    absent: parseInt(noAbsent.value, 10) || 0,
-    leave: parseInt(noLeave.value, 10) || "",
-};
+                                    // Create an object to hold the updated data
+                                    const updatedData = {
+                                        RequiredHours: parseInt(requiredSelector.value, 10) || "" || "",
+                                        ActualHours: totalAbsentHours < 0 ? 0 : totalAbsentHours ,
+                                        NoTimeLateIn: parseInt(actualWorkTime.value, 10) || "",
+                                        MinsLateIn: parseInt(actualWorkMin.value, 10) || "",
+                                        NoTimeEarlyLeave: parseInt(earyLeaveTime.value, 10) || "",
+                                        MinsEarlyLeave: parseInt(earyLeaveMin.value, 10) || "",
+                                        regularOvertime: parseInt(overtimeRegular.value, 10) || "",
+                                        specialOvertime: parseInt(overtimeSpecial.value, 10) || "",
+                                        businessTrip: parseInt(noBusinessTrip.value, 10) || "",
+                                        absent: parseInt(noAbsent.value, 10) || 0,
+                                        leave: parseInt(noLeave.value, 10) || "",
+                                    };
 
                                     // Assuming you have the document ID you want to update
                                     const documentIdToUpdate = receivedStringData;
