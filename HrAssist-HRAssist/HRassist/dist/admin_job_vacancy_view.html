@@ -36,6 +36,8 @@
   <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
   <script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   <!-- Template Main CSS File -->
   <link href="css/employee-template.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -598,13 +600,17 @@
               </form>
             </div>
           </section>
-          <table class="content-table" id="jobVacancyTable">
+          <table class="content-table" id="jobVacancyTable" style="font-size: 14px">
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Job Title</th>
                 <th>Job Type</th>
+                <th>Office</th>
+                <th>Salary</th>
+                <th>Number of Vacancy</th>
                 <th>Application Deadline</th>
+                <th>Application Status</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -615,82 +621,30 @@
         </div>
       </div>
       </div>
-    </section>
-    <!--END YOUR CONTENT-->
-
-    <label for="modal-trigger-center" class="open-modal">Open Modal</label>
-    <!-- Center modal -->
-    <div class="pure-modal">
-      <input id="modal-trigger-center" class="checkbox" type="checkbox">
-      <div class="pure-modal-overlay">
-        <label for="modal-trigger-center" class="o-close"></label>
-        <div class="pure-modal-wrap a-center">
-          <label for="modal-trigger-center" class="close">&#10006;</label>
-          <div class="container">
-            <header>Job Details</header>
-            <div class="content">
-              <form id="jobForm">
-                
-                <div class="user-details">
-                    <div class="input-box">
-                        <span class="details">Job Title</span>
-                        <input type="text" placeholder="Enter Job Title" id="inputJobTitle">
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Job Type</span>
-                        <select id="inputJobType" required>
-                            <option disabled selected>Select Job Type</option>
-                            <option>Full-Time</option>
-                            <option>Part-Time</option>
-                            <option>Contract</option>
-                        </select>
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Salary</span>
-                        <input type="text" placeholder="Enter Salary Amount" id="inputSalaryAmount">
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Application Deadline</span>
-                        <input type="date" placeholder="Enter Date of Deadline" id="inputDate">
-                    </div>
-                </div>
-                <div class="job-details">
-                    <div class="input-box">
-                        <span class="details">Job Description</span>
-                        <textarea style="resize: none;" cols="128" rows="5" name="message" id="inputJobDesc" placeholder="Write description here..."></textarea>
-                        <a href="javascript:myClickHandler();" class="add" >+ Add Information</a>
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Responsibility</span>
-                        <textarea style="resize: none;" cols="128" rows="5" name="message" id="inputJobResponsibility" placeholder="Write responsibility here..."></textarea>
-                        <a href="javascript:myClickHandler();" class="add">+ Add Information</a>
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Qualification</span>
-                        <textarea style="resize: none;" cols="128" rows="5" name="message" id="inputJobQuality" placeholder="Write responsibility here..."></textarea>
-                        <a href="javascript:myClickHandler();" class="add" >+ Add Information</a>
-                    </div>
-                </div>
-                <div class="user-details">
-                    <div class="input-box">
-                      <span class="details">Number of Vacancy</span>
-                      <input type="number" placeholder="Enter No. of Vacancy" id="inputJobVacancy">
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Location</span>
-                        <input type="text" placeholder="Enter Location" id="inputJobLocation">
-                    </div>
-
-                  </div>
-                <button type="button" class="submit" id="inputJobSubmit">Post Job</button>
-              </form>
-            </div>
-        </div>
+    </section> 
+    
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Job Vacancy</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to delete this job vacancy?</p>
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="closeBtn" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger" id="deleteBtnModal">Delete</button>
+          </div>
         </div>
       </div>
     </div>
-    <!-- End Modal -->
-
+    
   </main><!-- End #main -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
@@ -722,6 +676,10 @@
     });
   });
   </script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>

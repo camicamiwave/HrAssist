@@ -63,7 +63,8 @@
     "opcrf_list": "node opcrf_list.js",
     "individual_opcrf": "node individual_opcrf.js",
     "dtr_summary": "node dtr_summary.js",
-    "save_dtr_summary": "node save_dtr_summary.js"
+    "save_dtr_summary": "node save_dtr_summary.js",
+    "employee_reward": "node employee_reward.js"
   },
   "keywords": [],
   "author": "",
