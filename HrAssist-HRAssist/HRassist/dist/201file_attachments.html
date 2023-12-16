@@ -146,72 +146,80 @@
                             
                             <script>
                                 $(document).ready(function () {
-                                    // Array to store uploaded files
-                                    window.AttachmentuploadedFiles = [];
-                                    window.AttachmentFiles = [];
-                            
-                                    // Function to update file list and renumber
-                                    function updateFileList() {
-                                        $("#fileListBody").empty(); // Clear the existing rows
-                                        for (let i = 0; i < AttachmentuploadedFiles.length; i++) {
-                                            const file = AttachmentuploadedFiles[i];
-                            
-                                            const row = $("<tr>");
-                                            const fileNameCell = $("<td class='file-name'>");
-                                            const actionCell = $("<td class='text-center'>");
-                                            const deleteButton = $("<button type='button' class='btn btn-danger btn-delete-file'><i class='bi bi-trash'></i> Delete</button>");
-                            
-                                            const fileRow = $("<div><p class='file-link'>" + file.name + "</p></div>");
-                                            fileNameCell.append(fileRow);
-                            
-                                            // Add the row to the table
-                                            actionCell.append(deleteButton);
-                                            row.append("<th scope='row'>" + (i + 1) + "</th>", fileNameCell, actionCell);
-                                            $("#fileListBody").append(row);
-                            
-                                            // Delete button click event
-                                            deleteButton.click(function () {
-                                                // Implement your logic to delete the uploaded file
-                                                AttachmentuploadedFiles.splice(i, 1); // Remove the file from the array
-                                                updateFileList(); // Update the file list after deletion
-                                            });
-                                        }
-                                    }
-                            
-                                    // Add New button click event
-                                    $("#addNewButton").click(function () {
-                                        const fileInput = $("<input type='file' class='file-input' style='display: none;' />");
-                            
-                                        fileInput.change(function () {
-                                            const files = this.files;
-                            
-                                            if (files.length > 0) {
-                                                for (let i = 0; i < files.length; i++) {
-                                                    const fileName = files[i].name;
-                            
-                                                    // Store file information in the array
-                                                    AttachmentuploadedFiles.push({
-                                                        id: AttachmentuploadedFiles.length + 1,
-                                                        name: fileName,
-                                                        // Add other file information if needed
-                                                    });
+                                // Array to store uploaded files
+                                window.AttachmentuploadedFiles = [];
+                                window.AttachmentFiles = [];
 
-                                                    AttachmentFiles.push(files[i])
-                                                }
-                            
-                                                updateFileList(); // Update the file list after adding files
-                                            }
-                                        });
-                            
-                                        fileInput.click();
+                                // Function to update file list and renumber
+                                function updateFileList() {
+                                $("#fileListBody").empty(); // Clear the existing rows
+                                for (let i = 0; i < AttachmentuploadedFiles.length; i++) {
+                                    const file = AttachmentuploadedFiles[i];
+
+                                    const row = $("<tr>");
+                                    const fileNameCell = $("<td class='file-name'>");
+                                    const actionCell = $("<td class='text-center'>");
+                                    const deleteButton = $("<button type='button' class='btn btn-danger btn-delete-file'><i class='bi bi-trash'></i> Delete</button>");
+
+                                    const fileRow = $("<div><p class='file-link'>" + file.name + "</p></div>");
+                                    fileNameCell.append(fileRow);
+
+                                    // Add data attribute to store file index
+                                    deleteButton.attr("data-file-index", i);
+
+                                    // Add the row to the table
+                                    actionCell.append(deleteButton);
+                                    row.append("<th scope='row'>" + (i + 1) + "</th>", fileNameCell, actionCell);
+                                    $("#fileListBody").append(row);
+
+                                    // Delete button click event
+                                    deleteButton.click(function () {
+                                        // Retrieve the file index from the data attribute
+                                        const fileIndex = $(this).data("file-index");
+
+                                        // Implement your logic to delete the uploaded file
+                                        AttachmentuploadedFiles.splice(fileIndex, 1); // Remove the file from the array
+                                        AttachmentFiles.splice(fileIndex, 1); // Remove the file from the AttachmentFiles array
+                                        updateFileList(); // Update the file list after deletion
                                     });
-                            
-                                    // Example function to retrieve uploaded files
-                                    function getUploadedFiles() {
-                                        console.log(AttachmentuploadedFiles, 'Hey...')
-                                        return AttachmentuploadedFiles;
+                                }
+                                }
+
+                                // Add New button click event
+                                $("#addNewButton").click(function () {
+                                const fileInput = $("<input type='file' class='file-input' style='display: none;' />");
+
+                                fileInput.change(function () {
+                                    const files = this.files;
+
+                                    if (files.length > 0) {
+                                        for (let i = 0; i < files.length; i++) {
+                                            const fileName = files[i].name;
+
+                                            // Store file information in the array
+                                            AttachmentuploadedFiles.push({
+                                                id: AttachmentuploadedFiles.length + 1,
+                                                name: fileName,
+                                                // Add other file information if needed
+                                            });
+
+                                            AttachmentFiles.push(files[i]);
+                                        }
+
+                                        updateFileList(); // Update the file list after adding files
                                     }
                                 });
+
+                                fileInput.click();
+                                });
+
+                                // Example function to retrieve uploaded files
+                                function getUploadedFiles() {
+                                console.log(AttachmentuploadedFiles, 'Hey...');
+                                return AttachmentuploadedFiles;
+                                }
+                                });
+
                             </script>
                             
                             <br><br><br>
