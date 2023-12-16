@@ -111,11 +111,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                             //{ value: leaveCreditdata.Leave_Credit['Maternity Leave'].RemainingUnits, name: 'Maternity Leave' },
                                             { value: leaveCreditdata.Leave_Credit['Paternity Leave'].RemainingUnits, name: 'Paternity Leave' },
                                             { value: leaveCreditdata.Leave_Credit['Study Leave'].RemainingUnits, name: 'Study Leave' },
-                                            { value: leaveCreditdata.Leave_Credit['10-Day VAWC Leave'].RemainingUnits, name: '10-Day VAWC Leave' },
+                                            //{ value: leaveCreditdata.Leave_Credit['10-Day VAWC Leave'].RemainingUnits, name: '10-Day VAWC Leave' },
                                             { value: leaveCreditdata.Leave_Credit['Special Emergency (Calamity) Leave'].RemainingUnits, name: 'Special Emergency (Calamity) Leave' },
                                             { value: leaveCreditdata.Leave_Credit['Rehabilitation Priviledge'].RemainingUnits, name: 'Rehabilitation Priviledge' },
                                             { value: leaveCreditdata.Leave_Credit['Special Privilege Leave'].RemainingUnits, name: 'Special Privilege Leave' }
                                         ];
+                                      
                                     } else if (employee_data.Personal_Information.Gender === "Female"){
                                         return [
                                             { value: leaveCreditdata.Leave_Credit['Vacation Leave'].RemainingUnits, name: 'Vacation Leave' },

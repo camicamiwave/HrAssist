@@ -82,7 +82,18 @@ export function EmployeeRequestForm() {
                     const data = dataRetrieved;
 
                     const employeeDocID = data.documentID;
+                    console.log(data.Personal_Information.Gender, 'asfsaf')
 
+                    if (data.Personal_Information.Gender === "Male"){
+                        hideMaternityLeaveOption()
+                        hideVAWCLeaveOption()
+                        hideSLFWOption()
+
+                    }else if (data.Personal_Information.Gender === "Female") {
+                        hidePaternityLeaveOption()
+                    }
+
+                    
                     leaveSubmitBtn.addEventListener('click', (e) => {
 
                         if (validateForm()) {
@@ -264,6 +275,30 @@ function validateForm() {
     var SpecialleavewomenInput = document.getElementById('inputSpecialLeaveWomen');
 
 
+
+   
+    if (leaveoption.value === '--- Select ---') {
+        console.log('Please select a leave option!');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please select a leave option',
+            icon: 'error',
+        });
+        return false;
+    }
+
+    if (inclusives.value === 'dd/mm/yyyy') {
+        console.log('Please enter inclusive dates');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please enter inclusive dates',
+            icon: 'error',
+        });
+        return false;
+    }
+
+
+
     if (!isValidString(withinDetailsInput.value)) {
         console.log('Please enter a valid input!');
         Swal.fire({
@@ -334,6 +369,11 @@ function isValidString(value) {
     return /^[a-zA-Z\s]*$/.test(value.trim());
 }
 
+function isEmpty(value) {
+
+    return value && value.trim() === '';
+}
+
 function isValidFileType(fileInput) {
     var fileName = fileInput.value;
     var fileExtension = fileName.split('.').pop().toLowerCase();
@@ -341,3 +381,30 @@ function isValidFileType(fileInput) {
     return allowedExtensions.includes(fileExtension);
 }
 
+function hideMaternityLeaveOption() {
+    const maternityLeaveOption = document.querySelector('select#leaveTypeSelector option[value="Maternity Leave"]');
+    if (maternityLeaveOption) {
+        maternityLeaveOption.style.display = 'none';
+    }
+}
+
+function hideVAWCLeaveOption() {
+    const vawcLeaveOption = document.querySelector('select#leaveTypeSelector option[value="10-Day VAWC Leave"]');
+    if (vawcLeaveOption) {
+        vawcLeaveOption.style.display = 'none';
+    }
+}
+
+function hideSLFWOption() {
+    const SLFWOption = document.querySelector('select#leaveTypeSelector option[value="Special Leave Benefits for Women"]');
+    if (SLFWOption) {
+        SLFWOption.style.display = 'none';
+    }
+}
+
+function hidePaternityLeaveOption() {
+    const PaternityOption = document.querySelector('select#leaveTypeSelector option[value="Paternity Leave"]');
+    if (PaternityOption) {
+        PaternityOption.style.display = 'none';
+    }
+}
