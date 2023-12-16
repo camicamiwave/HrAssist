@@ -27,8 +27,8 @@ const storage = getStorage(app);
 function fetchTraining() {
 
     try{
-        const OfficecolRef = collection(db, 'Training Information');
-        const que = query(OfficecolRef, orderBy('createdAt'));
+        const OfficecolRef = collection(db, 'Calendar Information');
+        const que = query(OfficecolRef, where("EventType", '==', 'Training'));
     
         const tableBody = document.getElementById('trainingTable').getElementsByTagName('tbody')[0];
 
@@ -40,6 +40,8 @@ function fetchTraining() {
             snapshot.docs.forEach((doc) => {    
                 const data = doc.data();
                 const id = doc.id;
+
+                console.log(data)
                 // Create a new row
                 const row = tableBody.insertRow();
     

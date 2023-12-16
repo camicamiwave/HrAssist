@@ -15,7 +15,9 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +55,7 @@
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
     </div><!-- End Search Bar -->
-    
+
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
 
@@ -62,7 +64,7 @@
             <i class="bi bi-search"></i>
           </a>
         </li><!-- End Search Icon-->
-        
+
 
 
         <li class="nav-item dropdown pe-3">
@@ -92,7 +94,7 @@
               <hr class="dropdown-divider">
             </li>
 
-            
+
             <li>
               <a class="dropdown-item d-flex align-items-center" id="navbar_signout_btn">
                 <i class="bi bi-box-arrow-right"></i>
@@ -111,144 +113,144 @@
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
-        <li class="nav-heading">ADMIN TOOL</li>
+      <li class="nav-heading">ADMIN TOOL</li>
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" id="dashboard" href="admin_dashboard.html">
-                <i class="bi bi-grid"></i>
-                <span>Dashboard</span>
+      <li class="nav-item">
+        <a class="nav-link collapsed" id="dashboard" href="admin_dashboard.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="nav-link collapsed" id="addemployee" href="admin_201file_account.html">
+              <i class="bi bi-circle"></i><span>Add Employee</span>
             </a>
-        </li><!-- End Dashboard Nav -->
-
-        <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
+          </li>
+          <li>
+            <a id="employeelist" href="admin_employee_registry_list.html">
+              <i class="bi bi-circle"></i><span>Employee List</span>
             </a>
-            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                <li>
-                    <a class="nav-link collapsed" id="addemployee" href="admin_201file_account.html">
-                        <i class="bi bi-circle"></i><span>Add Employee</span>
-                    </a>
-                </li>
-                <li>
-                    <a id="employeelist" href="admin_employee_registry_list.html">
-                        <i class="bi bi-circle"></i><span>Employee List</span>
-                    </a>
-                </li>
-                <li>
-                    <a id="editemployee" href="admin_search_employee_view.html">
-                        <i class="bi bi-circle"></i><span>Edit Employee</span>
-                    </a>
-                </li>
-                <li>
-                    <a id="searchemployee" href="admin_search_employee_view.html">
-                        <i class="bi bi-circle"></i><span>Search Employee</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Components Nav -->
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-person"></i><span>Manage Applicant</span><i class="bi bi-chevron-down ms-auto"></i>
+          </li>
+          <li>
+            <a id="editemployee" href="admin_search_employee_view.html">
+              <i class="bi bi-circle"></i><span>Edit Employee</span>
             </a>
-            <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                <li>
-                    <a id="addapplicant" href="admin_add_applicant.html">
-                        <i class="bi bi-circle"></i><span>Add Applicant</span>
-                    </a>
-                </li>
-                <li>
-                    <a id="applicantlist" href="admin_manage_applicant_view.html">
-                        <i class="bi bi-circle"></i><span>Applicant List</span>
-                    </a>
-                </li>
-                <li>
-                    <a id="searchapplicant" href="admin_search_applicant.html">
-                        <i class="bi bi-circle"></i><span>Search Applicant</span>
-                    </a>
-                </li>
-            </ul>
-        </li><!-- End Forms Nav -->
-      
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
-              <i class="bx bxs-briefcase"></i>
-              <span>Job Vacancy</span>
-          </a>
+          </li>
+          <li>
+            <a id="searchemployee" href="admin_search_employee_view.html">
+              <i class="bi bi-circle"></i><span>Search Employee</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-person"></i><span>Manage Applicant</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a id="addapplicant" href="admin_add_applicant.html">
+              <i class="bi bi-circle"></i><span>Add Applicant</span>
+            </a>
+          </li>
+          <li>
+            <a id="applicantlist" href="admin_manage_applicant_view.html">
+              <i class="bi bi-circle"></i><span>Applicant List</span>
+            </a>
+          </li>
+          <li>
+            <a id="searchapplicant" href="admin_search_applicant.html">
+              <i class="bi bi-circle"></i><span>Search Applicant</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
+          <i class="bx bxs-briefcase"></i>
+          <span>Job Vacancy</span>
+        </a>
       </li><!-- End Job Vacancy Nav -->
-  
+
       <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
-        <li class="nav-item">
-          <a class="nav-link collapsed" id="employeePerformance" href="#">
-            <i class="bi bi-bar-chart-line"></i>
-            <span>Employee Performance</span>
-          </a>
-        </li><!-- End F.A.Q Page Nav -->
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" id="employeeIPCRF" href="admin-IPCRF-search.html">
-            <i class="bi bi-check-square"></i>
-            <span>Employee IPCRF</span>
-          </a>
-        </li><!-- End Contact Page Nav -->
-  
-        <li class="nav-heading">Rewards & RECOGNITION</li>
-        <li class="nav-item">
-          <a class="nav-link" id="rewards" href="admin-IPCRF-search.html">
-            <i class="bi bi-award"></i>
-            <span>Rewards</span>
-          </a>
-        </li><!-- End Register Page Nav -->
-  
-        <li class="nav-heading">LEARNING DEVELOPMENT</li>
-        <li class="nav-item">
-          <a class="nav-link collapsed" id="trainingSeminar" href="admin_training_n_seminars_view.html">
-            <i class="bi bi-people-fill"></i>
-            <span>Training & Seminar</span>
-          </a>
-        </li><!-- End Login Page Nav -->
-  
-        <li class="nav-heading">CONFIGURATION</li>
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-gear"></i><span>Configuration</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="icons-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-            <li>
-              <a id="office" href="admin-offices.html">
-                <i class="bi bi-circle"></i><span>Office</span>
-              </a>
-            </li>
-            <li>
-              <a id="accounts" href="admin_accounts_view.html">
-                <i class="bi bi-circle"></i><span>Accounts</span>
-              </a>
-            </li>
-            <li>
-              <a id="calendar" href="calendar.html">
-                <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
-              </a>
-            </li>
-          </ul>
-        </li><!-- End Icons Nav -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" id="leaveManagement" href="admin_request.html">
-            <i class="bi bi-calendar"></i>
-            <span>Leave Management</span>
-          </a>
-        </li><!-- End Login Page Nav -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" id="dtr" href="admin_dtr_form.html">
-            <i class="bi bi-clock"></i>
-            <span>DTR</span>
-          </a>
-        </li><!-- End Login Page Nav -->
-      </ul>
-    </aside><!-- End Sidebar-->
-  
+      <li class="nav-item">
+        <a class="nav-link collapsed" id="employeePerformance" href="#">
+          <i class="bi bi-bar-chart-line"></i>
+          <span>Employee Performance</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" id="employeeIPCRF" href="admin-IPCRF-search.html">
+          <i class="bi bi-check-square"></i>
+          <span>Employee IPCRF</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-heading">Rewards & RECOGNITION</li>
+      <li class="nav-item">
+        <a class="nav-link" id="rewards" href="admin-IPCRF-search.html">
+          <i class="bi bi-award"></i>
+          <span>Rewards</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li class="nav-heading">LEARNING DEVELOPMENT</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" id="trainingSeminar" href="admin_training_n_seminars_view.html">
+          <i class="bi bi-people-fill"></i>
+          <span>Training & Seminar</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+      <li class="nav-heading">CONFIGURATION</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gear"></i><span>Configuration</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a id="office" href="admin-offices.html">
+              <i class="bi bi-circle"></i><span>Office</span>
+            </a>
+          </li>
+          <li>
+            <a id="accounts" href="admin_accounts_view.html">
+              <i class="bi bi-circle"></i><span>Accounts</span>
+            </a>
+          </li>
+          <li>
+            <a id="calendar" href="calendar.html">
+              <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Icons Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" id="leaveManagement" href="admin_request.html">
+          <i class="bi bi-calendar"></i>
+          <span>Leave Management</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" id="dtr" href="admin_dtr_form.html">
+          <i class="bi bi-clock"></i>
+          <span>DTR</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+    </ul>
+  </aside><!-- End Sidebar-->
+
   <!--START CONTENT-->
 
   <main id="main" class="main">
@@ -272,239 +274,323 @@
 
             <!--START YOUR CONTENT HERE -->
             <!-- Main content -->
-    <div class="h-screen flex-grow-1 overflow-y-lg-auto">
-      <!-- Header -->
-      <header class="bg-surface-primary border-bottom pt-6">
-          <div class="container-fluid">
-              <div class="mb-npx">
-                  <div class="row align-items-center">
+            <div class="h-screen flex-grow-1 overflow-y-lg-auto">
+              <!-- Header -->
+              <header class="bg-surface-primary border-bottom pt-6">
+                <div class="container-fluid">
+                  <div class="mb-npx">
+                    <div class="row align-items-center">
                       <div class="col-sm-6 col-12 mb-4 mb-sm-0">
-                          <!-- Title -->
-                          <h1 class="h2 mb-0 ls-tight">
-                              </h1>
+                        <!-- Title -->
+                        <h1 class="h2 mb-0 ls-tight">
+                        </h1>
                       </div>
 
-                  <!-- Nav -->
-                  <ul class="nav nav-tabs mt-4 overflow-x border-0">
-                      
-                  </ul>
-              </div>
-          </div>
-      </header>
-      <!-- Main -->
-      <main class="py-6 bg-surface-secondary">
-          <div class="container-fluid">
-              <!-- Card stats -->
-              <div class="row g-6 mb-6">
-                  
-                  <div class="col-xl-6 col-sm-6 col-12" id="top1">
+                      <!-- Nav -->
+                      <ul class="nav nav-tabs mt-4 overflow-x border-0">
+
+                      </ul>
+                    </div>
+                  </div>
+              </header>
+
+
+              <!-- Main -->
+              <main class="py-6 bg-surface-secondary">
+                <div class="container-fluid">
+                  <!-- Card stats -->
+                  <div class="row g-6 mb-6">
+
+                    <div class="col-xl-6 col-sm-6 col-12" id="top1">
                       <div class="card shadow border-0">
-                          <div class="card-body">
-                              <div class="row">
-                                  <div class="col">
-                                      <span class="h6 font-semibold text-muted text-sm d-block mb-2">Top Performing Employees</span>
-                                      <span class="h3 font-bold mb-0">View List</span>
-                                  </div>
-                                  <div class="col-auto">
-                                      <div class="icon icon-shape text-lg rounded-circle">
-                                         <img class="" src="img/topmedal.png" alt="Profile Picture">
-                                       
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="mt-2 mb-0 text-sm">
-                                  <span class="badge badge-pill bg-soft-success text-success me-2">
-                                      <i class="bi bi-arrow-up me-1"></i>
-                                  </span>
-                                  <span class="text-nowrap text-xs text-muted">This month / December</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-
-
-                  <!--2nd Card-->
-                  <div class="col-xl-6 col-sm-6 col-12" id="top1">
-                    <div class="card shadow border-0">
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <span class="h6 font-semibold text-muted text-sm d-block mb-2">Top Performing Employees</span>
-                                    <span class="h3 font-bold mb-0">View List</span>
-                                </div>
-                                <div class="col-auto">
-                                    <div class="icon icon-shape text-lg rounded-circle">
-                                       <img class="" src="img/topmedal.png" alt="Profile Picture">
-                                     
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-2 mb-0 text-sm">
-                                <span class="badge badge-pill bg-soft-success text-success me-2">
-                                    <i class="bi bi-arrow-up me-1"></i>
-                                </span>
-                                <span class="text-nowrap text-xs text-muted">This month / December</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal fade" id="addrewards" tabindex="-1" aria-labelledby="applyLeaveModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <form id="addrewardform">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="leaveTitle">Add Rewards Form</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <div class="form-group">
-                            <label for="textArea">Send to:</label>
-                            <textarea class="form-control" id="sendtoText" rows="3" placeholder="Enter employee name" required></textarea>
-                          </div>
-                          <br>
-                          <div class="form-group">
-                            <label for="textArea">Gift:</label>
-                            <textarea class="form-control" id="giftText" rows="3" placeholder="Enter gift name." required></textarea>
-                          </div>
-                          <br>
                           <div class="row">
-                            <div class="col-md-6">
-                              <div class="form-group">
-                                <label for="slipDate">Set On:</label>
-                                <input type="date" id="slipDate" name="slipDate" class="form-control" required>
+                            <div class="col">
+                              <span class="h6 font-semibold text-muted text-sm d-block mb-2">Top Performing
+                                Employees</span>
+                              <span class="h3 font-bold mb-0">View List</span>
+                            </div>
+                            <div class="col-auto">
+                              <div class="icon icon-shape text-lg rounded-circle">
+                                <img class="" src="img/topmedal.png" alt="Profile Picture">
+
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" id="closemodal" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="button" id="addrewardbtn" class="btn btn-primary">Ok</button>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                  <!--End-->
-
-                  <div class="modal fade" id="mytop1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Top Performing Employees</h5>
-                            </div>
-                            <div class="modal-body">
-                              <table class="table table-hover">
-                                <thead>
-                                  <tr>
-                                    <th> </th>
-                                    <th>Last Name</th>
-                                    <th>First Name</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <td> <img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;"></td>
-                                    <td>Albos</td>
-                                    <td>John Erwin</td>
-                                  </tr>
-                                  <tr>
-                                    <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;"> </td>
-                                    <td>Binas</td>
-                                    <td>Camila</td>
-                                  </tr>
-                                  <tr>
-                                    <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;"> </td>
-                                    <td>Ar-jay</td>
-                                    <td>De la Fuente</td>
-                                  </tr>
-                                  <tr>
-                                    <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;"> </td>
-                                    <td>Donita Rose</td>
-                                    <td>Gadil</td>
-                                  </tr>
-                                  <tr>
-                                    <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;"> </td>
-                                    <td>Arriana Mae</td>
-                                    <td>Malubay</td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal1">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-
-              <a type="button" class="btn btn-success btn-sm" id="add" href="javascript:void(0);"  style="display: block; text-align: left;">+ Add Reward</a>
- 
-
-              <div class="card shadow border-0 mb-7">
-                  <div class="card-header">
-                      <h5 class="mb-0">Rewards</h5>
-                  </div>
-
-                  <!--Start the table here-->
-                  
-                     <!--Table-->
-
-            <section class="section">
-              <div class="row">
-                <div class="col-lg-12">
-
-                  <div class="card">
-                    <div class="card-body">
-               
-                      <!--START YOUR CONTENT HERE -->
-
-                      <!-- Table with stripped rows -->
-
-                      <div class="table-responsive-lg">
-                        <table class="table datatable" style="font-size: 14px;"  >
-                          <thead>
-                            <tr>
-                              <th>Send to</th>
-                              <th>Gift</th>
-                              <th>Message</th>
-                              <th>Set on</th>
-                              <th>Set by</th>
-                              <th>Status</th> 
-
-                            </tr>
-                          </thead>
-                          <tbody id="ipcrfBody" > 
-                            
-                          </tbody>
-                        </table>
-
-                        <!--Second-->
-                        <div class="card shadow border-0 mb-7">
-                          <div class="card-header">
-                              <h5 class="mb-0">Employees Performance Ranking</h5>
+                          <div class="mt-2 mb-0 text-sm">
+                            <span class="badge badge-pill bg-soft-success text-success me-2">
+                              <i class="bi bi-arrow-up me-1"></i>
+                            </span>
+                            <span class="text-nowrap text-xs text-muted">This month / December</span>
                           </div>
-        
-                          <!--Start the table here-->
-                          
-                             <!--Table-->
-        
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <!--2nd Card-->
+                    <div class="col-xl-6 col-sm-6 col-12" id="top1">
+                      <div class="card shadow border-0">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col">
+                              <span class="h6 font-semibold text-muted text-sm d-block mb-2">Top Performing
+                                Employees</span>
+                              <span class="h3 font-bold mb-0">View List</span>
+                            </div>
+                            <div class="col-auto">
+                              <div class="icon icon-shape text-lg rounded-circle">
+                                <img class="" src="img/topmedal.png" alt="Profile Picture">
+
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mt-2 mb-0 text-sm">
+                            <span class="badge badge-pill bg-soft-success text-success me-2">
+                              <i class="bi bi-arrow-up me-1"></i>
+                            </span>
+                            <span class="text-nowrap text-xs text-muted">This month / December</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modal fade" id="addrewards" tabindex="-1" aria-labelledby="applyLeaveModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <form id="addrewardform">
+                            
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="leaveTitle">Add Rewards Form</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+
+                            <div class="modal-body">
+                              <div class="container">
+                                <div class="row">
+                                  <!-- First Column -->
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <label for="textArea">Office:</label>
+                                      <select class="form-control" id="officeSelecor" placeholder="Enter Office name"
+                                        required></select>
+                                    </div>
+                                  </div>
+
+                                  <!-- Second Column -->
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <label for="textArea">Designation:</label>
+                                      <select class="form-control" id="positionSelector"
+                                        placeholder="Enter Office name" required></select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div><br>
+
+                              <div class="container">
+                                <div class="row">
+                                  <!-- First Column -->
+                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                      <label for="textArea">Name:</label>
+                                      <select class="form-control" id="employeeName" placeholder="Enter Office name"
+                                        required></select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div> 
+                              
+                              <div class="container"><br>
+                                <div class="row">
+                                  <!-- First Column -->
+                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                      <label for="textArea">Date Issued:</label>
+                                      <input type="date" class="form-control" id="dateIssued" required></select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div><br>
+
+                              <div class="container">
+                                <div class="row">
+                                  <!-- First Column -->
+                                  <div class="col-md-12">
+                                    <div class="form-group"> 
+                                      <label for="textArea">Reward:</label>
+                                      <input type="text" class="form-control" id="rewardText" required></select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="container"><br>
+                                <div class="row">
+                                  <!-- First Column -->
+                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                      <label for="textArea">Reason:</label>
+                                      <textarea class="form-control" id="reasonText" rows="3"
+                                        placeholder="Enter reward" required></textarea>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="container"><br>
+                                <div class="row">
+                                  <!-- First Column -->
+                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                      <label for="textArea">Description (optional):</label>
+                                      <textarea class="form-control" id="descriptionText" rows="3"
+                                        placeholder="Enter description"></textarea>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div><br>
+ 
+                            <div class="modal-footer">
+                              <button type="button" id="closemodal" class="btn btn-secondary"
+                                data-dismiss="modal">Close</button>
+                              <button type="button" id="addrewardbtn" class="btn btn-primary">Ok</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <!--End-->
+
+                    <div class="modal fade" id="mytop1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Top Performing Employees</h5>
+                          </div>
+                          <div class="modal-body">
+                            <table class="table table-hover">
+                              <thead>
+                                <tr>
+                                  <th> </th>
+                                  <th>Last Name</th>
+                                  <th>First Name</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td> <img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;">
+                                  </td>
+                                  <td>Albos</td>
+                                  <td>John Erwin</td>
+                                </tr>
+                                <tr>
+                                  <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;">
+                                  </td>
+                                  <td>Binas</td>
+                                  <td>Camila</td>
+                                </tr>
+                                <tr>
+                                  <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;">
+                                  </td>
+                                  <td>Ar-jay</td>
+                                  <td>De la Fuente</td>
+                                </tr>
+                                <tr>
+                                  <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;">
+                                  </td>
+                                  <td>Donita Rose</td>
+                                  <td>Gadil</td>
+                                </tr>
+                                <tr>
+                                  <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;">
+                                  </td>
+                                  <td>Arriana Mae</td>
+                                  <td>Malubay</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                              id="closemodal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card shadow border-0 mb-7">
+                    <div class="card-header">
+                      <h5 class="mb-0">Rewards</h5>
+                    </div>
+
+
+
+                    <!--Start the table here-->
+
+
                     <section class="section">
                       <div class="row">
                         <div class="col-lg-12">
-        
+
+
                           <div class="card">
-                            <div class="card-body">
-                       
+                            <div class="card-body"><br>
+
                               <!--START YOUR CONTENT HERE -->
-        
+
                               <!-- Table with stripped rows -->
-        
+
+                              <a type="button" class="btn btn-primary btn-sm" id="add" href="javascript:void(0);"
+                                style="display: block; text-align: left;  width: 11%;">+ Add Reward</a><br>
+                              <!--Table-->
+
                               <div class="table-responsive-lg">
-                                <table class="table datatable" style="font-size: 14px;"  >
+                                <table id="rewardTable" class="table datatable" style="font-size: 14px;">
+                                  <thead>
+                                    <tr>
+                                      <th>ID</th>
+                                      <th>Name</th>
+                                      <th>Office</th>
+                                      <th>Designation</th>
+                                      <th>Date Issued</th>
+                                      <th>Reward</th>
+                                      <th>Action</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody id="ipcrfBody">
+
+                                  </tbody>
+                                </table>
+
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+
+                  <section class="section">
+                    <div class="row">
+                      <div class="col-lg-12">
+
+                        <div class="card">
+                          <div class="card-body">
+
+                            <!--Second-->
+                            <div class="card shadow border-0 mb-7">
+                              <div class="card-header">
+                                <h5 class="mb-0">Employees Performance Ranking</h5>
+                              </div>
+
+                              <div class="table-responsive-lg">
+                                <table class="table datatable" style="font-size: 14px;">
                                   <thead>
                                     <tr>
                                       <th><b>No.</b></th>
@@ -513,34 +599,33 @@
                                       <th>Position Title</th>
                                       <th>Semester</th>
                                       <th>Descriptive Rating</th>
-                                      <th>Numerical Rating</th> 
-        
+                                      <th>Numerical Rating</th>
+
                                     </tr>
                                   </thead>
-                                  <tbody id="ipcrfBody" > 
-                                    
+                                  <tbody id="ipcrfBody">
+
                                   </tbody>
                                 </table>
-                        <!-- End Table with stripped rows -->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              </div>
-              </div>
-            </section>
+                                <!-- End Table with stripped rows -->
+                              </div>
+                  </section>
 
-          </main><!-- End #main -->
 
-        
+    </section>
+    <!--Table-->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  </main><!-- End #main -->
+
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <script src="bundles/navbar.bundle.js"></script>
   <script src="bundles/auth.bundle.js"></script>
-  <script src="bundles/ipcrf.bundle.js"></script>
-  
+  <script src="bundles/employee_reward.bundle.js"></script>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -561,11 +646,11 @@
   <script src="js/sidebar.js"></script>
 
   <script>
-    document.getElementById("add").addEventListener("click", function() {
+    document.getElementById("add").addEventListener("click", function () {
       $('#addrewards').modal('show');
     });
-  
-    document.getElementById("closemodal").addEventListener("click", function() {
+
+    document.getElementById("closemodal").addEventListener("click", function () {
       $('#addrewards').modal('hide');
     });
 
@@ -577,7 +662,7 @@
       $('#mytop1').modal('hide');
     });
   </script>
-  
+
 </body>
 
 </html>

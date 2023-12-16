@@ -33,7 +33,11 @@ export function fetchEmployeeTrainingMemo() {
         const EmployeecolRef = collection(db, 'Calendar Information');
         fetchEmployeeInfo(EmployeecolRef, receivedStringData, "documentID").then((dataRetrieved) => {
             const trainingdata = dataRetrieved.TrainingDetails;
+            
+            console.log(dataRetrieved, 'asdsdf')
+
             memoNumber.innerHTML = trainingdata.MemoNun;
+            
 
 
             function formatDate(inputDate) {

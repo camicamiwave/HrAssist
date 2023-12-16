@@ -386,8 +386,8 @@
                           <div class="card-body">
                               <div class="row">
                                   <div class="col">
-                                      <span class="h6 font-semibold text-muted text-sm d-block mb-2">LGU Total number of Active Employee</span>
-                                      <span class="h3 font-bold mb-0"><span id="totalActiveEmployee"></span></span>
+                                      <span class="h6 font-semibold text-muted text-sm d-block mb-2">LGU OPCRF Overall General Rating</span>
+                                      <span class="h3 font-bold mb-0"><span id="opcrfRating"></span></span>
                                   </div>
                                   <div class="col-auto">
                                       <div class="icon icon-shape text-lg rounded-circle">
@@ -400,7 +400,7 @@
                                   <span class="badge badge-pill bg-soft-success text-success me-2">
                                       <i class="bi bi-arrow-up me-1"></i>
                                   </span>
-                                  <span class="text-nowrap text-xs text-muted">This month / December</span>
+                                  <span class="text-nowrap text-xs text-muted">This month / <span id="thismonth"></span></span>
                               </div>
                           </div>
                       </div>
@@ -425,15 +425,25 @@
                                 <span class="badge badge-pill bg-soft-success text-success me-2">
                                     <i class="bi bi-arrow-up me-1"></i>
                                 </span>
-                                <span class="text-nowrap text-xs text-muted">This month / December</span>
+                                <span class="text-nowrap text-xs text-muted">This month / <span id="IPCRFthismonth"></span></span>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                
                 <div class="">
-                    <h5 class="mb-0">Employee Performance by Department</h5>
+                  <h5 class="mb-0">Office Performance Commitment and Review Form Rating
+                  </h5>
                 </div>
+
+                <!-- Bar Chart -->
+                <div id="OPCRFbarChart"></div>
+
+                <div class="">
+                    <h5 class="mb-0">Employee Performance by Department Rating</h5>
+                </div>
+                
 
                 <!-- Bar Chart -->
                 <div id="barChart"></div>

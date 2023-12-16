@@ -64,6 +64,7 @@ function AddTrainings() {
 
         const leaveFormData = {
             createdAt: serverTimestamp(),
+            EventType: "Training",
             TrainingDetails: {
                 MemoNun: document.getElementById('memoNum').value.trim(),
                 Title: document.getElementById('title').value.trim(),
