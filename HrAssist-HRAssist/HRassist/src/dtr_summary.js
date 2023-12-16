@@ -11,7 +11,7 @@ import {
     addDoc, deleteDoc, doc,
     query, where,
     orderBy, serverTimestamp,
-    getDoc, updateDoc, setDoc, getDocs
+    getDoc, updateDoc, setDoc, getDocs, FieldValue
 } from 'firebase/firestore'
 
 import { firebaseConfig } from './server.js';
@@ -341,12 +341,63 @@ function fetchDTRSummary() {
                         cell13.textContent = employee.absent;
                         cell14.textContent = employee.leave;
 
-                        console.log(employee.employeeDocID, 'asfsa1234');
+                        const deleteButton = document.createElement('button');
+    
+                        deleteButton.textContent = `Delete`;
+                        deleteButton.className = 'btn btn-danger';
+                        deleteButton.id = `viewbtn${num}`;
+                        deleteButton.style.color = 'white';
+                        deleteButton.type = 'button';
+    
+                        // Add an event listener to the button
+                        deleteButton.addEventListener('click', function () {
+                            // Get the row index (subtracting 1 because row index starts from 0)
+                            const rowIndex = this.id.replace('viewbtn', '') - 1;
+     
+                            console.log("ea", key)
+    
+    
+                            Swal.fire({
+                                title: "Are you sure?",
+                                text: "Employee's IPCRF will be lost",
+                                icon: "warning",
+                                showCancelButton: true,
+                                confirmButtonColor: "#3085d6",
+                                cancelButtonColor: "#d33",
+                                confirmButtonText: "Confirm"
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    // If the user clicks "Confirm"
+                                    console.log('Row ID clicked:', data.documentID);
+    
+                                    const colRef = collection(db, 'DTR Summary')
+    
+                                    const docRef = doc(colRef, data.documentID) 
+                                    
+
+                                    delete data.Employee_DTR[key]
+ 
+                                    updateDoc(docRef, data.Employee_DTR)
+                                      .then(() => {
+                                        console.log(`${data.Employee_DTR} value successfully deleted!`);
+                                      })
+                                      .catch((error) => {
+                                        console.error(`Error deleting ${data.Employee_DTR} value: `, error);
+                                      });
+    
+                                } else {
+                                    // Handle the case where the user cancels the action
+                                }
+                            });
+    
+                        })
+
 
                         // Create a view button
                         const viewButton = document.createElement('button');
                         viewButton.textContent = `Edit`;
                         viewButton.className = 'btn btn-primary';
+                        viewButton.style.color = 'white';
                         viewButton.id = `viewbtn${employee.employeeDocID}`;
                         viewButton.type = 'button';
 
@@ -496,6 +547,7 @@ function fetchDTRSummary() {
 
                         // Append the button to the last cell
                         cell15.appendChild(viewButton);
+                        //cell15.appendChild(deleteButton)
 
                         num++;
                     }

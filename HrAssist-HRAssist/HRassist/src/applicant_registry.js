@@ -16,7 +16,7 @@ import {
 
 import { firebaseConfig } from './server.js';
 import { UserLoginChecker } from './page_restriction.js';
-
+import { fetchEmployeeInfo } from './fetch_employee_info.js';
 
 // init firebase app
 const app = initializeApp(firebaseConfig)
@@ -52,7 +52,7 @@ function GetApplicantTable() {
       // Extracting date only from createdAt
       const dateString = createdAt.toLocaleDateString();
 
-      
+
       // Create and populate table cells
       // Create an image element
       const imageElement = document.createElement('img');
@@ -74,15 +74,15 @@ function GetApplicantTable() {
 
       const applicantStatusCell = document.createElement('td');
       applicantStatusCell.textContent = data.ApplicantStatus;
-      
+
       if (data.ApplicantStatus.toLowerCase() === 'pending') {
-        applicantStatusCell.classList.add('text-danger', );
+        applicantStatusCell.classList.add('text-danger',);
         applicantStatusCell.style.fontWeight = 'bold';
       } else if (data.ApplicantStatus === 'Hired') {
         applicantStatusCell.classList.add('text-primary');
         applicantStatusCell.style.fontWeight = 'bold';
       }
-      
+
       // Add button
       // Create a button element for actions and add it to the row
       const actionCell = document.createElement('td');
@@ -99,10 +99,10 @@ function GetApplicantTable() {
 
 
       });
- 
 
-      actionCell.appendChild(actionButtonEdit); 
- 
+
+      actionCell.appendChild(actionButtonEdit);
+
       // Append cells to the row 
       //row.appendChild(profileCell); 
       row.appendChild(profileCell)
@@ -145,11 +145,88 @@ export function FetchCurrentUser() {
 
 export function FetchApplicantProfile() {
   const TestcolRef = collection(db, 'Applicant Information');
+  const JobcolRef = collection(db, 'Job Information');
 
   FetchCurrentUser().then((currentUserUID) => {
 
     console.log(currentUserUID, 'sdds')
     const que = query(TestcolRef, where("userID", "==", currentUserUID));
+
+    onSnapshot(que, (snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        const data = doc.data();
+
+        try {
+          const inputApplicantStatus = document.getElementById('ApplicantStatus');
+          const inputJobApply = document.getElementById('JobApply');
+          const inputdateSubmitted = document.getElementById('dateSubmitted');
+          const inputMessage = document.getElementById('Message');
+ 
+
+          fetchEmployeeInfo(JobcolRef, data.jobDetailsURL, "documentID").then((dataRetrieved) => {
+            const job_data = dataRetrieved;
+            const job_dataDocID = job_data.documentID;
+
+            try{
+              if (data.Interview_Details.InterviewDate !== null){
+                interviewDate.innerHTML = data.Interview_Details.InterviewDate
+                interviewTime.innerHTML = data.Interview_Details.InterviewTime
+                interviewDescription.innerHTML = data.Interview_Details.InterviewDesc
+  
+                if (data.ApplicantStatus === "Rejected"){
+                  rejectReason.innerHTML = data.RejectReason
+                  reasonForm.style.display = 'block'
+
+                  interviewForm.style.display = 'none'
+                }
+  
+  
+                if (data.ApplicationProgess === 1){
+                  applicationProgress.innerHTML = "Reviewed";
+                } else if (data.ApplicationProgess === 2) {
+                  applicationProgress.innerHTML = "Interviewed";
+                } else if (data.ApplicationProgess === 3){
+                  applicationProgress.innerHTML = "Assessment";
+                } else if (data.ApplicationProgess === 4){
+                  applicationProgress.innerHTML = "Hired";
+                }
+              }
+  
+            } catch {
+              console.log("No interview retrieved...")
+            }
+
+            inputApplicantStatus.innerHTML = data.ApplicantStatus;
+            inputJobApply.innerHTML = job_data.JobTitle;
+            
+            // Assuming data.createdAt is a Firebase timestamp
+            const firebaseTimestamp = data.createdAt;
+
+            // Convert Firebase timestamp to JavaScript Date object
+            const dateObject = firebaseTimestamp.toDate();
+
+            // Extracting date and time in a human-readable format
+            const dateString = dateObject.toLocaleDateString(); // Date in the format MM/DD/YYYY
+            const timeString = dateObject.toLocaleTimeString(); // Time in the format HH:MM:SS AM/PM
+
+            // Concatenating date and time
+            const dateTimeString = `${dateString} ${timeString}`;
+
+            // Display or use dateTimeString as needed
+            inputdateSubmitted.innerHTML = dateTimeString;
+
+            inputMessage.innerHTML = data.Personal_Information.Message;
+
+          })
+
+
+        } catch {
+          console.log("No record found...")
+
+        }
+
+      })
+    })
 
     onSnapshot(que, (snapshot) => {
       snapshot.docs.forEach((doc) => {
@@ -181,7 +258,7 @@ export function FetchApplicantProfile() {
         ExtName.value = personalInfo.ExName;
 
         const sex = document.getElementById('inputSex');
-        sex.value = personalInfo.Sex;
+        sex.value = personalInfo.Gender;
 
         const civilStatus = document.getElementById('inputCivilStatus');
         civilStatus.value = personalInfo.CivilStatus;
@@ -190,7 +267,7 @@ export function FetchApplicantProfile() {
         address.value = personalInfo.Address;
 
         const birthPlace = document.getElementById('inputBplace');
-        birthPlace.value = personalInfo.Placebirth;
+        birthPlace.value = personalInfo.PlaceBirth;
 
         const emailAddress = document.getElementById('inputEmailAddress');
         emailAddress.value = personalInfo.Email;
@@ -202,20 +279,6 @@ export function FetchApplicantProfile() {
         inputEmailAddress.value = personalInfo.Email;
 
 
-        try {
-          const inputApplicantStatus = document.getElementById('ApplicantStatus');
-          const inputJobApply = document.getElementById('JobApply');
-          const inputdateSubmitted = document.getElementById('dateSubmitted');
-          const inputMessage = document.getElementById('Message');
-
-          inputApplicantStatus.value = data.ApplicantStatus;
-          inputJobApply.value = "";
-          inputdateSubmitted.value = data.createdAt;
-          inputMessage.value = data.personalInfo.Message;
-
-        } catch {
-
-        }
 
       });
 
@@ -224,6 +287,8 @@ export function FetchApplicantProfile() {
 }
 
 window.addEventListener('load', FetchApplicantProfile);
+
+
 
 export function AddApplicantAccount() {
   const EmployeeColRef = collection(db, 'Employee');
@@ -250,7 +315,7 @@ export function AddApplicantAccount() {
             displayName: username,
             emailVerified: true,
           })
-            .then(() => { 
+            .then(() => {
               const AccountDetails = {
                 userID: user.uid,
                 UserLevel: "Applicant",
@@ -279,12 +344,12 @@ export function AddApplicantAccount() {
                     showConfirmButton: true, // Change to true to show a confirm button
                     // Add a confirm button handler
                     confirmButtonText: 'Confirm', // Customize the button text
-                }).then((result) => {
+                  }).then((result) => {
                     if (result.isConfirmed) {
-                        // User clicked the confirm button
-                        window.location.href = 'index.html';
+                      // User clicked the confirm button
+                      window.location.href = 'job-list.html';
                     }
-                });
+                  });
 
                 })
                 .catch(error => console.error('Error adding applicant document:', error));
@@ -307,6 +372,9 @@ export function AddApplicantAccount() {
 }
 
 window.addEventListener('load', AddApplicantAccount);
+
+
+
 
 export function AddApplicantionForm() {
   const storageRef = ref(storage, "Applicant/Requirements");
@@ -416,7 +484,7 @@ export function AddApplicantionForm() {
                           Gender: addApplicantForm.querySelector('input[name="gender"]').value,
                           CivilStatus: selectedCivilStatus,
                           Birthdate: addApplicantForm.querySelector('input[name="birthday"]').value,
-                          Placebirth: addApplicantForm.querySelector('input[name="inputplacebirth"]').value,
+                          Placebirth: addApplicantForm.querySelector('input[name="inputBplace"]').value,
                           Phone: addApplicantForm.querySelector('input[name="phone"]').value,
                           Email: addApplicantForm.querySelector('input[name="inputemail"]').value,
                           Address: addApplicantForm.querySelector('input[name="inputaddress"]').value,
@@ -442,19 +510,19 @@ export function AddApplicantionForm() {
                             showConfirmButton: true, // Change to true to show a confirm button
                             // Add a confirm button handler
                             confirmButtonText: 'Confirm', // Customize the button text
-                        }).then((result) => {
+                          }).then((result) => {
                             if (result.isConfirmed) {
-                                // User clicked the confirm button
-                                window.location.href = 'applicant-congrats.html';
+                              // User clicked the confirm button
+                              window.location.href = 'applicant-congrats.html';
                             }
-                        });
+                          });
 
                         })
                         .catch(error => console.error('Error adding document:', error));
                     })
-                    .catch((error) => {
-                      console.error('Error fetching max ApplicantIDNum:', error);
-                    });
+                      .catch((error) => {
+                        console.error('Error fetching max ApplicantIDNum:', error);
+                      });
                   })
                   .catch((error) => {
                     console.error('Error uploading profile picture:', error);
@@ -475,7 +543,7 @@ export function AddApplicantionForm() {
   });
 
 
-  
+
 }
 
 window.addEventListener('load', AddApplicantionForm);
@@ -491,7 +559,7 @@ export function FetchApplicantIDData() {
       snapshot.docs.forEach((doc) => {
         const data = doc.data();
         const applicantIDNum = data.ApplicantID;
-        
+
         if (applicantIDNum > maxApplicantIDNum) {
           maxApplicantIDNum = applicantIDNum;
         }
@@ -502,22 +570,22 @@ export function FetchApplicantIDData() {
   });
 }
 
-window.addEventListener('load', FetchApplicantIDData) 
+window.addEventListener('load', FetchApplicantIDData)
 
-export function FetchApplicationStatus() { 
-    // Get the query string from the URL
-    const queryString = window.location.search;
+export function FetchApplicationStatus() {
+  // Get the query string from the URL
+  const queryString = window.location.search;
 
-    // Create a URLSearchParams object from the query string
-    const urlParams = new URLSearchParams(queryString);
+  // Create a URLSearchParams object from the query string
+  const urlParams = new URLSearchParams(queryString);
 
-    // Get the values of the customDocId and id parameters
-    const customDocId = urlParams.get('customDocId'); 
+  // Get the values of the customDocId and id parameters
+  const customDocId = urlParams.get('customDocId');
 
-    // Log or use the retrieved values
-    console.log(`Custom Doc ID: ${customDocId}`); 
+  // Log or use the retrieved values
+  console.log(`Custom Doc ID: ${customDocId}`);
 
-    
+
   const TestcolRef = collection(db, 'Applicant Information');
   const ApplicantQue = query(TestcolRef, where('documentID', '==', customDocId))
 
@@ -542,7 +610,7 @@ export function FetchApplicationStatus() {
         const formattedDate = createdAtDate.toLocaleString('en-US', {
           year: 'numeric',
           month: 'numeric',
-          day: 'numeric', 
+          day: 'numeric',
         });
 
         applicantDateCreated.innerHTML = formattedDate;
@@ -559,42 +627,42 @@ window.addEventListener('load', FetchApplicationStatus)
 
 export function TabNavigator() {
 
-  try{
+  try {
     const profileTab = document.getElementById('profileTab');
-    if (profileTab){
-  
-      profileTab.addEventListener('click', (e) => { 
+    if (profileTab) {
+
+      profileTab.addEventListener('click', (e) => {
         window.location.href = `profile.html`;
       })
-    }  
+    }
   } catch {
     console.log("Not profile")
   }
 
-  try{
+  try {
     const statusTab = document.getElementById('statusTab');
-    
-    statusTab.addEventListener('click', (e) => { 
+
+    statusTab.addEventListener('click', (e) => {
       window.location.href = `applicant_status.html`;
     })
 
   } catch {
     console.log("Not status Tab")
   }
-  
+
   try {
     const securityTab = document.getElementById('securityTab');
     if (securityTab) {
-      securityTab.addEventListener('click', (e) => { 
+      securityTab.addEventListener('click', (e) => {
         window.location.href = `applicant_security.html`;
       })
     }
-    
+
   } catch {
     console.log("Not securit Tab")
   }
 
-  
+
 }
 
 window.addEventListener('load', TabNavigator)

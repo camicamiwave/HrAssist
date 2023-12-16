@@ -66,7 +66,10 @@ function AddApplicantForm() {
         e.preventDefault();
         const applicantID = applicantCurrentMaxID + 1;
 
-        const applicantJobForm = {
+        const applicantJobForm = { 
+            ApplicantStatus: "Pending", 
+            ApplicationProgess: 1,
+            ApplicantID: applicantID, 
             createdAt: serverTimestamp(),
             ApplicantStatus: "Pending",
             userID: userUID,

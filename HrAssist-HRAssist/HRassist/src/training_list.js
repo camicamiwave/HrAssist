@@ -37,9 +37,9 @@ function fetchTraining() {
             tableBody.innerHTML = '';
 
             let num = 1;
-            snapshot.docs.forEach((doc) => {    
-                const data = doc.data();
-                const id = doc.id;
+            snapshot.docs.forEach((trainingdoc) => {    
+                const data = trainingdoc.data();
+                const id = trainingdoc.id;
 
                 console.log(data)
                 // Create a new row
@@ -95,7 +95,63 @@ function fetchTraining() {
 
                 })
 
+                const deleteButton = document.createElement('button');
+
+                deleteButton.textContent = `Delete`;
+                deleteButton.className = 'btn btn-danger';
+                deleteButton.id = `viewbtn${num}`;
+                deleteButton.type = 'button'
+
+                // Add an event listener to the button
+                deleteButton.addEventListener('click', function () {
+                    // Get the row index (subtracting 1 because row index starts from 0)
+                    const rowIndex = this.id.replace('viewbtn', '') - 1;
+
+                    // Get the data for the clicked row
+                    const clickedRowData = snapshot.docs[rowIndex].data();
+
+                    const employeedocID = clickedRowData.documentID
+
+                    console.log("ea", employeedocID)
+
+                    
+                    Swal.fire({
+                        title: "Are you sure?",
+                        text: "Employee's locator slip will be lost",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Confirm"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // If the user clicks "Confirm"
+                            console.log('Row ID clicked:', employeedocID);
+                                                     
+                            const colRef = collection(db, 'Calendar Information')
+
+                            const docRef = doc(colRef, employeedocID)
+
+                            deleteDoc(docRef)
+                                .then(() => {
+                                    Swal.fire({
+                                        title: 'Deleted Successfully!',
+                                        text: 'All employee record deleted on that year.',
+                                        icon: 'success',
+                                    });
+                                })
+
+                        } else {
+                            // Handle the case where the user cancels the action
+                        }
+                    });
+
+                })
+
+
+
                 cell7.appendChild(viewButton);
+                cell7.appendChild(deleteButton);
 
 
                 num++;

@@ -76,9 +76,9 @@
     <div class="container-xl px-4 mt-4">
         <!-- Account page navigation-->
         <nav class="nav nav-borders">
-            <a class="nav-link  active" id="profileTab" href="profile.html">Profile</a>
+            <a class="nav-link" id="profileTab" href="profile.html">Profile</a>
             <a class="nav-link" id="statusTab" href="applicant_status.html">Status</a>
-            <a class="nav-link" id="securityTab" href="applicant_security.html">Security</a>
+            <a class="nav-link active" id="securityTab" href="applicant_security.html">Security</a>
         </nav>
         <hr class="mt-0 mb-4">
         <div class="row">
@@ -92,8 +92,9 @@
                         
                     </div>
                 </div>
+               
                 <!-- Security preferences card-->
-                <div class="card mb-4">
+                <div class="card mb-4" style="display: none;">
                     <div class="card-header">Security Preferences</div>
                     <div class="card-body">
  
@@ -120,7 +121,7 @@
                     <div class="card-header">Delete Account</div>
                     <div class="card-body">
                         <p>Deleting your account is a permanent action and cannot be undone. If you are sure you want to delete your account, select the button below.</p>
-                        <button class="btn btn-danger-soft text-danger" id="deleteAccountBtn" type="button">I understand, delete my account</button>
+                        <button class="btn btn-danger-soft text-danger" id="deleteAccountBtn" type="button" >I understand, delete my account</button>
                     </div>
                 </div>
             </div>

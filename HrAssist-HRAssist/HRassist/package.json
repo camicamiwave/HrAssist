@@ -68,7 +68,8 @@
     "locator_slip_request": "node locator_slip_request.js",
     "employee_home": "node employee_home.js",
     "employee_request_section": "node employee_request_section.js",
-    "employee_total_leavecredits": "node employee_total_leavecredits.js"
+    "employee_total_leavecredits": "node employee_total_leavecredits.js",
+    "contacts": "node contacts.js"
   },
   "keywords": [],
   "author": "",

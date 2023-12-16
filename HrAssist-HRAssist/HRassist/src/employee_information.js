@@ -84,7 +84,11 @@ export function FetchEmployeeInformation() {
             const Employee_Address = `${EmployeePersonalInfo.Municipality} ${EmployeePersonalInfo.Province}`
 
             EmployeeProfilePicture.src = EmployeeData.ProfilePictureURL; 
-            EmployeeAbout.innerHTML = EmployeePersonalInfo.About
+            if (EmployeePersonalInfo){
+              EmployeeAbout.innerHTML = EmployeePersonalInfo.About
+            } else {
+              EmployeeAbout.innerHTML = ""
+            }
             DisplayfullName.innerHTML = Employee_Fullname;
             EmployeeFullName.innerHTML = Employee_Fullname;
             EmployeeAddress.innerHTML = Employee_Address;

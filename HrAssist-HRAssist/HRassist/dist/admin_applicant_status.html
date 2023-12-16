@@ -752,7 +752,7 @@
             style="float: right;">+ Schedule Interview</button><br><br><br>
 
         <button type="button" id="Feedbackbtn" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addfeedbackmodal"
-        style="float: right; margin-right: 9vw; margin-top: -6.5vh;" onclick="showfeedbackform()">+ Application Feedback</button>
+        style="float: right; margin-right: 9vw; margin-top: -6.5vh; display: none;" onclick="showfeedbackform()">+ Application Feedback</button>
 
         <!-- Modal -->
         <div class="modal fade" id="scheduleModal" tabindex="-1" role="dialog" aria-labelledby="yearModalLabel"
@@ -803,18 +803,14 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <div class="modal-body">
+                  <div class="modal-body">  
                     <div class="form-group">
-                      <label for="textArea">Send to:</label>
-                      <textarea class="form-control" id="sendtoText" rows="3" placeholder="Enter Applicant name" required></textarea>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                      <label for="textArea">Message:</label>
+                      <label for="textArea">Reason:</label>
                       <textarea class="form-control" id="messageText" rows="3" placeholder="Enter feedback." required></textarea>
                     </div>
                     <br>
                   </div>
+                  <br>
                   <div class="modal-footer">
                     <button type="button" id="closemodal" class="btn btn-secondary" data-dismiss="modal" onclick="hidefeedbackform()">Close</button>
                     <button type="button" id="addrewardbtn" class="btn btn-primary">Ok</button>
@@ -1116,6 +1112,7 @@
 
 
     <!-- Database Javascript -->
+    <script src="bundles/navbar.bundle.js"></script>
     <script src="bundles/applicant_status.bundle.js"></script>
 
 </body>

@@ -234,8 +234,8 @@ function fetchReward() {
 
         let num = 1;
 
-        snapshot.docs.forEach((doc) => {
-            const data = doc.data();
+        snapshot.docs.forEach((empdoc) => {
+            const data = empdoc.data();
             const employeeID = data.employeeDocID;
 
             // Create a new row
@@ -288,6 +288,52 @@ function fetchReward() {
                 alert('Clicked row data:', clickedRowData);
  
             })
+
+            // Add an event listener to the button
+            deleteButton.addEventListener('click', function () {
+                // Get the row index (subtracting 1 because row index starts from 0)
+                const rowIndex = this.id.replace('viewbtn', '') - 1;
+
+                // Get the data for the clicked row
+                const clickedRowData = snapshot.docs[rowIndex].data();
+
+                // Log or process the data as needed
+                console.log('Clicked row data:', clickedRowData.documentID);
+
+                
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "Employee's locator slip will be lost",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Confirm"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // If the user clicks "Confirm"
+                        console.log('Row ID clicked:', clickedRowData.documentID);
+                                                 
+                        const colRef = collection(db, 'Reward Information')
+
+                        const docRef = doc(colRef, clickedRowData.documentID)
+
+                        deleteDoc(docRef)
+                            .then(() => {
+                                Swal.fire({
+                                    title: 'Deleted Successfully!',
+                                    text: 'Reward has been deleted.',
+                                    icon: 'success',
+                                });
+                            })
+
+                    } else {
+                        // Handle the case where the user cancels the action
+                    }
+                });
+
+            })
+
 
             cell7.appendChild(viewButton);
             cell7.appendChild(deleteButton);

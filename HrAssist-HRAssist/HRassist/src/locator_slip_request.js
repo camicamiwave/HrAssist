@@ -41,14 +41,14 @@ function GetLeaveManagementTable() {
             // Clear the existing rows in the table body
             tbody.innerHTML = '';
 
-            snapshot.docs.forEach((doc) => {
-                const data = doc.data();
-                const id = doc.id;
+            snapshot.docs.forEach((pass_doc) => {
+                const data = pass_doc.data();
+                const id = pass_doc.id;
 
-                
+
                 const row = document.createElement('tr');
-                
-                
+
+
 
                 const employeedocID = data.employeeDocID
 
@@ -56,15 +56,11 @@ function GetLeaveManagementTable() {
 
                 fetchEmployeeInfo(EmployeecolRef, employeedocID, "documentID").then((dataRetrieved) => {
                     const employeedata = dataRetrieved;
-                    const personalInfo = dataRetrieved.Personal_Information;  
+                    const personalInfo = dataRetrieved.Personal_Information;
 
                     const ApplicantFullName = `${personalInfo.FirstName} ${personalInfo.SurName}`;
-   
-                     
-                    const imageElement = document.createElement('img');
 
-                    
-                    console.log('Heyyy!23224', row)
+                    const imageElement = document.createElement('img');
 
                     // Set the src attribute to the image URL
                     imageElement.src = employeedata.ProfilePictureURL;
@@ -115,8 +111,52 @@ function GetLeaveManagementTable() {
                     });
 
 
+                    // Decline button
+                    const deleteButtonApprove = document.createElement('button');
+                    deleteButtonApprove.textContent = 'Delete'; // Customize the button label
+                    deleteButtonApprove.classList.add('btn', 'mx-1', 'btn-sm', 'text-white', 'btn-danger'); // You can use Bootstrap's 'btn' and 'btn-primary' classes
+
+                    deleteButtonApprove.addEventListener('click', () => {
+                        console.log('View button clicked for record with ID:', id);
+
+                        Swal.fire({
+                            title: "Are you sure?",
+                            text: "Employee's locator slip will be lost",
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#3085d6",
+                            cancelButtonColor: "#d33",
+                            confirmButtonText: "Confirm"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                // If the user clicks "Confirm"
+                                console.log('Row ID clicked:', id);
+                                                         
+                                const colRef = collection(db, 'Request Information')
+
+                                const docRef = doc(colRef, id)
+
+                                deleteDoc(docRef)
+                                    .then(() => {
+                                        Swal.fire({
+                                            title: 'Deleted Successfully!',
+                                            text: 'All employee record deleted on that year.',
+                                            icon: 'success',
+                                        });
+                                    })
+
+                            } else {
+                                // Handle the case where the user cancels the action
+                            }
+                        });
+
+
+                    });
+
+
 
                     actionCell.appendChild(viewButtonApprove);
+                    actionCell.appendChild(deleteButtonApprove);
 
                     // Append cells to the row 
                     //row.appendChild(profileCell); 
@@ -172,7 +212,7 @@ function GetLeaveManagementStatus() {
             purposeText.value = data.Request_Details.PurposeStatement
             slipDate.value = data.Request_Details.PassSlipDate
             slipTime.value = data.Request_Details.PassSlipTime
-            
+
             statusRequest.innerHTML = data.RequestStatus
 
             if (data.RequestStatus === "Pending") {
@@ -450,7 +490,7 @@ function AcceptLeaveRequest(total) {
 
             const totalUnits = declineRequestForm.designationName.value
 
- 
+
         })
 
 

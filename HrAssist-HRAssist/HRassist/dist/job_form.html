@@ -65,6 +65,7 @@
     </section><!-- End Breadcrumbs -->
 
     <!--Contnt Start-->
+    
 
     <section class="inner-page">
       <div class="container">
@@ -73,18 +74,19 @@
         </p>
       </div>
     </section>
-    <div class="low-text">
+    <div class="low-text" style="width: 80%; margin-right: 10%; margin-left: 10%;"> 
       <p>Job Department | Job Vacancy Position</p>
-      <div class="lower">
+      <div class="lower" >
         <p>To apply in this job, please fill out the following fields in the form and please attach the requirements
           needed.</p>
       </div>
     </div>
     <br> <br>
-    <div class="outer-box">
+    <div class="outer-box" style="width: 80%; margin-right: 10%; margin-left: 10%;">
       <div class="info">
         <p>Personal Information</p>
       </div> <br><br><br><br>
+
       <div class="outer-2box">
         <div class="box">
           <div class="input-text" id="input-text">
@@ -93,34 +95,34 @@
               <form class="row g-3" id="applicant_info_form">
                 <div class="col-md-6">
                   <label for="inputFirstName" class="form-label">First Name:</label>
-                  <input type="text" class="form-control" id="inputFirstName">
+                  <input type="text" class="form-control" id="inputFirstName" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputMiddleName" class="form-label">Middle Name:</label>
-                  <input type="text" class="form-control" id="inputMiddleName">
+                  <input type="text" class="form-control" id="inputMiddleName" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputLastName" class="form-label">Last Name:</label>
-                  <input type="text" class="form-control" id="inputLastName">
+                  <input type="text" class="form-control" id="inputLastName" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputExName" class="form-label">Ex. Name:</label>
-                  <input type="text" class="form-control" id="inputExName">
+                  <input type="text" class="form-control" id="inputExName" >
                 </div>
                 <div class="col-md-6">
                   <label for="inputSex" class="form-label">Sex:</label>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" id="gender" name="sex" value="Female">
+                    <input class="form-check-input" type="radio" id="gender" name="sex" value="Female" required>
                     <label class="form-check-label" for="female">Female</label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" id="gender" name="sex" value="Male">
+                    <input class="form-check-input" type="radio" id="gender" name="sex" value="Male" required>
                     <label class="form-check-label" for="male">Male</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <label for="inputState" class="form-label">Civil Status:</label>
-                  <select id="inputState" class="form-select">
+                  <select id="inputState" class="form-select" required>
                     <option selected>Select</option>
                     <option>Single</option>
                     <option>Married</option>
@@ -131,46 +133,46 @@
                 </div>
                 <div class="col-md-6">
                   <label for="birthday" class="form-label">Birthday:</label>
-                  <input type="date" id="birthday" class="form-control" name="birthday">
+                  <input type="date" id="birthday" class="form-control" name="birthday" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputPlace" class="form-label">Place of Birth:</label>
-                  <input type="text" class="form-control" id="inputplacebirth">
+                  <input type="text" class="form-control" id="inputplacebirth" required>
                 </div>
                 <div class="col-md-6">
                   <label for="phone" class="form-label">Contact:</label>
-                  <input type="phone" class="form-control" id="phone">
+                  <input type="phone" class="form-control" id="phone" required>
                   <!--<input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">-->
                 </div>
                 <div class="col-md-6">
                   <label for="inputEmail" class="form-label">Email:</label>
-                  <input type="email" class="form-control" id="inputemail">
+                  <input type="email" class="form-control" id="inputemail" required>
                 </div>
                 <div class="col-md-12">
                   <label for="inputAddress" class="form-label">Address:</label>
-                  <input type="text" class="form-control" id="inputaddress">
+                  <input type="text" class="form-control" id="inputaddress" required>
                 </div>
                 <br>
                 <div class="attach">
-                  <p>Attach Files</p>
+                  <p>2 by 2   Picture</p>
                   <div class="form-group mt-3">
                     <label class="mr-2">Upload your 2x2:</label>
-                    <input type="file" name="file" id="applicantPic">
+                    <input type="file" name="file" id="applicantPic" required>
                   </div>
                   <br> <br> <br>
 
-                  <p>Attach Requirements</p>
+                  <p>Attachments</p>
                   <div class="form-group mt-3">
                     <label class="mr-2">Upload your CSV File:</label>
-                    <input type="file" name="file" id="cvFile" multiple>
+                    <input type="file" name="file" id="cvFile" multiple >
                   </div>
 
-                  <br> <br> <br>
+                  <br> <br> 
                   <div class="mes">
                     <p>Message</p>
                     <div class="form-group mt-3">
-                      <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
-                    </div>
+                      <textarea class="form-control" name="message" id="message" rows="5"></textarea>
+                    </div><br><br>
 
                     
                 <button type="submit">Submit</button>
