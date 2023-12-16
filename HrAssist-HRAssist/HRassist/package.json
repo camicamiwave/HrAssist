@@ -65,7 +65,10 @@
     "dtr_summary": "node dtr_summary.js",
     "save_dtr_summary": "node save_dtr_summary.js",
     "employee_reward": "node employee_reward.js",
-    "locator_slip_request": "node locator_slip_request.js"
+    "locator_slip_request": "node locator_slip_request.js",
+    "employee_home": "node employee_home.js",
+    "employee_request_section": "node employee_request_section.js",
+    "employee_total_leavecredits": "node employee_total_leavecredits.js"
   },
   "keywords": [],
   "author": "",
