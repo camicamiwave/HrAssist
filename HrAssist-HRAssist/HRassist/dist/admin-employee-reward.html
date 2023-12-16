@@ -110,13 +110,13 @@
 
   </header><!-- End Header -->
 
-  <!-- ======= Sidebar ======= -->
+  <!--Side Bar-->
   <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-heading">ADMIN TOOL</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" id="dashboard" href="admin_dashboard.html">
+        <a class="nav-link" id="dashboard" href="admin_dashboard.html">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -158,17 +158,18 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a id="addapplicant" href="admin_add_applicant.html">
+            <a href="admin_add_applicant.html">
               <i class="bi bi-circle"></i><span>Add Applicant</span>
             </a>
           </li>
           <li>
-            <a id="applicantlist" href="admin_manage_applicant_view.html">
+            <a href="admin_manage_applicant_view.html">
               <i class="bi bi-circle"></i><span>Applicant List</span>
             </a>
           </li>
+
           <li>
-            <a id="searchapplicant" href="admin_search_applicant.html">
+            <a href="admin_search_applicant.html">
               <i class="bi bi-circle"></i><span>Search Applicant</span>
             </a>
           </li>
@@ -184,14 +185,21 @@
 
       <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" id="employeePerformance" href="#">
+        <a id="employeePerformance" class="nav-link collapsed" href="admin-employee-performance.html">
           <i class="bi bi-bar-chart-line"></i>
           <span>Employee Performance</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" id="employeeIPCRF" href="admin-IPCRF-search.html">
+        <a class="nav-link collapsed"  href="admin_employee_opcrf.html" >
+          <i class="bi bi-check-circle"></i>
+          <span>Employee OPCRF</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
           <i class="bi bi-check-square"></i>
           <span>Employee IPCRF</span>
         </a>
@@ -199,7 +207,7 @@
 
       <li class="nav-heading">Rewards & RECOGNITION</li>
       <li class="nav-item">
-        <a class="nav-link" id="rewards" href="admin-IPCRF-search.html">
+        <a class="nav-link collapsed" id="rewards" href="#">
           <i class="bi bi-award"></i>
           <span>Rewards</span>
         </a>
@@ -207,7 +215,7 @@
 
       <li class="nav-heading">LEARNING DEVELOPMENT</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" id="trainingSeminar" href="admin_training_n_seminars_view.html">
+        <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
           <i class="bi bi-people-fill"></i>
           <span>Training & Seminar</span>
         </a>
@@ -218,37 +226,55 @@
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-gear"></i><span>Configuration</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="icons-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a id="office" href="admin-offices.html">
+            <a href="admin-offices.html">
               <i class="bi bi-circle"></i><span>Office</span>
             </a>
           </li>
           <li>
-            <a id="accounts" href="admin_accounts_view.html">
+            <a href="admin_accounts_view.html">
               <i class="bi bi-circle"></i><span>Accounts</span>
             </a>
           </li>
           <li>
-            <a id="calendar" href="calendar.html">
+            <a href="calendar.html">
               <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
             </a>
           </li>
         </ul>
       </li><!-- End Icons Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" id="leaveManagement" href="admin_request.html">
+        <a class="nav-link collapsed" href="admin_request.html">
           <i class="bi bi-calendar"></i>
           <span>Leave Management</span>
         </a>
-      </li><!-- End Login Page Nav -->
+      </li><!-- End Login Page Nav --> 
+
       <li class="nav-item">
-        <a class="nav-link collapsed" id="dtr" href="admin_dtr_form.html">
-          <i class="bi bi-clock"></i>
-          <span>DTR</span>
+        <a class="nav-link collapsed" href="admin_request_locatorslip.html">
+          <i class="bi bi-file-earmark-text"></i>
+          <span>Locator Slip Request</span>
         </a>
-      </li><!-- End Login Page Nav -->
+      </li><!-- End Login Page Nav --> 
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-clock"></i><span>Daily Time Record</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a> 
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav"> 
+          <li>
+            <a class="nav-link collapsed" id="addemployee" href="admin_dtr_summary.html">
+              <i class="bi bi-circle"></i><span>Add Summary</span>
+            </a>
+          </li>
+        </ul> 
+      </li><!-- End Components Nav -->
+
+      
+
     </ul>
+
   </aside><!-- End Sidebar-->
 
   <!--START CONTENT-->
