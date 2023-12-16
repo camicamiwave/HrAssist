@@ -618,7 +618,7 @@
               </ul>
             </li><!-- End Icons Nav -->
             <li class="nav-item">
-              <a class="nav-link collapsed" id="leaveManagement" href="admin_request.html">
+              <a class="nav-link collapsed" id="passSlipRequest" href="admin_request.html">
                 <i class="bi bi-calendar"></i>
                 <span>Leave Management</span>
               </a>
@@ -735,6 +735,84 @@
                     </div>
                 </div>
 
+                                <!-- Modal -->
+                                <div class="modal fade" id="declineModal" tabindex="-1" role="dialog" aria-labelledby="yearModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="editModalLabel">Decline Leave Request</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+            
+                                            <form id="declineRequestForm">
+            
+                                                <div class="col-md-12"> 
+                                                    <label for="withinDetails"><small>Reason</span></small></label><br>
+                                                    <textarea id="descriptionText" rows="3" class="form-control" placeholder="Reason"></textarea>
+                                                </div><br>
+                                            </form>
+            
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                                onclick="hideDeclineModal()">Close</button>
+                                            <input type="button" id="submitApproveBtn" class="btn btn-primary" value="Save">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <!-- Modal -->
+                            <div class="modal fade" id="approveModal" tabindex="-1" role="dialog" aria-labelledby="yearModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="editModalLabel">Approve Leave Request</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+            
+                                            <form id="approveRequestForm">
+                                                
+                                                <div class="col-md-12">
+                                                    <h7>Remaining Leave: <span>&nbsp;<b id="remainingLeaveNameSpan" >15</b></span></h7>
+                                                    <br><hr>
+                                                </div>
+            
+                                                                        
+                                                <div class="col-md-12">
+                                                    <label for="designationName"><small><b>Note: </b><i>The total units of leave taken will be automatically deducted from the total leave credits.</i></small></label>
+                                                </div><br>
+            
+                                                <div class="col-md-12">
+                                                    <label for="withinDetails"><small>Total units of leave taken: <span style="color: red;">*</span></small></label><br>
+                                                    <input type="number" id="designationName" class="form-control" required>
+                                                  </div><br>
+            
+                                                
+                                                  <div class="col-md-12"> 
+                                                    <label for="withinDetails"><small>Reason:</span></small></label><br>
+                                                    <textarea id="descriptionText" rows="3" class="form-control" placeholder="Reason"></textarea>
+                                                </div><br>
+            
+                                            </form>
+            
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                                onclick="hideApproveModal()">Close</button>
+                                            <input type="button" id="submitApproveBtn1" class="btn btn-primary" value="Save">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
             
                 <div class="col-xl-8">
@@ -794,14 +872,16 @@
                                         <br>
                                         <div class="row">
                                         
-                                          <div class="col-md-6" style="padding-left: 15vw; padding-top: 3vh;">
-                                            <input type="radio" id="slipPurpose" name="purpose" value="Official">
-                                            <label for="officialPurpose">&nbsp;Official</label>
-                                          </div><br>
-                                          <div class="col-md-6" style="padding-top: 3vh;">
-                                            <input type="radio" id="slipPurpose" name="purpose" value="Personal">
-                                            <label for="personalPurpose">&nbsp;Personal</label>
-                                          </div>
+                                            <div class="col-md-6" style="padding-left: 15vw; padding-top: 3vh;">
+                                                <input type="radio" id="officialPurpose" name="purpose" value="Official">
+                                                <label for="officialPurpose">&nbsp;Official</label>
+                                            </div>
+                                            <br>
+                                            <div class="col-md-6" style="padding-top: 3vh;">
+                                                <input type="radio" id="personalPurpose" name="purpose" value="Personal">
+                                                <label for="personalPurpose">&nbsp;Personal</label>
+                                            </div>
+
                                         </div>
                                       </div><br>
                                                           
@@ -974,7 +1054,7 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
-    <script src="bundles/leave_management.bundle.js"></script>
+    <script src="bundles/locator_slip_request.bundle.js"></script>
     <script src="js/sidebar.js"></script>
 
 
