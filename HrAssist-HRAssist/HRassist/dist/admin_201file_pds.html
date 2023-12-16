@@ -437,12 +437,29 @@
             </div>
             <br><br>
             <!--Personal Data-->
+            <div class="card">
+                <div class="card-body">
+                  <p class="card-text" style="padding-top: 2vh;">
+                   <b>Instructions:</b> Upload or Input Employee PDS pdf file
+                  </p>
+                </div>
+              </div>
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="right-aligned-btn"></div>
+                    <label for="file-upload" class="btn btn-success btn-sm">
+                        <input type="file" id="file-upload" style="display: none;" data-whatever="@mdo">+ Add Employee PDS
+                    </label>
+                </div>
+            </form>
+            
 
             <div class="container custom-container-pds">
                 <br>
+                
                 <div class="container">
-                    <label style="color:#08533F"><small>CS Form 212</small></label><br>
+                    <label style="color:#08533F"><small>CS Form 212</small></label>
                 </div><br>
+                
                 
                 <div class="container">
                     <div class="row">
@@ -468,6 +485,8 @@
                                             <input class="form-control" id="inputFirstName" type="text"
                                                 placeholder="">
                                         </div>
+
+                                        
                                         
                                         <!-- Form Group (middle name)-->
                                         <div class="col-md-4">
