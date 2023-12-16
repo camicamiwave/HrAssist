@@ -148,58 +148,66 @@ function AddReward() {
     const CalendarcolRef = collection(db, 'Reward Information');
     document.getElementById('addrewardbtn').addEventListener('click', () => {
 
-        const leaveFormData = {
-            createdAt: serverTimestamp(),
-            Reward_Details: {
-                Office: document.getElementById('officeSelecor').value.trim(),
-                Designation: document.getElementById('positionSelector').value.trim(),
-                FullName: document.getElementById('employeeName').value.trim(),
-                DateIssued: document.getElementById('dateIssued').value.trim(),
-                Reward: document.getElementById('rewardText').value.trim(),
-                Description: document.getElementById('descriptionText').value.trim(),
-                Reason: document.getElementById('reasonText').value.trim(),
-            }
-        };
+        if (validateForm()) {
 
-
-        Swal.fire({
-            title: 'Are you sure?',
-            text: 'Employee will be recognized',
-            icon: 'question',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Confirm'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                return addDoc(CalendarcolRef, leaveFormData);
-            } else {
-                return Promise.reject(new Error('User canceled'));
-            }
-        }).then((docRef) => {
-            ReturnDocumentID(docRef) 
-
+            const leaveFormData = {
+                createdAt: serverTimestamp(),
+                Reward_Details: {
+                    Office: document.getElementById('officeSelecor').value.trim(),
+                    Designation: document.getElementById('positionSelector').value.trim(),
+                    FullName: document.getElementById('employeeName').value.trim(),
+                    DateIssued: document.getElementById('dateIssued').value.trim(),
+                    Reward: document.getElementById('rewardText').value.trim(),
+                    Description: document.getElementById('descriptionText').value.trim(),
+                    Reason: document.getElementById('reasonText').value.trim(),
+                }
+            };
+    
+    
             Swal.fire({
-                title: 'Reward Added!',
-                text: "Employee's has been saved.",
-                icon: 'success',
-            })
-                .then(() => {
-                    const calendarForm = document.querySelector('#addrewardform')
-                    calendarForm.reset()
-                    // Redirect to the dashboard page
-                    //window.location.href = `admin-employee-reward.html?data=${encodeURIComponent(docRef.id)}`;
-                });
-        }).catch((error) => {
-            if (error.message !== 'User canceled') {
-                console.error('Error occurred:', error);
+                title: 'Are you sure?',
+                text: 'Employee will be recognized',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Confirm'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    return addDoc(CalendarcolRef, leaveFormData);
+                } else {
+                    return Promise.reject(new Error('User canceled'));
+                }
+            }).then((docRef) => {
+                ReturnDocumentID(docRef) 
+    
                 Swal.fire({
-                    title: 'Error',
-                    text: 'An error occurred while processing your request. Please try again.',
-                    icon: 'error',
-                });
-            }
-        });
+                    title: 'Reward Added!',
+                    text: "Employee's has been saved.",
+                    icon: 'success',
+                })
+                    .then(() => {
+                        const calendarForm = document.querySelector('#addrewardform')
+                        calendarForm.reset()
+                        // Redirect to the dashboard page
+                        //window.location.href = `admin-employee-reward.html?data=${encodeURIComponent(docRef.id)}`;
+                    });
+            }).catch((error) => {
+                if (error.message !== 'User canceled') {
+                    console.error('Error occurred:', error);
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'An error occurred while processing your request. Please try again.',
+                        icon: 'error',
+                    });
+                }
+            });
+
+        } else {
+            console.log("Error");
+        }
+
+       
     });
 }
 
@@ -302,3 +310,92 @@ function fetchReward() {
 // Call the fetchIPCRF function when the window is loaded
 window.addEventListener('load', fetchReward);
 
+function validateForm() {
+
+
+    var OfficeSelector = document.getElementById('officeSelecor');
+    var PositionSelector = document.getElementById('positionSelector');
+    var EmployeeNameInput = document.getElementById('employeeName');
+    var DateIssuedInput = document.getElementById('dateIssued');
+    var RewardInput = document.getElementById('rewardText');
+    var ReasonInput = document.getElementById('reasonText');
+    var DescriptionInput = document.getElementById('descriptionText');
+ 
+   
+       if (OfficeSelector.value === '--- Select Office ---') {
+           console.log('Please select an Office!');
+           Swal.fire({
+               title: 'Error',
+               text: 'Please select an Office!',
+               icon: 'error',
+           });
+           return false;
+       }
+   
+       if (PositionSelector.value === 'Select') {
+         console.log('Please select a position!');
+         Swal.fire({
+             title: 'Error',
+             text: 'Please select a position!',
+             icon: 'error',
+         });
+         return false;
+     }
+
+     if (EmployeeNameInput.value === '--- Select ---') {
+        console.log('Please choose an employee!');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please choose an employee!',
+            icon: 'error',
+        });
+        return false;
+    }
+
+    if (DateIssuedInput.value === '') {
+        console.log('Please input a date');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please input a date!',
+            icon: 'error',
+        });
+        return false;
+    }
+
+    if (!isValidString(RewardInput.value)) {
+        console.log('Please fix your input in Rewards');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please fix your input in Rewards!',
+            icon: 'error',
+        });
+        return false;
+    }
+
+    if (!isValidString(ReasonInput.value)) {
+        console.log('Please fix your input in Reasons');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please fix your input in Reasons!',
+            icon: 'error',
+        });
+        return false;
+    }
+   
+
+       return true;
+     
+     
+       
+   }
+   
+   
+   function isValidString(value) {
+   
+     return /^[a-zA-Z\s]*$/.test(value.trim());
+   }
+   
+   function isValidNumber(value) {
+   
+     return /^[0-9]+$/.test(value.trim());
+   }
