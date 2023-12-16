@@ -203,7 +203,7 @@ function getUpcomingActivities() {
             // No documents matched the query
             console.log('None');
         } else {
-            // Documents matched the query 
+            // Documents matched the query
             const data = snapshot.docs.map(doc => doc.data());
             console.log(data, 'asfasfsafwqwewr');
 
@@ -224,7 +224,7 @@ function getUpcomingActivities() {
                     <div class="activity-item d-flex">
                         <div class="activite-label">${year}/${month}/${day}</div>
                         <i class='bi bi-circle-fill activity-badge ${badgeColor} align-self-start'></i>
-                        <div class="activity-content">  <a href="#" class="fw-bold text-dark">${activity.eventPurpose}</a><br> ${activity.eventPurpose}
+                        <div class="activity-content">  <a href="#" class="fw-bold text-dark">${activity.formData.title}</a><br> ${activity.eventPurpose}
                         </div>
                     </div>
                 `;
