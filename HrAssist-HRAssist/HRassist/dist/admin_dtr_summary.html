@@ -336,6 +336,18 @@
         </a>
       </li><!-- End Login Page Nav -->
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-clock"></i><span>Daily Time Record</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a> 
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav"> 
+          <li>
+            <a class="nav-link collapsed" id="addemployee" href="admin_dtr_summary.html">
+              <i class="bi bi-circle"></i><span>Add Summary</span>
+            </a>
+          </li>
+        </ul> 
+      </li><!-- End Components Nav -->
 
     </ul>
 
@@ -458,6 +470,8 @@
             
               <input type="text" class="form-control" placeholder="Search Here" id="txtInputTable" style="width: 15vw; float: right; margin-bottom: 2vh;">
           </div>
+ 
+          
 
           <table class="content-table" id="dtrSummary" style="font-size: 14px;">
             <thead>
@@ -488,7 +502,7 @@
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody id="tableDetails">  
+            <tbody id="tableDetails" class="table table-bordered">  
 
                 <!--<tr>
                     <td>1</td>

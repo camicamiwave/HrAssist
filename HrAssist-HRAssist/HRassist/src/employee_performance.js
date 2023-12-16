@@ -46,7 +46,48 @@ function fetchEmployee() {
 
 }
 
-window.addEventListener('load', fetchEmployee)
+//window.addEventListener('load', fetchEmployee)
+
+
+
+function fetchAverageOPCRFRating() {
+    const IPCRFcolRef = collection(db, 'OPCRF Information');
+    const ratingElement = document.getElementById('opcrfRating'); // Assuming you have an element with id 'rating' to display the result
+
+    onSnapshot(IPCRFcolRef, (snapshot) => {
+        let totalRating = 0;
+        const numberOfEmployees = snapshot.docs.length;
+
+        snapshot.docs.forEach((doc) => {
+            const data = doc.data();
+
+            // Assuming TotalRating is stored as a string, convert it to a number
+            const rating = parseFloat(data.TotalRating) || 0;
+
+            totalRating += rating;
+        });
+
+        const averageRating = numberOfEmployees > 0 ? totalRating / numberOfEmployees : 0;
+
+        // If you want to display the average rating, you can do it here
+        ratingElement.innerHTML = averageRating.toFixed(2);
+
+        if (averageRating >= 4.50) {
+            descRating.innerHTML = "Outstanding";
+        } if (averageRating <= 4.449 && averageRating >= 3.500) {
+            descRating.innerHTML = "Very Satisfactory"
+        } if (averageRating >= 2.500 && averageRating <= 3.499) {
+            descRating.innerHTML = "Satisfactory";
+        } if (averageRating >= 1.500 && averageRating <= 1.500) {
+            descRating.innerHTML = "Unsatisfactory";
+        } if (averageRating <= 1.499) {
+            descRating.innerHTML = "Poor";
+        }
+
+    });
+}
+
+window.addEventListener('load', fetchAverageOPCRFRating);
 
 
 function fetchAverageIPCRFRating() {
@@ -87,6 +128,10 @@ function fetchAverageIPCRFRating() {
 }
 
 window.addEventListener('load', fetchAverageIPCRFRating);
+
+
+
+
 
 function fetchAverageOfficeIPCRF() {
     const IPCRFcolRef = collection(db, 'IPCRF Information');
@@ -141,7 +186,7 @@ function fetchAverageOfficeIPCRF() {
 window.addEventListener('load', fetchAverageOfficeIPCRF);
 
 
-
+/*
 function fetchPerformanceTable() {
     const DTRcolRef = collection(db, 'DTR Information');
     const EmployeecolRef = collection(db, 'Employee Information');
@@ -211,7 +256,80 @@ function fetchPerformanceTable() {
     });
 }
 
-window.addEventListener('load', fetchPerformanceTable);
+window.addEventListener('load', fetchPerformanceTable);*/
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Assuming you have Firebase initialized and db is your Firestore instance
+    const ipcRfColRef = collection(db, 'OPCRF Information');
+    const que = query(ipcRfColRef);
+
+    // Object to store total ratings and count per office
+    const officeRatings = {};
+
+    // Fetch IPCRF Information data
+    onSnapshot(que, (snapshot) => {
+        try {
+            if (!snapshot.empty) {
+                snapshot.docs.forEach((docData, index) => {
+                    const data = docData.data();
+                    const officeName = data.Office;
+
+                    // If the office doesn't exist in the ratings object, initialize it
+                    if (!officeRatings.hasOwnProperty(officeName)) {
+                        officeRatings[officeName] = {
+                            totalRating: 0,
+                            count: 0,
+                        };
+                    }
+
+                    // Add the rating to the total for the corresponding office
+                    officeRatings[officeName].totalRating += parseFloat(data.TotalRating || 0);
+                    // Increment the count for the corresponding office
+                    officeRatings[officeName].count += 1;
+                });
+
+                // Calculate average rating per office
+                const averageRatings = {};
+                for (const [officeName, ratingData] of Object.entries(officeRatings)) {
+                    averageRatings[officeName] = ratingData.totalRating / ratingData.count;
+                }
+
+                // Now averageRatings object contains the average ratings per office
+
+                // Now use the data to configure ApexCharts
+                const chartData = Object.values(averageRatings);
+                const chartCategories = Object.keys(averageRatings);
+
+                new ApexCharts(document.querySelector("#OPCRFbarChart"), {
+                    series: [{
+                        data: chartData,
+                    }],
+                    chart: {
+                        type: 'bar',
+                        height: 350
+                    },
+                    plotOptions: {
+                        bar: {
+                            borderRadius: 4,
+                            horizontal: true,
+                        }
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    xaxis: {
+                        categories: chartCategories,
+                    }
+                }).render();
+            }
+        } catch (error) {
+            console.error("Error fetching IPCRF data:", error);
+            // Handle error (e.g., display an error message)
+        }
+    });
+});
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -284,3 +402,108 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+function fetchPerformanceTable() {
+    const DTRcolRef = collection(db, 'DTR Summary');
+    const EmployeecolRef = collection(db, 'Employee Information');
+    const File201colRef = collection(db, '201File Information');
+
+    const months = [
+        'January', 'February', 'March', 'April',
+        'May', 'June', 'July', 'August',
+        'September', 'October', 'November', 'December'
+    ];
+
+    const currentDate = new Date();
+    const currentMonth = months[currentDate.getMonth()]; // Convert to string
+    const currentYear = currentDate.getFullYear().toString(); // Convert to string
+    console.log(currentMonth)
+
+    thismonth.innerHTML = currentMonth;
+    IPCRFthismonth.innerHTML = currentMonth;
+
+    const que = query(DTRcolRef, 
+        where('ForTheMonth', '==', currentMonth),
+        where('ForTheYear', '==', currentYear));
+
+    const tableBody = document.getElementById('tadinessTable').getElementsByTagName('tbody')[0];
+
+    // for retrieving the current user
+    onSnapshot(que, (snapshot) => {
+        try {
+            if (snapshot.size > 0) { // Check if there are documents in the snapshot
+                // Clear existing table rows
+                tableBody.innerHTML = '';
+
+                // Initialize an index counter
+                let rowIndex = 1;
+
+                snapshot.docs.forEach((docData, index) => {
+                    const data = docData.data();
+
+                    // Iterate over the keys of the sample object
+                    for (const key in data.Employee_DTR) { 
+                        // Create a new row
+                        const newRow = tableBody.insertRow();
+                        if (data.Employee_DTR.hasOwnProperty(key)) { 
+                            const employee = data.Employee_DTR[key];
+                            const name = employee.employeeFullName;
+                            const workHRSRequired = employee.RequiredHours;
+ 
+                              
+
+                            // Add cells to the row with data
+                            const cellID = newRow.insertCell(0);
+                            const cell1 = newRow.insertCell(1);
+                            const cell2 = newRow.insertCell(2);
+                            const cell3 = newRow.insertCell(3);
+                            const cell4 = newRow.insertCell(4);
+                            const cell5 = newRow.insertCell(5); 
+                            
+                            // Apply CSS styling to center text in cells
+                            cellID.style.textAlign = 'left';
+                            cell1.style.textAlign = 'left';
+                            cell2.style.textAlign = 'left';
+                            cell3.style.textAlign = 'center';
+                            cell4.style.textAlign = 'center';
+                            cell5.style.textAlign = 'center';
+
+                            // Check if values are non-zero before adding the row
+                            if (employee.NoTimeEarlyLeave !== "" || employee.NoTimeLateIn !== "") {
+                                // Populate cells with data
+                                cellID.textContent = rowIndex; // Use the rowIndex instead of the loop index
+                                cell1.textContent = name; 
+                                cell2.textContent = data.Office; 
+              
+                                fetchEmployeeInfo(File201colRef, key, "employeeDocID").then((dataRetrieved) => {
+                                    const designationData = dataRetrieved;
+    
+                                    console.log(designationData, 'hehehehehe')
+                                    cell3.textContent = designationData.Appointment_Details.PositionTitle;  
+    
+                                })
+
+                                cell4.textContent = employee.NoTimeEarlyLeave;  
+                                cell5.textContent = employee.NoTimeLateIn;  
+
+                                // Increment the rowIndex for the next iteration
+                                rowIndex++;
+                            } else {
+                                // If the condition is not met, remove the inserted row
+                                tableBody.deleteRow(-1);
+                            }
+                        }
+                    }
+                });
+            } else {
+                // Display a message when there are no records
+                tableBody.innerHTML = '<tr><td colspan="6">No records retrieved for this month.</td></tr>';
+            }
+        } catch (error) {
+            console.error("Error fetching IPCRF data:", error);
+            // Handle error (e.g., display an error message)
+        }
+    });
+}
+
+window.addEventListener('load', fetchPerformanceTable);

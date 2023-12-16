@@ -16,6 +16,7 @@ import {
 
 import { firebaseConfig } from './server.js';
 import { FetchCurrentUser } from './fetch_current_user.js';
+import { fetchEmployeeInfo } from './fetch_employee_info.js';
 
 // init firebase app
 const app = initializeApp(firebaseConfig)
@@ -35,11 +36,11 @@ function AddApplicantForm() {
     // Create a URLSearchParams object from the query string
     const urlParams = new URLSearchParams(queryString);
     // Get the values of the customDocId and id parameters
-    const jobDetailsURL = urlParams.get('id'); 
-    
+    const jobDetailsURL = urlParams.get('id');
+
 
     console.log(jobDetailsURL, 'hello')
-    
+
     const JobcolRef = collection(db, 'Applicant Information');
 
     let customDocId;
@@ -56,13 +57,13 @@ function AddApplicantForm() {
 
         const que = query(TestcolRef, where("userID", "==", userUID));
     })
-        
+
     FetchApplicantIDData().then((maxID) => {
         applicantCurrentMaxID = maxID
     })
 
     addApplicantForm.addEventListener('submit', (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         const applicantID = applicantCurrentMaxID + 1;
 
         const applicantJobForm = {
@@ -84,7 +85,7 @@ function AddApplicantForm() {
                 Email: addApplicantForm.inputemail.value,
                 Address: addApplicantForm.inputaddress.value,
                 Message: addApplicantForm.message.value
-            } 
+            }
         }
 
         Swal.fire({
@@ -123,7 +124,7 @@ function AddApplicantForm() {
 
                     // Upload the file to Firebase Storage
                     return uploadBytes(fileRef, firstSelectedFile);
-                 }).then((snapshot) => {
+                }).then((snapshot) => {
                     // File upload completed successfully
                     const fileRef = snapshot.ref;
 
@@ -133,7 +134,7 @@ function AddApplicantForm() {
                     // Update Firestore document with the download URL
                     console.log(downloadURL);
                     return setDoc(doc(JobcolRef, customDocId), { ProfilePicURL: downloadURL }, { merge: true });
-                }).then(() =>{
+                }).then(() => {
                     const storageRef = ref(storage, "Applicant/Profile");
 
                     // Access the file input field
@@ -159,11 +160,11 @@ function AddApplicantForm() {
                     console.log(downloadURL);
                     return setDoc(doc(JobcolRef, customDocId), { CVURL: downloadURL }, { merge: true });
                 })
-                
-                .catch((error) => {
-                    // Handle any errors that occurred during the process
-                    console.error("Error:", error);
-                })
+
+                    .catch((error) => {
+                        // Handle any errors that occurred during the process
+                        console.error("Error:", error);
+                    })
                     .then(() => {
                         console.log("hereee: ", customDocId)
                         // Reset the form
@@ -196,23 +197,6 @@ function Test() {
     btnId.addEventListener('click', (e) => {
         e.preventDefault();
 
-        const jobTitleLabel = document.getElementById("inputJobTitle").value;
-        const SalaryAmountLabel = document.getElementById("inputSalaryAmount").value;
-        const DateLabel = document.getElementById("inputDate").value;
-        const DescriptionLabel = document.getElementById("inputJobDesc").value;
-        const ResponsibilityLabel = document.getElementById("inputJobResponsibility").value;
-        const JobQualityLabel = document.getElementById("inputJobQuality").value;
-        const JobVacancyLabel = document.getElementById("inputJobVacancy").value;
-        const JobLocationLabel = document.getElementById("inputJobLocation").value;
-
-        console.log(jobTitleLabel, 'aswe')
-        console.log(SalaryAmountLabel, 'aswe')
-        console.log(DateLabel, 'aswe')
-        console.log(DescriptionLabel, 'aswe')
-        console.log(ResponsibilityLabel, 'aswe')
-        console.log(JobQualityLabel, 'aswe')
-        console.log(JobVacancyLabel, 'aswe')
-        console.log(JobLocationLabel, 'aswe')
 
         const jobDetailsData = {
             createdAt: serverTimestamp(),
@@ -225,7 +209,7 @@ function Test() {
             JobRes: document.getElementById("inputJobResponsibility").value,
             Qualification: document.getElementById("inputJobQuality").value,
             NumVacancy: document.getElementById("inputJobVacancy").value,
-            JobLocation: document.getElementById("inputJobLocation").value,
+            Office: document.getElementById("officeSelector").value,
         }
 
         Swal.fire({
@@ -249,7 +233,7 @@ function Test() {
                     customDocId = docRef.id;
                     // Update the document with the custom ID
                     return setDoc(doc(JobcolRef, customDocId), { documentID: customDocId }, { merge: true });
-                }).then(() => {
+                })/*.then(() => {
                     const storageRef = ref(storage, "Job Hiring/Logo");
 
                     // Access the file input field
@@ -264,7 +248,7 @@ function Test() {
 
                     // Upload the file to Firebase Storage
                     return uploadBytes(fileRef, firstSelectedFile);
-                 }).then((snapshot) => {
+                }).then((snapshot) => {
                     // File upload completed successfully
                     const fileRef = snapshot.ref;
 
@@ -277,7 +261,7 @@ function Test() {
                 }).catch((error) => {
                     // Handle any errors that occurred during the process
                     console.error("Error:", error);
-                })
+                })*/
                     .then(() => {
                         console.log("hereee: ", customDocId)
                         // Reset the form
@@ -312,26 +296,26 @@ window.addEventListener('load', () => {
 
 export function FetchApplicantIDData() {
     return new Promise((resolve, reject) => {
-      const TestcolRef = collection(db, 'Applicant Information');
-      const querySnapshot = query(TestcolRef);
-  
-      onSnapshot(querySnapshot, (snapshot) => {
-        let maxApplicantIDNum = 0;
-  
-        snapshot.docs.forEach((doc) => {
-          const data = doc.data();
-          const applicantIDNum = data.ApplicantID;
-          
-          if (applicantIDNum > maxApplicantIDNum) {
-            maxApplicantIDNum = applicantIDNum;
-          }
+        const TestcolRef = collection(db, 'Applicant Information');
+        const querySnapshot = query(TestcolRef);
+
+        onSnapshot(querySnapshot, (snapshot) => {
+            let maxApplicantIDNum = 0;
+
+            snapshot.docs.forEach((doc) => {
+                const data = doc.data();
+                const applicantIDNum = data.ApplicantID;
+
+                if (applicantIDNum > maxApplicantIDNum) {
+                    maxApplicantIDNum = applicantIDNum;
+                }
+            });
+
+            resolve(maxApplicantIDNum);
         });
-  
-        resolve(maxApplicantIDNum);
-      });
     });
-  }
-  
+}
+
 
 // This section is for applicant hiring index.html
 export function fetchApplicantHiring() {
@@ -402,7 +386,7 @@ function handleApplyNowClick(event) {
 
 window.addEventListener('load', fetchApplicantHiring)
 
-export function fetchJobDetails(){
+export function fetchJobDetails() {
     // Get the query string from the URL
     const queryString = window.location.search;
 
@@ -428,62 +412,62 @@ export function fetchJobDetails(){
     const jobSalaryText = document.getElementById("JobSalaryLabel")
     const jobDescText = document.getElementById("JobDescLabel")
     const jobRespText = document.getElementById("JobRespLabel")
-    const jobQualiText = document.getElementById("JobQualification") 
+    const jobQualiText = document.getElementById("JobQualification")
     const jobLogoImg = document.getElementById("JobLogo")
 
-    
-    const jobCreatedText = document.getElementById("CreatedLabel") 
-    const jobPositioniText = document.getElementById("JobPositionLabel") 
-    const jobNatureText = document.getElementById("JobNatureLabel") 
-    const jobSalaryText1 = document.getElementById("JobSalaryLabel") 
-    const jobLocationText1 = document.getElementById("JobLocationLabel") 
-    const jobDueDateText = document.getElementById("JobDueDateLabel") 
 
-    
+    const jobCreatedText = document.getElementById("CreatedLabel")
+    const jobPositioniText = document.getElementById("JobPositionLabel")
+    const jobNatureText = document.getElementById("JobNatureLabel")
+    const jobSalaryText1 = document.getElementById("JobSalaryLabel")
+    const jobLocationText1 = document.getElementById("JobLocationLabel")
+    const jobDueDateText = document.getElementById("JobDueDateLabel")
+
+
     const ApplyNowBtn = document.getElementById('Apply_Now_Btn')
 
 
-    onSnapshot(que, (snapshot) => { 
+    onSnapshot(que, (snapshot) => {
 
         snapshot.docs.forEach((doc) => {
             const data = doc.data();
             const id = doc.id;
 
             jobTitleText.innerHTML = data.JobTitle
-            jobLocationText.innerHTML = data.JobLocation
+            //jobLocationText.innerHTML = data.JobLocation
             jobTypeText.innerHTML = data.JobType
             jobSalaryText.innerHTML = data.SalaryAmount
             jobDescText.innerHTML = data.JobDesc
             jobRespText.innerHTML = data.JobRes
             jobQualiText.innerHTML = data.Qualification
             jobLogoImg.src = data.JobLogo
-            
+
 
             const timestamp = data.createdAt.toDate();
-    
+
             // Format the date and time
             const formattedDate = timestamp.toLocaleDateString('en-US');
             const formattedTime = timestamp.toLocaleTimeString('en-US');
-            
-            jobCreatedText.innerHTML =  formattedDate
-            jobPositioniText.innerHTML =  data.JobTitle
-            jobNatureText.innerHTML =  data.JobType
-            jobSalaryText1.innerHTML =  data.SalaryAmount
-            jobLocationText1.innerHTML =  data.JobLocation
-            jobDueDateText.innerHTML =  data.DueDate
+
+            jobCreatedText.innerHTML = formattedDate
+            jobPositioniText.innerHTML = data.JobTitle
+            jobNatureText.innerHTML = data.JobType
+            jobSalaryText1.innerHTML = data.SalaryAmount
+            //jobLocationText1.innerHTML = data.JobLocation
+            jobDueDateText.innerHTML = data.DueDate
 
 
             ApplyNowBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 console.log("hehehe")
-                
+
 
                 FetchCurrentUser().then((result) => {
-                    if (result !== "None") { 
+                    if (result !== "None") {
                         console.log(result)
                         // Redirect to the new URL with the customDocId and id as query parameters
                         window.location.href = `job_form.html?customDocId=${encodeURIComponent(data.customDocId)}&id=${id}`;
-                    } else { 
+                    } else {
                         window.location.href = `applicant-create.html`;
                     }
                 });
@@ -503,16 +487,16 @@ export function fetchJobDetails(){
 }
 
 
-window.addEventListener('load', fetchJobDetails) 
+window.addEventListener('load', fetchJobDetails)
 
 
 
 // ----------------------> get job vacancy table
 
 
-function GetJobVacancyTable() {
+async function GetJobVacancyTable() {
     try {
-                
+
         const jobcolRef = collection(db, 'Job Information')
 
         const q = query(jobcolRef, orderBy('createdAt'))
@@ -527,9 +511,9 @@ function GetJobVacancyTable() {
             // Clear the existing rows in the table body
             tbody.innerHTML = '';
 
-            snapshot.docs.forEach((doc) => {
-                const data = doc.data();
-                const id = doc.id;
+            snapshot.docs.forEach((jobdoc) => {
+                const data = jobdoc.data();
+                const id = jobdoc.id;
                 const row = document.createElement('tr');
 
                 const idCell = document.createElement('td');
@@ -541,29 +525,149 @@ function GetJobVacancyTable() {
                 const jobType = document.createElement('td');
                 jobType.textContent = data.JobType;
 
+                const office = document.createElement('td');
+                office.textContent = data.Office;
+                const salary = document.createElement('td');
+                salary.textContent = data.SalaryAmount;
+
                 const jobPositionCell = document.createElement('td');
                 jobPositionCell.textContent = data.DueDate;
+
+                const jobVacancyCell = document.createElement('td');
+                jobVacancyCell.textContent = data.NumVacancy;
+
+
+                const jobStatusCell = document.createElement('td');
+                jobStatusCell.textContent = data.JobStatus;
 
                 // Create a single cell for both buttons
                 const buttonsCell = document.createElement('td');
 
                 // Create activation and deactivation buttons with classes
                 const editButton = createButton('Edit', 'editJob');
-                const deleteButton = createButton('Delete', 'deleteJob');
+                editButton.classList.add('btn', 'btn-primary');
 
                 // Add click event listeners to the buttons
                 editButton.addEventListener('click', () => {
                     // Implement activation logic here 
-                    alert(`Activate clicked for ID: ${data.Email}`);
-                    AccountStatusActivation('Activate', id)
-                    idNum = 1;
+                    //alert(`Activate clicked for ID: ${data.JobTitle}`); 
+                    //idNum = 1;
+
+                    window.location.href = `admin_add_job.html?jobVacancyID=${encodeURIComponent(id)}`;
+
+                    /*
+                    const OfficeValue = document.getElementById("officeSelector");
+
+                    inputJobTitle.value = data.JobTitle
+                    inputSalaryAmount.value = data.SalaryAmount
+                    inputDate.value = data.DueDate
+                    inputJobVacancy.value = data.NumVacancy
+                    OfficeValue.value = data.Office
+                    inputJobDesc.value = data.JobDesc
+                    inputJobResponsibility.value = data.JobRes
+                    inputJobQuality.value = data.Qualification
+                    applicationStatus.value = data.JobStatus 
+
+                    $('#exampleModalCenter').modal('show');
+
+
+                    updateBtn.addEventListener('click', (e) => { 
+                     
+                        const jobDetailsData = {
+                            createdAt: serverTimestamp(),
+                            JobStatus: document.getElementById('applicationStatus').value,
+                            JobTitle: document.getElementById("inputJobTitle").value,
+                            JobType: document.getElementById("inputJobType").value,
+                            SalaryAmount: document.getElementById("inputSalaryAmount").value,
+                            DueDate: document.getElementById("inputDate").value,
+                            JobDesc: document.getElementById("inputJobDesc").value,
+                            JobRes: document.getElementById("inputJobResponsibility").value,
+                            Qualification: document.getElementById("inputJobQuality").value,
+                            NumVacancy: document.getElementById("inputJobVacancy").value,
+                            Office: document.getElementById("officeSelector").value, 
+                        }
+ 
+                        Swal.fire({
+                            title: "Are you sure?",
+                            text: "Your update will be recorded",
+                            icon: "question",
+                            showCancelButton: true,
+                            confirmButtonColor: "#3085d6",
+                            cancelButtonColor: "#d33",
+                            confirmButtonText: "Confirm"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                Swal.fire({
+                                    title: "Saved!",
+                                    text: "Update successfully...",
+                                    icon: "success"
+                                }).then(() => {
+                                    // Add data to Firestore                        
+                                    return setDoc(doc(jobcolRef, id), { jobDetailsData }, { merge: true }); 
+                                }).then(() => { 
+                                        // Reset the form
+                                        //addDataSheetForm.reset();
+                                        console.log("Added job details successfully...");
+                                        //window.location.href = 'Education-21Files.html';
+                                        window.location.href = `admin_job_vacancy_view.html`;
+                                    })
+                                    .catch(error => console.error('Error adding job details document:', error));
+                            }
+                        });
+                
+
+                    })*/
+
                 });
+
+                const deleteButton = createButton('Delete', 'deleteJob');
+                deleteButton.classList.add('btn', 'btn-danger');
 
                 deleteButton.addEventListener('click', () => {
                     // Implement deactivation logic here
-                    alert(`Deactivate clicked for ID: ${data.Email}`);
-                    AccountStatusActivation('Deactivated', id)
-                    idNum = 1;
+                    //alert(`Activate clicked for ID: ${id}`);
+                                
+                    $('#deleteModal').modal('show');
+
+                    closeBtn.addEventListener('click', (e) =>{
+                        $('#deleteModal').modal('hide');
+                    })
+
+                    const deleteButtonModal = document.getElementById('deleteBtnModal')
+                    
+                    deleteButtonModal.addEventListener('click', async (e) => {
+                        console.log('asgsgs')
+                        Swal.fire({
+                            title: "Are you sure?",
+                            text: "Record will be deleted",
+                            icon: "info",
+                            showCancelButton: true,
+                            confirmButtonColor: "#3085d6",
+                            cancelButtonColor: "#d33",
+                            confirmButtonText: "Yes, delete it"
+                        }).then(async (result) => {
+                            if (result.isConfirmed) {
+                                Swal.fire({
+                                    title: "Saved!",
+                                    text: "Deleted successfully...",
+                                    icon: "success"
+                                }).then(async () => {
+                                    try {
+                                        // Replace "cities" and "DC" with your actual collection name and document ID
+                                        await deleteDoc(doc(jobcolRef, id));
+                                                        
+                                        $('#deleteModal').modal('hide');
+                                    } catch {
+                                        alert("There's an error while deleting the record...");
+                                    }
+                                });
+                            }
+                        });
+                    });
+
+
+
+
                 });
 
                 // Append buttons to the cell
@@ -574,7 +678,11 @@ function GetJobVacancyTable() {
                 row.appendChild(idCell);
                 row.appendChild(jobTitle);
                 row.appendChild(jobType);
-                row.appendChild(jobPositionCell); 
+                row.appendChild(office);
+                row.appendChild(salary);
+                row.appendChild(jobVacancyCell);
+                row.appendChild(jobPositionCell);
+                row.appendChild(jobStatusCell);
                 row.appendChild(buttonsCell); // Append the cell with buttons
 
                 // Append the row to the table body
@@ -602,5 +710,120 @@ function createButton(text, className) {
 window.addEventListener('load', GetJobVacancyTable);
 
 
+function officeSelector() {
+    const OfficecolRef = collection(db, 'Office Information');
+    const que = query(OfficecolRef, orderBy('createdAt'));
+
+    const inputOffice = document.getElementById('officeSelector');
+    inputOffice.innerHTML = '<option>Select</option>';
+
+    onSnapshot(que, (snapshot) => {
+        snapshot.docs.forEach((doc) => {
+            const data = doc.data();
+            const id = doc.id;
+
+            // Create an option element for each OfficeName and append it to the selector
+            const optionElement = document.createElement('option');
+            optionElement.value = data.OfficeName;
+            optionElement.textContent = data.OfficeName;
+            inputOffice.appendChild(optionElement);
+        });
+    });
+}
+
+window.addEventListener('load', officeSelector);
 
 
+function JobVacancyFormPopulate() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const receivedStringData = urlParams.get('jobVacancyID');
+
+    const TrainingColRef = collection(db, 'Job Information');
+
+    fetchEmployeeInfo(TrainingColRef, receivedStringData, "documentID").then((dataRetrieved) => {
+        const data = dataRetrieved;
+
+        console.log(data)
+
+        const officeSelected = document.getElementById('officeSelector')
+
+        if (data !== "none") {
+
+            inputJobSubmit.style.display = 'none'
+            updateJob.style.display = 'block'
+
+            inputJobTitle.value = data.JobTitle
+            inputSalaryAmount.value = data.SalaryAmount
+            inputDate.value = data.DueDate
+            inputJobVacancy.value = data.NumVacancy
+            inputJobType.value = data.JobType
+            officeSelected.value = data.Office
+            inputJobDesc.value = data.JobDesc
+            inputJobResponsibility.value = data.JobRes
+            inputJobQuality.value = data.Qualification
+            applicationStatus.value = data.JobStatus
+
+            updateJob.addEventListener('click', (e) => { 
+                     
+                const jobDetailsData = {
+                    createdAt: serverTimestamp(),
+                    JobStatus: document.getElementById('applicationStatus').value,
+                    JobTitle: document.getElementById("inputJobTitle").value,
+                    JobType: document.getElementById("inputJobType").value,
+                    SalaryAmount: document.getElementById("inputSalaryAmount").value,
+                    DueDate: document.getElementById("inputDate").value,
+                    JobDesc: document.getElementById("inputJobDesc").value,
+                    JobRes: document.getElementById("inputJobResponsibility").value,
+                    Qualification: document.getElementById("inputJobQuality").value,
+                    NumVacancy: document.getElementById("inputJobVacancy").value,
+                    Office: document.getElementById("officeSelector").value, 
+                };
+                
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "Your update will be recorded",
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Confirm"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: "Saved!",
+                            text: "Update successfully...",
+                            icon: "success",
+                            timer: 2000, // Set the timer in milliseconds (2 seconds in this example)
+                            showConfirmButton: false
+                        }).then(() => {
+                            const jobcolRef = collection(db, 'Job Information');
+                            const docRef = doc(jobcolRef, receivedStringData);
+                
+                            // Update data in Firestore                        
+                            return updateDoc(docRef, jobDetailsData)
+                                .then(() => { 
+                                    // Reset the form if needed
+                                    // addDataSheetForm.reset();
+                
+                                    console.log("Updated job details successfully...");
+                                    
+                                    // Redirect after the specified delay
+                                    setTimeout(() => {
+                                        window.location.href = 'admin_job_vacancy_view.html';
+                                    }, 2000); // Set the delay in milliseconds (2 seconds in this example)
+                                })
+                                .catch(error => console.error('Error updating job details document:', error));
+                        });
+                    }
+                });
+        
+
+            })
+
+        }
+
+
+    })
+
+}
+window.addEventListener('load', JobVacancyFormPopulate);
