@@ -99,7 +99,7 @@ function fetchOfficeDesignation() {
 
         if (selectedOffice && selectedDesignation) {
             
-            fetchEmployeeInfo(file201ColRef, selectedOffice, 'Appointment_Details.Office')
+            fetchEmployeeInfo(file201ColRef, selectedDesignation, 'Appointment_Details.PositionTitle')
                 .then((dataRetrieved) => {
                     const appointmentData = dataRetrieved;
                     const appointmentDocumentID = appointmentData.employeeDocID
@@ -118,7 +118,6 @@ function fetchOfficeDesignation() {
                         employeeNameSelector.innerHTML = '<option>--- Select ---</option>';
                         
                         const fullName = `${employeeData.Personal_Information.FirstName} ${employeeData.Personal_Information.MiddleName} ${employeeData.Personal_Information.SurName}`
-
 
                         const optionElement = document.createElement('option');
                         optionElement.value = fullName;
@@ -355,6 +354,72 @@ function fetchReward() {
 
 // Call the fetchIPCRF function when the window is loaded
 window.addEventListener('load', fetchReward);
+
+
+
+function fetchTopPerformingEmployee() {
+    const IPCRFcolRef = collection(db, 'IPCRF Information');
+    const EmployeecolRef = collection(db, 'Employee Information');
+    const tableBody = document.getElementById('topPerformingEmployees').getElementsByTagName('tbody')[0];
+
+    let highestRating = -Infinity; // Initialize with a very low value
+
+    const que = query(IPCRFcolRef, orderBy('TotalRating', 'desc'));
+
+    onSnapshot(que, (snapshot) => {
+        // Clear existing rows
+        tableBody.innerHTML = '';
+
+        let num = 1;
+
+        snapshot.docs.forEach((empdoc) => {
+            const data = empdoc.data();
+            const employeeID = data.employeeDocID;
+
+            console.log(data);
+
+            if (data.TotalRating > highestRating) {
+                highestRating = data.TotalRating;
+            }
+
+            // Create a new row for the employee with the highest rating
+            if (data.TotalRating === highestRating) {
+                const row = tableBody.insertRow();
+
+                // Create cells and set values
+                const cell1 = row.insertCell(0);
+                const cell2 = row.insertCell(1);
+                const cell3 = row.insertCell(2);
+                const cell4 = row.insertCell(3);
+
+                
+                fetchEmployeeInfo(EmployeecolRef, data.employeeDocID, 'documentID')
+                .then((dataRetrieved) => {
+                    const employeeData = dataRetrieved;
+                    const employeeDocumentID = employeeData.documentID
+
+
+                    cell1.innerHTML = `<td> <img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;">`;
+                    cell2.textContent = employeeData.Personal_Information.SurName; // Replace with the actual field name
+                    cell3.textContent = employeeData.Personal_Information.FirstName; // Replace with the actual field name
+                    cell4.textContent = data.TotalRating;
+                    // Add more cells as needed
+    
+                    num++;
+     
+                })
+            }
+        });
+    });
+}
+
+// Call the fetchIPCRF function when the window is loaded
+window.addEventListener('load', fetchTopPerformingEmployee);
+
+
+
+
+
 
 function validateForm() {
 
