@@ -65,6 +65,11 @@ function fetchEmployeeLeaveCredits() {
 
                                 console.log(employee_data.Personal_Information.Gender, 'asfsaf')
                                 if (employee_data.Personal_Information.Gender === "Male"){
+
+                                    console.log("Hide vawc");
+                                    document.getElementById('vawcleave').style.display = 'none';
+                                    document.getElementById('maternityleave').style.display = 'none';
+                                    document.getElementById('specialwomenleave').style.display = 'none';
                                     totalVacationLeave.innerHTML = leaveCreditdata.Leave_Credit['Vacation Leave'].RemainingUnits
                                     totalMandatoryLeave.innerHTML = leaveCreditdata.Leave_Credit['Mandatory/Forced Leave'].RemainingUnits
                                     totalMandatoryLeave.innerHTML = leaveCreditdata.Leave_Credit['Mandatory/Forced Leave'].RemainingUnits
@@ -75,7 +80,7 @@ function fetchEmployeeLeaveCredits() {
                                     totalSpecialPrevilegeLeave.innerHTML = leaveCreditdata.Leave_Credit['Special Privilege Leave'].RemainingUnits
                                     //totalSpecialLeaveForWomen.innerHTML = leaveCreditdata.Leave_Credit['Special Leave Benefits for Women'].RemainingUnits
                                     totalStudyLeave.innerHTML = leaveCreditdata.Leave_Credit['Study Leave'].RemainingUnits
-                                    totalVAWCLeave.innerHTML = leaveCreditdata.Leave_Credit['10-Day VAWC Leave'].RemainingUnits
+                                    //totalVAWCLeave.innerHTML = leaveCreditdata.Leave_Credit['10-Day VAWC Leave'].RemainingUnits
                                     totalRehabilitationLeave.innerHTML = leaveCreditdata.Leave_Credit['Rehabilitation Priviledge'].RemainingUnits
                                     totalSpecialEmergency.innerHTML = leaveCreditdata.Leave_Credit['Special Emergency (Calamity) Leave'].RemainingUnits
                                     totalRehabilitationLeave.innerHTML = leaveCreditdata.Leave_Credit['Rehabilitation Priviledge'].RemainingUnits
@@ -94,7 +99,7 @@ function fetchEmployeeLeaveCredits() {
                                 } else if (employee_data.Personal_Information.Gender === "Female"){
                                     totalVacationLeave.innerHTML = leaveCreditdata.Leave_Credit['Vacation Leave'].RemainingUnits
                                     totalMandatoryLeave.innerHTML = leaveCreditdata.Leave_Credit['Mandatory/Forced Leave'].RemainingUnits
-                                    totalMandatoryLeave.innerHTML = leaveCreditdata.Leave_Credit['Mandatory/Forced Leave'].RemainingUnits
+                                    //totalMandatoryLeave.innerHTML = leaveCreditdata.Leave_Credit['Mandatory/Forced Leave'].RemainingUnits
                                     totalSickLeave.innerHTML = leaveCreditdata.Leave_Credit['Sick Leave'].RemainingUnits                                        
                                     totalMaternityLeave.innerHTML = leaveCreditdata.Leave_Credit['Maternity Leave'].RemainingUnits
                                     totalSoloParentLeave.innerHTML = leaveCreditdata.Leave_Credit['Solo Parent Leave'].RemainingUnits
