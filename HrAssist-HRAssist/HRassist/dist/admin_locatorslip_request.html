@@ -492,76 +492,167 @@
 
     </header><!-- End Header -->
 
-    <aside id="sidebar" class="sidebar">
-        <ul class="sidebar-nav" id="sidebar-nav">
-            <li class="nav-heading">ADMIN TOOL</li>
-    
-            <li class="nav-item">
-                <a class="nav-link collapsed" id="dashboard" href="admin_dashboard.html">
-                    <i class="bi bi-grid"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li><!-- End Dashboard Nav -->
-    
-            <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
-    
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a class="nav-link collapsed" id="addemployee" href="admin_201file_account.html">
-                            <i class="bi bi-circle"></i><span>Add Employee</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a id="employeelist" href="admin_employee_registry_list.html">
-                            <i class="bi bi-circle"></i><span>Employee List</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a id="editemployee" href="admin_search_employee_view.html">
-                            <i class="bi bi-circle"></i><span>Edit Employee</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a id="searchemployee" href="admin_search_employee_view.html">
-                            <i class="bi bi-circle"></i><span>Search Employee</span>
-                        </a>
-                    </li>
-                </ul>
-            </li><!-- End Components Nav -->
-    
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-person"></i><span>Manage Applicant</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a id="addapplicant" href="admin_add_applicant.html">
-                            <i class="bi bi-circle"></i><span>Add Applicant</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a id="applicantlist" href="admin_manage_applicant_view.html">
-                            <i class="bi bi-circle"></i><span>Applicant List</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a id="searchapplicant" href="admin_search_applicant.html">
-                            <i class="bi bi-circle"></i><span>Search Applicant</span>
-                        </a>
-                    </li>
-                </ul>
-            </li><!-- End Forms Nav -->
-          
-            <li class="nav-item">
-              <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
-                  <i class="bx bxs-briefcase"></i>
-                  <span>Job Vacancy</span>
-              </a>
-          </li><!-- End Job Vacancy Nav -->
+  <!--Side Bar-->
+  <aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-heading">ADMIN TOOL</li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="dashboard" href="admin_dashboard.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="nav-link collapsed" id="addemployee" href="admin_201file_account.html">
+              <i class="bi bi-circle"></i><span>Add Employee</span>
+            </a>
+          </li>
+          <li>
+            <a id="employeelist" href="admin_employee_registry_list.html">
+              <i class="bi bi-circle"></i><span>Employee List</span>
+            </a>
+          </li>
+          <li>
+            <a id="editemployee" href="admin_search_employee_view.html">
+              <i class="bi bi-circle"></i><span>Edit Employee</span>
+            </a>
+          </li>
+          <li>
+            <a id="searchemployee" href="admin_search_employee_view.html">
+              <i class="bi bi-circle"></i><span>Search Employee</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-person"></i><span>Manage Applicant</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="admin_add_applicant.html">
+              <i class="bi bi-circle"></i><span>Add Applicant</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_manage_applicant_view.html">
+              <i class="bi bi-circle"></i><span>Applicant List</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="admin_search_applicant.html">
+              <i class="bi bi-circle"></i><span>Search Applicant</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
+          <i class="bx bxs-briefcase"></i>
+          <span>Job Vacancy</span>
+        </a>
+      </li><!-- End Job Vacancy Nav -->
+
+      <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+      <li class="nav-item">
+        <a id="employeePerformance" class="nav-link collapsed" href="admin-employee-performance.html">
+          <i class="bi bi-bar-chart-line"></i>
+          <span>Employee Performance</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed"  href="admin_employee_opcrf.html" >
+          <i class="bi bi-check-circle"></i>
+          <span>Employee OPCRF</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
+          <i class="bi bi-check-square"></i>
+          <span>Employee IPCRF</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-heading">Rewards & RECOGNITION</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" id="rewards" href="#">
+          <i class="bi bi-award"></i>
+          <span>Rewards</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li class="nav-heading">LEARNING DEVELOPMENT</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+          <i class="bi bi-people-fill"></i>
+          <span>Training & Seminar</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+      <li class="nav-heading">CONFIGURATION</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gear"></i><span>Configuration</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="admin-offices.html">
+              <i class="bi bi-circle"></i><span>Office</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_accounts_view.html">
+              <i class="bi bi-circle"></i><span>Accounts</span>
+            </a>
+          </li>
+          <li>
+            <a href="calendar.html">
+              <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Icons Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_request.html">
+          <i class="bi bi-calendar"></i>
+          <span>Leave Management</span>
+        </a>
+      </li><!-- End Login Page Nav --> 
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_request_locatorslip.html">
+          <i class="bi bi-file-earmark-text"></i>
+          <span>Locator Slip Request</span>
+        </a>
+      </li><!-- End Login Page Nav --> 
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-clock"></i><span>Daily Time Record</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a> 
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav"> 
+          <li>
+            <a class="nav-link collapsed" id="addemployee" href="admin_dtr_summary.html">
+              <i class="bi bi-circle"></i><span>Add Summary</span>
+            </a>
+          </li>
+        </ul> 
+      </li><!-- End Components Nav -->
+
       
           <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
             <li class="nav-item">
@@ -618,7 +709,7 @@
               </ul>
             </li><!-- End Icons Nav -->
             <li class="nav-item">
-              <a class="nav-link collapsed" id="leaveManagement" href="admin_request.html">
+              <a class="nav-link collapsed" id="passSlipRequest" href="admin_request.html">
                 <i class="bi bi-calendar"></i>
                 <span>Leave Management</span>
               </a>
@@ -631,6 +722,10 @@
             </li><!-- End Login Page Nav -->
           </ul>
         </aside><!-- End Sidebar-->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
 
     <main id="main" class="main">
 
@@ -735,6 +830,84 @@
                     </div>
                 </div>
 
+                                <!-- Modal -->
+                                <div class="modal fade" id="declineModal" tabindex="-1" role="dialog" aria-labelledby="yearModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="editModalLabel">Decline Leave Request</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+            
+                                            <form id="declineRequestForm">
+            
+                                                <div class="col-md-12"> 
+                                                    <label for="withinDetails"><small>Reason</span></small></label><br>
+                                                    <textarea id="descriptionText" rows="3" class="form-control" placeholder="Reason"></textarea>
+                                                </div><br>
+                                            </form>
+            
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                                onclick="hideDeclineModal()">Close</button>
+                                            <input type="button" id="submitApproveBtn" class="btn btn-primary" value="Save">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <!-- Modal -->
+                            <div class="modal fade" id="approveModal" tabindex="-1" role="dialog" aria-labelledby="yearModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="editModalLabel">Approve Leave Request</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+            
+                                            <form id="approveRequestForm">
+                                                
+                                                <div class="col-md-12">
+                                                    <h7>Remaining Leave: <span>&nbsp;<b id="remainingLeaveNameSpan" >15</b></span></h7>
+                                                    <br><hr>
+                                                </div>
+            
+                                                                        
+                                                <div class="col-md-12">
+                                                    <label for="designationName"><small><b>Note: </b><i>The total units of leave taken will be automatically deducted from the total leave credits.</i></small></label>
+                                                </div><br>
+            
+                                                <div class="col-md-12">
+                                                    <label for="withinDetails"><small>Total units of leave taken: <span style="color: red;">*</span></small></label><br>
+                                                    <input type="number" id="designationName" class="form-control" required>
+                                                  </div><br>
+            
+                                                
+                                                  <div class="col-md-12"> 
+                                                    <label for="withinDetails"><small>Reason:</span></small></label><br>
+                                                    <textarea id="descriptionText" rows="3" class="form-control" placeholder="Reason"></textarea>
+                                                </div><br>
+            
+                                            </form>
+            
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                                onclick="hideApproveModal()">Close</button>
+                                            <input type="button" id="submitApproveBtn1" class="btn btn-primary" value="Save">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
             
                 <div class="col-xl-8">
@@ -794,14 +967,16 @@
                                         <br>
                                         <div class="row">
                                         
-                                          <div class="col-md-6" style="padding-left: 15vw; padding-top: 3vh;">
-                                            <input type="radio" id="slipPurpose" name="purpose" value="Official">
-                                            <label for="officialPurpose">&nbsp;Official</label>
-                                          </div><br>
-                                          <div class="col-md-6" style="padding-top: 3vh;">
-                                            <input type="radio" id="slipPurpose" name="purpose" value="Personal">
-                                            <label for="personalPurpose">&nbsp;Personal</label>
-                                          </div>
+                                            <div class="col-md-6" style="padding-left: 15vw; padding-top: 3vh;">
+                                                <input type="radio" id="officialPurpose" name="purpose" value="Official">
+                                                <label for="officialPurpose">&nbsp;Official</label>
+                                            </div>
+                                            <br>
+                                            <div class="col-md-6" style="padding-top: 3vh;">
+                                                <input type="radio" id="personalPurpose" name="purpose" value="Personal">
+                                                <label for="personalPurpose">&nbsp;Personal</label>
+                                            </div>
+
                                         </div>
                                       </div><br>
                                                           
@@ -974,7 +1149,7 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
-    <script src="bundles/leave_management.bundle.js"></script>
+    <script src="bundles/locator_slip_request.bundle.js"></script>
     <script src="js/sidebar.js"></script>
 
 

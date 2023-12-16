@@ -203,7 +203,7 @@ function getUpcomingActivities() {
             // No documents matched the query
             console.log('None');
         } else {
-            // Documents matched the query
+            // Documents matched the query 
             const data = snapshot.docs.map(doc => doc.data());
             console.log(data, 'asfasfsafwqwewr');
 

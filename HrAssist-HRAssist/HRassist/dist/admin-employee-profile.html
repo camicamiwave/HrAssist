@@ -189,152 +189,172 @@
   </header><!-- End Header -->
 
 
- <!--Side Bar-->
- <aside id="sidebar" class="sidebar">
-  <ul class="sidebar-nav" id="sidebar-nav">
+  <!--Side Bar-->
+  <aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-heading">ADMIN TOOL</li>
 
       <li class="nav-item">
-          <a class="nav-link collapsed" id="dashboard" href="admin_dashboard.html">
-              <i class="bi bi-grid"></i>
-              <span>Dashboard</span>
-          </a>
+        <a class="nav-link" id="dashboard" href="admin_dashboard.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-heading">RECRUITMENT, SELECTION, & PLACEMENT</li>
 
       <li class="nav-item">
-          <a class="nav-link " data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-              <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-              <li>
-                  <a class="nav-link collapsed" id="addemployee" href="admin_201file_account.html">
-                      <i class="bi bi-circle"></i><span>Add Employee</span>
-                  </a>
-              </li>
-              <li>
-                  <a id="employeelist" href="admin_employee_registry_list.html">
-                      <i class="bi bi-circle"></i><span>Employee List</span>
-                  </a>
-              </li>
-              <li>
-                  <a id="editemployee" href="admin_search_employee_view.html">
-                      <i class="bi bi-circle"></i><span>Edit Employee</span>
-                  </a>
-              </li>
-              <li>
-                  <a id="searchemployee" href="admin_search_employee_view.html">
-                      <i class="bi bi-circle"></i><span>Search Employee</span>
-                  </a>
-              </li>
-          </ul>
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-people"></i><span>Manage Employee</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="nav-link collapsed" id="addemployee" href="admin_201file_account.html">
+              <i class="bi bi-circle"></i><span>Add Employee</span>
+            </a>
+          </li>
+          <li>
+            <a id="employeelist" href="admin_employee_registry_list.html">
+              <i class="bi bi-circle"></i><span>Employee List</span>
+            </a>
+          </li>
+          <li>
+            <a id="editemployee" href="admin_search_employee_view.html">
+              <i class="bi bi-circle"></i><span>Edit Employee</span>
+            </a>
+          </li>
+          <li>
+            <a id="searchemployee" href="admin_search_employee_view.html">
+              <i class="bi bi-circle"></i><span>Search Employee</span>
+            </a>
+          </li>
+        </ul>
       </li><!-- End Components Nav -->
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-person"></i><span>Manage Applicant</span><i class="bi bi-chevron-down ms-auto"></i>
-      </a>
-      <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-          <a href="admin_add_applicant.html">
-            <i class="bi bi-circle"></i><span>Add Applicant</span>
-          </a>
-        </li>
-        <li>
-          <a href="admin_manage_applicant_view.html">
-            <i class="bi bi-circle"></i><span>Applicant List</span>
-          </a>
-        </li>
-        
-        <li>
-          <a href="admin_search_applicant.html">
-            <i class="bi bi-circle"></i><span>Search Applicant</span>
-          </a>
-        </li>
-      </ul>
-    </li><!-- End Forms Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-person"></i><span>Manage Applicant</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="admin_add_applicant.html">
+              <i class="bi bi-circle"></i><span>Add Applicant</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_manage_applicant_view.html">
+              <i class="bi bi-circle"></i><span>Applicant List</span>
+            </a>
+          </li>
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
+          <li>
+            <a href="admin_search_applicant.html">
+              <i class="bi bi-circle"></i><span>Search Applicant</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_job_vacancy_view.html">
           <i class="bx bxs-briefcase"></i>
           <span>Job Vacancy</span>
-      </a>
-  </li><!-- End Job Vacancy Nav -->
+        </a>
+      </li><!-- End Job Vacancy Nav -->
 
-  <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
-    <li class="nav-item">
-      <a id  = "employeePerformance"class="nav-link collapsed" href="admin-employee-performance.html">
-        <i class="bi bi-bar-chart-line"></i>
-        <span>Employee Performance</span>
-      </a>
-    </li><!-- End F.A.Q Page Nav -->
+      <li class="nav-heading">PERFORMANCE MANAGEMENT SYSTEM</li>
+      <li class="nav-item">
+        <a id="employeePerformance" class="nav-link collapsed" href="admin-employee-performance.html">
+          <i class="bi bi-bar-chart-line"></i>
+          <span>Employee Performance</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
-        <i class="bi bi-check-square"></i>
-        <span>Employee IPCRF</span>
-      </a>
+      <li class="nav-item">
+        <a class="nav-link collapsed"  href="admin_employee_opcrf.html" >
+          <i class="bi bi-check-circle"></i>
+          <span>Employee OPCRF</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin-IPCRF-upload.html">
+          <i class="bi bi-check-square"></i>
+          <span>Employee IPCRF</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-heading">Rewards & RECOGNITION</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" id="rewards" href="#">
+          <i class="bi bi-award"></i>
+          <span>Rewards</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li class="nav-heading">LEARNING DEVELOPMENT</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
+          <i class="bi bi-people-fill"></i>
+          <span>Training & Seminar</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+      <li class="nav-heading">CONFIGURATION</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gear"></i><span>Configuration</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="admin-offices.html">
+              <i class="bi bi-circle"></i><span>Office</span>
+            </a>
+          </li>
+          <li>
+            <a href="admin_accounts_view.html">
+              <i class="bi bi-circle"></i><span>Accounts</span>
+            </a>
+          </li>
+          <li>
+            <a href="calendar.html">
+              <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Icons Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_request.html">
+          <i class="bi bi-calendar"></i>
+          <span>Leave Management</span>
+        </a>
+      </li><!-- End Login Page Nav --> 
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin_request_locatorslip.html">
+          <i class="bi bi-file-earmark-text"></i>
+          <span>Locator Slip Request</span>
+        </a>
+      </li><!-- End Login Page Nav --> 
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-clock"></i><span>Daily Time Record</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a> 
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav"> 
+          <li>
+            <a class="nav-link collapsed" id="addemployee" href="admin_dtr_summary.html">
+              <i class="bi bi-circle"></i><span>Add Summary</span>
+            </a>
+          </li>
+        </ul> 
+      </li><!-- End Components Nav -->
+
       
-    </li><!-- End Contact Page Nav -->
 
-    <li class="nav-heading">Rewards & RECOGNITION</li>
-    <li class="nav-item">
-      <a class="nav-link collapsed"id = "rewards" href="#">
-        <i class="bi bi-award"></i>
-        <span>Rewards</span>
-      </a>
-    </li><!-- End Register Page Nav -->
+    </ul>
 
-    <li class="nav-heading">LEARNING DEVELOPMENT</li>
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="admin_training_n_seminars_view.html">
-        <i class="bi bi-people-fill"></i>
-        <span>Training & Seminar</span>
-      </a>
-    </li><!-- End Login Page Nav -->
-
-    <li class="nav-heading">CONFIGURATION</li>
-    <li class="nav-item">
-      <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-gear"></i><span>Configuration</span><i class="bi bi-chevron-down ms-auto"></i>
-      </a>
-      <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-          <a href="admin-offices.html">
-            <i class="bi bi-circle"></i><span>Office</span>
-          </a>
-        </li>
-        <li>
-          <a href="admin_accounts_view.html">
-            <i class="bi bi-circle"></i><span>Accounts</span>
-          </a>
-        </li>
-        <li>
-          <a href="calendar.html">
-            <i class="bi bi-circle"></i><span>Calendar & Scheduling</span>
-          </a>
-        </li>
-      </ul>
-    </li><!-- End Icons Nav -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="admin_request.html">
-        <i class="bi bi-calendar"></i>
-        <span>Leave Management</span>
-      </a>
-    </li><!-- End Login Page Nav -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="admin_dtr_form.html">
-        <i class="bi bi-clock"></i>
-        <span>Daily Time Record</span>
-      </a>
-    </li><!-- End Login Page Nav -->
-
-
-  </ul>
-
-</aside><!-- End Sidebar-->
-
+  </aside><!-- End Sidebar-->
   <main id="main" class="main">
 
 
