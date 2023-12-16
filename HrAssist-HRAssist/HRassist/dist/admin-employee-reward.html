@@ -434,7 +434,7 @@
                               </table>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal1">Close</button>
                             </div>
                         </div>
                     </div>
@@ -567,6 +567,14 @@
   
     document.getElementById("closemodal").addEventListener("click", function() {
       $('#addrewards').modal('hide');
+    });
+
+    document.getElementById("top1").addEventListener("click", function() {
+      $('#mytop1').modal('show');
+    });
+
+    document.getElementById("closemodal1").addEventListener("click", function() {
+      $('#mytop1').modal('hide');
     });
   </script>
   
