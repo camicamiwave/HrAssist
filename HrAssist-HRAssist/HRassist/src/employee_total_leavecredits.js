@@ -97,6 +97,8 @@ function fetchEmployeeLeaveCredits() {
                                     }
                                     
                                 } else if (employee_data.Personal_Information.Gender === "Female"){
+                                    console.log("Hide paternityleave");
+                                    document.getElementById('paternityleave').style.display = 'none';
                                     totalVacationLeave.innerHTML = leaveCreditdata.Leave_Credit['Vacation Leave'].RemainingUnits
                                     totalMandatoryLeave.innerHTML = leaveCreditdata.Leave_Credit['Mandatory/Forced Leave'].RemainingUnits
                                     //totalMandatoryLeave.innerHTML = leaveCreditdata.Leave_Credit['Mandatory/Forced Leave'].RemainingUnits
