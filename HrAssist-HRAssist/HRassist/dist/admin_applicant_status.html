@@ -751,6 +751,9 @@
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#scheduleModal"
             style="float: right;">+ Schedule Interview</button><br><br><br>
 
+        <button type="button" id="Feedbackbtn" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addfeedbackmodal"
+        style="float: right; margin-right: 9vw; margin-top: -6.5vh;" onclick="showfeedbackform()">+ Application Feedback</button>
+
         <!-- Modal -->
         <div class="modal fade" id="scheduleModal" tabindex="-1" role="dialog" aria-labelledby="yearModalLabel"
             aria-hidden="true">
@@ -789,6 +792,39 @@
             </div>
         </div>
 
+
+        <div class="modal fade" id="addfeedbackmodal" tabindex="-1" aria-labelledby="addfeedback" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <form id="addrewardform">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="leaveTitle">Add Feedback</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label for="textArea">Send to:</label>
+                      <textarea class="form-control" id="sendtoText" rows="3" placeholder="Enter Applicant name" required></textarea>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                      <label for="textArea">Message:</label>
+                      <textarea class="form-control" id="messageText" rows="3" placeholder="Enter feedback." required></textarea>
+                    </div>
+                    <br>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" id="closemodal" class="btn btn-secondary" data-dismiss="modal" onclick="hidefeedbackform()">Close</button>
+                    <button type="button" id="addrewardbtn" class="btn btn-primary">Ok</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+        </div>
+
+
         <script>
             function hideScheduleModal() {
                 // Hide the modal
@@ -798,6 +834,14 @@
             function openScheduleModal() {
                 // Show the modal
                 $('#scheduleModal').modal('show');
+            }
+
+            function showfeedbackform(){
+                $('#addfeedbackmodal').modal('show');
+            }
+
+            function hidefeedbackform(){
+                $('#addfeedbackmodal').modal('hide');
             }
         </script>
 
