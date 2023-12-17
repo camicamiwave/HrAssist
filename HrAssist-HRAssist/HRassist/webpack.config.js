@@ -67,7 +67,8 @@ module.exports = {
         employee_request_section: './src/employee_request_section.js',
         employee_total_leavecredits: './src/employee_total_leavecredits.js',
         contacts: './src/contacts.js',
-        admin_add_applicant: './src/admin_add_applicant.js'
+        admin_add_applicant: './src/admin_add_applicant.js',
+        applicant_submit: './src/applicant_submit.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),
