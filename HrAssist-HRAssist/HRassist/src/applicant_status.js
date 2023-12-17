@@ -85,12 +85,15 @@ export function FetchApplicationStatus() {
                 applicantEmail.innerHTML = data.Personal_Information.Email
                 applicantAddress.innerHTML = data.Personal_Information.Address
 
-
-                if (data.Interview_Details.InterviewDate) {
-                    const ApplicantScheduled123 = `${data.Interview_Details.InterviewDate} | ${data.Interview_Details.InterviewTime}`
-                    console.log(ApplicantScheduled123)
-                    applicantScheduled.innerHTML = ApplicantScheduled123
-                    applicantScheduled.style.display = 'block'
+                if (data.Interview_Details && data.Interview_Details.InterviewDate) {
+                    const ApplicantScheduled123 = `${data.Interview_Details.InterviewDate} | ${data.Interview_Details.InterviewTime}`;
+                    console.log(ApplicantScheduled123);
+                    applicantScheduled.innerHTML = ApplicantScheduled123;
+                    applicantScheduled.style.display = 'block';
+                } else {
+                    // Handle the case where there is no interview date or no data at all
+                    console.error('No interview date or data available.');
+                    // Optional: Display an error message to the user or perform other actions.
                 }
 
                 active = data.ApplicationProgess;

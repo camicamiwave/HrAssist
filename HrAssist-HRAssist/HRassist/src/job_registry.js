@@ -27,7 +27,7 @@ const auth = getAuth();
 
 const storage = getStorage(app);
 
-
+/*
 function AddApplicantForm() {
 
     // Get the query string from the URL
@@ -188,7 +188,7 @@ function AddApplicantForm() {
 }
 
 window.addEventListener('load', AddApplicantForm)
-
+*/
 
 function Test() {
     const JobcolRef = collection(db, 'Job Information');
@@ -734,6 +734,9 @@ function officeSelector() {
 }
 
 window.addEventListener('load', officeSelector);
+
+
+
 
 
 function JobVacancyFormPopulate() {
