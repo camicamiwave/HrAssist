@@ -428,22 +428,24 @@
                                         <div class="user-details">
                                           <div class="input-box">
                                             <span class="details">Upload your 2x2 Picture Here</span>
-                                            <div class="drag-area">
+                                            <div class="drag-area" id="dragArea2">
                                               <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                                              <p1>Drag & Drop to Upload File</p1>
+                                              <br>
+                                              <p1 id="fileInfo2">Drag & Drop to Upload File</p1>
                                               <span>OR</span>
-                                              <button>Browse File</button>
-                                              <input type="file" hidden>
+                                              <button id="browseButton2">Browse File</button>
+                                              <input type="file" id="fileInput2" hidden>
                                             </div>
                                           </div>
                                           <div class="input-box">
                                             <span class="details">Upload your CV here</span>
-                                            <div class="drag-area">
+                                            <div class="drag-area" id="dragArea">
                                               <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                                              <p1>Drag & Drop to Upload File</p1>
+                                              <br>
+                                              <p1 id="fileInfo">Drag & Drop to Upload File</p1>
                                               <span>OR</span>
-                                              <button>Browse File</button>
-                                              <input type="file" hidden>
+                                              <button id="browseButton">Browse File</button>
+                                              <input type="file" id="fileInput" hidden>
                                             </div>
                                           </div>
                                         </div>
@@ -480,6 +482,76 @@
            <script src="bundles/auth.bundle.js"></script> 
           <script src="bundles/navbar.bundle.js"></script>
           <script src="js/sidebar.js"></script>
+
+          <script>
+            const dragArea = document.getElementById('dragArea');
+            const fileInput = document.getElementById('fileInput');
+            const browseButton = document.getElementById('browseButton');
+            const fileInfo = document.getElementById('fileInfo');
+        
+            const dragArea2 = document.getElementById('dragArea2');
+            const fileInput2 = document.getElementById('fileInput2');
+            const browseButton2 = document.getElementById('browseButton2');
+            const fileInfo2 = document.getElementById('fileInfo2');
+        
+            dragArea.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                dragArea.classList.add('active');
+            });
+        
+            dragArea.addEventListener('dragleave', function() {
+                dragArea.classList.remove('active');
+            });
+        
+            dragArea.addEventListener('drop', function(e) {
+                e.preventDefault();
+                dragArea.classList.remove('active');
+        
+                const files = e.dataTransfer.files;
+                handleFiles(files, fileInfo);
+            });
+        
+            browseButton.addEventListener('click', function() {
+                fileInput.click();
+            });
+        
+            fileInput.addEventListener('change', function() {
+                const files = this.files;
+                handleFiles(files, fileInfo);
+            });
+        
+            dragArea2.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                dragArea2.classList.add('active');
+            });
+        
+            dragArea2.addEventListener('dragleave', function() {
+                dragArea2.classList.remove('active');
+            });
+        
+            dragArea2.addEventListener('drop', function(e) {
+                e.preventDefault();
+                dragArea2.classList.remove('active');
+        
+                const files = e.dataTransfer.files;
+                handleFiles(files, fileInfo2);
+            });
+        
+            browseButton2.addEventListener('click', function() {
+                fileInput2.click();
+            });
+        
+            fileInput2.addEventListener('change', function() {
+                const files = this.files;
+                handleFiles(files, fileInfo2);
+            });
+        
+            function handleFiles(files, fileInfoElement) {
+                if (files.length > 0) {
+                    fileInfoElement.textContent = files[0].name;
+                }
+            }
+        </script>
 
     </body>
 
