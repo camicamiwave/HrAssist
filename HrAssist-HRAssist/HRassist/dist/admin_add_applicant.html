@@ -383,48 +383,61 @@
                                       <form action="#">
                                         <div class="user-details">
                                           <div class="input-box">
-                                            <span class="details">Firts Name</span>
-                                            <input type="text">
+                                            <span class="details" >Firts Name</span>
+                                            <input type="text" id="inputFirstName">
                                           </div>
                                           <div class="input-box">
-                                            <span class="details">Middle Name</span>
-                                            <input type="text">
+                                            <span class="details" >Middle Name</span>
+                                            <input type="text" id="inputMiddleName">
                                           </div>
                                           <div class="input-box">
-                                            <span class="details">Last Name</span>
-                                            <input type="text">
+                                            <span class="details" >Last Name</span>
+                                            <input type="text" id="inputLastName">
                                           </div>
                                           <div class="input-box">
-                                            <span class="details">Ex. Name</span>
-                                            <input type="text">
+                                            <span class="details" >Ex. Name</span>
+                                            <input type="text"id="inputExName">
+                                          </div>
+                                          
+                                          <div class="input-box">
+                                            <span class="details" >Gender</span>
+                                            <select id="gender" >
+                                              <option value="Male">Male</option>
+                                              <option value="Female">Female</option>
+                                            </select>
                                           </div>
                                           <div class="input-box">
-                                            <span class="details">Gender</span>
-                                            <input type="text">
-                                          </div>
-                                          <div class="input-box">
-                                            <span class="details">Civil Status</span>
-                                            <input type="text">
+                                            <span class="details" >Civil Status</span>
+                                            <input type="text" id="inputState">
                                           </div>
                                           <div class="input-box">
                                             <span class="details">Birthday</span>
-                                            <input type="date">
+                                            <input type="date" id="birthday">
                                           </div>
                                           <div class="input-box">
                                             <span class="details">Place of Birth</span>
-                                            <input type="text">
+                                            <input type="text" id="inputplacebirth">
                                           </div>
                                           <div class="input-box">
                                             <span class="details">Contact</span>
-                                            <input type="text">
+                                            <input type="text" id="phone">
                                           </div>
                                           <div class="input-box">
-                                            <span class="details">Email</span>
-                                            <input type="text">
+                                            <span class="details" >Email</span>
+                                            <input type="text" id="inputemail">
                                           </div>
                                           <div class="input-box">
-                                            <span class="details">Address</span>
-                                            <input type="text">
+                                            <span class="details" >Address</span>
+                                            <input type="text" id="inputaddress">
+                                          </div> 
+                                          <div class="input-box">
+                                            <span class="details" >Job Type</span>
+                                            <input type="text" id="inputJobType">
+                                          </div> 
+                                          <div class="input-box">
+                                            <span class="details" >Office</span>
+                                            <select id="officeSelector"> 
+                                            </select>
                                           </div>
                                         </div>
                                         <div class="user-details">
@@ -451,7 +464,7 @@
                                             </div>
                                           </div>
                                         </div>
-                                        <button type="button" class="submit">Submit Application</button>
+                                        <button type="button" id="submitApplicationAdmin" class="submit">Submit Application</button>
                                       </form>
                                     </div>
                               </div>
@@ -482,6 +495,7 @@
           <!-- JavaScript -->
           <script src="js/script.js"></script>
 
+          <script src="bundles/admin_add_applicant.bundle.js"></script> 
            <!-- Database Javascript -->
            <script src="bundles/auth.bundle.js"></script> 
           <script src="bundles/navbar.bundle.js"></script>

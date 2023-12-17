@@ -92,7 +92,7 @@
           <div class="input-text" id="input-text">
             <div class="form-container sign-up">
 
-              <form class="row g-3" id="applicant_info_form">
+              <form class="row g-3" id="applicant_info_form_admin">
                 <div class="col-md-6">
                   <label for="inputFirstName" class="form-label">First Name:</label>
                   <input type="text" class="form-control" id="inputFirstName" required>
@@ -124,11 +124,11 @@
                   <label for="inputState" class="form-label">Civil Status:</label>
                   <select id="inputState" class="form-select" required>
                     <option selected>Select</option>
-                    <option>Single</option>
-                    <option>Married</option>
-                    <option>Widowed</option>
-                    <option>Separated</option>
-                    <option>Lived-in</option>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Widowed">Widowed</option>
+                    <option value="Separated">Separated</option>
+                    <option value="Lived-in">Lived-in</option>
                   </select>
                 </div>
                 <div class="col-md-6">
@@ -175,7 +175,7 @@
                     </div><br><br>
 
                     
-                <button type="submit">Submit</button>
+                <button type="submit" id="addApplicantBtn">Submit</button>
               </form>
 
               <br><br>

@@ -69,7 +69,8 @@
     "employee_home": "node employee_home.js",
     "employee_request_section": "node employee_request_section.js",
     "employee_total_leavecredits": "node employee_total_leavecredits.js",
-    "contacts": "node contacts.js"
+    "contacts": "node contacts.js",
+    "admin_add_applicant": "node admin_add_applicant.js"
   },
   "keywords": [],
   "author": "",
