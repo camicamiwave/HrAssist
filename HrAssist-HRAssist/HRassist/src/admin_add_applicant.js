@@ -67,65 +67,72 @@ function addApplicantAdmin() {
 
  
     submitApplicationAdmin.addEventListener('click', (e) => {
+        
         e.preventDefault();
         const applicantID = applicantCurrentMaxID + 1;
 
         console.log("hehehehe")
 
-        const office_Selector = document.getElementById('officeSelector').value
+        if(validateForm()){
+            const office_Selector = document.getElementById('officeSelector').value
 
-        const applicantJobForm = { 
-            ApplicantStatus: "Pending", 
-            ApplicationProgess: 1,
-            ApplicantID: applicantID, 
-            createdAt: serverTimestamp(),
-            ApplicantStatus: "Pending", 
-            jobDetailsURL: inputJobType.value, 
-            Office: office_Selector,
-            Personal_Information: {
-                FirstName: inputFirstName.value,
-                MiddleName: inputMiddleName.value,
-                LastName: inputLastName.value,
-                ExName: inputExName.value,
-                Gender: gender.value,
-                CivilStatus: inputState.value,
-                Birthdate: birthday.value,
-                PlaceBirth: inputplacebirth.value,
-                Phone: phone.value,
-                Email: inputemail.value,
-                Address: inputaddress.value, 
+            const applicantJobForm = { 
+                ApplicantStatus: "Pending", 
+                ApplicationProgess: 1,
+                ApplicantID: applicantID, 
+                createdAt: serverTimestamp(),
+                ApplicantStatus: "Pending", 
+                jobDetailsURL: inputJobType.value, 
+                Office: office_Selector,
+                Personal_Information: {
+                    FirstName: inputFirstName.value,
+                    MiddleName: inputMiddleName.value,
+                    LastName: inputLastName.value,
+                    ExName: inputExName.value,
+                    Gender: gender.value,
+                    CivilStatus: inputState.value,
+                    Birthdate: birthday.value,
+                    PlaceBirth: inputplacebirth.value,
+                    Phone: phone.value,
+                    Email: inputemail.value,
+                    Address: inputaddress.value, 
+                }
             }
+    
+            Swal.fire({
+                title: "Are you sure?",
+                text: "Applicant will be saved",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Confirm"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Saved!",
+                        text: "Your job details added successfully...",
+                        icon: "success"
+                    }).then(() => {
+                        // Add data to Firestore
+                        return addDoc(JobcolRef, applicantJobForm);
+                    }).then((docRef) => {
+                        SaveAttachmentProfile(docRef)
+                        SaveAttachment(docRef)
+                        customDocId = docRef.id;
+                        // Update the document with the custom ID
+                        return setDoc(doc(JobcolRef, customDocId), { documentID: customDocId }, { merge: true });
+                    }).then(() => { 
+                            console.log("Added job details successfully..."); 
+                        })
+                        .catch(error => console.error('Error adding job details document:', error));
+                }
+            });
+        } else {
+            console.log("Error");
         }
 
-        Swal.fire({
-            title: "Are you sure?",
-            text: "Applicant will be saved",
-            icon: "question",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Confirm"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire({
-                    title: "Saved!",
-                    text: "Your job details added successfully...",
-                    icon: "success"
-                }).then(() => {
-                    // Add data to Firestore
-                    return addDoc(JobcolRef, applicantJobForm);
-                }).then((docRef) => {
-                    SaveAttachmentProfile(docRef)
-                    SaveAttachment(docRef)
-                    customDocId = docRef.id;
-                    // Update the document with the custom ID
-                    return setDoc(doc(JobcolRef, customDocId), { documentID: customDocId }, { merge: true });
-                }).then(() => { 
-                        console.log("Added job details successfully..."); 
-                    })
-                    .catch(error => console.error('Error adding job details document:', error));
-            }
-        });
+       
 
 
 
@@ -210,6 +217,118 @@ function SaveAttachmentProfile(docRef) {
         return setDoc(doc(RequestcolRef, customDocId), { CVURL: ApplicantProfileURL }, { merge: true });
       });
   }
+
+  function validateForm() {
+
+
+    var FirstNameInput = document.getElementById('inputFirstName');
+    var MiddleInput = document.getElementById('inputMiddleName');
+    var LastNameInput = document.getElementById('inputLastName');
+    //var womenCheckBox = document.getElementById('inputExName');
+    var GenderInput = document.getElementById('gender');
+    var StateInput = document.getElementById('inputState');
+    var BirthdayInput = document.getElementById('birthday');
+    var BirthPlaceInput = document.getElementById('inputplacebirth');
+    var EmailInput = document.getElementById('inputemail');
+    var AddressInput = document.getElementById('inputaddress');
+    var JobTypeInput = document.getElementById('inputJobType'); 
+    var OfficeInput = document.getElementById('officeSelector');
+       if (
+        FirstNameInput.value.trim() === '' ||
+        MiddleInput.value.trim() === '' ||
+        LastNameInput.value.trim() === '' ||
+        GenderInput.value.trim() === '' ||
+        StateInput.value.trim() === '' ||
+        BirthPlaceInput.value.trim() === '' ||
+        BirthdayInput.value.trim() === '' ||
+        EmailInput.value.trim() === '' ||
+        AddressInput.value.trim() === '' ||
+        JobTypeInput.value.trim() === '' ||
+        OfficeInput.value.trim() === '' 
+     ) {
+       //alert('Please fill in all required fields.');
+       console.log('Please fill in all required fields.');
+       Swal.fire({
+           title: 'Error',
+           text: 'Please fill in all required fields.',
+           icon: 'error',
+       });
+       return false;
+     }
+
+     if(!isValidString(FirstNameInput.value)){
+        console.log('Please input proper name');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please input proper name',
+            icon: 'error',
+        });
+        return false;
+     }
+
+     if(!isValidString(MiddleInput.value)){
+        console.log('Please input proper Middle Name');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please input proper Middle Name',
+            icon: 'error',
+        });
+        return false;
+     }
+
+     if(!isValidString(LastNameInput.value)){
+        console.log('Please input proper Last Name');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please input proper Last Name',
+            icon: 'error',
+        });
+        return false;
+     }
+
+     if(!isValidString(StateInput.value)){
+        console.log('Please input proper Civil Status');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please input proper Civil Status',
+            icon: 'error',
+        });
+        return false;
+     }
+
+     if(!isValidString(BirthPlaceInput.value)){
+        console.log('Please input proper Birth Place');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please input proper Birth Place',
+            icon: 'error',
+        });
+        return false;
+     }
+
+     if(!isValidString(JobTypeInput.value)){
+        console.log('Please input proper Job Type');
+        Swal.fire({
+            title: 'Error',
+            text: 'Please input proper Job Type',
+            icon: 'error',
+        });
+        return false;
+     }
+    
+
+   
+
+     return true;
+ }
+
+
+ function isValidString(value) {
+
+     return /^[a-zA-Z\s]*$/.test(value.trim());
+ }
+
+
   
   
 
