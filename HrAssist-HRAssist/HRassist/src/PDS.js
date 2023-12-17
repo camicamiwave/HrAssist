@@ -75,7 +75,8 @@ export function AddEmployeeDataSheet() {
               addDataSheetForm.addEventListener('submit', (e) => {
                 e.preventDefault();
 
-                
+                if (validateForm()){
+                        
                 // Example pagtawag ng function
                 GetIncrementalID().then((resultIncrementAccountID) => {
 
@@ -181,6 +182,11 @@ export function AddEmployeeDataSheet() {
                       }
                     })
                   }); 
+                  
+                } else {
+                  console.log("Error123");
+                }
+
 
               });
             } else {
@@ -936,3 +942,65 @@ async function GetIncrementalID() {
       return 1; // O i-handle ang error depende sa iyong pangangailangan
   }
 }
+
+
+function validateForm() {
+
+
+  var ImageInput = document.getElementById('fileInput');
+
+  var CSIDinput = document.getElementById('inputCsID');
+  var FirstName = document.getElementById('inputFirstName');
+  var MiddleName = document.getElementById('inputMiddleName');
+  var SurName = document.getElementById('inputSurName');
+  var Amount = document.getElementById('Birthdate');
+  var NatureOfAppointment = document.getElementById('PlaceBirth');
+  var Viceinput = document.getElementById('CivilStatus');
+  var PlantillaInput = document.getElementById('inputEmail');
+  var MobileNumberInput = document.getElementById('inputMnumber');
+  var TelNumberInput = document.getElementById('inputTel');
+  var AppointmentDateInput = document.getElementById('inputHeight');
+  var AttachmentInput = document.getElementById('inputWeight');
+  var OfficeSelector = document.getElementById('inputBloodType');
+  var PositionSelector = document.getElementById('inputGsis');
+  var PosCategory = document.getElementById('InputPagibig');
+  var SalaryGrade = document.getElementById('inputPhealth');
+  var Amount = document.getElementById('inputSSS');
+  var NatureOfAppointment = document.getElementById('inputTIN');
+  var Viceinput = document.getElementById('InputAgency');
+  var PlantillaInput = document.getElementById('inputCitizen');
+  var Pageinput = document.getElementById('inputCountry');
+  var AppointingOfficerInput = document.getElementById('InputSub');
+  var AppointmentDateInput = document.getElementById('inputBarangay');
+  var AttachmentInput = document.getElementById('inputMun');
+  var AppointmentDateInput = document.getElementById('inputDate');
+  var AttachmentInput = document.getElementById('InputProv');
+
+     if (
+      ImageInput.value.trim() === '' 
+   ) {
+     //alert('Please fill in all required fields.');
+     console.log('Please choose a profile picture before submitting');
+     Swal.fire({
+         title: 'Error',
+         text: 'Please choose a profile picture before submitting.',
+         icon: 'error',
+     });
+     return false;
+   }
+
+
+   return true;
+}
+
+
+function isValidString(value) {
+
+   return /^[a-zA-Z\s]*$/.test(value.trim());
+}
+
+function isValidNumber(value) {
+
+  return /^[0-9]+$/.test(value.trim());
+}
+
