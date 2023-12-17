@@ -399,11 +399,7 @@ function AddYearLeaveRecord() {
                                     RemainingUnits: 180,
                                     AsOf: formattedDate
                                 },
-                                '10-Day VAWC Leave': {
-                                    LeaveType: "10-Day VAWC Leave",
-                                    RemainingUnits: 10,
-                                    AsOf: formattedDate
-                                },
+                                
                                 'Rehabilitation Priviledge': {
                                     LeaveType: "Rehabilitation Priviledge",
                                     RemainingUnits: 180,
@@ -438,6 +434,12 @@ function AddYearLeaveRecord() {
                             leaveDetails.Leave_Credit['Special Leave Benefits for Women'] = {
                                 LeaveType: "Special Leave Benefits for Women",
                                 RemainingUnits: 60,
+                                AsOf: formattedDate
+                            }
+
+                            leaveDetails.Leave_Credit['10-Day VAWC Leave'] = {
+                                LeaveType: "10-Day VAWC Leave",
+                                RemainingUnits: 10,
                                 AsOf: formattedDate
                             }
 
