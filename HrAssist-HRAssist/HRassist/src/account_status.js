@@ -110,7 +110,7 @@ function createButton(text, className) {
     button.textContent = text;
     button.classList.add(className);
     button.style.color = '#fff';
-    button.style.width = '60px';
+    button.style.width = '100px';
     button.style.fontSize = '12px'
     return button;
 }
