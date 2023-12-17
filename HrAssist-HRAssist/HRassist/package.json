@@ -72,7 +72,8 @@
     "contacts": "node contacts.js",
     "admin_add_applicant": "node admin_add_applicant.js",
     "applicant_submit": "node applicant_submit.js",
-    "employee_concerns": "node employee_concerns.js"
+    "employee_concerns": "node employee_concerns.js",
+    "queries": "node queries.js"
   },
   "keywords": [],
   "author": "",

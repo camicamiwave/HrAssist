@@ -95,6 +95,8 @@ function fetchOPCRF() {
                         viewButton.addEventListener('click', function () {
                                                     
                             $('#addrewards').modal('show');
+
+                            
                             const rowIndex = this.id.replace('viewbtn', '') - 1;
                             const clickedRowData = snapshot.docs[rowIndex].data();
                             
@@ -138,7 +140,7 @@ function fetchOPCRF() {
     
                             Swal.fire({
                                 title: "Are you sure?",
-                                text: "Employee's OPCRF will be lost",
+                                text: "Employee's Complaint will be lost",
                                 icon: "warning",
                                 showCancelButton: true,
                                 confirmButtonColor: "#3085d6",
