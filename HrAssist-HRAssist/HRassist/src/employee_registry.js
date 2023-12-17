@@ -62,8 +62,8 @@ async function GetEmployeeTable() {
             const profileCell = document.createElement('td');
             profileCell.appendChild(imageElement);
 
-            const idCell = document.createElement('td');
-            idCell.textContent = dataRetrieved.incrementalAccountID;
+            //const idCell = document.createElement('td');
+            //idCell.textContent = dataRetrieved.incrementalAccountID;
 
             const retrievefullName = `${dataRetrieved.Personal_Information.FirstName} ${dataRetrieved.Personal_Information.SurName}`;
             const nameCell = document.createElement('td');
@@ -98,11 +98,27 @@ async function GetEmployeeTable() {
 
             })
 
+            const newdeleteButton = document.createElement('button');
+            newdeleteButton.classList.add('btn', 'btn-primary');
+            newdeleteButton.innerHTML = 'View'
+
+            const newdeleteIcon = document.createElement('i');
+            //deleteIcon.classList.add('bx', 'bx-edit');
+
+            // Add a click event listener to the delete button
+            newdeleteButton.addEventListener('click', () => {
+              console.log('Row ID clicked:', id);
+
+              window.location.href = `admin-employee-profile.html?data=${encodeURIComponent(dataRetrieved.documentID)}`;
+
+            })
+            
+
             deleteButton.appendChild(deleteIcon);
             deleteButtonCell.appendChild(deleteButton);
 
             row.appendChild(profileCell);
-            row.appendChild(idCell);
+            //row.appendChild(idCell);
             row.appendChild(nameCell);
             row.appendChild(officeCell);
             row.appendChild(jobPositionCell);

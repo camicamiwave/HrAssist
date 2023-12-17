@@ -26,7 +26,7 @@ function validateForm() {
   
   
     var eventnameInput = document.getElementById('event-name');
-    var particpantInput = document.getElementById('participants');
+    var particpantInput = document.getElementById('inputOffice');
     var startfromInput = document.getElementById('start-from');
     var endtoInput = document.getElementById('end-to');
 
@@ -75,7 +75,7 @@ function AddEventsCalendar() {
         if  (validateForm()) {
             
         const eventName = document.querySelector('.event-name').value;
-        const participants = document.getElementById('participants').value;
+        const participants = document.getElementById('inputOffice').value;
         const tagColor = document.querySelector('.tag-color').value;
         const startFrom = document.querySelector('.start-from').value;
         const endTo = document.querySelector('.end-to').value;
@@ -265,3 +265,27 @@ function fetchCalendarActivites() {
         calendar.render();
     });
 }
+
+function fetchOfficeDesignation() {
+    const OfficecolRef = collection(db, 'Office Information');
+    const que = query(OfficecolRef, orderBy('createdAt'));
+
+    const inputOffice = document.getElementById('inputOffice');
+    inputOffice.innerHTML = '<option>All</option>';
+
+    onSnapshot(que, (snapshot) => {
+        snapshot.docs.forEach((doc) => {
+            const data = doc.data();
+            const id = doc.id;
+
+            // Create an option element for each OfficeName and append it to the selector
+            const optionElement = document.createElement('option');
+            optionElement.value = data.OfficeName;
+            optionElement.textContent = data.OfficeName;
+            inputOffice.appendChild(optionElement);
+        });
+    });
+ 
+}
+
+window.addEventListener('load', fetchOfficeDesignation);

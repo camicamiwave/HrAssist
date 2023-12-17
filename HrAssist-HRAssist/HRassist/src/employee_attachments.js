@@ -47,73 +47,89 @@ export function Employee201Attachment() {
 
                 const Attachments = window.AttachmentFiles;
 
-                Swal.fire({
-                    title: "Are you sure?",
-                    text: "Employee's attachments will be saved",
-                    icon: "question",
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "Confirm"
-                }).then((result) => {
-                    const uploadPromises = [];
-                    const fileURLs = [];
+                const allowedExtensions = ['pdf', 'doc', 'docx', 'png', 'jpeg', 'jpg'];
 
-                    for (let i = 0; i < Attachments.length; i++) {
-                        const selectedFile = Attachments[i];
-                        const timestamp = new Date().getTime();
-                        const uniqueFilename = `${timestamp}_${selectedFile.name}`;
-                        const fileRef = ref(storageRef, uniqueFilename);
-
-                        const uploadPromise = uploadBytes(fileRef, selectedFile)
-                            .then((snapshot) => getDownloadURL(fileRef))
-                            .then((downloadURL) => {
-                                fileURLs.push(downloadURL);
-                            });
-
-                        uploadPromises.push(uploadPromise);
-                    }
-
-                    Promise.all(uploadPromises)
-                        .then(() => {
-
-                            const attachmentsData = {
-                                AttachmentURLs: fileURLs
-                            };
-                            
-                            const EmployeecolRef = collection(db, '201File Information');
-                            const employeeDocRef = doc(EmployeecolRef, receivedString201File);
-                            
-                            // Gamitin ang setDoc upang ilagay ang data sa dokumento
-                            setDoc(employeeDocRef, { AttachmentURLs: arrayUnion(...fileURLs) }, { merge: true });
-
-                        })
-                        .then(() => {
-                            console.log("Attachments added successfully...");
-                            Swal.fire({
-                                position: "center",
-                                icon: "success",
-                                title: "Your work has been saved",
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                            // Optionally, perform additional actions after attachments are added
-                            //window.location.href = `201file_leave.html?data=${encodeURIComponent(receivedStringData)}`;
-                        }).then(() => {
-                            //window.location.href = `201file_leave.html?data=${encodeURIComponent(receivedStringData)}&201filedoc=${encodeURIComponent(receivedString201File)}`;
-
-                        })
-                        .catch((error) => {
-                            console.error("Error adding attachments:", error);
-                            // Handle errors
-                        });
+                const isValidExtension = Attachments.every(file => {
+                    const fileExtension = file.name.split('.').pop().toLowerCase();
+                    return allowedExtensions.includes(fileExtension);
                 });
+
+                if (Attachments.length === 0) {
+                    Swal.fire({
+                        title: "No Files Uploaded",
+                        text: "Please upload at least one file.",
+                        icon: "error"
+                    });
+                    return; 
+                } else if (!isValidExtension) {
+                    Swal.fire({
+                        title: "Invalid File Type",
+                        text: "Please upload files with the following extensions: pdf, doc, docx, png, jpeg, jpg",
+                        icon: "error"
+                    });
+                    return;
+                } else {
+                    Swal.fire({
+                        title: "Are you sure?",
+                        text: "Employee's attachments will be saved",
+                        icon: "question",
+                        showCancelButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Confirm"
+                    }).then((result) => {
+                        const uploadPromises = [];
+                        const fileURLs = [];
+
+                        for (let i = 0; i < Attachments.length; i++) {
+                            const selectedFile = Attachments[i];
+                            const timestamp = new Date().getTime();
+                            const uniqueFilename = `${timestamp}_${selectedFile.name}`;
+                            const fileRef = ref(storageRef, uniqueFilename);
+
+                            const uploadPromise = uploadBytes(fileRef, selectedFile)
+                                .then((snapshot) => getDownloadURL(fileRef))
+                                .then((downloadURL) => {
+                                    fileURLs.push(downloadURL);
+                                });
+
+                            uploadPromises.push(uploadPromise);
+                        }
+
+                        Promise.all(uploadPromises)
+                            .then(() => {
+                                const attachmentsData = {
+                                    AttachmentURLs: fileURLs
+                                };
+
+                                const EmployeecolRef = collection(db, '201File Information');
+                                const employeeDocRef = doc(EmployeecolRef, receivedString201File);
+
+                                setDoc(employeeDocRef, { AttachmentURLs: arrayUnion(...fileURLs) }, { merge: true });
+                            })
+                            .then(() => {
+                                console.log("Attachments added successfully...");
+                                Swal.fire({
+                                    position: "center",
+                                    icon: "success",
+                                    title: "Your work has been saved",
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                            })
+                            .catch((error) => {
+                                console.error("Error adding attachments:", error);
+                                // Handle errors
+                            });
+                    });
+                }
             });
         } else {
             console.error("Button with ID 'appointmentSubmitBtn' not found.");
         }
-    } catch {
+    } catch (error) {
         console.log("Not Education form");
+        console.error("Error:", error);
     }
 }
 

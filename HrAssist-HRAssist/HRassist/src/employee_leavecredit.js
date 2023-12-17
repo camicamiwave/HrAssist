@@ -11,7 +11,7 @@ import {
     addDoc, deleteDoc, doc,
     query, where,
     orderBy, serverTimestamp,
-    getDoc, updateDoc, setDoc
+    getDoc, updateDoc, setDoc, deleteField
 } from 'firebase/firestore'
 
 import { firebaseConfig } from './server.js';
@@ -220,18 +220,18 @@ function fetchLeaveCreditAnnual(leaveCreditsCollectionRef, File201Document) {
             const id = leavedoc.id;
             const row = document.createElement('tr');
 
-            const currentYear = new Date().getFullYear(); 
+            const currentYear = new Date().getFullYear();
 
-            if (data.LeaveCreditStatus === "Present"){
-                if (data.YearCovered !== currentYear.toString()){
+            if (data.LeaveCreditStatus === "Present") {
+                if (data.YearCovered !== currentYear.toString()) {
                     console.log("tamaaa", data.leavecreditDocID)
-                    
+
                     const leaveCreditsCollectionRef1 = collection(db, '201File Information', File201Document, 'Leave_Credits');
 
                     return setDoc(doc(leaveCreditsCollectionRef1, data.leavecreditDocID), { LeaveCreditStatus: "" }, { merge: true });
                 }
             } else if (data.LeaveCreditStatus !== "Present") {
-                if (data.YearCovered === currentYear.toString()){
+                if (data.YearCovered === currentYear.toString()) {
 
                     const leaveCreditsCollectionRef1 = collection(db, '201File Information', File201Document, 'Leave_Credits');
 
@@ -322,6 +322,7 @@ function AddYearLeaveRecord() {
     addYearSubmitBtn.addEventListener('click', (e) => {
         // get the current employee data
         const EmployeecolRef = collection(db, '201File Information');
+        const NewEmployeecolRef = collection(db, 'Employee Information');
 
         fetchEmployeeInfo(EmployeecolRef, receivedStringData, "employeeDocID").then((dataRetrieved) => {
             const File201Data = dataRetrieved;
@@ -338,7 +339,7 @@ function AddYearLeaveRecord() {
             // Reference to the nested collection within the document
             const leaveCreditsCollectionRef = collection(employeeDocumentRef, 'Leave_Credits');
 
-            
+
             Swal.fire({
                 title: "Are you sure?",
                 text: "Your request will be recorded",
@@ -357,124 +358,148 @@ function AddYearLeaveRecord() {
                     const day = String(currentDate.getDate()).padStart(2, '0');
 
                     const formattedDate = `${year}-${month}-${day}`;
+                    fetchEmployeeInfo(NewEmployeecolRef, receivedStringData, "documentID").then((Employee_dataRetrieved) => {
+                        const EmployeeData = Employee_dataRetrieved;
 
-                    const leaveDetails = {
-                        createdAt: serverTimestamp(),
-                        YearCovered: yearSelectorForm.yearSelctor.value.trim(),
-                        file201documentID: documentID,
-                        Leave_Credit: {
-                            'Sick Leave': {
-                                LeaveType: "Sick Leave",
-                                RemainingUnits: 0,
-                                AsOf: formattedDate
-                            },
-                            'Vacation Leave': {
-                                LeaveType: "Vacation Leave",
-                                RemainingUnits: 0,
-                                AsOf: formattedDate
-                            },
-                            'Maternity Leave': {
-                                LeaveType: "Maternity Leave",
-                                RemainingUnits: 105,
-                                AsOf: formattedDate
-                            },
-                            'Mandatory/Forced Leave': {
-                                LeaveType: "Mandatory/Forced Leave",
-                                RemainingUnits: 5,
-                                AsOf: formattedDate
-                            },
-                            'Paternity Leave': {
+
+
+                        const leaveDetails = {
+                            createdAt: serverTimestamp(),
+                            YearCovered: yearSelectorForm.yearSelctor.value.trim(),
+                            file201documentID: documentID,
+                            Leave_Credit: {
+                                'Sick Leave': {
+                                    LeaveType: "Sick Leave",
+                                    RemainingUnits: 0,
+                                    AsOf: formattedDate
+                                },
+                                'Vacation Leave': {
+                                    LeaveType: "Vacation Leave",
+                                    RemainingUnits: 0,
+                                    AsOf: formattedDate
+                                },
+                                'Mandatory/Forced Leave': {
+                                    LeaveType: "Mandatory/Forced Leave",
+                                    RemainingUnits: 5,
+                                    AsOf: formattedDate
+                                },
+                                
+                                'Special Privilege Leave': {
+                                    LeaveType: "Special Privilege Leave",
+                                    RemainingUnits: 3,
+                                    AsOf: formattedDate
+                                },
+                                'Solo Parent Leave': {
+                                    LeaveType: "Solo Parent Leave",
+                                    RemainingUnits: 7,
+                                    AsOf: formattedDate
+                                },
+                                'Study Leave': {
+                                    LeaveType: "Study Leave",
+                                    RemainingUnits: 180,
+                                    AsOf: formattedDate
+                                },
+                                '10-Day VAWC Leave': {
+                                    LeaveType: "10-Day VAWC Leave",
+                                    RemainingUnits: 10,
+                                    AsOf: formattedDate
+                                },
+                                'Rehabilitation Priviledge': {
+                                    LeaveType: "Rehabilitation Priviledge",
+                                    RemainingUnits: 180,
+                                    AsOf: formattedDate
+                                },
+                                'Special Emergency (Calamity) Leave': {
+                                    LeaveType: "Special Emergency (Calamity) Leave",
+                                    RemainingUnits: 5,
+                                    AsOf: formattedDate
+                                },
+    
+    
+                            }
+    
+                        };
+
+                        if (EmployeeData.Personal_Information.Gender === "Male"){
+                            leaveDetails.Leave_Credit['Paternity Leave'] = {
                                 LeaveType: "Paternity Leave",
                                 RemainingUnits: 7,
                                 AsOf: formattedDate
-                            },
-                            'Special Privilege Leave': {
-                                LeaveType: "Special Privilege Leave",
-                                RemainingUnits: 3,
+                            }
+                        } else if (EmployeeData.Personal_Information.Gender === "Female"){
+
+                            leaveDetails.Leave_Credit['Maternity Leave'] = {
+                                LeaveType: "Maternity Leave",
+                                RemainingUnits: 105,
                                 AsOf: formattedDate
-                            },
-                            'Solo Parent Leave': {
-                                LeaveType: "Solo Parent Leave",
-                                RemainingUnits: 7,
-                                AsOf: formattedDate
-                            },
-                            'Study Leave': {
-                                LeaveType: "Study Leave",
-                                RemainingUnits: 180,
-                                AsOf: formattedDate
-                            },
-                            '10-Day VAWC Leave': {
-                                LeaveType: "10-Day VAWC Leave",
-                                RemainingUnits: 10,
-                                AsOf: formattedDate
-                            },
-                            'Rehabilitation Priviledge': {
-                                LeaveType: "Rehabilitation Priviledge",
-                                RemainingUnits: 180,
-                                AsOf: formattedDate
-                            },
-                            'Special Leave Benefits for Women': {
+                            }
+
+                            
+                            leaveDetails.Leave_Credit['Special Leave Benefits for Women'] = {
                                 LeaveType: "Special Leave Benefits for Women",
                                 RemainingUnits: 60,
                                 AsOf: formattedDate
-                            },
-                            'Special Emergency (Calamity) Leave': {
-                                LeaveType: "Special Emergency (Calamity) Leave",
-                                RemainingUnits: 5,
-                                AsOf: formattedDate
-                            },
-
-
-                        }
-
-                    };
-
-
-                    // Add a document to the nested collection and get the document reference
-                    return addDoc(leaveCreditsCollectionRef, leaveDetails)
-                        .then((docRef) => {
-                            const EmpcustomDocId = docRef.id;
-
-
-                            const currentYear = new Date().getFullYear();
-                            console.log(currentYear, 'asdfsd');
-
-                            if (yearSelectorForm.yearSelctor.value === currentYear.toString()) {
-
-                                console.log('log')
-                                const leaveCreditDetails = {
-                                    leavecreditDocID: EmpcustomDocId,
-                                    LeaveCreditStatus: 'Present'
-                                }
-                                // Assuming downloadURLs is defined somewhere
-                                return setDoc(doc(leaveCreditsCollectionRef, EmpcustomDocId), leaveCreditDetails, { merge: true });
-
-                            } else {
-
-                                const leaveCreditDetails = {
-                                    leavecreditDocID: EmpcustomDocId,
-                                    LeaveCreditStatus: ''
-                                }
-
-                                // Assuming downloadURLs is defined somewhere
-                                return setDoc(doc(leaveCreditsCollectionRef, EmpcustomDocId), leaveCreditDetails, { merge: true });
-
                             }
 
 
-                        }).then(() => {
-                            Swal.fire({
-                                title: 'Saved successfully!',
-                                text: 'Record has been saved.',
-                                icon: 'success',
+                        }
+    
+    
+
+                        // Add a document to the nested collection and get the document reference
+                        return addDoc(leaveCreditsCollectionRef, leaveDetails)
+                            .then((docRef) => {
+                                const EmpcustomDocId = docRef.id;
+
+
+                                const currentYear = new Date().getFullYear();
+                                console.log(currentYear, 'asdfsd');
+
+                                if (yearSelectorForm.yearSelctor.value === currentYear.toString()) {
+
+                                    console.log('log')
+                                    const leaveCreditDetails = {
+                                        leavecreditDocID: EmpcustomDocId,
+                                        LeaveCreditStatus: 'Present'
+                                    }
+                                    // Assuming downloadURLs is defined somewhere
+                                    return setDoc(doc(leaveCreditsCollectionRef, EmpcustomDocId), leaveCreditDetails, { merge: true });
+
+                                } else {
+
+                                    const leaveCreditDetails = {
+                                        leavecreditDocID: EmpcustomDocId,
+                                        LeaveCreditStatus: ''
+                                    }
+
+                                    // Assuming downloadURLs is defined somewhere
+                                    return setDoc(doc(leaveCreditsCollectionRef, EmpcustomDocId), leaveCreditDetails, { merge: true });
+
+                                }
+
+
+                            }).then(() => {
+                                Swal.fire({
+                                    title: 'Saved successfully!',
+                                    text: 'Record has been saved.',
+                                    icon: 'success',
+                                });
+
+                                hideYearModal()
+
+                            })
+                            .catch((error) => {
+                                console.error('Error adding document:', error);
                             });
 
-                            hideYearModal()
 
-                        })
-                        .catch((error) => {
-                            console.error('Error adding document:', error);
-                        });
+
+
+                    })
+
+
+
+
 
                 } else {
                     // If the user clicks "Cancel", return a resolved promise
@@ -512,6 +537,7 @@ export function fetchEmployeeLeaveCredit() {
         // Reference to the Leave_Credits collection
         const leaveCreditsCollectionRef = collection(db, '201File Information', receivedfile201, 'Leave_Credits');
 
+
         // Create a query to get the Leave_Credit data
         const leaveCreditQuery = query(leaveCreditsCollectionRef, where('leavecreditDocID', '==', receivedleave_id));
         // Listen for real-time updates
@@ -536,6 +562,7 @@ export function fetchEmployeeLeaveCredit() {
                         var cell4 = row.insertCell(3);
                         var cell5 = row.insertCell(4);
                         var cell6 = row.insertCell(5);
+                        var cell7 = row.insertCell(6);
 
                         // Set values for each cell
                         cell2.innerHTML = num; // You can set an ID or index here
@@ -556,6 +583,7 @@ export function fetchEmployeeLeaveCredit() {
                         editButton.textContent = 'Edit';
                         editButton.className = 'btn btn-primary';
                         editButton.id = `${leaveType}`;
+                        editButton.style.marginRight = '10px'
 
                         // Add an event listener to the button
                         editButton.addEventListener('click', function () {
@@ -564,12 +592,80 @@ export function fetchEmployeeLeaveCredit() {
                             leaveCreditLeaveType.value = leaveData.LeaveType
                             leaveCreditRemainingUnits.value = leaveData.RemainingUnits
                             leaveCreditAsOfNow.value = leaveData.AsOf
-                            
+
                             openEditModal();
                         });
+ 
+                        // Assuming you have created the button and assigned it to the variable 'editButton'
+                        const deleteButton = document.createElement('button');
+
+                        deleteButton.textContent = 'Delete';
+                        deleteButton.className = 'btn btn-danger';
+                        deleteButton.id = `${leaveType}`;
+
+                        // Add an event listener to the button
+                        deleteButton.addEventListener('click', async function () {
+                            const leaveData = leaveDetails[this.id]
+
+                            const deletingLeaveType = leaveData.LeaveType 
+
+
+                            console.log(this.id, 'asdgasdgasd')
+
+                            Swal.fire({
+                                title: "Are you sure?",
+                                text: "All employee's leave credit record for this year will be lost",
+                                icon: "warning",
+                                showCancelButton: true,
+                                confirmButtonColor: "#3085d6",
+                                cancelButtonColor: "#d33",
+                                confirmButtonText: "Confirm"
+                            }).then(async (result) => {
+                                if (result.isConfirmed) { 
+                        
+                                    console.log('leaveCreditsCollectionRef1:', leaveCreditsCollectionRef);
+                                    console.log('id:', this.id);
+
+                                    delete leaveDetails[deletingLeaveType];
+
+                                    console.log(leaveDetails, 'ey')
+            
+                                    try {
+                                        // Construct the correct document reference
+                                        const cityRef = doc(db, leaveCreditsCollectionRef, receivedleave_id);
+
+                                        // Use updateDoc to delete the specific field
+                                        await updateDoc(cityRef, { Leave_Credit: deleteField() }).then(() =>{
+
+                                            // Assuming 'leaveFormData' is the data you want to set
+                                            const IPCRFcolRef = collection(db, 'DTR Summary');
+ 
+                                            return setDoc(cityRef, {Leave_Credit: leaveDetails}, { merge: true });
+                                        }).then(() => {
+                                            alert("Save Successfully");
+                                        })
+
+
+                                    } catch (error) {
+                                        console.error('Error deleting or updating documents:', error);
+                                        alert('Failed to delete or update. Please try again.');
+                                    }
+
+                                } else {
+                                    // Handle the case where the user cancels the action
+                                }
+                            });
+                            
+                            
+                            
+                        });
+
+
+
 
                         // Append the button to the cell (cell6 in this case)
                         cell6.appendChild(editButton);
+                        //cell6.appendChild(deleteButton)
 
 
 
@@ -586,3 +682,37 @@ export function fetchEmployeeLeaveCredit() {
     }
 }
 
+async function deleteLeaveCredit(leaveCreditsCollectionRef1, id, leave_details) { 
+    try {
+        // Reference to the root collection
+        const employeeCollectionRef = collection(db, '201File Information');
+        
+        // Replace 'documentID' with the actual ID of the document you want to reference
+        const documentID = id;
+
+        // Reference to the specific document
+        const employeeDocumentRef = doc(employeeCollectionRef, documentID);
+
+        // Reference to the nested collection within the document
+        const leaveCreditsCollectionRef = collection(employeeDocumentRef, 'Leave_Credits');
+
+        // Reference to the specific document within the nested collection
+        const cityRef = doc(leaveCreditsCollectionRef, id);
+
+        // Delete the entire document from the nested collection
+        await deleteDoc(cityRef);
+
+        // Update the document in the root collection with the new data
+        const IPCRFcolRef = collection(db, 'Reward Information');
+        await setDoc(employeeDocumentRef, { Leave_Credit: leave_details }, { merge: true });
+
+        Swal.fire({
+            title: 'Deleted Successfully!',
+            text: 'Leave credit has been deleted.',
+            icon: 'success',
+        });
+    } catch (error) {
+        console.error('Error deleting or updating documents:', error);
+        alert('Failed to delete or update. Please try again.');
+    }
+}

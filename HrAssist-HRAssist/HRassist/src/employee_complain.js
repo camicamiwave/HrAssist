@@ -124,10 +124,20 @@ export function EmployeeComplaintForm() {
                                     });
 
                             } else {
-                                alert('Please provide the required fields. Thank you!')
+                                //alert('Please provide the required fields. Thank you!')
+                                Swal.fire({
+                                    title: 'Error',
+                                    text: 'Please provide the required fields. Thank you!',
+                                    icon: 'error',
+                                });
                             }
                         } else {
-                            alert('Please provide the required fields. Thank you!')
+                            //alert('Please provide the required fields. Thank you!')
+                            Swal.fire({
+                                title: 'Error',
+                                text: 'Please provide the required fields. Thank you!',
+                                icon: 'error',
+                            });
 
                         }
 

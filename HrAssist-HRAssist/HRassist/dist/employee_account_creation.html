@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Employee-DataSheet</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicon -->
+    <link href="img/hricon.png" rel="icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Template Main CSS File -->
+    <link href="css/datasheet.css" rel="stylesheet">
+    <link href="css/employee-template.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Initial Step
+            showStep(1);
+
+            // Button Click Handler
+            $(".next-step").click(function () {
+                var currentStep = $(this).data("step");
+                var nextStep = currentStep + 1;
+                showStep(nextStep);
+            });
+
+            $(".prev-step").click(function () {
+                var currentStep = $(this).data("step");
+                var prevStep = currentStep - 1;
+                showStep(prevStep);
+            });
+
+            function showStep(step) {
+                $(".form-step").hide();
+                $("#step-" + step).show();
+            }
+        });
+    </script>
+
+
+</head>
+
+<body>
+
+
+
+    <!--Personal Data-->
+    <div class="container" id="accountLayout" style="margin-top: 3%;">
+        <div class="row">
+            <!-- Account details card-->
+            <!-- Form Row-->
+            <div class="d-flex w-100">
+                
+                <h1 class="mx-auto text-center custom-text">Account Creation</h1>
+
+            </div>
+
+            <div class="col-md-6 mx-auto">
+                <div class="custom-container">
+                    <form id="employeeDataSheet">
+                        <div class="card-body">
+                            <!-- Form Row-->
+                            <div class="d-flex w-100">
+                                <h1 class="mx-auto text-center custom-text">Account Creation</h1>
+                            </div>
+                            <div class="row gx-3 mb-1">
+                                <!-- Form Group (first name)-->
+                                <div class="col-12">
+                                    <label class="small mb-1" for="empInputUsername">Username</label>
+                                    <input class="form-control" id="empInputUsername" type="text"
+                                        placeholder="Enter your username">
+                                </div>
+                            </div>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-1">
+                                <!-- Form Group (middle name)-->
+                                <div class="col-12">
+                                    <label class="small mb-1" for="empInputEmail">Email</label>
+                                    <input class="form-control" id="empInputEmail" type="text"
+                                        placeholder="Enter your email">
+                                </div>
+                            </div>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-1">
+                                <!-- Form Group (password)-->
+                                <div class="col-12">
+                                    <label class="small mb-1" for="empInputPassword">Password</label>
+                                    <input class="form-control" id="empInputPassword" type="password"
+                                        placeholder="Enter your password">
+                                </div>
+                            </div>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-1">
+                                <!-- Form Group (confirm password)-->
+                                <div class="col-12">
+                                    <label class="small mb-1" for="empInputConfirmPassword">Confirm
+                                        Password</label>
+                                    <input class="form-control" id="empInputConfirmPassword" type="password"
+                                        placeholder="Confirm your password">
+                                </div>
+                            </div>
+                            <hr>
+                            <input type="submit" id="empCreateAccountBtn" name="empCreateAccountBtn"
+                                class="btn btn-success submit-btn" value="Create Account" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="js/datasheet.js"></script>
+
+    <script src="bundles/auth.bundle.js"></script>
+    <script src="bundles/employee_signin.bundle.js"></script>
+    <script src="bundles/file201.bundle.js"></script>
+    <script src="bundles/navbar.bundle.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script src="js/sidebar.js"></script>
+
+
+</body>
+
+</html>

@@ -30,10 +30,10 @@ function GetLeaveManagementTable() {
         const colRef = collection(db, 'Request Information')
         const EmployeecolRef = collection(db, 'Employee Information')
 
-        const q = query(colRef, where("RequestType", "==", "Request Leave"))
+        const q = query(colRef, where("RequestType", "==", "Pass Slip Leave"))
 
         // Assuming you have Firestore data in the 'employees' array
-        const employeeTable = document.getElementById('leaveManagement');
+        const employeeTable = document.getElementById('locatorManagement');
         const tbody = employeeTable.querySelector('tbody');
 
 
@@ -41,18 +41,24 @@ function GetLeaveManagementTable() {
             // Clear the existing rows in the table body
             tbody.innerHTML = '';
 
-            snapshot.docs.forEach((doc) => {
-                const data = doc.data();
-                const id = doc.id;
+            snapshot.docs.forEach((pass_doc) => {
+                const data = pass_doc.data();
+                const id = pass_doc.id;
+
+
                 const row = document.createElement('tr');
 
+
+
                 const employeedocID = data.employeeDocID
+
+
 
                 fetchEmployeeInfo(EmployeecolRef, employeedocID, "documentID").then((dataRetrieved) => {
                     const employeedata = dataRetrieved;
                     const personalInfo = dataRetrieved.Personal_Information;
 
-                    const ApplicantFullName = personalInfo.FirstName + " " + personalInfo.SurName;
+                    const ApplicantFullName = `${personalInfo.FirstName} ${personalInfo.SurName}`;
 
                     const imageElement = document.createElement('img');
 
@@ -67,13 +73,13 @@ function GetLeaveManagementTable() {
                     nameCell.textContent = ApplicantFullName;
 
                     const leaveTypeCell = document.createElement('td');
-                    leaveTypeCell.textContent = data.Request_Details.LeaveType;
+                    leaveTypeCell.textContent = data.Request_Details.PurposeSlip;
 
                     const startDateCell = document.createElement('td');
-                    startDateCell.textContent = data.Request_Details.StartDate;
+                    startDateCell.textContent = data.Request_Details.PassSlipDate;
 
-                    const endDateCell = document.createElement('td');
-                    endDateCell.textContent = data.Request_Details.EndDate;
+                    const passslipTimeCell = document.createElement('td');
+                    passslipTimeCell.textContent = data.Request_Details.PassSlipTime;
 
                     const statusCell = document.createElement('td');
                     statusCell.textContent = data.RequestStatus;
@@ -100,13 +106,57 @@ function GetLeaveManagementTable() {
                         // You can add your specific logic here
                         console.log('View button clicked for record with ID:', id);
 
-                        window.location.href = `admin_leave_request.html?data=${encodeURIComponent(id)}&employeeDocID=${encodeURIComponent(employeedocID)}`;
+                        window.location.href = `admin_locatorslip_request.html?data=${encodeURIComponent(id)}&employeeDocID=${encodeURIComponent(employeedocID)}`;
+
+                    });
+
+
+                    // Decline button
+                    const deleteButtonApprove = document.createElement('button');
+                    deleteButtonApprove.textContent = 'Delete'; // Customize the button label
+                    deleteButtonApprove.classList.add('btn', 'mx-1', 'btn-sm', 'text-white', 'btn-danger'); // You can use Bootstrap's 'btn' and 'btn-primary' classes
+
+                    deleteButtonApprove.addEventListener('click', () => {
+                        console.log('View button clicked for record with ID:', id);
+
+                        Swal.fire({
+                            title: "Are you sure?",
+                            text: "Employee's locator slip will be lost",
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#3085d6",
+                            cancelButtonColor: "#d33",
+                            confirmButtonText: "Confirm"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                // If the user clicks "Confirm"
+                                console.log('Row ID clicked:', id);
+                                                         
+                                const colRef = collection(db, 'Request Information')
+
+                                const docRef = doc(colRef, id)
+
+                                deleteDoc(docRef)
+                                    .then(() => {
+                                        Swal.fire({
+                                            title: 'Deleted Successfully!',
+                                            text: 'All employee record deleted on that year.',
+                                            icon: 'success',
+                                        });
+                                    })
+
+                            } else {
+                                // Handle the case where the user cancels the action
+                            }
+                        });
+
 
                     });
 
 
 
                     actionCell.appendChild(viewButtonApprove);
+                    actionCell.appendChild(deleteButtonApprove);
 
                     // Append cells to the row 
                     //row.appendChild(profileCell); 
@@ -114,7 +164,7 @@ function GetLeaveManagementTable() {
                     row.appendChild(nameCell);
                     row.appendChild(leaveTypeCell);
                     row.appendChild(startDateCell);
-                    row.appendChild(endDateCell);
+                    row.appendChild(passslipTimeCell);
                     row.appendChild(statusCell);
                     row.appendChild(actionCell);
 
@@ -159,53 +209,25 @@ function GetLeaveManagementStatus() {
             const data = empdoc.data();
             const id = empdoc.id;
 
-            const leaveTypeSelector = document.getElementById('leaveTypeSelector')
-            const otherLeaveReason = document.getElementById('otherLeaveReason')
-            const startDate = document.getElementById('startDate')
-            const endDate = document.getElementById('endDate')
+            purposeText.value = data.Request_Details.PurposeStatement
+            slipDate.value = data.Request_Details.PassSlipDate
+            slipTime.value = data.Request_Details.PassSlipTime
 
-            leaveTypeSelector.value = data.Request_Details.LeaveType
+            statusRequest.innerHTML = data.RequestStatus
 
-            if (data.Request_Details.LeaveType === "Others") {
-                showHideOtherInput()
-                otherLeaveReason.value = data.Request_Details.OtherReason
+            if (data.RequestStatus === "Pending") {
+                statusRequest.style.color = 'red'
+            } else if (data.RequestStatus === "Declined") {
+                statusRequest.style.color = 'black'
+                approveBtn.style.display = 'none'
+                declineBtn.style.display = 'none'
+            } else if (data.RequestStatus === "Approved") {
+                statusRequest.style.color = 'blue'
+                approveBtn.style.display = 'none'
+                declineBtn.style.display = 'none'
             }
-
-            if (data.Request_Details.LeaveType === "Vacation Leave") {
-                showHideOtherInput()
-                leave_form.vacationLeave.value = data.Request_Details.VacationLeave;
-                if (data.Request_Details.VacationLeave === "Within the Philippines") {
-                    leave_form.withinDetails.value = data.Request_Details.VacationPh;
-                } else {
-                    leave_form.vacationLeave.value = data.Request_Details.VacationAbroad;
-                }
-            }
-            if (data.Request_Details.LeaveType === "Sick Leave") {
-                showHideOtherInput()
-                leave_form.sickLeave.value = data.Request_Details.SickLeave;
-                if (data.Request_Details.LeaveType === "InHospital") {
-                    leave_form.inputInHospital.value = data.Request_Details.InHospital;
-                } else {
-                    leave_form.inputInHospital.value = data.Request_Details.OutPatient;
-                }
-            }
-
-            if (data.Request_Details.LeaveType === "Special Leave Benefits for Women") {
-                showHideOtherInput()
-                leave_form.inputSpecialLeaveWomen.value = data.Request_Details.SpecialLeaveWomen;
-            }
-
-            if (data.Request_Details.LeaveType === "Study Leave") {
-                showHideOtherInput()
-                leave_form.studyLeave.value = data.Request_Details.StudyLeave;
-            }
-            if (data.Request_Details.DetailsofLeave) {
-                showHideOtherInput()
-                leave_form.detailsOfLeave.value = data.Request_Details.DetailsofLeave;
-            }
-
-            startDate.value = data.Request_Details.StartDate
-            endDate.value = data.Request_Details.EndDate
+            // Assuming 'data.PurposeSlip' contains the value you want to set
+            document.querySelector('input[name="purpose"][value="' + data.Request_Details.PurposeSlip + '"]').checked = true;
 
             const listAttachmentsURL = data.AttachmentsURL
 
@@ -237,27 +259,12 @@ function GetLeaveManagementStatus() {
             }
 
 
-
-            statusRequest.innerHTML = data.RequestStatus
-
-            if (data.RequestStatus === "Pending") {
-                statusRequest.style.color = 'red'
-            } else if (data.RequestStatus === "Declined") {
-                statusRequest.style.color = 'black'
-                approveBtn.style.display = 'none'
-                declineBtn.style.display = 'none'
-            } else if (data.RequestStatus === "Approved") {
-                statusRequest.style.color = 'blue'
-                approveBtn.style.display = 'none'
-                declineBtn.style.display = 'none'
-            }
-
             fetchEmployeeInfo(File201colRef, receivedemployeeDocID, "employeeDocID").then((dataRetrieved) => {
                 const file201data = dataRetrieved;
                 const file201DocID = file201data.documentID
 
                 empOffice.innerHTML = file201data.Appointment_Details.Office
-                empJobType.innerHTML = file201data.Appointment_Details.NatureAppointment
+                empJobType.innerHTML = file201data.Appointment_Details.PositionTitle
 
                 const employeeDocumentRef = doc(File201colRef, file201DocID);
                 const leaveCreditsCollectionRef = collection(employeeDocumentRef, 'Leave_Credits');
@@ -270,15 +277,6 @@ function GetLeaveManagementStatus() {
                         const id = filedoc.id;
                         const leaveTypeValue = leaveTypeSelector.value;
 
-                        if (leavedata.Leave_Credit[leaveTypeValue]) {
-                            labelLeaveType.innerHTML = leaveTypeValue
-                            labelLeaveUnits.innerHTML = leavedata.Leave_Credit[leaveTypeValue].RemainingUnits
-                            remainingLeaveNameSpan.innerHTML = leavedata.Leave_Credit[leaveTypeValue].RemainingUnits
-                        } else {
-                            labelLeaveType.innerHTML = leaveTypeValue
-                            labelLeaveUnits.innerHTML = 0
-                            remainingLeaveNameSpan.innerHTML = 0
-                        }
 
 
 
@@ -397,6 +395,8 @@ function GetLeaveManagementStatus() {
 window.addEventListener('load', GetLeaveManagementStatus);
 
 
+
+
 function DeclineLeaveRequest() {
 
     try {
@@ -417,7 +417,7 @@ function DeclineLeaveRequest() {
 
             Swal.fire({
                 title: "Are you sure?",
-                text: "Employee's leave request will be declined",
+                text: "Employee's pass slip will be declined",
                 icon: "question",
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
@@ -435,7 +435,7 @@ function DeclineLeaveRequest() {
                         .then(() => {
                             Swal.fire({
                                 title: 'Saved Successfully!',
-                                text: "Employee's leave credits saved to the system.",
+                                text: "Pass slip denied.",
                                 icon: 'success',
                             });
 
@@ -490,7 +490,7 @@ function AcceptLeaveRequest(total) {
 
             const totalUnits = declineRequestForm.designationName.value
 
- 
+
         })
 
 

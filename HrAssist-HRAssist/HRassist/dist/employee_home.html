@@ -279,7 +279,7 @@
                       <img src="assets/img/dashboard/leave3.png" alt="1">
                     </div>
                     <div class="ps-3">
-                      <h6>14</h6>
+                      <h6><span id="totalVacationLeave"></span></h6>
                       <span class="text-muted small pt-2 ps-1">total vacation leave</span>
                     </div>
                   </div>
@@ -313,7 +313,7 @@
                       <img src="assets/img/dashboard/medical.png" alt="1">
                     </div>
                     <div class="ps-3">
-                      <h6>14</h6>
+                      <h6><span id="totalSickLeave"></span></h6>
                       <span class="text-muted small pt-2 ps-1">total sick leave</span>
                     </div>
                   </div>
@@ -345,54 +345,22 @@
                 <div class="card-body">
                   <h5 class="card-title">Request <span>| Today</span></h5>
 
-                  <table class="table table-borderless datatable">
+
+                  <table class="table table-borderless datatable" id="employee_request">
                     <thead>
-                      <tr>
+                      <tr style="text-align: center;">
                         <th scope="col">ID</th>
                         <th scope="col">Request</th>
                         <th scope="col">Reason</th>
-                        <th scope="col">Days</th>
+                        <th scope="col">Request Date</th> 
                         <th scope="col">Status</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"><a href="#">1</a></th>
-                        <td>Leave Request</td>
-                        <td><a href="#" class="text-primary">Sick</a></td>
-                        <td>3</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">2</a></th>
-                        <td>Leave Request</td>
-                        <td><a href="#" class="text-primary">Sick</a></td>
-                        <td>3</td>
-                        <td><span class="badge bg-warning">Pending</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">3</a></th>
-                        <td>Pass Slip</td>
-                        <td><a href="#" class="text-prim ary">LGU Convention</a></td>
-                        <td>1</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">4</a></th>
-                        <td>Leave Request</td>
-                        <td><a href="#" class="text-primary">Vacation</a></td>
-                        <td>15</td>
-                        <td><span class="badge bg-danger">Rejected</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">5</a></th>
-                        <td>Pass Slip</td>
-                        <td><a href="#" class="text-primary">LGU Training</a></td>
-                        <td>5</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
+                    <tbody> 
                     </tbody>
                   </table>
+
+
 
                 </div>
 
@@ -440,25 +408,27 @@
             </div>
 
             <div class="card-body">
-              <h5 class="card-title">Upcoming Activities <span>| Today</span></h5>
+              <h5 class="card-title">Upcoming Activities <span></span></h5>
 
-              <div class="activity">
-
+              <div class="activity" id="employee_activity">
+                
+              <!--
                 <div class="activity-item d-flex">
                   <div class="activite-label">11/28/23</div>
                   <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
                   <div class="activity-content">
                     PGS Core <a href="#" class="fw-bold text-dark">meeting</a> a quarterly meeting is held.
                   </div>
-                </div><!-- End activity item-->
+                </div> End activity item-->
 
+                <!--
                 <div class="activity-item d-flex">
                   <div class="activite-label">12/1/23</div>
                   <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
                   <div class="activity-content">
                     Cascading Framework Technical Sessions
                   </div>
-                </div><!-- End activity item-->
+                </div>
 
                 <div class="activity-item d-flex">
                   <div class="activite-label">12/18/23</div>
@@ -466,7 +436,7 @@
                   <div class="activity-content">
                     Meeting with dswd officials
                   </div>
-                </div><!-- End activity item-->
+                </div> 
 
                 <div class="activity-item d-flex">
                   <div class="activite-label">12/25/23</div>
@@ -474,7 +444,7 @@
                   <div class="activity-content">
                     DSWD Scorecard <a href="#" class="fw-bold text-dark"></a>Summit
                   </div>
-                </div><!-- End activity item-->
+                </div> 
 
                 <div class="activity-item d-flex">
                   <div class="activite-label">01/05/24</div>
@@ -482,7 +452,7 @@
                   <div class="activity-content">
                     PGS Core <a href="#" class="fw-bold text-dark">meeting</a> a quarterly meeting is held.
                   </div>
-                </div><!-- End activity item-->
+                </div> 
 
                 <div class="activity-item d-flex">
                   <div class="activite-label">01/11/24</div>
@@ -490,7 +460,7 @@
                   <div class="activity-content">
                     Meeting with dswd officials and Mayor
                   </div>
-                </div><!-- End activity item-->
+                </div> 
 
                 <div class="activity-item d-flex">
                     <div class="activite-label">01/25/24</div>
@@ -498,7 +468,7 @@
                     <div class="activity-content">
                       DSWD Scorecard <a href="#" class="fw-bold text-dark"></a>Summit
                     </div>
-                  </div><!-- End activity item-->
+                  </div> -->
 
               </div>
             </div>
@@ -522,7 +492,7 @@
             <div class="card-body pb-0">
               <h5 class="card-title">Job Vacancy <span>| Today</span></h5>
 
-              <div class="news">
+              <div class="news" id="job_vacancy_container">
                 <div class="post-item clearfix">
                   <img src="img/favicon.png" alt="">
                   <h4><a href="#">Administrative Officer (Management and Audit Analyst I)</a></h4>
@@ -579,7 +549,7 @@
 
   
   <script src="bundles/navbar.bundle.js"></script>
-  <script src="bundles/employee_interface.bundle.js"></script>
+  <script src="bundles/employee_home.bundle.js"></script>
 
   <script>
      function redirectToAnotherPage() {

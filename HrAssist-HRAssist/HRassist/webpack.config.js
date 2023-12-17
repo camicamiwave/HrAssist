@@ -62,7 +62,11 @@ module.exports = {
         dtr_summary: './src/dtr_summary.js',
         save_dtr_summary: './src/save_dtr_summary.js',
         employee_reward: './src/employee_reward.js',
-        locator_slip_request: './src/locator_slip_request.js'
+        locator_slip_request: './src/locator_slip_request.js',
+        employee_home: './src/employee_home.js',
+        employee_request_section: './src/employee_request_section.js',
+        employee_total_leavecredits: './src/employee_total_leavecredits.js',
+        contacts: './src/contacts.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),

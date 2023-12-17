@@ -170,7 +170,7 @@
               <hr class="dropdown-divider">
             </li>
 
-              
+
             <li>
               <a class="dropdown-item d-flex align-items-center" id="navbar_signout_btn">
                 <i class="bi bi-box-arrow-right"></i>
@@ -207,11 +207,11 @@
       <li class="nav-item">
         <a class="nav-link" href="employee-request.html">
           <i class="bx bxs-calendar-alt"></i>
-          <span>Request</span> 
+          <span>Request</span>
         </a>
       </li>
 
-      
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="employee-complaint.html">
           <i class="bi bi-send-plus"></i>
@@ -230,7 +230,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="login.html">
           <i class="bi bi-box-arrow-in-right"></i>
-          <span>Login</span>
+          <span>Logout</span>
         </a>
       </li>
     </ul>
@@ -276,61 +276,62 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <form id="passSlipForm">
-          <div class="modal-header">
-            <h5 class="modal-title" id="leaveTitle">Pass Slip Form</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
+            <div class="modal-header">
+              <h5 class="modal-title" id="leaveTitle">Pass Slip Form</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
 
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="slipDate">Date:</label>
-                  <input type="date" id="slipDate" name="slipDate" class="form-control" required>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="slipTime">Time:</label>
-                  <input type="time" id="slipTime" name="slipTime" class="form-control" required>
-                </div>
-              </div>
-            </div><br>
-
-            <div class="form-group">
-              <label for="passSlipDetails">Pass Slip Details:</label>
-              <br>
               <div class="row">
                 <div class="col-md-6">
-                  <input type="radio" id="slipPurpose" name="purpose" value="Official">
-                  <label for="officialPurpose">&nbsp;Official</label>
-                </div><br>
-                <div class="col-md-6">
-                  <input type="radio" id="slipPurpose" name="purpose" value="Personal">
-                  <label for="personalPurpose">&nbsp;Personal</label>
+                  <div class="form-group">
+                    <label for="slipDate">Date:</label>
+                    <input type="date" id="slipDate" name="slipDate" class="form-control" required>
+                  </div>
                 </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="slipTime">Time:</label>
+                    <input type="time" id="slipTime" name="slipTime" class="form-control" required>
+                  </div>
+                </div>
+              </div><br>
+
+              <div class="form-group">
+                <label for="passSlipDetails">Pass Slip Details:</label>
+                <br>
+                <div class="row">
+                  <div class="col-md-6">
+                    <input type="radio" id="slipPurpose" name="purpose" value="Official">
+                    <label for="officialPurpose">&nbsp;Official</label>
+                  </div><br>
+                  <div class="col-md-6">
+                    <input type="radio" id="slipPurpose" name="purpose" value="Personal">
+                    <label for="personalPurpose">&nbsp;Personal</label>
+                  </div>
+                </div>
+              </div><br>
+
+              <div class="form-group">
+                <label for="textArea">Purpose:</label>
+                <textarea class="form-control" id="purposeText" rows="3" placeholder="Enter your purpose"
+                  required></textarea>
+              </div> <br>
+
+              <div class="form-group">
+                <label for="textArea">Attachment:</label><br>
+                <input type="file" class="form-control" id="attachmentFile" rows="3" placeholder="Enter your purpose"
+                  multiple>
               </div>
-            </div><br>
 
-            <div class="form-group">
-              <label for="textArea">Purpose:</label>
-              <textarea class="form-control" id="purposeText" rows="3" placeholder="Enter your purpose" required></textarea>
-            </div> <br>
-
-            <div class="form-group">
-              <label for="textArea">Attachment:</label><br>
-              <input type="file" class="form-control" id="attachmentFile" rows="3"
-                placeholder="Enter your purpose" multiple>
             </div>
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" id="applyPassSlip" class="btn btn-primary">Apply</button>
-          </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" id="applyPassSlip" class="btn btn-primary">Apply</button>
+            </div>
           </form>
         </div>
       </div>
@@ -345,206 +346,220 @@
         <div class="col-lg-8">
           <div class="row">
 
- <!--START NOW-->
-<!-- Leave In formation -->
-<div class="col-xxl-12 col-md-12">
-  <div class="card info-card sales-card">
+            <!--START NOW-->
+            <!-- Leave In formation -->
+            <div class="col-xxl-12 col-md-12">
+              <div class="card info-card sales-card">
 
-    <div class="filter">
-      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-      
-    </div>
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
 
-    <div class="card-body">
-      <h5 class="card-title">Leave <span>| Information</span></h5>
-      <div class="d-flex align-items-center">
-        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-           <img src="assets/img/dashboard/dash1.png" alt="1">
-        </div>
-        <div class="ps-3">
-          <h6>Types of Leave</h6> 
-          <div class="b">
-            <button onclick="redirectToAnotherPage()" class="btn btn-success btn-sm btn-responsive">View</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </div>
-</div><!-- End Absenses Card -->
-<style>
-.b {
-  position: absolute;
-  margin-top: -30px;
-  width: 250px;
-  left: 540px
-}
-</style>
+                </div>
 
-           <!-- Upcoming Activitie -->
-           <div class="col-12">
-            <div class="card recent-sales overflow-auto">
-
-              <div class="filter">
-                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                  </li>
-
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
-                </ul>
-              </div>
-
-              <div class="card-body">
-                <h5 class="card-title">Request <span>| Today</span></h5>
-
-                <table class="table table-borderless datatable">
-                  <thead>
-                    <tr>
-                      <th scope="col">ID</th>
-                      <th scope="col">Request</th>
-                      <th scope="col">Reason</th>
-                      <th scope="col">Days</th>
-                      <th scope="col">Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row"><a href="#">1</a></th>
-                      <td>Leave Request</td>
-                      <td><a href="#" class="text-primary">Sick</a></td>
-                      <td>3</td>
-                      <td><span class="badge bg-success">Approved</span></td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="#">2</a></th>
-                      <td>Leave Request</td>
-                      <td><a href="#" class="text-primary">Sick</a></td>
-                      <td>3</td>
-                      <td><span class="badge bg-warning">Pending</span></td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="#">3</a></th>
-                      <td>Pass Slip</td>
-                      <td><a href="#" class="text-primary">LGU Convention</a></td>
-                      <td>1</td>
-                      <td><span class="badge bg-success">Approved</span></td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="#">4</a></th>
-                      <td>Leave Request</td>
-                      <td><a href="#" class="text-primary">Vacation</a></td>
-                      <td>15</td>
-                      <td><span class="badge bg-danger">Rejected</span></td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="#">5</a></th>
-                      <td>Pass Slip</td>
-                      <td><a href="#" class="text-primary">LGU Training</a></td>
-                      <td>5</td>
-                      <td><span class="badge bg-success">Approved</span></td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div class="card-body">
+                  <h5 class="card-title">Leave <span>| Information</span></h5>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <img src="assets/img/dashboard/dash1.png" alt="1">
+                    </div>
+                    <div class="ps-3">
+                      <h6>Types of Leave</h6>
+                      <div class="b">
+                        <button onclick="redirectToAnotherPage()"
+                          class="btn btn-success btn-sm btn-responsive">View</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
               </div>
+            </div><!-- End Absenses Card -->
+            <style>
+              .b {
+                position: absolute;
+                margin-top: -30px;
+                width: 250px;
+                left: 540px
+              }
+            </style>
 
-            </div>
-          </div><!-- End Recent Sales -->
- 
-        </div>
-      </div><!-- End Left side columns -->
+            <!-- Upcoming Activitie -->
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
 
-    
-      <!-- Right side columns -->
-      <div class="col-lg-4">
-
-               <!-- Website Traffic -->
-               <div class="card">
                 <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                     <li class="dropdown-header text-start">
                       <h6>Filter</h6>
                     </li>
-      
+
                     <li><a class="dropdown-item" href="#">Today</a></li>
                     <li><a class="dropdown-item" href="#">This Month</a></li>
                     <li><a class="dropdown-item" href="#">This Year</a></li>
                   </ul>
                 </div>
-      
-                <div class="card-body pb-0">
-                  <h5 class="card-title">Leaves</h5>
-      
-                  <div id="trafficChart" style="min-height: 555px;" class="echart"></div>
-      
-                  <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                      echarts.init(document.querySelector("#trafficChart")).setOption({
-                        tooltip: {
-                          trigger: 'item'
-                        },
-                        legend: {
-                          top: '5%',
-                          left: 'center'
-                        },
-                        series: [{
-                          name: 'Access From',
-                          type: 'pie',
-                          radius: ['40%', '70%'],
-                          top: '50%', 
-                          avoidLabelOverlap: false,
-                          label: {
-                            show: false,
-                            position: 'center'
-                          },
-                          emphasis: {
-                            label: {
-                              show: true,
-                              fontSize: '18',
-                              fontWeight: 'bold'
-                            }
-                          },
-                          labelLine: {
-                            show: false
-                          },
-                          data: [
-                            { value: 12, name: 'Vacation Leave' },
-                            { value: 11, name: 'Mandatory Leave' },
-                            { value: 10, name: 'Sick Leave' },
-                            { value: 9, name: 'Special Privilege Leave' },
-                            { value: 8, name: 'Solo Parent Leave' },
-                            // Add more data points as needed
-                            { value: 7, name: 'Maternity Leave' },
-                            { value: 6, name: 'Paternity Leave' },
-                            { value: 5, name: 'Study Leave' },
-                            { value: 4, name: 'Unpaid Leave' },
-                            { value: 3, name: 'Public Holiday Leave' },
-                            { value: 2, name: 'Bereavement Leave' },
-                            { value: 1, name: 'Compensatory Leave' },
-                            { value: 0, name: 'Other Leave' },
-                          ]
-                        }]
-                      });
-                    });
-                  </script>
-              
-      
+
+                <div class="card-body">
+                  <h5 class="card-title">Request <span>| Today</span></h5>
+
+                  <table class="table table-borderless datatable" id="employee_request">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Request</th>
+                        <th scope="col">Reason</th>
+                        <th scope="col">Days</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                  </table>
+
                 </div>
-              </div><!-- End Website Traffic -->
-            </div><!-- End Right side columns -->
-      
+
+              </div>
+            </div><!-- End Recent Sales -->
+
           </div>
-        </section>
-      
+        </div><!-- End Left side columns -->
+
+
+        <!-- Right side columns -->
+        <div class="col-lg-4">
+
+          <!-- Website Traffic -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body pb-0">
+              <h5 class="card-title">Leaves</h5>
+
+              <div id="trafficChart" style="min-height: 555px;" class="echart"></div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  // Initialize ECharts
+                  const trafficChart = echarts.init(document.querySelector("#trafficChart"));
+
+                  // Initial ECharts configuration
+                  const initialOption = {
+                    tooltip: {
+                      trigger: 'item'
+                    },
+                    legend: {
+                      top: '5%',
+                      left: 'center'
+                    },
+                    series: [{
+                      name: 'Access From',
+                      type: 'pie',
+                      radius: ['40%', '70%'],
+                      top: '50%',
+                      avoidLabelOverlap: false,
+                      label: {
+                        show: false,
+                        position: 'center'
+                      },
+                      emphasis: {
+                        label: {
+                          show: true,
+                          fontSize: '18',
+                          fontWeight: 'bold'
+                        }
+                      },
+                      labelLine: {
+                        show: false
+                      },
+                      data: []
+                    }]
+                  };
+
+                  // Set the initial configuration
+                  trafficChart.setOption(initialOption);
+
+                });
+              </script>
 
 
 
- <!--EM-->
+              <!--
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  echarts.init(document.querySelector("#trafficChart")).setOption({
+                    tooltip: {
+                      trigger: 'item'
+                    },
+                    legend: {
+                      top: '5%',
+                      left: 'center'
+                    },
+                    series: [{
+                      name: 'Access From',
+                      type: 'pie',
+                      radius: ['40%', '70%'],
+                      top: '50%',
+                      avoidLabelOverlap: false,
+                      label: {
+                        show: false,
+                        position: 'center'
+                      },
+                      emphasis: {
+                        label: {
+                          show: true,
+                          fontSize: '18',
+                          fontWeight: 'bold'
+                        }
+                      },
+                      labelLine: {
+                        show: false
+                      },
+                      data: [
+                        { value: 12, name: 'Vacation Leave' },
+                        { value: 11, name: 'Mandatory Leave' },
+                        { value: 10, name: 'Sick Leave' },
+                        { value: 9, name: 'Special Privilege Leave' },
+                        { value: 8, name: 'Solo Parent Leave' },
+                        // Add more data points as needed
+                        { value: 7, name: 'Maternity Leave' },
+                        { value: 6, name: 'Paternity Leave' },
+                        { value: 5, name: 'Study Leave' },
+                        { value: 4, name: 'Unpaid Leave' },
+                        { value: 3, name: 'Public Holiday Leave' },
+                        { value: 2, name: 'Bereavement Leave' },
+                        { value: 1, name: 'Compensatory Leave' },
+                        { value: 0, name: 'Other Leave' },
+                      ]
+                    }]
+                  });
+                });
+              </script>-->
+
+
+            </div>
+          </div><!-- End Website Traffic -->
+        </div><!-- End Right side columns -->
+
+      </div>
+    </section>
+
+
+
+
+    <!--EM-->
 
 
   </main><!-- End #main -->
@@ -575,19 +590,20 @@
 
   <script src="bundles/navbar.bundle.js"></script>
   <script src="bundles/employee_pass_slip.bundle.js"></script>
+  <script src="bundles/employee_request_section.bundle.js"></script>
 
   <script>
     function redirectToAnotherPage() {
-        window.location.href = 'employee-leave-info.html';
+      window.location.href = 'employee-leave-info.html';
     }
   </script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-  var locatorform = document.getElementById('applyLeaveModal');
-  var requestLocatorBtn = document.getElementById('applyPassSlip');
- 
-  });
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var locatorform = document.getElementById('applyLeaveModal');
+      var requestLocatorBtn = document.getElementById('applyPassSlip');
+
+    });
   </script>
 
 </body>

@@ -41,9 +41,9 @@ function GetLeaveManagementTable() {
             // Clear the existing rows in the table body
             tbody.innerHTML = '';
 
-            snapshot.docs.forEach((doc) => {
-                const data = doc.data();
-                const id = doc.id;
+            snapshot.docs.forEach((empdoc) => {
+                const data = empdoc.data();
+                const id = empdoc.id;
                 const row = document.createElement('tr');
 
                 const employeedocID = data.employeeDocID
@@ -104,9 +104,49 @@ function GetLeaveManagementTable() {
 
                     });
 
+                    // Decline button
+                    const deleteApprove = document.createElement('button');
+                    deleteApprove.textContent = 'Delete'; // Customize the button label
+                    deleteApprove.classList.add('btn', 'mx-1', 'btn-sm', 'text-white', 'btn-danger'); // You can use Bootstrap's 'btn' and 'btn-primary' classes
+
+                    deleteApprove.addEventListener('click', () => {
+                        // Define an action for the Decline button (e.g., decline the record)
+                        
+                        Swal.fire({
+                            title: "Are you sure?",
+                            text: "Employee's leave request will be lost",
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#3085d6",
+                            cancelButtonColor: "#d33",
+                            confirmButtonText: "Confirm"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                console.log('Row ID clicked:', id);
+                                const colRef = collection(db, 'Request Information')
+                                const docRef = doc(colRef, id)
+                                deleteDoc(docRef)
+                                    .then(() => {
+                                        Swal.fire({
+                                            title: 'Deleted Successfully!',
+                                            text: 'Leave request deleted.',
+                                            icon: 'success',
+                                        });
+                                    })
+                            } else {
+                                // Handle the case where the user cancels the action
+                            }
+                        });
+
+                        
+                    });
+
+                    
+
 
 
                     actionCell.appendChild(viewButtonApprove);
+                    actionCell.appendChild(deleteApprove);
 
                     // Append cells to the row 
                     //row.appendChild(profileCell); 

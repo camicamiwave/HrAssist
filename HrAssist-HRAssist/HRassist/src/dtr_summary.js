@@ -11,7 +11,7 @@ import {
     addDoc, deleteDoc, doc,
     query, where,
     orderBy, serverTimestamp,
-    getDoc, updateDoc, setDoc, getDocs
+    getDoc, updateDoc, setDoc, getDocs, FieldValue, deleteField
 } from 'firebase/firestore'
 
 import { firebaseConfig } from './server.js';
@@ -341,12 +341,72 @@ function fetchDTRSummary() {
                         cell13.textContent = employee.absent;
                         cell14.textContent = employee.leave;
 
-                        console.log(employee.employeeDocID, 'asfsa1234');
+                        const deleteButton = document.createElement('button');
+
+                        deleteButton.textContent = `Delete`;
+                        deleteButton.className = 'btn btn-danger';
+                        deleteButton.id = `viewbtn${num}`;
+                        deleteButton.style.color = 'white';
+                        deleteButton.type = 'button';
+                        // Declare leaveFormData variable before using it
+                        let leaveFormData;
+
+                        // Add an event listener to the button
+                        deleteButton.addEventListener('click', async function () {
+                            // ... (your existing code)
+
+                            Swal.fire({
+                                title: "Are you sure?",
+                                text: "Employee's IPCRF will be lost",
+                                icon: "warning",
+                                showCancelButton: true,
+                                confirmButtonColor: "#3085d6",
+                                cancelButtonColor: "#d33",
+                                confirmButtonText: "Confirm"
+                            }).then(async (result) => {
+                                if (result.isConfirmed) {
+                                    // If the user clicks "Confirm"
+                                    console.log('Row ID clicked:', data.documentID);
+
+                                    const colRef = collection(db, 'DTR Summary');
+                                    const docRef = doc(colRef, data.documentID);
+
+                                    const employeeDTR = data.Employee_DTR;
+                                    delete employeeDTR[key];
+                                    console.log(employeeDTR);
+
+                                    try {
+                                        // Construct the correct document reference
+                                        const cityRef = doc(db, 'DTR Summary', data.documentID);
+
+                                        // Use updateDoc to delete the specific field
+                                        await updateDoc(cityRef, { Employee_DTR: deleteField(key) }).then(() =>{
+
+                                            // Assuming 'leaveFormData' is the data you want to set
+                                            const IPCRFcolRef = collection(db, 'DTR Summary');
+ 
+                                            return setDoc(doc(IPCRFcolRef, data.documentID), {Employee_DTR: employeeDTR}, { merge: true });
+                                        }).then(() => {
+                                            alert("Save Successfully");
+                                        })
+
+
+                                    } catch (error) {
+                                        console.error('Error deleting or updating documents:', error);
+                                        alert('Failed to delete or update. Please try again.');
+                                    }
+                                } else {
+                                    // Handle the case where the user cancels the action
+                                }
+                            });
+                        });
+
 
                         // Create a view button
                         const viewButton = document.createElement('button');
                         viewButton.textContent = `Edit`;
                         viewButton.className = 'btn btn-primary';
+                        viewButton.style.color = 'white';
                         viewButton.id = `viewbtn${employee.employeeDocID}`;
                         viewButton.type = 'button';
 
@@ -404,11 +464,11 @@ function fetchDTRSummary() {
 
                                     // Subtract adjustedAbsentHours from totalAbsentHours
                                     const totalAbsentHours = roundToTwoDecimals(adjustedRequiredHours - (parseInt(adjustedAbsentHours, 10) || 0));
-                                     
+
                                     // Create an object to hold the updated data
                                     const updatedData = {
                                         RequiredHours: parseInt(requiredSelector.value, 10) || "" || "",
-                                        ActualHours: totalAbsentHours < 0 ? 0 : totalAbsentHours ,
+                                        ActualHours: totalAbsentHours < 0 ? 0 : totalAbsentHours,
                                         NoTimeLateIn: parseInt(actualWorkTime.value, 10) || "",
                                         MinsLateIn: parseInt(actualWorkMin.value, 10) || "",
                                         NoTimeEarlyLeave: parseInt(earyLeaveTime.value, 10) || "",
@@ -460,6 +520,8 @@ function fetchDTRSummary() {
 
                                     if (result.isConfirmed) {
 
+
+
                                         // Use setDoc to update the document with merge: true
                                         await setDoc(doc(DTRcolRef, documentIdToUpdate), {
                                             Employee_DTR: {
@@ -496,6 +558,7 @@ function fetchDTRSummary() {
 
                         // Append the button to the last cell
                         cell15.appendChild(viewButton);
+                        cell15.appendChild(deleteButton)
 
                         num++;
                     }

@@ -272,7 +272,7 @@
             <div class="card">
               <div class="card-body">
                 <p class="card-text" style="padding-top: 2vh;">
-                 <b>Instructions:</b> Click each boxes to know how to apply.
+                 <b>Instructions:</b> Below are your total leave credits. Click each box to learn how to apply.
                 </p>
               </div>
             </div>
@@ -299,7 +299,7 @@
                     <div class="card bg-c-white order-card" style="width:230px;" style="height: 100px;">
                         <div class="card-block">
                             <h6 class="m-b-20">Vacation leave</h6>
-                            <h2 class="text-right"><img src="assets/img/dashboard/leave3.png" alt="1"><span>5</span></h2>
+                            <h2 class="text-right"><img src="assets/img/dashboard/leave3.png" alt="1"><span id="totalVacationLeave">0</span></h2>
                            
                         </div>
                     </div>
@@ -329,7 +329,7 @@
                         <div class="card bg-c-white order-card" >
                             <div class="card-block">
                                 <h6 class="m-b-20">Mandatory/Forced leave</h6>
-                                <h2 class="text-right"><img src="assets/img/dashboard/leave9.png" alt="1"></i><span>5</span></h2>
+                                <h2 class="text-right"><img src="assets/img/dashboard/leave9.png" alt="1"></i><span id="totalMandatoryLeave">0</span></h2>
                                
                             </div>
                         </div>
@@ -359,7 +359,7 @@
                         <div class="card bg-c-white order-card">
                             <div class="card-block">
                                 <h6 class="m-b-20">Sick leave</h6>
-                                <h2 class="text-right"><img src="assets/img/dashboard/sick.png" alt="1"></i><span>5</span></h2>
+                                <h2 class="text-right"><img src="assets/img/dashboard/sick.png" alt="1"></i><span id="totalSickLeave">0</span></h2>
                                 
                             </div>
                         </div>
@@ -396,7 +396,7 @@
                         <div class="card bg-c-white order-card">
                             <div class="card-block">
                                 <h6 class="m-b-20">Maternity leave</h6>
-                                <h2 class="text-right"><img src="assets/img/dashboard/maternity.png" alt="1"></i><span>5</span></h2>
+                                <h2 class="text-right"><img src="assets/img/dashboard/maternity.png" alt="1"></i><span id="totalMaternityLeave">0</span></h2>
                                 
                             </div>
                         </div>
@@ -436,7 +436,7 @@
                         <div class="card bg-c-white order-card">
                             <div class="card-block">
                                 <h6 class="m-b-20">Paternity leave</h6>
-                                <h2 class="text-right"><img src="assets/img/dashboard/father.png" alt="1"></i><span>5</span></h2>
+                                <h2 class="text-right"><img src="assets/img/dashboard/father.png" alt="1"></i><span id="totalPaternityLeave">0</span></h2>
                                
                             </div>
                         </div>
@@ -465,7 +465,7 @@
                         <div class="card bg-c-white order-card">
                             <div class="card-block">
                                 <h6 class="m-b-20">Special Privilege leave</h6>
-                                <h2 class="text-right"><img src="assets/img/dashboard/special.png" alt="1"></i><span>5</span></h2>
+                                <h2 class="text-right"><img src="assets/img/dashboard/special.png" alt="1"></i><span id="totalSpecialPrevilegeLeave">0</span></h2>
                                
                             </div>
                         </div>
@@ -495,7 +495,7 @@
                         <div class="card bg-c-white order-card">
                             <div class="card-block">
                                 <h6 class="m-b-20">Solo Parent leave</h6>
-                                <h2 class="text-right"><img src="assets/img/dashboard/solo.png" alt="1"></i><span>5</span></h2>
+                                <h2 class="text-right"><img src="assets/img/dashboard/solo.png" alt="1"></i><span id="totalSoloParentLeave">0</span></h2>
                                
                             </div>
                         </div>
@@ -524,7 +524,7 @@
                         <div class="card bg-c-white order-card">
                             <div class="card-block">
                                 <h6 class="m-b-20">Study leave</h6>
-                                <h2 class="text-right"><img src="assets/img/dashboard/study.png" alt="1"></i><span>5</span></h2>
+                                <h2 class="text-right"><img src="assets/img/dashboard/study.png" alt="1"></i><span id="totalStudyLeave">0</span></h2>
                                
                             </div>
                         </div>
@@ -562,7 +562,7 @@
                         <div class="card bg-c-white order-card">
                             <div class="card-block">
                                 <h6 class="m-b-20">VAWC leave</h6>
-                                <h2 class="text-right"><img src="assets/img/dashboard/leave3.png" alt="1"></i><span>5</span></h2>
+                                <h2 class="text-right"><img src="assets/img/dashboard/leave3.png" alt="1"></i><span id="totalVAWCLeave">0</span></h2>
                                 
                             </div>
                         </div>
@@ -605,7 +605,7 @@
                         <div class="card bg-c-white order-card">
                             <div class="card-block">
                                 <h6 class="m-b-20">Rehabilitation leave</h6>
-                                <h2 class="text-right"><img src="assets/img/dashboard/rehabilitation.png" alt="1"></i><span>5</span></h2>
+                                <h2 class="text-right"><img src="assets/img/dashboard/rehabilitation.png" alt="1"></i><span id="totalRehabilitationLeave">0</span></h2>
                               
                             </div>
                         </div>
@@ -641,7 +641,7 @@
                         <div class="card bg-c-white order-card">
                             <div class="card-block">
                                 <h6 class="m-b-20">Special leave benefits for women</h6>
-                                <h2 class="text-right"><img src="assets/img/dashboard/mother.png" alt="1"></i><span>5</span></h2>
+                                <h2 class="text-right"><img src="assets/img/dashboard/mother.png" alt="1"></i><span id="totalSpecialLeaveForWomen">0</span></h2>
                                 
                             </div>
                         </div>
@@ -678,7 +678,7 @@
                         <div class="card bg-c-whit order-card">
                             <div class="card-block">
                                 <h6 class="m-b-20">Special Emergency (Calamamity) leave</h6>
-                                <h2 class="text-right"><img src="assets/img/dashboard/front-line.png" alt="1"></i><span>5</span></h2>
+                                <h2 class="text-right"><img src="assets/img/dashboard/front-line.png" alt="1"></i><span id="totalSpecialEmergency">0</span></h2>
                                
                             </div>
                         </div>
@@ -720,7 +720,7 @@
                         <div class="card bg-c-white order-card">
                             <div class="card-block">
                                 <h6 class="m-b-20">Monetization of leave credits</h6>
-                                <h2 class="text-right"><img src="assets/img/dashboard/responsibility 1.png" alt="1"></i><span>5</span></h2>
+                                <h2 class="text-right"><img src="assets/img/dashboard/responsibility 1.png" alt="1"></i><span id="totalMonetization">0</span></h2>
                                 
                             </div>
                         </div>
@@ -777,7 +777,7 @@
                   <div class="card bg-c-white order-card">
                       <div class="card-block">
                           <h6 class="m-b-20">Adoption Leave</h6>
-                          <h2 class="text-right"><img src="assets/img/dashboard/adoption.png" alt="1"></i><span>5</span></h2>
+                          <h2 class="text-right"><img src="assets/img/dashboard/adoption.png" alt="1"></i><span id="totalAdoptionLeave">5</span></h2>
                          
                       </div>
                   </div>
@@ -945,6 +945,7 @@
   </script>
 
   <script src="bundles/navbar.bundle.js"></script>
+  <script src="bundles/employee_total_leavecredits.bundle.js"></script>
   
 </body>
 
