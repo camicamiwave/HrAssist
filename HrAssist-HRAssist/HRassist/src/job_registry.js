@@ -66,10 +66,10 @@ function AddApplicantForm() {
         e.preventDefault();
         const applicantID = applicantCurrentMaxID + 1;
 
-        const applicantJobForm = { 
-            ApplicantStatus: "Pending", 
+        const applicantJobForm = {
+            ApplicantStatus: "Pending",
             ApplicationProgess: 1,
-            ApplicantID: applicantID, 
+            ApplicantID: applicantID,
             createdAt: serverTimestamp(),
             ApplicantStatus: "Pending",
             userID: userUID,
@@ -189,12 +189,13 @@ function AddApplicantForm() {
 
 window.addEventListener('load', AddApplicantForm)
 
+
 function Test() {
     const JobcolRef = collection(db, 'Job Information');
 
     let customDocId;
 
-    const btnId = document.getElementById("inputJobSubmit")
+    const btnId = document.getElementById("inputJobVacancySubmitBtn")
 
 
     btnId.addEventListener('click', (e) => {
@@ -266,12 +267,11 @@ function Test() {
                     console.error("Error:", error);
                 })*/
                     .then(() => {
-                        console.log("hereee: ", customDocId)
-                        // Reset the form
-                        //addDataSheetForm.reset();
-                        console.log("Added job details successfully...");
-                        //window.location.href = 'Education-21Files.html';
-                        window.location.href = `admin_job_vacancy_view.html?data=${encodeURIComponent(customDocId)}`;
+                        // Add a delay of 3 seconds before redirecting
+                        setTimeout(() => {
+                            window.location.href = `admin_job_vacancy_view.html?data=${encodeURIComponent(customDocId)}`;
+                        }, 3000);
+
                     })
                     .catch(error => console.error('Error adding job details document:', error));
             }
@@ -628,15 +628,15 @@ async function GetJobVacancyTable() {
                 deleteButton.addEventListener('click', () => {
                     // Implement deactivation logic here
                     //alert(`Activate clicked for ID: ${id}`);
-                                
+
                     $('#deleteModal').modal('show');
 
-                    closeBtn.addEventListener('click', (e) =>{
+                    closeBtn.addEventListener('click', (e) => {
                         $('#deleteModal').modal('hide');
                     })
 
                     const deleteButtonModal = document.getElementById('deleteBtnModal')
-                    
+
                     deleteButtonModal.addEventListener('click', async (e) => {
                         console.log('asgsgs')
                         Swal.fire({
@@ -657,7 +657,7 @@ async function GetJobVacancyTable() {
                                     try {
                                         // Replace "cities" and "DC" with your actual collection name and document ID
                                         await deleteDoc(doc(jobcolRef, id));
-                                                        
+
                                         $('#deleteModal').modal('hide');
                                     } catch {
                                         alert("There's an error while deleting the record...");
@@ -742,92 +742,102 @@ function JobVacancyFormPopulate() {
 
     const TrainingColRef = collection(db, 'Job Information');
 
-    fetchEmployeeInfo(TrainingColRef, receivedStringData, "documentID").then((dataRetrieved) => {
-        const data = dataRetrieved;
-
-        console.log(data)
-
-        const officeSelected = document.getElementById('officeSelector')
-
-        if (data !== "none") {
-
-            inputJobSubmit.style.display = 'none'
-            updateJob.style.display = 'block'
-
-
-
-            inputJobTitle.value = data.JobTitle
-            inputSalaryAmount.value = data.SalaryAmount
-            inputDate.value = data.DueDate
-            inputJobVacancy.value = data.NumVacancy
-            inputJobType.value = data.JobType
-            officeSelected.value = data.Office
-            inputJobDesc.value = data.JobDesc
-            inputJobResponsibility.value = data.JobRes
-            inputJobQuality.value = data.Qualification
-            applicationStatus.value = data.JobStatus
-
-            updateJob.addEventListener('click', (e) => { 
-                     
-                const jobDetailsData = {
-                    createdAt: serverTimestamp(),
-                    JobStatus: document.getElementById('applicationStatus').value,
-                    JobTitle: document.getElementById("inputJobTitle").value,
-                    JobType: document.getElementById("inputJobType").value,
-                    SalaryAmount: document.getElementById("inputSalaryAmount").value,
-                    DueDate: document.getElementById("inputDate").value,
-                    JobDesc: document.getElementById("inputJobDesc").value,
-                    JobRes: document.getElementById("inputJobResponsibility").value,
-                    Qualification: document.getElementById("inputJobQuality").value,
-                    NumVacancy: document.getElementById("inputJobVacancy").value,
-                    Office: document.getElementById("officeSelector").value, 
-                };
-                
-                Swal.fire({
-                    title: "Are you sure?",
-                    text: "Your update will be recorded",
-                    icon: "question",
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "Confirm"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        Swal.fire({
-                            title: "Saved!",
-                            text: "Update successfully...",
-                            icon: "success",
-                            timer: 2000, // Set the timer in milliseconds (2 seconds in this example)
-                            showConfirmButton: false
-                        }).then(() => {
-                            const jobcolRef = collection(db, 'Job Information');
-                            const docRef = doc(jobcolRef, receivedStringData);
-                
-                            // Update data in Firestore                        
-                            return updateDoc(docRef, jobDetailsData)
-                                .then(() => { 
-                                    // Reset the form if needed
-                                    // addDataSheetForm.reset();
-                
-                                    console.log("Updated job details successfully...");
-                                    
-                                    // Redirect after the specified delay
-                                    setTimeout(() => {
-                                        window.location.href = 'admin_job_vacancy_view.html';
-                                    }, 2000); // Set the delay in milliseconds (2 seconds in this example)
-                                })
-                                .catch(error => console.error('Error updating job details document:', error));
-                        });
-                    }
-                });
+    try {
+ 
+            fetchEmployeeInfo(TrainingColRef, receivedStringData, "documentID").then((dataRetrieved) => {
+                const data = dataRetrieved;
         
-
+                console.log(data)
+        
+                const officeSelected = document.getElementById('officeSelector')
+        
+                if (data !== "none") {
+        
+                    inputJobVacancySubmitBtn.style.display = 'none'
+                    updateJob.style.display = 'block'
+        
+        
+        
+                    inputJobTitle.value = data.JobTitle
+                    inputSalaryAmount.value = data.SalaryAmount
+                    inputDate.value = data.DueDate
+                    inputJobVacancy.value = data.NumVacancy
+                    inputJobType.value = data.JobType
+                    officeSelected.value = data.Office
+                    inputJobDesc.value = data.JobDesc
+                    inputJobResponsibility.value = data.JobRes
+                    inputJobQuality.value = data.Qualification
+                    applicationStatus.value = data.JobStatus
+        
+                    updateJob.addEventListener('click', (e) => {
+        
+                        const jobDetailsData = {
+                            createdAt: serverTimestamp(),
+                            JobStatus: document.getElementById('applicationStatus').value,
+                            JobTitle: document.getElementById("inputJobTitle").value,
+                            JobType: document.getElementById("inputJobType").value,
+                            SalaryAmount: document.getElementById("inputSalaryAmount").value,
+                            DueDate: document.getElementById("inputDate").value,
+                            JobDesc: document.getElementById("inputJobDesc").value,
+                            JobRes: document.getElementById("inputJobResponsibility").value,
+                            Qualification: document.getElementById("inputJobQuality").value,
+                            NumVacancy: document.getElementById("inputJobVacancy").value,
+                            Office: document.getElementById("officeSelector").value,
+                        };
+        
+                        Swal.fire({
+                            title: "Are you sure?",
+                            text: "Your update will be recorded",
+                            icon: "question",
+                            showCancelButton: true,
+                            confirmButtonColor: "#3085d6",
+                            cancelButtonColor: "#d33",
+                            confirmButtonText: "Confirm"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                Swal.fire({
+                                    title: "Saved!",
+                                    text: "Update successfully...",
+                                    icon: "success",
+                                    timer: 2000, // Set the timer in milliseconds (2 seconds in this example)
+                                    showConfirmButton: false
+                                }).then(() => {
+                                    const jobcolRef = collection(db, 'Job Information');
+                                    const docRef = doc(jobcolRef, receivedStringData);
+        
+                                    // Update data in Firestore                        
+                                    return updateDoc(docRef, jobDetailsData)
+                                        .then(() => {
+                                            // Reset the form if needed
+                                            // addDataSheetForm.reset();
+        
+                                            console.log("Updated job details successfully...");
+        
+                                            // Redirect after the specified delay
+                                            setTimeout(() => {
+                                                window.location.href = 'admin_job_vacancy_view.html';
+                                            }, 2000); // Set the delay in milliseconds (2 seconds in this example)
+                                        })
+                                        .catch(error => console.error('Error updating job details document:', error));
+                                });
+                            }
+                        });
+        
+        
+                    })
+        
+                }
+        
+        
             })
+        
+    
+    
 
-        }
+    } catch {
+        console.log("there was an error...")
+    }
 
-
-    })
 
 }
 window.addEventListener('load', JobVacancyFormPopulate);
