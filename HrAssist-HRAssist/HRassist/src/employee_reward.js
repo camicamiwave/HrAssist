@@ -576,16 +576,6 @@ function validateForm() {
         return false;
     }
 
-    if (!isValidString(RewardInput.value)) {
-        console.log('Please fix your input in Rewards');
-        Swal.fire({
-            title: 'Error',
-            text: 'Please fix your input in Rewards!',
-            icon: 'error',
-        });
-        return false;
-    }
-
     if (!isValidString(ReasonInput.value)) {
         console.log('Please fix your input in Reasons');
         Swal.fire({
