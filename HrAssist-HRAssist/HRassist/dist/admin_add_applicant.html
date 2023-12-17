@@ -512,7 +512,7 @@
                 dragArea.classList.remove('active');
         
                 const files = e.dataTransfer.files;
-                handleFiles(files, fileInfo, ['pdf', 'doc', 'docx'], 'Invalid file type for CV. Please upload a PDF or Word document.');
+                handleFiles(files, fileInfo, ['png', 'pdf', 'doc', 'docx', 'jpeg', 'jpg'], 'Invalid file type for CV. Please upload a PDF or Word or PNG document.');
             });
         
             browseButton.addEventListener('click', function() {
@@ -521,7 +521,7 @@
         
             fileInput.addEventListener('change', function() {
                 const files = this.files;
-                handleFiles(files, fileInfo, ['pdf', 'doc', 'docx'], 'Invalid file type for CV. Please upload a PDF or Word document.');
+                handleFiles(files, fileInfo, ['png','pdf', 'doc', 'docx', 'jpeg', 'jpg'], 'Invalid file type for CV. Please upload a PDF or Word or PNG document.');
             });
         
             dragArea2.addEventListener('dragover', function(e) {
