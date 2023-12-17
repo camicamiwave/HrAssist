@@ -70,7 +70,8 @@ module.exports = {
         admin_add_applicant: './src/admin_add_applicant.js',
         applicant_submit: './src/applicant_submit.js',
         employee_concerns: './src/employee_concerns.js',
-        queries: './src/queries.js'
+        queries: './src/queries.js',
+        admin_user_profile: './src/admin_user_profile.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/bundles'),

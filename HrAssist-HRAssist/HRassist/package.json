@@ -73,7 +73,8 @@
     "admin_add_applicant": "node admin_add_applicant.js",
     "applicant_submit": "node applicant_submit.js",
     "employee_concerns": "node employee_concerns.js",
-    "queries": "node queries.js"
+    "queries": "node queries.js",
+    "admin_user_profile": "node admin_user_profile.js"
   },
   "keywords": [],
   "author": "",
