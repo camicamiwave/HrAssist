@@ -296,15 +296,6 @@ function SaveAttachmentProfile(docRef) {
         return false;
      }
 
-     if(!isValidString(BirthPlaceInput.value)){
-        console.log('Please input proper Birth Place');
-        Swal.fire({
-            title: 'Error',
-            text: 'Please input proper Birth Place',
-            icon: 'error',
-        });
-        return false;
-     }
 
      if(!isValidString(JobTypeInput.value)){
         console.log('Please input proper Job Type');
