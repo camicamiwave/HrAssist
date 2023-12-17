@@ -11,7 +11,7 @@ import {
     addDoc, deleteDoc, doc,
     query, where,
     orderBy, serverTimestamp,
-    getDoc, updateDoc, setDoc
+    getDoc, updateDoc, setDoc, deleteField
 } from 'firebase/firestore'
 
 import { firebaseConfig } from './server.js';
@@ -537,6 +537,7 @@ export function fetchEmployeeLeaveCredit() {
         // Reference to the Leave_Credits collection
         const leaveCreditsCollectionRef = collection(db, '201File Information', receivedfile201, 'Leave_Credits');
 
+
         // Create a query to get the Leave_Credit data
         const leaveCreditQuery = query(leaveCreditsCollectionRef, where('leavecreditDocID', '==', receivedleave_id));
         // Listen for real-time updates
@@ -594,8 +595,7 @@ export function fetchEmployeeLeaveCredit() {
 
                             openEditModal();
                         });
-
-                        /*
+ 
                         // Assuming you have created the button and assigned it to the variable 'editButton'
                         const deleteButton = document.createElement('button');
 
@@ -604,7 +604,7 @@ export function fetchEmployeeLeaveCredit() {
                         deleteButton.id = `${leaveType}`;
 
                         // Add an event listener to the button
-                        deleteButton.addEventListener('click', function () {
+                        deleteButton.addEventListener('click', async function () {
                             const leaveData = leaveDetails[this.id]
 
                             const deletingLeaveType = leaveData.LeaveType 
@@ -620,12 +620,9 @@ export function fetchEmployeeLeaveCredit() {
                                 confirmButtonColor: "#3085d6",
                                 cancelButtonColor: "#d33",
                                 confirmButtonText: "Confirm"
-                            }).then((result) => {
+                            }).then(async (result) => {
                                 if (result.isConfirmed) { 
-            
-                                    // Reference to the Leave_Credits collection
-                                    //const leaveCreditsCollectionRef1 = collection(db, '201File Information', File201Document, 'Leave_Credits');
-            
+                        
                                     console.log('leaveCreditsCollectionRef1:', leaveCreditsCollectionRef);
                                     console.log('id:', this.id);
 
@@ -633,9 +630,26 @@ export function fetchEmployeeLeaveCredit() {
 
                                     console.log(leaveDetails, 'ey')
             
-                                    DeleteLeaveCredit(leaveCreditsCollectionRef, receivedleave_id, leaveDetails);
-                            
+                                    try {
+                                        // Construct the correct document reference
+                                        const cityRef = doc(db, leaveCreditsCollectionRef, receivedleave_id);
 
+                                        // Use updateDoc to delete the specific field
+                                        await updateDoc(cityRef, { Leave_Credit: deleteField() }).then(() =>{
+
+                                            // Assuming 'leaveFormData' is the data you want to set
+                                            const IPCRFcolRef = collection(db, 'DTR Summary');
+ 
+                                            return setDoc(cityRef, {Leave_Credit: leaveDetails}, { merge: true });
+                                        }).then(() => {
+                                            alert("Save Successfully");
+                                        })
+
+
+                                    } catch (error) {
+                                        console.error('Error deleting or updating documents:', error);
+                                        alert('Failed to delete or update. Please try again.');
+                                    }
 
                                 } else {
                                     // Handle the case where the user cancels the action
@@ -644,7 +658,7 @@ export function fetchEmployeeLeaveCredit() {
                             
                             
                             
-                        });*/
+                        });
 
 
 
@@ -668,21 +682,37 @@ export function fetchEmployeeLeaveCredit() {
     }
 }
 
+async function deleteLeaveCredit(leaveCreditsCollectionRef1, id, leave_details) { 
+    try {
+        // Reference to the root collection
+        const employeeCollectionRef = collection(db, '201File Information');
+        
+        // Replace 'documentID' with the actual ID of the document you want to reference
+        const documentID = id;
 
+        // Reference to the specific document
+        const employeeDocumentRef = doc(employeeCollectionRef, documentID);
 
-function DeleteLeaveCredit(leaveCreditsCollectionRef1, id, Leave_Credit) { 
-     
-      return setDoc(doc(leaveCreditsCollectionRef1, id), Leave_Credit, { merge: true })
-        .then(() => {
-          console.log(Leave_Credit, 'hoypangits');
-          Swal.fire({
+        // Reference to the nested collection within the document
+        const leaveCreditsCollectionRef = collection(employeeDocumentRef, 'Leave_Credits');
+
+        // Reference to the specific document within the nested collection
+        const cityRef = doc(leaveCreditsCollectionRef, id);
+
+        // Delete the entire document from the nested collection
+        await deleteDoc(cityRef);
+
+        // Update the document in the root collection with the new data
+        const IPCRFcolRef = collection(db, 'Reward Information');
+        await setDoc(employeeDocumentRef, { Leave_Credit: leave_details }, { merge: true });
+
+        Swal.fire({
             title: 'Deleted Successfully!',
-            text: 'All employee record deleted on that year.',
+            text: 'Leave credit has been deleted.',
             icon: 'success',
-          });
-        })
-        .catch((error) => {
-          console.error('Error updating document:', error);
         });
-  
+    } catch (error) {
+        console.error('Error deleting or updating documents:', error);
+        alert('Failed to delete or update. Please try again.');
+    }
 }

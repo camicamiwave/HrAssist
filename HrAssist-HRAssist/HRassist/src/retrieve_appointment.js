@@ -28,7 +28,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const receivedStringData = urlParams.get('data');
 
 function fetchEmployee() {
-    const EmployeecolRef = collection(db, '201File Information'); 
+    const EmployeecolRef = collection(db, '201File Information');
 
     fetchEmployeeInfo(EmployeecolRef, receivedStringData, "employeeDocID").then((dataRetrieved) => {
         const empdata = dataRetrieved;
@@ -38,17 +38,29 @@ function fetchEmployee() {
         empPositionTile.innerHTML = empdata.Appointment_Details.PositionTitle
         empEmployementStatus.innerHTML = empdata.Appointment_Details.PositionCategory
         empsgjgpg.innerHTML = empdata.Appointment_Details.SalaryGrade
-        natureOfAppointment.innerHTML = empdata.Appointment_Details.NatureAppointment 
-        vice.innerHTML = empdata.Appointment_Details.Vice 
-        who.innerHTML = empdata.Appointment_Details.Who 
-        plantillaItemNo.innerHTML = empdata.Appointment_Details.PlantillaNum 
-        page.innerHTML = empdata.Appointment_Details.Page 
-        appointingOfficer.innerHTML = empdata.Appointment_Details.AppointingOfficer 
-        dateOfSigning.innerHTML = empdata.Appointment_Details.DateofSigning 
+        natureOfAppointment.innerHTML = empdata.Appointment_Details.NatureAppointment
+        vice.innerHTML = empdata.Appointment_Details.Vice
+        who.innerHTML = empdata.Appointment_Details.Who
+        plantillaItemNo.innerHTML = empdata.Appointment_Details.PlantillaNum
+        page.innerHTML = empdata.Appointment_Details.Page
+        appointingOfficer.innerHTML = empdata.Appointment_Details.AppointingOfficer
+        dateOfSigning.innerHTML = empdata.Appointment_Details.DateofSigning
         compensationPerMonth.innerHTML = empdata.Appointment_Details.Compensation
 
 
+        const listAttachmentsURL = empdata.Appointment_URL
+
+        document.getElementById('viewAttachedDocument').addEventListener('click', function() {
+            // Get the document URL from your data (replace this with your actual data structure)
+            const listAttachmentsURL = empdata.Appointment_URL;
+        
+            // Open the document in a new tab or window
+            window.open(listAttachmentsURL, '_blank');
+        });
     })
+
+
+
 }
 
 window.addEventListener('load', fetchEmployee)

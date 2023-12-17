@@ -333,7 +333,7 @@
                           <div class="row">
                             <div class="col">
                               <span class="h6 font-semibold text-muted text-sm d-block mb-2">Top Performing
-                                Employees</span>
+                                Employees (IPCRF)</span>
                               <span class="h3 font-bold mb-0">View List</span>
                             </div>
                             <div class="col-auto">
@@ -347,7 +347,7 @@
                             <span class="badge badge-pill bg-soft-success text-success me-2">
                               <i class="bi bi-arrow-up me-1"></i>
                             </span>
-                            <span class="text-nowrap text-xs text-muted">This month / December</span>
+                            <span class="text-nowrap text-xs text-muted">This month / <span id="thismonth"></span></span>
                           </div>
                         </div>
                       </div>
@@ -355,13 +355,13 @@
 
 
                     <!--2nd Card-->
-                    <div class="col-xl-6 col-sm-6 col-12">
+                    <div class="col-xl-6 col-sm-6 col-12" id="top2">
                       <div class="card shadow border-0">
                         <div class="card-body">
                           <div class="row">
                             <div class="col">
                               <span class="h6 font-semibold text-muted text-sm d-block mb-2">Top Performing
-                                Employees</span>
+                                Employees (OPCRF)</span>
                               <span class="h3 font-bold mb-0">View List</span>
                             </div>
                             <div class="col-auto">
@@ -375,7 +375,7 @@
                             <span class="badge badge-pill bg-soft-success text-success me-2">
                               <i class="bi bi-arrow-up me-1"></i>
                             </span>
-                            <span class="text-nowrap text-xs text-muted">This month / December</span>
+                            <span class="text-nowrap text-xs text-muted">This month / <span id="IPCRFthismonth"></span></span>
                           </div>
                         </div>
                       </div>
@@ -442,6 +442,68 @@
                         </div>
                       </div>
                     </div>
+
+                    <div class="modal fade" id="mytop2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel1">Top Performing Employees</h5>
+                        </div>
+                        <div class="modal-body">
+                          <table class="table table-hover" id="topPerformingEmployeesOPCRF">
+                            <thead>
+                              <tr>
+                                <th> </th>
+                                <th>Last Name</th>
+                                <th>First Name</th>
+                                <th>OPCRF Rating</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td> <img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;">
+                                </td>
+                                <td>Albos</td>
+                                <td>John Erwin</td>
+                              </tr>
+                              <tr>
+                                <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;">
+                                </td>
+                                <td>Binas</td>
+                                <td>Camila</td>
+                              </tr>
+                              <tr>
+                                <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;">
+                                </td>
+                                <td>Ar-jay</td>
+                                <td>De la Fuente</td>
+                              </tr>
+                              <tr>
+                                <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;">
+                                </td>
+                                <td>Donita Rose</td>
+                                <td>Gadil</td>
+                              </tr>
+                              <tr>
+                                <td><img src="img/topmedal.png" class="img-fluid" style="width: 2vw; height: 4vh;">
+                                </td>
+                                <td>Arriana Mae</td>
+                                <td>Malubay</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                            id="closemodal2">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
                   </div>
 
                   <div class="card shadow border-0 mb-7">
@@ -600,13 +662,14 @@
                           <button type="button" id="closemodal" class="btn btn-secondary"
                             data-dismiss="modal">Close</button>
                           <button type="button" id="addrewardbtn" class="btn btn-primary">Ok</button>
+                          <button type="button" id="addrewardbtnModal" class="btn btn-primary" style="display: none;">Ok</button>
                         </div>
                       </form>
                     </div>
                   </div>
                 </div>
 
-                  <section class="section">
+                  <section class="section" style="display: none;">
                     <div class="row">
                       <div class="col-lg-12">
 
@@ -690,6 +753,14 @@
 
     document.getElementById("closemodal1").addEventListener("click", function() {
       $('#mytop1').modal('hide');
+    });
+
+    document.getElementById("top2").addEventListener("click", function() {
+      $('#mytop2').modal('show');
+    });
+
+    document.getElementById("closemodal2").addEventListener("click", function() {
+      $('#mytop2').modal('hide');
     });
   </script>
 
