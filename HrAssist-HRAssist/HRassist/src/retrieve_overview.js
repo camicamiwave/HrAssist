@@ -42,6 +42,7 @@ function fetchEmployee() {
         fetchEmployeeInfo(File201colRef, receivedStringData, "employeeDocID").then((dataRetrieved) => {
             const file201 = dataRetrieved;
 
+            
             empDesignation.innerHTML = file201.Appointment_Details.PositionTitle
             employmentStatus.innerHTML = file201.Appointment_Details.PositionCategory
 

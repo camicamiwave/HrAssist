@@ -103,7 +103,7 @@ export function EmployeeComplaintForm() {
                                     .then((result) => {
                                         if (result.isConfirmed) {
                                             // Redirect to the dashboard page after the user clicks "OK"
-                                            window.location.href = '`employee_home`.html';
+                                            window.location.href = 'employee_home.html';
                                             complaint_form.reset();
                                             console.log('Complaint saved...')
                                         } else {

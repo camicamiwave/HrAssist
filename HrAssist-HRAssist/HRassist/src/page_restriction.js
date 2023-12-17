@@ -57,25 +57,25 @@ export function UserLoginChecker(Account_UserID, User_Action) {
           if (User_Action === "Login") {
             window.location.href = "employee_home.html";
           } else if (User_Action === "Browsing") {
-            //PageRestrictionMethod(currentPath, userlevel);
+            PageRestrictionMethod(currentPath, userlevel);
           }
 
         } else if (userlevel === "Applicant") {
           if (User_Action === "Login") {
             window.location.href = "index.html";
           } else if (User_Action === "Browsing") {
-            //PageRestrictionMethod(currentPath, userlevel);
+            PageRestrictionMethod(currentPath, userlevel);
           }
 
         } else if (userlevel === "Admin") {
           if (User_Action === "Login") {
             window.location.href = "admin_dashboard.html";
           } else if (User_Action === "Browsing") {
-            //PageRestrictionMethod(currentPath, userlevel); 
+            PageRestrictionMethod(currentPath, userlevel); 
           }
 
         } else {
-          //PageRestrictionMethod(currentPath, "Guest");
+          PageRestrictionMethod(currentPath, "Guest");
         }
 
       } else {
@@ -103,18 +103,49 @@ export function PageRestrictionMethod(currentPath, userLevel) {
   // lagay nyo dito lahat ng pages na exclusive lang for employees
   const Employee_Pages = [
     '/dist/employee_home.html',
-    '/dist/employee_changepass.html',
-    '/dist/employee_changeprofile.html',
-    '/dist/employee_contactus.html',
-    '/dist/employee_profilepass.html',
-    '/dist/employeeprofile.html',
-
+    '/dist/employee-request.html',
+    '/dist/employee-leave-info.html',
+    '/dist/employee-complaint.html',
+    '/dist/employee_request_form.html',
+    '/dist/employee-users-profile.html',
   ];
 
   // lagay nyo dito lahat ng pages na exclusive lang for admin or HR
   const Admin_Pages = [
     '/dist/admin_dashboard.html',
+    '/dist/admin_201file_account.html',
+    '/dist/admin_201file_pds.html',
+    '/dist/admin_201file_appointment.html',
+    '/dist/admin_201file_attachments.html',
+    '/dist/admin_201file_leave.html',
+    '/dist/admin_employee_registry_list.html',
+    '/dist/admin-employee-profile.html',
+    '/dist/admin-employee-datasheet.html',
+    '/dist/admin-employee-appointment.html',
+    '/dist/admin-employee-attachment.html',
+    '/dist/admin-employee-leave.html',
+    '/dist/admin-employee-behavior.html',
+    '/dist/admin_search_employee_view.html',
+    '/dist/admin_add_applicant.html',
     '/dist/admin_manage_applicant_view.html',
+    '/dist/admin_applicant_status.html',
+    '/dist/admin_add_applicant.html',
+    '/dist/admin-employee-performance.html',
+    '/dist/admin_employee_opcrf.html',
+    '/dist/admin-OPCRF-search.html',
+    '/dist/admin-IPCRF-upload.html',
+    '/dist/admin-IPCRF-search.html',
+    '/dist/admin-employee-reward.html',
+    '/dist/admin_training_n_seminars_view.html',
+    '/dist/admin_add_training.html',
+    '/dist/admin-offices.html',
+    '/dist/organizational_chart.html',
+    '/dist/admin_accounts_view.html',
+    '/dist/calendar.html',
+    '/dist/admin_request.html',
+    '/dist/admin_request_locatorslip.html',
+    '/dist/admin_dtr_summary.html',
+
   ];
 
 

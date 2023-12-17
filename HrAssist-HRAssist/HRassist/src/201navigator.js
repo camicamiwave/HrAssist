@@ -40,7 +40,7 @@ function fetchEmployee() {
 
         const fullName = `${empdata.Personal_Information.FirstName} ${empdata.Personal_Information.SurName}`
 
-        applicantFullName.innerHTML = empdata.EmployeeUsername
+        applicantFullName.innerHTML = fullName
         empPhone.innerHTML = empdata.Personal_Information.MobileNumber
         empEmail.innerHTML = empdata.Personal_Information.Email
         applicantProfile.src = empdata.ProfilePictureURL
