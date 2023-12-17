@@ -46,7 +46,7 @@ function AddAppointmentData() {
 
     console.log(receivedStringData, 'hey')
 
-    if (validateForm()){
+    if (validateForm()) {
       try {
 
         const employeeData = {
@@ -66,9 +66,9 @@ function AddAppointmentData() {
             AppointingOfficer: addDataSheetForm.inputAppOff.value.trim(),
             DateofSigning: addDataSheetForm.inputDate.value.trim()
           }
-  
+
         }
-  
+
         Swal.fire({
           title: "Are you sure?",
           text: "Employee's personal information will be saved",
@@ -79,32 +79,31 @@ function AddAppointmentData() {
           confirmButtonText: "Confirm"
         }).then((result) => {
           if (result.isConfirmed) {
-            //const employeeDocRef = doc(EmployeecolRef, currentDocumentID);
-            //return setDoc(employeeDocRef, employeeData, { merge: true })
             return addDoc(EmployeeColRef, employeeData)
-              .then((docRef) => {
-                EmpcustomDocId = docRef.id;
-                return setDoc(doc(EmployeeColRef, EmpcustomDocId), { documentID: EmpcustomDocId }, { merge: true });
-              })
-              .then(() => {
-                Swal.fire({
-                  title: "Saved!",
-                  text: "Your appointment details added successfully...",
-                  icon: "success"
-                }).then(() => {
-                  //addDataSheetForm.reset();
-                  console.log("Added appointment successfully...");
-                  window.location.href = `admin_201file_attachments.html?data=${encodeURIComponent(receivedStringData)}&201filedoc=${encodeURIComponent(EmpcustomDocId)}`;
-  
-                  console.log("Hello")
-  
-                });
-              })
-              .catch(error => console.error('Error adding employee document:', error));
-          }
+                .then((docRef) => {
+                    SaveAttachment(docRef);
+                    EmpcustomDocId = docRef.id;
+                    return setDoc(doc(EmployeeColRef, EmpcustomDocId), { documentID: EmpcustomDocId }, { merge: true });
+                })
+                .then(() => {
+                    // Add a delay of 2 seconds (adjust the time as needed)
+                    return new Promise(resolve => setTimeout(resolve, 2000));
+                })
+                .then(() => {
+                    Swal.fire({
+                        title: "Saved!",
+                        text: "Your appointment details added successfully...",
+                        icon: "success"
+                    }).then(() => {
+                        console.log("Added appointment successfully...");
+                        window.location.href = `admin_201file_attachments.html?data=${encodeURIComponent(receivedStringData)}&201filedoc=${encodeURIComponent(EmpcustomDocId)}`;
+                    });
+                })
+                .catch(error => console.error('Error adding employee document:', error));
+        }
         });
-  
-  
+
+
       } catch {
         console.log("There was an error...")
       }
@@ -113,13 +112,37 @@ function AddAppointmentData() {
       console.log("Error");
     }
 
-    
+
   })
 
 }
 
 window.addEventListener('load', AddAppointmentData)
 
+function SaveAttachment(docRef) {
+  const storageRef = ref(storage, "201File/Appointments");
+  const RequestcolRef = collection(db, '201File Information');
+  const fileInput = document.getElementById('fileInput');
+  const selectedFiles = fileInput.files;
+  const firstSelectedFile = selectedFiles[0];  // Access the first file
+
+  const timestamp = new Date().getTime();
+  const uniqueFilename = `${timestamp}_${firstSelectedFile.name}`;
+  const fileRef = ref(storageRef, uniqueFilename);
+
+  let ApplicantProfileURL;  // Declare the variable in a higher scope
+
+  const uploadPromise = uploadBytes(fileRef, firstSelectedFile)
+    .then((snapshot) => getDownloadURL(fileRef))
+    .then((downloadURL) => {
+      ApplicantProfileURL = downloadURL;  // Assign the value to the variable
+    })
+    .then(() => {
+      const customDocId = docRef.id;
+      // Update the document with the custom ID
+      return setDoc(doc(RequestcolRef, customDocId), { Appointment_URL: ApplicantProfileURL }, { merge: true });
+    });
+}
 
 
 /// ito na gamitin na algo for retrieving
@@ -173,7 +196,7 @@ function fetchOfficeDesignation() {
 
   const inputOffice = document.getElementById('inputOffice');
   inputOffice.innerHTML = '<option>Select</option>';
- 
+
   onSnapshot(que, (snapshot) => {
     snapshot.docs.forEach((doc) => {
       const data = doc.data();
@@ -194,7 +217,7 @@ function fetchOfficeDesignation() {
 
     if (selectedValue) {
       // Log or use the selected value
-      console.log(selectedValue); 
+      console.log(selectedValue);
 
       fetchEmployeeInfo(OfficecolRef, selectedValue, "OfficeName").then((dataRetrieved) => {
         const designationData = dataRetrieved;
@@ -203,14 +226,14 @@ function fetchOfficeDesignation() {
         positionSelector.innerHTML = '<option>Select</option>';
 
         // getting data of designation
-        const designationCollectionRef = collection(db, 'Office Information', designationData.officeDocumentID, 'Designations'); 
+        const designationCollectionRef = collection(db, 'Office Information', designationData.officeDocumentID, 'Designations');
         const designationQue = query(designationCollectionRef)
 
         onSnapshot(designationQue, (snapshot) => {
           snapshot.docs.forEach((doc) => {
             const data = doc.data();
             const id = doc.id;
-      
+
             // Create an option element for each OfficeName and append it to the selector
             const optionElement = document.createElement('option');
             optionElement.value = data.DesignationName;
@@ -230,56 +253,56 @@ window.addEventListener('load', fetchOfficeDesignation);
 function validateForm() {
 
 
- var OfficeSelector = document.getElementById('inputOffice');
- var PositionSelector = document.getElementById('positionSelector');
- var PosCategory = document.getElementById('inputPosCategory');
- var SalaryGrade = document.getElementById('inputSJP');
- var Amount = document.getElementById('inputAmount');
- var NatureOfAppointment = document.getElementById('inputNatofApp');
- var Viceinput = document.getElementById('inputVice');
- var PlantillaInput = document.getElementById('inputPlant');
- var Pageinput = document.getElementById('inputPage');
- var AppointingOfficerInput = document.getElementById('inputAppOff');
- var AppointmentDateInput = document.getElementById('inputDate');
- var AttachmentInput = document.getElementById('fileInput');
+  var OfficeSelector = document.getElementById('inputOffice');
+  var PositionSelector = document.getElementById('positionSelector');
+  var PosCategory = document.getElementById('inputPosCategory');
+  var SalaryGrade = document.getElementById('inputSJP');
+  var Amount = document.getElementById('inputAmount');
+  var NatureOfAppointment = document.getElementById('inputNatofApp');
+  var Viceinput = document.getElementById('inputVice');
+  var PlantillaInput = document.getElementById('inputPlant');
+  var Pageinput = document.getElementById('inputPage');
+  var AppointingOfficerInput = document.getElementById('inputAppOff');
+  var AppointmentDateInput = document.getElementById('inputDate');
+  var AttachmentInput = document.getElementById('fileInput');
 
 
-     if (OfficeSelector.value === 'Select') {
-        console.log('Please select an Office!');
-        Swal.fire({
-            title: 'Error',
-            text: 'Please select an Office!',
-            icon: 'error',
-        });
-        return false;
-    }
+  if (OfficeSelector.value === 'Select') {
+    console.log('Please select an Office!');
+    Swal.fire({
+      title: 'Error',
+      text: 'Please select an Office!',
+      icon: 'error',
+    });
+    return false;
+  }
 
-    if (PositionSelector.value === 'Select') {
-      console.log('Please select a position!');
-      Swal.fire({
-          title: 'Error',
-          text: 'Please select a position!',
-          icon: 'error',
-      });
-      return false;
+  if (PositionSelector.value === 'Select') {
+    console.log('Please select a position!');
+    Swal.fire({
+      title: 'Error',
+      text: 'Please select a position!',
+      icon: 'error',
+    });
+    return false;
   }
 
   if (PosCategory.value === '') {
     console.log('Please select a position category!');
     Swal.fire({
-        title: 'Error',
-        text: 'Please select a position category!',
-        icon: 'error',
+      title: 'Error',
+      text: 'Please select a position category!',
+      icon: 'error',
     });
     return false;
- }
+  }
 
   if (SalaryGrade.value === '') {
     console.log('Please select a Salary Grade!');
     Swal.fire({
-        title: 'Error',
-        text: 'Please select a position category!',
-        icon: 'error',
+      title: 'Error',
+      text: 'Please select a position category!',
+      icon: 'error',
     });
     return false;
   }
@@ -288,9 +311,9 @@ function validateForm() {
   if (!isValidNumber(Amount.value)) {
     console.log('Please input numerical digits in Compensation');
     Swal.fire({
-        title: 'Error',
-        text: 'Please input numerical digits in Compensation',
-        icon: 'error',
+      title: 'Error',
+      text: 'Please input numerical digits in Compensation',
+      icon: 'error',
     });
     return false;
   }
@@ -298,19 +321,19 @@ function validateForm() {
   if (NatureOfAppointment.value === '') {
     console.log('Please select a Nature of Appointment!');
     Swal.fire({
-        title: 'Error',
-        text: 'Please select a Nature of Appointment!',
-        icon: 'error',
+      title: 'Error',
+      text: 'Please select a Nature of Appointment!',
+      icon: 'error',
     });
     return false;
- }
+  }
 
   if (!isValidString(Viceinput.value)) {
     console.log('Please correct your input in choosing the Vice');
     Swal.fire({
-        title: 'Error',
-        text: 'Please correct your input in choosing the Vice',
-        icon: 'error',
+      title: 'Error',
+      text: 'Please correct your input in choosing the Vice',
+      icon: 'error',
     });
     return false;
   }
@@ -318,9 +341,9 @@ function validateForm() {
   if (!isValidNumber(PlantillaInput.value)) {
     console.log('Please input numerical digits in Plantilla');
     Swal.fire({
-        title: 'Error',
-        text: 'Please input numerical digits in Plantilla',
-        icon: 'error',
+      title: 'Error',
+      text: 'Please input numerical digits in Plantilla',
+      icon: 'error',
     });
     return false;
   }
@@ -328,9 +351,9 @@ function validateForm() {
   if (!isValidNumber(Pageinput.value)) {
     console.log('Please input numerical digits in Page');
     Swal.fire({
-        title: 'Error',
-        text: 'Please input numerical digits in Plantilla',
-        icon: 'error',
+      title: 'Error',
+      text: 'Please input numerical digits in Plantilla',
+      icon: 'error',
     });
     return false;
   }
@@ -338,9 +361,9 @@ function validateForm() {
   if (!isValidString(AppointingOfficerInput.value)) {
     console.log('Please correct your input in choosing the Appointing Officer');
     Swal.fire({
-        title: 'Error',
-        text: 'Please correct your input in choosing the Appointing Officer',
-        icon: 'error',
+      title: 'Error',
+      text: 'Please correct your input in choosing the Appointing Officer',
+      icon: 'error',
     });
     return false;
   }
@@ -348,19 +371,19 @@ function validateForm() {
   if (AppointmentDateInput.value === '') {
     console.log('Please select an Appointment Date');
     Swal.fire({
-        title: 'Error',
-        text: 'Please select an Appointment Date',
-        icon: 'error',
+      title: 'Error',
+      text: 'Please select an Appointment Date',
+      icon: 'error',
     });
     return false;
- }
+  }
 
 
 
-    return true;
-  
-  
-    
+  return true;
+
+
+
 }
 
 
