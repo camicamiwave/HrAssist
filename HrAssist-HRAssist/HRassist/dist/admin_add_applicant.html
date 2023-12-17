@@ -35,6 +35,8 @@
         <link href="css/employee-template.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
     </head>
 
     <body>
@@ -461,6 +463,8 @@
           </main><!-- End #main -->
         
           <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         
           <!-- Vendor JS Files -->
           <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -508,7 +512,7 @@
                 dragArea.classList.remove('active');
         
                 const files = e.dataTransfer.files;
-                handleFiles(files, fileInfo);
+                handleFiles(files, fileInfo, ['pdf', 'doc', 'docx'], 'Invalid file type for CV. Please upload a PDF or Word document.');
             });
         
             browseButton.addEventListener('click', function() {
@@ -517,7 +521,7 @@
         
             fileInput.addEventListener('change', function() {
                 const files = this.files;
-                handleFiles(files, fileInfo);
+                handleFiles(files, fileInfo, ['pdf', 'doc', 'docx'], 'Invalid file type for CV. Please upload a PDF or Word document.');
             });
         
             dragArea2.addEventListener('dragover', function(e) {
@@ -534,7 +538,7 @@
                 dragArea2.classList.remove('active');
         
                 const files = e.dataTransfer.files;
-                handleFiles(files, fileInfo2);
+                handleFiles(files, fileInfo2, ['png', 'jpeg', 'jpg'], 'Invalid file type for Picture. Please upload a PNG or JPEG image.');
             });
         
             browseButton2.addEventListener('click', function() {
@@ -543,12 +547,25 @@
         
             fileInput2.addEventListener('change', function() {
                 const files = this.files;
-                handleFiles(files, fileInfo2);
+                handleFiles(files, fileInfo2, ['png', 'jpeg', 'jpg'], 'Invalid file type for Picture. Please upload a PNG or JPEG image.');
             });
         
-            function handleFiles(files, fileInfoElement) {
+            function handleFiles(files, fileInfoElement, allowedExtensions, errorMessage) {
                 if (files.length > 0) {
-                    fileInfoElement.textContent = files[0].name;
+                    const fileName = files[0].name;
+                    const fileExtension = fileName.split('.').pop().toLowerCase();
+        
+                    if (allowedExtensions.includes(fileExtension)) {
+                        fileInfoElement.textContent = fileName;
+                    } else {
+                        Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: errorMessage,
+                        });
+
+                        fileInput.value = '';
+                    }
                 }
             }
         </script>
