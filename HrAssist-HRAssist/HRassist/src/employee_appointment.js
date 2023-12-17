@@ -352,7 +352,7 @@ function validateForm() {
     console.log('Please input numerical digits in Page');
     Swal.fire({
       title: 'Error',
-      text: 'Please input numerical digits in Plantilla',
+      text: 'Please input numerical digits in Page',
       icon: 'error',
     });
     return false;
